@@ -449,5 +449,11 @@ footer a:hover { color: var(--text); }
   <p style="margin-top:0.4rem;">Not affiliated with any Malaysian government body. Information verified March 2026.</p>
 </footer>
 
+
+<script>
+document.querySelectorAll('.checklist li').forEach(function(li) {
+  li.addEventListener('click', function() { this.classList.toggle('checked'); });
+});
+</script>
 </body>
 </html>
