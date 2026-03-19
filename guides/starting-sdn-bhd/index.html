@@ -315,29 +315,43 @@ nav {
 /* Fees table */
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 0.875rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
 th {
-  background: var(--bg3);
-  padding: 0.6rem 0.85rem;
+  background: rgba(108,99,255,0.15);
+  padding: 0.85rem 1.1rem;
   text-align: left;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--muted);
-  font-weight: 600;
-  border: 1px solid var(--border);
+  letter-spacing: 0.8px;
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid rgba(108,99,255,0.3);
+}
+th:not(:last-child), td:not(:last-child) {
+  border-right: 1px solid var(--border);
 }
 td {
-  padding: 0.6rem 0.85rem;
-  border: 1px solid var(--border);
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border);
   color: var(--muted);
+  line-height: 1.4;
 }
-tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-td:first-child { color: var(--text); }
-.amount { color: var(--accent2); font-weight: 700; font-family: monospace; }
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: rgba(255,255,255,0.035); }
+tr:nth-child(odd) td { background: rgba(0,0,0,0.12); }
+tr:hover td { background: rgba(108,99,255,0.08); transition: background 0.15s; }
+td:first-child { color: var(--text); font-weight: 500; }
+.amount { color: var(--accent2); font-weight: 700; font-family: monospace; font-size: 0.95rem; }
+@media (max-width: 600px) {
+  th, td { padding: 0.65rem 0.75rem; font-size: 0.8rem; }
+}
 
 /* Coffee banner */
 .coffee-banner {
