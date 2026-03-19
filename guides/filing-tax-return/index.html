@@ -8,7 +8,395 @@
   <meta property="og:title" content="Filing Your First Tax Return (LHDN) Malaysia 2026 — Sorted">
   <meta property="og:description" content="e-Filing Form BE, tax reliefs, deadlines, and penalties. Complete guide for first-time LHDN taxpayers in Malaysia, YA 2025.">
   <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/guides/filing-tax-return/">
-  <link rel="stylesheet" href="/sorted-my/style.css">
+  <style>
+/* Sorted — shared stylesheet */
+:root {
+  --bg: #0f1117;
+  --bg2: #1a1d26;
+  --bg3: #22263a;
+  --border: #2d3148;
+  --text: #e8eaf6;
+  --muted: #8892b0;
+  --accent: #6c63ff;
+  --accent2: #48cfad;
+  --warn: #ffd166;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Nav */
+nav {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f1117 0%, #1a1d26 50%, #0f1117 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(108,99,255,0.15);
+  border: 1px solid rgba(108,99,255,0.4);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+.hero h1 .highlight { color: var(--accent); }
+.hero p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+/* Search box (decorative on index) */
+.search-box {
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: var(--font);
+}
+.search-box input::placeholder { color: var(--muted); }
+
+/* Main container */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section heading */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2.5rem 0 1rem;
+}
+
+/* Guide cards */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.guide-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: border-color 0.2s, transform 0.15s;
+  display: block;
+  color: var(--text);
+}
+.guide-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.guide-card .icon { font-size: 1.75rem; margin-bottom: 0.6rem; display: block; }
+.guide-card .card-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+.guide-card .card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+.guide-card .card-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background: rgba(108,99,255,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(108,99,255,0.25);
+}
+.tag.green {
+  background: rgba(34,197,94,0.1);
+  color: var(--success);
+  border-color: rgba(34,197,94,0.2);
+}
+.tag.yellow {
+  background: rgba(255,209,102,0.1);
+  color: var(--warn);
+  border-color: rgba(255,209,102,0.2);
+}
+
+/* Guide page layout */
+.guide-header {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.guide-header .back-link {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+
+/* Summary box */
+.summary-box {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.summary-item { flex: 1; min-width: 120px; }
+.summary-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+.summary-item .value { font-size: 1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+
+/* Info box */
+.info-box {
+  background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.info-box strong { color: var(--text); }
+.warn-box {
+  background: rgba(255,209,102,0.07);
+  border-color: rgba(255,209,102,0.25);
+  color: var(--muted);
+}
+.warn-box strong { color: var(--warn); }
+.success-box {
+  background: rgba(34,197,94,0.07);
+  border-color: rgba(34,197,94,0.2);
+  color: var(--muted);
+}
+.success-box strong { color: var(--success); }
+
+/* Section */
+.section { margin-bottom: 2.5rem; }
+.section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.section h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--accent2);
+}
+
+/* Steps */
+.steps { counter-reset: step; list-style: none; }
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+.steps li::before {
+  content: counter(step);
+  background: var(--accent);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Doc checklist */
+.checklist { list-style: none; }
+.checklist li {
+  padding: 0.5rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: '□';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1rem;
+}
+.checklist li strong { color: var(--text); }
+
+/* Fees table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+}
+th {
+  background: var(--bg3);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+td {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+td:first-child { color: var(--text); }
+.amount { color: var(--accent2); font-weight: 700; font-family: monospace; }
+
+/* Coffee banner */
+.coffee-banner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  margin: 2.5rem 0;
+}
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+
+/* Footer */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 4rem;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+/* Disclaimer */
+.disclaimer {
+  background: rgba(255,209,102,0.06);
+  border: 1px solid rgba(255,209,102,0.2);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+.disclaimer strong { color: var(--warn); }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .guides-grid { grid-template-columns: 1fr; }
+  .summary-box { flex-direction: column; gap: 1rem; }
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+}
+
+</style>
 </head>
 <body>
 
