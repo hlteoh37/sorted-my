@@ -271,15 +271,12 @@ nav {
 .steps { counter-reset: step; list-style: none; padding: 0; }
 .steps li {
   counter-increment: step;
-  display: flex;
-  gap: 1.2rem;
   margin-bottom: 0;
-  padding: 1.2rem 1.4rem;
-  align-items: flex-start;
+  padding: 1.1rem 1.4rem;
   border-bottom: 1px solid var(--border);
   background: var(--bg2);
   transition: background 0.15s;
-  line-height: 1.65;
+  line-height: 1.7;
   font-size: 0.95rem;
   color: var(--text);
 }
@@ -288,46 +285,57 @@ nav {
 .steps li:nth-child(even) { background: var(--bg3); }
 .steps li:hover { background: rgba(108, 99, 255, 0.08); }
 .steps li::before {
-  content: counter(step);
-  background: var(--accent);
-  color: white;
-  font-size: 0.85rem;
+  content: "Step " counter(step);
+  display: block;
+  font-size: 0.7rem;
   font-weight: 700;
-  min-width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-  box-shadow: 0 2px 6px rgba(108, 99, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
 }
-.steps li strong { color: #fff; }
+.steps li strong { color: #fff; font-size: 1.02rem; }
 @media (max-width: 600px) {
-  .steps li { padding: 1rem; gap: 0.8rem; font-size: 0.88rem; }
-  .steps li::before { min-width: 28px; height: 28px; font-size: 0.78rem; }
+  .steps li { padding: 1rem; font-size: 0.88rem; }
+  .steps li strong { font-size: 0.92rem; }
 }
 
 /* Doc checklist */
-.checklist { list-style: none; }
+.checklist { list-style: none; padding: 0; }
 .checklist li {
-  padding: 0.5rem 0;
-  padding-left: 1.75rem;
-  position: relative;
-  font-size: 0.9rem;
+  padding: 0.7rem 0 0.7rem 0;
+  font-size: 0.92rem;
   border-bottom: 1px solid var(--border);
-  color: var(--muted);
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  line-height: 1.55;
 }
 .checklist li:last-child { border-bottom: none; }
 .checklist li::before {
-  content: '□';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 1rem;
+  content: '';
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 0.15rem;
+  transition: background 0.15s, border-color 0.15s;
 }
-.checklist li strong { color: var(--text); }
+.checklist li.checked::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.checklist li.checked { opacity: 0.5; text-decoration: line-through; }
+.checklist li strong { color: #fff; }
 
 /* Fees table */
 table {
@@ -640,5 +648,11 @@ footer a:hover { color: var(--text); }
   <p style="margin-top:0.4rem;">Not affiliated with any Malaysian government body. Information verified March 2026.</p>
 </footer>
 
+
+<script>
+document.querySelectorAll('.checklist li').forEach(function(li) {
+  li.addEventListener('click', function() { this.classList.toggle('checked'); });
+});
+</script>
 </body>
 </html>
