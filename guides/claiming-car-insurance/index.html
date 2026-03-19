@@ -49,14 +49,53 @@ nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0
 .checklist li:last-child { border-bottom: none; }
 .checklist li::before { content: '□'; position: absolute; left: 0; color: var(--accent); font-size: 1rem; }
 .checklist li strong { color: var(--text); }
-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.875rem; margin: 1.5rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-th { background: rgba(108,99,255,0.15); padding: 0.85rem 1.1rem; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); font-weight: 700; border-bottom: 2px solid rgba(108,99,255,0.3); }
-th:not(:last-child), td:not(:last-child) { border-right: 1px solid var(--border); }
-td { padding: 0.85rem 1.1rem; border-bottom: 1px solid var(--border); color: var(--muted); line-height: 1.4; }
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9375rem;
+  margin: 2rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+th {
+  background: rgba(108, 99, 255, 0.2);
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 2px solid rgba(108, 99, 255, 0.45);
+  white-space: nowrap;
+}
+th:not(:last-child), td:not(:last-child) {
+  border-right: 1px solid var(--border);
+}
+th:last-child { text-align: right; }
+td {
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid rgba(45, 49, 72, 0.8);
+  color: var(--text);
+  line-height: 1.5;
+  font-weight: 400;
+}
 tr:last-child td { border-bottom: none; }
-tr:nth-child(even) td { background: rgba(255,255,255,0.035); }
-tr:nth-child(odd) td { background: rgba(0,0,0,0.12); }
-tr:hover td { background: rgba(108,99,255,0.08); transition: background 0.15s; }
+td:first-child { color: var(--text); font-weight: 600; }
+td:last-child { text-align: right; }
+tr:nth-child(odd) td { background: var(--bg2); }
+tr:nth-child(even) td { background: var(--bg3); }
+tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s ease; }
+.amount { color: var(--success); font-weight: 700; font-family: monospace; font-size: 0.9375rem; letter-spacing: -0.01em; }
+@media (max-width: 600px) {
+  table { font-size: 0.85rem; }
+  th, td { padding: 0.65rem 0.8rem; }
+  th { font-size: 0.7rem; }
+  .amount { font-size: 0.85rem; }
+}
 td:first-child { color: var(--text); font-weight: 500; }
 .amount { color: var(--accent2); font-weight: 700; font-family: monospace; font-size: 0.95rem; }
 .coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
