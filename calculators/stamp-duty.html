@@ -124,6 +124,10 @@ tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
 .rate-table td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
 .rate-table td:last-child { color: var(--accent2); font-weight: 700; }
 
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
 footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
 footer a { color: var(--muted); }
 footer a:hover { color: var(--text); }
@@ -135,6 +139,29 @@ footer a:hover { color: var(--text); }
   .result-breakdown { grid-template-columns: 1fr; }
 }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Stamp Duty Calculator 2025",
+    "url": "https://hlteoh37.github.io/sorted-my/calculators/stamp-duty.html",
+    "description": "Free Malaysian stamp duty calculator for 2025. Calculate stamp duty on property purchase, legal fees, and total upfront costs. Includes first-time buyer exemption for properties up to RM500,000.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MYR"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sorted MY",
+      "url": "https://hlteoh37.github.io/sorted-my/"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -304,6 +331,42 @@ footer a:hover { color: var(--text); }
 
     <p><strong style="color:var(--text)">Does stamp duty apply to new developer properties?</strong></p>
     <p>Yes — stamp duty applies whether you buy from a developer (primary market) or a previous owner (sub-sale). For primary purchases, developers sometimes offer to absorb stamp duty as part of a promotion — always verify in writing what is included.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Related Tools</h2>
+    <div class="related-grid">
+      <a href="../compare/rental-yield/" class="related-card">
+        🏘 Rental Yield Calculator
+        <div class="rel-desc">Calculate gross &amp; net rental yield and cash flow for property investment</div>
+      </a>
+      <a href="../compare/car-loan/" class="related-card">
+        🚗 Car Loan Calculator
+        <div class="rel-desc">Compare monthly repayments across major Malaysian banks</div>
+      </a>
+      <a href="../compare/tax-calculator/" class="related-card">
+        💸 Income Tax Calculator
+        <div class="rel-desc">Estimate your YA 2025 income tax with bracket breakdown</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📖 Related Guides</h2>
+    <div class="related-grid">
+      <a href="../guides/buying-property/" class="related-card">
+        🏠 Buying Property in Malaysia
+        <div class="rel-desc">Step-by-step guide to purchasing residential property</div>
+      </a>
+      <a href="../guides/home-loan-guide/" class="related-card">
+        🏦 Home Loan Guide
+        <div class="rel-desc">How to apply for a Malaysian home loan and what to expect</div>
+      </a>
+      <a href="../guides/renting-first-apartment/" class="related-card">
+        🔑 Renting Your First Apartment
+        <div class="rel-desc">What to check before signing a tenancy agreement</div>
+      </a>
+    </div>
   </div>
 
   <div class="warn-box">

@@ -110,6 +110,10 @@ tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
 .tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
 .tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
 
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
 footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
 footer a { color: var(--muted); }
 footer a:hover { color: var(--text); }
@@ -121,6 +125,29 @@ footer a:hover { color: var(--text); }
   .result-breakdown { grid-template-columns: 1fr; }
 }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Income Tax Calculator YA 2025",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/tax-calculator/",
+    "description": "Free Malaysian income tax calculator for Year of Assessment 2025. Enter chargeable income and reliefs to see bracket breakdown and effective tax rate.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MYR"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sorted MY",
+      "url": "https://hlteoh37.github.io/sorted-my/"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -292,6 +319,42 @@ footer a:hover { color: var(--text); }
 
     <p><strong style="color:var(--text)">What if my income is below RM34,000?</strong></p>
     <p>If your <em>annual income</em> (before reliefs) is RM34,000 or below, you are generally not required to file a tax return. However, if you have been registered before, you still should file.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Related Tools</h2>
+    <div class="related-grid">
+      <a href="../../guides/epf-calculator/" class="related-card">
+        💼 EPF Retirement Calculator
+        <div class="rel-desc">EPF contributions reduce your chargeable income — see your projected savings</div>
+      </a>
+      <a href="../ptptn-calculator/" class="related-card">
+        🎓 PTPTN Repayment Calculator
+        <div class="rel-desc">PTPTN repayments may qualify for tax relief — calculate your schedule</div>
+      </a>
+      <a href="../car-loan/" class="related-card">
+        🚗 Car Loan Calculator
+        <div class="rel-desc">Compare monthly repayments across major Malaysian banks</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📖 Related Guides</h2>
+    <div class="related-grid">
+      <a href="../../guides/filing-tax-return/" class="related-card">
+        🧾 Filing Your Tax Return
+        <div class="rel-desc">Step-by-step guide to filing e-Filing with LHDN</div>
+      </a>
+      <a href="../../guides/zakat-tax-rebate/" class="related-card">
+        🌙 Zakat as Tax Rebate
+        <div class="rel-desc">How to offset your income tax with zakat payments</div>
+      </a>
+      <a href="../../guides/reading-ea-form/" class="related-card">
+        📋 Reading Your EA Form
+        <div class="rel-desc">Understand every line on your employer's EA form</div>
+      </a>
+    </div>
   </div>
 
   <div class="warn-box">
