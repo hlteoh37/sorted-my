@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Car Loan Calculator 2026 — Compare Bank Rates | Sorted</title>
+  <meta name="description" content="Calculate your Malaysia car loan monthly repayment instantly. Compare rates from Maybank, CIMB, Public Bank, Hong Leong, and RHB. Find the cheapest car financing in 2026.">
+  <meta property="og:title" content="Malaysia Car Loan Calculator 2026 — Compare Bank Rates | Sorted">
+  <meta property="og:description" content="Free car loan calculator for Malaysia. Enter car price, down payment, and tenure to see monthly repayments. Compare all major banks side by side.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/car-loan/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Calculator */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Results */
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.result-placeholder { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+.result-placeholder .icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+.result-placeholder p { font-size: 0.9rem; }
+
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.danger { color: var(--danger); }
+
+.cost-bar { background: var(--bg3); border-radius: 6px; height: 10px; margin: 1rem 0 0.4rem; overflow: hidden; display: flex; }
+.cost-bar-principal { background: var(--accent2); }
+.cost-bar-interest { background: var(--warn); }
+.cost-bar-legend { display: flex; gap: 1rem; font-size: 0.75rem; color: var(--muted); }
+.legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+
+/* Bank comparison table */
+.compare-section { margin-bottom: 2.5rem; }
+.compare-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.compare-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+
+.bank-table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody tr.highlight { background: rgba(72,207,173,0.07); border-color: rgba(72,207,173,0.2); }
+tbody tr.highlight td:first-child { border-left: 3px solid var(--accent2); padding-left: calc(0.85rem - 3px); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.bank-name { font-weight: 700; color: var(--text); }
+.bank-tag { font-size: 0.65rem; background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); padding: 0.1rem 0.4rem; border-radius: 999px; font-weight: 700; margin-left: 0.4rem; vertical-align: middle; }
+.monthly-amt { font-weight: 700; color: var(--accent2); }
+.rate-cell { color: var(--muted); }
+.note-cell { font-size: 0.78rem; color: var(--muted); max-width: 200px; }
+
+/* Info boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../broadband/">Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>🚗 Car Loan Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Calculate your monthly repayment and compare rates from major Malaysian banks — Maybank, CIMB, Public Bank, Hong Leong, RHB.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Loan Details</h2>
+
+      <div class="field">
+        <label for="car-price">Car Price (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="car-price" min="5000" max="2000000" step="1000" value="80000" placeholder="80000">
+        </div>
+        <div class="hint">On-the-road price including insurance &amp; road tax</div>
+      </div>
+
+      <div class="field">
+        <label for="down-payment">Down Payment (%)</label>
+        <input type="number" id="down-payment" min="0" max="90" step="1" value="10" placeholder="10">
+        <div class="hint">Minimum 10% required by most banks. Higher = lower monthly</div>
+      </div>
+
+      <div class="field">
+        <label for="tenure">Loan Tenure (Years)</label>
+        <select id="tenure">
+          <option value="3">3 years</option>
+          <option value="5">5 years</option>
+          <option value="7" selected>7 years</option>
+          <option value="9">9 years</option>
+        </select>
+        <div class="hint">Max 9 years for most banks in Malaysia</div>
+      </div>
+
+      <div class="field">
+        <label for="interest-rate">Interest Rate (% per year)</label>
+        <input type="number" id="interest-rate" min="1" max="10" step="0.01" value="3.5" placeholder="3.5">
+        <div class="hint">Flat rate (not reducing balance). Typical: 2.8%–4.5%</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Monthly Payment</button>
+    </div>
+
+    <div class="calc-results" id="results-panel">
+      <h2>Your Results</h2>
+      <div class="result-placeholder" id="result-placeholder">
+        <span class="icon">🧮</span>
+        <p>Enter your loan details and click Calculate to see your monthly repayment.</p>
+      </div>
+      <div id="result-output" style="display:none">
+        <div class="result-primary">
+          <div class="label">Monthly Repayment</div>
+          <div class="amount" id="res-monthly">—</div>
+          <div class="sub" id="res-sub">per month for <span id="res-tenure-label">—</span></div>
+        </div>
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="stat-label">Loan Amount</div>
+            <div class="stat-value" id="res-principal">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Interest</div>
+            <div class="stat-value warn" id="res-interest">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Cost</div>
+            <div class="stat-value" id="res-total">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Interest Ratio</div>
+            <div class="stat-value danger" id="res-ratio">—</div>
+          </div>
+        </div>
+        <div class="cost-bar" id="cost-bar">
+          <div class="cost-bar-principal" id="bar-principal" style="width:70%"></div>
+          <div class="cost-bar-interest" id="bar-interest" style="width:30%"></div>
+        </div>
+        <div class="cost-bar-legend">
+          <span><span class="legend-dot" style="background:var(--accent2)"></span>Principal</span>
+          <span><span class="legend-dot" style="background:var(--warn)"></span>Interest</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANK COMPARISON -->
+  <div class="compare-section">
+    <h2>📊 Bank Rate Comparison</h2>
+    <p class="subtitle">Live estimates based on your inputs above. Rates are indicative — actual rates depend on your credit profile and the car model.</p>
+    <div class="bank-table-wrap">
+      <table id="bank-table">
+        <thead>
+          <tr>
+            <th>Bank</th>
+            <th>Rate (p.a.)</th>
+            <th>Monthly (RM)</th>
+            <th>Total Interest</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="bank-tbody">
+          <tr><td colspan="5" style="text-align:center;color:var(--muted);padding:1.5rem">Enter loan details above and click Calculate to compare banks.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>How Malaysian car loan interest works:</strong> Banks in Malaysia use a <strong>flat rate</strong> system, not a reducing balance. This means interest is calculated on the full loan amount throughout the tenure — so the effective interest rate is roughly double the flat rate quoted. A 3.5% flat rate ≈ 6.5%–7% effective annual rate.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips to Reduce Your Car Loan Cost</h2>
+    <ul class="tips-list">
+      <li>Put down <strong>20–30%</strong> instead of 10% — this significantly reduces monthly payments and total interest.</li>
+      <li>Choose a <strong>shorter tenure</strong> (5–7 years vs 9 years) to pay less interest overall, even if monthly payments are higher.</li>
+      <li>Compare at least 3 banks — rates can vary by 0.5–1%, which adds up to thousands of ringgit over 7 years.</li>
+      <li>Check if your employer or car brand offers a <strong>staff rate or rebate</strong> — Perodua and Proton often have promotions.</li>
+      <li>A good credit score (CCRIS / CTOS) can get you a lower rate. Check your record before applying.</li>
+      <li>Some banks offer a <strong>flexi loan</strong> feature that lets you make early repayments penalty-free.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+    <p><strong style="color:var(--text)">What is the minimum down payment in Malaysia?</strong></p>
+    <p>For new cars, banks typically require 10% down payment. For used cars, this can be 20–30%. If you're a first-time borrower with a lower credit score, banks may require a higher margin.</p>
+    <p><strong style="color:var(--text)">What is the maximum car loan tenure in Malaysia?</strong></p>
+    <p>Most banks allow up to 9 years for new cars. Used cars generally cap at 7 years depending on the car's age. Bank Negara Malaysia guidelines require loan tenure to end before the borrower turns 70.</p>
+    <p><strong style="color:var(--text)">Is the rate here flat or reducing balance?</strong></p>
+    <p>This calculator uses a <strong>flat rate</strong>, which is the standard for Malaysian hire-purchase (HP) car loans. The effective interest you actually pay is roughly 1.8–2× the flat rate quoted.</p>
+    <p><strong style="color:var(--text)">Can I negotiate a lower rate?</strong></p>
+    <p>Yes — especially if you have a good credit score or are buying a Proton/Perodua. Dealers often have pre-arranged rates with specific banks. Always ask for a lower rate and compare across at least 2–3 banks.</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates only. Actual loan terms, interest rates, and monthly payments depend on your credit profile, the bank's current offerings, and the specific vehicle. Always confirm figures directly with your bank or financial institution before committing to any loan.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Broadband Compare</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+const BANKS = [
+  { name: 'Maybank',      rate: 2.99, tag: 'Lowest',  note: 'MAE customers may qualify for preferential rates' },
+  { name: 'Public Bank',  rate: 3.15, tag: null,       note: 'Competitive for Proton/Perodua vehicles' },
+  { name: 'CIMB',         rate: 3.25, tag: null,       note: 'Flexible repayment options available' },
+  { name: 'Hong Leong',   rate: 3.35, tag: null,       note: 'Good for Toyota/Honda models' },
+  { name: 'RHB',          rate: 3.50, tag: null,       note: 'Promotions available for select brands' },
+];
+
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calcMonthly(principal, flatRate, years) {
+  const totalInterest = principal * (flatRate / 100) * years;
+  const totalAmount = principal + totalInterest;
+  const months = years * 12;
+  return { monthly: totalAmount / months, totalInterest, totalAmount, months };
+}
+
+function calculate() {
+  const price = parseFloat(document.getElementById('car-price').value) || 0;
+  const dpPct = parseFloat(document.getElementById('down-payment').value) || 10;
+  const years = parseInt(document.getElementById('tenure').value) || 7;
+  const rate = parseFloat(document.getElementById('interest-rate').value) || 3.5;
+
+  if (price <= 0) { alert('Please enter a valid car price.'); return; }
+  if (dpPct < 0 || dpPct >= 100) { alert('Down payment must be between 0% and 99%.'); return; }
+
+  const downAmt = price * dpPct / 100;
+  const principal = price - downAmt;
+
+  const { monthly, totalInterest, totalAmount, months } = calcMonthly(principal, rate, years);
+  const ratio = (totalInterest / totalAmount * 100).toFixed(1);
+
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('result-output').style.display = 'block';
+
+  document.getElementById('res-monthly').textContent = fmt(monthly);
+  document.getElementById('res-tenure-label').textContent = months + ' months';
+  document.getElementById('res-principal').textContent = fmt(principal);
+  document.getElementById('res-interest').textContent = fmt(totalInterest);
+  document.getElementById('res-total').textContent = fmt(totalAmount);
+  document.getElementById('res-ratio').textContent = ratio + '% interest';
+
+  const principalPct = ((principal / totalAmount) * 100).toFixed(1);
+  document.getElementById('bar-principal').style.width = principalPct + '%';
+  document.getElementById('bar-interest').style.width = (100 - parseFloat(principalPct)) + '%';
+
+  // Bank comparison
+  const tbody = document.getElementById('bank-tbody');
+  tbody.innerHTML = '';
+  const results = BANKS.map(b => {
+    const r = calcMonthly(principal, b.rate, years);
+    return { ...b, ...r };
+  }).sort((a, b) => a.monthly - b.monthly);
+
+  const minMonthly = results[0].monthly;
+
+  results.forEach((b, i) => {
+    const tr = document.createElement('tr');
+    if (i === 0) tr.classList.add('highlight');
+    const savings = i > 0 ? ` (+RM ${(b.monthly - minMonthly).toFixed(2)}/mo)` : '';
+    tr.innerHTML = `
+      <td class="bank-name">${b.name}${b.tag ? `<span class="bank-tag">${b.tag}</span>` : ''}</td>
+      <td class="rate-cell">${b.rate.toFixed(2)}%</td>
+      <td class="monthly-amt">${fmt(b.monthly)}${savings ? `<br><span style="font-size:0.72rem;color:var(--warn);font-weight:400">${savings}</span>` : ''}</td>
+      <td class="rate-cell">${fmt(b.totalInterest)}</td>
+      <td class="note-cell">${b.note}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// Auto-calculate on load with defaults
+calculate();
+</script>
+</body>
+</html>
