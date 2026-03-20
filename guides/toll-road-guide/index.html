@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Toll Road Guide 2026: SmartTAG, RFID, Touch 'n Go & Highway Rates | Sorted</title>
+  <meta name="description" content="Complete guide to Malaysian toll roads 2026. SmartTAG vs RFID sticker vs Touch 'n Go card — what to use, how to install RFID, PLUS highway rates, PLUSMiles, and how to avoid common toll mistakes.">
+  <meta property="og:title" content="Malaysia Toll Road Guide 2026 — SmartTAG, RFID & Highways | Sorted">
+  <meta property="og:description" content="How to use toll roads in Malaysia — SmartTAG, RFID windscreen sticker, Touch 'n Go card — plus PLUS highway rates, toll plazas, and how to get your money back if you're overcharged.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/guides/toll-road-guide/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.summary-box { background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid var(--accent2); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.summary-item { flex: 1; min-width: 120px; }
+.summary-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+.summary-item .value { font-size: 1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.07); border: 1px solid rgba(255,209,102,0.25); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.warn-box strong { color: var(--warn); }
+.success-box { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.success-box strong { color: var(--success); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: var(--accent2); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li { counter-increment: step; margin-bottom: 0; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border); background: var(--bg2); font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+.steps li:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.steps li:last-child { border-radius: 0 0 var(--radius) var(--radius); border-bottom: none; }
+.steps li:nth-child(even) { background: var(--bg3); }
+.steps li::before { content: "Step " counter(step); display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent2); margin-bottom: 0.35rem; }
+.steps li strong { color: #fff; font-size: 1.02rem; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.7rem 0 0.7rem 0; font-size: 0.92rem; border-bottom: 1px solid var(--border); color: var(--text); display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; transition: opacity 0.2s; line-height: 1.55; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before { content: ''; width: 18px; height: 18px; min-width: 18px; border: 2px solid var(--accent2); border-radius: 4px; display: inline-block; margin-top: 0.15rem; transition: background 0.15s, border-color 0.15s; }
+.checklist li.checked::before { background: var(--accent2); border-color: var(--accent2); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/%3E%3C/svg%3E"); background-size: 14px; background-position: center; background-repeat: no-repeat; }
+.checklist li.checked { opacity: 0.5; text-decoration: line-through; }
+.checklist li strong { color: #fff; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.9375rem; margin: 1.25rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(108, 99, 255, 0.25); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+th { background: rgba(108, 99, 255, 0.2); padding: 0.9rem 1.2rem; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text); font-weight: 700; border-bottom: 2px solid rgba(108, 99, 255, 0.45); }
+th:not(:last-child), td:not(:last-child) { border-right: 1px solid var(--border); }
+td { padding: 0.8rem 1.2rem; border-bottom: 1px solid rgba(45,49,72,0.8); color: var(--text); line-height: 1.5; }
+tr:last-child td { border-bottom: none; }
+td:first-child { font-weight: 600; }
+tr:nth-child(odd) td { background: var(--bg2); }
+tr:nth-child(even) td { background: var(--bg3); }
+tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s ease; }
+.amount { color: var(--success); font-weight: 700; font-family: monospace; font-size: 0.9375rem; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-weight: 700; font-size: 0.95rem; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.faq-q::after { content: '+'; color: var(--accent2); font-size: 1.2rem; font-weight: 400; flex-shrink: 0; margin-top: -0.1rem; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; display: none; }
+.faq-item.open .faq-a { display: block; }
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s, background 0.2s; }
+.related-card:hover { border-color: var(--accent); background: var(--bg3); text-decoration: none; }
+.rel-desc { color: var(--muted); font-weight: 400; font-size: 0.8rem; margin-top: 0.3rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 4rem; }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--text); }
+.disclaimer { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; color: var(--muted); font-size: 0.8rem; margin: 2rem 0; }
+.toc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+.toc h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; margin-bottom: 0.75rem; }
+.toc ol { padding-left: 1.25rem; }
+.toc li { margin-bottom: 0.35rem; font-size: 0.875rem; }
+.toc a { color: var(--muted); }
+.toc a:hover { color: var(--text); }
+.method-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.method-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+.method-card .method-name { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+.method-card .method-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
+.badge-best { background: rgba(34,197,94,0.15); color: var(--success); }
+.badge-ok { background: rgba(108,99,255,0.15); color: var(--accent2); }
+.badge-limited { background: rgba(255,209,102,0.1); color: var(--warn); }
+.method-card .method-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/sorted-my/" class="nav-brand">S<span>orted</span></a>
+  <div class="nav-links">
+    <a href="/sorted-my/">All Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="guide-header">
+    <a href="/sorted-my/" class="back-link">&larr; All Guides</a>
+    <h1>Malaysia Toll Road Guide 2026</h1>
+    <p class="subtitle">SmartTAG, RFID sticker (Tol RFID), and Touch 'n Go — how to use Malaysian highways without getting stuck at the toll booth.</p>
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <div class="summary-item">
+      <div class="label">Best Method</div>
+      <div class="value">RFID Sticker</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">RFID Cost</div>
+      <div class="value">Free (via TNG)</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">SmartTAG Cost</div>
+      <div class="value">RM35–RM110</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">RFID lanes</div>
+      <div class="value">All major highways</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Payment Linked To</div>
+      <div class="value">Touch 'n Go card/eWallet</div>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>In This Guide</h3>
+    <ol>
+      <li><a href="#methods">The three ways to pay at tolls</a></li>
+      <li><a href="#rfid">RFID sticker (Tol RFID) — how to get and install</a></li>
+      <li><a href="#smarttag">SmartTAG — what it is and when to use it</a></li>
+      <li><a href="#tng-card">Touch 'n Go card at toll plazas</a></li>
+      <li><a href="#highways">Major Malaysian highways and typical tolls</a></li>
+      <li><a href="#plusmiles">PLUSMiles rewards programme</a></li>
+      <li><a href="#tips">Pro tips and common mistakes</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </div>
+
+  <!-- METHODS OVERVIEW -->
+  <div class="section" id="methods">
+    <h2>The Three Ways to Pay at Malaysian Tolls</h2>
+    <p>Malaysian toll plazas use an electronic toll collection system. There are three main payment methods — and knowing which lane to use can save you a lot of queue time.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-name">RFID Sticker (Tol RFID)</div>
+        <div class="method-badge badge-best">Recommended</div>
+        <div class="method-desc">A windscreen sticker that uses radio frequency to deduct from your Touch 'n Go eWallet as you drive through. No device needed. Free to get. Works at all major tolls. Hands-free. The government's preferred replacement for SmartTAG.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">SmartTAG</div>
+        <div class="method-badge badge-ok">Still Works</div>
+        <div class="method-desc">An in-car transponder (the blue/black device you mount on the windscreen) that triggers barrier-lifting when you enter the SmartTAG lane. Uses a Touch 'n Go card loaded inside it. Costs RM35–RM110 to buy the device. Being phased out gradually.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">Touch 'n Go Card (Manual)</div>
+        <div class="method-badge badge-limited">Slower</div>
+        <div class="method-desc">Tap your TNG card at the toll terminal in a dedicated lane. No device needed — works if you have a TNG card. Slower because you must slow down and tap manually. Fine for occasional highway use. Fewer lanes at busy plazas.</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Cash lanes:</strong> A small number of toll plazas still have cash lanes, but Malaysia is actively converting to cashless-only. Cash is NOT accepted at most PLUS highway tolls. Do not assume a cash lane will be available — always have your TNG card loaded.
+    </div>
+
+    <h3>Which Lane Is Which?</h3>
+    <table>
+      <tr>
+        <th>Lane Type</th>
+        <th>Signage</th>
+        <th>Accepts</th>
+      </tr>
+      <tr>
+        <td>RFID</td>
+        <td>Blue "RFID" sign</td>
+        <td>RFID sticker linked to TNG eWallet only</td>
+      </tr>
+      <tr>
+        <td>SmartTAG</td>
+        <td>Yellow "SmartTAG" sign</td>
+        <td>SmartTAG device only (TNG card inside)</td>
+      </tr>
+      <tr>
+        <td>Touch 'n Go</td>
+        <td>Orange/TNG logo</td>
+        <td>Physical TNG card (tap manually)</td>
+      </tr>
+      <tr>
+        <td>MyEG / MultiLane Free Flow</td>
+        <td>Overhead gantries, no barrier</td>
+        <td>RFID sticker (barrier-free tolling)</td>
+      </tr>
+    </table>
+
+    <div class="warn-box">
+      <strong>Wrong lane = fine.</strong> Driving into an RFID lane without a registered RFID sticker, or a SmartTAG lane without a working SmartTAG, will trigger a barrier failure. You may be charged a penalty or must reverse — causing congestion and potentially a fine. Always use the correct lane.
+    </div>
+  </div>
+
+  <!-- RFID STICKER -->
+  <div class="section" id="rfid">
+    <h2>RFID Sticker (Tol RFID) — How to Get and Install</h2>
+
+    <p>The <strong>RFID (Radio Frequency Identification) windscreen sticker</strong> — officially branded as <strong>Tol RFID</strong> — is Malaysia's newer electronic toll system. It's free to obtain, links to your TNG eWallet, and enables hands-free toll payment without any in-car device.</p>
+
+    <h3>How RFID Sticker Works</h3>
+    <p>A small sticker is applied to the inside of your windscreen. At an RFID toll lane, overhead readers scan the sticker and automatically deduct the toll amount from your linked <strong>Touch 'n Go eWallet</strong>. No barrier, no tapping — your car just drives through. Some highways use <strong>Multi-Lane Free Flow (MLFF)</strong> gantries — overhead scanners with no barrier at all, so you don't slow down.</p>
+
+    <h3>How to Get an RFID Sticker</h3>
+    <ul class="steps">
+      <li>
+        <strong>Download or open the Touch 'n Go eWallet app</strong>
+        Available on iOS and Android. You need an active TNG eWallet account with eKYC completed (MyKad verification). Your RFID sticker will be linked to this wallet.
+      </li>
+      <li>
+        <strong>Register for RFID in the app</strong>
+        In the TNG eWallet app: go to <strong>Profile → RFID</strong> or look for "Tol RFID" under the main menu. Enter your vehicle registration number and select your vehicle type (car, motorcycle, van, etc.). You will need to confirm your vehicle details and identity.
+      </li>
+      <li>
+        <strong>Choose your RFID sticker collection method</strong>
+        Options include: collecting from a PLUS TnG service centre at a highway R&amp;R (rest area), selected petrol stations (Petronas, Shell), or certain authorised workshops. The sticker is <strong>free</strong>.
+      </li>
+      <li>
+        <strong>Collect your RFID sticker</strong>
+        Bring your vehicle to the collection point. Staff will verify your vehicle registration and issue the sticker. You may need your MyKad and vehicle grant (geran) or insurance document.
+      </li>
+      <li>
+        <strong>Install the sticker on your windscreen</strong>
+        The sticker must be placed on the <strong>inside</strong> of the windscreen, in the upper-centre area (just below the rearview mirror), or as instructed. Proper placement is critical — incorrect positioning causes read failures at toll lanes.
+      </li>
+      <li>
+        <strong>Link your vehicle to your TNG eWallet</strong>
+        Once the sticker is registered and installed, ensure your vehicle plate is linked in the app. The toll deduction will come from your eWallet balance automatically. Make sure your eWallet balance is always topped up.
+      </li>
+    </ul>
+
+    <div class="info-box">
+      <strong>One vehicle, one sticker.</strong> Each RFID sticker is registered to one specific vehicle plate number. You cannot transfer a sticker to another car. If you sell your car, de-register the RFID first.
+    </div>
+
+    <h3>RFID Sticker Placement</h3>
+    <p>Incorrect placement is the #1 cause of RFID read failures. Follow these rules:</p>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Place on the <strong>inside</strong> of the windscreen only — never on the outside</li>
+      <li>Position in the <strong>upper centre</strong> of the windscreen, just below the sun visor or rearview mirror bracket</li>
+      <li>Avoid placing behind any metallic coating, tint, or UV-block layer that blocks radio signals</li>
+      <li>Avoid placing near metallic window frames or metal-coated glass</li>
+      <li>Once applied, do not move or peel off the sticker — repositioning damages it</li>
+    </ul>
+
+    <div class="warn-box">
+      <strong>Window tint problem:</strong> Some car window tints, especially high-end IR-blocking or metallic tints, block RFID signals. If your car has this type of tint, the RFID sticker will not be read consistently. Ask your tint installer or check with TNG if your tint is RFID-compatible. If not, you may need to use SmartTAG instead.
+    </div>
+
+    <h3>RFID Sticker: Reload and Balance</h3>
+    <p>The RFID sticker deducts directly from your <strong>TNG eWallet</strong> balance. Keep your eWallet topped up — you can set up auto-reload so it refills automatically when balance drops below a set amount. This prevents the embarrassing scenario of being stuck at a toll with insufficient funds.</p>
+  </div>
+
+  <!-- SMARTTAG -->
+  <div class="section" id="smarttag">
+    <h2>SmartTAG — What It Is and When to Use It</h2>
+
+    <p>SmartTAG is the older in-car transponder system. A small device (usually blue or black) mounts on your windscreen and contains a slot for a <strong>Touch 'n Go card</strong>. When you drive into the SmartTAG lane, the device communicates with the toll sensor and automatically deducts the fare from the TNG card inside.</p>
+
+    <h3>SmartTAG vs RFID: Key Differences</h3>
+    <table>
+      <tr>
+        <th></th>
+        <th>SmartTAG</th>
+        <th>RFID Sticker</th>
+      </tr>
+      <tr>
+        <td>Device required?</td>
+        <td>Yes — in-car transponder (RM35–RM110)</td>
+        <td>No — windscreen sticker (free)</td>
+      </tr>
+      <tr>
+        <td>Payment source</td>
+        <td>TNG card loaded inside device</td>
+        <td>TNG eWallet (app)</td>
+      </tr>
+      <tr>
+        <td>Balance check</td>
+        <td>Check TNG card separately</td>
+        <td>Check via TNG app anytime</td>
+      </tr>
+      <tr>
+        <td>Installation</td>
+        <td>Mount device, insert TNG card</td>
+        <td>Apply sticker to windscreen</td>
+      </tr>
+      <tr>
+        <td>Works with metallic tint?</td>
+        <td>Yes (external reader)</td>
+        <td>No (blocked by metallic tint)</td>
+      </tr>
+      <tr>
+        <td>Future-proof?</td>
+        <td>Being phased out gradually</td>
+        <td>Government's preferred system</td>
+      </tr>
+    </table>
+
+    <h3>When to Choose SmartTAG Over RFID</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Your car has metallic or IR-blocking window tint that blocks RFID signals</li>
+      <li>You prefer a physical TNG card over the eWallet app</li>
+      <li>You use your car's air cond vent clip mount (SmartTAG holders often attach to vents)</li>
+    </ul>
+
+    <h3>Where to Buy SmartTAG</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>PLUS highway rest areas (R&amp;R) — PLUS TnG outlets</li>
+      <li>Selected petrol stations (Petronas, Shell)</li>
+      <li>Larger convenience stores and hypermarkets</li>
+      <li>Touch 'n Go service centres</li>
+    </ul>
+    <p>Price varies: basic models around RM35–RM50, premium models up to RM110.</p>
+
+    <div class="info-box">
+      <strong>SmartTAG + TNG card:</strong> The SmartTAG device does not come with a TNG card. You need to buy a TNG card separately (RM10) and insert it into the device. The device reads the card's balance — if the card runs out, the device stops working at tolls.
+    </div>
+  </div>
+
+  <!-- TNG CARD AT TOLL -->
+  <div class="section" id="tng-card">
+    <h2>Using a Touch 'n Go Card at Toll Plazas (Manual Tap)</h2>
+
+    <p>If you don't have RFID or SmartTAG, you can pay at dedicated <strong>Touch 'n Go lanes</strong> by tapping your physical TNG card at the terminal. This is the slowest method but requires no setup.</p>
+
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Enter the lane marked with the TNG logo (orange)</li>
+      <li>Roll down your window as you approach the terminal</li>
+      <li>Tap your TNG card on the reader — it will beep and display the deducted amount and remaining balance</li>
+      <li>The barrier lifts after a successful tap</li>
+      <li>If the balance is too low, the reader will beep differently and the barrier may not lift — you'll need to top up at a nearby machine or go to a service lane</li>
+    </ul>
+
+    <div class="success-box">
+      <strong>Top tip:</strong> Keep at least RM20–30 on your TNG card if you use highways regularly. Running out mid-journey is a serious inconvenience, especially on highways without nearby top-up options.
+    </div>
+  </div>
+
+  <!-- MAJOR HIGHWAYS -->
+  <div class="section" id="highways">
+    <h2>Major Malaysian Highways and Typical Tolls</h2>
+    <p>Malaysia has an extensive network of tolled highways operated mainly by <strong>PLUS Malaysia</strong> (the largest concessionaire), with others operated by Grand Saga, Gamuda, LITRAK, and regional operators. Tolls are generally charged at barriers (open toll system) or at entry/exit points (closed toll system on PLUS).</p>
+
+    <h3>Major PLUS Highways</h3>
+    <table>
+      <tr>
+        <th>Highway</th>
+        <th>Route</th>
+        <th>Typical Toll Range</th>
+      </tr>
+      <tr>
+        <td>North-South Expressway (PLUS)</td>
+        <td>Johor Bahru to Bukit Kayu Hitam (Thai border)</td>
+        <td>RM6.10–RM85.50 (full length, Class 1)</td>
+      </tr>
+      <tr>
+        <td>PLUS NSE (KL to Penang)</td>
+        <td>KL to Penang ~360km</td>
+        <td>~RM44 Class 1 (car)</td>
+      </tr>
+      <tr>
+        <td>PLUS NSE (KL to JB)</td>
+        <td>KL to Johor Bahru ~330km</td>
+        <td>~RM46 Class 1 (car)</td>
+      </tr>
+      <tr>
+        <td>ELITE (E6)</td>
+        <td>Kuala Lumpur to Seremban via KLIA</td>
+        <td>RM3.00–RM15.00</td>
+      </tr>
+      <tr>
+        <td>Kesas (E10)</td>
+        <td>Shah Alam Expressway</td>
+        <td>RM1.50–RM5.00</td>
+      </tr>
+      <tr>
+        <td>LDP (E11)</td>
+        <td>Lebuhraya Damansara-Puchong</td>
+        <td>RM1.60–RM3.50</td>
+      </tr>
+      <tr>
+        <td>MEX (E9)</td>
+        <td>Maju Expressway (KL city to Putrajaya)</td>
+        <td>RM2.50–RM8.00</td>
+      </tr>
+      <tr>
+        <td>DUKE (D1)</td>
+        <td>Duta-Ulu Kelang Expressway</td>
+        <td>RM1.50–RM4.00</td>
+      </tr>
+      <tr>
+        <td>Penang Bridge (1st)</td>
+        <td>Mainland Penang to Penang island</td>
+        <td>RM7.00 one-way (car)</td>
+      </tr>
+      <tr>
+        <td>Penang Second Bridge (PTBSB)</td>
+        <td>Mainland to Batu Kawan/Penang island</td>
+        <td>RM8.50 one-way (car)</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      <strong>Vehicle classes:</strong> Toll rates vary by vehicle class. Class 1 = private car/motorcycle; Class 2 = light commercial van; Class 3–5 = lorry/bus with axle count. The rates above are for Class 1 (car). Motorcycles pay about half the car rate on most highways.
+    </div>
+
+    <h3>How PLUS Closed-System Tolling Works</h3>
+    <p>PLUS uses a <strong>closed toll system</strong> — you take a ticket (or the system records your entry point electronically) when you enter, and pay at the exit based on distance travelled. There is no fixed rate per plaza — your toll depends on where you joined and where you exit.</p>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>With RFID/SmartTAG:</strong> The system records your entry automatically. At the exit, the correct amount is deducted based on your entry point and exit point.</li>
+      <li><strong>With TNG card (manual):</strong> Tap at entry, tap at exit. The system calculates the fare and deducts at exit.</li>
+      <li><strong>Wrong entry recorded:</strong> If the RFID reads incorrectly at entry, you may be charged for a different entry point. If overcharged, keep your TNG card transaction record and submit a dispute via PLUS (1-800-88-0000 or myplus.my).</li>
+    </ul>
+  </div>
+
+  <!-- PLUSMILES -->
+  <div class="section" id="plusmiles">
+    <h2>PLUSMiles Rewards Programme</h2>
+
+    <p>If you use PLUS highways regularly, the <strong>PLUSMiles</strong> rewards programme gives you points for every toll you pay — redeemable for toll discounts and other rewards.</p>
+
+    <h3>How PLUSMiles Works</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Register your TNG card or RFID-linked vehicle at <strong>myplus.my</strong> or the <strong>PLUS app</strong></li>
+      <li>Earn <strong>1 PLUSMile</strong> for every RM1 paid in toll on PLUS highways</li>
+      <li>Redeem points for toll credit, petrol vouchers, or merchandise</li>
+      <li>Regular PLUS users can save hundreds per year through the programme</li>
+    </ul>
+
+    <div class="success-box">
+      <strong>Free money left on the table:</strong> Most Malaysians who use PLUS highways regularly are not enrolled in PLUSMiles. If you do the KL–JB route even twice a year, enrolment earns you meaningful toll credit. Take 10 minutes to register.
+    </div>
+
+    <h3>Enrolment Steps</h3>
+    <ul class="steps">
+      <li>
+        <strong>Go to myplus.my or download the PLUS app</strong>
+        Available on iOS and Android.
+      </li>
+      <li>
+        <strong>Register with your IC number and mobile number</strong>
+        Link your TNG card number or your RFID-linked vehicle plate.
+      </li>
+      <li>
+        <strong>Start earning points automatically</strong>
+        Every subsequent toll paid via your registered TNG card or RFID earns PLUSMiles.
+      </li>
+      <li>
+        <strong>Redeem via the PLUS app</strong>
+        Log in to check your balance and redeem for toll credits.
+      </li>
+    </ul>
+  </div>
+
+  <!-- PRO TIPS -->
+  <div class="section" id="tips">
+    <h2>Pro Tips and Common Mistakes</h2>
+
+    <h3>Tips to Save Money and Time</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>Get the RFID sticker — it's free.</strong> If you have a modern car without metallic tint, there's no reason not to use RFID. It's faster, free, and eliminates the hassle of keeping a device charged or a card topped up separately.</li>
+      <li><strong>Register for PLUSMiles</strong> if you use PLUS highways at all. Free programme, real savings.</li>
+      <li><strong>Set TNG eWallet auto-reload</strong> so your RFID never runs out. Low balance at a MLFF gantry means a penalty notice in the mail.</li>
+      <li><strong>Keep a physical TNG card as backup</strong> even if you use RFID daily — for situations where RFID fails or you use a rental car.</li>
+      <li><strong>Check the Waze or Google Maps estimated toll cost</strong> before a highway trip. Both apps show estimated tolls for your route.</li>
+    </ul>
+
+    <h3>Common Mistakes to Avoid</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>Driving into RFID lanes without a registered sticker.</strong> The barrier won't lift and you'll block traffic. If this happens, turn on hazard lights, wait for a tolls officer, or reverse if safe to do so. Never try to break through a barrier.</li>
+      <li><strong>Letting the SmartTAG TNG card run out.</strong> The card inside SmartTAG is separate from your eWallet — many drivers forget to top it up. Check the balance before long trips.</li>
+      <li><strong>Not registering your TNG card.</strong> Unregistered cards mean zero recourse if lost or damaged. Register via the TNG app — takes minutes and protects your balance.</li>
+      <li><strong>Ignoring MLFF (Multi-Lane Free Flow) gantries.</strong> On MLFF sections, there is no barrier — if your RFID doesn't register, you'll receive a penalty notice later. Ensure your RFID sticker is correctly installed and your eWallet is funded.</li>
+      <li><strong>Wrong lane at toll plazas.</strong> RFID lanes are marked blue. SmartTAG lanes are yellow. TNG card lanes are orange. Each accepts only its designated payment method.</li>
+    </ul>
+
+    <h3>What to Do If You're Overcharged</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Note the toll plaza name/number, time, and transaction amount from your TNG app</li>
+      <li>For PLUS highways: call <strong>1-800-88-0000</strong> or submit a dispute at <strong>myplus.my</strong></li>
+      <li>For other highways: contact the relevant concessionaire (LITRAK for LDP, Gamuda for DUKE, etc.)</li>
+      <li>For TNG eWallet transactions: use the in-app dispute function or contact TNG at <strong>1-300-88-8088</strong></li>
+      <li>Keep a screenshot of the transaction from the TNG app — it shows time, location, and amount</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I still pay cash at Malaysian toll plazas?</div>
+      <div class="faq-a">At most major highways, especially PLUS, <strong>cash is no longer accepted</strong>. Malaysia has been transitioning to fully cashless tolling since 2020, and most PLUS toll plazas operate SmartTAG/RFID/TNG card only. Some state roads and smaller expressways may still have cash lanes, but do not assume. Always carry a funded TNG card when using Malaysian highways.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does RFID work on motorcycles too?</div>
+      <div class="faq-a">Yes. RFID stickers are available for motorcycles as well as cars. The motorcycle RFID sticker is typically placed on the helmet visor or in a designated holder — not on a windscreen. When registering, select "motorcycle" as the vehicle type. Some toll plazas have dedicated motorcycle lanes with RFID readers at a lower height. Confirm the placement with the TNG outlet when you collect your sticker.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">My RFID sticker keeps failing to read at the toll. What should I do?</div>
+      <div class="faq-a">Common causes: (1) Sticker placement is incorrect — it should be centred at the top of the windscreen inside, not behind metallic tint or near metal frames. (2) Window tint is blocking the signal — metallic or IR-blocking tints interfere with RFID. (3) The sticker is damaged from peeling or reinstallation — each sticker only works once correctly applied. Visit a TNG service centre for a replacement sticker. If your tint is RFID-incompatible, consider switching to SmartTAG instead.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I drove through a Multi-Lane Free Flow (MLFF) gantry without RFID. What happens?</div>
+      <div class="faq-a">The system will record your vehicle plate from overhead cameras. You will receive a <strong>notice of compounded toll</strong> by mail to your registered vehicle address, or it will appear in the MyMudah portal. Pay within the stipulated time to avoid additional fines. The compounded amount is typically the toll fare plus a penalty. Repeated non-payment can affect your JPJ records. If you believe you were wrongly charged, contest it through the issuing authority with evidence of your TNG payment.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use the same TNG eWallet for both rail (LRT/MRT) and highway tolls?</div>
+      <div class="faq-a">Yes. The TNG eWallet is a single wallet used for both transit (LRT/MRT via NFC or RFID) and toll roads (via RFID sticker or manual TNG card). All deductions come from the same eWallet balance. However, <strong>a physical TNG card</strong> (used for SmartTAG or manual tap) is separate from the eWallet balance — it's a separate stored-value card. The eWallet and physical card are different, though you can top up your physical card via the app if registered.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is RFID really free? What's the catch?</div>
+      <div class="faq-a">Yes, the sticker itself is genuinely free. The "catch" is that it links to your TNG eWallet — meaning Prasarana and TNG have a record of your toll usage. There is no subscription fee, no monthly charge, and no hidden cost. You simply pay the actual toll fare from your eWallet balance, same as you would with a physical TNG card. The government subsidises the sticker cost as part of the national cashless tolling rollout. Get it — it's legitimately free.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I'm driving a rental car or someone else's car. Can I use the RFID or SmartTAG?</div>
+      <div class="faq-a">RFID stickers are registered to a specific vehicle plate — you cannot use your personal RFID sticker in a rental car. For rental cars: check if the rental company provides a TNG card or toll payment service (many do, for a daily fee). If not, use the physical TNG card lanes (tap manually). Alternatively, if the rental company has their own RFID registered to the car, tolls may be charged to your rental bill. Always clarify toll payment with the rental company before you drive.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a Touch 'n Go "Reload Lane" at toll plazas?</div>
+      <div class="faq-a">Some toll plazas have dedicated <strong>Reload lanes</strong> — staffed lanes where you can top up your TNG card without using ATMs or convenience stores. You hand the card to the attendant with cash, and they reload it immediately. These are less common now that the TNG app allows app-based reload. If you find yourself at a toll with insufficient balance, look for a "Reload" or "Customer Service" lane — usually on the far left or right of the toll plaza.</div>
+    </div>
+
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> Toll rates and policies are subject to change. Always verify current rates at myplus.my (PLUS highways) or the relevant highway concessionaire. This guide is correct as of March 2026 but is not affiliated with PLUS Malaysia, Touch 'n Go, or any government agency.
+  </div>
+
+  <!-- COFFEE BANNER -->
+  <div class="coffee-banner">
+    <p>Sorted helps Malaysians navigate paperwork and everyday life for free. If this guide saved you time or money, consider buying me a coffee.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">Buy me a coffee</a>
+  </div>
+
+  <!-- RELATED GUIDES -->
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/tng-ewallet/" class="related-card">
+        Touch 'n Go eWallet Guide
+        <div class="rel-desc">Registration, eKYC, top-up, limits, and payments</div>
+      </a>
+      <a href="/sorted-my/guides/public-transport-guide/" class="related-card">
+        Public Transport Guide
+        <div class="rel-desc">LRT, MRT, KTM, bus — fares and monthly passes</div>
+      </a>
+      <a href="/sorted-my/guides/buying-a-car/" class="related-card">
+        Buying a Car in Malaysia
+        <div class="rel-desc">New vs used, loan, insurance, road tax</div>
+      </a>
+      <a href="/sorted-my/guides/renewing-road-tax/" class="related-card">
+        Renewing Road Tax &amp; Insurance
+        <div class="rel-desc">JPJ renewal, MyEG, inspection requirements</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-car-insurance/" class="related-card">
+        Claiming Car Insurance
+        <div class="rel-desc">What to do after an accident, claim process</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/sorted-my/">All Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+  <div>Sorted &mdash; Every document. Every step. Sorted.</div>
+  <div style="margin-top:0.4rem;">Not affiliated with PLUS Malaysia, Touch 'n Go, or any government agency. For informational purposes only.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+  document.querySelectorAll('.checklist li').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('checked'));
+  });
+</script>
+
+</body>
+</html>
