@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Stamp Duty Calculator 2025 — Property Purchase Costs | Sorted</title>
+  <meta name="description" content="Free Malaysian stamp duty calculator for 2025. Calculate stamp duty on property purchase, legal fees, and total upfront costs. Includes first-time buyer exemption for properties up to RM500,000.">
+  <meta property="og:title" content="Malaysia Stamp Duty Calculator 2025 | Sorted">
+  <meta property="og:description" content="Calculate Malaysian stamp duty, legal fees, and total upfront property purchase costs. Supports first-time buyer stamp duty exemption.">
+  <meta property="og:type" content="website">
+  <meta name="keywords" content="Malaysia stamp duty calculator 2025, stamp duty property Malaysia, MOT stamp duty, legal fees calculator Malaysia, first time buyer exemption Malaysia, property purchase cost calculator, LHDN stamp duty, Malaysian property calculator 2025">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/calculators/stamp-duty.html">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Layout */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+
+.toggle-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.toggle-row label { font-size: 0.85rem; color: var(--text); cursor: pointer; }
+.toggle-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+
+.exemption-note { background: rgba(72,207,173,0.08); border: 1px solid rgba(72,207,173,0.2); border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.8rem; color: var(--accent2); margin-bottom: 1.25rem; display: none; }
+.exemption-note.visible { display: block; }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Results */
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.success { color: var(--success); }
+.result-stat .stat-value.accent { color: var(--accent2); }
+
+.saving-badge { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.82rem; color: var(--success); margin-bottom: 1rem; display: none; }
+.saving-badge.visible { display: block; }
+
+/* Breakdown table */
+.bracket-section { margin-bottom: 2.5rem; }
+.bracket-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.bracket-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.col-amount { font-weight: 700; color: var(--accent2); }
+.col-muted { color: var(--muted); }
+.col-strike { color: var(--muted); text-decoration: line-through; }
+.total-row { background: var(--bg3) !important; font-weight: 700; border-top: 2px solid var(--border); }
+.exempt-row td { color: var(--success) !important; }
+.exempt-row .col-amount { color: var(--success) !important; }
+
+/* Info & warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+/* Rate reference table */
+.rate-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+.rate-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.rate-table th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); }
+.rate-table td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+.rate-table td:last-child { color: var(--accent2); font-weight: 700; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../">Guides</a>
+    <a href="../compare/broadband/">Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../" class="back-link">← Back to all guides</a>
+    <h1>🏠 Stamp Duty Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Calculate Malaysian stamp duty (MOT), legal fees, and total upfront property purchase costs. Includes first-time buyer stamp duty exemption for properties up to RM500,000.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Property Details</h2>
+
+      <div class="field">
+        <label for="purchase-price">Property Purchase Price (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="purchase-price" min="0" max="100000000" step="10000" value="500000" placeholder="500000" oninput="calculate()">
+        </div>
+        <div class="hint">Total agreed purchase price of the property</div>
+      </div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="first-time-buyer" onchange="calculate()">
+        <label for="first-time-buyer">I am a first-time buyer (Malaysian citizen)</label>
+      </div>
+      <div class="exemption-note" id="exemption-note">
+        ✓ First-time buyer exemption applies — stamp duty is <strong>fully waived</strong> for residential properties priced at or below <strong>RM500,000</strong>.
+      </div>
+
+      <div class="field">
+        <label for="loan-amount">Home Loan Amount (RM) <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="loan-amount" min="0" max="100000000" step="10000" value="" placeholder="Leave blank if cash purchase" oninput="calculate()">
+        </div>
+        <div class="hint">Loan agreement stamp duty is 0.5% of loan amount (included if entered)</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Costs</button>
+    </div>
+
+    <div class="calc-results">
+      <h2>Your Results</h2>
+
+      <div class="result-primary">
+        <div class="label">Total Upfront Costs</div>
+        <div class="amount" id="res-total">—</div>
+        <div class="sub" id="res-total-sub">stamp duty + legal fees + loan stamp duty</div>
+      </div>
+
+      <div class="saving-badge" id="saving-badge">
+        🎉 First-time buyer exemption saves you <strong id="saving-amount">—</strong> in stamp duty!
+      </div>
+
+      <div class="result-breakdown">
+        <div class="result-stat">
+          <div class="stat-label">Stamp Duty (MOT)</div>
+          <div class="stat-value accent" id="res-stamp-duty">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Legal Fees</div>
+          <div class="stat-value" id="res-legal-fees">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Loan Stamp Duty</div>
+          <div class="stat-value warn" id="res-loan-stamp">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Total % of Price</div>
+          <div class="stat-value" id="res-pct">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAKDOWN TABLE -->
+  <div class="bracket-section">
+    <h2>📋 Full Cost Breakdown</h2>
+    <p class="subtitle">Itemised upfront costs based on Malaysian stamp duty and legal fee schedules. Calculated automatically from your inputs above.</p>
+    <div class="table-wrap">
+      <table id="cost-table">
+        <thead>
+          <tr>
+            <th>Cost Item</th>
+            <th>Basis / Rate</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="cost-tbody">
+          <tr><td colspan="3" style="text-align:center;color:var(--muted);padding:1.5rem">Enter a property price above to see the full breakdown.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- RATE REFERENCE -->
+  <div class="section">
+    <h2>📊 Malaysian Stamp Duty Rate Table (2024/2025)</h2>
+    <div class="rate-table-wrap">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>Property Price Band</th>
+            <th>Rate</th>
+            <th>Duty on That Band</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>First RM100,000</td><td>1%</td><td>RM 1,000</td></tr>
+          <tr><td>RM100,001 – RM500,000</td><td>2%</td><td>Up to RM 8,000</td></tr>
+          <tr><td>RM500,001 – RM1,000,000</td><td>3%</td><td>Up to RM 15,000</td></tr>
+          <tr><td>Above RM1,000,000</td><td>4%</td><td>4% on excess</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem;color:var(--muted)">Stamp duty is tiered (progressive), not flat — a RM700,000 property is taxed 1% on the first RM100k, 2% on the next RM400k, and 3% on the remaining RM200k.</p>
+  </div>
+
+  <div class="info-box">
+    <strong>What is stamp duty in Malaysia?</strong> Stamp duty (also called MOT — Memorandum of Transfer) is a government tax paid when property ownership is transferred. It is paid to LHDN (Inland Revenue Board) and calculated on the purchase price. The buyer is responsible for paying stamp duty, typically 3–6 months after signing the Sale &amp; Purchase Agreement (SPA). For loans, a separate stamp duty of <strong>0.5%</strong> on the loan amount is also payable on the Loan Agreement.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips for Malaysian Property Buyers</h2>
+    <ul class="tips-list">
+      <li><strong>Stamp duty is not negotiable</strong> — it is a fixed legal obligation set by law, not a bank or developer charge.</li>
+      <li><strong>First-time buyers</strong> enjoy a 100% stamp duty exemption on residential properties priced at or below RM500,000 — check eligibility before assuming you owe it.</li>
+      <li><strong>Budget for legal fees separately</strong> — you'll need one lawyer for the SPA (paid by seller typically) and another for the loan agreement (paid by buyer).</li>
+      <li>Stamp duty is paid to LHDN within <strong>30 days</strong> of signing the SPA to avoid late penalties.</li>
+      <li>For sub-sale properties, stamp duty is based on the <strong>higher of the purchase price or market value</strong> — LHDN may assess the property independently.</li>
+      <li>Under-declaring the purchase price to reduce stamp duty is illegal and can result in prosecution and back-taxes.</li>
+      <li>Keep your Borang 14A (transfer form) stamped — this is proof of ownership transfer registration with the Land Office.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+
+    <p><strong style="color:var(--text)">Who qualifies for the first-time buyer stamp duty exemption?</strong></p>
+    <p>Malaysian citizens purchasing their first residential property priced at or below RM500,000 qualify for a full stamp duty exemption on the MOT (Memorandum of Transfer). This exemption applies to the transfer instrument only — not the loan agreement stamp duty. The exemption has been extended through Budget 2025.</p>
+
+    <p><strong style="color:var(--text)">What is the difference between stamp duty and legal fees?</strong></p>
+    <p>Stamp duty is a government tax collected by LHDN. Legal fees are professional charges paid to your solicitor for preparing and filing the SPA and loan agreement. Both are upfront costs, but legal fees go to your lawyer, not the government. Legal fees are regulated by the Solicitors' Remuneration Order 2005.</p>
+
+    <p><strong style="color:var(--text)">What legal fees apply in Malaysia?</strong></p>
+    <p>Legal fees for property transactions follow a tiered scale: 1% on the first RM500,000; 0.8% on RM500,001 to RM1,000,000; 0.5% above RM1,000,000. A minimum fee of RM500 applies. In practice, some lawyers charge slightly different rates — confirm with your solicitor before engaging.</p>
+
+    <p><strong style="color:var(--text)">Is stamp duty the same for all property types?</strong></p>
+    <p>The tiered rate structure applies to residential and commercial properties. However, Bumiputera and government housing schemes, affordable housing, or properties under certain HOC (Home Ownership Campaign) periods may attract additional exemptions. Verify with your lawyer or LHDN.</p>
+
+    <p><strong style="color:var(--text)">When do I pay stamp duty?</strong></p>
+    <p>Stamp duty is typically paid within 30 days of signing the Sale &amp; Purchase Agreement (SPA). Late payment incurs a penalty. Your lawyer will usually handle payment on your behalf as part of the conveyancing process.</p>
+
+    <p><strong style="color:var(--text)">Does stamp duty apply to new developer properties?</strong></p>
+    <p>Yes — stamp duty applies whether you buy from a developer (primary market) or a previous owner (sub-sale). For primary purchases, developers sometimes offer to absorb stamp duty as part of a promotion — always verify in writing what is included.</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only. Stamp duty rates, legal fee scales, and exemption eligibility are subject to change. Actual costs may vary based on property type, buyer status, applicable government schemes, and solicitor charges. Always verify with a licensed property lawyer or LHDN before making any property purchase decisions.
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid #2d3148;margin-top:3rem;">
+  <p style="color:#8892b0;font-size:0.9rem;margin-bottom:0.5rem;">Found this useful? Support free Malaysian tools</p>
+  <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#6c63ff,#48cfad);color:#fff;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem;">Buy me a coffee ☕</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../">All Guides</a>
+    <a href="../compare/rental-yield/">Rental Yield Calculator</a>
+    <a href="../compare/car-loan/">Car Loan Calculator</a>
+    <a href="../compare/tax-calculator/">Income Tax Calculator</a>
+    <a href="../compare/ptptn-calculator/">PTPTN Calculator</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// Malaysian stamp duty on property transfer (MOT)
+// First RM100k: 1%, RM100k–RM500k: 2%, RM500k–RM1M: 3%, Above RM1M: 4%
+function calcStampDuty(price) {
+  let duty = 0;
+  if (price <= 0) return 0;
+  const bands = [
+    { from: 0,       to: 100000,  rate: 0.01 },
+    { from: 100000,  to: 500000,  rate: 0.02 },
+    { from: 500000,  to: 1000000, rate: 0.03 },
+    { from: 1000000, to: Infinity, rate: 0.04 },
+  ];
+  for (const b of bands) {
+    if (price <= b.from) break;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    duty += (upper - b.from) * b.rate;
+  }
+  return duty;
+}
+
+// Legal fees (Solicitors' Remuneration Order 2005)
+// First RM500k: 1%, RM500k–RM1M: 0.8%, Above RM1M: 0.5%
+function calcLegalFees(price) {
+  if (price <= 0) return 0;
+  let fees = 0;
+  const bands = [
+    { from: 0,       to: 500000,  rate: 0.01  },
+    { from: 500000,  to: 1000000, rate: 0.008 },
+    { from: 1000000, to: Infinity, rate: 0.005 },
+  ];
+  for (const b of bands) {
+    if (price <= b.from) break;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    fees += (upper - b.from) * b.rate;
+  }
+  return Math.max(fees, 500); // minimum RM500
+}
+
+function stampDutyRows(price, isExempt) {
+  const bands = [
+    { from: 0,       to: 100000,  rate: 1, label: 'First RM100,000' },
+    { from: 100000,  to: 500000,  rate: 2, label: 'RM100,001 – RM500,000' },
+    { from: 500000,  to: 1000000, rate: 3, label: 'RM500,001 – RM1,000,000' },
+    { from: 1000000, to: Infinity, rate: 4, label: 'Above RM1,000,000' },
+  ];
+  const rows = [];
+  for (const b of bands) {
+    if (price <= b.from) continue;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    const amount = (upper - b.from) * b.rate / 100;
+    rows.push({ label: 'Stamp Duty (MOT) — ' + b.label, basis: b.rate + '%', amount, exempt: isExempt });
+  }
+  return rows;
+}
+
+function legalFeeRows(price) {
+  const bands = [
+    { from: 0,       to: 500000,  rate: 1.0, label: 'First RM500,000' },
+    { from: 500000,  to: 1000000, rate: 0.8, label: 'RM500,001 – RM1,000,000' },
+    { from: 1000000, to: Infinity, rate: 0.5, label: 'Above RM1,000,000' },
+  ];
+  const rows = [];
+  let total = 0;
+  for (const b of bands) {
+    if (price <= b.from) continue;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    const amount = (upper - b.from) * b.rate / 100;
+    total += amount;
+    rows.push({ label: 'Legal Fees — ' + b.label, basis: b.rate + '%', amount });
+  }
+  // Apply minimum fee
+  if (total < 500 && rows.length > 0) {
+    rows[rows.length - 1].amount += (500 - total);
+    rows[rows.length - 1].basis += ' (min. RM500)';
+  }
+  return rows;
+}
+
+function calculate() {
+  const price = parseFloat(document.getElementById('purchase-price').value) || 0;
+  const loanAmt = parseFloat(document.getElementById('loan-amount').value) || 0;
+  const isFirstTime = document.getElementById('first-time-buyer').checked;
+
+  // First-time buyer exemption: full exemption if price <= RM500,000
+  const isExempt = isFirstTime && price > 0 && price <= 500000;
+
+  // Show/hide exemption note
+  const exemptNote = document.getElementById('exemption-note');
+  if (isFirstTime && price > 0) {
+    exemptNote.classList.add('visible');
+    if (price > 500000) {
+      exemptNote.textContent = '⚠ Your property exceeds RM500,000 — first-time buyer exemption does not apply at this price. Standard stamp duty rates apply.';
+      exemptNote.style.color = 'var(--warn)';
+      exemptNote.style.borderColor = 'rgba(255,209,102,0.3)';
+      exemptNote.style.background = 'rgba(255,209,102,0.06)';
+    } else {
+      exemptNote.innerHTML = '✓ First-time buyer exemption applies — stamp duty is <strong>fully waived</strong> for residential properties priced at or below <strong>RM500,000</strong>.';
+      exemptNote.style.color = 'var(--accent2)';
+      exemptNote.style.borderColor = 'rgba(72,207,173,0.2)';
+      exemptNote.style.background = 'rgba(72,207,173,0.08)';
+    }
+  } else {
+    exemptNote.classList.remove('visible');
+  }
+
+  if (price <= 0) return;
+
+  const stampDutyFull = calcStampDuty(price);
+  const stampDutyPayable = isExempt ? 0 : stampDutyFull;
+  const legalFees = calcLegalFees(price);
+  const loanStampDuty = loanAmt > 0 ? loanAmt * 0.005 : 0;
+  const totalCost = stampDutyPayable + legalFees + loanStampDuty;
+  const totalPct = price > 0 ? ((totalCost / price) * 100).toFixed(2) : 0;
+
+  // Update summary stats
+  document.getElementById('res-total').textContent = fmt(totalCost);
+  document.getElementById('res-stamp-duty').textContent = isExempt ? 'RM 0 (Exempt)' : fmt(stampDutyFull);
+  document.getElementById('res-legal-fees').textContent = fmt(legalFees);
+  document.getElementById('res-loan-stamp').textContent = loanAmt > 0 ? fmt(loanStampDuty) : '—';
+  document.getElementById('res-pct').textContent = totalPct + '% of price';
+
+  const subEl = document.getElementById('res-total-sub');
+  subEl.textContent = loanAmt > 0 ? 'stamp duty + legal fees + loan stamp duty' : 'stamp duty + legal fees';
+
+  // Savings badge
+  const badgeEl = document.getElementById('saving-badge');
+  if (isExempt && stampDutyFull > 0) {
+    document.getElementById('saving-amount').textContent = fmt(stampDutyFull);
+    badgeEl.classList.add('visible');
+  } else {
+    badgeEl.classList.remove('visible');
+  }
+
+  // Build breakdown table
+  const tbody = document.getElementById('cost-tbody');
+  tbody.innerHTML = '';
+
+  const sdRows = stampDutyRows(price, isExempt);
+  const lfRows = legalFeeRows(price);
+
+  let tableTotal = 0;
+
+  // Stamp duty rows
+  for (const row of sdRows) {
+    const payable = row.exempt ? 0 : row.amount;
+    tableTotal += payable;
+    const tr = document.createElement('tr');
+    if (row.exempt) tr.classList.add('exempt-row');
+    tr.innerHTML = `
+      <td>${row.label}${row.exempt ? ' <span style="font-size:0.72rem;background:rgba(34,197,94,0.1);color:var(--success);border:1px solid rgba(34,197,94,0.25);padding:0.1rem 0.4rem;border-radius:4px;font-weight:700;">EXEMPT</span>' : ''}</td>
+      <td class="col-muted">${row.basis}</td>
+      <td class="${row.exempt ? 'col-amount' : 'col-amount'}">${row.exempt ? '<span style="text-decoration:line-through;color:var(--muted);margin-right:0.4rem">' + fmt(row.amount) + '</span>' + fmt(0) : fmt(row.amount)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // Legal fee rows
+  for (const row of lfRows) {
+    tableTotal += row.amount;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${row.label}</td>
+      <td class="col-muted">${row.basis}</td>
+      <td class="col-amount">${fmt(row.amount)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // Loan stamp duty row (if applicable)
+  if (loanAmt > 0) {
+    tableTotal += loanStampDuty;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>Loan Agreement Stamp Duty</td>
+      <td class="col-muted">0.5% on RM${loanAmt.toLocaleString('en-MY')}</td>
+      <td class="col-amount">${fmt(loanStampDuty)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // Total row
+  const totalTr = document.createElement('tr');
+  totalTr.className = 'total-row';
+  totalTr.innerHTML = `
+    <td colspan="2" style="text-align:right;padding-right:1rem;color:var(--muted);font-size:0.85rem">Total Upfront Costs (excl. purchase price)</td>
+    <td class="col-amount">${fmt(tableTotal)}</td>
+  `;
+  tbody.appendChild(totalTr);
+}
+
+// Auto-calculate on load
+calculate();
+</script>
+</body>
+</html>
