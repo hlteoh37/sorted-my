@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Rental Yield Calculator 2025 — Gross & Net Yield, Cash Flow | Sorted</title>
+  <meta name="description" content="Free Malaysian rental yield calculator. Calculate gross rental yield, net rental yield, monthly cash flow, and total acquisition costs including stamp duty and legal fees for property investment in Malaysia.">
+  <meta property="og:title" content="Malaysia Rental Yield Calculator 2025 | Sorted">
+  <meta property="og:description" content="Calculate gross & net rental yield, monthly cash flow, and total acquisition costs for Malaysian property investments. Includes stamp duty and legal fee auto-calculation.">
+  <meta property="og:type" content="website">
+  <meta name="keywords" content="Malaysia rental yield calculator, property investment Malaysia, rental yield Malaysia, buy to let Malaysia, ROI property Malaysia, gross rental yield, net rental yield, Malaysian property calculator">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/rental-yield/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Layout */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+.input-suffix { position: relative; }
+.input-suffix span { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-suffix input { padding-right: 2.5rem; }
+
+.relief-divider { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent); margin: 1.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(108,99,255,0.2); }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Results */
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+.yield-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.success { color: var(--success); }
+.result-stat .stat-value.accent { color: var(--accent2); }
+
+/* Acquisition cost table */
+.bracket-section { margin-bottom: 2.5rem; }
+.bracket-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.bracket-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.col-amount { font-weight: 700; color: var(--accent2); }
+.col-muted { color: var(--muted); }
+.total-row { background: var(--bg3) !important; font-weight: 700; border-top: 2px solid var(--border); }
+
+/* Info & warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+  .yield-pair { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../broadband/">Broadband</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>🏠 Rental Yield Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Calculate gross & net rental yield, monthly cash flow, and total acquisition costs for Malaysian property investments. Includes stamp duty and legal fee estimates.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Property Details</h2>
+
+      <div class="field">
+        <label for="purchase-price">Property Purchase Price (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="purchase-price" min="0" max="100000000" step="10000" value="500000" placeholder="500000" oninput="calculate()">
+        </div>
+        <div class="hint">Total purchase price including negotiated discount</div>
+      </div>
+
+      <div class="field">
+        <label for="monthly-rent">Monthly Rental Income (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="monthly-rent" min="0" max="500000" step="100" value="2000" placeholder="2000" oninput="calculate()">
+        </div>
+        <div class="hint">Expected gross monthly rent at full occupancy</div>
+      </div>
+
+      <div class="field">
+        <label for="vacancy-rate">Vacancy Rate (% per year)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="vacancy-rate" min="0" max="100" step="1" value="8" placeholder="8" oninput="calculate()">
+        </div>
+        <div class="hint">Average time the unit sits vacant — 8% ≈ 1 month/year</div>
+      </div>
+
+      <div class="relief-divider">Annual Operating Costs</div>
+
+      <div class="field">
+        <label for="monthly-maintenance">Monthly Maintenance / Service Fees (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="monthly-maintenance" min="0" max="50000" step="50" value="300" placeholder="300" oninput="calculate()">
+        </div>
+        <div class="hint">Strata fees, sinking fund, management fees</div>
+      </div>
+
+      <div class="field">
+        <label for="annual-insurance">Annual Fire / Landlord Insurance (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="annual-insurance" min="0" max="50000" step="100" value="600" placeholder="600" oninput="calculate()">
+        </div>
+        <div class="hint">Typical fire insurance for RM500k property: ~RM500–800/yr</div>
+      </div>
+
+      <div class="field">
+        <label for="annual-tax">Annual Property Tax / Quit Rent (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="annual-tax" min="0" max="50000" step="50" value="200" placeholder="200" oninput="calculate()">
+        </div>
+        <div class="hint">Cukai Taksiran + Cukai Tanah combined estimate</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Yield</button>
+    </div>
+
+    <div class="calc-results" id="results-panel">
+      <h2>Your Results</h2>
+
+      <div class="yield-pair">
+        <div class="result-primary" style="margin-bottom:0">
+          <div class="label">Gross Yield</div>
+          <div class="amount" id="res-gross-yield">—</div>
+          <div class="sub">before costs</div>
+        </div>
+        <div class="result-primary" style="margin-bottom:0;background:linear-gradient(135deg,rgba(72,207,173,0.15),rgba(108,99,255,0.08));border-color:rgba(72,207,173,0.3);">
+          <div class="label">Net Yield</div>
+          <div class="amount" id="res-net-yield" style="color:var(--accent2)">—</div>
+          <div class="sub">after all costs</div>
+        </div>
+      </div>
+
+      <div class="result-breakdown" style="margin-top:0.75rem">
+        <div class="result-stat">
+          <div class="stat-label">Monthly Cash Flow</div>
+          <div class="stat-value" id="res-cashflow">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Annual Net Income</div>
+          <div class="stat-value accent" id="res-annual-net">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Cap Rate</div>
+          <div class="stat-value warn" id="res-cap-rate">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Total Acquisition Cost</div>
+          <div class="stat-value" id="res-total-cost">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Stamp Duty (auto)</div>
+          <div class="stat-value" id="res-stamp-duty">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Legal Fees (auto)</div>
+          <div class="stat-value" id="res-legal-fees">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACQUISITION COST TABLE -->
+  <div class="bracket-section">
+    <h2>📋 Acquisition Cost Breakdown</h2>
+    <p class="subtitle">Upfront costs beyond the purchase price — calculated automatically from Malaysian stamp duty and legal fee schedules.</p>
+    <div class="table-wrap">
+      <table id="cost-table">
+        <thead>
+          <tr>
+            <th>Cost Item</th>
+            <th>Basis / Rate</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="cost-tbody">
+          <tr><td colspan="3" style="text-align:center;color:var(--muted);padding:1.5rem">Enter property details above to see breakdown.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>What is rental yield?</strong> Gross yield = (Annual Rent ÷ Purchase Price) × 100. Net yield further deducts operating costs (maintenance, insurance, property tax, vacancy). The cap rate uses net operating income against purchase price only — excluding acquisition fees — which is useful for comparing properties. A net yield of <strong>4–5%+ in Malaysia is generally considered healthy</strong> for residential property.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips for Malaysian Property Investors</h2>
+    <ul class="tips-list">
+      <li><strong>Target net yield above 4%</strong> — gross yield of 5–6% typically translates to ~3.5–4.5% net after costs.</li>
+      <li>Factor in <strong>rental void periods</strong> — a 1-month vacancy per year is 8.3% vacancy rate. Matured areas have lower vacancy risk.</li>
+      <li><strong>Stamp duty is tiered</strong> — a RM700k property incurs RM18,000 in stamp duty (1% + 2% + 3% in bands), not 3% flat.</li>
+      <li>Consider <strong>Real Property Gains Tax (RPGT)</strong> when planning your exit — rates vary by holding period and residency status.</li>
+      <li><strong>Rental income is taxable</strong> in Malaysia — deductible expenses include interest on mortgage, repairs, assessment, insurance, and agent fees.</li>
+      <li>For condos, <strong>service charges and sinking fund</strong> are often RM250–600/month — always check before buying.</li>
+      <li><strong>Leasehold vs freehold</strong> — leasehold properties (especially &lt;60 years remaining) may command lower rents and resale values.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+    <p><strong style="color:var(--text)">What stamp duty rates apply in Malaysia?</strong></p>
+    <p>For residential property: 1% on the first RM100,000; 2% on RM100,001–RM500,000; 3% on RM500,001–RM1,000,000; 4% above RM1,000,000. Stamp duty exemptions may apply for first-time buyers under certain government schemes.</p>
+
+    <p><strong style="color:var(--text)">Are legal fees regulated in Malaysia?</strong></p>
+    <p>Legal fees are set by the Solicitors' Remuneration Order. The simplified rates used here are: 1% on the first RM500,000; 0.8% on RM500,001–RM1,000,000; 0.5% above RM1,000,000. In practice, lawyers may negotiate slightly different rates.</p>
+
+    <p><strong style="color:var(--text)">What is a good rental yield in Malaysia?</strong></p>
+    <p>For residential property in Malaysia, a <strong>gross yield of 4–6%</strong> and <strong>net yield of 3–4.5%</strong> is considered reasonable. Klang Valley condos often yield 3–5% gross, while landed properties in less central areas may yield 4–7%. Compare against the current OPR (3.0% in 2025) for context.</p>
+
+    <p><strong style="color:var(--text)">Does this include mortgage financing costs?</strong></p>
+    <p>No — this calculator shows unlevered yield (no mortgage). To assess levered returns, subtract your monthly mortgage payment from the monthly cash flow figure shown. Most Malaysian home loans are at ~4–4.5% per annum for the first few years.</p>
+
+    <p><strong style="color:var(--text)">What is cap rate vs rental yield?</strong></p>
+    <p>Cap rate (capitalisation rate) uses the purchase price as the denominator and net operating income (excluding financing). Rental yield typically uses the full acquisition cost. Cap rate is better for comparing investment quality across properties, while yield on total cost is better for measuring your actual return on capital deployed.</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only. Stamp duty, legal fees, and tax rules are subject to change. Actual costs may vary based on property type, buyer status, and applicable exemptions. Always verify with a licensed property lawyer or LHDN before making investment decisions.
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid #2d3148;margin-top:3rem;">
+  <p style="color:#8892b0;font-size:0.9rem;margin-bottom:0.5rem;">Found this useful? Support free Malaysian tools</p>
+  <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#6c63ff,#48cfad);color:#fff;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem;">Buy me a coffee — $3</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Broadband Compare</a>
+    <a href="../tax-calculator/">Income Tax Calculator</a>
+    <a href="../car-loan/">Car Loan Calculator</a>
+    <a href="../ptptn-calculator/">PTPTN Calculator</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function fmtPct(n) {
+  return n.toFixed(2) + '%';
+}
+
+// Malaysian stamp duty on property transfer
+// First RM100k: 1%, RM100k–RM500k: 2%, RM500k–RM1M: 3%, Above RM1M: 4%
+function calcStampDuty(price) {
+  let duty = 0;
+  if (price <= 0) return 0;
+  const bands = [
+    { from: 0,        to: 100000,   rate: 0.01 },
+    { from: 100000,   to: 500000,   rate: 0.02 },
+    { from: 500000,   to: 1000000,  rate: 0.03 },
+    { from: 1000000,  to: Infinity, rate: 0.04 },
+  ];
+  for (const b of bands) {
+    if (price <= b.from) break;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    duty += (upper - b.from) * b.rate;
+  }
+  return duty;
+}
+
+// Legal fees (simplified Solicitors' Remuneration Order)
+// First RM500k: 1%, RM500k–RM1M: 0.8%, Above RM1M: 0.5%
+function calcLegalFees(price) {
+  let fees = 0;
+  if (price <= 0) return 0;
+  const bands = [
+    { from: 0,       to: 500000,  rate: 0.01  },
+    { from: 500000,  to: 1000000, rate: 0.008 },
+    { from: 1000000, to: Infinity, rate: 0.005 },
+  ];
+  for (const b of bands) {
+    if (price <= b.from) break;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    fees += (upper - b.from) * b.rate;
+  }
+  return fees;
+}
+
+// Stamp duty breakdown rows for table
+function stampDutyRows(price) {
+  const bands = [
+    { from: 0,        to: 100000,   rate: 1,  label: 'First RM100,000' },
+    { from: 100000,   to: 500000,   rate: 2,  label: 'RM100,001–RM500,000' },
+    { from: 500000,   to: 1000000,  rate: 3,  label: 'RM500,001–RM1,000,000' },
+    { from: 1000000,  to: Infinity, rate: 4,  label: 'Above RM1,000,000' },
+  ];
+  const rows = [];
+  for (const b of bands) {
+    if (price <= b.from) continue;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    const amount = (upper - b.from) * b.rate / 100;
+    rows.push({ label: 'Stamp Duty — ' + b.label, basis: b.rate + '%', amount });
+  }
+  return rows;
+}
+
+function legalFeeRows(price) {
+  const bands = [
+    { from: 0,       to: 500000,  rate: 1.0, label: 'First RM500,000' },
+    { from: 500000,  to: 1000000, rate: 0.8, label: 'RM500,001–RM1,000,000' },
+    { from: 1000000, to: Infinity, rate: 0.5, label: 'Above RM1,000,000' },
+  ];
+  const rows = [];
+  for (const b of bands) {
+    if (price <= b.from) continue;
+    const upper = b.to === Infinity ? price : Math.min(price, b.to);
+    const amount = (upper - b.from) * b.rate / 100;
+    rows.push({ label: 'Legal Fees — ' + b.label, basis: b.rate + '%', amount });
+  }
+  return rows;
+}
+
+function calculate() {
+  const price       = parseFloat(document.getElementById('purchase-price').value)     || 0;
+  const monthlyRent = parseFloat(document.getElementById('monthly-rent').value)       || 0;
+  const vacancyPct  = parseFloat(document.getElementById('vacancy-rate').value)       || 0;
+  const monthlyMaint= parseFloat(document.getElementById('monthly-maintenance').value)|| 0;
+  const annualIns   = parseFloat(document.getElementById('annual-insurance').value)   || 0;
+  const annualTax   = parseFloat(document.getElementById('annual-tax').value)         || 0;
+
+  if (price <= 0 || monthlyRent <= 0) return;
+
+  // Gross annual rent (accounting for vacancy)
+  const occupancyRate   = 1 - vacancyPct / 100;
+  const annualRentGross = monthlyRent * 12;
+  const annualRentEff   = annualRentGross * occupancyRate;
+
+  // Annual costs
+  const annualMaint = monthlyMaint * 12;
+  const annualCosts = annualMaint + annualIns + annualTax;
+
+  // Net operating income
+  const annualNetIncome = annualRentEff - annualCosts;
+  const monthlyCashFlow = annualNetIncome / 12;
+
+  // Acquisition costs
+  const stampDuty  = calcStampDuty(price);
+  const legalFees  = calcLegalFees(price);
+  const totalAcqCost = price + stampDuty + legalFees;
+
+  // Yields
+  const grossYield = price > 0 ? (annualRentGross / price * 100) : 0;
+  const netYield   = totalAcqCost > 0 ? (annualNetIncome / totalAcqCost * 100) : 0;
+  const capRate    = price > 0 ? (annualNetIncome / price * 100) : 0;
+
+  // Update results
+  document.getElementById('res-gross-yield').textContent = fmtPct(grossYield);
+  document.getElementById('res-net-yield').textContent   = fmtPct(netYield);
+
+  const cfEl = document.getElementById('res-cashflow');
+  cfEl.textContent = fmt(monthlyCashFlow);
+  cfEl.className = 'stat-value ' + (monthlyCashFlow >= 0 ? 'success' : 'danger');
+
+  document.getElementById('res-annual-net').textContent  = fmt(annualNetIncome);
+  document.getElementById('res-cap-rate').textContent    = fmtPct(capRate);
+  document.getElementById('res-total-cost').textContent  = fmt(totalAcqCost);
+  document.getElementById('res-stamp-duty').textContent  = fmt(stampDuty);
+  document.getElementById('res-legal-fees').textContent  = fmt(legalFees);
+
+  // Acquisition cost table
+  const tbody = document.getElementById('cost-tbody');
+  tbody.innerHTML = '';
+
+  const costRows = [
+    { label: 'Purchase Price', basis: 'As entered', amount: price },
+    ...stampDutyRows(price),
+    ...legalFeeRows(price),
+  ];
+
+  let total = 0;
+  for (const row of costRows) {
+    total += row.amount;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${row.label}</td>
+      <td class="col-muted">${row.basis}</td>
+      <td class="col-amount">${fmt(row.amount)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  const totalTr = document.createElement('tr');
+  totalTr.className = 'total-row';
+  totalTr.innerHTML = `
+    <td colspan="2" style="text-align:right;padding-right:1rem;color:var(--muted);font-size:0.85rem">Total Acquisition Cost</td>
+    <td class="col-amount">${fmt(total)}</td>
+  `;
+  tbody.appendChild(totalTr);
+}
+
+// Auto-calculate on load
+calculate();
+</script>
+</body>
+</html>
