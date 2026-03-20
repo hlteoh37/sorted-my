@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakat Calculator Malaysia 2025 — Calculate Zakat on Savings & Wealth | Sorted</title>
+  <meta name="description" content="Free Malaysian zakat calculator for 2025. Calculate zakat on savings, gold, investments, and business assets. Includes nisab threshold, full breakdown by asset type, and links to state zakat collection centres.">
+  <meta property="og:title" content="Zakat Calculator Malaysia 2025 | Sorted">
+  <meta property="og:description" content="Calculate your zakat obligation on savings, gold, investments, and business assets. Instant nisab check and 2.5% zakat payable amount for Malaysian Muslims.">
+  <meta property="og:type" content="website">
+  <meta name="keywords" content="zakat calculator Malaysia 2025, zakat harta, zakat simpanan, zakat emas, zakat pelaburan, nisab emas Malaysia, kadar zakat, zakat pendapatan, lembaga zakat, zakat perniagaan, islamic wealth tax calculator Malaysia">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/calculators/zakat-calculator/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Layout */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.asset-section { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+.asset-section:last-of-type { border-bottom: none; }
+.asset-section-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent2); margin-bottom: 0.9rem; }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Results */
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+.nisab-badge { border-radius: 6px; padding: 0.65rem 0.9rem; font-size: 0.82rem; margin-bottom: 1rem; }
+.nisab-badge.above { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.25); color: var(--accent); }
+.nisab-badge.below { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.25); color: var(--success); }
+
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.success { color: var(--success); }
+.result-stat .stat-value.accent { color: var(--accent2); }
+
+/* Breakdown table */
+.bracket-section { margin-bottom: 2.5rem; }
+.bracket-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.bracket-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.col-amount { font-weight: 700; color: var(--accent2); }
+.col-muted { color: var(--muted); }
+.total-row { background: var(--bg3) !important; font-weight: 700; border-top: 2px solid var(--border); }
+.excluded-row td { color: var(--muted) !important; font-style: italic; }
+.excluded-row .col-amount { color: var(--muted) !important; text-decoration: line-through; }
+
+/* Info & warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+/* Zakat centres table */
+.rate-table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+.rate-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.rate-table th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); }
+.rate-table td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+.rate-table td:last-child { color: var(--accent2); }
+.rate-table td a { color: var(--accent); }
+
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zakat Calculator Malaysia 2025",
+    "url": "https://hlteoh37.github.io/sorted-my/calculators/zakat-calculator/",
+    "description": "Free Malaysian zakat calculator for 2025. Calculate zakat on savings, gold, investments, and business assets. Includes nisab threshold check and full breakdown by asset type.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MYR"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sorted MY",
+      "url": "https://hlteoh37.github.io/sorted-my/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../../compare/broadband/">Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>☪️ Zakat Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Calculate your zakat obligation on savings, gold, investments, and business assets. Covers zakat harta (wealth zakat) with Malaysia's nisab threshold and full breakdown by asset type.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Your Assets &amp; Liabilities</h2>
+
+      <!-- Cash & Savings -->
+      <div class="asset-section">
+        <div class="asset-section-title">Cash &amp; Savings</div>
+
+        <div class="field">
+          <label for="cash-savings">Cash &amp; Bank Savings (RM)</label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="cash-savings" min="0" step="100" value="30000" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">Current account, savings account, fixed deposits, e-wallets</div>
+        </div>
+
+        <div class="field">
+          <label for="epf-savings">EPF Balance (RM) <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="epf-savings" min="0" step="100" value="" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">EPF is zakatable in Malaysia — include if you wish to pay zakat on it</div>
+        </div>
+      </div>
+
+      <!-- Gold & Silver -->
+      <div class="asset-section">
+        <div class="asset-section-title">Gold &amp; Silver</div>
+
+        <div class="field">
+          <label for="gold-value">Gold Value (RM)</label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="gold-value" min="0" step="100" value="0" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">Current market value of gold jewellery, gold bars, gold savings account (e.g. Public Gold, Maybank Gold)</div>
+        </div>
+
+        <div class="field">
+          <label for="silver-value">Silver Value (RM)</label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="silver-value" min="0" step="100" value="0" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">Current market value of silver coins, silver bars, or silver savings accounts</div>
+        </div>
+      </div>
+
+      <!-- Investments -->
+      <div class="asset-section">
+        <div class="asset-section-title">Investments</div>
+
+        <div class="field">
+          <label for="investments">Shares &amp; Unit Trusts (RM)</label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="investments" min="0" step="100" value="0" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">Current market value of stocks, unit trusts, REITs, ASB, amanah saham</div>
+        </div>
+      </div>
+
+      <!-- Business Assets -->
+      <div class="asset-section">
+        <div class="asset-section-title">Business Assets</div>
+
+        <div class="field">
+          <label for="business-assets">Business Stock &amp; Receivables (RM)</label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="business-assets" min="0" step="100" value="0" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">Value of goods for sale, trade receivables, and business cash</div>
+        </div>
+      </div>
+
+      <!-- Deductions -->
+      <div class="asset-section">
+        <div class="asset-section-title">Deductions (Debts)</div>
+
+        <div class="field">
+          <label for="debts">Outstanding Debts &amp; Liabilities (RM)</label>
+          <div class="input-prefix">
+            <span>RM</span>
+            <input type="number" id="debts" min="0" step="100" value="0" placeholder="0" oninput="calculate()">
+          </div>
+          <div class="hint">Debts due within one year — credit card balance, short-term loans, money owed to others</div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Zakat</button>
+    </div>
+
+    <div class="calc-results">
+      <h2>Your Results</h2>
+
+      <div class="result-primary">
+        <div class="label">Zakat Payable</div>
+        <div class="amount" id="res-zakat">—</div>
+        <div class="sub" id="res-zakat-sub">2.5% of net zakatable wealth</div>
+      </div>
+
+      <div class="nisab-badge below" id="nisab-badge" style="display:none">
+        <strong id="nisab-badge-text">—</strong>
+      </div>
+
+      <div class="result-breakdown">
+        <div class="result-stat">
+          <div class="stat-label">Total Assets</div>
+          <div class="stat-value" id="res-total-assets">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Total Debts</div>
+          <div class="stat-value warn" id="res-total-debts">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Net Zakatable Wealth</div>
+          <div class="stat-value accent" id="res-net-wealth">—</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Nisab Threshold</div>
+          <div class="stat-value" id="res-nisab">RM 24,000</div>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:0;font-size:0.82rem">
+        <strong>Nisab (gold-based):</strong> Approximately <strong>RM 24,000</strong> in 2025, based on 85g of gold at ~RM 282/g. Your state zakat centre may use a slightly different rate. Check with your local Lembaga Zakat for the current nisab.
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAKDOWN TABLE -->
+  <div class="bracket-section">
+    <h2>📋 Asset Breakdown</h2>
+    <p class="subtitle">Your assets by category. Zakat is charged at 2.5% on net zakatable wealth (total assets minus short-term debts) if it exceeds the nisab threshold and has been held for one lunar year (haul).</p>
+    <div class="table-wrap">
+      <table id="asset-table">
+        <thead>
+          <tr>
+            <th>Asset / Liability</th>
+            <th>Category</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody id="asset-tbody">
+          <tr><td colspan="3" style="text-align:center;color:var(--muted);padding:1.5rem">Enter your assets above to see the full breakdown.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- HOW ZAKAT IS CALCULATED -->
+  <div class="info-box">
+    <strong>How zakat on wealth (zakat harta) is calculated in Malaysia:</strong>
+    <ol style="margin-top:0.6rem;padding-left:1.2rem;color:var(--muted);font-size:0.88rem;line-height:1.8">
+      <li>Add up all zakatable assets: cash, savings, gold, silver, investments, business stock</li>
+      <li>Deduct short-term debts and liabilities (due within one year)</li>
+      <li>If net wealth ≥ nisab threshold (≈ RM 24,000) and held for one full lunar year (haul) — zakat is due</li>
+      <li>Zakat payable = <strong>2.5%</strong> of net zakatable wealth</li>
+    </ol>
+  </div>
+
+  <!-- NISAB EXPLANATION -->
+  <div class="section">
+    <h2>📊 Nisab Threshold in Malaysia 2025</h2>
+    <p>The nisab is the minimum wealth level above which zakat becomes obligatory. In Malaysia, the gold-based nisab is commonly used: <strong>85 grams of gold</strong>. At a gold price of approximately RM 282/g (2025 average), this gives a nisab of roughly <strong>RM 24,000</strong>.</p>
+    <p>Nisab fluctuates with the gold price and is updated periodically by each state's zakat authority. Always confirm the current nisab with your state's Lembaga Zakat before calculating.</p>
+    <div class="rate-table-wrap">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>Nisab Basis</th>
+            <th>Weight / Amount</th>
+            <th>Approx. Value (2025)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Gold (emas)</td><td>85 grams</td><td>≈ RM 24,000</td></tr>
+          <tr><td>Silver (perak)</td><td>595 grams</td><td>≈ RM 1,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem;color:var(--muted)">Most Malaysian zakat authorities use the gold-based nisab. The silver-based nisab is much lower — if you use this, you may be liable for zakat on smaller amounts. Consult your state zakat centre for guidance.</p>
+  </div>
+
+  <!-- ZAKAT CENTRES -->
+  <div class="section">
+    <h2>🏛️ State Zakat Collection Centres in Malaysia</h2>
+    <div class="rate-table-wrap">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Authority</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Selangor</td><td>Lembaga Zakat Selangor (LZS)</td><td><a href="https://www.zakatselangor.com.my" target="_blank" rel="noopener">zakatselangor.com.my</a></td></tr>
+          <tr><td>Kuala Lumpur</td><td>Pusat Pungutan Zakat MAIWP (PPZ-MAIWP)</td><td><a href="https://www.zakatmy.com.my" target="_blank" rel="noopener">zakatmy.com.my</a></td></tr>
+          <tr><td>Johor</td><td>Majlis Agama Islam Johor (MAIJ)</td><td><a href="https://www.maij.gov.my" target="_blank" rel="noopener">maij.gov.my</a></td></tr>
+          <tr><td>Penang</td><td>Majlis Agama Islam Pulau Pinang (MAIPP)</td><td><a href="https://www.maipp.gov.my" target="_blank" rel="noopener">maipp.gov.my</a></td></tr>
+          <tr><td>Perak</td><td>Majlis Agama Islam Perak (MAIPk)</td><td><a href="https://www.maiprerak.gov.my" target="_blank" rel="noopener">maiprerak.gov.my</a></td></tr>
+          <tr><td>Kedah</td><td>Lembaga Zakat Kedah (LAZKED)</td><td><a href="https://www.lazked.gov.my" target="_blank" rel="noopener">lazked.gov.my</a></td></tr>
+          <tr><td>Kelantan</td><td>Majlis Agama Islam &amp; Adat Melayu Kelantan (MAIK)</td><td><a href="https://www.maik.gov.my" target="_blank" rel="noopener">maik.gov.my</a></td></tr>
+          <tr><td>Terengganu</td><td>Majlis Agama Islam &amp; Adat Melayu Terengganu (MAIDAM)</td><td><a href="https://www.maidam.gov.my" target="_blank" rel="noopener">maidam.gov.my</a></td></tr>
+          <tr><td>Pahang</td><td>Majlis Agama Islam Pahang (MUIP)</td><td><a href="https://www.muip.gov.my" target="_blank" rel="noopener">muip.gov.my</a></td></tr>
+          <tr><td>Negeri Sembilan</td><td>Majlis Agama Islam Negeri Sembilan (MAINS)</td><td><a href="https://www.mains.gov.my" target="_blank" rel="noopener">mains.gov.my</a></td></tr>
+          <tr><td>Melaka</td><td>Majlis Agama Islam Melaka (MAIM)</td><td><a href="https://www.maim.gov.my" target="_blank" rel="noopener">maim.gov.my</a></td></tr>
+          <tr><td>Sabah</td><td>Majlis Agama Islam Sabah (MUIS)</td><td><a href="https://www.muis.gov.my" target="_blank" rel="noopener">muis.gov.my</a></td></tr>
+          <tr><td>Sarawak</td><td>Majlis Islam Sarawak (MIS)</td><td><a href="https://www.mis.gov.my" target="_blank" rel="noopener">mis.gov.my</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Key Things to Know About Zakat in Malaysia</h2>
+    <ul class="tips-list">
+      <li><strong>Haul (one lunar year):</strong> Zakat is only due if your net wealth has been above the nisab threshold continuously for one full lunar year (approximately 354 days). If wealth drops below nisab at any point, the haul resets.</li>
+      <li><strong>EPF &amp; ASB:</strong> EPF contributions are zakatable in Malaysia. Many scholars and zakat authorities include EPF savings in zakatable wealth. Pay zakat on the full EPF balance (or just the annual dividend, depending on the authority).</li>
+      <li><strong>Jewellery worn regularly:</strong> Most Malaysian zakat authorities exempt personal-use gold jewellery up to a reasonable amount. Jewellery held as investment or beyond personal use is zakatable.</li>
+      <li><strong>Property:</strong> Your primary residence and property held for personal use are generally not zakatable. Only property held for investment or trade is included.</li>
+      <li><strong>Income tax deduction:</strong> Zakat payments are eligible as a <strong>full rebate</strong> against Malaysian income tax (not just a relief) — every RM of zakat paid reduces your tax payable by RM 1, up to your total tax payable.</li>
+      <li><strong>State jurisdiction:</strong> Zakat must be paid in the state where you are domiciled (ber-domisil). Each state has slightly different rulings — always check with your state's Lembaga Zakat.</li>
+      <li><strong>Online payment:</strong> All major state zakat centres now accept online payment via their websites or through online banking (JomPAY, FPX).</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+
+    <p><strong style="color:var(--text)">What is zakat?</strong></p>
+    <p>Zakat is one of the Five Pillars of Islam — an obligatory annual payment on eligible wealth. It is distributed to eight categories of recipients (asnaf) including the poor, the needy, and those in debt. In Malaysia, it is administered by each state's Islamic religious authority.</p>
+
+    <p><strong style="color:var(--text)">What is the difference between zakat fitrah and zakat harta?</strong></p>
+    <p>Zakat fitrah is a fixed per-person food payment due at the end of Ramadan (typically RM 7–15 per person in Malaysia). Zakat harta (wealth zakat) is calculated on accumulated wealth — savings, gold, investments, and business assets — and is what this calculator computes.</p>
+
+    <p><strong style="color:var(--text)">Is EPF zakatable?</strong></p>
+    <p>Yes. The majority of Malaysian zakat authorities rule that EPF savings are zakatable. Some scholars say zakat is due on the full balance annually; others say it is only due on the annual dividend or upon withdrawal. The safest approach — and the one adopted by many Lembaga Zakat — is to include your EPF balance as part of your zakatable assets.</p>
+
+    <p><strong style="color:var(--text)">Can I deduct my home loan from my zakatable wealth?</strong></p>
+    <p>Only short-term debts due within the current year are typically deductible for zakat purposes. A home loan or car loan is a long-term liability — only the portion due within the next 12 months (i.e., one year's worth of repayments) may be deducted, not the full outstanding balance.</p>
+
+    <p><strong style="color:var(--text)">How does zakat reduce my income tax?</strong></p>
+    <p>In Malaysia, zakat paid is eligible as a <strong>tax rebate</strong> (bukan potongan), not just a tax relief. This means every ringgit of zakat paid directly reduces your tax payable — up to the amount of tax you owe. If you paid RM 1,200 in zakat and your income tax is RM 3,000, your net tax payable is RM 1,800. Keep your zakat receipt for your LHDN tax filing.</p>
+
+    <p><strong style="color:var(--text)">Is zakat compulsory if I am not a Malaysian citizen?</strong></p>
+    <p>Zakat is a religious obligation for all Muslims regardless of citizenship or residency, as long as you are sane, an adult (baligh), free, and possess wealth above the nisab for one full lunar year. Residency in Malaysia determines which state's Lembaga Zakat you should pay to.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Related Tools</h2>
+    <div class="related-grid">
+      <a href="../../compare/tax-calculator/" class="related-card">
+        💸 Income Tax Calculator
+        <div class="rel-desc">Estimate YA 2025 income tax — zakat is a full rebate against tax payable</div>
+      </a>
+      <a href="../../guides/epf-calculator/" class="related-card">
+        🏦 EPF Calculator
+        <div class="rel-desc">Project your EPF retirement balance and dividend growth</div>
+      </a>
+      <a href="../stamp-duty.html" class="related-card">
+        🏷️ Stamp Duty Calculator
+        <div class="rel-desc">Calculate Malaysian property stamp duty and legal fees</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only and is not a fatwa. Zakat rules vary by state, school of thought, and individual circumstances. The nisab threshold changes with gold prices. Always verify with your state's Lembaga Zakat or a qualified Islamic scholar before making zakat payments.
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid #2d3148;margin-top:3rem;">
+  <p style="color:#8892b0;font-size:0.9rem;margin-bottom:0.5rem;">Found this useful? Support free Malaysian tools</p>
+  <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#6c63ff,#48cfad);color:#fff;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem;">Buy me a coffee ☕</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../../compare/tax-calculator/">Income Tax Calculator</a>
+    <a href="../../compare/car-loan/">Car Loan Calculator</a>
+    <a href="../../compare/rental-yield/">Rental Yield Calculator</a>
+    <a href="../stamp-duty.html">Stamp Duty Calculator</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+const NISAB = 24000; // approx RM based on 85g gold at ~RM282/g (2025)
+const ZAKAT_RATE = 0.025;
+
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function val(id) {
+  return parseFloat(document.getElementById(id).value) || 0;
+}
+
+function calculate() {
+  const cash     = val('cash-savings');
+  const epf      = val('epf-savings');
+  const gold     = val('gold-value');
+  const silver   = val('silver-value');
+  const invest   = val('investments');
+  const biz      = val('business-assets');
+  const debts    = val('debts');
+
+  const totalAssets = cash + epf + gold + silver + invest + biz;
+  const netWealth   = Math.max(0, totalAssets - debts);
+  const zakatPayable = netWealth >= NISAB ? netWealth * ZAKAT_RATE : 0;
+
+  // Update summary
+  document.getElementById('res-zakat').textContent = fmt(zakatPayable);
+  document.getElementById('res-total-assets').textContent = fmt(totalAssets);
+  document.getElementById('res-total-debts').textContent  = debts > 0 ? fmt(debts) : '—';
+  document.getElementById('res-net-wealth').textContent   = fmt(netWealth);
+  document.getElementById('res-nisab').textContent        = fmt(NISAB);
+
+  // Nisab badge
+  const badge = document.getElementById('nisab-badge');
+  badge.style.display = 'block';
+  const badgeText = document.getElementById('nisab-badge-text');
+  if (netWealth >= NISAB) {
+    badge.className = 'nisab-badge above';
+    badgeText.innerHTML = '⚠ Your net wealth exceeds the nisab threshold of ' + fmt(NISAB) + '. Zakat is due if this wealth has been held for one full lunar year (haul).';
+  } else {
+    badge.className = 'nisab-badge below';
+    badgeText.innerHTML = '✓ Your net wealth is below the nisab threshold of ' + fmt(NISAB) + '. Zakat is not obligatory at this level, but voluntary sadaqah is always encouraged.';
+  }
+
+  // Build asset breakdown table
+  const tbody = document.getElementById('asset-tbody');
+  tbody.innerHTML = '';
+
+  const rows = [
+    { label: 'Cash &amp; Bank Savings',          category: 'Cash &amp; Savings',   value: cash,   zakatable: true },
+    { label: 'EPF Balance',                        category: 'Retirement Savings',   value: epf,    zakatable: true },
+    { label: 'Gold (market value)',                category: 'Precious Metals',       value: gold,   zakatable: true },
+    { label: 'Silver (market value)',              category: 'Precious Metals',       value: silver, zakatable: true },
+    { label: 'Shares &amp; Unit Trusts',          category: 'Investments',           value: invest, zakatable: true },
+    { label: 'Business Stock &amp; Receivables', category: 'Business Assets',       value: biz,    zakatable: true },
+  ];
+
+  for (const row of rows) {
+    if (row.value <= 0) continue;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${row.label}</td>
+      <td class="col-muted">${row.category}</td>
+      <td class="col-amount">${fmt(row.value)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  if (debts > 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>Outstanding Debts (deducted)</td>
+      <td class="col-muted">Liabilities</td>
+      <td style="font-weight:700;color:var(--danger)">− ${fmt(debts)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  if (totalAssets > 0) {
+    // Net wealth row
+    const netTr = document.createElement('tr');
+    netTr.className = 'total-row';
+    netTr.innerHTML = `
+      <td colspan="2" style="text-align:right;padding-right:1rem;color:var(--muted);font-size:0.85rem">Net Zakatable Wealth</td>
+      <td class="col-amount">${fmt(netWealth)}</td>
+    `;
+    tbody.appendChild(netTr);
+
+    // Zakat payable row
+    const zakatTr = document.createElement('tr');
+    zakatTr.style.background = 'rgba(108,99,255,0.07)';
+    zakatTr.innerHTML = `
+      <td colspan="2" style="text-align:right;padding-right:1rem;font-weight:700;font-size:0.88rem">
+        Zakat Payable (2.5%${netWealth < NISAB ? ' — below nisab, not due' : ''})
+      </td>
+      <td style="font-weight:800;color:var(--accent2);font-size:1.05rem">${fmt(zakatPayable)}</td>
+    `;
+    tbody.appendChild(zakatTr);
+  } else {
+    tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:1.5rem">Enter your assets above to see the full breakdown.</td></tr>';
+  }
+}
+
+// Auto-calculate on load
+calculate();
+</script>
+</body>
+</html>
