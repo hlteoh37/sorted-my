@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Income Tax Calculator YA 2025 — Chargeable Income & Reliefs | Sorted</title>
+  <meta name="description" content="Free Malaysian income tax calculator for Year of Assessment 2025. Enter your chargeable income and reliefs to see your exact tax bracket breakdown and effective tax rate.">
+  <meta property="og:title" content="Malaysia Income Tax Calculator YA 2025 | Sorted">
+  <meta property="og:description" content="Calculate your Malaysian personal income tax for YA 2025. Progressive bracket breakdown, effective rate, and common tax relief inputs included.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/tax-calculator/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Layout */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+
+.relief-divider { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent); margin: 1.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(108,99,255,0.2); }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Results */
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+.result-placeholder { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+.result-placeholder .icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+.result-placeholder p { font-size: 0.9rem; }
+
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.success { color: var(--success); }
+
+/* Bracket table */
+.bracket-section { margin-bottom: 2.5rem; }
+.bracket-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.bracket-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody tr.active-bracket { background: rgba(108,99,255,0.08); border-color: rgba(108,99,255,0.2); }
+tbody tr.active-bracket td:first-child { border-left: 3px solid var(--accent); padding-left: calc(0.85rem - 3px); }
+tbody tr.taxed { background: rgba(72,207,173,0.04); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.bracket-rate { font-weight: 700; color: var(--accent); }
+.bracket-tax { font-weight: 700; color: var(--accent2); }
+.bracket-zero { color: var(--muted); }
+
+/* Info & warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../broadband/">Broadband</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>🧾 Income Tax Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Calculate your Malaysian personal income tax for Year of Assessment 2025 — enter your chargeable income and reliefs for a full bracket breakdown.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Your Income & Reliefs</h2>
+
+      <div class="field">
+        <label for="gross-income">Annual Gross Income (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="gross-income" min="0" max="10000000" step="1000" value="72000" placeholder="72000">
+        </div>
+        <div class="hint">Your total employment income before any deductions</div>
+      </div>
+
+      <div class="relief-divider">Common Tax Reliefs (YA 2025)</div>
+
+      <div class="field">
+        <label for="relief-personal">Personal Relief (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="relief-personal" min="0" max="9000" step="100" value="9000" placeholder="9000">
+        </div>
+        <div class="hint">Standard personal relief — RM9,000 for all individuals</div>
+      </div>
+
+      <div class="field">
+        <label for="relief-epf">EPF Contribution (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="relief-epf" min="0" max="4000" step="100" value="4000" placeholder="4000">
+        </div>
+        <div class="hint">Max claimable: RM4,000 (employee contribution only)</div>
+      </div>
+
+      <div class="field">
+        <label for="relief-socso">SOCSO / EIS Contribution (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="relief-socso" min="0" max="350" step="10" value="350" placeholder="350">
+        </div>
+        <div class="hint">Max claimable: RM350</div>
+      </div>
+
+      <div class="field">
+        <label for="relief-lifestyle">Lifestyle Relief (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="relief-lifestyle" min="0" max="2500" step="100" value="2500" placeholder="2500">
+        </div>
+        <div class="hint">Books, internet, sports, devices — max RM2,500</div>
+      </div>
+
+      <div class="field">
+        <label for="relief-other">Other Reliefs (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="relief-other" min="0" max="100000" step="100" value="0" placeholder="0">
+        </div>
+        <div class="hint">Medical, education, spouse, children, etc.</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate My Tax</button>
+    </div>
+
+    <div class="calc-results" id="results-panel">
+      <h2>Your Results</h2>
+      <div class="result-placeholder" id="result-placeholder">
+        <span class="icon">🧮</span>
+        <p>Enter your income and reliefs, then click Calculate.</p>
+      </div>
+      <div id="result-output" style="display:none">
+        <div class="result-primary">
+          <div class="label">Total Tax Payable</div>
+          <div class="amount" id="res-tax">—</div>
+          <div class="sub" id="res-sub">on chargeable income of <span id="res-chargeable">—</span></div>
+        </div>
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="stat-label">Gross Income</div>
+            <div class="stat-value" id="res-gross">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Reliefs</div>
+            <div class="stat-value success" id="res-reliefs">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Effective Tax Rate</div>
+            <div class="stat-value warn" id="res-effective">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Monthly Tax</div>
+            <div class="stat-value" id="res-monthly">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRACKET BREAKDOWN TABLE -->
+  <div class="bracket-section">
+    <h2>📊 Tax Bracket Breakdown (YA 2025)</h2>
+    <p class="subtitle">Shows how much tax you pay in each progressive band based on your chargeable income.</p>
+    <div class="table-wrap">
+      <table id="bracket-table">
+        <thead>
+          <tr>
+            <th>Chargeable Income Band</th>
+            <th>Rate</th>
+            <th>Band Width</th>
+            <th>Income in Band</th>
+            <th>Tax in Band</th>
+          </tr>
+        </thead>
+        <tbody id="bracket-tbody">
+          <tr><td colspan="5" style="text-align:center;color:var(--muted);padding:1.5rem">Enter your income above and click Calculate.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>How progressive tax works in Malaysia:</strong> You don't pay the top rate on all your income — only on the portion that falls in each bracket. For example, if your chargeable income is RM72,000, the first RM5,000 is taxed at 0%, the next RM15,000 at 1%, the next RM15,000 at 3%, the next RM15,000 at 6%, and only RM2,000 at 11%.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips to Reduce Your Income Tax</h2>
+    <ul class="tips-list">
+      <li>Max out your <strong>EPF voluntary contribution</strong> (VC) — up to RM4,000 is tax-deductible.</li>
+      <li>Claim <strong>lifestyle relief</strong> up to RM2,500 for books, internet, gym, and computers — keep receipts.</li>
+      <li>Don't forget <strong>SOCSO and EIS</strong> contributions — up to RM350 is claimable.</li>
+      <li>If you have dependants, claim <strong>spouse, child, and parent relief</strong> — these add up quickly.</li>
+      <li>Medical expenses for serious diseases and for parents are claimable (separate limits apply).</li>
+      <li>Contribute to <strong>private retirement schemes (PRS)</strong> for an additional RM3,000 relief.</li>
+      <li>Life insurance and education insurance premiums are deductible up to RM3,000.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+    <p><strong style="color:var(--text)">What is chargeable income?</strong></p>
+    <p>Chargeable income is your total income minus all eligible tax reliefs and deductions. This is the figure that the progressive tax rates are applied to — not your gross salary.</p>
+
+    <p><strong style="color:var(--text)">Does this include zakat or tax rebates?</strong></p>
+    <p>This calculator shows your base tax before zakat offsets or rebates (e.g., RM400 individual rebate for chargeable income below RM35,000). If eligible, subtract those from the tax payable shown.</p>
+
+    <p><strong style="color:var(--text)">When is the tax filing deadline for YA 2025?</strong></p>
+    <p>For salaried employees (Form BE), the deadline is typically <strong>30 April 2026</strong>. Self-employed (Form B) is <strong>30 June 2026</strong>. e-Filing via MyTax opens in March.</p>
+
+    <p><strong style="color:var(--text)">What if my income is below RM34,000?</strong></p>
+    <p>If your <em>annual income</em> (before reliefs) is RM34,000 or below, you are generally not required to file a tax return. However, if you have been registered before, you still should file.</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates based on YA 2025 tax rates published by LHDN. It does not account for all possible reliefs, rebates, or special circumstances. Always verify your tax liability directly via <a href="https://mytax.hasil.gov.my" target="_blank" rel="noopener" style="color:var(--warn)">MyTax (hasil.gov.my)</a> or consult a tax professional.
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid #2d3148;margin-top:3rem;">
+  <p style="color:#8892b0;font-size:0.9rem;margin-bottom:0.5rem;">Found this useful? Support free Malaysian tools</p>
+  <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#6c63ff,#48cfad);color:#fff;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem;">Buy me a coffee — $3</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Broadband Compare</a>
+    <a href="../car-loan/">Car Loan Calculator</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+// YA 2025 tax brackets: [from, to, rate%]
+// "to" is Infinity for the last bracket
+const BRACKETS = [
+  { from: 0,        to: 5000,      rate: 0  },
+  { from: 5000,     to: 20000,     rate: 1  },
+  { from: 20000,    to: 35000,     rate: 3  },
+  { from: 35000,    to: 50000,     rate: 6  },
+  { from: 50000,    to: 70000,     rate: 11 },
+  { from: 70000,    to: 100000,    rate: 19 },
+  { from: 100000,   to: 400000,    rate: 25 },
+  { from: 400000,   to: 600000,    rate: 26 },
+  { from: 600000,   to: 2000000,   rate: 28 },
+  { from: 2000000,  to: Infinity,  rate: 30 },
+];
+
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function fmtBand(from, to) {
+  if (to === Infinity) return 'Above RM ' + from.toLocaleString('en-MY');
+  return 'RM ' + from.toLocaleString('en-MY') + ' – RM ' + to.toLocaleString('en-MY');
+}
+
+function computeTax(chargeable) {
+  let tax = 0;
+  const rows = [];
+  for (const b of BRACKETS) {
+    if (chargeable <= b.from) {
+      rows.push({ bracket: b, incomeInBand: 0, taxInBand: 0, active: false });
+      continue;
+    }
+    const upper = Math.min(chargeable, b.to === Infinity ? chargeable : b.to);
+    const incomeInBand = upper - b.from;
+    const taxInBand = incomeInBand * b.rate / 100;
+    tax += taxInBand;
+    rows.push({ bracket: b, incomeInBand, taxInBand, active: incomeInBand > 0 });
+  }
+  return { tax, rows };
+}
+
+function calculate() {
+  const gross = parseFloat(document.getElementById('gross-income').value) || 0;
+  const rPersonal  = parseFloat(document.getElementById('relief-personal').value)  || 0;
+  const rEpf       = parseFloat(document.getElementById('relief-epf').value)       || 0;
+  const rSocso     = parseFloat(document.getElementById('relief-socso').value)      || 0;
+  const rLifestyle = parseFloat(document.getElementById('relief-lifestyle').value)  || 0;
+  const rOther     = parseFloat(document.getElementById('relief-other').value)      || 0;
+
+  if (gross <= 0) { alert('Please enter a valid gross income.'); return; }
+
+  const totalRelief = rPersonal + rEpf + rSocso + rLifestyle + rOther;
+  const chargeable = Math.max(0, gross - totalRelief);
+  const { tax, rows } = computeTax(chargeable);
+  const effectiveRate = gross > 0 ? (tax / gross * 100) : 0;
+
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('result-output').style.display = 'block';
+
+  document.getElementById('res-tax').textContent = fmt(tax);
+  document.getElementById('res-gross').textContent = fmt(gross);
+  document.getElementById('res-chargeable').textContent = fmt(chargeable);
+  document.getElementById('res-reliefs').textContent = fmt(totalRelief);
+  document.getElementById('res-effective').textContent = effectiveRate.toFixed(2) + '%';
+  document.getElementById('res-monthly').textContent = fmt(tax / 12);
+
+  // Bracket table
+  const tbody = document.getElementById('bracket-tbody');
+  tbody.innerHTML = '';
+
+  for (const row of rows) {
+    const b = row.bracket;
+    const bandWidth = b.to === Infinity ? chargeable - b.from : b.to - b.from;
+    const tr = document.createElement('tr');
+    if (row.active) {
+      tr.classList.add('taxed');
+      // Mark the highest bracket with income as "active-bracket"
+    }
+    tr.innerHTML = `
+      <td>${fmtBand(b.from, b.to)}</td>
+      <td class="bracket-rate">${b.rate}%</td>
+      <td style="color:var(--muted)">${b.to === Infinity ? '—' : fmt(bandWidth)}</td>
+      <td style="color:var(--text)">${row.incomeInBand > 0 ? fmt(row.incomeInBand) : '<span style="color:var(--muted)">—</span>'}</td>
+      <td class="${row.taxInBand > 0 ? 'bracket-tax' : 'bracket-zero'}">${row.taxInBand > 0 ? fmt(row.taxInBand) : '—'}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // Total row
+  const totalRow = document.createElement('tr');
+  totalRow.style.cssText = 'background:var(--bg3);font-weight:700;border-top:2px solid var(--border)';
+  totalRow.innerHTML = `
+    <td colspan="4" style="text-align:right;padding-right:1rem;color:var(--muted);font-size:0.85rem">Total Tax Payable</td>
+    <td class="bracket-tax">${fmt(tax)}</td>
+  `;
+  tbody.appendChild(totalRow);
+}
+
+// Auto-calculate with defaults on load
+calculate();
+</script>
+</body>
+</html>
