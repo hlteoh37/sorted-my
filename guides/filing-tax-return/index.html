@@ -434,6 +434,17 @@ footer a { color: var(--muted); }
 footer a:hover { color: var(--text); }
 .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
 
+/* FAQ */
+.faq { list-style: none; padding: 0; }
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.75rem; overflow: hidden; }
+.faq-q { padding: 1rem 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; background: var(--bg2); display: flex; justify-content: space-between; align-items: center; color: var(--text); user-select: none; }
+.faq-q:hover { background: var(--bg3); }
+.faq-q::after { content: '+'; font-size: 1.2rem; color: var(--accent); min-width: 20px; text-align: center; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 0.9rem; color: var(--muted); background: var(--bg2); line-height: 1.7; }
+.faq-a strong { color: var(--text); }
+.faq-item.open .faq-a { display: block; }
+
 /* Disclaimer */
 .disclaimer {
   background: rgba(255,209,102,0.06);
@@ -583,6 +594,79 @@ footer a:hover { color: var(--text); }
   </div>
 
   <div class="section">
+    <h2>Pro Tips <em>(Tips Pro)</em></h2>
+    <ul style="font-size:0.9rem;color:var(--muted);list-style:none;padding:0;">
+      <li style="padding:0.8rem 0;border-bottom:1px solid var(--border);">✅ <strong>File even if your PCB covers everything.</strong> Your employer's PCB deductions may have over-deducted — filing triggers a refund. Thousands of Malaysians leave money with LHDN by not filing.</li>
+      <li style="padding:0.8rem 0;border-bottom:1px solid var(--border);">✅ <strong>Lifestyle relief is a catch-all.</strong> Books, sports equipment, gym fees, internet, electronic devices — all claimable up to RM2,500 combined. Most people under-claim this.</li>
+      <li style="padding:0.8rem 0;border-bottom:1px solid var(--border);">✅ <strong>Claim full RM9,000 individual relief.</strong> This is automatic — you don't need receipts. Just enter it. Many first-timers miss this because it feels too simple.</li>
+      <li style="padding:0.8rem 0;border-bottom:1px solid var(--border);">✅ <strong>Medical expenses include dental and optometry.</strong> Up to RM8,000 for serious illness and disability (different sub-limits). Basic medical + full medical examination RM1,000 sub-limit. Dental up to RM1,000 sub-limit within the medical relief.</li>
+      <li style="padding:0.8rem 0;border-bottom:1px solid var(--border);">✅ <strong>SSPN contributions qualify for relief.</strong> Deposits to Skim Simpanan Pendidikan Nasional (SSPN) for your children's education get relief up to RM8,000. Often overlooked.</li>
+      <li style="padding:0.8rem 0;border-bottom:1px solid var(--border);">✅ <strong>Refunds come to your registered bank account.</strong> Make sure your bank account details are updated in MyTax before filing. Refunds typically arrive within 30 working days if all details are correct.</li>
+      <li style="padding:0.8rem 0;">✅ <strong>Keep receipts for 7 years.</strong> You don't upload receipts when e-filing, but LHDN can audit any year within 7 years. If you can't produce receipts during an audit, the claimed relief is disallowed and penalties apply.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Common Mistakes <em>(Kesilapan Biasa)</em></h2>
+    <ul style="font-size:0.9rem;color:var(--muted);list-style:none;padding:0;">
+      <li style="padding:0.7rem 0;border-bottom:1px solid var(--border);">❌ <strong>Thinking PCB means you don't need to file.</strong> PCB (Potongan Cukai Bulanan) is a monthly tax deduction — it does NOT substitute for filing. You must still submit your annual return.</li>
+      <li style="padding:0.7rem 0;border-bottom:1px solid var(--border);">❌ <strong>Missing the e-Filing deadline (15 May).</strong> Late filing = immediate fine of RM200–RM20,000 plus possible imprisonment. Set a calendar reminder for 1 May — that leaves two weeks of buffer.</li>
+      <li style="padding:0.7rem 0;border-bottom:1px solid var(--border);">❌ <strong>Not registering for a TIN early.</strong> TIN registration via e-Daftar can take 1–3 working days. Don't wait until May — do it in March when e-Filing opens.</li>
+      <li style="padding:0.7rem 0;border-bottom:1px solid var(--border);">❌ <strong>Under-claiming reliefs.</strong> The average Malaysian only claims 4–5 reliefs. Run through the complete list — most people qualify for 8+ categories.</li>
+      <li style="padding:0.7rem 0;border-bottom:1px solid var(--border);">❌ <strong>Not declaring freelance / side income.</strong> Freelance income (Grab, tutoring, consulting, selling online) is taxable. LHDN cross-checks against platform data. Declare it.</li>
+      <li style="padding:0.7rem 0;">❌ <strong>Submitting without verifying pre-filled data.</strong> MyTax auto-fills some data but it can have errors. Always verify your income figure against your Form EA — don't just accept the pre-fill.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <ul class="faq">
+      <li class="faq-item">
+        <div class="faq-q">Do I need to file if my employer already deducts PCB every month?</div>
+        <div class="faq-a">Yes. PCB (Monthly Tax Deduction) is an advance payment, not a substitution for filing. You still must submit an annual return. In fact, many people find their PCB over-deducted — filing confirms the exact tax and may trigger a refund.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">What if I worked multiple jobs in the same year?</div>
+        <div class="faq-a">Declare all employment income from all employers on the same Form BE. Collect Form EA from each employer. Each employer's PCB is entered separately. The portal calculates your total tax liability on combined income.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">I have freelance income on top of a salaried job. Which form do I file?</div>
+        <div class="faq-a">If your freelance income is classified as business income, you file <strong>Form B</strong> (not Form BE). Business income includes Grab driving, tutoring as a business, consulting, selling goods regularly. Casual one-time receipts may still go on Form BE as "other income." When in doubt, use Form B — it's safer and has more reliefs available.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">When will I get my tax refund?</div>
+        <div class="faq-a">LHDN targets 30 working days from the submission date for e-Filing refunds. Common reasons for delays: bank account not updated in MyTax, discrepancy in income figures, or your return is flagged for review. Check your MyTax account for status. If it's been over 90 days, call LHDN at 03-8911 1000.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">Can I claim relief for my parents' medical expenses?</div>
+        <div class="faq-a">Yes — you can claim <strong>RM1,500 per parent</strong> for medical treatment expenses, or <strong>RM3,000 per parent</strong> if they have a serious disease (as defined by LHDN). You must be paying for their medical costs and they must not have sufficient income to cover it themselves. Keep medical receipts.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">I forgot to file last year. Am I in trouble?</div>
+        <div class="faq-a">File as soon as possible — late filing is better than not filing at all. LHDN typically issues a fine under Section 112 of the Income Tax Act. For first-time late filers, LHDN often accepts a voluntary disclosure with a reduced penalty. Contact your nearest LHDN branch or call their helpline. Do not ignore it — unpaid taxes can result in travel bans and legal action.</div>
+      </li>
+      <li class="faq-item">
+        <div class="faq-q">Can I file from overseas?</div>
+        <div class="faq-a">Yes — MyTax portal is accessible from any country. You need your TIN, e-Filing PIN (or MyDigital ID), and internet access. If you've been working overseas for the full year and are a non-resident for tax purposes (present in Malaysia &lt;182 days), you file Form M (non-resident) instead, and a flat 30% tax rate applies with no personal reliefs.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;margin-top:0.75rem;">
+      <a href="/sorted-my/guides/epf-guide/" style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;display:block;color:var(--text);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-weight:700;margin-bottom:0.25rem;">💰 EPF (KWSP) Complete Guide</div>
+        <div style="color:var(--muted);font-size:0.8rem;">EPF contributions are a key tax relief — up to RM7,000 combined with life insurance.</div>
+      </a>
+      <a href="/sorted-my/guides/home-loan-guide/" style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;display:block;color:var(--text);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-weight:700;margin-bottom:0.25rem;">🏦 Applying for a Home Loan</div>
+        <div style="color:var(--muted);font-size:0.8rem;">First-home buyers get RM7,000/year housing loan interest relief for the first 3 YAs.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
     <h2>Key Government Links</h2>
     <ul class="checklist">
       <li><strong>MyTax portal (e-Filing):</strong> <a href="https://mytax.hasil.gov.my" target="_blank" rel="noopener">mytax.hasil.gov.my</a></li>
@@ -615,6 +699,9 @@ footer a:hover { color: var(--text); }
 <script>
 document.querySelectorAll('.checklist li').forEach(function(li) {
   li.addEventListener('click', function() { this.classList.toggle('checked'); });
+});
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() { this.parentElement.classList.toggle('open'); });
 });
 </script>
 </body>
