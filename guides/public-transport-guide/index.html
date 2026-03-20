@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Public Transport Guide 2026: LRT, MRT, KTM, Bus & Touch 'n Go | Sorted</title>
+  <meta name="description" content="Complete guide to public transport in Malaysia 2026. LRT, MRT, KTM Komuter, Monorail, Rapid KL Bus — fares, Touch 'n Go cards, monthly passes (PULSE), concession cards for students and seniors.">
+  <meta property="og:title" content="Malaysia Public Transport Guide 2026 — Sorted">
+  <meta property="og:description" content="How to use LRT, MRT, KTM, Monorail, and Rapid KL Bus in Malaysia. Touch 'n Go card, PULSE monthly pass, student concession cards, and journey planning apps.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/guides/public-transport-guide/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.summary-box { background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid var(--accent2); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.summary-item { flex: 1; min-width: 120px; }
+.summary-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+.summary-item .value { font-size: 1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.07); border: 1px solid rgba(255,209,102,0.25); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.warn-box strong { color: var(--warn); }
+.success-box { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.success-box strong { color: var(--success); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: var(--accent2); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li { counter-increment: step; margin-bottom: 0; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border); background: var(--bg2); font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+.steps li:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.steps li:last-child { border-radius: 0 0 var(--radius) var(--radius); border-bottom: none; }
+.steps li:nth-child(even) { background: var(--bg3); }
+.steps li::before { content: "Step " counter(step); display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent2); margin-bottom: 0.35rem; }
+.steps li strong { color: #fff; font-size: 1.02rem; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 0.7rem 0 0.7rem 0; font-size: 0.92rem; border-bottom: 1px solid var(--border); color: var(--text); display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; transition: opacity 0.2s; line-height: 1.55; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before { content: ''; width: 18px; height: 18px; min-width: 18px; border: 2px solid var(--accent2); border-radius: 4px; display: inline-block; margin-top: 0.15rem; transition: background 0.15s, border-color 0.15s; }
+.checklist li.checked::before { background: var(--accent2); border-color: var(--accent2); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/%3E%3C/svg%3E"); background-size: 14px; background-position: center; background-repeat: no-repeat; }
+.checklist li.checked { opacity: 0.5; text-decoration: line-through; }
+.checklist li strong { color: #fff; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.9375rem; margin: 1.25rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(108, 99, 255, 0.25); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+th { background: rgba(108, 99, 255, 0.2); padding: 0.9rem 1.2rem; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text); font-weight: 700; border-bottom: 2px solid rgba(108, 99, 255, 0.45); }
+th:not(:last-child), td:not(:last-child) { border-right: 1px solid var(--border); }
+td { padding: 0.8rem 1.2rem; border-bottom: 1px solid rgba(45,49,72,0.8); color: var(--text); line-height: 1.5; }
+tr:last-child td { border-bottom: none; }
+td:first-child { font-weight: 600; }
+tr:nth-child(odd) td { background: var(--bg2); }
+tr:nth-child(even) td { background: var(--bg3); }
+tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s ease; }
+.amount { color: var(--success); font-weight: 700; font-family: monospace; font-size: 0.9375rem; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-weight: 700; font-size: 0.95rem; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.faq-q::after { content: '+'; color: var(--accent2); font-size: 1.2rem; font-weight: 400; flex-shrink: 0; margin-top: -0.1rem; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; display: none; }
+.faq-item.open .faq-a { display: block; }
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s, background 0.2s; }
+.related-card:hover { border-color: var(--accent); background: var(--bg3); text-decoration: none; }
+.rel-desc { color: var(--muted); font-weight: 400; font-size: 0.8rem; margin-top: 0.3rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 4rem; }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--text); }
+.disclaimer { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; color: var(--muted); font-size: 0.8rem; margin: 2rem 0; }
+.toc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+.toc h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; margin-bottom: 0.75rem; }
+.toc ol { padding-left: 1.25rem; }
+.toc li { margin-bottom: 0.35rem; font-size: 0.875rem; }
+.toc a { color: var(--muted); }
+.toc a:hover { color: var(--text); }
+.line-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.line-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.line-card .line-name { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
+.line-card .line-op { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.5rem; font-weight: 600; }
+.line-card .line-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+.line-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/sorted-my/" class="nav-brand">S<span>orted</span></a>
+  <div class="nav-links">
+    <a href="/sorted-my/">All Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="guide-header">
+    <a href="/sorted-my/" class="back-link">&larr; All Guides</a>
+    <h1>Malaysia Public Transport Guide 2026</h1>
+    <p class="subtitle">LRT, MRT, KTM Komuter, Monorail, Rapid KL Bus — how to pay, how to save money, and how to get around without a car.</p>
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <div class="summary-item">
+      <div class="label">Minimum Fare</div>
+      <div class="value">RM0.70 (Bus)</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Rail Fares</div>
+      <div class="value">RM1.00–RM9.50</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Monthly Pass</div>
+      <div class="value">From RM30/month</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Payment</div>
+      <div class="value">Touch 'n Go card</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Coverage</div>
+      <div class="value">Klang Valley + states</div>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>In This Guide</h3>
+    <ol>
+      <li><a href="#overview">Overview of the network</a></li>
+      <li><a href="#payment">How to pay: Touch 'n Go card</a></li>
+      <li><a href="#fares">Fares by line</a></li>
+      <li><a href="#monthly-pass">Monthly passes (PULSE)</a></li>
+      <li><a href="#concession">Concession cards (students, seniors, OKU)</a></li>
+      <li><a href="#apps">Journey planning apps</a></li>
+      <li><a href="#tips">Pro tips for commuters</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section" id="overview">
+    <h2>Overview: Malaysia's Urban Rail & Bus Network</h2>
+    <p>The Klang Valley (Kuala Lumpur and surroundings) has one of the most extensive urban rail networks in Southeast Asia — operated by multiple agencies across several lines. If you're new to it, the different names and operators can be confusing. Here's how it breaks down:</p>
+
+    <div class="line-grid">
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#e40428;"></span>Ampang/Sri Petaling LRT</div>
+        <div class="line-op">Prasarana (Rapid KL)</div>
+        <div class="line-desc">Two branches merging at Masjid Jamek. Covers Ampang, Cheras, Puchong, Sri Petaling, and into KL city centre.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#0073bc;"></span>Kelana Jaya LRT</div>
+        <div class="line-op">Prasarana (Rapid KL)</div>
+        <div class="line-desc">KL city centre to Kelana Jaya and Putra Heights. Passes KLCC, KL Sentral, Subang, and Shah Alam.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#93278f;"></span>Putrajaya MRT (Laluan Putrajaya)</div>
+        <div class="line-op">Prasarana (Rapid KL)</div>
+        <div class="line-desc">Kwasa Damansara to Putrajaya Sentral. Covers Kepong, Sentul, Titiwangsa, KLCC, Bukit Bintang, Muzium Negara.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#00a651;"></span>Kajang MRT (Laluan Kajang)</div>
+        <div class="line-op">Prasarana (Rapid KL)</div>
+        <div class="line-desc">Sungai Buloh to Putrajaya/Kajang. Covers Damansara, Semantan, KL Sentral, Bukit Chagar, Kajang.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#f7941d;"></span>KTM Komuter</div>
+        <div class="line-op">KTM (Keretapi Tanah Melayu)</div>
+        <div class="line-desc">Commuter rail covering greater KV. Klang–Batu Caves, Port Klang–Tanjung Malim. Longer distances, lower fares per km.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#c8a000;"></span>KL Monorail</div>
+        <div class="line-op">Prasarana (Rapid KL)</div>
+        <div class="line-desc">Short line in KL city: KL Sentral to Titiwangsa. 11 stations. Good for Bukit Bintang and Chow Kit access.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#c00000;"></span>ERL / KLIA Ekspres</div>
+        <div class="line-op">ERL (Express Rail Link)</div>
+        <div class="line-desc">KL Sentral to KLIA / KLIA2. Premium airport express. Separate fare system — not Rapid KL.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name"><span class="line-dot" style="background:#00adef;"></span>Rapid KL Bus</div>
+        <div class="line-op">Prasarana (Rapid KL)</div>
+        <div class="line-desc">Extensive bus network across KV. Feeder buses connect rail stations to residential areas. Flat fare: RM1.00 within zones, RM0.70 for some routes.</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Outside Klang Valley:</strong> Penang has Rapid Penang (buses + CAT free bus in Georgetown). Johor Bahru has Rapid JB. Kuching has City Public Link buses. KL's rail network does not extend to other states.
+    </div>
+  </div>
+
+  <!-- HOW TO PAY -->
+  <div class="section" id="payment">
+    <h2>How to Pay: Touch 'n Go Card (Kad Touch 'n Go)</h2>
+
+    <p>The <strong>Touch 'n Go (TNG) card</strong> is the standard payment method for all Prasarana rail and bus services in the Klang Valley, as well as KTM Komuter. It is a <strong>contactless stored-value card</strong> (not to be confused with the Touch 'n Go eWallet — see below).</p>
+
+    <h3>Physical Touch 'n Go Card vs TNG eWallet</h3>
+    <table>
+      <tr>
+        <th></th>
+        <th>Physical TNG Card</th>
+        <th>TNG eWallet (NFC)</th>
+      </tr>
+      <tr>
+        <td>What it is</td>
+        <td>Contactless plastic card</td>
+        <td>Phone app with NFC tap-to-pay</td>
+      </tr>
+      <tr>
+        <td>Works on rail gates?</td>
+        <td>Yes — all Rapid KL and KTM</td>
+        <td>Yes, if phone has NFC and eWallet is set up</td>
+      </tr>
+      <tr>
+        <td>Also works for</td>
+        <td>Highways (PLUS tolls), car parks</td>
+        <td>Online payments, P2P transfer, bills</td>
+      </tr>
+      <tr>
+        <td>Where to buy/reload</td>
+        <td>7-Eleven, Petronas, convenience stores, KTM/Rapid KL stations, MyNews</td>
+        <td>Download app, link to bank account</td>
+      </tr>
+      <tr>
+        <td>Card cost</td>
+        <td>RM10 (includes RM5 initial value, RM5 non-refundable deposit)</td>
+        <td>Free (app download)</td>
+      </tr>
+      <tr>
+        <td>Lost card</td>
+        <td>Balance lost (card not registered to your name)</td>
+        <td>Balance protected (tied to your account)</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      <strong>Recommendation:</strong> If you use public transport daily, get a physical TNG card for transit and keep the TNG eWallet for online payments and money transfers. The eWallet's NFC works on transit gates, but battery dependence is a real risk.
+    </div>
+
+    <h3>How to Top Up Your TNG Card (Cara Tambah Nilai)</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>Convenience stores:</strong> 7-Eleven, Petronas Mesra, MyNews, KK Super Mart — most common method</li>
+      <li><strong>ATMs:</strong> Select banks have TNG top-up options at their ATMs</li>
+      <li><strong>TNG kiosks:</strong> At major train stations and selected locations</li>
+      <li><strong>Online via TNG app:</strong> Top up your physical card through the TNG app if your card is registered</li>
+      <li><strong>KTM counters:</strong> At all KTM Komuter stations</li>
+    </ul>
+    <p>Minimum top-up: RM10. Maximum balance on card: RM600.</p>
+
+    <h3>Checking Your TNG Balance</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>The balance is displayed on the screen at every rail gate when you tap in or out</li>
+      <li>TNG kiosk machines at stations show balance and transaction history</li>
+      <li>TNG app (if your physical card is registered)</li>
+      <li>Some top-up points (7-Eleven) also display balance when you hand over the card</li>
+    </ul>
+
+    <div class="warn-box">
+      <strong>Keep at least RM3–5 on your card.</strong> If your card balance is too low to complete a journey, the gate will reject you on exit and you may need to pay a penalty fare at the customer service counter. Always top up before you run out.
+    </div>
+  </div>
+
+  <!-- FARES -->
+  <div class="section" id="fares">
+    <h2>Fares by Line</h2>
+    <p>Fares are distance-based on most rail lines. The longer the trip, the higher the fare. All fares are correct as of March 2026.</p>
+
+    <h3>Rapid KL Rail (LRT + MRT + Monorail)</h3>
+    <table>
+      <tr>
+        <th>Distance / Journey</th>
+        <th>Fare (Adult)</th>
+      </tr>
+      <tr>
+        <td>1–3 stations (short)</td>
+        <td>RM1.00–RM2.00</td>
+      </tr>
+      <tr>
+        <td>4–8 stations (medium)</td>
+        <td>RM2.00–RM4.00</td>
+      </tr>
+      <tr>
+        <td>Long-distance (e.g. Ampang to Putra Heights)</td>
+        <td>RM4.50–RM6.50</td>
+      </tr>
+      <tr>
+        <td>Maximum single journey fare</td>
+        <td>RM9.50</td>
+      </tr>
+    </table>
+
+    <h3>KTM Komuter</h3>
+    <table>
+      <tr>
+        <th>Journey Example</th>
+        <th>Approx. Fare</th>
+      </tr>
+      <tr>
+        <td>KL Sentral → Midvalley</td>
+        <td>RM1.00</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Subang Jaya</td>
+        <td>RM2.30</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Klang</td>
+        <td>RM5.00</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Batu Caves</td>
+        <td>RM2.60</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Port Klang</td>
+        <td>RM5.60</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Tanjung Malim</td>
+        <td>RM10.60</td>
+      </tr>
+    </table>
+
+    <h3>Rapid KL Bus</h3>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Fare</th>
+      </tr>
+      <tr>
+        <td>Rapid KL Bus (standard routes)</td>
+        <td>RM1.00 flat fare (within zone)</td>
+      </tr>
+      <tr>
+        <td>BRT Sunway Line</td>
+        <td>RM0.70 flat fare (within BRT zone)</td>
+      </tr>
+      <tr>
+        <td>Gombak / Rawang / outskirt feeder</td>
+        <td>RM1.00–RM3.00</td>
+      </tr>
+    </table>
+
+    <h3>KLIA Ekspres (Airport)</h3>
+    <table>
+      <tr>
+        <th>Route</th>
+        <th>Fare (Adult)</th>
+      </tr>
+      <tr>
+        <td>KL Sentral → KLIA</td>
+        <td>RM35</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → KLIA2</td>
+        <td>RM35</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → KL Midtown (Salak Tinggi)</td>
+        <td>RM10</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      <strong>Children's fares:</strong> Children under 90 cm in height travel free on Rapid KL rail and bus. Children 90 cm–12 years pay half fare. Bring ID if asked.
+    </div>
+  </div>
+
+  <!-- MONTHLY PASS -->
+  <div class="section" id="monthly-pass">
+    <h2>Monthly Passes: PULSE (Prasarana Urban Link Subscription for Everyone)</h2>
+
+    <p>If you commute daily, a monthly pass will save you significantly compared to paying per trip. Prasarana's <strong>PULSE pass</strong> gives unlimited rides within defined zones for a fixed monthly fee.</p>
+
+    <h3>PULSE Pass Types</h3>
+    <table>
+      <tr>
+        <th>Pass Type</th>
+        <th>Coverage</th>
+        <th>Monthly Price</th>
+      </tr>
+      <tr>
+        <td>PULSE Rail (30 days)</td>
+        <td>Unlimited trips on all Rapid KL rail lines (LRT + MRT + Monorail)</td>
+        <td>RM100</td>
+      </tr>
+      <tr>
+        <td>PULSE Bus (30 days)</td>
+        <td>Unlimited trips on all Rapid KL bus routes</td>
+        <td>RM30</td>
+      </tr>
+      <tr>
+        <td>PULSE Rail + Bus (30 days)</td>
+        <td>Unlimited trips on all Rapid KL rail AND bus</td>
+        <td>RM120</td>
+      </tr>
+    </table>
+
+    <h3>Is a PULSE Pass Worth It?</h3>
+    <p>If you commute 5 days a week on rail, you make roughly 20 round trips per month. A typical mid-length rail journey is RM3.00 each way = RM6.00 return × 20 days = RM120 per month without a pass. The PULSE Rail pass costs RM100 — saving RM20. The longer your commute, the more you save.</p>
+
+    <div class="success-box">
+      <strong>Best for:</strong> Daily commuters who take LRT/MRT 4+ days a week. The pass pays for itself in about 17 days for a standard 5-day commute. After day 17, every ride is free.
+    </div>
+
+    <h3>How to Buy a PULSE Pass</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Purchase via the <strong>MyRapid app</strong> (iOS and Android) — the easiest method</li>
+      <li>At <strong>Rapid KL customer service counters</strong> at major stations (KL Sentral, Masjid Jamek, Dang Wangi, etc.)</li>
+      <li>The pass is loaded onto your Touch 'n Go card (physical card) or linked to your TNG eWallet</li>
+      <li>Activate on the day you first tap in — the 30 days start from first use</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Note:</strong> PULSE passes cover Rapid KL services only. They do NOT cover KTM Komuter (different operator). If you take KTM, you will still pay per trip even with a PULSE pass. KTM has its own monthly pass (see below).
+    </div>
+
+    <h3>KTM Monthly Season Ticket (Tiket Musim KTM)</h3>
+    <p>KTM Komuter offers its own monthly pass called <strong>Tiket Musim</strong>. It covers unlimited KTM Komuter trips between two fixed stations (your origin and destination).</p>
+    <table>
+      <tr>
+        <th>Journey</th>
+        <th>Monthly Season Ticket Price</th>
+      </tr>
+      <tr>
+        <td>KL Sentral → Subang Jaya</td>
+        <td>~RM46</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Klang</td>
+        <td>~RM100</td>
+      </tr>
+      <tr>
+        <td>KL Sentral → Batu Caves</td>
+        <td>~RM52</td>
+      </tr>
+    </table>
+    <p>Buy at any KTM Komuter station counter. You need your MyKad or passport. The ticket is issued as a printed card or can be loaded onto a TNG card at certain locations.</p>
+  </div>
+
+  <!-- CONCESSION CARDS -->
+  <div class="section" id="concession">
+    <h2>Concession Cards: Students, Senior Citizens & OKU</h2>
+    <p>If you are a student, senior citizen (60+), or a person with disability (OKU), you are entitled to <strong>half-price (50%) discounted fares</strong> on Rapid KL rail and bus services.</p>
+
+    <h3>MyRapid Concession Card (Kad Konsesi MyRapid)</h3>
+    <table>
+      <tr>
+        <th>Who Qualifies</th>
+        <th>Discount</th>
+        <th>Proof Required</th>
+      </tr>
+      <tr>
+        <td>Students (primary, secondary, pre-university)</td>
+        <td>50% off all fares</td>
+        <td>Student ID (Kad Pelajar) from school/institution + MyKad/Birth certificate</td>
+      </tr>
+      <tr>
+        <td>Senior citizens (60 years and above)</td>
+        <td>50% off all fares</td>
+        <td>MyKad (age verified from IC number)</td>
+      </tr>
+      <tr>
+        <td>OKU (Orang Kurang Upaya / Persons with Disability)</td>
+        <td>50% off all fares</td>
+        <td>OKU card (Kad OKU) issued by JKM</td>
+      </tr>
+    </table>
+
+    <h3>How to Get a MyRapid Concession Card</h3>
+    <ul class="steps">
+      <li>
+        <strong>Visit a Rapid KL Customer Service counter</strong>
+        Located at major stations including KL Sentral, Masjid Jamek, KLCC, Dang Wangi, Chan Sow Lin. Bring your documents.
+      </li>
+      <li>
+        <strong>Submit your application with documents</strong>
+        Students: student ID + MyKad (or parent's MyKad for children). Seniors: MyKad only. OKU: OKU card + MyKad.
+      </li>
+      <li>
+        <strong>Pay a small card fee and load initial value</strong>
+        The concession card is issued on the spot at most counters. A minimum reload is usually required.
+      </li>
+      <li>
+        <strong>Use the concession card for all rail/bus journeys</strong>
+        Tap the concession card at gates — the system automatically applies the 50% discount.
+      </li>
+    </ul>
+
+    <div class="warn-box">
+      <strong>Concession cards are personal and non-transferable.</strong> Using someone else's concession card is fraud and can result in penalties. Each person in your family must have their own concession card.
+    </div>
+
+    <h3>Concession for KTM Komuter</h3>
+    <p>KTM also offers concession fares for students and senior citizens. Apply at any KTM Komuter station counter with the same documents. KTM concession cards are separate from Rapid KL concession cards.</p>
+  </div>
+
+  <!-- APPS -->
+  <div class="section" id="apps">
+    <h2>Journey Planning Apps</h2>
+
+    <h3>MyRapid (Official Prasarana App)</h3>
+    <p>The official app for Rapid KL. Use it to plan journeys on LRT, MRT, Monorail, and bus; buy PULSE passes; check real-time arrival information; and reload your TNG card (if registered). Available on iOS and Android.</p>
+
+    <h3>Google Maps</h3>
+    <p>Google Maps has reasonably accurate Klang Valley public transport routes and times. It covers rail and bus. Good for quick journey planning when you're unfamiliar with an area. Not always up-to-date with service disruptions.</p>
+
+    <h3>Moovit</h3>
+    <p>Crowdsourced public transport app with good KV coverage. Often has more up-to-date bus route information than Google Maps for Malaysia. Available on iOS and Android.</p>
+
+    <h3>KTM Mobile</h3>
+    <p>KTM Berhad's official app for KTM Komuter and intercity train schedules, fare checking, and seat booking for intercity services. Essential if you use KTM regularly.</p>
+
+    <div class="info-box">
+      <strong>Pro tip:</strong> Use the MyRapid app for route planning on Rapid KL. Use KTM Mobile for KTM journeys. Use Google Maps for quick door-to-door directions that combine both.
+    </div>
+  </div>
+
+  <!-- PRO TIPS -->
+  <div class="section" id="tips">
+    <h2>Pro Tips for Daily Commuters</h2>
+
+    <h3>Save Money</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>Get a PULSE pass</strong> if you commute 4+ days a week. It pays for itself in under 3 weeks.</li>
+      <li><strong>Apply for a concession card</strong> if you are a student, senior, or OKU. 50% savings add up to hundreds of ringgit per year.</li>
+      <li><strong>Take the KTM</strong> for longer-distance suburban journeys — it's often cheaper than LRT/MRT for the same distance.</li>
+      <li><strong>Combine bus + rail</strong> instead of taking Grab for the first/last mile. Rapid KL feeder buses are RM1 flat.</li>
+      <li><strong>Check if your employer pays for travel</strong> — some companies provide transport allowances or reimburse monthly passes.</li>
+    </ul>
+
+    <h3>Avoid Common Mistakes</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>Always tap OUT.</strong> If you forget to tap out at the exit gate, you will be charged the maximum fare. If this happens, visit the customer service counter immediately — they can usually reverse the overcharge if you report it the same day.</li>
+      <li><strong>Don't tap multiple times.</strong> One tap in, one tap out. If you tap twice by accident, go to the customer service counter before leaving the station.</li>
+      <li><strong>Know which platform you need.</strong> LRT Kelana Jaya and KTM often share buildings (e.g., KL Sentral, Subang Jaya) but are different levels and different gates. Tapping in for the wrong train means paying again to exit and enter the right platform.</li>
+      <li><strong>Peak hours are brutal.</strong> Trains are packed 7:30–9:30am and 5:30–7:30pm. If you can shift your hours by 30–60 minutes, do it.</li>
+    </ul>
+
+    <h3>Navigating Interchanges</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li><strong>KL Sentral</strong> — The main interchange hub. KTM Komuter, Kelana Jaya LRT, KL Monorail, KLIA Ekspres, and ERL all connect here. Follow the signs carefully — it is a large building.</li>
+      <li><strong>Masjid Jamek</strong> — Interchange between Kelana Jaya LRT and Ampang/Sri Petaling LRT. You can transfer free of charge here.</li>
+      <li><strong>Chan Sow Lin</strong> — Interchange between Ampang LRT and Sri Petaling LRT lines.</li>
+      <li><strong>Titiwangsa</strong> — Interchange between KL Monorail and Putrajaya MRT.</li>
+      <li><strong>Muzium Negara</strong> — Interchange between Kajang MRT and KTM Komuter.</li>
+    </ul>
+
+    <h3>Safety &amp; Etiquette</h3>
+    <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.25rem;margin-bottom:0.75rem;">
+      <li>Priority seating (petak khas) at the ends of carriages is reserved for elderly, pregnant women, and those with disabilities. Don't sit there unless you need it.</li>
+      <li>Pink carriages on LRT trains are women-only. Not enforced aggressively but it is the rule.</li>
+      <li>Eating and drinking are prohibited inside all rail carriages. Fines apply.</li>
+      <li>Keep your belongings close in busy stations — bag snatching is rare but pickpocketing occurs in crowded trains.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use the Touch 'n Go eWallet (on my phone) instead of a physical card at rail gates?</div>
+      <div class="faq-a">Yes, if your phone has NFC capability and you have set up the TNG eWallet with NFC enabled. Open the eWallet app, tap "Go" to activate the transit feature, and tap your phone at the gate. Not all Android phones support this — iPhones with TNG eWallet NFC support are more recent. If your phone runs out of battery, you won't be able to tap out, so keep a physical TNG card as backup if you rely on the eWallet for daily commuting.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I forgot to tap out and was charged the maximum fare. What do I do?</div>
+      <div class="faq-a">Go to the <strong>customer service counter</strong> at any Rapid KL station before you leave the building, or as soon as possible. Explain what happened and they will check your transaction record and refund the difference if the error is clear. If you only noticed later, you can also call Rapid KL at 1-800-38-7787 or submit a refund request at myrapid.com.my. Keep your receipt or note the time and station for reference.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does the PULSE monthly pass cover the KLIA Ekspres?</div>
+      <div class="faq-a">No. KLIA Ekspres is operated by ERL (Express Rail Link), which is a completely separate company from Prasarana. PULSE passes only cover Rapid KL rail (LRT, MRT, Monorail) and/or Rapid KL bus. You pay separately for KLIA Ekspres regardless of whether you have a PULSE pass.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can tourists use the same Touch 'n Go card and pay the same fares as locals?</div>
+      <div class="faq-a">Yes. A physical Touch 'n Go card can be purchased at any convenience store or station and used by anyone regardless of nationality. Fares are the same. Tourist rail passes (unlimited travel for 1–3 days) are sometimes available at KL Sentral — ask at the customer service counter. Concession fares (50% discount) are only for Malaysian residents with valid cards.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I get from KL Sentral to KLIA / KLIA2?</div>
+      <div class="faq-a">The fastest option is the <strong>KLIA Ekspres</strong> — 28 minutes to KLIA, 33 minutes to KLIA2, RM35 each way. Buy tickets at the KLIA Ekspres counters inside KL Sentral (not the regular Rapid KL counters). The <strong>KLIA Transit</strong> makes additional stops (Bandar Tasik Selatan, Putrajaya/Cyberjaya, Salak Tinggi) and takes about 55 minutes — cheaper at RM35 to KLIA but slower. Budget taxis take 45–70 minutes depending on traffic, Grab costs RM45–60+.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">My Touch 'n Go card is damaged or lost. Can I get a refund?</div>
+      <div class="faq-a">For a <strong>damaged card</strong>: bring it to any TNG service centre or selected Rapid KL counters. If the chip is still readable, they can transfer the balance to a new card. If completely unreadable, recovery is difficult. For a <strong>lost card</strong>: if your card was <strong>not registered</strong> to your name, the balance is gone permanently — this is the main risk of unregistered cards. If your card was registered (via the TNG app), the remaining balance can be recovered — call TNG at 1-300-88-8088 or visit a service centre. This is a strong reason to register your TNG card after purchase.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the difference between Rapid KL, KTM, and ERL — are they the same?</div>
+      <div class="faq-a">No, they are three separate companies. <strong>Rapid KL</strong> (operated by Prasarana) runs the LRT lines, MRT lines, KL Monorail, and Rapid KL bus. <strong>KTM</strong> (Keretapi Tanah Melayu) runs KTM Komuter (suburban commuter rail) and intercity trains. <strong>ERL</strong> (Express Rail Link) runs KLIA Ekspres and KLIA Transit. Each company has its own fares and ticketing system, though all accept Touch 'n Go payment. Monthly passes (PULSE for Rapid KL, Tiket Musim for KTM) are not interchangeable.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are trains running during public holidays?</div>
+      <div class="faq-a">Yes. Rapid KL rail and bus operates 7 days a week including public holidays, typically from around 6am to midnight. On public holidays, trains often run on a reduced schedule (similar to weekends). KTM Komuter also operates on public holidays with adjusted schedules. Check the MyRapid app or Rapid KL social media for service alerts on major holidays like Hari Raya and Chinese New Year, when schedules may change.</div>
+    </div>
+
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> Fares, pass prices, and schedules are correct as of March 2026 and are subject to change. Always verify current fares with Rapid KL (myrapid.com.my), KTM (ktmb.com.my), or ERL (kliaekspres.com) before travel. This guide is not affiliated with any transport operator or government agency.
+  </div>
+
+  <!-- COFFEE BANNER -->
+  <div class="coffee-banner">
+    <p>Sorted helps Malaysians navigate paperwork and bureaucracy for free. If this guide saved you time, consider buying me a coffee.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">Buy me a coffee</a>
+  </div>
+
+  <!-- RELATED GUIDES -->
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/tng-ewallet/" class="related-card">
+        Touch 'n Go eWallet Guide
+        <div class="rel-desc">Registration, eKYC, top-up, limits, and payments</div>
+      </a>
+      <a href="/sorted-my/guides/grab-driver-guide/" class="related-card">
+        How to Become a Grab Driver
+        <div class="rel-desc">PSV licence, Puspakom, registration and earnings</div>
+      </a>
+      <a href="/sorted-my/guides/buying-a-car/" class="related-card">
+        Buying a Car in Malaysia
+        <div class="rel-desc">New vs used, loan, insurance, registration</div>
+      </a>
+      <a href="/sorted-my/guides/getting-driving-license/" class="related-card">
+        Getting a Driving Licence
+        <div class="rel-desc">L licence, P licence, full licence — the full process</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/sorted-my/">All Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+  <div>Sorted &mdash; Every document. Every step. Sorted.</div>
+  <div style="margin-top:0.4rem;">Not affiliated with Rapid KL, KTM, ERL, or any government agency. For informational purposes only.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>
