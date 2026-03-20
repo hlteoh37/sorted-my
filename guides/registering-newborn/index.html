@@ -409,6 +409,25 @@ td:first-child { color: var(--text); }
   transition: background 0.2s;
 }
 .coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.related-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.875rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .r-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.related-card .r-desc { color: var(--muted); font-size: 0.8rem; }
 
 /* Footer */
 footer {
@@ -666,6 +685,24 @@ footer a:hover { color: var(--text); }
     <div class="faq-item">
       <div class="faq-q">Is the birth certificate the same as the MyKid?</div>
       <div class="faq-a">No. They are two separate documents. The birth certificate (sijil kelahiran) is a paper document issued by JPN confirming the registered details of the birth. The MyKid is the physical identity card. Both are issued as part of the birth registration process, but they serve different purposes. The birth certificate is used for school enrolment, passport applications, and legal matters. The MyKid is the day-to-day identity document. Keep both — the birth certificate is not replaceable the same way an IC is.</div>
+    </div>
+  </div>
+
+    <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/getting-married-non-muslim/" class="related-card">
+        <div class="r-title">💍 Getting Married (Non-Muslim)</div>
+        <div class="r-desc">JPN marriage registration — documents and steps for civil marriage in Malaysia.</div>
+      </a>
+      <a href="/sorted-my/guides/making-a-will/" class="related-card">
+        <div class="r-title">📜 Making a Will</div>
+        <div class="r-desc">Name a guardian for your child. Making a will is the most important thing new parents can do.</div>
+      </a>
+      <a href="/sorted-my/guides/applying-ptptn/" class="related-card">
+        <div class="r-title">🎓 Applying for PTPTN</div>
+        <div class="r-desc">Start planning early — PTPTN education loans for your child's future tertiary education.</div>
+      </a>
     </div>
   </div>
 

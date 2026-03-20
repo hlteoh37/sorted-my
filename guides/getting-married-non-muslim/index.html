@@ -419,6 +419,25 @@ tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s
   transition: background 0.2s;
 }
 .coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.related-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.875rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .r-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.related-card .r-desc { color: var(--muted); font-size: 0.8rem; }
 
 /* Footer */
 footer {
@@ -633,6 +652,24 @@ footer a:hover { color: var(--text); }
     <div class="faq-item">
       <div class="faq-q">Can the 6-month validity period for the Notice of Marriage be extended?</div>
       <div class="faq-a">No — the Notice of Marriage lapses after 6 months if the marriage has not been solemnized. You must reapply from the beginning: file a new Notice of Marriage, wait another 21 days, and pay the registration fee again. If circumstances prevent you from solemnizing within 6 months (illness, travel, family emergency), start the process again as soon as you can — there is no extension or waiver mechanism.</div>
+    </div>
+  </div>
+
+    <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/registering-newborn/" class="related-card">
+        <div class="r-title">👶 Registering a Newborn</div>
+        <div class="r-desc">JPN birth registration, MyKad application, and hospital documents — what to do in the first 14 days.</div>
+      </a>
+      <a href="/sorted-my/guides/making-a-will/" class="related-card">
+        <div class="r-title">📜 Making a Will</div>
+        <div class="r-desc">Protect your spouse and children. Don't wait — write a will soon after marriage.</div>
+      </a>
+      <a href="/sorted-my/guides/epf-guide/" class="related-card">
+        <div class="r-title">💰 EPF (KWSP) Guide</div>
+        <div class="r-desc">Update your EPF nomination after marriage — your savings should go to the right person.</div>
+      </a>
     </div>
   </div>
 

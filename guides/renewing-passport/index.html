@@ -419,6 +419,25 @@ tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s
   transition: background 0.2s;
 }
 .coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.related-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.875rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .r-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.related-card .r-desc { color: var(--muted); font-size: 0.8rem; }
 
 /* Footer */
 footer {
@@ -645,6 +664,24 @@ footer a:hover { color: var(--text); }
     <div class="faq-item">
       <div class="faq-q">My name on my IC has changed (marriage/deed poll). How do I renew my passport?</div>
       <div class="faq-a">You must first update your IC to reflect the new name before applying for a passport renewal. Your passport must match your IC. Bring your updated IC, the legal name change document (marriage certificate / deed poll / court order depending on the reason), your old passport, and any other required documents to the Immigration counter. The name on your passport will be updated to match your current IC. If you have pending flights booked in your old name, check with your airline — most allow free name corrections for legal name changes with supporting documents.</div>
+    </div>
+  </div>
+
+    <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/replacing-mykad/" class="related-card">
+        <div class="r-title">🪪 Replacing Your MyKad</div>
+        <div class="r-desc">Updating your IC? Check if your MyKad details also need updating at the same time.</div>
+      </a>
+      <a href="/sorted-my/guides/applying-pr-mm2h/" class="related-card">
+        <div class="r-title">🌏 Applying for PR / MM2H</div>
+        <div class="r-desc">Permanent residency or MM2H long-stay visa — the routes to staying in Malaysia long-term.</div>
+      </a>
+      <a href="/sorted-my/guides/getting-driving-license/" class="related-card">
+        <div class="r-title">🚗 Getting Your Driving Licence</div>
+        <div class="r-desc">Need a Malaysian driving licence? Your passport or MyKad is required to apply.</div>
+      </a>
     </div>
   </div>
 

@@ -409,6 +409,25 @@ td:first-child { color: var(--text); }
   transition: background 0.2s;
 }
 .coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.related-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.875rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .r-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.related-card .r-desc { color: var(--muted); font-size: 0.8rem; }
 
 /* Footer */
 footer {
@@ -697,6 +716,24 @@ footer a:hover { color: var(--text); }
     <div class="faq-item">
       <div class="faq-q">When must my employer pay my final salary?</div>
       <div class="faq-a">Under the Employment Act 1955, the final salary must be paid within 7 days after your last day of work. This includes all outstanding salary, unused annual leave payout, and any other accrued benefits. If your employer fails to pay within 7 days, this is a breach of the Employment Act. You can file a complaint with the Labour Department (Jabatan Tenaga Kerja) or submit an eAduan online. Keep all payslips and written communications as evidence.</div>
+    </div>
+  </div>
+
+    <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/epf-guide/" class="related-card">
+        <div class="r-title">💰 EPF (KWSP) Guide</div>
+        <div class="r-desc">Resigned? Check your EPF balance, withdrawal options, and what to do with your savings.</div>
+      </a>
+      <a href="/sorted-my/guides/filing-tax-return/" class="related-card">
+        <div class="r-title">📊 Filing Your Tax Return (LHDN)</div>
+        <div class="r-desc">Get your EA form and file your taxes — especially important in the year you resigned.</div>
+      </a>
+      <a href="/sorted-my/guides/registering-enterprise/" class="related-card">
+        <div class="r-title">🏪 Registering a Sole Proprietorship</div>
+        <div class="r-desc">Going freelance after quitting? Register your business with SSM in under a day.</div>
+      </a>
     </div>
   </div>
 

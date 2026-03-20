@@ -419,6 +419,25 @@ tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s
   transition: background 0.2s;
 }
 .coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.related-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.875rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .r-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.related-card .r-desc { color: var(--muted); font-size: 0.8rem; }
 
 /* Footer */
 footer {
@@ -620,6 +639,24 @@ footer a:hover { color: var(--text); }
     <div class="faq-item">
       <div class="faq-q">What happens if I get married abroad — do I need to register in Malaysia?</div>
       <div class="faq-a">Yes. If a Malaysian Muslim marries abroad, the marriage must be registered with the Jabatan Agama Islam in Malaysia within 6 months of returning. Bring your foreign marriage certificate (and certified translation if not in Malay/English), plus the standard JAI documents. Failure to register can cause complications with inheritance (harta pusaka), divorce proceedings, and children's citizenship. The JPN (civil registration) does not automatically recognise an overseas Syariah marriage — JAI registration is separate and required.</div>
+    </div>
+  </div>
+
+    <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/registering-newborn/" class="related-card">
+        <div class="r-title">👶 Registering a Newborn</div>
+        <div class="r-desc">JPN birth registration, MyKad application, and hospital documents — what to do in the first 14 days.</div>
+      </a>
+      <a href="/sorted-my/guides/making-a-will/" class="related-card">
+        <div class="r-title">📜 Making a Will (Wasiat)</div>
+        <div class="r-desc">Protect your spouse and children. Muslim estate distribution and wasiat explained.</div>
+      </a>
+      <a href="/sorted-my/guides/epf-guide/" class="related-card">
+        <div class="r-title">💰 EPF (KWSP) Guide</div>
+        <div class="r-desc">Update your EPF nomination after marriage — your savings should go to the right person.</div>
+      </a>
     </div>
   </div>
 

@@ -419,6 +419,25 @@ tr:hover td { background: rgba(108, 99, 255, 0.12); transition: background 0.15s
   transition: background 0.2s;
 }
 .coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.related-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.875rem;
+  display: block;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .r-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.related-card .r-desc { color: var(--muted); font-size: 0.8rem; }
 
 /* Footer */
 footer {
@@ -645,6 +664,24 @@ footer a:hover { color: var(--text); }
     <div class="faq-item">
       <div class="faq-q">What happens if I miss my road tax renewal?</div>
       <div class="faq-a">Driving with expired road tax is an offence under the Road Transport Act 1987 — fines (saman) of up to RM3,000 can be issued, and your car can be clamped or impounded. If your road tax has been expired for more than 12 months, you may need a PUSPAKOM B2 inspection before renewal. Your insurance policy should not be confused with road tax — the two are separate. Many Malaysians mistakenly believe renewing insurance automatically renews road tax. It does not.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/getting-driving-license/" class="related-card">
+        <div class="r-title">🚗 Getting Your Driving Licence</div>
+        <div class="r-desc">PDL, KPP theory test, JPJ practical test — everything to get your P licence and full licence.</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-car-insurance/" class="related-card">
+        <div class="r-title">🛡️ Claiming Car Insurance</div>
+        <div class="r-desc">Step-by-step guide to making a car insurance claim in Malaysia — own damage, third party, and total loss.</div>
+      </a>
+      <a href="/sorted-my/guides/home-loan-guide/" class="related-card">
+        <div class="r-title">🏦 Home Loan Guide</div>
+        <div class="r-desc">Understanding how banks assess loan eligibility — useful if you're also planning a hire purchase.</div>
+      </a>
     </div>
   </div>
 
