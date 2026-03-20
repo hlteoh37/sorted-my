@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Home Broadband Comparison 2026 — Unifi vs TIME vs Maxis vs CelcomDigi | Sorted</title>
+  <meta name="description" content="Side-by-side comparison of Malaysia's home fibre broadband plans in 2026. Unifi, TIME, Maxis, CelcomDigi, and Yes — prices, speeds, contracts, and who each plan suits.">
+  <meta property="og:title" content="Malaysia Home Broadband Comparison 2026 — Sorted">
+  <meta property="og:description" content="Unifi vs TIME vs Maxis vs CelcomDigi vs Yes — every plan, every price, who wins for your home.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/guides/broadband-comparison/">
+  <style>
+/* Sorted — shared stylesheet */
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.summary-box { background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.summary-item { flex: 1; min-width: 120px; }
+.summary-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+.summary-item .value { font-size: 1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.07); border: 1px solid rgba(255,209,102,0.25); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.warn-box strong { color: var(--warn); }
+.success-box { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.success-box strong { color: var(--success); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: var(--accent2); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.checklist { list-style: none; }
+.checklist li { padding: 0.5rem 0; padding-left: 1.75rem; position: relative; font-size: 0.9rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 1rem; }
+.checklist li strong { color: var(--text); }
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.9375rem; margin: 1.25rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(108,99,255,0.25); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+th { background: rgba(108,99,255,0.2); padding: 0.9rem 1.2rem; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text); font-weight: 700; border-bottom: 2px solid rgba(108,99,255,0.45); white-space: nowrap; }
+th:not(:last-child), td:not(:last-child) { border-right: 1px solid var(--border); }
+td { padding: 0.8rem 1.2rem; border-bottom: 1px solid rgba(45,49,72,0.8); color: var(--text); line-height: 1.5; font-weight: 400; }
+tr:last-child td { border-bottom: none; }
+td:first-child { color: var(--text); font-weight: 600; }
+tr:nth-child(odd) td { background: var(--bg2); }
+tr:nth-child(even) td { background: var(--bg3); }
+tr:hover td { background: rgba(108,99,255,0.12); transition: background 0.15s ease; }
+.amount { color: var(--accent2); font-weight: 700; font-family: monospace; font-size: 0.95rem; }
+.badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.4rem; }
+.badge-green { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid rgba(34,197,94,0.3); }
+.badge-yellow { background: rgba(255,209,102,0.12); color: var(--warn); border: 1px solid rgba(255,209,102,0.3); }
+.badge-blue { background: rgba(108,99,255,0.15); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.3); }
+.provider-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.provider-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+.provider-card .provider-name { font-weight: 800; font-size: 1.05rem; color: var(--text); margin-bottom: 0.25rem; }
+.provider-card .provider-tagline { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+.provider-card .plan-row { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+.provider-card .plan-row:last-child { border-bottom: none; }
+.provider-card .plan-speed { color: var(--muted); }
+.provider-card .plan-price { color: var(--accent2); font-weight: 700; font-family: monospace; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-weight: 700; color: var(--text); font-size: 0.95rem; margin-bottom: 0.4rem; }
+.faq-a { color: var(--muted); font-size: 0.875rem; }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+.winner-box { background: rgba(72,207,173,0.06); border: 1px solid rgba(72,207,173,0.25); border-left: 4px solid var(--accent2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; }
+.winner-box strong { color: var(--accent2); }
+@media (max-width: 600px) { .summary-box { flex-direction: column; gap: 1rem; } nav { padding: 0 1rem; } .nav-links { display: none; } th, td { padding: 0.65rem 0.75rem; font-size: 0.8rem; } .provider-cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/sorted-my/" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="/sorted-my/">All Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="/sorted-my/" class="back-link">← All Guides</a>
+    <h1>🌐 Malaysia Home Broadband Comparison 2026</h1>
+    <p class="subtitle">Unifi vs TIME vs Maxis vs CelcomDigi vs Yes — every plan, every price, and which one to actually pick for your home.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-item">
+      <div class="label">Entry Price</div>
+      <div class="value">RM89/month</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Fastest Home Plan</div>
+      <div class="value">2 Gbps (TIME)</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Best Coverage</div>
+      <div class="value">Unifi (nationwide)</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Last Updated</div>
+      <div class="value">March 2026</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>How to use this guide:</strong> Jump to the <a href="#comparison-table">Quick Comparison Table</a> for a side-by-side view, or read the <a href="#who-should-pick">Who Should Pick What</a> section for a personalised recommendation. Coverage availability (especially for TIME) is the first thing to check — no plan is better than no service.
+  </div>
+
+  <!-- QUICK COMPARISON TABLE -->
+  <div class="section" id="comparison-table">
+    <h2>Quick Comparison Table</h2>
+    <p>All prices listed are the standard monthly fee. Promotional discounts may apply — always check the provider's official website before signing.</p>
+    <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Provider</th>
+        <th>Speed</th>
+        <th>Price/Month</th>
+        <th>Contract</th>
+        <th>Best For</th>
+      </tr>
+      <tr>
+        <td>Unifi (TM)<br><span style="font-size:0.75rem;color:var(--muted);font-weight:400;">Widest coverage in Malaysia</span></td>
+        <td>100 Mbps</td>
+        <td class="amount">RM89</td>
+        <td>24 months</td>
+        <td>Budget, first-time</td>
+      </tr>
+      <tr>
+        <td>Unifi (TM)</td>
+        <td>300 Mbps</td>
+        <td class="amount">RM129</td>
+        <td>24 months</td>
+        <td>Families (4–6 users)</td>
+      </tr>
+      <tr>
+        <td>Unifi (TM)</td>
+        <td>500 Mbps</td>
+        <td class="amount">RM149</td>
+        <td>24 months</td>
+        <td>WFH + streaming</td>
+      </tr>
+      <tr>
+        <td>TIME<br><span style="font-size:0.75rem;color:var(--muted);font-weight:400;">Condos &amp; apartments mainly</span></td>
+        <td>200 Mbps</td>
+        <td class="amount">RM99</td>
+        <td>No contract available</td>
+        <td>Flexible tenants</td>
+      </tr>
+      <tr>
+        <td>TIME</td>
+        <td>600 Mbps</td>
+        <td class="amount">RM139</td>
+        <td>No contract available</td>
+        <td>Speed seekers</td>
+      </tr>
+      <tr>
+        <td>TIME</td>
+        <td>1 Gbps</td>
+        <td class="amount">RM199</td>
+        <td>24 months</td>
+        <td>Power users, gamers</td>
+      </tr>
+      <tr>
+        <td>TIME</td>
+        <td>2 Gbps</td>
+        <td class="amount">RM379</td>
+        <td>24 months</td>
+        <td>10G PON early adopters</td>
+      </tr>
+      <tr>
+        <td>Maxis Fibre<br><span style="font-size:0.75rem;color:var(--muted);font-weight:400;">Best for Maxis mobile subscribers</span></td>
+        <td>100 Mbps</td>
+        <td class="amount">RM89</td>
+        <td>Optional</td>
+        <td>Maxis mobile users</td>
+      </tr>
+      <tr>
+        <td>Maxis Fibre</td>
+        <td>300 Mbps</td>
+        <td class="amount">RM129</td>
+        <td>Optional</td>
+        <td>Bundle with postpaid</td>
+      </tr>
+      <tr>
+        <td>CelcomDigi Fibre<br><span style="font-size:0.75rem;color:var(--muted);font-weight:400;">Uses TM's network</span></td>
+        <td>50 Mbps</td>
+        <td class="amount">RM90</td>
+        <td>24 months</td>
+        <td>Light users</td>
+      </tr>
+      <tr>
+        <td>CelcomDigi Fibre</td>
+        <td>100 Mbps</td>
+        <td class="amount">RM97–RM130</td>
+        <td>24 months</td>
+        <td>Bundle with Postpaid 60</td>
+      </tr>
+      <tr>
+        <td>Yes 5G<br><span style="font-size:0.75rem;color:var(--muted);font-weight:400;">Wireless, no fibre cable needed</span></td>
+        <td>5G wireless</td>
+        <td class="amount">Varies</td>
+        <td>Flexible</td>
+        <td>No cable access / renters</td>
+      </tr>
+    </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">Prices are standard retail rates as of March 2026. Promotions, bundle discounts, and limited-time offers may apply. Verify at each provider's official website before signing up.</p>
+  </div>
+
+  <!-- PROVIDER DEEP DIVES -->
+  <div class="section">
+    <h2>Provider Breakdown</h2>
+
+    <h3>Unifi by Telekom Malaysia — Best Coverage, Reliable Choice</h3>
+    <p>Unifi (run by TM, or Telekom Malaysia / syarikat telekomunikasi negara) has the broadest fibre coverage in Malaysia. If you live outside a major city or in a landed property, Unifi is often the <em>only</em> fibre option available. Its network reaches states and areas that TIME and other providers simply don't serve.</p>
+    <div class="provider-cards">
+      <div class="provider-card">
+        <div class="provider-name">Unifi</div>
+        <div class="provider-tagline">Telekom Malaysia — widest fibre network</div>
+        <div class="plan-row"><span class="plan-speed">100 Mbps</span><span class="plan-price">RM89/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">300 Mbps</span><span class="plan-price">RM129/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">500 Mbps</span><span class="plan-price">RM149/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">1 Gbps</span><span class="plan-price">~RM229/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">2 Gbps</span><span class="plan-price">RM319/mth</span></div>
+      </div>
+    </div>
+    <p><strong>Contract:</strong> All plans on a 24-month contract. Free Wi-Fi 6 router included. Free installation.</p>
+    <p><strong>What makes Unifi stand out:</strong> Nationwide fibre coverage including kampung areas and smaller towns. Strong customer service network (Unifi stores across Malaysia). Frequently bundles entertainment (Netflix, HBO Max) with selected plans. Pricing has been reduced significantly in recent years — the RM89 entry plan was RM149 just a few years ago.</p>
+    <div class="winner-box"><strong>Best for:</strong> Landed properties, areas outside Klang Valley, those who want the most widespread coverage and an established support network.</div>
+
+    <h3>TIME dotCom — Fastest Speeds, Great for Condos</h3>
+    <p>TIME (Time dotCom Berhad / Masa Internet) operates its own fibre network, separate from TM, and is renowned for offering the best speed-to-price ratio in Malaysia. The 600 Mbps plan at RM139/month with symmetrical upload speeds (500 Mbps up) is difficult to beat for price-conscious heavy users. TIME was the first Malaysian provider to commercially deploy 2 Gbps home broadband using 10G PON technology.</p>
+    <div class="provider-cards">
+      <div class="provider-card">
+        <div class="provider-name">TIME</div>
+        <div class="provider-tagline">Speed champion — condos &amp; apartments</div>
+        <div class="plan-row"><span class="plan-speed">200 Mbps</span><span class="plan-price">RM99/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">600 Mbps</span><span class="plan-price">RM139/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">1 Gbps</span><span class="plan-price">RM199/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">2 Gbps</span><span class="plan-price">RM379/mth</span></div>
+      </div>
+    </div>
+    <p><strong>Contract:</strong> 24-month standard. No-contract plans have been offered periodically (check TIME's website for current availability).</p>
+    <p><strong>What makes TIME stand out:</strong> Symmetrical upload speeds (great for video calls, cloud backups, content creators). Includes a Wi-Fi 6 router. Has upgraded existing customers to faster speeds at no cost historically. Competitive pricing at the high-speed tiers.</p>
+    <p><strong>The catch:</strong> TIME's network is concentrated in condominiums and high-density residential buildings, primarily in the Klang Valley, Penang, and Johor Bahru. Check your address on TIME's website before getting excited — many landed properties and rural areas are not covered.</p>
+    <div class="winner-box"><strong>Best for:</strong> Condo residents in KL, PJ, Penang, JB who want maximum speed for the price. Content creators and WFH professionals who need fast upload speeds.</div>
+
+    <h3>Maxis Fibre — Best for Maxis Mobile Subscribers</h3>
+    <p>Maxis Fibre uses TM's infrastructure, so its coverage is broadly similar to Unifi. The main advantage of Maxis Fibre is for existing Maxis mobile (postpaid) subscribers — bundling home and mobile plans can unlock unlimited mobile data and promotional discounts not available to standalone subscribers.</p>
+    <div class="provider-cards">
+      <div class="provider-card">
+        <div class="provider-name">Maxis Fibre</div>
+        <div class="provider-tagline">Bundle with Maxis mobile postpaid</div>
+        <div class="plan-row"><span class="plan-speed">100 Mbps</span><span class="plan-price">RM89/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">300 Mbps</span><span class="plan-price">RM129/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">500 Mbps+</span><span class="plan-price">RM149+/mth</span></div>
+      </div>
+    </div>
+    <p><strong>Contract:</strong> Both contract and no-contract options available. Fixed pricing for two years on contract plans.</p>
+    <p><strong>What makes Maxis stand out:</strong> No-contract flexibility (useful for renters). Bundle deals with Maxis postpaid plans for unlimited mobile data. Maxperts home setup team included. Fixed pricing guarantee for the contract duration.</p>
+    <div class="winner-box"><strong>Best for:</strong> Current Maxis postpaid users who want a bundle discount, or tenants who want home broadband without a 24-month lock-in.</div>
+
+    <h3>CelcomDigi Fibre — Bundle Deals for CD Mobile Users</h3>
+    <p>Following the Celcom-Digi merger in 2022, CelcomDigi (CD) now offers home fibre broadband using TM's network infrastructure. The standalone plans are priced similarly to Unifi and Maxis. The main value-add is for existing CelcomDigi postpaid subscribers — bundling with the Postpaid 60 plan can reduce the 100 Mbps home plan to RM97/month with 6 months of free internet.</p>
+    <div class="provider-cards">
+      <div class="provider-card">
+        <div class="provider-name">CelcomDigi</div>
+        <div class="provider-tagline">Leverages TM's network</div>
+        <div class="plan-row"><span class="plan-speed">50 Mbps</span><span class="plan-price">RM90/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">100 Mbps</span><span class="plan-price">RM97–RM130/mth</span></div>
+        <div class="plan-row"><span class="plan-speed">300 Mbps</span><span class="plan-price">~RM150/mth</span></div>
+      </div>
+    </div>
+    <p><strong>Contract:</strong> 24 months standard.</p>
+    <div class="winner-box"><strong>Best for:</strong> Existing CelcomDigi postpaid subscribers who want to bundle mobile and home plans at a discount.</div>
+
+    <h3>Yes 5G Wireless — No Cable Needed</h3>
+    <p>Yes (YTL Communications) offers a fundamentally different product: wireless home broadband using 4G and 5G, with no physical fibre cable required. This is a genuine advantage in situations where fibre installation is impossible or impractical — older buildings without fibre infrastructure, short-term rentals, or frequent movers.</p>
+    <p><strong>Coverage:</strong> 5G coverage in KL, Petaling Jaya, Shah Alam, George Town, Ipoh, Johor Bahru, Kuching, and other major urban areas. Check Yes's website for your specific address.</p>
+    <p><strong>The tradeoff:</strong> Wireless broadband cannot match the stability and consistent speed of a physical fibre connection. Peak-hour congestion is more noticeable. If fibre is available at your address, fibre is usually the better choice for home use.</p>
+    <div class="winner-box"><strong>Best for:</strong> Tenants in buildings without fibre infrastructure, frequent movers who can't commit to a 24-month contract, rural areas not yet covered by fibre providers.</div>
+  </div>
+
+  <!-- WHO SHOULD PICK WHAT -->
+  <div class="section" id="who-should-pick">
+    <h2>Who Should Pick What</h2>
+    <table>
+      <tr>
+        <th>Your Situation</th>
+        <th>Recommended</th>
+        <th>Why</th>
+      </tr>
+      <tr>
+        <td>Landed house, small town, or rural area</td>
+        <td class="amount">Unifi 100–300 Mbps</td>
+        <td>Widest coverage. Others may not be available at your address.</td>
+      </tr>
+      <tr>
+        <td>Condo in KL/PJ/Penang/JB, need max speed</td>
+        <td class="amount">TIME 600 Mbps</td>
+        <td>Best speed-per-ringgit. Symmetrical upload speeds. WiFi 6 router included.</td>
+      </tr>
+      <tr>
+        <td>Renter who might move in 12 months</td>
+        <td class="amount">Maxis (no contract) or TIME (no contract)</td>
+        <td>No lock-in. Move without penalty.</td>
+      </tr>
+      <tr>
+        <td>Already on Maxis postpaid</td>
+        <td class="amount">Maxis Fibre bundle</td>
+        <td>Bundle discount + unlimited mobile data. Single bill.</td>
+      </tr>
+      <tr>
+        <td>Already on CelcomDigi postpaid</td>
+        <td class="amount">CelcomDigi Fibre bundle</td>
+        <td>RM97/month with Postpaid 60 bundle — competitive price.</td>
+      </tr>
+      <tr>
+        <td>Power user / gamer / content creator</td>
+        <td class="amount">TIME 1 Gbps at RM199</td>
+        <td>Symmetrical gigabit speeds. Best upload performance in Malaysia.</td>
+      </tr>
+      <tr>
+        <td>Building has no fibre cable</td>
+        <td class="amount">Yes 5G wireless</td>
+        <td>Only option for buildings without fibre infrastructure.</td>
+      </tr>
+      <tr>
+        <td>Tight budget, light usage</td>
+        <td class="amount">Unifi 100 Mbps at RM89</td>
+        <td>Cheapest fibre plan in Malaysia. Sufficient for 1–3 users with regular usage.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- HOW TO CHECK COVERAGE -->
+  <div class="section">
+    <h2>Check Coverage Before Signing Anything</h2>
+    <p>Coverage availability is the most important factor — especially for TIME, which is not universally available. Always verify your specific address before committing to a plan. Salespeople may not always know what's available at a specific unit.</p>
+    <ul class="checklist">
+      <li><strong>Unifi:</strong> <a href="https://unifi.com.my/fibre-broadband" target="_blank" rel="noopener">unifi.com.my/fibre-broadband</a> — use the address checker on the sign-up page</li>
+      <li><strong>TIME:</strong> <a href="https://www.time.com.my" target="_blank" rel="noopener">time.com.my</a> — enter your postcode or address; TIME's coverage map is accurate</li>
+      <li><strong>Maxis:</strong> <a href="https://www.maxis.com.my/maxis-fibre/" target="_blank" rel="noopener">maxis.com.my/maxis-fibre</a> — check your address</li>
+      <li><strong>CelcomDigi:</strong> <a href="https://www.celcomdigi.com/home-broadband" target="_blank" rel="noopener">celcomdigi.com/home-broadband</a></li>
+      <li><strong>Yes 5G:</strong> <a href="https://www.yes.my" target="_blank" rel="noopener">yes.my</a> — check 5G coverage map</li>
+    </ul>
+
+    <div class="warn-box">
+      <strong>⚠ TIME coverage tip:</strong> TIME's fibre is available in specific residential buildings that have signed an agreement with TIME. Just because your neighbour has TIME doesn't guarantee your unit is covered — individual unit availability can vary. Check your exact unit address, not just the building name.
+    </div>
+  </div>
+
+  <!-- CONTRACT VS NO CONTRACT -->
+  <div class="section">
+    <h2>Contract vs No Contract — What to Know</h2>
+
+    <h3>Why most plans use 24-month contracts</h3>
+    <p>Providers offer free installation and a free Wi-Fi router as part of the sign-up package. The 24-month contract lets them recoup those upfront costs. Breaking a contract early typically means paying the remaining monthly fees (or a portion) as a termination fee, plus returning the router.</p>
+
+    <h3>If you're renting, negotiate with your landlord first</h3>
+    <p>If you're in a rental property, confirm with your landlord (tuan rumah) that they're okay with you installing broadband before signing up. Most landlords are fine with it — the fibre installation is non-destructive and the line stays behind when you move. But it's worth asking first, especially if the previous tenant already installed a line.</p>
+
+    <h3>Early termination fees</h3>
+    <p>Early termination fees vary by provider but are typically calculated as: remaining months × monthly fee, or a flat fee. Read the fine print before signing. A 24-month contract signed in a property you might vacate in 12 months is a financial commitment.</p>
+
+    <div class="info-box">
+      <strong>No-contract options available from:</strong> Maxis (select plans), TIME (promoted periodically — check current availability). These plans may cost slightly more per month or require a one-time setup fee. For renters, the flexibility premium is often worth it.
+    </div>
+  </div>
+
+  <!-- SPEED GUIDE -->
+  <div class="section">
+    <h2>How Much Speed Do You Actually Need?</h2>
+    <p>Marketing numbers are "up to" speeds — real-world speeds depend on your Wi-Fi router, cable quality, number of active users, and time of day. A rough guide:</p>
+    <table>
+      <tr>
+        <th>Household</th>
+        <th>Usage</th>
+        <th>Recommended Speed</th>
+      </tr>
+      <tr>
+        <td>1–2 people</td>
+        <td>Streaming, video calls, casual browsing</td>
+        <td class="amount">100 Mbps</td>
+      </tr>
+      <tr>
+        <td>3–4 people</td>
+        <td>Multiple streams, some WFH, gaming</td>
+        <td class="amount">300 Mbps</td>
+      </tr>
+      <tr>
+        <td>4–6 people</td>
+        <td>WFH, 4K streaming, gaming, smart devices</td>
+        <td class="amount">500 Mbps</td>
+      </tr>
+      <tr>
+        <td>Power household</td>
+        <td>Multiple WFH setups, large file transfers, content creation</td>
+        <td class="amount">1 Gbps</td>
+      </tr>
+    </table>
+    <p>For most Malaysian households of 2–4 people, the 100–300 Mbps range is more than adequate. The jump to 500 Mbps+ only pays off if you're regularly transferring large files or have many simultaneous heavy users.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I keep my existing Unifi line if I switch apartments?</div>
+      <div class="faq-a">Your Unifi subscription is tied to a specific address, not to you as a person. If you move, you need to either transfer the account to the new tenant (they take over the remaining contract) or terminate and sign a new contract at your new address. Some providers allow address transfers within the same coverage zone — call customer support to find out what options are available in your specific situation.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is TIME really worth switching to from Unifi?</div>
+      <div class="faq-a">If TIME is available at your address and you're on an Unifi contract that's ending, TIME's 600 Mbps at RM139 is exceptional value — you get 6x the speed of Unifi's RM129 plan for RM10 more per month, with better upload speeds. The main risk is service continuity; Unifi has a longer track record and wider support network. For most users in TIME-covered condos, the switch is worth it at renewal time.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What Wi-Fi router do I need?</div>
+      <div class="faq-a">All major providers bundle a free Wi-Fi router with your plan. For most households, the provided router is sufficient. If you want better coverage in a large apartment or landed house, consider adding a mesh Wi-Fi system (such as TP-Link Deco or ASUS ZenWiFi). For plans above 500 Mbps, make sure any additional routers or extenders support Wi-Fi 6 — older Wi-Fi 5 hardware will bottleneck your connection.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Does my internet provider affect my mobile speed?</div>
+      <div class="faq-a">Your home fibre broadband and your mobile data plan are completely separate. Your mobile speed depends on your mobile network provider (CelcomDigi, Maxis, U Mobile, Yes) and signal strength in your area — it has nothing to do with your home fibre provider. However, Maxis and CelcomDigi do offer bundle deals that give unlimited mobile data when combined with their home fibre plans, which can be worth considering if you're a heavy mobile data user.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I get broadband if I'm a foreigner renting in Malaysia?</div>
+      <div class="faq-a">Yes. Unifi, Maxis, and most providers accept foreign nationals as subscribers. You'll need a valid passport, a valid visa/pass, and in some cases a local guarantor or deposit. The application process is the same — apply online or at a service centre. Some providers may require you to sign up in person rather than online if you don't have a MyKad.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What happens to my broadband if I can't pay my bill?</div>
+      <div class="faq-a">Providers typically send payment reminders before suspending service. After a grace period (usually 30–60 days past due), your connection is suspended but not terminated. Pay the overdue amount to restore service. If the account goes into default, the provider may terminate the contract and charge early termination fees. Always set up auto-pay (autopay via FPX or credit card) to avoid accidental suspensions.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/renting-first-apartment/" class="related-card">
+        🏘️ Renting Your First Apartment
+        <div class="rel-desc">Tenancy agreement, deposits, stamp duty — before you set up broadband</div>
+      </a>
+      <a href="/sorted-my/guides/opening-bank-account/" class="related-card">
+        🏦 Opening a Bank Account
+        <div class="rel-desc">You'll need a local account to pay your broadband bill via FPX</div>
+      </a>
+      <a href="/sorted-my/guides/buying-property/" class="related-card">
+        🏠 Buying Property in Malaysia
+        <div class="rel-desc">Set up your home internet after settling the SPA and loan process</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="coffee-banner">
+    <p>If this comparison saved you from picking the wrong plan or signing a contract you'd regret, consider buying me a coffee.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" class="coffee-btn" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠ Disclaimer:</strong> Broadband plan prices, speeds, and promotions change frequently. All figures in this guide are based on publicly available information as of March 2026 and are provided for informational purposes only. Always verify current pricing and plan availability directly with your chosen provider before signing up. Coverage availability varies by location — always check your specific address before committing to a plan.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/sorted-my/">Home</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support this site</a>
+  </div>
+  <p>Sorted — Every document. Every step. Sorted. | Malaysia 🇲🇾</p>
+  <p style="margin-top:0.4rem;">Not affiliated with any Malaysian government body or broadband provider. Information verified March 2026.</p>
+</footer>
+
+</body>
+</html>
