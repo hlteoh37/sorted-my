@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTPTN Loan Repayment Calculator Malaysia 2026 — Monthly Payment & Schedule | Sorted</title>
+  <meta name="description" content="Free PTPTN loan repayment calculator for Malaysia 2026. Calculate your monthly payment, total repayment, lump-sum settlement, salary deduction bracket, and full amortization schedule.">
+  <meta property="og:title" content="PTPTN Loan Repayment Calculator Malaysia 2026 | Sorted">
+  <meta property="og:description" content="Calculate your PTPTN student loan repayment — monthly instalments, total ujrah fee, lump-sum discount, and salary deduction bracket based on your income.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/ptptn-calculator/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Layout */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+
+.relief-divider { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent); margin: 1.5rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(108,99,255,0.2); }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Toggle */
+.toggle-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; }
+.toggle-row label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); cursor: pointer; }
+.toggle-row input[type="checkbox"] { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
+
+/* Results */
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+.result-placeholder { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+.result-placeholder .icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+.result-placeholder p { font-size: 0.9rem; }
+
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.success { color: var(--success); }
+.result-stat .stat-value.danger { color: var(--danger); }
+
+/* Lump sum box */
+.lumpsum-box { background: rgba(72,207,173,0.06); border: 1px solid rgba(72,207,173,0.25); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+.lumpsum-box .ls-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent2); margin-bottom: 0.3rem; }
+.lumpsum-box .ls-amount { font-size: 1.4rem; font-weight: 800; color: var(--accent2); }
+.lumpsum-box .ls-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* Bracket table */
+.bracket-section { margin-bottom: 2.5rem; }
+.bracket-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.bracket-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody tr.active-bracket { background: rgba(108,99,255,0.08); border-color: rgba(108,99,255,0.2); }
+tbody tr.active-bracket td:first-child { border-left: 3px solid var(--accent); padding-left: calc(0.85rem - 3px); }
+tbody tr.taxed { background: rgba(72,207,173,0.04); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.bracket-rate { font-weight: 700; color: var(--accent); }
+.bracket-tax { font-weight: 700; color: var(--accent2); }
+.bracket-zero { color: var(--muted); }
+
+/* Info & warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../broadband/">Broadband</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>🎓 PTPTN Loan Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Calculate your PTPTN student loan monthly repayment, total ujrah fee, lump-sum settlement discount, and salary deduction bracket — updated for 2026.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Your Loan Details</h2>
+
+      <div class="field">
+        <label for="loan-amount">Total PTPTN Loan Amount (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="loan-amount" min="1000" max="300000" step="1000" value="30000" placeholder="30000">
+        </div>
+        <div class="hint">Typical range: RM20,000 – RM60,000 depending on course & institution</div>
+      </div>
+
+      <div class="field">
+        <label for="monthly-salary">Monthly Gross Salary (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="monthly-salary" min="0" max="100000" step="100" value="3500" placeholder="3500">
+        </div>
+        <div class="hint">Used to determine your salary deduction bracket (mandatory if ≥RM2,000/mo)</div>
+      </div>
+
+      <div class="field">
+        <label for="ujrah-rate">Ujrah (Admin Fee) Rate (% per annum)</label>
+        <div class="input-prefix">
+          <span>%</span>
+          <input type="number" id="ujrah-rate" min="0" max="5" step="0.1" value="1" placeholder="1" style="padding-left:2rem">
+        </div>
+        <div class="hint">Standard PTPTN ujrah is 1% p.a. (Islamic financing — not compound interest)</div>
+      </div>
+
+      <div class="field">
+        <label for="loan-term">Repayment Period (years)</label>
+        <input type="number" id="loan-term" min="1" max="15" step="1" value="10" placeholder="10">
+        <div class="hint">Standard is up to 15 years; shorter term = less total ujrah paid</div>
+      </div>
+
+      <div class="relief-divider">Custom Payment Option</div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="custom-payment-toggle" onchange="toggleCustomPayment()">
+        <label for="custom-payment-toggle">Override with custom monthly payment</label>
+      </div>
+
+      <div class="field" id="custom-payment-field" style="display:none">
+        <label for="custom-payment">Custom Monthly Payment (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="custom-payment" min="50" max="100000" step="50" value="300" placeholder="300">
+        </div>
+        <div class="hint">Minimum RM50/month; paying more shortens repayment period</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate My Repayment</button>
+    </div>
+
+    <div class="calc-results" id="results-panel">
+      <h2>Your Results</h2>
+      <div class="result-placeholder" id="result-placeholder">
+        <span class="icon">🎓</span>
+        <p>Enter your loan details, then click Calculate.</p>
+      </div>
+      <div id="result-output" style="display:none">
+        <div class="result-primary">
+          <div class="label">Monthly Repayment</div>
+          <div class="amount" id="res-monthly">—</div>
+          <div class="sub" id="res-monthly-sub">calculated repayment instalment</div>
+        </div>
+
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="stat-label">Loan Principal</div>
+            <div class="stat-value" id="res-principal">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Ujrah Fees</div>
+            <div class="stat-value warn" id="res-ujrah">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Repayment</div>
+            <div class="stat-value danger" id="res-total">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Repayment Period</div>
+            <div class="stat-value" id="res-duration">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Salary Deduction</div>
+            <div class="stat-value" id="res-salary-ded">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Deduction Bracket</div>
+            <div class="stat-value success" id="res-bracket">—</div>
+          </div>
+        </div>
+
+        <div class="lumpsum-box">
+          <div class="ls-label">💰 Lump-Sum Settlement (10% Discount)</div>
+          <div class="ls-amount" id="res-lumpsum">—</div>
+          <div class="ls-sub" id="res-lumpsum-sub">settle now and save on outstanding balance</div>
+        </div>
+
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="stat-label">Principal per Month</div>
+            <div class="stat-value success" id="res-avg-principal">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Ujrah per Month</div>
+            <div class="stat-value warn" id="res-avg-ujrah">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SALARY DEDUCTION TABLE -->
+  <div class="bracket-section">
+    <h2>📊 Salary Deduction Brackets (2026)</h2>
+    <p class="subtitle">Mandatory salary deduction applies to all PTPTN borrowers earning ≥RM2,000/month. Your employer deducts this directly — it counts toward your repayment.</p>
+    <div class="table-wrap">
+      <table id="bracket-table">
+        <thead>
+          <tr>
+            <th>Monthly Gross Salary</th>
+            <th>Deduction Rate</th>
+            <th>Monthly Deduction (example)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="bracket-tbody">
+          <tr><td colspan="4" style="text-align:center;color:var(--muted);padding:1.5rem">Enter your salary above and click Calculate to see your bracket.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>What is ujrah?</strong> Unlike a conventional loan, PTPTN uses Islamic financing (tawarruq). The 1% p.a. "ujrah" is an administrative charge, not compound interest. This means it is calculated on your original loan balance each year — making it significantly cheaper than a typical bank loan at 4–5% p.a.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips to Manage Your PTPTN Loan</h2>
+    <ul class="tips-list">
+      <li>Pay more than the minimum each month — even RM50 extra reduces your ujrah cost significantly over time.</li>
+      <li>If you have savings, consider the <strong>10% lump-sum settlement discount</strong> — it's a guaranteed return on your money.</li>
+      <li>Register for <strong>MySPTJN</strong> (the PTPTN borrower portal) to check your outstanding balance, payment history, and statements.</li>
+      <li>Confirm your <strong>employer has set up salary deduction</strong> via eDDM — non-deduction doesn't mean exemption; arrears accrue.</li>
+      <li>PTPTN graduates who scored <strong>CGPA 3.0 and above</strong> may be eligible for 20% fee reduction — check your eligibility.</li>
+      <li>If unemployed or facing hardship, apply for <strong>deferment</strong> via MySPTJN before missing payments to avoid CCRIS impact.</li>
+      <li>Academic excellence borrowers with first-class honours may qualify for <strong>full loan conversion to scholarship</strong>.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+
+    <p><strong style="color:var(--text)">When does PTPTN repayment start?</strong></p>
+    <p>Repayment begins 12 months after your graduation date (the date your final semester ends, not your convocation). You'll receive a repayment notice from PTPTN — but don't wait; register on MySPTJN early to plan ahead.</p>
+
+    <p><strong style="color:var(--text)">What happens if I miss payments?</strong></p>
+    <p>Missed payments are reported to CCRIS (Central Credit Reference Information System) and can affect your credit score, making it harder to get a car loan, home loan, or credit card. Persistent defaulters may also face an overseas travel ban via immigration blacklisting.</p>
+
+    <p><strong style="color:var(--text)">Is the salary deduction automatic?</strong></p>
+    <p>Yes — if you earn ≥RM2,000/month, your employer is legally required to deduct PTPTN repayments from your salary under the Education Institutions (PTPTN) Act. This started being enforced from 2019. If your employer hasn't set it up, contact HR and PTPTN directly.</p>
+
+    <p><strong style="color:var(--text)">Can I pay more than the required amount?</strong></p>
+    <p>Absolutely. You can make extra payments anytime via PTPTN's online portal, FPX, or at the counter. Extra payments go directly to reducing your principal, which lowers future ujrah charges. There is no early settlement penalty.</p>
+
+    <p><strong style="color:var(--text)">How does the 10% lump-sum discount work?</strong></p>
+    <p>If you pay off your entire outstanding PTPTN balance in one go, PTPTN gives you a 10% reduction on the remaining amount owed. For example, if you owe RM20,000, you pay only RM18,000. This discount applies to the outstanding balance at time of settlement — not your original loan.</p>
+
+    <p><strong style="color:var(--text)">What if I change jobs or become self-employed?</strong></p>
+    <p>Salary deduction only applies to salaried employees. If you become self-employed or your income drops below RM2,000/month, you should still make direct monthly payments to avoid defaulting. You can set up auto-debit via MySPTJN.</p>
+
+    <p><strong style="color:var(--text)">Can the repayment period be extended?</strong></p>
+    <p>Yes — PTPTN allows repayment periods of up to 15 years. If you are facing genuine hardship, you can apply to restructure your repayment schedule via MySPTJN or a PTPTN service centre.</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates based on PTPTN's standard 1% p.a. ujrah rate and published salary deduction brackets as of 2026. Actual repayment amounts may differ based on your specific loan agreement, disbursement history, and any outstanding arrears. Always verify your balance and repayment schedule via <strong>MySPTJN</strong> at ptptn.gov.my or call PTPTN at 1-300-88-7878.
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid #2d3148;margin-top:3rem;">
+  <p style="color:#8892b0;font-size:0.9rem;margin-bottom:0.5rem;">Found this useful? Support free Malaysian tools</p>
+  <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#6c63ff,#48cfad);color:#fff;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem;">Buy me a coffee — $3</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Broadband Compare</a>
+    <a href="../car-loan/">Car Loan Calculator</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+// Salary deduction brackets: [minSalary, maxSalary (exclusive), rate%]
+const DEDUCTION_BRACKETS = [
+  { min: 0,    max: 2000,  rate: 0,  label: 'Below RM2,000' },
+  { min: 2000, max: 3000,  rate: 2,  label: 'RM2,000 – RM2,999' },
+  { min: 3000, max: 4000,  rate: 5,  label: 'RM3,000 – RM3,999' },
+  { min: 4000, max: 5000,  rate: 7,  label: 'RM4,000 – RM4,999' },
+  { min: 5000, max: 7000,  rate: 10, label: 'RM5,000 – RM6,999' },
+  { min: 7000, max: 9000,  rate: 12, label: 'RM7,000 – RM8,999' },
+  { min: 9000, max: Infinity, rate: 15, label: 'RM9,000 and above' },
+];
+
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function fmtMonths(months) {
+  const y = Math.floor(months / 12);
+  const m = months % 12;
+  if (y === 0) return m + ' month' + (m !== 1 ? 's' : '');
+  if (m === 0) return y + ' year' + (y !== 1 ? 's' : '');
+  return y + ' yr ' + m + ' mo';
+}
+
+function getSalaryBracket(salary) {
+  return DEDUCTION_BRACKETS.find(b => salary >= b.min && salary < b.max) || DEDUCTION_BRACKETS[0];
+}
+
+function toggleCustomPayment() {
+  const on = document.getElementById('custom-payment-toggle').checked;
+  document.getElementById('custom-payment-field').style.display = on ? 'block' : 'none';
+}
+
+function calculate() {
+  const principal = parseFloat(document.getElementById('loan-amount').value) || 0;
+  const salary    = parseFloat(document.getElementById('monthly-salary').value) || 0;
+  const ujrahRate = parseFloat(document.getElementById('ujrah-rate').value) || 1;
+  const termYears = parseFloat(document.getElementById('loan-term').value) || 10;
+  const useCustom = document.getElementById('custom-payment-toggle').checked;
+  const customPmt = parseFloat(document.getElementById('custom-payment').value) || 0;
+
+  if (principal <= 0) { alert('Please enter a valid loan amount.'); return; }
+
+  // PTPTN uses simple (flat) ujrah on original balance, not reducing balance
+  // Total ujrah = principal × rate × years
+  const totalUjrah = principal * (ujrahRate / 100) * termYears;
+  const totalRepayment = principal + totalUjrah;
+  const standardMonthly = totalRepayment / (termYears * 12);
+
+  // If custom payment provided, recalculate actual duration
+  let monthlyPayment, actualMonths, actualTotalUjrah, actualTotal;
+
+  if (useCustom && customPmt >= 50) {
+    monthlyPayment = customPmt;
+    // Simulate amortization with flat ujrah model
+    // Monthly ujrah = principal × rate / 12 (flat on original)
+    const monthlyUjrah = principal * (ujrahRate / 100) / 12;
+    const monthlyPrincipal = monthlyPayment - monthlyUjrah;
+
+    if (monthlyPrincipal <= 0) {
+      alert('Custom payment is too low to cover the monthly ujrah fee. Please increase the payment amount.');
+      return;
+    }
+
+    actualMonths = Math.ceil(principal / monthlyPrincipal);
+    actualTotalUjrah = monthlyUjrah * actualMonths;
+    actualTotal = principal + actualTotalUjrah;
+  } else {
+    monthlyPayment = standardMonthly;
+    actualMonths = termYears * 12;
+    actualTotalUjrah = totalUjrah;
+    actualTotal = totalRepayment;
+  }
+
+  // Minimum monthly check
+  if (monthlyPayment < 50) monthlyPayment = 50;
+
+  // Monthly split (average)
+  const avgMonthlyUjrah = actualTotalUjrah / actualMonths;
+  const avgMonthlyPrincipal = principal / actualMonths;
+
+  // Salary deduction
+  const bracket = getSalaryBracket(salary);
+  const salaryDeduction = salary * bracket.rate / 100;
+
+  // Lump-sum settlement on CURRENT outstanding (full principal)
+  const lumpsum = principal * 0.9;
+
+  // Show results
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('result-output').style.display = 'block';
+
+  document.getElementById('res-monthly').textContent = fmt(monthlyPayment);
+  document.getElementById('res-monthly-sub').textContent =
+    useCustom && customPmt >= 50 ? 'custom monthly payment' : 'standard ' + termYears + '-year instalment';
+  document.getElementById('res-principal').textContent = fmt(principal);
+  document.getElementById('res-ujrah').textContent = fmt(actualTotalUjrah);
+  document.getElementById('res-total').textContent = fmt(actualTotal);
+  document.getElementById('res-duration').textContent = fmtMonths(actualMonths);
+  document.getElementById('res-salary-ded').textContent = bracket.rate === 0 ? 'Not mandatory' : fmt(salaryDeduction) + '/mo';
+  document.getElementById('res-bracket').textContent = bracket.rate === 0 ? 'Below RM2,000' : bracket.rate + '%';
+  document.getElementById('res-avg-principal').textContent = fmt(avgMonthlyPrincipal);
+  document.getElementById('res-avg-ujrah').textContent = fmt(avgMonthlyUjrah);
+  document.getElementById('res-lumpsum').textContent = fmt(lumpsum);
+  document.getElementById('res-lumpsum-sub').textContent =
+    'save ' + fmt(principal - lumpsum) + ' vs full outstanding balance of ' + fmt(principal);
+
+  // Salary deduction bracket table
+  const tbody = document.getElementById('bracket-tbody');
+  tbody.innerHTML = '';
+
+  for (const b of DEDUCTION_BRACKETS) {
+    const isActive = b.min === bracket.min;
+    const exampleSalary = b.min === 0 ? 1500 : b.min === 9000 ? 10000 : Math.round((b.min + Math.min(b.max, b.min + 999)) / 2 / 100) * 100;
+    const exampleDeduction = exampleSalary * b.rate / 100;
+    const tr = document.createElement('tr');
+    if (isActive) tr.classList.add('active-bracket');
+    tr.innerHTML = `
+      <td>${b.label}</td>
+      <td class="${b.rate === 0 ? 'bracket-zero' : 'bracket-rate'}">${b.rate}%</td>
+      <td style="color:var(--muted)">${b.rate === 0 ? '—' : fmt(exampleDeduction) + ' on RM' + exampleSalary.toLocaleString('en-MY')}</td>
+      <td>${isActive
+        ? '<span style="color:var(--accent2);font-weight:700">← Your bracket</span>'
+        : b.rate === 0
+          ? '<span style="color:var(--muted)">Exempt</span>'
+          : '<span style="color:var(--muted)">—</span>'
+      }</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+// Auto-calculate with defaults on load
+calculate();
+</script>
+</body>
+</html>
