@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Trust Fee Comparison Calculator Malaysia 2025 — Direct vs Agent vs Robo-Advisor | Sorted</title>
+  <meta name="description" content="Compare unit trust fees across 3 channels in Malaysia: direct from fund house, via unit trust agent, and robo-advisors like StashAway & Wahed. See total fees, net returns, and effective cost over any investment period.">
+  <meta property="og:title" content="Unit Trust Fee Comparison Calculator Malaysia 2025 | Sorted">
+  <meta property="og:description" content="How much are you really paying in unit trust fees? Compare direct, agent, and robo-advisor costs side by side. Includes PRS and EPF-i context.">
+  <meta property="og:type" content="website">
+  <meta name="keywords" content="unit trust fee calculator Malaysia 2025, unit trust comparison Malaysia, sales charge calculator Malaysia, annual management fee unit trust, robo advisor Malaysia fees, StashAway fees, Wahed fees, PRS private retirement scheme, EPF investment unit trust, ASNB ASB fund fees Malaysia">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/calculators/unit-trust-fees.html">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Layout */
+.calc-grid { display: grid; grid-template-columns: 360px 1fr; gap: 1.5rem; margin-bottom: 2rem; align-items: start; }
+@media (max-width: 760px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; position: sticky; top: 72px; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+@media (max-width: 760px) { .calc-inputs { position: static; } }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+.input-suffix { position: relative; }
+.input-suffix span { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-suffix input { padding-right: 2.5rem; }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+/* Scenario columns */
+.scenarios { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+@media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+
+.scenario-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem;
+  position: relative; transition: border-color 0.2s;
+}
+.scenario-card.best { border-color: rgba(34,197,94,0.4); }
+.scenario-card .best-badge {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--success); color: #fff; font-size: 0.65rem; font-weight: 800;
+  padding: 0.15rem 0.65rem; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap;
+}
+.scenario-title { font-size: 0.9rem; font-weight: 800; margin-bottom: 0.25rem; color: var(--text); }
+.scenario-subtitle { font-size: 0.72rem; color: var(--muted); margin-bottom: 1rem; }
+.scenario-stat { margin-bottom: 0.75rem; }
+.scenario-stat .stat-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.scenario-stat .stat-value { font-size: 1.15rem; font-weight: 800; color: var(--text); }
+.scenario-stat .stat-value.warn { color: var(--warn); }
+.scenario-stat .stat-value.success { color: var(--success); }
+.scenario-stat .stat-value.accent { color: var(--accent2); }
+.scenario-stat .stat-value.muted { color: var(--muted); font-size: 0.95rem; font-weight: 500; }
+.scenario-divider { border: none; border-top: 1px solid var(--border); margin: 0.75rem 0; }
+
+/* Breakdown table */
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.col-amount { font-weight: 700; color: var(--accent2); }
+.col-warn { font-weight: 700; color: var(--warn); }
+.col-success { font-weight: 700; color: var(--success); }
+.col-muted { color: var(--muted); font-size: 0.82rem; }
+.total-row { background: var(--bg3) !important; font-weight: 700; border-top: 2px solid var(--border); }
+
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.success-box { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--muted); margin: 1.5rem 0; }
+.success-box strong { color: var(--success); }
+
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+.placeholder-msg { text-align: center; color: var(--muted); padding: 2rem 1rem; font-size: 0.9rem; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../index.html">Guides</a>
+    <a href="../compare/broadband/">Broadband</a>
+    <a href="https://hlteoh37.github.io/go-make-money/public/coffee.html" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../index.html" class="back-link">← Back to all guides</a>
+    <h1>📈 Unit Trust Fee Comparison Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Compare the true cost of investing through a direct fund house, unit trust agent, or robo-advisor in Malaysia. See total fees paid, net portfolio value, and effective cost ratio over your investment period.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Your Investment Details</h2>
+
+      <div class="field">
+        <label for="invest-amount">Investment Amount (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="invest-amount" min="1000" max="10000000" step="1000" value="50000" placeholder="50000" oninput="calculate()">
+        </div>
+        <div class="hint">Lump sum invested upfront</div>
+      </div>
+
+      <div class="field">
+        <label for="annual-return">Expected Annual Return (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="annual-return" min="1" max="30" step="0.5" value="7" placeholder="7" oninput="calculate()">
+        </div>
+        <div class="hint">Gross return before fees. Malaysian equity funds average ~6–9% p.a. historically.</div>
+      </div>
+
+      <div class="field">
+        <label for="period">Investment Period (Years)</label>
+        <input type="number" id="period" min="1" max="40" step="1" value="10" placeholder="10" oninput="calculate()">
+        <div class="hint">How long you plan to stay invested</div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0 1rem;">
+      <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);margin-bottom:1rem;">Customise Fee Scenarios</p>
+
+      <div class="field">
+        <label for="sc-direct">Direct — Sales Charge (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="sc-direct" min="0" max="10" step="0.1" value="1" oninput="calculate()">
+        </div>
+        <div class="hint">Typical: 0–1% via EPF member investment scheme or fund house website</div>
+      </div>
+
+      <div class="field">
+        <label for="amf-direct">Direct — Annual Mgmt Fee (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="amf-direct" min="0" max="5" step="0.05" value="1.5" oninput="calculate()">
+        </div>
+        <div class="hint">Typical: 1.0–1.8% p.a. for active equity funds</div>
+      </div>
+
+      <div class="field">
+        <label for="sc-agent">Agent — Sales Charge (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="sc-agent" min="0" max="10" step="0.1" value="3" oninput="calculate()">
+        </div>
+        <div class="hint">Typical: 2–5.5% when buying via a licensed unit trust agent</div>
+      </div>
+
+      <div class="field">
+        <label for="amf-agent">Agent — Annual Mgmt Fee (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="amf-agent" min="0" max="5" step="0.05" value="1.5" oninput="calculate()">
+        </div>
+        <div class="hint">Same fund, same AMF — agents earn from the sales charge</div>
+      </div>
+
+      <div class="field">
+        <label for="sc-robo">Robo — Sales Charge (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="sc-robo" min="0" max="5" step="0.1" value="0" oninput="calculate()">
+        </div>
+        <div class="hint">Typically 0% for robo-advisors (StashAway, Wahed, Versa)</div>
+      </div>
+
+      <div class="field">
+        <label for="amf-robo">Robo — Annual Mgmt Fee (%)</label>
+        <div class="input-suffix">
+          <span>%</span>
+          <input type="number" id="amf-robo" min="0" max="5" step="0.05" value="0.8" oninput="calculate()">
+        </div>
+        <div class="hint">Platform + fund fee: ~0.2–0.8% for robo-advisors</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Compare Scenarios</button>
+    </div>
+
+    <!-- RESULTS PANEL -->
+    <div>
+      <div id="scenarios-section">
+        <div class="placeholder-msg" id="placeholder">Enter your investment details and click <strong>Compare Scenarios</strong> to see results.</div>
+        <div class="scenarios" id="scenarios-grid" style="display:none"></div>
+      </div>
+
+      <div id="breakdown-section" style="display:none">
+        <div class="section">
+          <h2>📋 Year-by-Year Breakdown</h2>
+          <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1rem;">Portfolio value at end of each year, after fees are deducted from gross returns.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Direct (RM)</th>
+                  <th>Agent (RM)</th>
+                  <th>Robo-Advisor (RM)</th>
+                  <th>No-Fee Baseline (RM)</th>
+                </tr>
+              </thead>
+              <tbody id="yearly-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>💸 Total Fees Summary</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fee Type</th>
+                  <th>Direct</th>
+                  <th>Agent</th>
+                  <th>Robo-Advisor</th>
+                </tr>
+              </thead>
+              <tbody id="fees-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEXT & TIPS -->
+  <div class="info-box">
+    <strong>How fees erode returns:</strong> A 1% higher annual management fee may seem small, but over 20 years on a RM50,000 investment it can cost you more than <strong>RM30,000</strong> in foregone compounding. The longer your horizon, the more critical it is to minimise recurring fees.
+  </div>
+
+  <div class="section">
+    <h2>🇲🇾 Malaysian Context: PRS &amp; EPF Investment</h2>
+    <p><strong style="color:var(--text)">Private Retirement Scheme (PRS)</strong> — PRS funds are eligible for a <strong>tax relief of up to RM3,000 per year</strong> for contributions made by individuals below age 60. PRS management fees typically range from 0.5% to 1.8% p.a. For PRS, the sales charge is often 0–3%. PRS funds are regulated by the Securities Commission Malaysia.</p>
+    <p><strong style="color:var(--text)">EPF Members Investment Scheme (EPF-i)</strong> — Members aged 55 and below may transfer a portion of their EPF Account 1 savings (up to 30% of the amount exceeding the Basic Savings threshold) into approved unit trust funds. Sales charges on EPF-invested funds are capped at <strong>3%</strong> by EPF. This is a common entry point for Malaysians into unit trusts.</p>
+    <p><strong style="color:var(--text)">ASNB Funds (ASB, ASM, etc.)</strong> — Amanah Saham Nasional Berhad fixed-price funds (e.g. ASB) charge <strong>zero sales charge and zero management fee</strong> — dividends are declared annually. They are open to Bumiputera investors and offer different risk/return profiles from conventional unit trusts.</p>
+  </div>
+
+  <div class="section">
+    <h2>📊 Typical Fee Ranges in Malaysia (2025)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Sales Charge</th>
+            <th>Annual Mgmt Fee</th>
+            <th>Platform Fee</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fund House (Direct)</strong></td>
+            <td class="col-muted">0–1%</td>
+            <td class="col-muted">1.0–1.8%</td>
+            <td class="col-muted">0%</td>
+            <td class="col-muted">Maybank AM, CIMB-Principal, Public Mutual website</td>
+          </tr>
+          <tr>
+            <td><strong>Licensed Agent / IFA</strong></td>
+            <td class="col-warn">2–5.5%</td>
+            <td class="col-muted">1.0–1.8%</td>
+            <td class="col-muted">0%</td>
+            <td class="col-muted">CIMB Wealth, Maybank branches, independent agents</td>
+          </tr>
+          <tr>
+            <td><strong>Robo-Advisor</strong></td>
+            <td class="col-success">0%</td>
+            <td class="col-success">0.2–0.8%</td>
+            <td class="col-muted">Included</td>
+            <td class="col-muted">StashAway, Wahed Invest, Versa, MyTHEO</td>
+          </tr>
+          <tr>
+            <td><strong>PRS (any channel)</strong></td>
+            <td class="col-muted">0–3%</td>
+            <td class="col-muted">0.5–1.8%</td>
+            <td class="col-muted">0%</td>
+            <td class="col-muted">Principal PRS Plus, Manulife PRS, CIMB PRS</td>
+          </tr>
+          <tr>
+            <td><strong>ASNB (ASB/ASM)</strong></td>
+            <td class="col-success">0%</td>
+            <td class="col-success">0%</td>
+            <td class="col-muted">0%</td>
+            <td class="col-muted">ASB, ASM (Bumiputera only for some)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem">* Fees quoted are indicative. Always check the fund's prospectus and product highlight sheet for exact charges.</p>
+  </div>
+
+  <div class="section">
+    <h2>💡 Tips to Reduce Unit Trust Fees</h2>
+    <ul class="tips-list">
+      <li><strong>Buy direct from the fund house</strong> — online portals (e.g. FundSupermart, Kenanga, Maybank2u) often offer <strong>0% sales charge</strong> promotions.</li>
+      <li><strong>Negotiate the sales charge</strong> — licensed agents can sometimes reduce their upfront charge. It doesn't hurt to ask, especially for large investments.</li>
+      <li><strong>Use EPF savings strategically</strong> — EPF-i sales charges are capped at 3%, but direct online applications may charge less.</li>
+      <li><strong>Compare expense ratios, not just sales charges</strong> — a low sales charge with a high annual management fee can cost more over 10+ years than a moderate sales charge with a low AMF.</li>
+      <li><strong>Consider PRS for tax savings</strong> — the RM3,000 annual tax relief on PRS contributions can effectively subsidise management fees for many investors.</li>
+      <li><strong>Robo-advisors suit passive/diversified investing</strong> — lower fees and automatic rebalancing make them compelling for long-term, low-maintenance portfolios.</li>
+      <li><strong>Read the product highlight sheet (PHS)</strong> — every licensed fund must publish a PHS showing all fees clearly. Always check before investing.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🙋 Frequently Asked Questions</h2>
+
+    <p><strong style="color:var(--text)">What is a sales charge in unit trusts?</strong></p>
+    <p>A sales charge (also called an upfront fee or entry fee) is deducted from your investment at the point of purchase. If you invest RM10,000 with a 3% sales charge, only RM9,700 actually goes into the fund. The remaining RM300 goes to the distributor (agent or fund house). Sales charges can be 0–5.5% depending on the channel.</p>
+
+    <p><strong style="color:var(--text)">What is an annual management fee (AMF)?</strong></p>
+    <p>The AMF is charged by the fund manager as a percentage of the fund's net asset value (NAV) each year. It is deducted automatically from the fund, so you won't see a separate bill — but it directly reduces the NAV and therefore your returns. A 1.5% AMF on a RM50,000 portfolio costs RM750 in year one, growing as the portfolio grows.</p>
+
+    <p><strong style="color:var(--text)">Are robo-advisors regulated in Malaysia?</strong></p>
+    <p>Yes. Digital investment managers (DIMs) like StashAway and Wahed are licensed and regulated by the Securities Commission Malaysia under the Capital Markets and Services Act. They are required to act in investors' best interests as a fiduciary.</p>
+
+    <p><strong style="color:var(--text)">Can I use EPF to invest in unit trusts?</strong></p>
+    <p>Yes — EPF members aged 55 and below may transfer eligible savings from Account 1 into SC-approved unit trust funds under the Members Investment Scheme. The amount transferable depends on your balance relative to the Basic Savings threshold for your age group. EPF caps the sales charge at 3% for participating funds.</p>
+
+    <p><strong style="color:var(--text)">Is PRS the same as EPF?</strong></p>
+    <p>No. EPF (KWSP) is a statutory mandatory savings scheme. PRS (Private Retirement Scheme) is a voluntary supplementary retirement savings vehicle managed by licensed private fund managers. PRS contributions attract a personal tax relief of up to RM3,000 per year for individuals below 60. Both are regulated by different bodies (EPF by the EPF Act; PRS by the Securities Commission).</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator is for educational and illustrative purposes only. It does not constitute financial advice. Unit trust investments are subject to market risk and past performance is not indicative of future results. Always read the fund's prospectus and product highlight sheet before investing. Consult a licensed financial planner if in doubt.
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid #2d3148;margin-top:3rem;">
+  <p style="color:#8892b0;font-size:0.9rem;margin-bottom:0.5rem;">Found this useful? Support free Malaysian tools</p>
+  <a href="https://hlteoh37.github.io/go-make-money/public/coffee.html" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#6c63ff,#48cfad);color:#fff;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem;">Buy me a coffee ☕</a>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../index.html">All Guides</a>
+    <a href="../calculators/stamp-duty.html">Stamp Duty Calculator</a>
+    <a href="../compare/car-loan/">Car Loan Calculator</a>
+    <a href="../compare/tax-calculator/">Income Tax Calculator</a>
+    <a href="../guides/epf-calculator/">EPF Retirement Calculator</a>
+    <a href="https://hlteoh37.github.io/go-make-money/public/coffee.html" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+  <p>Sorted.my — Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function fmtPct(n) {
+  return n.toFixed(2) + '%';
+}
+
+function calcScenario(principal, grossReturn, years, salesChargePct, amfPct) {
+  // Deduct sales charge upfront
+  const invested = principal * (1 - salesChargePct / 100);
+  // Net annual growth rate after management fee
+  const netRate = (grossReturn - amfPct) / 100;
+
+  const yearlyValues = [];
+  let val = invested;
+  for (let y = 1; y <= years; y++) {
+    val = val * (1 + netRate);
+    yearlyValues.push(val);
+  }
+  const finalValue = yearlyValues[years - 1];
+  const totalGain = finalValue - principal;
+
+  // Total fees = principal - finalValue + theoretical no-fee final value
+  const noFeeValue = principal * Math.pow(1 + grossReturn / 100, years);
+  const totalFeeCost = noFeeValue - finalValue;
+  const salesChargeAmt = principal * salesChargePct / 100;
+
+  // AMF cost = total fee cost - sales charge cost
+  const amfTotalCost = totalFeeCost - salesChargeAmt;
+
+  // Effective cost ratio = total fees / no-fee value
+  const effectiveCostRatio = (totalFeeCost / noFeeValue) * 100;
+
+  return { invested, yearlyValues, finalValue, totalGain, noFeeValue, totalFeeCost, salesChargeAmt, amfTotalCost, effectiveCostRatio };
+}
+
+function calculate() {
+  const principal = parseFloat(document.getElementById('invest-amount').value) || 0;
+  const grossReturn = parseFloat(document.getElementById('annual-return').value) || 7;
+  const years = parseInt(document.getElementById('period').value) || 10;
+  const scDirect = parseFloat(document.getElementById('sc-direct').value) || 0;
+  const amfDirect = parseFloat(document.getElementById('amf-direct').value) || 0;
+  const scAgent = parseFloat(document.getElementById('sc-agent').value) || 0;
+  const amfAgent = parseFloat(document.getElementById('amf-agent').value) || 0;
+  const scRobo = parseFloat(document.getElementById('sc-robo').value) || 0;
+  const amfRobo = parseFloat(document.getElementById('amf-robo').value) || 0;
+
+  if (principal <= 0 || years <= 0) return;
+
+  const direct = calcScenario(principal, grossReturn, years, scDirect, amfDirect);
+  const agent = calcScenario(principal, grossReturn, years, scAgent, amfAgent);
+  const robo = calcScenario(principal, grossReturn, years, scRobo, amfRobo);
+
+  // No-fee baseline (same for all)
+  const noFeeValue = direct.noFeeValue;
+
+  // Determine best scenario by final value
+  const finals = [direct.finalValue, agent.finalValue, robo.finalValue];
+  const bestIdx = finals.indexOf(Math.max(...finals));
+
+  // Render scenario cards
+  const scenariosGrid = document.getElementById('scenarios-grid');
+  const scenarios = [
+    { label: 'Direct from Fund House', sub: `${scDirect}% sales charge · ${amfDirect}% AMF p.a.`, data: direct },
+    { label: 'Via Unit Trust Agent', sub: `${scAgent}% sales charge · ${amfAgent}% AMF p.a.`, data: agent },
+    { label: 'Robo-Advisor', sub: `${scRobo}% sales charge · ${amfRobo}% all-in fee p.a.`, data: robo },
+  ];
+
+  scenariosGrid.innerHTML = '';
+  scenarios.forEach((s, i) => {
+    const isBest = i === bestIdx;
+    const card = document.createElement('div');
+    card.className = 'scenario-card' + (isBest ? ' best' : '');
+    card.innerHTML = `
+      ${isBest ? '<div class="best-badge">Best Value</div>' : ''}
+      <div class="scenario-title">${s.label}</div>
+      <div class="scenario-subtitle">${s.sub}</div>
+      <div class="scenario-stat">
+        <div class="stat-label">Final Portfolio Value</div>
+        <div class="stat-value ${isBest ? 'success' : 'accent'}">${fmt(s.data.finalValue)}</div>
+      </div>
+      <div class="scenario-stat">
+        <div class="stat-label">Net Gain</div>
+        <div class="stat-value ${s.data.totalGain >= 0 ? 'success' : 'warn'}">${s.data.totalGain >= 0 ? '+' : ''}${fmt(s.data.totalGain)}</div>
+      </div>
+      <hr class="scenario-divider">
+      <div class="scenario-stat">
+        <div class="stat-label">Total Fees Paid</div>
+        <div class="stat-value warn">${fmt(s.data.totalFeeCost)}</div>
+      </div>
+      <div class="scenario-stat">
+        <div class="stat-label">— Sales Charge</div>
+        <div class="stat-value muted">${fmt(s.data.salesChargeAmt)}</div>
+      </div>
+      <div class="scenario-stat">
+        <div class="stat-label">— Mgmt Fees (cumulative)</div>
+        <div class="stat-value muted">${fmt(Math.max(0, s.data.amfTotalCost))}</div>
+      </div>
+      <hr class="scenario-divider">
+      <div class="scenario-stat">
+        <div class="stat-label">Effective Cost Ratio</div>
+        <div class="stat-value warn">${fmtPct(s.data.effectiveCostRatio)} of max value</div>
+      </div>
+    `;
+    scenariosGrid.appendChild(card);
+  });
+
+  document.getElementById('placeholder').style.display = 'none';
+  scenariosGrid.style.display = 'grid';
+  document.getElementById('breakdown-section').style.display = 'block';
+
+  // Year-by-year table
+  const tbody = document.getElementById('yearly-tbody');
+  tbody.innerHTML = '';
+  for (let y = 0; y < years; y++) {
+    const noFeeYear = principal * Math.pow(1 + grossReturn / 100, y + 1);
+    const tr = document.createElement('tr');
+    const isLast = y === years - 1;
+    if (isLast) tr.classList.add('total-row');
+    tr.innerHTML = `
+      <td>${y + 1}</td>
+      <td class="${isLast ? 'col-success' : 'col-amount'}">${fmt(direct.yearlyValues[y])}</td>
+      <td class="${isLast ? 'col-warn' : 'col-amount'}">${fmt(agent.yearlyValues[y])}</td>
+      <td class="${isLast ? 'col-success' : 'col-amount'}">${fmt(robo.yearlyValues[y])}</td>
+      <td class="col-muted">${fmt(noFeeYear)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // Fees summary table
+  const feesTbody = document.getElementById('fees-tbody');
+  feesTbody.innerHTML = '';
+  const feeRows = [
+    { label: 'Sales Charge (upfront)', values: [direct.salesChargeAmt, agent.salesChargeAmt, robo.salesChargeAmt] },
+    { label: 'Cumulative Mgmt Fees (est.)', values: [Math.max(0, direct.amfTotalCost), Math.max(0, agent.amfTotalCost), Math.max(0, robo.amfTotalCost)] },
+    { label: 'Total Fees Over Period', values: [direct.totalFeeCost, agent.totalFeeCost, robo.totalFeeCost], isTotal: true },
+    { label: 'Effective Cost Ratio', values: [direct.effectiveCostRatio, agent.effectiveCostRatio, robo.effectiveCostRatio], isPct: true },
+  ];
+  feeRows.forEach(row => {
+    const tr = document.createElement('tr');
+    if (row.isTotal) tr.classList.add('total-row');
+    const cells = row.values.map(v =>
+      row.isPct
+        ? `<td class="col-warn">${fmtPct(v)}</td>`
+        : `<td class="${row.isTotal ? 'col-warn' : 'col-muted'}">${fmt(v)}</td>`
+    ).join('');
+    tr.innerHTML = `<td>${row.label}</td>${cells}`;
+    feesTbody.appendChild(tr);
+  });
+}
+
+// Auto-calculate on load
+calculate();
+</script>
+</body>
+</html>
