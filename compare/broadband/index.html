@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Malaysia Broadband Plans 2026 — Interactive Filter &amp; Sort Tool | Sorted</title>
+  <meta name="description" content="Interactive tool to compare all Malaysia home broadband plans in 2026. Filter by budget, speed, and contract. Sort by price or speed. Find your perfect plan in seconds.">
+  <meta property="og:title" content="Compare Malaysia Broadband Plans 2026 — Interactive Tool | Sorted">
+  <meta property="og:description" content="Filter and sort every Malaysian broadband plan. Unifi, TIME, Maxis, CelcomDigi — find the best plan for your budget and needs.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/broadband/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.filters h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select, .filter-group input[type="range"] { width: 100%; }
+.filter-group select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); appearance: auto; cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+.range-row { display: flex; align-items: center; gap: 0.75rem; }
+.range-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.range-value { font-size: 0.875rem; font-weight: 700; color: var(--accent2); font-family: monospace; min-width: 60px; text-align: right; }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.chip { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 20px; cursor: pointer; transition: all 0.15s; }
+.chip:hover { background: rgba(108,99,255,0.25); }
+.chip.active { background: var(--accent); color: white; border-color: var(--accent); }
+.chip-x { font-size: 0.85rem; line-height: 1; }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); margin-top: 0.75rem; }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Results count */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+.results-count { font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+
+/* Plan cards */
+.plan-cards { display: grid; gap: 0.75rem; }
+.plan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; align-items: center; transition: border-color 0.15s; }
+.plan-card:hover { border-color: rgba(108,99,255,0.4); }
+.plan-card.best-match { border-color: var(--accent2); border-width: 2px; }
+.plan-card.best-match::before { content: '★ BEST MATCH'; display: block; grid-column: 1 / -1; font-size: 0.68rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: -0.25rem; }
+.plan-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.plan-provider { font-weight: 700; font-size: 1rem; color: var(--text); }
+.plan-provider .provider-sub { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-left: 0.3rem; }
+.plan-details { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.plan-tag { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; }
+.tag-speed { background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-contract { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.tag-nocontract { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.tag-bestfor { background: rgba(108,99,255,0.1); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.2); font-weight: 400; }
+.plan-pricing { text-align: right; }
+.plan-price { font-size: 1.4rem; font-weight: 800; color: var(--accent2); font-family: monospace; }
+.plan-price-unit { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+.plan-yearly { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+
+/* Sortable headers */
+.sort-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Wizard */
+.wizard { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.wizard h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+.wizard p { color: var(--muted); font-size: 0.875rem; margin-bottom: 1rem; }
+.wizard-questions { display: grid; gap: 1rem; }
+.wq { display: flex; flex-direction: column; gap: 0.35rem; }
+.wq label { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.wq-options { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.wq-opt { background: var(--bg); border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.wq-opt:hover { border-color: var(--accent); color: var(--text); }
+.wq-opt.selected { background: var(--accent); color: white; border-color: var(--accent); }
+.wizard-result { margin-top: 1rem; padding: 1rem; background: rgba(72,207,173,0.06); border: 1px solid rgba(72,207,173,0.25); border-left: 4px solid var(--accent2); border-radius: var(--radius); display: none; }
+.wizard-result h4 { color: var(--accent2); font-size: 0.9rem; margin-bottom: 0.3rem; }
+.wizard-result p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0; }
+.wizard-result .rec-plan { font-weight: 700; color: var(--text); font-size: 1rem; }
+
+/* No results */
+.no-results { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+
+/* Cost calculator */
+.cost-calc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.cost-calc h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.cost-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.cost-item { text-align: center; }
+.cost-item .cost-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.cost-item .cost-value { font-size: 1.5rem; font-weight: 800; color: var(--accent2); font-family: monospace; }
+.cost-item .cost-note { font-size: 0.75rem; color: var(--muted); }
+
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; } .nav-links { display: none; }
+  .filter-grid { grid-template-columns: 1fr; }
+  .plan-card { grid-template-columns: 1fr; }
+  .plan-pricing { text-align: left; }
+  .wq-options { flex-direction: column; }
+  .cost-grid { grid-template-columns: 1fr 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/sorted-my/" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="/sorted-my/">All Guides</a>
+    <a href="/sorted-my/compare/broadband/">Compare Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="/sorted-my/" class="back-link">← All Guides</a>
+    <h1>🔍 Compare Malaysia Broadband Plans <span class="tool-tag">Interactive Tool</span></h1>
+    <p class="subtitle">Filter by budget, speed, and contract preference. Sort by price or speed. Find your perfect plan in seconds.</p>
+  </div>
+
+  <!-- WIZARD -->
+  <div class="wizard" id="wizard">
+    <h3>🎯 Quick Recommendation</h3>
+    <p>Answer 3 questions and we'll recommend the best plan for you.</p>
+    <div class="wizard-questions">
+      <div class="wq">
+        <label>What's your monthly budget?</label>
+        <div class="wq-options" data-q="budget">
+          <button class="wq-opt" data-v="89">Under RM100</button>
+          <button class="wq-opt" data-v="139">RM100–RM150</button>
+          <button class="wq-opt" data-v="200">RM150–RM200</button>
+          <button class="wq-opt" data-v="999">RM200+</button>
+        </div>
+      </div>
+      <div class="wq">
+        <label>How many people in your household?</label>
+        <div class="wq-options" data-q="people">
+          <button class="wq-opt" data-v="1">1–2</button>
+          <button class="wq-opt" data-v="3">3–4</button>
+          <button class="wq-opt" data-v="5">5+</button>
+        </div>
+      </div>
+      <div class="wq">
+        <label>What type of property?</label>
+        <div class="wq-options" data-q="property">
+          <button class="wq-opt" data-v="condo">Condo / Apartment</button>
+          <button class="wq-opt" data-v="landed">Landed House</button>
+          <button class="wq-opt" data-v="renting">Renting (may move soon)</button>
+        </div>
+      </div>
+    </div>
+    <div class="wizard-result" id="wizard-result">
+      <h4>Our Recommendation</h4>
+      <p class="rec-plan" id="rec-plan"></p>
+      <p id="rec-reason"></p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>🔧 Filter Plans</h3>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Max Monthly Budget</label>
+        <div class="range-row">
+          <input type="range" id="budget-slider" min="80" max="400" value="400" step="10">
+          <span class="range-value" id="budget-display">RM400</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Minimum Speed</label>
+        <select id="speed-filter">
+          <option value="0">Any speed</option>
+          <option value="50">50 Mbps+</option>
+          <option value="100">100 Mbps+</option>
+          <option value="200">200 Mbps+</option>
+          <option value="300">300 Mbps+</option>
+          <option value="500">500 Mbps+</option>
+          <option value="1000">1 Gbps+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Contract Preference</label>
+        <select id="contract-filter">
+          <option value="any">Any</option>
+          <option value="no">No contract only</option>
+          <option value="yes">Contract OK</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Provider</label>
+        <select id="provider-filter">
+          <option value="any">All Providers</option>
+          <option value="Unifi">Unifi (TM)</option>
+          <option value="TIME">TIME</option>
+          <option value="Maxis">Maxis Fibre</option>
+          <option value="CelcomDigi">CelcomDigi</option>
+          <option value="Yes">Yes 5G</option>
+        </select>
+      </div>
+    </div>
+    <button class="reset-btn" id="reset-filters">↻ Reset all filters</button>
+  </div>
+
+  <!-- SORT + RESULTS -->
+  <div class="results-bar">
+    <span class="results-count">Showing <em id="result-count">0</em> plans</span>
+    <div class="sort-bar">
+      <span style="font-size:0.75rem;color:var(--muted);">Sort:</span>
+      <button class="sort-btn active" data-sort="price-asc">Price ↑</button>
+      <button class="sort-btn" data-sort="price-desc">Price ↓</button>
+      <button class="sort-btn" data-sort="speed-desc">Speed ↓</button>
+      <button class="sort-btn" data-sort="speed-asc">Speed ↑</button>
+      <button class="sort-btn" data-sort="value">Best Value</button>
+    </div>
+  </div>
+
+  <!-- PLAN CARDS -->
+  <div class="plan-cards" id="plan-cards"></div>
+
+  <!-- COST CALCULATOR -->
+  <div class="cost-calc" id="cost-calc" style="display:none;">
+    <h3>💰 Cost Calculator — Click any plan to see totals</h3>
+    <div class="cost-grid">
+      <div class="cost-item">
+        <div class="cost-label">Selected Plan</div>
+        <div class="cost-value" id="calc-plan">—</div>
+        <div class="cost-note" id="calc-plan-name"></div>
+      </div>
+      <div class="cost-item">
+        <div class="cost-label">Monthly</div>
+        <div class="cost-value" id="calc-monthly">—</div>
+      </div>
+      <div class="cost-item">
+        <div class="cost-label">Yearly</div>
+        <div class="cost-value" id="calc-yearly">—</div>
+      </div>
+      <div class="cost-item">
+        <div class="cost-label">2-Year Total</div>
+        <div class="cost-value" id="calc-2yr">—</div>
+        <div class="cost-note" id="calc-note"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 Looking for the full guide?</strong> Read our detailed <a href="/sorted-my/guides/broadband-comparison/">Malaysia Broadband Comparison Guide</a> for provider deep dives, coverage tips, FAQ, and who-should-pick-what recommendations.
+  </div>
+
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="/sorted-my/guides/broadband-comparison/" class="related-card">
+        🌐 Broadband Comparison Guide
+        <div class="rel-desc">Full deep dive — provider breakdowns, coverage tips, FAQ</div>
+      </a>
+      <a href="/sorted-my/guides/renting-first-apartment/" class="related-card">
+        🏘️ Renting Your First Apartment
+        <div class="rel-desc">Tenancy agreement, deposits, stamp duty</div>
+      </a>
+      <a href="/sorted-my/guides/opening-bank-account/" class="related-card">
+        🏦 Opening a Bank Account
+        <div class="rel-desc">You'll need a local account for FPX bill payments</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="coffee-banner">
+    <p>Did this tool help you find the right broadband plan? Consider buying me a coffee.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" class="coffee-btn" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠ Disclaimer:</strong> Broadband plan prices, speeds, and promotions change frequently. All figures are based on publicly available information as of March 2026. Always verify current pricing directly with your chosen provider before signing up. Coverage varies by location — check your specific address.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/sorted-my/">Home</a>
+    <a href="/sorted-my/compare/broadband/">Compare Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support this site</a>
+  </div>
+  <p>Sorted — Every document. Every step. Sorted. | Malaysia 🇲🇾</p>
+  <p style="margin-top:0.4rem;">Not affiliated with any Malaysian government body or broadband provider. Information verified March 2026.</p>
+</footer>
+
+<script>
+// ==================== PLAN DATA ====================
+const plans = [
+  // Unifi (TM)
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 100, price: 89, contract: true, contractMonths: 24, bestFor: "Budget / first-time", coverage: "Nationwide", upload: "30 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 300, price: 129, contract: true, contractMonths: 24, bestFor: "Families (4–6 users)", coverage: "Nationwide", upload: "50 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 500, price: 149, contract: true, contractMonths: 24, bestFor: "WFH + streaming", coverage: "Nationwide", upload: "100 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 1000, price: 229, contract: true, contractMonths: 24, bestFor: "Power users", coverage: "Nationwide", upload: "500 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 2000, price: 319, contract: true, contractMonths: 24, bestFor: "Max speed on TM", coverage: "Nationwide", upload: "500 Mbps", router: "Wi-Fi 6 included" },
+
+  // TIME
+  { provider: "TIME", sub: "Time dotCom", speed: 200, price: 99, contract: false, contractMonths: 0, bestFor: "Flexible tenants", coverage: "Condos (KL, PJ, Penang, JB)", upload: "200 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "TIME", sub: "Time dotCom", speed: 600, price: 139, contract: false, contractMonths: 0, bestFor: "Speed seekers", coverage: "Condos (KL, PJ, Penang, JB)", upload: "500 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "TIME", sub: "Time dotCom", speed: 1000, price: 199, contract: true, contractMonths: 24, bestFor: "Power users / gamers", coverage: "Condos (KL, PJ, Penang, JB)", upload: "1000 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "TIME", sub: "Time dotCom", speed: 2000, price: 379, contract: true, contractMonths: 24, bestFor: "10G PON early adopters", coverage: "Condos (KL, PJ, Penang, JB)", upload: "2000 Mbps", router: "Wi-Fi 6E included" },
+
+  // Maxis
+  { provider: "Maxis", sub: "Maxis Fibre", speed: 100, price: 89, contract: false, contractMonths: 0, bestFor: "Maxis mobile users", coverage: "TM network coverage", upload: "30 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Maxis", sub: "Maxis Fibre", speed: 300, price: 129, contract: false, contractMonths: 0, bestFor: "Bundle with postpaid", coverage: "TM network coverage", upload: "50 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Maxis", sub: "Maxis Fibre", speed: 500, price: 149, contract: false, contractMonths: 0, bestFor: "WFH bundle", coverage: "TM network coverage", upload: "100 Mbps", router: "Wi-Fi 6 included" },
+
+  // CelcomDigi
+  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 50, price: 90, contract: true, contractMonths: 24, bestFor: "Light users", coverage: "TM network coverage", upload: "20 Mbps", router: "Wi-Fi 5 included" },
+  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 100, price: 110, contract: true, contractMonths: 24, bestFor: "CD postpaid bundle", coverage: "TM network coverage", upload: "30 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 300, price: 150, contract: true, contractMonths: 24, bestFor: "Family bundle", coverage: "TM network coverage", upload: "50 Mbps", router: "Wi-Fi 6 included" },
+
+  // Yes 5G
+  { provider: "Yes", sub: "Yes 5G Wireless", speed: 100, price: 99, contract: false, contractMonths: 0, bestFor: "No cable access", coverage: "5G areas (major cities)", upload: "Varies", router: "5G modem included" },
+  { provider: "Yes", sub: "Yes 5G Wireless", speed: 300, price: 149, contract: false, contractMonths: 0, bestFor: "Wireless speed seekers", coverage: "5G areas (major cities)", upload: "Varies", router: "5G modem included" },
+];
+
+// ==================== STATE ====================
+let currentSort = "price-asc";
+let wizardAnswers = {};
+
+// ==================== FILTER & RENDER ====================
+function getFilteredPlans() {
+  const maxBudget = parseInt(document.getElementById("budget-slider").value);
+  const minSpeed = parseInt(document.getElementById("speed-filter").value);
+  const contractPref = document.getElementById("contract-filter").value;
+  const providerPref = document.getElementById("provider-filter").value;
+
+  return plans.filter(p => {
+    if (p.price > maxBudget) return false;
+    if (p.speed < minSpeed) return false;
+    if (contractPref === "no" && p.contract) return false;
+    if (providerPref !== "any" && p.provider !== providerPref) return false;
+    return true;
+  });
+}
+
+function sortPlans(arr) {
+  const sorted = [...arr];
+  switch (currentSort) {
+    case "price-asc": sorted.sort((a, b) => a.price - b.price); break;
+    case "price-desc": sorted.sort((a, b) => b.price - a.price); break;
+    case "speed-desc": sorted.sort((a, b) => b.speed - a.speed); break;
+    case "speed-asc": sorted.sort((a, b) => a.speed - b.speed); break;
+    case "value": sorted.sort((a, b) => (a.price / a.speed) - (b.price / b.speed)); break;
+  }
+  return sorted;
+}
+
+function formatSpeed(mbps) {
+  return mbps >= 1000 ? (mbps / 1000) + " Gbps" : mbps + " Mbps";
+}
+
+function renderPlans() {
+  const filtered = sortPlans(getFilteredPlans());
+  const container = document.getElementById("plan-cards");
+  document.getElementById("result-count").textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<div class="no-results">No plans match your filters. Try adjusting your budget or speed requirements.</div>';
+    return;
+  }
+
+  // Find best value plan
+  let bestValue = null;
+  let bestRatio = Infinity;
+  filtered.forEach(p => {
+    const ratio = p.price / p.speed;
+    if (ratio < bestRatio) { bestRatio = ratio; bestValue = p; }
+  });
+
+  container.innerHTML = filtered.map(p => {
+    const isBest = (p === bestValue && filtered.length > 2);
+    const contractTag = p.contract
+      ? `<span class="plan-tag tag-contract">${p.contractMonths}mo contract</span>`
+      : `<span class="plan-tag tag-nocontract">No contract</span>`;
+    return `
+      <div class="plan-card${isBest ? ' best-match' : ''}" data-price="${p.price}" data-speed="${p.speed}" data-provider="${p.provider}" data-upload="${p.upload}" data-contract="${p.contract ? p.contractMonths + ' months' : 'No contract'}" data-coverage="${p.coverage}" data-router="${p.router}" onclick="selectPlan(this)">
+        <div class="plan-info">
+          <div class="plan-provider">${p.provider}<span class="provider-sub">${p.sub}</span></div>
+          <div class="plan-details">
+            <span class="plan-tag tag-speed">${formatSpeed(p.speed)} ↓ / ${p.upload} ↑</span>
+            ${contractTag}
+            <span class="plan-tag tag-bestfor">${p.bestFor}</span>
+          </div>
+          <div style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Coverage: ${p.coverage} · Router: ${p.router}</div>
+        </div>
+        <div class="plan-pricing">
+          <div class="plan-price">RM${p.price}<span class="plan-price-unit">/mo</span></div>
+          <div class="plan-yearly">RM${(p.price * 12).toLocaleString()}/year</div>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+// ==================== COST CALCULATOR ====================
+function selectPlan(el) {
+  const price = parseInt(el.dataset.price);
+  const speed = parseInt(el.dataset.speed);
+  const provider = el.dataset.provider;
+  const contract = el.dataset.contract;
+  const calcDiv = document.getElementById("cost-calc");
+  calcDiv.style.display = "block";
+  document.getElementById("calc-plan").textContent = formatSpeed(speed);
+  document.getElementById("calc-plan-name").textContent = provider + " — " + contract;
+  document.getElementById("calc-monthly").textContent = "RM" + price;
+  document.getElementById("calc-yearly").textContent = "RM" + (price * 12).toLocaleString();
+  document.getElementById("calc-2yr").textContent = "RM" + (price * 24).toLocaleString();
+  document.getElementById("calc-note").textContent = "Over typical 24-month contract period";
+  calcDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  // Highlight selected
+  document.querySelectorAll(".plan-card").forEach(c => c.style.boxShadow = "none");
+  el.style.boxShadow = "0 0 0 2px var(--accent)";
+}
+
+// ==================== WIZARD ====================
+document.querySelectorAll(".wq-opt").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const q = this.closest(".wq-options").dataset.q;
+    this.closest(".wq-options").querySelectorAll(".wq-opt").forEach(b => b.classList.remove("selected"));
+    this.classList.add("selected");
+    wizardAnswers[q] = this.dataset.v;
+    if (wizardAnswers.budget && wizardAnswers.people && wizardAnswers.property) {
+      showRecommendation();
+    }
+  });
+});
+
+function showRecommendation() {
+  const budget = parseInt(wizardAnswers.budget);
+  const people = parseInt(wizardAnswers.people);
+  const property = wizardAnswers.property;
+  const result = document.getElementById("wizard-result");
+  const planEl = document.getElementById("rec-plan");
+  const reasonEl = document.getElementById("rec-reason");
+
+  let rec, reason;
+
+  if (property === "renting") {
+    if (budget <= 89) {
+      rec = "Maxis 100 Mbps — RM89/mo (no contract)";
+      reason = "No lock-in period means you can move without penalty. Same price as Unifi but without the 24-month commitment.";
+    } else if (budget <= 139) {
+      rec = "TIME 200 Mbps — RM99/mo (no contract) or Maxis 300 Mbps — RM129/mo";
+      reason = "If TIME is available at your condo, it's the best deal — 200 Mbps with no contract at RM99. Otherwise, Maxis 300 Mbps gives flexibility without lock-in.";
+    } else {
+      rec = "TIME 600 Mbps — RM139/mo (no contract)";
+      reason = "Best speed-per-ringgit with no contract. 600 Mbps + symmetrical upload for RM139. Check TIME coverage at your address first.";
+    }
+  } else if (property === "condo") {
+    if (people >= 5) {
+      if (budget >= 199) {
+        rec = "TIME 1 Gbps — RM199/mo";
+        reason = "Symmetrical gigabit speeds handle 5+ simultaneous users easily. Best upload speed in Malaysia for video calls and cloud backups.";
+      } else {
+        rec = "TIME 600 Mbps — RM139/mo or Unifi 500 Mbps — RM149/mo";
+        reason = "TIME 600 Mbps is the better deal if available at your condo. Otherwise Unifi 500 Mbps is widely available with solid performance.";
+      }
+    } else if (budget <= 99) {
+      rec = "TIME 200 Mbps — RM99/mo";
+      reason = "If TIME covers your condo, you get 200 Mbps with symmetrical upload for just RM99. That's 2x the speed of Unifi's cheapest plan for only RM10 more.";
+    } else {
+      rec = "TIME 600 Mbps — RM139/mo";
+      reason = "Best value in Malaysia. 600 Mbps download + 500 Mbps upload, no contract option available. Perfect for WFH households in condos.";
+    }
+  } else {
+    // Landed
+    if (budget <= 89) {
+      rec = "Unifi 100 Mbps — RM89/mo";
+      reason = "Most affordable fibre plan. Unifi has the widest coverage for landed properties — TIME is rarely available for houses.";
+    } else if (budget <= 139 && people <= 3) {
+      rec = "Unifi 300 Mbps — RM129/mo";
+      reason = "Sweet spot for 3–4 person households in landed properties. Reliable and widely available.";
+    } else if (budget <= 149) {
+      rec = "Unifi 500 Mbps — RM149/mo";
+      reason = "Handles multiple WFH setups, 4K streaming, and gaming simultaneously. Good headroom for a busy household.";
+    } else {
+      rec = "Unifi 1 Gbps — RM229/mo";
+      reason = "Maximum speed on the widest network. Great for power households with heavy usage across many devices.";
+    }
+  }
+
+  planEl.textContent = rec;
+  reasonEl.textContent = reason;
+  result.style.display = "block";
+}
+
+// ==================== EVENT LISTENERS ====================
+document.getElementById("budget-slider").addEventListener("input", function() {
+  document.getElementById("budget-display").textContent = "RM" + this.value;
+  renderPlans();
+});
+
+["speed-filter", "contract-filter", "provider-filter"].forEach(id => {
+  document.getElementById(id).addEventListener("change", renderPlans);
+});
+
+document.getElementById("reset-filters").addEventListener("click", function() {
+  document.getElementById("budget-slider").value = 400;
+  document.getElementById("budget-display").textContent = "RM400";
+  document.getElementById("speed-filter").value = "0";
+  document.getElementById("contract-filter").value = "any";
+  document.getElementById("provider-filter").value = "any";
+  renderPlans();
+});
+
+document.querySelectorAll(".sort-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    document.querySelectorAll(".sort-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+    currentSort = this.dataset.sort;
+    renderPlans();
+  });
+});
+
+// ==================== INIT ====================
+renderPlans();
+</script>
+
+</body>
+</html>
