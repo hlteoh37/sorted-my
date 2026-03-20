@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Malaysia Mobile Plans 2026 — Prepaid &amp; Postpaid Filter Tool | Sorted</title>
+  <meta name="description" content="Compare all Malaysian mobile plans in 2026. Filter prepaid and postpaid plans from Digi, Celcom, Maxis, U Mobile, Yes 4G and Tune Talk by budget, data, and 5G support.">
+  <meta property="og:title" content="Compare Malaysia Mobile Plans 2026 — Interactive Tool | Sorted">
+  <meta property="og:description" content="Filter and sort every Malaysian mobile plan. Maxis, CelcomDigi, U Mobile, Yes 5G, Tune Talk — find the best prepaid or postpaid plan in seconds.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/mobile/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.filters h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select, .filter-group input[type="range"] { width: 100%; }
+.filter-group select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); appearance: auto; cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+.range-row { display: flex; align-items: center; gap: 0.75rem; }
+.range-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.range-value { font-size: 0.875rem; font-weight: 700; color: var(--accent2); font-family: monospace; min-width: 60px; text-align: right; }
+.toggle-row { display: flex; align-items: center; gap: 0.75rem; padding-top: 0.4rem; }
+.toggle-label { font-size: 0.875rem; color: var(--text); }
+.toggle { position: relative; width: 40px; height: 22px; flex-shrink: 0; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-slider { position: absolute; cursor: pointer; inset: 0; background: var(--bg3); border: 1px solid var(--border); border-radius: 22px; transition: 0.2s; }
+.toggle-slider:before { position: absolute; content: ''; height: 14px; width: 14px; left: 3px; bottom: 3px; background: var(--muted); border-radius: 50%; transition: 0.2s; }
+.toggle input:checked + .toggle-slider { background: rgba(108,99,255,0.3); border-color: var(--accent); }
+.toggle input:checked + .toggle-slider:before { transform: translateX(18px); background: var(--accent); }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); margin-top: 0.75rem; }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Results count */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+
+/* Plan cards */
+.plan-cards { display: grid; gap: 0.75rem; }
+.plan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; align-items: center; transition: border-color 0.15s; cursor: default; }
+.plan-card:hover { border-color: rgba(108,99,255,0.4); }
+.plan-card.best-value { border-color: var(--accent2); border-width: 2px; }
+.plan-card.best-value::before { content: '★ BEST VALUE'; display: block; grid-column: 1 / -1; font-size: 0.68rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: -0.25rem; }
+.plan-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.plan-provider { font-weight: 700; font-size: 1rem; color: var(--text); }
+.plan-name { font-size: 0.85rem; color: var(--muted); margin-top: -0.1rem; }
+.plan-details { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: 0.3rem; }
+.plan-tag { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; }
+.tag-data { background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-prepaid { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.tag-postpaid { background: rgba(108,99,255,0.1); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.2); }
+.tag-5g { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.tag-contract { background: rgba(239,68,68,0.08); color: #fca5a5; border: 1px solid rgba(239,68,68,0.2); }
+.tag-nocontract { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.tag-calls { background: rgba(148,163,184,0.08); color: var(--muted); border: 1px solid var(--border); }
+.plan-pricing { text-align: right; min-width: 90px; }
+.plan-price { font-size: 1.4rem; font-weight: 800; color: var(--accent2); font-family: monospace; }
+.plan-price-unit { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+.plan-value { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+
+/* Sort bar */
+.sort-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Wizard */
+.wizard { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.wizard h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+.wizard p { color: var(--muted); font-size: 0.875rem; margin-bottom: 1rem; }
+.wizard-questions { display: grid; gap: 1rem; }
+.wq { display: flex; flex-direction: column; gap: 0.35rem; }
+.wq label { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.wq-options { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.wq-opt { background: var(--bg); border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.wq-opt:hover { border-color: var(--accent); color: var(--text); }
+.wq-opt.selected { background: var(--accent); color: white; border-color: var(--accent); }
+.wizard-result { margin-top: 1rem; padding: 1rem; background: rgba(72,207,173,0.06); border: 1px solid rgba(72,207,173,0.25); border-left: 4px solid var(--accent2); border-radius: var(--radius); display: none; }
+.wizard-result h4 { color: var(--accent2); font-size: 0.9rem; margin-bottom: 0.3rem; }
+.wizard-result p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0; }
+.wizard-result .rec-plan { font-weight: 700; color: var(--text); font-size: 1rem; }
+
+/* No results */
+.no-results { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+
+/* FAQ */
+.faq { margin: 2.5rem 0; }
+.faq h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.5rem; overflow: hidden; }
+.faq-q { width: 100%; background: var(--bg2); border: none; color: var(--text); font-size: 0.9rem; font-weight: 600; padding: 0.9rem 1.25rem; text-align: left; cursor: pointer; font-family: var(--font); display: flex; justify-content: space-between; align-items: center; }
+.faq-q:hover { background: var(--bg3); }
+.faq-q .faq-icon { color: var(--muted); font-size: 1rem; transition: transform 0.2s; flex-shrink: 0; margin-left: 1rem; }
+.faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+.faq-a { background: var(--bg); padding: 0 1.25rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; }
+.faq-a.open { max-height: 600px; padding: 0.9rem 1.25rem; }
+.faq-a p { font-size: 0.875rem; color: var(--muted); margin-bottom: 0.5rem; }
+.faq-a p:last-child { margin-bottom: 0; }
+
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; } .nav-links { display: none; }
+  .filter-grid { grid-template-columns: 1fr; }
+  .plan-card { grid-template-columns: 1fr; }
+  .plan-pricing { text-align: left; }
+  .wq-options { flex-direction: column; }
+  .results-bar { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the cheapest mobile plan in Malaysia in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tune Talk offers some of the most affordable prepaid plans starting from RM25/month with 10GB data. CelcomDigi BEST Prepaid starts at RM30/month with 15GB. These are ideal for light users or those with Wi-Fi at home and work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Malaysian telco has the best 5G coverage in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maxis and CelcomDigi have the widest 5G coverage in Malaysia in 2026, particularly in urban areas like Klang Valley, Penang, and Johor Bahru. Yes 5G specialises entirely in 5G connectivity. U Mobile also has expanding 5G coverage. Always check individual operator coverage maps for your specific area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is prepaid or postpaid better in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prepaid is better if you want flexibility with no contract commitment, easier registration, and no credit check. Postpaid typically offers more data for the price, included device subsidies, and better customer service priority. For most regular users who want value, postpaid plans at RM80–RM100/month offer the best data-per-ringgit ratio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which mobile plan offers the most data per ringgit in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "U Mobile consistently offers competitive data-per-ringgit ratios. U Mobile's Giler Unlimited prepaid at RM40/month provides effectively unlimited data (throttled after a high-speed threshold). CelcomDigi postpaid plans at RM80–RM100 also offer strong value with 50–100GB."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I keep my number when switching telcos in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Mobile Number Portability (MNP) is available in Malaysia. You can port your existing number to a new operator by visiting the new operator's store with your IC, existing SIM, and completing the transfer form. The process takes 1–3 business days and your number remains active throughout the transfer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Digi and Celcom in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Digi and Celcom merged to form CelcomDigi in 2022–2023. As of 2026, both brands operate under the CelcomDigi umbrella with unified network infrastructure. The BEST prepaid and postpaid plans are the primary offerings under the CelcomDigi brand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Malaysian mobile plans include roaming?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most postpaid plans include limited roaming passes or add-ons. Prepaid plans generally do not include free roaming. You can purchase roaming day passes from most operators for RM10–RM20/day when travelling. CelcomDigi, Maxis, and U Mobile all offer travel roaming add-ons through their apps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which telco is best for rural areas in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maxis and CelcomDigi tend to have the best rural coverage due to their extensive tower networks across Peninsular Malaysia. For East Malaysia (Sabah and Sarawak), CelcomDigi has strong coverage. U Mobile and Yes 5G are more urban-focused. Always check the operator's coverage map before committing to a plan."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Compare Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← All Guides</a>
+    <h1>📱 Compare Malaysia Mobile Plans 2026 <span class="tool-tag">Interactive Tool</span></h1>
+    <p class="subtitle">Filter prepaid and postpaid plans from all major telcos. Sort by price, data, or value. Find the right plan in seconds.</p>
+  </div>
+
+  <!-- WIZARD -->
+  <div class="wizard" id="wizard">
+    <h3>🎯 Quick Recommendation</h3>
+    <p>Answer 3 questions and we'll suggest the best plan type for you.</p>
+    <div class="wizard-questions">
+      <div class="wq">
+        <label>What's your monthly budget?</label>
+        <div class="wq-options" data-q="budget">
+          <button class="wq-opt" data-v="30">Under RM35</button>
+          <button class="wq-opt" data-v="60">RM35–RM65</button>
+          <button class="wq-opt" data-v="100">RM65–RM100</button>
+          <button class="wq-opt" data-v="999">RM100+</button>
+        </div>
+      </div>
+      <div class="wq">
+        <label>How much data do you need?</label>
+        <div class="wq-options" data-q="data">
+          <button class="wq-opt" data-v="light">Light (social media, messaging)</button>
+          <button class="wq-opt" data-v="medium">Medium (streaming occasionally)</button>
+          <button class="wq-opt" data-v="heavy">Heavy (video calls, hotspot)</button>
+        </div>
+      </div>
+      <div class="wq">
+        <label>Do you want a contract?</label>
+        <div class="wq-options" data-q="contract">
+          <button class="wq-opt" data-v="no">No contract (flexible)</button>
+          <button class="wq-opt" data-v="yes">Contract OK (want best value)</button>
+        </div>
+      </div>
+    </div>
+    <div class="wizard-result" id="wizard-result">
+      <h4>Our Recommendation</h4>
+      <p class="rec-plan" id="rec-plan"></p>
+      <p id="rec-reason"></p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>🔧 Filter Plans</h3>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Provider</label>
+        <select id="provider-filter">
+          <option value="any">All Providers</option>
+          <option value="CelcomDigi">CelcomDigi (Digi/Celcom)</option>
+          <option value="Maxis">Maxis</option>
+          <option value="U Mobile">U Mobile</option>
+          <option value="Yes">Yes 4G/5G</option>
+          <option value="Tune Talk">Tune Talk</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Plan Type</label>
+        <select id="type-filter">
+          <option value="any">Prepaid &amp; Postpaid</option>
+          <option value="prepaid">Prepaid only</option>
+          <option value="postpaid">Postpaid only</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Max Monthly Budget</label>
+        <div class="range-row">
+          <input type="range" id="budget-slider" min="25" max="150" value="150" step="5">
+          <span class="range-value" id="budget-display">RM150</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Min Data (GB)</label>
+        <div class="range-row">
+          <input type="range" id="data-slider" min="0" max="100" value="0" step="5">
+          <span class="range-value" id="data-display">0 GB</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>5G Support</label>
+        <div class="toggle-row">
+          <label class="toggle">
+            <input type="checkbox" id="fiveg-toggle">
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">5G plans only</span>
+        </div>
+      </div>
+    </div>
+    <button class="reset-btn" id="reset-filters">↻ Reset all filters</button>
+  </div>
+
+  <!-- SORT + RESULTS -->
+  <div class="results-bar">
+    <span class="results-count">Showing <em id="result-count">0</em> plans</span>
+    <div class="sort-bar">
+      <span style="font-size:0.75rem;color:var(--muted);">Sort:</span>
+      <button class="sort-btn active" data-sort="price-asc">Price ↑</button>
+      <button class="sort-btn" data-sort="price-desc">Price ↓</button>
+      <button class="sort-btn" data-sort="data-desc">Data ↓</button>
+      <button class="sort-btn" data-sort="value">Best Value</button>
+    </div>
+  </div>
+
+  <!-- PLAN CARDS -->
+  <div class="plan-cards" id="plan-cards"></div>
+
+  <div class="info-box" style="margin-top:1.5rem;">
+    <strong>💡 Tip:</strong> "Best Value" sort ranks plans by GB per RM. Unlimited data plans are ranked top. Use the 5G toggle to quickly compare 5G-capable plans only.
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠️ Disclaimer:</strong> Plan pricing and details are based on publicly available information as of early 2026 and may change without notice. Always verify current pricing and terms directly with the operator before subscribing. Prices shown are standard rates and may exclude promotional discounts, device bundles, or loyalty pricing.
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq section">
+    <h2>Frequently Asked Questions</h2>
+    <div id="faq-list"></div>
+  </div>
+
+  <div class="section">
+    <h2>Related Guides &amp; Tools</h2>
+    <div class="related-guides">
+      <a href="../broadband/" class="related-card">
+        🌐 Compare Broadband Plans
+        <div class="rel-desc">Filter all home broadband plans by speed, price &amp; contract</div>
+      </a>
+      <a href="../../guides/broadband-comparison/" class="related-card">
+        📡 Broadband Comparison Guide
+        <div class="rel-desc">Full deep dive — provider breakdowns, coverage, FAQ</div>
+      </a>
+      <a href="../../guides/opening-bank-account/" class="related-card">
+        🏦 Open a Bank Account
+        <div class="rel-desc">Best Malaysian banks for residents and expats</div>
+      </a>
+      <a href="../../" class="related-card">
+        🗂️ All Sorted MY Guides
+        <div class="rel-desc">Housing, finance, telecoms, and more</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="coffee-banner">
+    <p>Sorted MY is free to use. If this tool saved you time or money, consider buying us a coffee.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">☕ Buy me a coffee</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">Sorted MY</a>
+    <a href="../broadband/">Compare Broadband</a>
+    <a href="../../guides/broadband-comparison/">Broadband Guide</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Support</a>
+  </div>
+  <p>© 2026 Sorted MY — Independent guides for living in Malaysia. Not affiliated with any telco.</p>
+</footer>
+
+<script>
+const PLANS = [
+  // ── CelcomDigi ──
+  {
+    provider: 'CelcomDigi', name: 'BEST Prepaid 30',
+    type: 'prepaid', price: 30, data: 15, dataDisplay: '15 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'Light users & backup SIM'
+  },
+  {
+    provider: 'CelcomDigi', name: 'BEST Prepaid 50',
+    type: 'prepaid', price: 50, data: 30, dataDisplay: '30 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Mid-range prepaid with 5G'
+  },
+  {
+    provider: 'CelcomDigi', name: 'BEST Prepaid 80',
+    type: 'prepaid', price: 80, data: 65, dataDisplay: '65 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Heavy prepaid users'
+  },
+  {
+    provider: 'CelcomDigi', name: 'Postpaid 50',
+    type: 'postpaid', price: 50, data: 20, dataDisplay: '20 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: false,
+    bestFor: 'Budget postpaid starter'
+  },
+  {
+    provider: 'CelcomDigi', name: 'Postpaid 80',
+    type: 'postpaid', price: 80, data: 50, dataDisplay: '50 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
+    bestFor: 'Mid-tier postpaid with 5G'
+  },
+  {
+    provider: 'CelcomDigi', name: 'Postpaid 100',
+    type: 'postpaid', price: 100, data: 100, dataDisplay: '100 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
+    bestFor: 'Power users, hotspot sharing'
+  },
+  {
+    provider: 'CelcomDigi', name: 'Postpaid 130',
+    type: 'postpaid', price: 130, data: 999, dataDisplay: 'Unlimited',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
+    bestFor: 'Unlimited data on 5G'
+  },
+  // ── Maxis ──
+  {
+    provider: 'Maxis', name: 'HotLink Red 35',
+    type: 'prepaid', price: 35, data: 15, dataDisplay: '15 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'Flexible Maxis prepaid'
+  },
+  {
+    provider: 'Maxis', name: 'HotLink Red Plus 60',
+    type: 'prepaid', price: 60, data: 40, dataDisplay: '40 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Mid-range Maxis 5G prepaid'
+  },
+  {
+    provider: 'Maxis', name: 'Postpaid 60',
+    type: 'postpaid', price: 60, data: 30, dataDisplay: '30 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: false,
+    bestFor: 'Entry postpaid with Maxis network'
+  },
+  {
+    provider: 'Maxis', name: 'Postpaid 98',
+    type: 'postpaid', price: 98, data: 80, dataDisplay: '80 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
+    bestFor: 'High-data 5G postpaid'
+  },
+  {
+    provider: 'Maxis', name: 'Postpaid 128',
+    type: 'postpaid', price: 128, data: 999, dataDisplay: 'Unlimited',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
+    bestFor: 'Unlimited data & 5G'
+  },
+  // ── U Mobile ──
+  {
+    provider: 'U Mobile', name: 'Giler Unlimited Prepaid',
+    type: 'prepaid', price: 40, data: 999, dataDisplay: 'Unlimited*',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'Budget unlimited prepaid'
+  },
+  {
+    provider: 'U Mobile', name: '5G Prepaid 55',
+    type: 'prepaid', price: 55, data: 30, dataDisplay: '30 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: '5G prepaid with no contract'
+  },
+  {
+    provider: 'U Mobile', name: 'Postpaid P58',
+    type: 'postpaid', price: 58, data: 30, dataDisplay: '30 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'No-contract postpaid'
+  },
+  {
+    provider: 'U Mobile', name: 'Postpaid P98',
+    type: 'postpaid', price: 98, data: 100, dataDisplay: '100 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'High data, no contract, 5G'
+  },
+  {
+    provider: 'U Mobile', name: 'Postpaid P138',
+    type: 'postpaid', price: 138, data: 999, dataDisplay: 'Unlimited',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Unlimited no-contract postpaid'
+  },
+  // ── Yes 4G/5G ──
+  {
+    provider: 'Yes', name: '5G Go Prepaid 38',
+    type: 'prepaid', price: 38, data: 20, dataDisplay: '20 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Affordable 5G prepaid'
+  },
+  {
+    provider: 'Yes', name: '5G Freedom 65',
+    type: 'postpaid', price: 65, data: 50, dataDisplay: '50 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: '5G postpaid, no contract'
+  },
+  {
+    provider: 'Yes', name: '5G Freedom 95',
+    type: 'postpaid', price: 95, data: 100, dataDisplay: '100 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'High-data 5G, no contract'
+  },
+  // ── Tune Talk ──
+  {
+    provider: 'Tune Talk', name: 'Prepaid Basic 25',
+    type: 'prepaid', price: 25, data: 10, dataDisplay: '10 GB',
+    calls: '100 mins', sms: '50 SMS', contract: 0, fiveG: false,
+    bestFor: 'Lowest cost prepaid'
+  },
+  {
+    provider: 'Tune Talk', name: 'Active Prepaid 45',
+    type: 'prepaid', price: 45, data: 25, dataDisplay: '25 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'Value prepaid, no 5G needed'
+  },
+  {
+    provider: 'Tune Talk', name: 'Postpaid 55',
+    type: 'postpaid', price: 55, data: 30, dataDisplay: '30 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 12, fiveG: false,
+    bestFor: 'Budget postpaid on Celcom network'
+  }
+];
+
+const FAQS = [
+  {
+    q: "What is the cheapest mobile plan in Malaysia in 2026?",
+    a: "<p>Tune Talk offers some of the most affordable prepaid plans starting from RM25/month with 10GB data. CelcomDigi BEST Prepaid starts at RM30/month with 15GB. These are ideal for light users or those with Wi-Fi at home and work.</p>"
+  },
+  {
+    q: "Which Malaysian telco has the best 5G coverage in 2026?",
+    a: "<p>Maxis and CelcomDigi have the widest 5G coverage in Malaysia, particularly in Klang Valley, Penang, and Johor Bahru. Yes 5G specialises entirely in 5G. U Mobile also has expanding 5G coverage. Always check the operator's coverage map for your specific area.</p>"
+  },
+  {
+    q: "Is prepaid or postpaid better in Malaysia?",
+    a: "<p>Prepaid is better if you want flexibility with no contract, easier registration, and no credit check. Postpaid typically offers more data for the price and better customer service priority.</p><p>For most regular users who want value, postpaid plans at RM80–RM100/month offer the best data-per-ringgit ratio.</p>"
+  },
+  {
+    q: "Which mobile plan offers the most data per ringgit?",
+    a: "<p>U Mobile consistently offers competitive GB-per-ringgit ratios. The Giler Unlimited prepaid at RM40/month provides effectively unlimited data. Use the \"Best Value\" sort in the tool above to rank all plans by GB/RM.</p>"
+  },
+  {
+    q: "Can I keep my number when switching telcos in Malaysia?",
+    a: "<p>Yes. Mobile Number Portability (MNP) is available in Malaysia. Visit the new operator's store with your IC and existing SIM. The process takes 1–3 business days. Your old SIM continues to work until the port completes.</p>"
+  },
+  {
+    q: "What is the difference between Digi and Celcom in 2026?",
+    a: "<p>Digi and Celcom merged to form CelcomDigi in 2022–2023. As of 2026, both brands operate under the CelcomDigi umbrella on a unified network. The BEST prepaid and postpaid plans are the current primary offerings.</p>"
+  },
+  {
+    q: "Do Malaysian mobile plans include free roaming?",
+    a: "<p>Most postpaid plans include limited roaming passes or optional add-ons. Prepaid plans generally do not include free roaming. Day passes are available from most operators for RM10–RM20/day. CelcomDigi, Maxis, and U Mobile all offer travel add-ons through their apps.</p>"
+  },
+  {
+    q: "Which telco is best for rural areas in Malaysia?",
+    a: "<p>Maxis and CelcomDigi have the best rural coverage due to their extensive tower networks across Peninsular Malaysia. For East Malaysia (Sabah and Sarawak), CelcomDigi has strong coverage. U Mobile and Yes 5G are more urban-focused. Always check the operator's coverage map before committing.</p>"
+  }
+];
+
+// State
+let sortMode = 'price-asc';
+let filters = { provider: 'any', type: 'any', budget: 150, minData: 0, fiveG: false };
+let wizard = { budget: null, data: null, contract: null };
+
+// Helpers
+function valueScore(plan) {
+  if (plan.data === 999) return 9999;
+  return plan.data / plan.price;
+}
+
+function applyFilters() {
+  return PLANS.filter(p => {
+    if (filters.provider !== 'any' && p.provider !== filters.provider) return false;
+    if (filters.type !== 'any' && p.type !== filters.type) return false;
+    if (p.price > filters.budget) return false;
+    if (filters.minData > 0 && p.data < filters.minData && p.data !== 999) return false;
+    if (filters.fiveG && !p.fiveG) return false;
+    return true;
+  });
+}
+
+function sortPlans(plans) {
+  const copy = [...plans];
+  if (sortMode === 'price-asc') copy.sort((a,b) => a.price - b.price);
+  else if (sortMode === 'price-desc') copy.sort((a,b) => b.price - a.price);
+  else if (sortMode === 'data-desc') copy.sort((a,b) => b.data - a.data);
+  else if (sortMode === 'value') copy.sort((a,b) => valueScore(b) - valueScore(a));
+  return copy;
+}
+
+function providerColor(provider) {
+  const map = {
+    'CelcomDigi': '#3b82f6',
+    'Maxis': '#ef4444',
+    'U Mobile': '#f97316',
+    'Yes': '#22c55e',
+    'Tune Talk': '#a855f7'
+  };
+  return map[provider] || 'var(--accent)';
+}
+
+function render() {
+  const filtered = applyFilters();
+  const sorted = sortPlans(filtered);
+  document.getElementById('result-count').textContent = sorted.length;
+
+  const container = document.getElementById('plan-cards');
+  if (sorted.length === 0) {
+    container.innerHTML = '<div class="no-results">No plans match your filters. Try adjusting your budget or data requirements.</div>';
+    return;
+  }
+
+  // Mark best value (top value score)
+  const topScore = sortMode === 'value' ? valueScore(sorted[0]) : -1;
+
+  container.innerHTML = sorted.map((p, i) => {
+    const isBest = sortMode === 'value' && i === 0;
+    const color = providerColor(p.provider);
+    const contractTag = p.contract === 0
+      ? '<span class="plan-tag tag-nocontract">No Contract</span>'
+      : `<span class="plan-tag tag-contract">${p.contract}-mo contract</span>`;
+    const fiveGTag = p.fiveG ? '<span class="plan-tag tag-5g">5G</span>' : '';
+    const typeTag = `<span class="plan-tag tag-${p.type}">${p.type === 'prepaid' ? 'Prepaid' : 'Postpaid'}</span>`;
+    const gbRm = p.data === 999 ? '∞ GB/RM' : `${(p.data/p.price).toFixed(2)} GB/RM`;
+
+    return `<div class="plan-card${isBest ? ' best-value' : ''}">
+  <div class="plan-info">
+    <div class="plan-provider" style="color:${color}">${p.provider} <span style="color:var(--text);font-weight:400;font-size:0.85rem">${p.name}</span></div>
+    <div class="plan-details">
+      ${typeTag}
+      <span class="plan-tag tag-data">${p.dataDisplay}</span>
+      <span class="plan-tag tag-calls">📞 ${p.calls}</span>
+      ${fiveGTag}
+      ${contractTag}
+    </div>
+    <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem">${p.bestFor}</div>
+  </div>
+  <div class="plan-pricing">
+    <div class="plan-price">RM${p.price}<span class="plan-price-unit">/mo</span></div>
+    <div class="plan-value">${gbRm}</div>
+  </div>
+</div>`;
+  }).join('');
+}
+
+// Event listeners
+document.getElementById('provider-filter').addEventListener('change', e => {
+  filters.provider = e.target.value; render();
+});
+document.getElementById('type-filter').addEventListener('change', e => {
+  filters.type = e.target.value; render();
+});
+document.getElementById('budget-slider').addEventListener('input', e => {
+  filters.budget = +e.target.value;
+  document.getElementById('budget-display').textContent = `RM${e.target.value}`;
+  render();
+});
+document.getElementById('data-slider').addEventListener('input', e => {
+  filters.minData = +e.target.value;
+  document.getElementById('data-display').textContent = `${e.target.value} GB`;
+  render();
+});
+document.getElementById('fiveg-toggle').addEventListener('change', e => {
+  filters.fiveG = e.target.checked; render();
+});
+document.getElementById('reset-filters').addEventListener('click', () => {
+  filters = { provider: 'any', type: 'any', budget: 150, minData: 0, fiveG: false };
+  document.getElementById('provider-filter').value = 'any';
+  document.getElementById('type-filter').value = 'any';
+  document.getElementById('budget-slider').value = 150;
+  document.getElementById('budget-display').textContent = 'RM150';
+  document.getElementById('data-slider').value = 0;
+  document.getElementById('data-display').textContent = '0 GB';
+  document.getElementById('fiveg-toggle').checked = false;
+  render();
+});
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    sortMode = btn.dataset.sort;
+    render();
+  });
+});
+
+// Wizard
+document.querySelectorAll('.wq-opt').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const q = btn.closest('[data-q]').dataset.q;
+    btn.closest('[data-q]').querySelectorAll('.wq-opt').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    wizard[q] = btn.dataset.v;
+    checkWizard();
+  });
+});
+
+function checkWizard() {
+  if (!wizard.budget || !wizard.data || !wizard.contract) return;
+  const res = document.getElementById('wizard-result');
+  const planEl = document.getElementById('rec-plan');
+  const reasonEl = document.getElementById('rec-reason');
+
+  let rec = '', reason = '';
+  const budget = +wizard.budget;
+
+  if (wizard.data === 'heavy' && wizard.contract === 'no') {
+    if (budget >= 98) {
+      rec = 'U Mobile Postpaid P98 — RM98/mo, 100 GB, 5G, no contract';
+      reason = 'Heavy users who want maximum flexibility. No contract + high data + 5G.';
+    } else if (budget >= 40) {
+      rec = 'U Mobile Giler Unlimited Prepaid — RM40/mo, Unlimited data';
+      reason = 'Best budget option for heavy data usage with no contract commitment.';
+    }
+  } else if (wizard.data === 'heavy' && wizard.contract === 'yes') {
+    if (budget >= 128) {
+      rec = 'Maxis Postpaid 128 — RM128/mo, Unlimited data, 5G';
+      reason = 'Maxis has excellent 5G coverage — ideal for heavy users who want reliability.';
+    } else if (budget >= 98) {
+      rec = 'CelcomDigi Postpaid 100 — RM100/mo, 100 GB, 5G';
+      reason = 'Great value 100 GB postpaid with 5G on Malaysia\'s largest merged network.';
+    } else {
+      rec = 'CelcomDigi Postpaid 80 — RM80/mo, 50 GB, 5G';
+      reason = 'Solid mid-tier plan with 5G support at a reasonable price.';
+    }
+  } else if (wizard.data === 'medium') {
+    if (budget <= 50) {
+      rec = 'CelcomDigi BEST Prepaid 50 — RM50/mo, 30 GB, 5G';
+      reason = 'Good mid-range prepaid with 5G for occasional streaming.';
+    } else if (wizard.contract === 'no') {
+      rec = 'Yes 5G Freedom 65 — RM65/mo, 50 GB, 5G, no contract';
+      reason = 'Pure 5G network with generous data and no lock-in.';
+    } else {
+      rec = 'Maxis Postpaid 60 — RM60/mo, 30 GB';
+      reason = 'Reliable Maxis network at an accessible postpaid price point.';
+    }
+  } else {
+    // light user
+    if (budget <= 30) {
+      rec = 'Tune Talk Prepaid Basic 25 — RM25/mo, 10 GB';
+      reason = 'Lowest cost option — perfect as a backup SIM or for minimal data usage.';
+    } else {
+      rec = 'CelcomDigi BEST Prepaid 30 — RM30/mo, 15 GB';
+      reason = 'Affordable prepaid with unlimited calls — great for light daily use.';
+    }
+  }
+
+  planEl.textContent = rec;
+  reasonEl.textContent = reason;
+  res.style.display = 'block';
+}
+
+// Build FAQ
+const faqContainer = document.getElementById('faq-list');
+FAQS.forEach((faq, i) => {
+  const div = document.createElement('div');
+  div.className = 'faq-item';
+  div.innerHTML = `
+    <button class="faq-q" aria-expanded="false" aria-controls="faq-a-${i}">
+      ${faq.q}
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a" id="faq-a-${i}" role="region">${faq.a}</div>`;
+  faqContainer.appendChild(div);
+  div.querySelector('.faq-q').addEventListener('click', function() {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    const ans = div.querySelector('.faq-a');
+    ans.classList.toggle('open', !expanded);
+  });
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>
