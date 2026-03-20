@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPF Retirement Calculator Malaysia 2026 — KWSP Projected Balance | Sorted</title>
+  <meta name="description" content="Free EPF (KWSP) retirement calculator for Malaysia 2026. Project your EPF balance at retirement, check against EPF basic savings thresholds, and estimate monthly withdrawals.">
+  <meta property="og:title" content="EPF Retirement Calculator Malaysia 2026 — Sorted">
+  <meta property="og:description" content="Calculate your projected EPF (KWSP) balance at retirement. Check EPF basic savings thresholds and estimate how long your savings will last.">
+  <meta name="keywords" content="EPF calculator Malaysia, KWSP calculator 2026, EPF retirement calculator, KWSP retirement savings, EPF basic savings threshold, EPF dividend calculator, EPF projection Malaysia">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/guides/epf-calculator/">
+  <style>
+/* Sorted — shared stylesheet */
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.summary-box { background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.summary-item { flex: 1; min-width: 120px; }
+.summary-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+.summary-item .value { font-size: 1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.07); border: 1px solid rgba(255,209,102,0.25); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.warn-box strong { color: var(--warn); }
+.success-box { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.success-box strong { color: var(--success); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: var(--accent2); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.checklist { list-style: none; }
+.checklist li { padding: 0.5rem 0; padding-left: 1.75rem; position: relative; font-size: 0.9rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 1rem; }
+.checklist li strong { color: var(--text); }
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.9375rem; margin: 1.25rem 0; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(108,99,255,0.25); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+th { background: rgba(108,99,255,0.2); padding: 0.9rem 1.2rem; text-align: left; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text); font-weight: 700; border-bottom: 2px solid rgba(108,99,255,0.45); white-space: nowrap; }
+th:not(:last-child), td:not(:last-child) { border-right: 1px solid var(--border); }
+td { padding: 0.8rem 1.2rem; border-bottom: 1px solid rgba(45,49,72,0.8); color: var(--text); line-height: 1.5; font-weight: 400; }
+tr:last-child td { border-bottom: none; }
+td:first-child { color: var(--text); font-weight: 600; }
+tr:nth-child(odd) td { background: var(--bg2); }
+tr:nth-child(even) td { background: var(--bg3); }
+tr:hover td { background: rgba(108,99,255,0.12); transition: background 0.15s ease; }
+.amount { color: var(--accent2); font-weight: 700; font-family: monospace; font-size: 0.95rem; }
+.badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.4rem; }
+.badge-green { background: rgba(34,197,94,0.15); color: var(--success); border: 1px solid rgba(34,197,94,0.3); }
+.badge-yellow { background: rgba(255,209,102,0.12); color: var(--warn); border: 1px solid rgba(255,209,102,0.3); }
+.badge-red { background: rgba(239,68,68,0.12); color: var(--danger); border: 1px solid rgba(239,68,68,0.3); }
+.badge-blue { background: rgba(108,99,255,0.15); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.3); }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-weight: 700; color: var(--text); font-size: 0.95rem; margin-bottom: 0.4rem; }
+.faq-a { color: var(--muted); font-size: 0.875rem; }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+.winner-box { background: rgba(72,207,173,0.06); border: 1px solid rgba(72,207,173,0.25); border-left: 4px solid var(--accent2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; }
+.winner-box strong { color: var(--accent2); }
+
+/* Calculator-specific styles */
+.calc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+.calc-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--accent2); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.form-group input, .form-group select { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; color: var(--text); font-size: 0.95rem; font-family: var(--font); width: 100%; outline: none; transition: border-color 0.2s; }
+.form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+.form-group input::placeholder { color: var(--muted); }
+.form-group .hint { font-size: 0.75rem; color: var(--muted); }
+.calc-btn { display: block; width: 100%; background: var(--accent); color: white; border: none; border-radius: 8px; padding: 0.85rem 1.5rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 1.25rem; font-family: var(--font); }
+.calc-btn:hover { background: #7c74ff; }
+.results-section { display: none; }
+.results-section.visible { display: block; }
+.results-hero { background: var(--bg2); border: 1px solid rgba(72,207,173,0.35); border-left: 4px solid var(--accent2); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+.results-hero .hero-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; margin-bottom: 0.3rem; }
+.results-hero .hero-amount { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--accent2); font-family: monospace; letter-spacing: -1px; }
+.results-hero .hero-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.4rem; }
+.results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.result-stat { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.result-stat .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; margin-bottom: 0.25rem; }
+.result-stat .stat-value { font-size: 1.15rem; font-weight: 800; color: var(--text); }
+.result-stat .stat-value.green { color: var(--success); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.danger { color: var(--danger); }
+.threshold-result { border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+.threshold-result.pass { background: rgba(34,197,94,0.07); border: 1px solid rgba(34,197,94,0.3); }
+.threshold-result.fail { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.3); }
+.threshold-result.pass .th-title { color: var(--success); font-weight: 700; }
+.threshold-result.fail .th-title { color: var(--danger); font-weight: 700; }
+.threshold-result .th-body { color: var(--muted); margin-top: 0.35rem; font-size: 0.85rem; }
+.breakdown-wrap { overflow-x: auto; }
+@media (max-width: 600px) {
+  .summary-box { flex-direction: column; gap: 1rem; }
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  th, td { padding: 0.65rem 0.75rem; font-size: 0.8rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">All Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← All Guides</a>
+    <h1>📊 EPF Retirement Calculator Malaysia 2026</h1>
+    <p class="subtitle">Project your KWSP balance at retirement, check EPF basic savings thresholds, and estimate monthly withdrawals — all in one tool.</p>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-item">
+      <div class="label">Employee Rate</div>
+      <div class="value">11% of salary</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Employer Rate</div>
+      <div class="value">12–13% of salary</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Avg Dividend (5yr)</div>
+      <div class="value">~5.5% p.a.</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">Last Updated</div>
+      <div class="value">March 2026</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>How to use:</strong> Enter your current details below. The calculator projects your EPF balance year-by-year, accounting for contributions from both you and your employer, salary growth, and EPF dividends. Results appear instantly below the calculator.
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="section" id="calculator">
+    <h2>EPF Retirement Calculator</h2>
+
+    <div class="calc-card">
+      <h3>Your Details</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="currentAge">Current Age</label>
+          <input type="number" id="currentAge" placeholder="e.g. 30" min="18" max="64" value="">
+          <span class="hint">Your age today (18–64)</span>
+        </div>
+        <div class="form-group">
+          <label for="retirementAge">Retirement Age</label>
+          <select id="retirementAge">
+            <option value="55">55 (early retirement)</option>
+            <option value="60" selected>60 (standard)</option>
+            <option value="65">65 (extended)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="monthlySalary">Monthly Gross Salary (RM)</label>
+          <input type="number" id="monthlySalary" placeholder="e.g. 5000" min="0" value="">
+          <span class="hint">Your current gross monthly pay before deductions</span>
+        </div>
+        <div class="form-group">
+          <label for="currentBalance">Current EPF Balance (RM)</label>
+          <input type="number" id="currentBalance" placeholder="e.g. 25000" min="0" value="">
+          <span class="hint">Total balance — Akaun Persaraan + Sejahtera + Fleksibel combined</span>
+        </div>
+        <div class="form-group">
+          <label for="salaryGrowth">Expected Annual Salary Growth (%)</label>
+          <input type="number" id="salaryGrowth" value="3" min="0" max="20" step="0.5">
+          <span class="hint">Annual increment rate. Malaysia average ~3–5%</span>
+        </div>
+        <div class="form-group">
+          <label for="dividendRate">Expected EPF Dividend Rate (%)</label>
+          <input type="number" id="dividendRate" value="5.5" min="0" max="15" step="0.1">
+          <span class="hint">EPF declared 5.50% (2023), 5.45% (2022). 5.5% is a reasonable estimate.</span>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calculate()">Calculate My EPF Projection →</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-section" id="resultsSection">
+
+      <div class="results-hero">
+        <div class="hero-label">Projected EPF Balance at Retirement</div>
+        <div class="hero-amount" id="projectedBalance">RM0</div>
+        <div class="hero-sub" id="heroSub">Retiring at age 60 · 0 years of contributions</div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-stat">
+          <div class="stat-label">Monthly Withdrawal (20 yrs)</div>
+          <div class="stat-value green" id="monthlyWithdrawal">RM0</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Total Contributions</div>
+          <div class="stat-value" id="totalContributions">RM0</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Total Dividends Earned</div>
+          <div class="stat-value" id="totalDividends">RM0</div>
+        </div>
+        <div class="result-stat">
+          <div class="stat-label">Years to Retirement</div>
+          <div class="stat-value" id="yearsToRetirement">0</div>
+        </div>
+      </div>
+
+      <div class="threshold-result" id="thresholdResult">
+        <div class="th-title" id="thresholdTitle"></div>
+        <div class="th-body" id="thresholdBody"></div>
+      </div>
+
+      <div class="section" style="margin-bottom:1.5rem;">
+        <h2>Year-by-Year Projection</h2>
+        <p>Every 5 years, how your balance is expected to grow:</p>
+        <div class="breakdown-wrap">
+          <table id="breakdownTable">
+            <thead>
+              <tr>
+                <th>Age</th>
+                <th>Year</th>
+                <th>Annual Salary</th>
+                <th>Annual Contribution</th>
+                <th>EPF Balance</th>
+                <th>Basic Savings Target</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="breakdownBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EPF BASIC SAVINGS THRESHOLDS -->
+  <div class="section" id="thresholds">
+    <h2>EPF Basic Savings Thresholds by Age</h2>
+    <p>EPF sets minimum "basic savings" benchmarks to guide members on whether they are on track for retirement. These are the targets EPF recommends you meet at each age milestone:</p>
+    <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Age</th>
+        <th>EPF Basic Savings Target</th>
+        <th>What It Represents</th>
+      </tr>
+      <tr>
+        <td>Age 30</td>
+        <td class="amount">RM27,000</td>
+        <td>Early career baseline — roughly 1 year of minimum wage savings</td>
+      </tr>
+      <tr>
+        <td>Age 35</td>
+        <td class="amount">RM57,000</td>
+        <td>Mid-career checkpoint — contributions plus growth starting to compound</td>
+      </tr>
+      <tr>
+        <td>Age 40</td>
+        <td class="amount">RM103,000</td>
+        <td>Peak earning years — balance should have doubled from age 30</td>
+      </tr>
+      <tr>
+        <td>Age 45</td>
+        <td class="amount">RM165,000</td>
+        <td>Pre-retirement phase — compounding dividend effect becomes significant</td>
+      </tr>
+      <tr>
+        <td>Age 50</td>
+        <td class="amount">RM246,000</td>
+        <td>Final decade — balance should be accelerating due to large base</td>
+      </tr>
+      <tr>
+        <td>Age 55</td>
+        <td class="amount">RM370,000</td>
+        <td>EPF's minimum recommended balance for basic retirement needs</td>
+      </tr>
+    </table>
+    </div>
+    <div class="warn-box">
+      <strong>⚠ Reality check:</strong> The RM370,000 target at age 55 is EPF's <em>minimum</em> for basic retirement — not a comfortable retirement. Spread over 20 years, RM370,000 works out to roughly RM1,541/month. With Malaysia's rising cost of living, financial planners typically recommend 10–15× your annual expenses as a retirement target.
+    </div>
+  </div>
+
+  <!-- HOW EPF CONTRIBUTIONS WORK -->
+  <div class="section">
+    <h2>How EPF Contributions Are Calculated</h2>
+    <p>Your total monthly EPF contribution comes from two sources — you (the employee) and your employer:</p>
+    <table>
+      <tr>
+        <th>Contributor</th>
+        <th>Rate (Age Below 60)</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td class="amount">11%</td>
+        <td>Deducted from your gross monthly salary. Can opt for 9% (lower rate) if preferred.</td>
+      </tr>
+      <tr>
+        <td>Employer (salary ≤ RM5,000)</td>
+        <td class="amount">13%</td>
+        <td>Employer contributes more if your salary is RM5,000 or below.</td>
+      </tr>
+      <tr>
+        <td>Employer (salary &gt; RM5,000)</td>
+        <td class="amount">12%</td>
+        <td>Standard employer rate for higher earners.</td>
+      </tr>
+      <tr>
+        <td><strong>Total (salary ≤ RM5,000)</strong></td>
+        <td class="amount">24%</td>
+        <td>Combined employee + employer contribution.</td>
+      </tr>
+      <tr>
+        <td><strong>Total (salary &gt; RM5,000)</strong></td>
+        <td class="amount">23%</td>
+        <td>Combined employee + employer contribution.</td>
+      </tr>
+    </table>
+    <div class="info-box">
+      <strong>This calculator uses:</strong> 24% total contribution rate for salary ≤ RM5,000 and 23% for salary &gt; RM5,000, matching actual EPF statutory rates. Contributions are calculated on your gross salary before tax.
+    </div>
+  </div>
+
+  <!-- EPF DIVIDEND HISTORY -->
+  <div class="section">
+    <h2>EPF Dividend History (Conventional)</h2>
+    <p>EPF dividends are declared annually. Here's the recent track record for the conventional (non-Shariah) account:</p>
+    <table>
+      <tr>
+        <th>Year</th>
+        <th>Conventional Dividend</th>
+        <th>Shariah Dividend</th>
+      </tr>
+      <tr><td>2023</td><td class="amount">5.50%</td><td class="amount">5.40%</td></tr>
+      <tr><td>2022</td><td class="amount">5.35%</td><td class="amount">4.75%</td></tr>
+      <tr><td>2021</td><td class="amount">6.10%</td><td class="amount">5.65%</td></tr>
+      <tr><td>2020</td><td class="amount">5.20%</td><td class="amount">4.90%</td></tr>
+      <tr><td>2019</td><td class="amount">5.45%</td><td class="amount">5.00%</td></tr>
+      <tr><td>2018</td><td class="amount">6.15%</td><td class="amount">5.90%</td></tr>
+    </table>
+    <p>The 5-year average (2019–2023) is approximately 5.52% — making 5.5% a reasonable and slightly conservative assumption for long-term projections.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I withdraw my EPF before retirement?</div>
+      <div class="faq-a">Yes, in limited circumstances. Akaun Fleksibel (Akaun 3) can be withdrawn anytime, minimum RM50, once per month. Akaun Sejahtera (Akaun 2) allows partial withdrawals for housing, education, medical, or reaching age 50. Akaun Persaraan (Akaun 1) is locked until age 55 and is intended purely for retirement. Early withdrawals permanently reduce your compounding base — even small withdrawals today cost significantly more at retirement.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What happens to my EPF at age 55?</div>
+      <div class="faq-a">At age 55, EPF restructures into a new Akaun 55 from which you can make full or partial withdrawals. You can choose to withdraw all at once, in periodic amounts, or leave it invested — EPF continues to pay dividends on remaining balances. Many financial advisors recommend withdrawing gradually rather than all at once to continue earning EPF dividends, which are typically higher than fixed deposits.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is EPF enough for retirement?</div>
+      <div class="faq-a">For most Malaysians, EPF alone is not sufficient. Studies by EPF show that the majority of members exhaust their savings within 3 years of retirement. EPF should be treated as a foundation — supplement it with SSPN (for education), private retirement schemes (PRS), unit trusts, property, or other investments. A common guideline: your EPF target should be 10–15× your annual expenses at retirement age.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How is EPF dividend calculated on my account?</div>
+      <div class="faq-a">EPF calculates dividends on the minimum daily balance in your account during the calendar year. This means money deposited early in the year earns more than money deposited late. Employers are required to submit contributions by the 15th of each month — late employer contributions still earn dividends from the date EPF receives them, but you lose compounding on the delay period.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I make voluntary top-up contributions to EPF?</div>
+      <div class="faq-a">Yes. EPF allows voluntary self-contributions (Caruman Sukarela) beyond the statutory amount. These earn the same dividend rate as regular contributions. Voluntary contributions also qualify for personal tax relief of up to RM4,000 per year (combined with EPF statutory contributions under Schedule 6 relief). This makes additional EPF top-ups tax-efficient for higher earners.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is the EPF Akaun Persaraan / Sejahtera / Fleksibel split?</div>
+      <div class="faq-a">Since May 2024, EPF contributions are split across three accounts: Akaun Persaraan (75% of contributions — locked until 55), Akaun Sejahtera (15% — for housing, education, medical), and Akaun Fleksibel (10% — can be withdrawn anytime). The three-account structure replaced the old Akaun 1 (70%) and Akaun 2 (30%) model. Your total balance across all three accounts is what this calculator projects.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if I'm self-employed or a gig worker?</div>
+      <div class="faq-a">Self-employed individuals and gig workers can contribute voluntarily to EPF through the i-Saraan scheme. There is no minimum contribution amount. The government provides an additional incentive — matching contributions of 15% (capped at RM250/year) for eligible participants through the i-Saraan Enhanced programme. Contributing voluntarily ensures you're building retirement savings even without an employer's mandatory contribution.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How accurate is this calculator?</div>
+      <div class="faq-a">This calculator gives a projection based on the inputs you provide — it assumes consistent salary growth, a steady dividend rate, and uninterrupted contributions throughout your career. Real-world outcomes will vary due to career breaks, salary changes, changes in EPF policy, actual dividend declarations, and early withdrawals. Use this as a planning estimate, not a guarantee. For personalised advice, consult a licensed financial planner (FIMM or SIDC registered).</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="../epf-guide/" class="related-card">
+        💼 EPF (KWSP) Complete Guide
+        <div class="rel-desc">Akaun Persaraan, Sejahtera, Fleksibel — how EPF works end-to-end</div>
+      </a>
+      <a href="../kwsp-akaun-fleksibel-withdrawal/" class="related-card">
+        💸 Akaun Fleksibel Withdrawal
+        <div class="rel-desc">How to withdraw from EPF Akaun 3 — steps, limits, and real cost</div>
+      </a>
+      <a href="../filing-tax-return/" class="related-card">
+        🧾 Filing Your Tax Return
+        <div class="rel-desc">EPF contributions as tax relief — maximise your return</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="coffee-banner">
+    <p>If this calculator helped you plan for retirement, consider buying me a coffee — it keeps Sorted running.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" class="coffee-btn" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠ Disclaimer:</strong> This calculator is for informational and planning purposes only. It does not constitute financial advice. Projections are estimates based on inputs provided and assume consistent contributions, steady salary growth, and a fixed dividend rate — actual results will vary. EPF contribution rates, policies, and dividend declarations are subject to change. Always verify current EPF rules at <a href="https://www.kwsp.gov.my" target="_blank" rel="noopener">kwsp.gov.my</a> or consult a licensed financial planner before making retirement planning decisions.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">Home</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support this site</a>
+  </div>
+  <p>Sorted — Every document. Every step. Sorted. | Malaysia 🇲🇾</p>
+  <p style="margin-top:0.4rem;">Not affiliated with any Malaysian government body or EPF/KWSP. Information verified March 2026.</p>
+</footer>
+
+<script>
+const BASIC_SAVINGS = {
+  30: 27000,
+  35: 57000,
+  40: 103000,
+  45: 165000,
+  50: 246000,
+  55: 370000
+};
+
+function fmt(n) {
+  return 'RM' + Math.round(n).toLocaleString('en-MY');
+}
+
+function getContribRate(salary) {
+  return salary <= 5000 ? 0.24 : 0.23;
+}
+
+function getBasicSavingsTarget(age) {
+  const milestones = [30, 35, 40, 45, 50, 55];
+  // Find the most recent milestone at or before the age
+  let target = null;
+  for (let m of milestones) {
+    if (age >= m) target = BASIC_SAVINGS[m];
+  }
+  return target;
+}
+
+function getNextMilestone(age) {
+  const milestones = [30, 35, 40, 45, 50, 55];
+  for (let m of milestones) {
+    if (age <= m) return { age: m, target: BASIC_SAVINGS[m] };
+  }
+  return null;
+}
+
+function calculate() {
+  const currentAge = parseInt(document.getElementById('currentAge').value);
+  const retirementAge = parseInt(document.getElementById('retirementAge').value);
+  const monthlySalary = parseFloat(document.getElementById('monthlySalary').value);
+  const currentBalance = parseFloat(document.getElementById('currentBalance').value) || 0;
+  const salaryGrowth = parseFloat(document.getElementById('salaryGrowth').value) / 100;
+  const dividendRate = parseFloat(document.getElementById('dividendRate').value) / 100;
+
+  if (!currentAge || !monthlySalary || currentAge >= retirementAge) {
+    alert('Please fill in all fields. Current age must be less than retirement age.');
+    return;
+  }
+
+  if (currentAge < 18 || currentAge > 64) {
+    alert('Please enter a valid current age between 18 and 64.');
+    return;
+  }
+
+  const yearsToRetire = retirementAge - currentAge;
+  let balance = currentBalance;
+  let salary = monthlySalary;
+  let totalContributions = 0;
+  let totalDividends = 0;
+
+  const breakdownRows = [];
+
+  for (let year = 1; year <= yearsToRetire; year++) {
+    const age = currentAge + year;
+    const rate = getContribRate(salary);
+    const annualContrib = salary * rate * 12;
+    const dividendBase = balance + annualContrib;
+    const dividendEarned = dividendBase * dividendRate;
+
+    totalContributions += annualContrib;
+    totalDividends += dividendEarned;
+    balance = dividendBase + dividendEarned;
+
+    // Capture every 5-year milestone + retirement year + age 30/35/40/45/50/55 milestones
+    const isMilestone = [30, 35, 40, 45, 50, 55, 60, 65].includes(age);
+    const isEvery5 = year % 5 === 0;
+    const isRetirement = year === yearsToRetire;
+
+    if (isMilestone || isEvery5 || isRetirement) {
+      const target = BASIC_SAVINGS[age];
+      let statusHtml = '—';
+      if (target) {
+        if (balance >= target) {
+          statusHtml = '<span style="color:var(--success);font-weight:700;">✓ On track</span>';
+        } else {
+          statusHtml = '<span style="color:var(--danger);font-weight:700;">✗ Below target</span>';
+        }
+      }
+      breakdownRows.push({
+        age,
+        year: new Date().getFullYear() + year,
+        salary: salary * 12,
+        annualContrib,
+        balance,
+        target,
+        statusHtml
+      });
+    }
+
+    salary = salary * (1 + salaryGrowth);
+  }
+
+  // Remove duplicate rows
+  const seen = new Set();
+  const uniqueRows = breakdownRows.filter(r => {
+    if (seen.has(r.age)) return false;
+    seen.add(r.age);
+    return true;
+  });
+
+  // Monthly withdrawal over 20 years
+  const monthlyWithdrawal = balance / (20 * 12);
+
+  // Check threshold at retirement
+  const retirementTarget = BASIC_SAVINGS[retirementAge];
+
+  // Display results
+  document.getElementById('projectedBalance').textContent = fmt(balance);
+  document.getElementById('heroSub').textContent =
+    `Retiring at age ${retirementAge} · ${yearsToRetire} year${yearsToRetire !== 1 ? 's' : ''} of contributions`;
+  document.getElementById('monthlyWithdrawal').textContent = fmt(monthlyWithdrawal);
+  document.getElementById('totalContributions').textContent = fmt(totalContributions + currentBalance);
+  document.getElementById('totalDividends').textContent = fmt(totalDividends);
+  document.getElementById('yearsToRetirement').textContent = yearsToRetire + ' years';
+
+  // Threshold result
+  const thresholdEl = document.getElementById('thresholdResult');
+  const titleEl = document.getElementById('thresholdTitle');
+  const bodyEl = document.getElementById('thresholdBody');
+
+  if (retirementTarget && retirementAge === 55) {
+    if (balance >= retirementTarget) {
+      thresholdEl.className = 'threshold-result pass';
+      titleEl.textContent = '✓ Meets EPF Basic Savings Target at Age 55';
+      bodyEl.textContent = `Your projected balance of ${fmt(balance)} exceeds the EPF basic savings target of ${fmt(retirementTarget)} at age 55. You are on track for a basic retirement. Consider whether this is sufficient for your lifestyle — the basic savings target covers basic needs only.`;
+    } else {
+      thresholdEl.className = 'threshold-result fail';
+      titleEl.textContent = '✗ Below EPF Basic Savings Target at Age 55';
+      bodyEl.textContent = `Your projected balance of ${fmt(balance)} is below the EPF basic savings target of ${fmt(retirementTarget)} at age 55. Consider increasing contributions, reducing early withdrawals, delaying retirement, or supplementing with other investments (PRS, unit trusts, etc.).`;
+    }
+  } else if (balance >= 370000) {
+    thresholdEl.className = 'threshold-result pass';
+    titleEl.textContent = `✓ Meets EPF Basic Savings Target (RM370,000 benchmark)`;
+    bodyEl.textContent = `Your projected balance of ${fmt(balance)} at age ${retirementAge} exceeds the EPF basic savings benchmark of RM370,000. You are on track for a basic retirement. Evaluate whether this amount supports your expected lifestyle for 20+ years.`;
+  } else {
+    thresholdEl.className = 'threshold-result fail';
+    titleEl.textContent = `✗ Below EPF Basic Savings Benchmark`;
+    bodyEl.textContent = `Your projected balance of ${fmt(balance)} at age ${retirementAge} is below the EPF basic savings benchmark of RM370,000. Consider contributing more, avoiding early withdrawals, or supplementing with Private Retirement Scheme (PRS) or other investments.`;
+  }
+
+  // Build breakdown table
+  const tbody = document.getElementById('breakdownBody');
+  tbody.innerHTML = '';
+  uniqueRows.forEach(row => {
+    const tr = document.createElement('tr');
+    const targetCell = row.target ? fmt(row.target) : '—';
+    tr.innerHTML = `
+      <td>${row.age}</td>
+      <td>${row.year}</td>
+      <td class="amount">${fmt(row.salary)}</td>
+      <td class="amount">${fmt(row.annualContrib)}</td>
+      <td class="amount">${fmt(row.balance)}</td>
+      <td>${targetCell}</td>
+      <td>${row.statusHtml}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Show results
+  document.getElementById('resultsSection').classList.add('visible');
+  document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>
