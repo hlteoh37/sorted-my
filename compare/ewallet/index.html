@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Malaysian E-Wallets 2026 — TNG, GrabPay, Boost, MAE &amp; More | Sorted</title>
+  <meta name="description" content="Compare all major Malaysian e-wallets in 2026. Touch n Go, GrabPay, Boost, MAE, ShopeePay, BigPay, FavePay, GoPayz, Setel — fees, cashback, features side by side.">
+  <meta property="og:title" content="Compare Malaysian E-Wallets 2026 | Sorted">
+  <meta property="og:description" content="Find the best e-wallet in Malaysia. Compare transfer fees, cashback, bill payment, investments and more. Updated 2026.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/ewallet/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148;
+  --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad;
+  --warn: #ffd166; --danger: #ef4444; --success: #22c55e;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+/* LAYOUT */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* HEADER */
+.page-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.back-link:hover { color: var(--text); text-decoration: none; }
+.page-header h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.page-header p { color: var(--muted); font-size: 0.95rem; max-width: 640px; }
+
+/* CONTROLS */
+.controls { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+.control-group { display: flex; flex-direction: column; gap: 0.4rem; min-width: 160px; }
+.control-group label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.control-group select, .control-group input { background: var(--bg3); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 0.45rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.control-group select:focus, .control-group input:focus { outline: none; border-color: var(--accent); }
+.control-group select option { background: var(--bg3); }
+
+/* FEATURE FILTERS */
+.feature-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.feat-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); border-radius: 20px; padding: 0.3rem 0.85rem; font-size: 0.8rem; cursor: pointer; transition: all 0.15s; font-family: var(--font); }
+.feat-btn:hover { border-color: var(--accent); color: var(--text); }
+.feat-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* COMPARE BAR */
+.compare-bar { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: none; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.compare-bar.visible { display: flex; }
+.compare-slots { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.compare-slot { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.75rem; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+.compare-slot .remove { cursor: pointer; color: var(--muted); font-size: 1rem; line-height: 1; }
+.compare-slot .remove:hover { color: var(--danger); }
+.compare-actions { display: flex; gap: 0.5rem; }
+.btn { padding: 0.5rem 1.1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none; font-family: var(--font); transition: opacity 0.15s; }
+.btn:hover { opacity: 0.85; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+.btn-ghost:hover { color: var(--text); border-color: var(--text); }
+
+/* RESULTS COUNT */
+.results-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+
+/* WALLET GRID */
+.wallet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+
+/* WALLET CARD */
+.wallet-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; position: relative; transition: border-color 0.15s; }
+.wallet-card:hover { border-color: var(--accent); }
+.wallet-card.selected { border-color: var(--accent2); box-shadow: 0 0 0 2px rgba(72, 207, 173, 0.15); }
+.wallet-card.hidden { display: none; }
+
+.wallet-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+.wallet-identity { display: flex; align-items: center; gap: 0.75rem; }
+.wallet-emoji { font-size: 2rem; line-height: 1; }
+.wallet-name-wrap h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.2; }
+.wallet-name-wrap .wallet-tagline { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+
+.rating { display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; flex-shrink: 0; }
+.rating-score { font-size: 1.3rem; font-weight: 800; color: var(--accent2); line-height: 1; }
+.rating-stars { font-size: 0.7rem; letter-spacing: 1px; color: var(--warn); }
+.rating-label { font-size: 0.65rem; color: var(--muted); }
+
+/* FEATURE BADGES */
+.feature-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.badge { font-size: 0.7rem; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 600; background: var(--bg3); color: var(--muted); border: 1px solid var(--border); }
+.badge.yes { background: rgba(34,197,94,0.12); color: var(--success); border-color: rgba(34,197,94,0.25); }
+.badge.highlight { background: rgba(108,99,255,0.15); color: var(--accent); border-color: rgba(108,99,255,0.3); }
+
+/* WALLET DETAILS */
+.wallet-details { display: flex; flex-direction: column; gap: 0.6rem; }
+.detail-row { display: flex; gap: 0.5rem; font-size: 0.82rem; }
+.detail-row .detail-label { color: var(--muted); min-width: 110px; flex-shrink: 0; }
+.detail-row .detail-value { color: var(--text); }
+
+/* SELECT COMPARE */
+.card-select-btn { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; }
+.select-compare-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); border-radius: 6px; padding: 0.3rem 0.75rem; font-size: 0.78rem; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.select-compare-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+.select-compare-btn.active { background: rgba(72,207,173,0.12); border-color: var(--accent2); color: var(--accent2); }
+
+/* COMPARISON TABLE */
+.compare-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 200; align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
+.compare-modal-overlay.open { display: flex; }
+.compare-modal { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); width: 100%; max-width: 900px; padding: 2rem; }
+.compare-modal h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.compare-modal .close-btn { background: transparent; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer; line-height: 1; padding: 0; }
+.compare-modal .close-btn:hover { color: var(--text); }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; overflow-x: auto; display: block; }
+.compare-table th { background: var(--bg3); padding: 0.75rem 1rem; text-align: left; border-bottom: 2px solid var(--border); white-space: nowrap; }
+.compare-table th.wallet-col { text-align: center; min-width: 160px; }
+.compare-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.compare-table td.wallet-col { text-align: center; }
+.compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+.compare-table .row-label { color: var(--muted); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+.compare-table .check { color: var(--success); }
+.compare-table .cross { color: var(--danger); opacity: 0.5; }
+.compare-table .wallet-head-emoji { font-size: 1.5rem; display: block; margin-bottom: 0.25rem; }
+.compare-table .wallet-head-name { font-weight: 700; font-size: 0.9rem; }
+.compare-table .wallet-head-rating { color: var(--accent2); font-weight: 700; font-size: 1.1rem; }
+
+/* TIP JAR */
+.tip-section { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; margin: 2.5rem 0; }
+.tip-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.tip-section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+.tip-btn { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; padding: 0.65rem 1.75rem; border-radius: 8px; font-size: 0.95rem; transition: opacity 0.15s; }
+.tip-btn:hover { opacity: 0.85; text-decoration: none; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 1.5rem 0; text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 2rem; }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .controls { flex-direction: column; }
+  .control-group { min-width: 100%; }
+  .wallet-grid { grid-template-columns: 1fr; }
+  .compare-modal { padding: 1.25rem; }
+  .compare-modal h2 { font-size: 1.05rem; }
+}
+@media (max-width: 480px) {
+  nav { padding: 0 1rem; }
+  .nav-links { gap: 1rem; }
+  .container { padding: 0 1rem; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand">Sort<span>ed</span></a>
+  <div class="nav-links">
+    <a href="../../">Home</a>
+    <a href="../../guides/">Guides</a>
+    <a href="../">Compare</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <a href="../" class="back-link">← Compare Tools</a>
+    <h1>Compare Malaysian E-Wallets 2026</h1>
+    <p>Side-by-side comparison of 9 major e-wallets in Malaysia — fees, cashback, bill payment, investments and more. Data updated March 2026.</p>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="control-group">
+      <label>Sort by</label>
+      <select id="sort-select">
+        <option value="rating">Rating (highest first)</option>
+        <option value="name">Name (A–Z)</option>
+      </select>
+    </div>
+    <div class="control-group" style="flex:1; min-width:180px;">
+      <label>Search</label>
+      <input type="text" id="search-input" placeholder="e.g. GrabPay, cashback…">
+    </div>
+  </div>
+
+  <!-- FEATURE FILTERS -->
+  <div class="feature-filters" id="feature-filters">
+    <button class="feat-btn active" data-feature="all">All Wallets</button>
+    <button class="feat-btn" data-feature="bill-pay">Bill Payment</button>
+    <button class="feat-btn" data-feature="investment">Investment / Savings</button>
+    <button class="feat-btn" data-feature="cashback">Cashback</button>
+    <button class="feat-btn" data-feature="free-transfer">Free P2P Transfer</button>
+    <button class="feat-btn" data-feature="insurance">Insurance</button>
+    <button class="feat-btn" data-feature="reload-bonus">Reload Bonus</button>
+    <button class="feat-btn" data-feature="international">International Use</button>
+  </div>
+
+  <!-- COMPARE BAR -->
+  <div class="compare-bar" id="compare-bar">
+    <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+      <span style="font-size:0.85rem; color:var(--muted); font-weight:600;">Compare:</span>
+      <div class="compare-slots" id="compare-slots"></div>
+    </div>
+    <div class="compare-actions">
+      <button class="btn btn-primary" id="run-compare-btn">Compare Now →</button>
+      <button class="btn btn-ghost" id="clear-compare-btn">Clear</button>
+    </div>
+  </div>
+
+  <!-- RESULTS META -->
+  <div class="results-meta" id="results-meta">Showing 9 wallets</div>
+
+  <!-- WALLET GRID -->
+  <div class="wallet-grid" id="wallet-grid"></div>
+
+  <!-- TIP JAR -->
+  <div class="tip-section">
+    <h3>Found this useful? ☕</h3>
+    <p>This comparison is free and ad-free. If it saved you time, a small tip helps keep it updated.</p>
+    <a href="https://buy.stripe.com/aEUaEKaOi8IY1a04gg" class="tip-btn" target="_blank" rel="noopener">Buy me a coffee ☕</a>
+  </div>
+</div><!-- /container -->
+
+<!-- COMPARE MODAL -->
+<div class="compare-modal-overlay" id="compare-modal-overlay">
+  <div class="compare-modal">
+    <h2>
+      Side-by-Side Comparison
+      <button class="close-btn" id="close-compare-btn" aria-label="Close">×</button>
+    </h2>
+    <div id="compare-table-container" style="overflow-x:auto;"></div>
+  </div>
+</div>
+
+<footer>
+  <p>Data sourced from official e-wallet apps and websites. Verify fees and features before transacting. <a href="../../">Sorted MY</a> — Malaysian financial tools.</p>
+</footer>
+
+<script>
+const WALLETS = [
+  {
+    id: "tng",
+    name: "Touch 'n Go eWallet",
+    tagline: "Malaysia's most widely used e-wallet",
+    emoji: "💳",
+    rating: 4.6,
+    features: ["bill-pay","investment","cashback","free-transfer","insurance","reload-bonus"],
+    transferFee: "Free (up to RM5,000/day)",
+    topUp: "Online banking, ATM, Touch n Go card, debit/credit card",
+    cashback: "GO Rewards points, cashback via CIMB & partner promos",
+    billPay: "TNB, Unifi, Maxis, Celcom, water bills, insurance",
+    investment: "GO+ (money market fund, ~3.5% p.a.) via Principal",
+    merchants: "Petrol stations, Grab, supermarkets, toll, parking, convenience stores",
+    special: "Toll & transit payments, insurance top-up, RFID reload, loans via Boost/CIMB",
+    international: false,
+    hasBillPay: true, hasInvestment: true, hasCashback: true, hasFreeTransfer: true, hasInsurance: true, hasReloadBonus: true, hasInternational: false
+  },
+  {
+    id: "grabpay",
+    name: "GrabPay",
+    tagline: "Ride-hailing rewards powerhouse",
+    emoji: "🟢",
+    rating: 4.4,
+    features: ["bill-pay","cashback","free-transfer","insurance","reload-bonus"],
+    transferFee: "Free",
+    topUp: "Online banking, debit/credit card, GrabPay card (Mastercard)",
+    cashback: "GrabRewards points, cashback on Grab rides/food/mart, PayLater rewards",
+    billPay: "TNB, Unifi, Maxis, telco bills, insurance premiums",
+    investment: "No dedicated investment product",
+    merchants: "Grab (rides, food, mart), petrol, pharmacies, F&B via GrabPay merchants",
+    special: "GrabPay Card (virtual Mastercard), PayLater BNPL, Grab Insurance, GrabFinance",
+    international: true,
+    hasBillPay: true, hasInvestment: false, hasCashback: true, hasFreeTransfer: true, hasInsurance: true, hasReloadBonus: true, hasInternational: true
+  },
+  {
+    id: "boost",
+    name: "Boost",
+    tagline: "Celcom-backed wallet with lifestyle rewards",
+    emoji: "🚀",
+    rating: 4.1,
+    features: ["bill-pay","cashback","free-transfer","insurance","reload-bonus"],
+    transferFee: "Free",
+    topUp: "Online banking, debit/credit card, convenience stores",
+    cashback: "Cashback on selected merchants, loyalty stamp-card programme",
+    billPay: "TNB, water bills, telco, credit card bills",
+    investment: "No investment product",
+    merchants: "McDonald's, KFC, 7-Eleven, Shell, pharmacies, F&B outlets",
+    special: "Boost Credit (BNPL/nano-loans), Takaful insurance, QR Pay at 350,000+ outlets",
+    international: false,
+    hasBillPay: true, hasInvestment: false, hasCashback: true, hasFreeTransfer: true, hasInsurance: true, hasReloadBonus: true, hasInternational: false
+  },
+  {
+    id: "mae",
+    name: "MAE by Maybank",
+    tagline: "Maybank's digital wallet & banking app",
+    emoji: "🏦",
+    rating: 4.3,
+    features: ["bill-pay","investment","cashback","free-transfer","insurance","reload-bonus"],
+    transferFee: "Free (within MAE/Maybank2u)",
+    topUp: "Maybank account instant link, debit/credit card",
+    cashback: "MAE cashback deals, Maybank Treats programme, merchant offers",
+    billPay: "Full JomPAY support — all major utilities, telcos, credit cards",
+    investment: "MAE Invest — unit trusts, fixed deposits, amanah saham",
+    merchants: "All DuitNow QR merchants, Maybank PayDay deals at selected F&B",
+    special: "Full Maybank banking features, DuitNow QR/transfer, MAE Visa debit card (abroad), split bills",
+    international: true,
+    hasBillPay: true, hasInvestment: true, hasCashback: true, hasFreeTransfer: true, hasInsurance: true, hasReloadBonus: true, hasInternational: true
+  },
+  {
+    id: "shopee",
+    name: "ShopeePay",
+    tagline: "Best for Shopee shoppers",
+    emoji: "🛒",
+    rating: 3.9,
+    features: ["bill-pay","cashback","reload-bonus"],
+    transferFee: "Free (to Shopee users); bank withdrawals RM0.50–RM2.00",
+    topUp: "Online banking, ShopeePay cards, debit/credit card",
+    cashback: "Shopee coins, vouchers, cashback during Shopee sales & campaigns",
+    billPay: "TNB, telcos, water, Shopee Bills integration",
+    investment: "No investment product",
+    merchants: "Shopee platform, ShopeePay physical merchants (growing), selected F&B",
+    special: "SPaylater BNPL, Shopee Deals integration, coin cashback on Shopee orders",
+    international: false,
+    hasBillPay: true, hasInvestment: false, hasCashback: true, hasFreeTransfer: false, hasInsurance: false, hasReloadBonus: true, hasInternational: false
+  },
+  {
+    id: "bigpay",
+    name: "BigPay",
+    tagline: "Best for international transfers & travel",
+    emoji: "✈️",
+    rating: 4.2,
+    features: ["bill-pay","cashback","free-transfer","international"],
+    transferFee: "Free P2P; international remittance from RM3",
+    topUp: "Online banking, BigPay Visa card (debit prepaid)",
+    cashback: "BIG Points (AirAsia loyalty), cashback on selected categories",
+    billPay: "Selected utilities and telcos via BigPay app",
+    investment: "No investment product",
+    merchants: "All Visa-accepting merchants globally, AirAsia flights, online shopping",
+    special: "BigPay Visa Card for international spending, AirAsia BIG Points earn, low-cost remittance to 50+ countries",
+    international: true,
+    hasBillPay: true, hasInvestment: false, hasCashback: true, hasFreeTransfer: true, hasInsurance: false, hasReloadBonus: false, hasInternational: true
+  },
+  {
+    id: "favepay",
+    name: "FavePay",
+    tagline: "Cashback at F&B and lifestyle merchants",
+    emoji: "⭐",
+    rating: 3.7,
+    features: ["cashback","reload-bonus"],
+    transferFee: "N/A (not a primary P2P wallet)",
+    topUp: "Online banking, debit/credit card",
+    cashback: "Up to 10% cashback at Fave partner merchants (F&B, beauty, fitness)",
+    billPay: "No direct bill payment",
+    investment: "No investment product",
+    merchants: "Fave partner F&B, cafes, spas, fitness studios (~4,000 Malaysia merchants)",
+    special: "Fave Deals (group buying), e-Cards (gift vouchers), cashback for friends referral",
+    international: false,
+    hasBillPay: false, hasInvestment: false, hasCashback: true, hasFreeTransfer: false, hasInsurance: false, hasReloadBonus: true, hasInternational: false
+  },
+  {
+    id: "gopayz",
+    name: "GoPayz",
+    tagline: "UMB's multi-currency e-wallet",
+    emoji: "🌐",
+    rating: 3.5,
+    features: ["bill-pay","investment","international"],
+    transferFee: "Free domestic; FX fee for international",
+    topUp: "UMB online banking, bank transfer, debit card",
+    cashback: "Limited cashback promos; GoPoints loyalty programme",
+    billPay: "Utilities, telcos, government services (LHDN, PTPTN, JPJ)",
+    investment: "GoSave — high-yield savings product",
+    merchants: "DuitNow QR merchants, selected retail and online stores",
+    special: "Multi-currency wallet, international transfers, government bill payments",
+    international: true,
+    hasBillPay: true, hasInvestment: true, hasCashback: false, hasFreeTransfer: false, hasInsurance: false, hasReloadBonus: false, hasInternational: true
+  },
+  {
+    id: "setel",
+    name: "Setel",
+    tagline: "Petrol & highway payments made easy",
+    emoji: "⛽",
+    rating: 3.8,
+    features: ["bill-pay","cashback","reload-bonus"],
+    transferFee: "N/A (not a primary P2P wallet)",
+    topUp: "Online banking, debit/credit card",
+    cashback: "Setel coins, Petronas mesra points, cashback on petrol & highway",
+    billPay: "Petronas petrol, PLUS/expressway tolls, selected bills",
+    investment: "No investment product",
+    merchants: "Petronas petrol stations, PLUS toll plazas, Kedai Mesra convenience",
+    special: "Pump-from-car petrol payment, toll top-up, mesra points integration, fleet management",
+    international: false,
+    hasBillPay: true, hasInvestment: false, hasCashback: true, hasFreeTransfer: false, hasInsurance: false, hasReloadBonus: true, hasInternational: false
+  }
+];
+
+function stars(rating) {
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.4 ? 1 : 0;
+  return "★".repeat(full) + (half ? "½" : "") + "☆".repeat(5 - full - half);
+}
+
+function renderBadges(w) {
+  const badges = [];
+  if (w.hasFreeTransfer) badges.push('<span class="badge yes">Free Transfer</span>');
+  if (w.hasBillPay) badges.push('<span class="badge yes">Bill Pay</span>');
+  if (w.hasInvestment) badges.push('<span class="badge highlight">Investment</span>');
+  if (w.hasInsurance) badges.push('<span class="badge highlight">Insurance</span>');
+  if (w.hasInternational) badges.push('<span class="badge highlight">International</span>');
+  if (w.hasCashback) badges.push('<span class="badge yes">Cashback</span>');
+  return badges.join('');
+}
+
+function renderCard(w) {
+  return `
+    <div class="wallet-card" data-id="${w.id}" data-features='${JSON.stringify(w.features)}'>
+      <div class="wallet-header">
+        <div class="wallet-identity">
+          <span class="wallet-emoji">${w.emoji}</span>
+          <div class="wallet-name-wrap">
+            <h3>${w.name}</h3>
+            <div class="wallet-tagline">${w.tagline}</div>
+          </div>
+        </div>
+        <div class="rating">
+          <span class="rating-score">${w.rating}</span>
+          <span class="rating-stars">${stars(w.rating)}</span>
+          <span class="rating-label">/ 5.0</span>
+        </div>
+      </div>
+      <div class="feature-badges">${renderBadges(w)}</div>
+      <div class="wallet-details">
+        <div class="detail-row">
+          <span class="detail-label">P2P Transfer</span>
+          <span class="detail-value">${w.transferFee}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Top-Up</span>
+          <span class="detail-value">${w.topUp}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Cashback</span>
+          <span class="detail-value">${w.cashback}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Bill Payment</span>
+          <span class="detail-value">${w.billPay}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Investment</span>
+          <span class="detail-value">${w.investment}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Merchants</span>
+          <span class="detail-value">${w.merchants}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Special Features</span>
+          <span class="detail-value">${w.special}</span>
+        </div>
+      </div>
+      <div class="card-select-btn">
+        <button class="select-compare-btn" data-id="${w.id}">+ Add to Compare</button>
+      </div>
+    </div>`;
+}
+
+// State
+let selectedFeature = "all";
+let searchQuery = "";
+let sortBy = "rating";
+let compareIds = [];
+
+const grid = document.getElementById("wallet-grid");
+const compareBar = document.getElementById("compare-bar");
+const compareSlots = document.getElementById("compare-slots");
+const resultsMeta = document.getElementById("results-meta");
+
+function getFilteredWallets() {
+  let list = [...WALLETS];
+
+  // Feature filter
+  if (selectedFeature !== "all") {
+    list = list.filter(w => w.features.includes(selectedFeature));
+  }
+
+  // Search
+  if (searchQuery.trim()) {
+    const q = searchQuery.toLowerCase();
+    list = list.filter(w =>
+      w.name.toLowerCase().includes(q) ||
+      w.tagline.toLowerCase().includes(q) ||
+      w.cashback.toLowerCase().includes(q) ||
+      w.special.toLowerCase().includes(q) ||
+      w.merchants.toLowerCase().includes(q)
+    );
+  }
+
+  // Sort
+  if (sortBy === "rating") {
+    list.sort((a, b) => b.rating - a.rating);
+  } else {
+    list.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  return list;
+}
+
+function render() {
+  const visible = getFilteredWallets();
+  const visibleIds = new Set(visible.map(w => w.id));
+
+  // Rebuild grid in sorted order
+  grid.innerHTML = visible.map(w => renderCard(w)).join('');
+
+  // Re-apply selected state
+  compareIds.forEach(id => {
+    const btn = grid.querySelector(`.select-compare-btn[data-id="${id}"]`);
+    const card = grid.querySelector(`.wallet-card[data-id="${id}"]`);
+    if (btn) btn.classList.add("active");
+    if (card) card.classList.add("selected");
+  });
+
+  resultsMeta.textContent = `Showing ${visible.length} of ${WALLETS.length} wallets`;
+
+  attachCardListeners();
+}
+
+function attachCardListeners() {
+  grid.querySelectorAll(".select-compare-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
+      const card = grid.querySelector(`.wallet-card[data-id="${id}"]`);
+      if (compareIds.includes(id)) {
+        compareIds = compareIds.filter(i => i !== id);
+        btn.classList.remove("active");
+        btn.textContent = "+ Add to Compare";
+        if (card) card.classList.remove("selected");
+      } else {
+        if (compareIds.length >= 3) {
+          alert("You can compare up to 3 wallets at a time.");
+          return;
+        }
+        compareIds.push(id);
+        btn.classList.add("active");
+        btn.textContent = "✓ Added";
+        if (card) card.classList.add("selected");
+      }
+      updateCompareBar();
+    });
+  });
+}
+
+function updateCompareBar() {
+  if (compareIds.length === 0) {
+    compareBar.classList.remove("visible");
+    compareSlots.innerHTML = "";
+    return;
+  }
+  compareBar.classList.add("visible");
+  compareSlots.innerHTML = compareIds.map(id => {
+    const w = WALLETS.find(x => x.id === id);
+    return `<div class="compare-slot">${w.emoji} ${w.name} <span class="remove" data-id="${id}" title="Remove">×</span></div>`;
+  }).join('');
+
+  compareSlots.querySelectorAll(".remove").forEach(el => {
+    el.addEventListener("click", () => {
+      const id = el.dataset.id;
+      compareIds = compareIds.filter(i => i !== id);
+      const btn = grid.querySelector(`.select-compare-btn[data-id="${id}"]`);
+      const card = grid.querySelector(`.wallet-card[data-id="${id}"]`);
+      if (btn) { btn.classList.remove("active"); btn.textContent = "+ Add to Compare"; }
+      if (card) card.classList.remove("selected");
+      updateCompareBar();
+    });
+  });
+}
+
+function buildCompareTable() {
+  const wallets = compareIds.map(id => WALLETS.find(w => w.id === id));
+  const rows = [
+    { label: "Rating", fn: w => `<strong style="color:var(--accent2)">${w.rating} / 5.0</strong>` },
+    { label: "P2P Transfer", fn: w => w.transferFee },
+    { label: "Top-Up Methods", fn: w => w.topUp },
+    { label: "Cashback / Rewards", fn: w => w.cashback },
+    { label: "Bill Payment", fn: w => w.billPay },
+    { label: "Investment / Savings", fn: w => w.investment },
+    { label: "Merchants", fn: w => w.merchants },
+    { label: "Special Features", fn: w => w.special },
+    { label: "Free P2P Transfer", fn: w => w.hasFreeTransfer ? '<span class="check">✔</span>' : '<span class="cross">✖</span>' },
+    { label: "Bill Payment", fn: w => w.hasBillPay ? '<span class="check">✔</span>' : '<span class="cross">✖</span>' },
+    { label: "Investment", fn: w => w.hasInvestment ? '<span class="check">✔</span>' : '<span class="cross">✖</span>' },
+    { label: "Insurance", fn: w => w.hasInsurance ? '<span class="check">✔</span>' : '<span class="cross">✖</span>' },
+    { label: "International Use", fn: w => w.hasInternational ? '<span class="check">✔</span>' : '<span class="cross">✖</span>' },
+  ];
+
+  let html = `<table class="compare-table">
+    <thead><tr>
+      <th>Feature</th>
+      ${wallets.map(w => `<th class="wallet-col">
+        <span class="wallet-head-emoji">${w.emoji}</span>
+        <span class="wallet-head-name">${w.name}</span><br>
+        <span class="wallet-head-rating">${w.rating}</span>
+      </th>`).join('')}
+    </tr></thead>
+    <tbody>
+    ${rows.map(r => `<tr>
+      <td class="row-label">${r.label}</td>
+      ${wallets.map(w => `<td class="wallet-col">${r.fn(w)}</td>`).join('')}
+    </tr>`).join('')}
+    </tbody>
+  </table>`;
+
+  return html;
+}
+
+// Feature filter
+document.getElementById("feature-filters").addEventListener("click", e => {
+  if (!e.target.classList.contains("feat-btn")) return;
+  document.querySelectorAll(".feat-btn").forEach(b => b.classList.remove("active"));
+  e.target.classList.add("active");
+  selectedFeature = e.target.dataset.feature;
+  render();
+});
+
+// Sort
+document.getElementById("sort-select").addEventListener("change", e => {
+  sortBy = e.target.value;
+  render();
+});
+
+// Search
+document.getElementById("search-input").addEventListener("input", e => {
+  searchQuery = e.target.value;
+  render();
+});
+
+// Compare actions
+document.getElementById("run-compare-btn").addEventListener("click", () => {
+  if (compareIds.length < 2) {
+    alert("Select at least 2 wallets to compare.");
+    return;
+  }
+  document.getElementById("compare-table-container").innerHTML = buildCompareTable();
+  document.getElementById("compare-modal-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+});
+
+document.getElementById("clear-compare-btn").addEventListener("click", () => {
+  compareIds = [];
+  render();
+  updateCompareBar();
+});
+
+document.getElementById("close-compare-btn").addEventListener("click", () => {
+  document.getElementById("compare-modal-overlay").classList.remove("open");
+  document.body.style.overflow = "";
+});
+
+document.getElementById("compare-modal-overlay").addEventListener("click", e => {
+  if (e.target === e.currentTarget) {
+    e.currentTarget.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+});
+
+// Initial render
+render();
+</script>
+
+</body>
+</html>
