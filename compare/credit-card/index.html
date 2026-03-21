@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Malaysian Credit Cards 2026 — Interactive Filter &amp; Sort Tool | Sorted</title>
+  <meta name="description" content="Compare the best Malaysian credit cards in 2026. Filter by cashback, rewards, travel miles, or Islamic cards. Find the right card for your income and spending habits.">
+  <meta property="og:title" content="Compare Malaysian Credit Cards 2026 — Interactive Tool | Sorted">
+  <meta property="og:description" content="Filter and sort every major Malaysian credit card. Maybank, CIMB, Public Bank, Hong Leong, RHB, AmBank — find the best card for your wallet.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/credit-card/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.filters h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); appearance: auto; cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); margin-top: 0.75rem; }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Results count */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+
+/* Sort bar */
+.sort-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Card grid */
+.card-grid { display: grid; gap: 0.75rem; }
+.cc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; align-items: start; transition: border-color 0.15s; }
+.cc-card:hover { border-color: rgba(108,99,255,0.4); }
+.cc-card.featured { border-color: var(--accent2); border-width: 2px; }
+.cc-card.featured::before { content: '★ POPULAR CHOICE'; display: block; grid-column: 1 / -1; font-size: 0.68rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: -0.25rem; }
+.cc-info { display: flex; flex-direction: column; gap: 0.25rem; }
+.cc-bank { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; }
+.cc-name { font-weight: 700; font-size: 1rem; color: var(--text); line-height: 1.3; }
+.cc-benefit { font-size: 0.875rem; color: var(--accent2); margin-top: 0.1rem; }
+.cc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+.cc-tag { font-size: 0.7rem; font-weight: 600; padding: 0.12rem 0.45rem; border-radius: 4px; letter-spacing: 0.3px; }
+.tag-cashback { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.tag-rewards { background: rgba(108,99,255,0.1); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.2); }
+.tag-travel { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.2); }
+.tag-islamic { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.tag-free { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.tag-waived { background: rgba(72,207,173,0.08); color: var(--accent2); border: 1px solid rgba(72,207,173,0.15); }
+.tag-paid { background: rgba(239,68,68,0.08); color: #f87171; border: 1px solid rgba(239,68,68,0.15); }
+.cc-meta { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+.cc-stats { text-align: right; display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-end; min-width: 90px; }
+.cc-fee { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+.cc-fee-val { font-size: 1.25rem; font-weight: 800; color: var(--accent2); font-family: monospace; line-height: 1.1; }
+.cc-fee-sub { font-size: 0.68rem; color: var(--muted); }
+.cc-income { font-size: 0.72rem; color: var(--muted); text-align: right; }
+.cc-income strong { color: var(--text); }
+
+/* Wizard */
+.wizard { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.wizard h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+.wizard p { color: var(--muted); font-size: 0.875rem; margin-bottom: 1rem; }
+.wizard-questions { display: grid; gap: 1rem; }
+.wq { display: flex; flex-direction: column; gap: 0.35rem; }
+.wq label { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.wq-options { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.wq-opt { background: var(--bg); border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.wq-opt:hover { border-color: var(--accent); color: var(--text); }
+.wq-opt.selected { background: var(--accent); color: white; border-color: var(--accent); }
+.wizard-result { margin-top: 1rem; padding: 1rem; background: rgba(72,207,173,0.06); border: 1px solid rgba(72,207,173,0.25); border-left: 4px solid var(--accent2); border-radius: var(--radius); display: none; }
+.wizard-result h4 { color: var(--accent2); font-size: 0.9rem; margin-bottom: 0.3rem; }
+.wizard-result p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0; }
+.wizard-result .rec-card { font-weight: 700; color: var(--text); font-size: 1rem; }
+
+/* No results */
+.no-results { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { padding: 0.9rem 1.25rem; font-weight: 600; font-size: 0.9rem; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+.faq-q:hover { background: var(--bg3); }
+.faq-q .faq-icon { color: var(--muted); font-size: 1rem; transition: transform 0.2s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 1.25rem 0.9rem; font-size: 0.875rem; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+.faq-item.open .faq-a { display: block; }
+
+/* Coffee + footer */
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; } .nav-links { display: none; }
+  .filter-grid { grid-template-columns: 1fr; }
+  .cc-card { grid-template-columns: 1fr; }
+  .cc-stats { text-align: left; align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+  .cc-fee-val { font-size: 1rem; }
+  .wq-options { flex-direction: column; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Compare Broadband</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← All Guides</a>
+    <h1>💳 Compare Malaysian Credit Cards <span class="tool-tag">Interactive Tool</span></h1>
+    <p class="subtitle">Filter by card type, annual fee, and income requirement. Find the best credit card for your spending habits.</p>
+  </div>
+
+  <!-- WIZARD -->
+  <div class="wizard" id="wizard">
+    <h3>🎯 Quick Recommendation</h3>
+    <p>Answer 3 questions and we'll point you to the right card category.</p>
+    <div class="wizard-questions">
+      <div class="wq">
+        <label>What do you spend most on?</label>
+        <div class="wq-options" data-q="spend">
+          <button class="wq-opt" data-v="groceries">Groceries & dining</button>
+          <button class="wq-opt" data-v="petrol">Petrol & bills</button>
+          <button class="wq-opt" data-v="travel">Travel & hotels</button>
+          <button class="wq-opt" data-v="everything">A bit of everything</button>
+        </div>
+      </div>
+      <div class="wq">
+        <label>Are you looking for a Shariah-compliant card?</label>
+        <div class="wq-options" data-q="islamic">
+          <button class="wq-opt" data-v="yes">Yes, Islamic preferred</button>
+          <button class="wq-opt" data-v="no">No preference</button>
+        </div>
+      </div>
+      <div class="wq">
+        <label>What's your annual income?</label>
+        <div class="wq-options" data-q="income">
+          <button class="wq-opt" data-v="24">Under RM24,000</button>
+          <button class="wq-opt" data-v="36">RM24k – RM36k</button>
+          <button class="wq-opt" data-v="60">RM36k – RM60k</button>
+          <button class="wq-opt" data-v="100">RM60k+</button>
+        </div>
+      </div>
+    </div>
+    <div class="wizard-result" id="wizard-result">
+      <h4>Our Recommendation</h4>
+      <p class="rec-card" id="rec-card"></p>
+      <p id="rec-reason"></p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>🔧 Filter Cards</h3>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Card Type</label>
+        <select id="type-filter">
+          <option value="any">All Types</option>
+          <option value="cashback">Cashback</option>
+          <option value="rewards">Rewards Points</option>
+          <option value="travel">Travel Miles</option>
+          <option value="islamic">Islamic</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Annual Fee</label>
+        <select id="fee-filter">
+          <option value="any">Any</option>
+          <option value="free">Free for life</option>
+          <option value="waived">Waived with spending</option>
+          <option value="paid">Paid</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Min Annual Income</label>
+        <select id="income-filter">
+          <option value="any">Any income</option>
+          <option value="24000">Qualify on RM24k</option>
+          <option value="36000">Qualify on RM36k</option>
+          <option value="60000">Qualify on RM60k</option>
+          <option value="100000">Qualify on RM100k+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Bank</label>
+        <select id="bank-filter">
+          <option value="any">All Banks</option>
+          <option value="Maybank">Maybank</option>
+          <option value="CIMB">CIMB</option>
+          <option value="Public Bank">Public Bank</option>
+          <option value="Hong Leong">Hong Leong</option>
+          <option value="RHB">RHB</option>
+          <option value="AmBank">AmBank</option>
+        </select>
+      </div>
+    </div>
+    <button class="reset-btn" id="reset-filters">↻ Reset all filters</button>
+  </div>
+
+  <!-- SORT + RESULTS -->
+  <div class="results-bar">
+    <span class="results-count">Showing <em id="result-count">0</em> cards</span>
+    <div class="sort-bar">
+      <span style="font-size:0.75rem;color:var(--muted);">Sort:</span>
+      <button class="sort-btn active" data-sort="income-asc">Income ↑</button>
+      <button class="sort-btn" data-sort="income-desc">Income ↓</button>
+      <button class="sort-btn" data-sort="fee-asc">Fee ↑</button>
+      <button class="sort-btn" data-sort="fee-desc">Fee ↓</button>
+      <button class="sort-btn" data-sort="cashback-desc">Cashback ↓</button>
+    </div>
+  </div>
+
+  <div class="card-grid" id="card-grid">
+    <!-- Cards rendered by JS -->
+  </div>
+  <div class="no-results" id="no-results" style="display:none;">No cards match your filters. Try adjusting your criteria.</div>
+
+  <!-- INFO BOX -->
+  <div class="info-box" style="margin-top:2rem;">
+    <strong>Note:</strong> Annual fee waivers and cashback caps change regularly. Always check directly with the bank before applying. Interest rates shown are the standard Bank Negara Malaysia maximum of <strong>18% p.a.</strong> for conventional cards; Islamic cards use a profit rate structure.
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" style="margin-top:2.5rem;">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">What is the minimum income to get a credit card in Malaysia? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Bank Negara Malaysia requires a minimum annual income of <strong>RM24,000</strong> (RM2,000/month) for most credit cards. However, some entry-level cards set their own threshold at this level, while premium and signature cards can require RM60,000 to RM120,000 or more. Your take-home pay, existing debts, and CCRIS record all factor into approval.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What does "annual fee waived" actually mean? <span class="faq-icon">+</span></div>
+        <div class="faq-a">A waived annual fee means you won't pay as long as you meet the bank's minimum spend requirement — typically RM12,000 to RM60,000 per year depending on the card tier. If you don't hit that threshold, the fee is charged. "Free for life" cards have no such condition — the fee is permanently RM0.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the difference between cashback and rewards points? <span class="faq-icon">+</span></div>
+        <div class="faq-a"><strong>Cashback</strong> returns a percentage of your spending directly as a credit or cash — simple and transparent. <strong>Rewards points</strong> (like TreatsPoints or BonusLink) accumulate and can be redeemed for vouchers, merchandise, or air miles. Cashback is often better value for everyday spending; rewards points can win if you redeem strategically (e.g. for flights).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does an Islamic credit card differ from a conventional one? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Islamic credit cards are structured using Shariah-compliant contracts — typically <em>Ujrah</em> (service fee) or <em>Bai' Al-Inah</em> — rather than charging interest (riba). Instead of an interest rate, you pay a fixed service/profit charge. Functionally they work the same as conventional cards for everyday spending.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How many credit cards can I hold in Malaysia? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Bank Negara Malaysia limits total credit card limits to <strong>2× your monthly income</strong> across all cards. There's no hard cap on the number of cards, but each bank will check your CCRIS to assess total exposure. Having too many cards can hurt your credit score and affect loan approvals.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What interest rate do Malaysian credit cards charge? <span class="faq-icon">+</span></div>
+        <div class="faq-a">BNM caps the standard credit card interest rate at <strong>18% p.a.</strong> for conventional cards. Some banks offer a reduced rate (15% p.a.) for good payers. Always pay the full statement balance to avoid interest — the effective cost is very high if you carry a balance month to month.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What should I look for when comparing credit cards? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Focus on: (1) <strong>Where you spend most</strong> — pick a card that rewards your top categories; (2) <strong>Annual fee vs. rewards value</strong> — calculate if the rewards justify any fee; (3) <strong>Cashback caps</strong> — many cards cap monthly cashback at RM30–RM100; (4) <strong>Minimum spend</strong> for fee waiver; (5) <strong>Supplementary card fees</strong> if you want to add a family member.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> Card details on this page are for informational purposes only and were last reviewed in <strong>March 2026</strong>. Annual fees, cashback rates, income requirements, and waiver conditions change regularly. Always verify current terms on the bank's official website before applying. Sorted.my is not a financial adviser and this is not financial advice.
+  </div>
+
+  <!-- COFFEE -->
+  <div class="coffee-banner">
+    <p>Found this tool useful? Help keep Sorted.my free and updated.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">☕ Buy me a coffee</a>
+  </div>
+
+  <!-- RELATED -->
+  <div class="section">
+    <h2>More Comparison Tools</h2>
+    <div class="related-guides">
+      <a href="../broadband/" class="related-card">
+        🌐 Broadband Plans
+        <div class="rel-desc">Compare Unifi, TIME, Maxis and more</div>
+      </a>
+      <a href="../car-loan/" class="related-card">
+        🚗 Car Loan Calculator
+        <div class="rel-desc">Monthly repayment estimator</div>
+      </a>
+      <a href="../mobile/" class="related-card">
+        📱 Mobile Plans
+        <div class="rel-desc">Best prepaid &amp; postpaid plans</div>
+      </a>
+      <a href="../tax-calculator/" class="related-card">
+        🧾 Income Tax Calculator
+        <div class="rel-desc">Estimate your 2025 tax bill</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Compare Broadband</a>
+    <a href="../mobile/">Compare Mobile</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support</a>
+  </div>
+  <div>© 2026 Sorted.my · Last updated March 2026 · Not financial advice</div>
+</footer>
+
+<script>
+const CARDS = [
+  // === MAYBANK ===
+  {
+    id: 1,
+    bank: "Maybank",
+    name: "Maybank 2 Gold Cards",
+    type: ["cashback"],
+    feeType: "free",
+    feeAmount: 0,
+    feeNote: "Free for life",
+    benefit: "5% cashback on weekends, 0.2% weekdays",
+    cashbackRate: 5,
+    minIncome: 30000,
+    interest: "15–18% p.a.",
+    featured: true
+  },
+  {
+    id: 2,
+    bank: "Maybank",
+    name: "Maybank 2 Platinum Cards",
+    type: ["cashback"],
+    feeType: "free",
+    feeAmount: 0,
+    feeNote: "Free for life",
+    benefit: "5% cashback on weekends, 0.5% weekdays (higher limits)",
+    cashbackRate: 5,
+    minIncome: 60000,
+    interest: "15–18% p.a.",
+    featured: false
+  },
+  {
+    id: 3,
+    bank: "Maybank",
+    name: "Maybank Visa Signature",
+    type: ["rewards", "travel"],
+    feeType: "waived",
+    feeAmount: 636,
+    feeNote: "Waived with RM50k/yr spend",
+    benefit: "5× TreatsPoints on dining, retail & overseas; airport lounge access",
+    cashbackRate: 0,
+    minIncome: 100000,
+    interest: "15–18% p.a.",
+    featured: false
+  },
+  {
+    id: 4,
+    bank: "Maybank",
+    name: "Maybank Islamic Ikhwan Visa Gold",
+    type: ["cashback", "islamic"],
+    feeType: "free",
+    feeAmount: 0,
+    feeNote: "Free for life",
+    benefit: "2% cashback on retail spend; Shariah-compliant",
+    cashbackRate: 2,
+    minIncome: 24000,
+    interest: "Profit rate 15% p.a.",
+    featured: false
+  },
+  // === CIMB ===
+  {
+    id: 5,
+    bank: "CIMB",
+    name: "CIMB Cash Rebate Platinum Mastercard",
+    type: ["cashback"],
+    feeType: "free",
+    feeAmount: 0,
+    feeNote: "Free for life",
+    benefit: "Up to 10% cashback on petrol, groceries, utilities & telco",
+    cashbackRate: 10,
+    minIncome: 24000,
+    interest: "15–18% p.a.",
+    featured: true
+  },
+  {
+    id: 6,
+    bank: "CIMB",
+    name: "CIMB Visa Signature",
+    type: ["rewards", "travel"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM12k/yr spend",
+    benefit: "5× CIMB Points on overseas; 2× local; complimentary lounge passes",
+    cashbackRate: 0,
+    minIncome: 60000,
+    interest: "15–18% p.a.",
+    featured: false
+  },
+  {
+    id: 7,
+    bank: "CIMB",
+    name: "CIMB Islamic Platinum Mastercard",
+    type: ["cashback", "islamic"],
+    feeType: "free",
+    feeAmount: 0,
+    feeNote: "Free for life",
+    benefit: "5% cashback on petrol & groceries; Shariah-compliant",
+    cashbackRate: 5,
+    minIncome: 36000,
+    interest: "Profit rate 15% p.a.",
+    featured: false
+  },
+  // === PUBLIC BANK ===
+  {
+    id: 8,
+    bank: "Public Bank",
+    name: "Public Bank Quantum Visa",
+    type: ["cashback"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM12k/yr spend",
+    benefit: "5% cashback on contactless payments; up to RM30/month",
+    cashbackRate: 5,
+    minIncome: 24000,
+    interest: "15–18% p.a.",
+    featured: true
+  },
+  {
+    id: 9,
+    bank: "Public Bank",
+    name: "Public Bank Visa Infinite",
+    type: ["rewards", "travel"],
+    feeType: "paid",
+    feeAmount: 800,
+    feeNote: "RM800/year (not waivable)",
+    benefit: "3× Bonus Points on all spend; unlimited airport lounge access",
+    cashbackRate: 0,
+    minIncome: 120000,
+    interest: "15% p.a.",
+    featured: false
+  },
+  // === HONG LEONG ===
+  {
+    id: 10,
+    bank: "Hong Leong",
+    name: "Hong Leong Wise Mastercard Platinum",
+    type: ["cashback"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM12k/yr spend",
+    benefit: "Up to 8% cashback on your 3 chosen categories",
+    cashbackRate: 8,
+    minIncome: 24000,
+    interest: "15–18% p.a.",
+    featured: true
+  },
+  {
+    id: 11,
+    bank: "Hong Leong",
+    name: "Hong Leong EnrichCard Visa Signature",
+    type: ["travel"],
+    feeType: "paid",
+    feeAmount: 350,
+    feeNote: "RM350/year",
+    benefit: "Earn Enrich Miles on every spend; lounge access; travel insurance",
+    cashbackRate: 0,
+    minIncome: 60000,
+    interest: "15–18% p.a.",
+    featured: false
+  },
+  // === RHB ===
+  {
+    id: 12,
+    bank: "RHB",
+    name: "RHB Visa Signature",
+    type: ["cashback"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM12k/yr spend",
+    benefit: "Unlimited 2% cashback on all spending; no caps",
+    cashbackRate: 2,
+    minIncome: 48000,
+    interest: "15–18% p.a.",
+    featured: false
+  },
+  {
+    id: 13,
+    bank: "RHB",
+    name: "RHB World Mastercard",
+    type: ["rewards", "travel"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM60k/yr spend",
+    benefit: "5× Reward Points; Priority Pass lounge; golf & concierge benefits",
+    cashbackRate: 0,
+    minIncome: 96000,
+    interest: "15% p.a.",
+    featured: false
+  },
+  // === AMBANK ===
+  {
+    id: 14,
+    bank: "AmBank",
+    name: "AmBank Islamic Gold Mastercard",
+    type: ["cashback", "islamic"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM12k/yr spend",
+    benefit: "Cashback on retail spend; Shariah-compliant Ujrah structure",
+    cashbackRate: 1,
+    minIncome: 24000,
+    interest: "Profit rate 15% p.a.",
+    featured: false
+  },
+  {
+    id: 15,
+    bank: "AmBank",
+    name: "AmBank Signature Priority Banking Visa",
+    type: ["cashback", "rewards"],
+    feeType: "waived",
+    feeAmount: 0,
+    feeNote: "Free with RM60k/yr spend",
+    benefit: "Unlimited cashback + BonusLink points; dedicated RM banking support",
+    cashbackRate: 1.5,
+    minIncome: 60000,
+    interest: "15–18% p.a.",
+    featured: false
+  }
+];
+
+let currentSort = "income-asc";
+let filters = { type: "any", fee: "any", income: "any", bank: "any" };
+
+function getFeeDisplay(card) {
+  if (card.feeAmount === 0) return "RM0";
+  return "RM" + card.feeAmount.toLocaleString();
+}
+
+function typeLabel(t) {
+  return { cashback: "Cashback", rewards: "Rewards", travel: "Travel", islamic: "Islamic" }[t] || t;
+}
+function typeTagClass(t) {
+  return "cc-tag tag-" + t;
+}
+function feeTagClass(f) {
+  return "cc-tag tag-" + f;
+}
+function feeLabel(f) {
+  return { free: "Free for life", waived: "Waived", paid: "Paid fee" }[f] || f;
+}
+
+function renderCards() {
+  let cards = CARDS.slice();
+
+  // Filter
+  if (filters.type !== "any") {
+    cards = cards.filter(c => c.type.includes(filters.type));
+  }
+  if (filters.fee !== "any") {
+    cards = cards.filter(c => c.feeType === filters.fee);
+  }
+  if (filters.income !== "any") {
+    const max = parseInt(filters.income);
+    cards = cards.filter(c => c.minIncome <= max);
+  }
+  if (filters.bank !== "any") {
+    cards = cards.filter(c => c.bank === filters.bank);
+  }
+
+  // Sort
+  cards.sort((a, b) => {
+    if (currentSort === "income-asc") return a.minIncome - b.minIncome;
+    if (currentSort === "income-desc") return b.minIncome - a.minIncome;
+    if (currentSort === "fee-asc") return a.feeAmount - b.feeAmount;
+    if (currentSort === "fee-desc") return b.feeAmount - a.feeAmount;
+    if (currentSort === "cashback-desc") return b.cashbackRate - a.cashbackRate;
+    return 0;
+  });
+
+  const grid = document.getElementById("card-grid");
+  const noRes = document.getElementById("no-results");
+  document.getElementById("result-count").textContent = cards.length;
+
+  if (cards.length === 0) {
+    grid.innerHTML = "";
+    noRes.style.display = "block";
+    return;
+  }
+  noRes.style.display = "none";
+
+  grid.innerHTML = cards.map(card => {
+    const feeVal = getFeeDisplay(card);
+    const typeTags = card.type.map(t => `<span class="${typeTagClass(t)}">${typeLabel(t)}</span>`).join("");
+    const feeSub = card.feeNote;
+    const incomeStr = "RM" + card.minIncome.toLocaleString();
+    return `
+<div class="cc-card${card.featured ? " featured" : ""}">
+  <div class="cc-info">
+    <div class="cc-bank">${card.bank}</div>
+    <div class="cc-name">${card.name}</div>
+    <div class="cc-benefit">${card.benefit}</div>
+    <div class="cc-tags">
+      ${typeTags}
+      <span class="${feeTagClass(card.feeType)}">${feeLabel(card.feeType)}</span>
+    </div>
+    <div class="cc-meta">Interest: ${card.interest}</div>
+  </div>
+  <div class="cc-stats">
+    <div>
+      <div class="cc-fee">Annual Fee</div>
+      <div class="cc-fee-val">${feeVal}</div>
+      <div class="cc-fee-sub">${feeSub}</div>
+    </div>
+    <div class="cc-income">Min income<br><strong>${incomeStr}/yr</strong></div>
+  </div>
+</div>`;
+  }).join("");
+}
+
+// Sort buttons
+document.querySelectorAll(".sort-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".sort-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentSort = btn.dataset.sort;
+    renderCards();
+  });
+});
+
+// Filters
+document.getElementById("type-filter").addEventListener("change", e => { filters.type = e.target.value; renderCards(); });
+document.getElementById("fee-filter").addEventListener("change", e => { filters.fee = e.target.value; renderCards(); });
+document.getElementById("income-filter").addEventListener("change", e => { filters.income = e.target.value; renderCards(); });
+document.getElementById("bank-filter").addEventListener("change", e => { filters.bank = e.target.value; renderCards(); });
+
+document.getElementById("reset-filters").addEventListener("click", () => {
+  filters = { type: "any", fee: "any", income: "any", bank: "any" };
+  document.getElementById("type-filter").value = "any";
+  document.getElementById("fee-filter").value = "any";
+  document.getElementById("income-filter").value = "any";
+  document.getElementById("bank-filter").value = "any";
+  renderCards();
+});
+
+// Wizard
+const wqAnswers = {};
+document.querySelectorAll(".wq-opt").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const q = btn.closest(".wq-options").dataset.q;
+    btn.closest(".wq-options").querySelectorAll(".wq-opt").forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    wqAnswers[q] = btn.dataset.v;
+    checkWizard();
+  });
+});
+
+function checkWizard() {
+  if (!wqAnswers.spend || !wqAnswers.islamic || !wqAnswers.income) return;
+  const res = document.getElementById("wizard-result");
+  const recCard = document.getElementById("rec-card");
+  const recReason = document.getElementById("rec-reason");
+
+  let name, reason;
+
+  if (wqAnswers.islamic === "yes") {
+    if (parseInt(wqAnswers.income) <= 24) {
+      name = "Maybank Islamic Ikhwan Visa Gold";
+      reason = "Free for life with cashback on all retail — ideal entry-level Islamic card.";
+    } else {
+      name = "CIMB Islamic Platinum Mastercard";
+      reason = "5% cashback on petrol and groceries, free for life, Shariah-compliant.";
+    }
+  } else if (wqAnswers.spend === "travel") {
+    if (parseInt(wqAnswers.income) >= 60) {
+      name = "CIMB Visa Signature";
+      reason = "5× points overseas + free lounge passes. Annual fee waived with modest spend.";
+    } else {
+      name = "Hong Leong EnrichCard Visa Signature";
+      reason = "Earn Enrich Miles on everyday spend with travel insurance included.";
+    }
+  } else if (wqAnswers.spend === "groceries" || wqAnswers.spend === "petrol") {
+    if (parseInt(wqAnswers.income) <= 24) {
+      name = "CIMB Cash Rebate Platinum Mastercard";
+      reason = "Up to 10% cashback on petrol, groceries, utilities — free for life.";
+    } else {
+      name = "Hong Leong Wise Mastercard Platinum";
+      reason = "Pick your top 3 spending categories and earn up to 8% cashback on them.";
+    }
+  } else {
+    if (parseInt(wqAnswers.income) <= 30) {
+      name = "Maybank 2 Gold Cards";
+      reason = "Simple 5% cashback on weekends — free for life and easy to qualify.";
+    } else {
+      name = "RHB Visa Signature";
+      reason = "Unlimited 2% cashback on everything with no caps — great all-rounder.";
+    }
+  }
+
+  recCard.textContent = name;
+  recReason.textContent = reason;
+  res.style.display = "block";
+}
+
+// FAQ toggle
+document.querySelectorAll(".faq-q").forEach(q => {
+  q.addEventListener("click", () => {
+    const item = q.closest(".faq-item");
+    item.classList.toggle("open");
+  });
+});
+
+// Initial render
+renderCards();
+</script>
+
+</body>
+</html>
