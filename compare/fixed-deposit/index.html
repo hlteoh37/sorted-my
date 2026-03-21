@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Fixed Deposit Rates Malaysia 2026 — Best FD Rates Calculator | Sorted</title>
+  <meta name="description" content="Compare fixed deposit rates from 15 major Malaysian banks (2026). Find the best FD rate for your tenure — 1 month to 24 months. Free FD interest calculator shows exact interest earned.">
+  <meta property="og:title" content="Compare Fixed Deposit Rates Malaysia 2026 — Best FD Rates Calculator | Sorted">
+  <meta property="og:description" content="Compare FD rates from Maybank, CIMB, Public Bank, Hong Leong, RHB, AmBank, Standard Chartered and more. Free calculator — enter your deposit amount and see interest earned from every bank.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/fixed-deposit/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Calculator */
+.calc-section { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.calc-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.calc-section .calc-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.calc-inputs-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.72rem; color: var(--muted); }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.75rem; }
+.calc-btn { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.65rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; white-space: nowrap; transition: background 0.2s; height: fit-content; }
+.calc-btn:hover { background: #7c74ff; }
+.calc-summary { display: none; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.calc-summary.visible { display: block; }
+.calc-summary-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cs-stat { flex: 1; min-width: 120px; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+.calc-note { font-size: 0.78rem; color: var(--muted); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+.filters-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.filters-top h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+
+/* Sort bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.sort-label { font-size: 0.75rem; color: var(--muted); align-self: center; margin-right: 0.25rem; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; white-space: nowrap; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* FD Cards */
+.fd-cards { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+.fd-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.fd-card:hover { border-color: rgba(108,99,255,0.4); }
+.fd-card.best-rate { border-color: var(--accent2); border-width: 2px; }
+.fd-card.best-rate .card-badge { display: inline-block; }
+.card-badge { display: none; font-size: 0.65rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; }
+.card-bank { font-size: 1rem; font-weight: 800; color: var(--text); }
+.card-type { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+.card-rate-block { text-align: right; flex-shrink: 0; }
+.card-rate { font-size: 1.8rem; font-weight: 800; color: var(--accent2); font-family: monospace; letter-spacing: -1px; }
+.card-rate-label { font-size: 0.7rem; color: var(--muted); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem 1rem; margin-bottom: 0.75rem; }
+.card-stat .cs-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+.card-stat .cs-v { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.card-stat .cs-v.highlight { color: var(--warn); font-size: 1rem; }
+.card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; white-space: nowrap; }
+.tag-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.tag-islamic { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+
+/* Tenure tabs */
+.tenure-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.tenure-tab { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.tenure-tab:hover { border-color: var(--accent); color: var(--text); }
+.tenure-tab.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); }
+.no-results h3 { color: var(--text); margin-bottom: 0.5rem; }
+
+/* Info / warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); }
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* Rate table */
+.rate-table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+.rate-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.rate-table th { background: var(--bg3); color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.rate-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.rate-table tr:last-child td { border-bottom: none; }
+.rate-table tr:hover td { background: var(--bg3); }
+.rate-table .best-cell { color: var(--accent2); font-weight: 700; }
+.rate-table .bank-col { font-weight: 700; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: var(--font); font-size: 0.95rem; font-weight: 600; padding: 1rem 1.25rem; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { background: var(--bg3); }
+.faq-arrow { color: var(--muted); font-size: 0.85rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 0.85rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+
+/* Related tools */
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+/* Tip jar */
+.tipjar { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.tipjar p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.tipjar a { display: inline-block; background: var(--bg2); color: var(--muted); border: 1px solid var(--border); font-weight: 600; padding: 0.55rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.875rem; transition: all 0.2s; }
+.tipjar a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .calc-inputs-row { grid-template-columns: 1fr 1fr; }
+  .calc-btn { grid-column: 1 / -1; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 450px) {
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .card-header { flex-direction: column; gap: 0.5rem; }
+  .card-rate-block { text-align: left; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Fixed Deposit Rates Comparison 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/fixed-deposit/",
+    "description": "Compare fixed deposit interest rates from 15 major Malaysian banks. Free FD calculator — enter deposit amount and tenure to see interest earned and maturity amount.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best fixed deposit rate in Malaysia 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, the highest FD rates in Malaysia are offered by Standard Chartered (up to 3.15% p.a. for 24 months), followed by AmBank and HSBC (3.10% for 24 months). For 12-month tenure, Standard Chartered leads at 3.05%, with Hong Leong Bank and AmBank close behind at 3.00%. Rates vary by bank, tenure, and deposit amount — always confirm with the bank directly before placing your deposit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is fixed deposit interest in Malaysia taxable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fixed deposit interest earned by Malaysian residents is exempt from income tax under Section 133 of the Income Tax Act 1967. This exemption applies to interest from licensed banks and financial institutions. Non-residents may be subject to withholding tax. Always verify your tax status with LHDN or a tax advisor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum deposit for a fixed deposit in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Malaysian banks require a minimum of RM500 to RM1,000 to open a fixed deposit account. Some banks like Public Bank and Maybank accept RM500 minimum. Promotional FD rates sometimes require higher minimums (e.g., RM10,000 or RM20,000). Always check the specific bank's terms before applying."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I break my fixed deposit early in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Breaking a fixed deposit early typically results in reduced or zero interest. Most Malaysian banks will only pay interest proportional to the time held, often at a lower rate (e.g., savings rate or 50% of the contracted FD rate). Some banks charge an early withdrawal penalty fee. Check your bank's FD terms and conditions before placing the deposit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between conventional FD and Islamic FD (Term Deposit-i) in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conventional fixed deposits earn interest (faedah), which is prohibited under Islamic law. Islamic fixed deposits — known as Term Deposit-i or Deposit-i — use Shariah-compliant contracts such as Murabahah, Tawarruq, or Mudharabah. Instead of interest, you receive a 'profit rate' (kadar keuntungan). In practice, the rates and mechanics are very similar. Both types are protected by PIDM (Perbadanan Insurans Deposit Malaysia) up to RM250,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are fixed deposits in Malaysia protected by PIDM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Fixed deposits (and Islamic equivalent Term Deposit-i) placed with PIDM member banks are protected up to RM250,000 per depositor per bank. This limit applies to the total of all eligible deposits (savings, current, FD) you hold with the same bank. If you have more than RM250,000 to deposit, spread it across multiple banks to maximize protection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I choose a longer or shorter FD tenure in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Longer tenures (12–24 months) typically offer higher rates (0.30–0.65% more than 1-month FDs). Choose a longer tenure only if you are certain you won't need the funds — early withdrawal forfeits the higher rate. If interest rates are expected to rise, shorter tenures let you reinvest at higher rates sooner. A common strategy is to ladder FDs across different tenures to balance liquidity and returns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate fixed deposit interest in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FD interest is calculated using simple interest: Interest = Principal × Rate × (Days/365). For example, RM10,000 at 2.85% for 12 months: Interest = RM10,000 × 0.0285 × (365/365) = RM285. Your maturity amount would be RM10,285. Use the calculator above to compare interest earned across all Malaysian banks instantly."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../home-loan/">Home Loan</a>
+    <a href="../car-loan/">Car Loan</a>
+    <a href="https://buy.stripe.com/4gw8A2dpVfIQ7AI4gr" target="_blank" rel="noopener">☕ Support</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>🏦 Compare Fixed Deposit Rates Malaysia <span class="tool-tag">2026</span></h1>
+    <p class="subtitle">15 banks compared. Enter your deposit amount to see exact interest earned — then filter by tenure and bank type.</p>
+  </div>
+
+  <!-- FD CALCULATOR -->
+  <div class="calc-section">
+    <h2>FD Interest Calculator</h2>
+    <p class="calc-desc">Enter your deposit amount and select a tenure — results update automatically for all banks.</p>
+    <div class="calc-inputs-row">
+      <div class="field">
+        <label>Deposit Amount (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="depositAmount" value="10000" min="500" step="500" placeholder="e.g. 10000">
+        </div>
+        <span class="hint">Minimum RM500 for most banks</span>
+      </div>
+      <div class="field">
+        <label>Tenure</label>
+        <select id="calcTenure">
+          <option value="1">1 Month</option>
+          <option value="3">3 Months</option>
+          <option value="6">6 Months</option>
+          <option value="12" selected>12 Months</option>
+          <option value="24">24 Months</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="runCalc()">Calculate</button>
+    </div>
+    <div class="calc-summary" id="calcSummary">
+      <div class="calc-summary-stats">
+        <div class="cs-stat">
+          <div class="cs-label">Best Rate Available</div>
+          <div class="cs-value accent2" id="summBestRate">—</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Interest Earned</div>
+          <div class="cs-value accent2" id="summBestInterest">—</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Maturity Amount</div>
+          <div class="cs-value" id="summBestMaturity">—</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Bank</div>
+          <div class="cs-value" id="summBestBank">—</div>
+        </div>
+      </div>
+      <p class="calc-note">⚠️ Rates are indicative only. Simple interest calculation. Verify with your bank before placing deposits.</p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filters-top">
+      <h3>Filter &amp; Sort</h3>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Tenure</label>
+        <select id="filterTenure" onchange="applyFilters()">
+          <option value="all">All Tenures</option>
+          <option value="1">1 Month</option>
+          <option value="3">3 Months</option>
+          <option value="6">6 Months</option>
+          <option value="12" selected>12 Months</option>
+          <option value="24">24 Months</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Bank Type</label>
+        <select id="filterType" onchange="applyFilters()">
+          <option value="all">All Banks</option>
+          <option value="conventional">Conventional</option>
+          <option value="islamic">Islamic (has TD-i)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortBy" onchange="applyFilters()">
+          <option value="rate-desc">Rate (Highest First)</option>
+          <option value="rate-asc">Rate (Lowest First)</option>
+          <option value="bank-az">Bank Name (A–Z)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS BAR -->
+  <div class="results-bar">
+    <div class="results-count">Showing <em id="visibleCount">15</em> banks</div>
+    <div class="sort-bar">
+      <span class="sort-label">Quick tenure:</span>
+      <button class="tenure-tab active" data-tenure="12" onclick="setTenureTab(this)">12M</button>
+      <button class="tenure-tab" data-tenure="1" onclick="setTenureTab(this)">1M</button>
+      <button class="tenure-tab" data-tenure="3" onclick="setTenureTab(this)">3M</button>
+      <button class="tenure-tab" data-tenure="6" onclick="setTenureTab(this)">6M</button>
+      <button class="tenure-tab" data-tenure="24" onclick="setTenureTab(this)">24M</button>
+    </div>
+  </div>
+
+  <!-- FD CARDS -->
+  <div class="fd-cards" id="fdCards"></div>
+
+  <div class="no-results" id="noResults" style="display:none">
+    <h3>No banks match your filters</h3>
+    <p>Try adjusting the filters above.</p>
+  </div>
+
+  <!-- RATE TABLE -->
+  <div class="section">
+    <h2>📊 Full Rate Table — All Banks &amp; Tenures</h2>
+    <p>Compare rates across all tenures at a glance. All rates are per annum (p.a.).</p>
+    <div class="rate-table-wrap">
+      <table class="rate-table" id="rateTable">
+        <thead>
+          <tr>
+            <th>Bank</th>
+            <th>Type</th>
+            <th>1 Month</th>
+            <th>3 Months</th>
+            <th>6 Months</th>
+            <th>12 Months</th>
+            <th>24 Months</th>
+          </tr>
+        </thead>
+        <tbody id="rateTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠️ Important Disclaimer</strong><br>
+    Rates shown are indicative figures based on published data as of early 2026. Actual rates may differ based on promotional campaigns, deposit amount, account type, and negotiation. Always verify current rates directly with your bank before placing a fixed deposit.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips to Maximise Your FD Returns</h2>
+    <ul class="tips-list">
+      <li>Longer tenures (12–24 months) earn 0.30–0.65% more per year than 1-month FDs — lock in only what you won't need.</li>
+      <li><strong>FD laddering</strong>: Split your deposit across multiple tenures (e.g. 3M, 6M, 12M) for liquidity while earning higher blended rates.</li>
+      <li>Foreign banks (Standard Chartered, HSBC) and mid-tier banks (AmBank) often offer higher rates than the Big 4 to attract deposits.</li>
+      <li>Watch for <strong>promotional FD campaigns</strong> — banks often offer 0.20–0.50% above standard rates for new-to-bank customers.</li>
+      <li>PIDM protects up to <strong>RM250,000 per depositor per bank</strong> — spread large deposits across multiple banks.</li>
+      <li>Islamic Term Deposits-i offer comparable profit rates and are available to all Malaysians regardless of religion.</li>
+      <li>Online placement (app/internet banking) sometimes earns a <strong>higher rate</strong> than branch placement.</li>
+      <li>If you have a large sum (&gt;RM100,000), <strong>negotiate directly</strong> with the bank — treasury rates may exceed standard board rates.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the best fixed deposit rate in Malaysia 2026?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">As of 2026, the highest FD rates are offered by <strong>Standard Chartered</strong> (up to 3.15% p.a. for 24 months), followed by <strong>AmBank</strong> and <strong>HSBC</strong> (3.10% for 24 months). For 12-month tenure, Standard Chartered leads at 3.05%, with Hong Leong Bank and AmBank close behind at 3.00%. Rates vary by bank, tenure, and deposit amount — always confirm with the bank directly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is fixed deposit interest taxable in Malaysia?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">FD interest earned by <strong>Malaysian residents</strong> is <strong>exempt from income tax</strong> under Section 133 of the Income Tax Act 1967. This applies to interest from licensed banks and financial institutions. Non-residents may be subject to withholding tax. Verify your tax status with LHDN or a tax advisor if unsure.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the minimum deposit for a fixed deposit in Malaysia?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Most Malaysian banks require a minimum of <strong>RM500 to RM1,000</strong> to open a fixed deposit. Promotional FD rates sometimes require higher minimums (e.g., RM10,000–RM20,000). Always check the bank's specific terms. BSN, Bank Islam, and Bank Rakyat are known to accept lower minimums for certain deposit products.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What happens if I break my FD early?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Early withdrawal typically results in <strong>reduced or zero interest</strong>. Most banks only pay a reduced rate proportional to the time held (often 50% of the FD rate or savings account rate). Some banks charge an early withdrawal penalty fee. <strong>Never place money you may need urgently</strong> into a fixed deposit — keep 3–6 months of expenses in a liquid savings account.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the difference between conventional FD and Islamic Term Deposit-i?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Conventional FDs earn <strong>interest (faedah)</strong>, which is prohibited under Islamic law. Islamic Term Deposits (TD-i) use Shariah-compliant contracts such as <strong>Murabahah, Tawarruq, or Mudharabah</strong> — you receive a 'profit rate' instead of interest. In practice, rates and mechanics are very similar. Both types are protected by PIDM up to RM250,000 and available to all Malaysians.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are Malaysian bank fixed deposits protected by PIDM?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Yes. Fixed deposits placed with <strong>PIDM member banks</strong> are protected up to <strong>RM250,000 per depositor per bank</strong>. This limit covers all your eligible deposits (savings, current, FD) combined at the same bank. If you have more than RM250,000, spread across multiple banks to maximize protection. All 15 banks listed here are PIDM members.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Should I choose a longer or shorter FD tenure?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Longer tenures (12–24M) offer higher rates but lock up your money. <strong>FD laddering</strong> is a smart strategy — split your deposit into 3M, 6M, and 12M portions. As each matures, reinvest into 12M at the prevailing rate. This gives you periodic liquidity while earning near-maximum rates. If you expect Bank Negara to raise the OPR, shorter tenures let you reinvest at higher rates sooner.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How is FD interest calculated in Malaysia?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Malaysian FDs use <strong>simple interest</strong>: <code>Interest = Principal × Rate × (Days ÷ 365)</code>. Example: RM10,000 at 2.85% for 12 months = RM10,000 × 0.0285 × 1 = <strong>RM285 interest</strong>, maturity amount RM10,285. Use the calculator at the top of this page to compare returns from all banks instantly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="section">
+    <h2>🔗 Related Tools</h2>
+    <div class="related-grid">
+      <a href="../home-loan/" class="related-card">
+        🏠 Home Loan Comparison
+        <div class="rel-desc">Compare mortgage rates from 9 Malaysian banks</div>
+      </a>
+      <a href="../car-loan/" class="related-card">
+        🚗 Car Loan Calculator
+        <div class="rel-desc">Monthly repayments from Maybank, CIMB &amp; more</div>
+      </a>
+      <a href="../credit-card/" class="related-card">
+        💳 Credit Card Comparison
+        <div class="rel-desc">Find the best cashback or rewards card</div>
+      </a>
+      <a href="../tax-calculator/" class="related-card">
+        🧾 Income Tax Calculator
+        <div class="rel-desc">Calculate your YA 2025 Malaysian income tax</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="tipjar">
+    <p>This tool is free. If it helped you find a better FD rate, consider supporting the site.</p>
+    <a href="https://buy.stripe.com/4gw8A2dpVfIQ7AI4gr" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">Home</a>
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../home-loan/">Home Loan</a>
+    <a href="../car-loan/">Car Loan</a>
+  </div>
+  <p>© 2026 Sorted.my — Indicative rates only. Always verify with your bank. Not financial advice.</p>
+</footer>
+
+<script>
+const FD_DATA = [
+  { bank: "Maybank",           type: "conventional", rates: { 1: 2.50, 3: 2.60, 6: 2.75, 12: 2.85, 24: 2.90 } },
+  { bank: "CIMB",              type: "conventional", rates: { 1: 2.55, 3: 2.65, 6: 2.80, 12: 2.95, 24: 3.00 } },
+  { bank: "Public Bank",       type: "conventional", rates: { 1: 2.50, 3: 2.60, 6: 2.80, 12: 2.90, 24: 2.95 } },
+  { bank: "Hong Leong Bank",   type: "conventional", rates: { 1: 2.55, 3: 2.70, 6: 2.85, 12: 3.00, 24: 3.05 } },
+  { bank: "RHB Bank",          type: "conventional", rates: { 1: 2.50, 3: 2.65, 6: 2.80, 12: 2.90, 24: 2.95 } },
+  { bank: "AmBank",            type: "conventional", rates: { 1: 2.60, 3: 2.70, 6: 2.85, 12: 3.00, 24: 3.10 } },
+  { bank: "Bank Islam",        type: "islamic",      rates: { 1: 2.45, 3: 2.55, 6: 2.70, 12: 2.85, 24: 2.90 } },
+  { bank: "Alliance Bank",     type: "conventional", rates: { 1: 2.55, 3: 2.65, 6: 2.80, 12: 2.95, 24: 3.00 } },
+  { bank: "OCBC",              type: "conventional", rates: { 1: 2.50, 3: 2.60, 6: 2.75, 12: 2.85, 24: 2.95 } },
+  { bank: "UOB",               type: "conventional", rates: { 1: 2.55, 3: 2.65, 6: 2.80, 12: 2.90, 24: 3.00 } },
+  { bank: "Standard Chartered",type: "conventional", rates: { 1: 2.60, 3: 2.75, 6: 2.90, 12: 3.05, 24: 3.15 } },
+  { bank: "HSBC",              type: "conventional", rates: { 1: 2.55, 3: 2.70, 6: 2.85, 12: 3.00, 24: 3.10 } },
+  { bank: "Bank Rakyat",       type: "islamic",      rates: { 1: 2.50, 3: 2.60, 6: 2.75, 12: 2.90, 24: 2.95 } },
+  { bank: "Affin Bank",        type: "conventional", rates: { 1: 2.50, 3: 2.60, 6: 2.75, 12: 2.85, 24: 2.90 } },
+  { bank: "BSN",               type: "conventional", rates: { 1: 2.45, 3: 2.55, 6: 2.70, 12: 2.80, 24: 2.85 } }
+];
+
+const TENURE_MONTHS = { 1: 1, 3: 3, 6: 6, 12: 12, 24: 24 };
+let currentTenure = 12;
+let calcCalcDone = false;
+
+function calcInterest(principal, ratePA, tenureMonths) {
+  return principal * (ratePA / 100) * (tenureMonths / 12);
+}
+
+function fmt(n) {
+  return 'RM ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function runCalc() {
+  const principal = parseFloat(document.getElementById('depositAmount').value) || 0;
+  const tenure = parseInt(document.getElementById('calcTenure').value);
+  if (principal <= 0) return;
+
+  // Sync filter tenure
+  document.getElementById('filterTenure').value = tenure;
+  currentTenure = tenure;
+  document.querySelectorAll('.tenure-tab').forEach(t => {
+    t.classList.toggle('active', parseInt(t.dataset.tenure) === tenure);
+  });
+
+  // Find best rate
+  let best = null;
+  FD_DATA.forEach(b => {
+    const rate = b.rates[tenure];
+    if (!best || rate > best.rate) best = { bank: b.bank, rate };
+  });
+
+  const bestInterest = calcInterest(principal, best.rate, tenure);
+  document.getElementById('summBestRate').textContent = best.rate.toFixed(2) + '% p.a.';
+  document.getElementById('summBestInterest').textContent = fmt(bestInterest);
+  document.getElementById('summBestMaturity').textContent = fmt(principal + bestInterest);
+  document.getElementById('summBestBank').textContent = best.bank;
+  document.getElementById('calcSummary').classList.add('visible');
+
+  applyFilters();
+}
+
+function setTenureTab(el) {
+  const tenure = parseInt(el.dataset.tenure);
+  currentTenure = tenure;
+  document.querySelectorAll('.tenure-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('filterTenure').value = tenure;
+  document.getElementById('calcTenure').value = tenure;
+  applyFilters();
+  runCalc();
+}
+
+function applyFilters() {
+  const tenureVal = document.getElementById('filterTenure').value;
+  const typeVal = document.getElementById('filterType').value;
+  const sortVal = document.getElementById('sortBy').value;
+
+  const tenure = tenureVal === 'all' ? null : parseInt(tenureVal);
+  if (tenure) currentTenure = tenure;
+
+  // Filter
+  let filtered = FD_DATA.filter(b => {
+    if (typeVal === 'conventional' && b.type !== 'conventional') return false;
+    if (typeVal === 'islamic' && b.type !== 'islamic') return false;
+    return true;
+  });
+
+  // Determine display tenure
+  const displayTenure = tenure || currentTenure || 12;
+
+  // Sort
+  filtered.sort((a, b) => {
+    if (sortVal === 'rate-desc') return b.rates[displayTenure] - a.rates[displayTenure];
+    if (sortVal === 'rate-asc') return a.rates[displayTenure] - b.rates[displayTenure];
+    if (sortVal === 'bank-az') return a.bank.localeCompare(b.bank);
+    return 0;
+  });
+
+  renderCards(filtered, displayTenure);
+  document.getElementById('visibleCount').textContent = filtered.length;
+  document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function renderCards(banks, tenure) {
+  const principal = parseFloat(document.getElementById('depositAmount').value) || 0;
+  const container = document.getElementById('fdCards');
+  if (!banks.length) { container.innerHTML = ''; return; }
+
+  const maxRate = Math.max(...banks.map(b => b.rates[tenure]));
+
+  container.innerHTML = banks.map((b, i) => {
+    const rate = b.rates[tenure];
+    const isBest = rate === maxRate && i === banks.findIndex(x => x.rates[tenure] === maxRate);
+    const interest = principal > 0 ? calcInterest(principal, rate, tenure) : null;
+    const maturity = principal > 0 ? principal + interest : null;
+
+    return `<div class="fd-card${isBest ? ' best-rate' : ''}">
+      <div class="card-badge">★ Best Rate</div>
+      <div class="card-header">
+        <div>
+          <div class="card-bank">${b.bank}</div>
+          <div class="card-type">${b.type === 'islamic' ? 'Islamic (Term Deposit-i)' : 'Conventional'}</div>
+        </div>
+        <div class="card-rate-block">
+          <div class="card-rate">${rate.toFixed(2)}%</div>
+          <div class="card-rate-label">p.a. · ${tenure}M</div>
+        </div>
+      </div>
+      <div class="card-grid">
+        ${interest !== null ? `
+        <div class="card-stat">
+          <div class="cs-k">Interest Earned</div>
+          <div class="cs-v highlight">${fmt(interest)}</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">Maturity Amount</div>
+          <div class="cs-v">${fmt(maturity)}</div>
+        </div>
+        ` : ''}
+        <div class="card-stat">
+          <div class="cs-k">1M Rate</div>
+          <div class="cs-v">${b.rates[1].toFixed(2)}%</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">3M Rate</div>
+          <div class="cs-v">${b.rates[3].toFixed(2)}%</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">6M Rate</div>
+          <div class="cs-v">${b.rates[6].toFixed(2)}%</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">12M Rate</div>
+          <div class="cs-v">${b.rates[12].toFixed(2)}%</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">24M Rate</div>
+          <div class="cs-v">${b.rates[24].toFixed(2)}%</div>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="tag ${b.type === 'islamic' ? 'tag-islamic' : 'tag-conv'}">${b.type === 'islamic' ? 'Islamic TD-i' : 'Conventional FD'}</span>
+        ${isBest ? '<span class="tag" style="background:rgba(72,207,173,0.1);color:var(--accent2);border:1px solid rgba(72,207,173,0.25);">Best for ' + tenure + 'M</span>' : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderRateTable() {
+  const tenures = [1, 3, 6, 12, 24];
+  const maxRates = {};
+  tenures.forEach(t => {
+    maxRates[t] = Math.max(...FD_DATA.map(b => b.rates[t]));
+  });
+
+  const sorted = [...FD_DATA].sort((a, b) => b.rates[12] - a.rates[12]);
+
+  document.getElementById('rateTableBody').innerHTML = sorted.map(b => {
+    return `<tr>
+      <td class="bank-col">${b.bank}</td>
+      <td><span class="tag ${b.type === 'islamic' ? 'tag-islamic' : 'tag-conv'}" style="font-size:0.65rem;">${b.type === 'islamic' ? 'Islamic' : 'Conv.'}</span></td>
+      ${tenures.map(t => `<td class="${b.rates[t] === maxRates[t] ? 'best-cell' : ''}">${b.rates[t].toFixed(2)}%</td>`).join('')}
+    </tr>`;
+  }).join('');
+}
+
+function resetFilters() {
+  document.getElementById('filterTenure').value = '12';
+  document.getElementById('filterType').value = 'all';
+  document.getElementById('sortBy').value = 'rate-desc';
+  currentTenure = 12;
+  document.querySelectorAll('.tenure-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.tenure === '12');
+  });
+  applyFilters();
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Init
+renderRateTable();
+applyFilters();
+</script>
+</body>
+</html>
