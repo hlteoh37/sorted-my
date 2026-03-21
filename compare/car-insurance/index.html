@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Malaysia Car Insurance 2026 — Premium Calculator &amp; Filter Tool | Sorted</title>
+  <meta name="description" content="Estimate your Malaysian car insurance premium instantly. Compare comprehensive, third-party fire &amp; theft, and third-party plans from Allianz, AIA, Etiqa, Kurnia, Zurich, Tokio Marine, MSIG and RHB. Filter by NCD discount and car value.">
+  <meta property="og:title" content="Malaysia Car Insurance Calculator 2026 — Compare Premiums | Sorted">
+  <meta property="og:description" content="Interactive tool to estimate and compare motor insurance premiums in Malaysia. Filter by plan type, NCD discount and insurer.">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/car-insurance/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.filters h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); appearance: auto; cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+.range-row { display: flex; align-items: center; gap: 0.75rem; }
+.range-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.range-value { font-size: 0.875rem; font-weight: 700; color: var(--accent2); font-family: monospace; min-width: 72px; text-align: right; }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.chip { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 20px; cursor: pointer; transition: all 0.15s; }
+.chip:hover { background: rgba(108,99,255,0.25); }
+.chip.active { background: var(--accent); color: white; border-color: var(--accent); }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); margin-top: 0.75rem; }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Results bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Plan cards */
+.plan-cards { display: grid; gap: 0.75rem; }
+.plan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.plan-card:hover { border-color: rgba(108,99,255,0.4); }
+.plan-card.best-value { border-color: var(--accent2); border-width: 2px; }
+.plan-card.best-value::before { content: '★ BEST VALUE'; display: block; font-size: 0.68rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.card-top { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
+.card-body { margin-top: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.plan-provider { font-weight: 700; font-size: 1.05rem; color: var(--text); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.plan-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.3rem; }
+.badge { font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; letter-spacing: 0.3px; text-transform: uppercase; }
+.badge-takaful { background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.badge-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.badge-comp { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.badge-tpft { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.badge-tpo { background: rgba(139,139,139,0.12); color: var(--muted); border: 1px solid rgba(139,139,139,0.2); }
+.plan-pricing { text-align: right; }
+.plan-price { font-size: 1.5rem; font-weight: 800; color: var(--accent2); font-family: monospace; }
+.plan-price-unit { font-size: 0.72rem; color: var(--muted); font-weight: 400; display: block; }
+.plan-ncd-saving { font-size: 0.75rem; color: var(--success); margin-top: 0.15rem; }
+.plan-base-note { font-size: 0.72rem; color: var(--muted); }
+.coverage-list { list-style: none; font-size: 0.82rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.2rem; }
+.coverage-list li::before { content: '✓ '; color: var(--success); font-weight: 700; }
+.coverage-list li.no::before { content: '✗ '; color: var(--danger); }
+.addons-list { font-size: 0.8rem; color: var(--muted); }
+.addons-list strong { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 0.3rem; }
+.addon-tag { display: inline-block; font-size: 0.7rem; background: var(--bg3); border: 1px solid var(--border); color: var(--muted); padding: 0.1rem 0.4rem; border-radius: 4px; margin: 0.1rem 0.15rem 0.1rem 0; }
+.best-for-row { grid-column: 1 / -1; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.65rem; margin-top: 0.1rem; }
+.best-for-row strong { color: var(--accent); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 0.9rem; display: none; }
+
+/* Summary calc box */
+.calc-summary { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.calc-summary h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.75rem; font-weight: 600; }
+.calc-row { display: flex; justify-content: space-between; font-size: 0.875rem; padding: 0.2rem 0; color: var(--muted); }
+.calc-row.total { border-top: 1px solid var(--border); margin-top: 0.5rem; padding-top: 0.5rem; font-weight: 700; color: var(--text); font-size: 0.95rem; }
+.calc-row span:last-child { font-family: monospace; color: var(--accent2); }
+.calc-row.total span:last-child { color: var(--accent2); font-size: 1.1rem; }
+
+/* NCD scale */
+.ncd-scale { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.35rem; margin-top: 0.75rem; }
+.ncd-step { text-align: center; padding: 0.35rem 0.25rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.72rem; background: var(--bg); }
+.ncd-step .ncd-pct { font-weight: 700; color: var(--accent2); font-size: 0.85rem; }
+.ncd-step .ncd-yr { color: var(--muted); font-size: 0.65rem; }
+.ncd-step.active-step { border-color: var(--accent); background: rgba(108,99,255,0.1); }
+.ncd-step.active-step .ncd-pct { color: var(--accent); }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-size: 0.95rem; font-family: var(--font); font-weight: 600; padding: 1rem 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { color: var(--accent); }
+.faq-icon { color: var(--muted); font-size: 1.1rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 1rem 0; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+
+/* Coffee banner */
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+
+/* Disclaimer */
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+
+/* Related */
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 1rem; } .nav-links { display: none; }
+  .filter-grid { grid-template-columns: 1fr; }
+  .card-top { grid-template-columns: 1fr; }
+  .plan-pricing { text-align: left; }
+  .card-body { grid-template-columns: 1fr; }
+  .ncd-scale { grid-template-columns: repeat(3, 1fr); }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../../">Compare Tools</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← All Guides</a>
+    <h1>🛡️ Compare Malaysia Car Insurance 2026 <span class="tool-tag">Calculator</span></h1>
+    <p class="subtitle">Estimate your annual premium and compare plans from major Malaysian insurers. Filter by car value, NCD discount, and plan type.</p>
+  </div>
+
+  <div class="info-box">
+    <strong>How this works:</strong> Enter your car's market value and NCD status below. Premiums are <em>estimates</em> based on published industry rate bands — actual quotes depend on your car model, age, location, and insurer underwriting. Use this to shortlist, then get a firm quote from your insurer or a comparison portal.
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>🔧 Filter &amp; Calculate</h3>
+    <div class="filter-grid">
+      <div class="filter-group" style="grid-column: 1 / -1;">
+        <label>Car Market Value / Sum Insured</label>
+        <div class="range-row">
+          <input type="range" id="carValue" min="20000" max="300000" step="5000" value="80000">
+          <span class="range-value" id="carValueDisplay">RM 80,000</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>NCD Discount</label>
+        <select id="ncdSelect">
+          <option value="0">0% — New driver / post-claim</option>
+          <option value="25">25% — 1 claim-free year</option>
+          <option value="30" selected>30% — 2 claim-free years</option>
+          <option value="38.33">38.33% — 3 claim-free years</option>
+          <option value="45">45% — 4 claim-free years</option>
+          <option value="55">55% — 5+ claim-free years</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortSelect">
+          <option value="price-asc">Lowest premium first</option>
+          <option value="price-desc">Highest premium first</option>
+          <option value="provider">Provider (A–Z)</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Plan Type</label>
+      <div class="filter-chips" id="planChips">
+        <span class="chip active" data-plan="all">All Plans</span>
+        <span class="chip" data-plan="comprehensive">Comprehensive</span>
+        <span class="chip" data-plan="tpft">Third Party Fire &amp; Theft</span>
+        <span class="chip" data-plan="tpo">Third Party Only</span>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Provider</label>
+      <div class="filter-chips" id="providerChips">
+        <span class="chip active" data-provider="all">All Providers</span>
+        <span class="chip" data-provider="Allianz">Allianz</span>
+        <span class="chip" data-provider="AIA">AIA</span>
+        <span class="chip" data-provider="Etiqa">Etiqa Takaful</span>
+        <span class="chip" data-provider="Zurich">Zurich</span>
+        <span class="chip" data-provider="Kurnia">Kurnia</span>
+        <span class="chip" data-provider="RHB">RHB Insurance</span>
+        <span class="chip" data-provider="Tokio Marine">Tokio Marine</span>
+        <span class="chip" data-provider="MSIG">MSIG</span>
+      </div>
+    </div>
+    <button class="reset-btn" id="resetBtn">Reset filters</button>
+  </div>
+
+  <!-- NCD GUIDE BOX -->
+  <div class="calc-summary" id="calcSummary">
+    <h3>Your NCD Profile</h3>
+    <div class="ncd-scale" id="ncdScale">
+      <div class="ncd-step" data-ncd="0"><div class="ncd-pct">0%</div><div class="ncd-yr">New / claim</div></div>
+      <div class="ncd-step" data-ncd="25"><div class="ncd-pct">25%</div><div class="ncd-yr">Year 1</div></div>
+      <div class="ncd-step" data-ncd="30"><div class="ncd-pct">30%</div><div class="ncd-yr">Year 2</div></div>
+      <div class="ncd-step" data-ncd="38.33"><div class="ncd-pct">38.33%</div><div class="ncd-yr">Year 3</div></div>
+      <div class="ncd-step" data-ncd="45"><div class="ncd-pct">45%</div><div class="ncd-yr">Year 4</div></div>
+      <div class="ncd-step" data-ncd="55"><div class="ncd-pct">55%</div><div class="ncd-yr">Year 5+</div></div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;">NCD is earned for each consecutive claim-free year. It resets to 0% after a fault claim. The NCD belongs to <em>you</em>, not your car — you can transfer it when changing vehicles.</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-bar">
+    <span class="results-count">Showing <em id="resultCount">0</em> plans</span>
+    <span style="font-size:0.78rem;color:var(--muted);">Estimates only — get a firm quote before purchasing</span>
+  </div>
+  <div class="plan-cards" id="planCards"></div>
+  <div class="no-results" id="noResults">
+    <p>No plans match your filters. Try selecting "All Plans" or "All Providers".</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> All premiums shown are <strong>estimates</strong> based on indicative market rate bands as of 2026. Malaysia detariffed motor insurance in 2017, meaning each insurer sets its own rates. Your actual premium will vary based on car make &amp; model, engine capacity, vehicle age, claims history, location, and the insurer's underwriting criteria. Always obtain an official quote before purchasing. Takaful products operate on a contribution (tabarru') model — contributions shown are approximate equivalents for comparison purposes.
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="section">
+    <h2>Related Guides</h2>
+    <div class="related-guides">
+      <a href="../../guides/claiming-car-insurance/" class="related-card">🚗 How to Claim Car Insurance<div class="rel-desc">Step-by-step guide to making a motor insurance claim in Malaysia</div></a>
+      <a href="../../guides/car-accident-guide/" class="related-card">💥 What to Do After a Car Accident<div class="rel-desc">Know your rights and the correct steps after an accident</div></a>
+      <a href="../../guides/renewing-road-tax/" class="related-card">📋 Renewing Road Tax<div class="rel-desc">How to renew your road tax (cukai jalan) online or in person</div></a>
+      <a href="../car-loan/" class="related-card">🏦 Car Loan Calculator<div class="rel-desc">Compare monthly repayments from Maybank, CIMB, RHB and more</div></a>
+      <a href="../../guides/buying-a-car/" class="related-card">🛒 Buying a Car in Malaysia<div class="rel-desc">Full guide covering hire purchase, insurance, and registration</div></a>
+      <a href="../../guides/buying-second-hand-car/" class="related-card">🔍 Buying a Second-Hand Car<div class="rel-desc">How to check ownership, outstanding loan, and puspakom inspection</div></a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="coffee-banner">
+    <p>Found this useful? It takes time to research and build these tools.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">☕ Buy us a coffee</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../broadband/">Compare Broadband</a>
+    <a href="../car-loan/">Car Loan Calculator</a>
+    <a href="../tax-calculator/">Income Tax Calculator</a>
+    <a href="../../guides/claiming-car-insurance/">Car Insurance Guide</a>
+  </div>
+  <p>Sorted.my — Malaysian life admin, simplified. Estimates are for informational purposes only.</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is NCD (No Claim Discount) in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NCD (No Claim Discount) is a reward for not making any insurance claims in the previous policy year. It starts at 0% for new drivers and builds up to a maximum of 55% after 5 consecutive claim-free years. The discount directly reduces your annual premium. NCD is tied to the vehicle owner, not the car — you can transfer it when switching vehicles or insurers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Comprehensive, TPFT, and Third Party Only car insurance in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comprehensive covers your own car damage (from accidents, fire, theft) plus third-party liability. Third Party Fire and Theft (TPFT) covers theft, fire, and third-party liability but NOT own damage from accidents. Third Party Only (TPO) is the minimum required by law — it only covers injury or damage you cause to others. TPO is cheapest but offers no protection for your own car."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is takaful motor insurance the same as conventional insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Takaful operates on a mutual contribution (tabarru') model based on Islamic finance principles — participants contribute to a shared pool rather than paying premiums to an insurer. Coverage benefits are similar to conventional plans. Etiqa and Zurich Takaful are the major takaful motor providers in Malaysia. You can choose either regardless of religion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Special Perils coverage and do I need it in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Special perils (also called natural disaster or flood coverage) protects your car from damage caused by floods, storms, landslides, and other natural events. Standard comprehensive policies do NOT include this — it must be added as a rider. Given Malaysia's frequent flooding, especially during monsoon season (October–March), special perils coverage is strongly recommended if you live in flood-prone areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is my car insurance premium calculated in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Since motor insurance detariffication in 2017, each insurer sets their own rates. Premiums are primarily based on your car's market value (or sum insured), your NCD discount, and the plan type. Other factors include: vehicle age, engine capacity, driver age and experience, claims history, location, and optional add-ons. The estimated formula is: (car value × rate%) × (1 - NCD%) × 1.08 (service tax) + RM10 (stamp duty)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Agreed Value and Market Value for car insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Market Value policies pay out based on the car's current market value at the time of a total loss or theft. This decreases each year as the car depreciates, meaning you could receive less than you expected. Agreed Value policies lock in a fixed sum insured upfront — you and the insurer agree on the value, and that is what you receive in a claim. Agreed Value premiums are slightly higher but give more certainty, especially for newer or modified cars."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep my NCD if I change insurers or sell my car?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your NCD belongs to you as the vehicle owner, not the car or the insurer. You can transfer your NCD to a new vehicle or to a new insurer when renewing. The Persatuan Insurans Am Malaysia (PIAM) maintains a central NCD registry. If you sell your car and buy a new one, inform your insurer to transfer the NCD. There is typically a maximum of one year to use an unused NCD before it expires."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my NCD if I make a claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Making a fault claim resets your NCD to 0%. If you have NCD Protector add-on, you may be allowed one claim per policy year without losing your NCD (terms vary by insurer). For a non-fault claim where the other party is fully liable, your NCD should not be affected — but confirm this with your insurer before proceeding."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+const PROVIDERS = [
+  {
+    id: 'allianz',
+    name: 'Allianz',
+    type: 'conventional',
+    rates: { comprehensive: 0.0322, tpft: 0.0086, tpo: 218 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Legal liability of passengers'], tpft: ['Special perils (fire ext.)', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Towing (up to RM200)'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Strong claim service, wide panel workshop network', tpft: 'Mid-range protection without comprehensive cost', tpo: 'Low-cost legal compliance' },
+    notes: { comprehensive: 'Market & agreed value options available', tpft: '', tpo: '' }
+  },
+  {
+    id: 'aia',
+    name: 'AIA',
+    type: 'conventional',
+    rates: { comprehensive: 0.0298, tpft: 0.0082, tpo: 205 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Key replacement'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Towing assistance'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Competitive rates, digital claims processing', tpft: 'Good value TPFT option', tpo: 'Budget-friendly TPO' },
+    notes: { comprehensive: 'Online quote &amp; purchase available', tpft: '', tpo: '' }
+  },
+  {
+    id: 'etiqa',
+    name: 'Etiqa',
+    type: 'takaful',
+    rates: { comprehensive: 0.0291, tpft: 0.0079, tpo: 198 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Hospital income'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Towing &amp; roadside assist'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Often lowest rates, Takaful-compliant, online purchase', tpft: 'Affordable Takaful TPFT', tpo: 'Cheapest Takaful TPO' },
+    notes: { comprehensive: 'Takaful contributions; surplus may be refunded', tpft: '', tpo: '' }
+  },
+  {
+    id: 'zurich',
+    name: 'Zurich',
+    type: 'both',
+    rates: { comprehensive: 0.0308, tpft: 0.0083, tpo: 210 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Smart key replacement'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Emergency towing'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Both conventional &amp; Takaful options available', tpft: 'Solid mid-market option', tpo: 'Standard TPO coverage' },
+    notes: { comprehensive: 'Zurich Takaful available separately', tpft: '', tpo: '' }
+  },
+  {
+    id: 'kurnia',
+    name: 'Kurnia',
+    type: 'conventional',
+    rates: { comprehensive: 0.0328, tpft: 0.0088, tpo: 222 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Emergency cash'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Towing (up to RM300)'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Established Malaysian insurer, Pos Malaysia points', tpft: 'Convenient renewal via Pos Malaysia', tpo: 'Widely available renewal channels' },
+    notes: { comprehensive: 'Renewal via Pos Malaysia branches nationwide', tpft: '', tpo: '' }
+  },
+  {
+    id: 'rhb',
+    name: 'RHB Insurance',
+    type: 'conventional',
+    rates: { comprehensive: 0.0304, tpft: 0.0083, tpo: 207 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Legal liability passengers'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Towing assistance'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'RHB banking customers get bundled discounts', tpft: 'Mid-range option with bank channel', tpo: 'Convenient if you bank with RHB' },
+    notes: { comprehensive: 'May offer discounts for RHB account holders', tpft: '', tpo: '' }
+  },
+  {
+    id: 'tokio',
+    name: 'Tokio Marine',
+    type: 'conventional',
+    rates: { comprehensive: 0.0315, tpft: 0.0085, tpo: 214 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', '24hr roadside assist'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', '24hr roadside assist'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Global insurer, strong in commercial &amp; fleet coverage', tpft: 'Reliable TPFT from global brand', tpo: 'International brand, basic coverage' },
+    notes: { comprehensive: 'Strong financial rating, reputable claim handling', tpft: '', tpo: '' }
+  },
+  {
+    id: 'msig',
+    name: 'MSIG',
+    type: 'conventional',
+    rates: { comprehensive: 0.0311, tpft: 0.0084, tpo: 211 },
+    addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Accessories rider'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
+    coverage: {
+      comprehensive: ['Own damage (accident)', 'Fire & theft', 'Third-party bodily injury', 'Third-party property damage', 'Towing &amp; emergency'],
+      tpft: ['Fire & theft', 'Third-party bodily injury', 'Third-party property damage'],
+      tpo: ['Third-party bodily injury', 'Third-party property damage']
+    },
+    excl: { comprehensive: [], tpft: ['Own damage (accident)'], tpo: ['Own damage', 'Fire & theft'] },
+    windscreen: { comprehensive: 'Add-on rider', tpft: 'Add-on rider', tpo: 'Not available' },
+    bestFor: { comprehensive: 'Japanese-backed insurer, strong underwriting standards', tpft: 'Trusted TPFT option', tpo: 'Standard compliant TPO' },
+    notes: { comprehensive: 'Mitsui Sumitomo backing, good for import/prestige cars', tpft: '', tpo: '' }
+  }
+];
+
+const PLAN_LABELS = { comprehensive: 'Comprehensive', tpft: 'Third Party Fire & Theft', tpo: 'Third Party Only' };
+const PLAN_BADGE = { comprehensive: 'badge-comp', tpft: 'badge-tpft', tpo: 'badge-tpo' };
+
+let state = {
+  carValue: 80000,
+  ncd: 30,
+  plan: 'all',
+  provider: 'all',
+  sort: 'price-asc'
+};
+
+function calcPremium(provider, planType) {
+  const ncdFactor = 1 - (state.ncd / 100);
+  let base;
+  if (planType === 'tpo') {
+    base = provider.rates.tpo;
+  } else {
+    base = state.carValue * provider.rates[planType];
+  }
+  const afterNcd = base * ncdFactor;
+  const serviceTax = afterNcd * 0.08;
+  const stampDuty = 10;
+  const total = afterNcd + serviceTax + stampDuty;
+  return { base, afterNcd, serviceTax, stampDuty, total, saving: base - afterNcd };
+}
+
+function fmtRM(n) {
+  return 'RM ' + Math.round(n).toLocaleString('en-MY');
+}
+
+function renderCards() {
+  const container = document.getElementById('planCards');
+  const noResults = document.getElementById('noResults');
+  const plans = [];
+
+  const planTypes = state.plan === 'all' ? ['comprehensive', 'tpft', 'tpo'] : [state.plan];
+
+  PROVIDERS.forEach(p => {
+    if (state.provider !== 'all' && p.name !== state.provider) return;
+    planTypes.forEach(pt => {
+      const premium = calcPremium(p, pt);
+      plans.push({ provider: p, planType: pt, premium });
+    });
+  });
+
+  // Sort
+  if (state.sort === 'price-asc') plans.sort((a, b) => a.premium.total - b.premium.total);
+  else if (state.sort === 'price-desc') plans.sort((a, b) => b.premium.total - a.premium.total);
+  else plans.sort((a, b) => a.provider.name.localeCompare(b.provider.name));
+
+  document.getElementById('resultCount').textContent = plans.length;
+
+  if (plans.length === 0) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+    return;
+  }
+  noResults.style.display = 'none';
+
+  const lowestPrice = Math.min(...plans.map(p => p.premium.total));
+
+  container.innerHTML = plans.map((item, idx) => {
+    const { provider: p, planType: pt, premium } = item;
+    const isBest = Math.abs(premium.total - lowestPrice) < 1;
+    const typeLabel = p.type === 'takaful' ? 'Takaful' : (p.type === 'both' ? 'Conv. &amp; Takaful' : 'Conventional');
+    const typeBadge = p.type === 'takaful' || p.type === 'both' ? 'badge-takaful' : 'badge-conv';
+
+    const coverageHtml = p.coverage[pt].map(c => `<li>${c}</li>`).join('');
+    const exclHtml = p.excl[pt].map(c => `<li class="no">${c}</li>`).join('');
+    const addonsHtml = p.addons[pt].length > 0
+      ? p.addons[pt].map(a => `<span class="addon-tag">${a}</span>`).join('')
+      : '<span style="font-size:0.78rem;color:var(--muted)">None available</span>';
+
+    const savingText = state.ncd > 0 ? `<div class="plan-ncd-saving">You save ${fmtRM(premium.saving)} with ${state.ncd}% NCD</div>` : '';
+    const noteText = p.notes[pt] ? `<span style="font-size:0.75rem;color:var(--muted);font-style:italic;">${p.notes[pt]}</span>` : '';
+
+    return `
+    <div class="plan-card${isBest ? ' best-value' : ''}">
+      <div class="card-top">
+        <div>
+          <div class="plan-provider">${p.name}</div>
+          <div class="plan-badges">
+            <span class="badge ${typeBadge}">${typeLabel}</span>
+            <span class="badge ${PLAN_BADGE[pt]}">${PLAN_LABELS[pt]}</span>
+          </div>
+        </div>
+        <div class="plan-pricing">
+          <div class="plan-price">${fmtRM(premium.total)}</div>
+          <span class="plan-price-unit">est. per year</span>
+          ${savingText}
+          <div class="plan-base-note">Base: ${fmtRM(premium.base)} · Tax: ${fmtRM(premium.serviceTax)}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <ul class="coverage-list">${coverageHtml}${exclHtml}</ul>
+        </div>
+        <div class="addons-list">
+          <strong>Optional Add-ons</strong>
+          ${addonsHtml}
+          <div style="margin-top:0.5rem;font-size:0.75rem;"><strong style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;">Windscreen</strong><br>${p.windscreen[pt]}</div>
+        </div>
+        <div class="best-for-row"><strong>Best for:</strong> ${p.bestFor[pt]}${noteText ? ' — ' + noteText : ''}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function updateNcdScale() {
+  document.querySelectorAll('.ncd-step').forEach(el => {
+    el.classList.toggle('active-step', parseFloat(el.dataset.ncd) === state.ncd);
+  });
+}
+
+// Car value slider
+const carValueSlider = document.getElementById('carValue');
+const carValueDisplay = document.getElementById('carValueDisplay');
+carValueSlider.addEventListener('input', () => {
+  state.carValue = parseInt(carValueSlider.value);
+  carValueDisplay.textContent = 'RM ' + state.carValue.toLocaleString('en-MY');
+  renderCards();
+});
+
+// NCD select
+document.getElementById('ncdSelect').addEventListener('change', e => {
+  state.ncd = parseFloat(e.target.value);
+  updateNcdScale();
+  renderCards();
+});
+
+// Sort
+document.getElementById('sortSelect').addEventListener('change', e => {
+  state.sort = e.target.value;
+  renderCards();
+});
+
+// Plan chips
+document.getElementById('planChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#planChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.plan = chip.dataset.plan;
+  renderCards();
+});
+
+// Provider chips
+document.getElementById('providerChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#providerChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.provider = chip.dataset.provider;
+  renderCards();
+});
+
+// Reset
+document.getElementById('resetBtn').addEventListener('click', () => {
+  state = { carValue: 80000, ncd: 30, plan: 'all', provider: 'all', sort: 'price-asc' };
+  carValueSlider.value = 80000;
+  carValueDisplay.textContent = 'RM 80,000';
+  document.getElementById('ncdSelect').value = '30';
+  document.getElementById('sortSelect').value = 'price-asc';
+  document.querySelectorAll('#planChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  document.querySelectorAll('#providerChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  updateNcdScale();
+  renderCards();
+});
+
+// FAQ
+const FAQS = [
+  { q: 'What is NCD (No Claim Discount) in Malaysia?', a: 'NCD is a reward for not making any insurance claims in the previous policy year. It starts at 0% for new drivers and builds up to a maximum of 55% after 5 consecutive claim-free years. The discount directly reduces your annual premium. NCD is tied to the vehicle owner, not the car — you can transfer it when switching vehicles or insurers.' },
+  { q: 'What is the difference between Comprehensive, TPFT, and Third Party Only?', a: '<strong>Comprehensive</strong> covers your own car damage (accidents, fire, theft) plus third-party liability. <strong>Third Party Fire &amp; Theft (TPFT)</strong> covers theft, fire, and third-party liability but NOT own accident damage. <strong>Third Party Only (TPO)</strong> is the minimum required by law — it only covers injury or damage you cause to others. TPO is cheapest but offers zero protection for your own vehicle.' },
+  { q: 'Is takaful motor insurance the same as conventional insurance?', a: 'Takaful operates on a mutual contribution (tabarru\') model based on Islamic finance principles — participants contribute to a shared pool rather than paying premiums to an insurer. Coverage benefits are very similar to conventional plans. Etiqa Takaful and Zurich Takaful are the major takaful motor providers in Malaysia. You can choose either product regardless of your religion.' },
+  { q: 'Do I need Special Perils (flood) coverage in Malaysia?', a: 'Special perils (also called natural disaster or flood coverage) protects against damage from floods, storms, landslides, and other natural events. Standard comprehensive policies do NOT include this — it must be added as a rider, typically for RM50–RM150 extra per year. Given Malaysia\'s frequent flooding during the monsoon season (October–March), special perils coverage is strongly recommended if you live or park your car in flood-prone areas.' },
+  { q: 'How is my car insurance premium calculated in Malaysia?', a: 'Since motor insurance detariffication in 2017, each insurer sets their own rates. Premiums are primarily based on: (1) car market value / sum insured, (2) NCD discount, (3) plan type, (4) 8% service tax, and (5) RM10 stamp duty. Other factors include vehicle age, engine capacity, driver experience, claims history, and location.' },
+  { q: 'What is the difference between Agreed Value and Market Value?', a: '<strong>Market Value</strong> policies pay out based on the car\'s current depreciated market value at the time of total loss or theft. <strong>Agreed Value</strong> policies lock in a fixed sum insured upfront — that amount is guaranteed in a claim regardless of market depreciation. Agreed Value premiums are slightly higher but offer more certainty, particularly for newer or modified vehicles.' },
+  { q: 'Can I keep my NCD if I change insurers or buy a new car?', a: 'Yes. Your NCD belongs to you as the vehicle owner, not the car or insurer. You can transfer it when switching insurers at renewal or when buying a new vehicle. The Persatuan Insurans Am Malaysia (PIAM) maintains a central NCD registry. You typically have up to 12 months to use an unused NCD before it lapses.' },
+  { q: 'What happens to my NCD after I make a claim?', a: 'Making a fault claim resets your NCD to 0%. If you have an NCD Protector add-on, you may be permitted one fault claim per policy year without losing your NCD (terms vary by insurer). For a non-fault claim where the third party is fully liable, your NCD should not be affected — but confirm with your insurer before proceeding with any claim.' }
+];
+
+document.getElementById('faqList').innerHTML = FAQS.map((f, i) => `
+  <div class="faq-item" id="faq${i}">
+    <button class="faq-q" onclick="toggleFaq(${i})">${f.q}<span class="faq-icon">+</span></button>
+    <div class="faq-a">${f.a}</div>
+  </div>`).join('');
+
+function toggleFaq(i) {
+  const item = document.getElementById('faq' + i);
+  item.classList.toggle('open');
+}
+
+// Init
+updateNcdScale();
+renderCards();
+</script>
+</body>
+</html>
