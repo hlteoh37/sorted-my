@@ -215,6 +215,14 @@ footer a:hover { color: var(--text); }
           "@type": "Answer",
           "text": "Maxis and CelcomDigi tend to have the best rural coverage due to their extensive tower networks across Peninsular Malaysia. For East Malaysia (Sabah and Sarawak), CelcomDigi has strong coverage. U Mobile and Yes 5G are more urban-focused. Always check the operator's coverage map before committing to a plan."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Unifi Mobile and is it worth subscribing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unifi Mobile is TM's (Telekom Malaysia) mobile service. It offers competitive no-contract postpaid plans with 5G support, unlimited calls, and data from RM45/month. Existing Unifi home broadband customers may benefit from bundling. Plans range from RM30 prepaid to RM149 for unlimited 5G postpaid."
+        }
       }
     ]
   }
@@ -287,6 +295,7 @@ footer a:hover { color: var(--text); }
           <option value="Maxis">Maxis</option>
           <option value="U Mobile">U Mobile</option>
           <option value="Yes">Yes 4G/5G</option>
+          <option value="Unifi Mobile">Unifi Mobile</option>
           <option value="Tune Talk">Tune Talk</option>
         </select>
       </div>
@@ -301,8 +310,8 @@ footer a:hover { color: var(--text); }
       <div class="filter-group">
         <label>Max Monthly Budget</label>
         <div class="range-row">
-          <input type="range" id="budget-slider" min="25" max="150" value="150" step="5">
-          <span class="range-value" id="budget-display">RM150</span>
+          <input type="range" id="budget-slider" min="25" max="200" value="200" step="5">
+          <span class="range-value" id="budget-display">RM200</span>
         </div>
       </div>
       <div class="filter-group">
@@ -519,6 +528,43 @@ const PLANS = [
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
     bestFor: 'High-data 5G, no contract'
   },
+  // ── Unifi Mobile ──
+  {
+    provider: 'Unifi Mobile', name: 'Prepaid 30',
+    type: 'prepaid', price: 30, data: 10, dataDisplay: '10 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'Budget prepaid on Unifi network'
+  },
+  {
+    provider: 'Unifi Mobile', name: 'Prepaid 50',
+    type: 'prepaid', price: 50, data: 30, dataDisplay: '30 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Mid-range prepaid with 5G'
+  },
+  {
+    provider: 'Unifi Mobile', name: 'Postpaid 45',
+    type: 'postpaid', price: 45, data: 20, dataDisplay: '20 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
+    bestFor: 'Affordable no-contract postpaid'
+  },
+  {
+    provider: 'Unifi Mobile', name: 'Postpaid 65',
+    type: 'postpaid', price: 65, data: 40, dataDisplay: '40 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Good value 5G postpaid, no contract'
+  },
+  {
+    provider: 'Unifi Mobile', name: 'Postpaid 99',
+    type: 'postpaid', price: 99, data: 80, dataDisplay: '80 GB',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'High data 5G postpaid, no contract'
+  },
+  {
+    provider: 'Unifi Mobile', name: 'Postpaid 149',
+    type: 'postpaid', price: 149, data: 999, dataDisplay: 'Unlimited',
+    calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
+    bestFor: 'Unlimited 5G, no contract'
+  },
   // ── Tune Talk ──
   {
     provider: 'Tune Talk', name: 'Prepaid Basic 25',
@@ -572,12 +618,16 @@ const FAQS = [
   {
     q: "Which telco is best for rural areas in Malaysia?",
     a: "<p>Maxis and CelcomDigi have the best rural coverage due to their extensive tower networks across Peninsular Malaysia. For East Malaysia (Sabah and Sarawak), CelcomDigi has strong coverage. U Mobile and Yes 5G are more urban-focused. Always check the operator's coverage map before committing.</p>"
+  },
+  {
+    q: "What is Unifi Mobile and is it good?",
+    a: "<p>Unifi Mobile is TM's (Telekom Malaysia) mobile service, launched to complement the Unifi home broadband brand. It offers competitive postpaid plans with no contracts, 5G support, and unlimited calls. If you are an existing Unifi home broadband customer, bundling with Unifi Mobile may get you loyalty discounts. Coverage uses the existing TM network.</p>"
   }
 ];
 
 // State
 let sortMode = 'price-asc';
-let filters = { provider: 'any', type: 'any', budget: 150, minData: 0, fiveG: false };
+let filters = { provider: 'any', type: 'any', budget: 200, minData: 0, fiveG: false };
 let wizard = { budget: null, data: null, contract: null };
 
 // Helpers
@@ -612,6 +662,7 @@ function providerColor(provider) {
     'Maxis': '#ef4444',
     'U Mobile': '#f97316',
     'Yes': '#22c55e',
+    'Unifi Mobile': '#0ea5e9',
     'Tune Talk': '#a855f7'
   };
   return map[provider] || 'var(--accent)';
@@ -682,11 +733,11 @@ document.getElementById('fiveg-toggle').addEventListener('change', e => {
   filters.fiveG = e.target.checked; render();
 });
 document.getElementById('reset-filters').addEventListener('click', () => {
-  filters = { provider: 'any', type: 'any', budget: 150, minData: 0, fiveG: false };
+  filters = { provider: 'any', type: 'any', budget: 200, minData: 0, fiveG: false };
   document.getElementById('provider-filter').value = 'any';
   document.getElementById('type-filter').value = 'any';
-  document.getElementById('budget-slider').value = 150;
-  document.getElementById('budget-display').textContent = 'RM150';
+  document.getElementById('budget-slider').value = 200;
+  document.getElementById('budget-display').textContent = 'RM200';
   document.getElementById('data-slider').value = 0;
   document.getElementById('data-display').textContent = '0 GB';
   document.getElementById('fiveg-toggle').checked = false;
@@ -745,8 +796,8 @@ function checkWizard() {
       rec = 'CelcomDigi BEST Prepaid 50 — RM50/mo, 30 GB, 5G';
       reason = 'Good mid-range prepaid with 5G for occasional streaming.';
     } else if (wizard.contract === 'no') {
-      rec = 'Yes 5G Freedom 65 — RM65/mo, 50 GB, 5G, no contract';
-      reason = 'Pure 5G network with generous data and no lock-in.';
+      rec = 'Unifi Mobile Postpaid 65 — RM65/mo, 40 GB, 5G, no contract';
+      reason = 'Great value no-contract 5G postpaid on the Unifi network.';
     } else {
       rec = 'Maxis Postpaid 60 — RM60/mo, 30 GB';
       reason = 'Reliable Maxis network at an accessible postpaid price point.';
@@ -791,8 +842,8 @@ FAQS.forEach((faq, i) => {
 render();
 </script>
 <div style="text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);margin-top:2rem;">
-  <p style="color:var(--muted);font-size:0.875rem;margin-bottom:0.75rem;">Found this useful? Support Sorted — buy us a coffee for RM12</p>
-  <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener" style="display:inline-block;background:var(--bg2);color:var(--muted);border:1px solid var(--border);font-weight:600;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='var(--accent)';this.style.borderColor='var(--accent)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">☕ Buy us a coffee — RM12</a>
+  <p style="color:var(--muted);font-size:0.875rem;margin-bottom:0.75rem;">Found this tool useful? Support Sorted MY — buy us a coffee!</p>
+  <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" style="display:inline-block;background:var(--bg2);color:var(--muted);border:1px solid var(--border);font-weight:600;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='var(--accent)';this.style.borderColor='var(--accent)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">☕ Buy me a coffee</a>
 </div>
 </body>
 </html>
