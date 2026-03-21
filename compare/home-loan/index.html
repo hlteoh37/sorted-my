@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Malaysia Home Loan Rates 2026 — Interactive Mortgage Calculator | Sorted</title>
+  <meta name="description" content="Compare Malaysia home loan rates 2026 from Maybank, CIMB, Public Bank, Hong Leong, RHB, AmBank, Bank Islam and more. Free mortgage calculator — enter property price and see monthly payments instantly.">
+  <meta property="og:title" content="Compare Malaysia Home Loan Rates 2026 — Mortgage Calculator | Sorted">
+  <meta property="og:description" content="Find the best home loan in Malaysia. Compare rates, tenure, lock-in periods and monthly payments from 17 loan packages across 9 major banks.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/home-loan/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Calculator */
+.calc-section { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.calc-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.calc-section .calc-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.calc-inputs-row { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 1rem; align-items: end; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.72rem; color: var(--muted); }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.75rem; }
+.calc-btn { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.65rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; white-space: nowrap; transition: background 0.2s; height: fit-content; }
+.calc-btn:hover { background: #7c74ff; }
+
+.calc-summary { display: none; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.calc-summary.visible { display: block; }
+.calc-summary-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cs-stat { flex: 1; min-width: 120px; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+.calc-note { font-size: 0.78rem; color: var(--muted); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+.filters-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.filters-top h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+.range-row { display: flex; align-items: center; gap: 0.75rem; }
+.range-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.range-value { font-size: 0.875rem; font-weight: 700; color: var(--accent2); font-family: monospace; min-width: 52px; text-align: right; }
+
+/* Sort bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.sort-label { font-size: 0.75rem; color: var(--muted); align-self: center; margin-right: 0.25rem; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; white-space: nowrap; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Loan Cards */
+.loan-cards { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+.loan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.loan-card:hover { border-color: rgba(108,99,255,0.4); }
+.loan-card.best-rate { border-color: var(--accent2); border-width: 2px; }
+.loan-card.best-rate .card-badge { display: inline-block; }
+.card-badge { display: none; font-size: 0.65rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; }
+.card-bank { font-size: 1rem; font-weight: 800; color: var(--text); }
+.card-product { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+.card-rate-block { text-align: right; flex-shrink: 0; }
+.card-rate { font-size: 1.8rem; font-weight: 800; color: var(--accent2); font-family: monospace; letter-spacing: -1px; }
+.card-rate-label { font-size: 0.7rem; color: var(--muted); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.5rem 1rem; margin-bottom: 0.75rem; }
+.card-stat { }
+.card-stat .cs-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+.card-stat .cs-v { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.card-stat .cs-v.monthly { color: var(--warn); font-size: 1rem; }
+.card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; white-space: nowrap; }
+.tag-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.tag-islamic { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-nolin { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.tag-lockin { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.tag-flexi { background: rgba(108,99,255,0.1); color: #c4b5fd; border: 1px solid rgba(108,99,255,0.2); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); }
+.no-results h3 { color: var(--text); margin-bottom: 0.5rem; }
+
+/* Info / warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); }
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: var(--font); font-size: 0.95rem; font-weight: 600; padding: 1rem 1.25rem; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { background: var(--bg3); }
+.faq-arrow { color: var(--muted); font-size: 0.85rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 0.85rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+
+/* Related tools */
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+/* Tip jar */
+.tipjar { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.tipjar p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.tipjar a { display: inline-block; background: var(--bg2); color: var(--muted); border: 1px solid var(--border); font-weight: 600; padding: 0.55rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.875rem; transition: all 0.2s; }
+.tipjar a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .calc-inputs-row { grid-template-columns: 1fr 1fr; }
+  .calc-btn { grid-column: 1 / -1; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .calc-summary-stats { gap: 0.75rem; }
+}
+@media (max-width: 450px) {
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .card-header { flex-direction: column; gap: 0.5rem; }
+  .card-rate-block { text-align: left; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Home Loan Comparison Tool 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/home-loan/",
+    "description": "Compare Malaysia home loan rates from Maybank, CIMB, Public Bank, Hong Leong, RHB, AmBank, Bank Islam and more. Free mortgage calculator with monthly payment estimates.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the current home loan interest rate in Malaysia 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, Malaysian home loan rates range from about 3.75% to 4.30% per annum (variable). Rates are pegged to each bank's Base Rate (BR), which tracks Bank Negara Malaysia's Overnight Policy Rate (OPR) of 3.00%. Most banks price home loans at BR + 0.70% to BR + 1.30%. Islamic home financing uses a similar Effective Profit Rate structure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between conventional and Islamic home loans in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conventional home loans charge interest on the outstanding principal. Islamic home financing (e.g. Murabahah, Musharakah Mutanaqisah) is Shariah-compliant — the bank purchases the property and sells it to you at a profit, or co-owns it with you. In practice, the monthly payments and overall cost are similar. Islamic financing offers a selling price lock-in (Ibra' rebate) protection and is available to all Malaysians regardless of religion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I borrow for a home loan in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Malaysian banks lend up to 90% of the property value (10% down payment) for first and second properties. For third properties and above, the maximum is 70%. Your loan eligibility depends on your Debt Service Ratio (DSR) — most banks require DSR below 60–70%, meaning total monthly loan commitments should not exceed 60–70% of your gross income."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a lock-in period for home loans in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A lock-in period (typically 3–5 years) is a window where you cannot fully redeem or refinance your loan without paying an early settlement penalty — usually 2–3% of the outstanding loan amount. After the lock-in period expires, you can refinance or fully settle without penalty. Some banks like Maybank (MaxiHome) offer zero lock-in home loans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it worth refinancing my home loan in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Refinancing makes sense if: (1) your current rate is 0.30% or more above today's best rates, (2) your lock-in period has ended, (3) your property value has increased (improving your LTV ratio), or (4) you want to switch between conventional and Islamic financing. Factor in legal fees (typically 0.5–1% of loan), valuation fees (RM1,000–3,000), and stamp duty when calculating savings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a flexi home loan in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A flexi home loan lets you make extra repayments into a linked current account, reducing the principal balance that interest is charged on — lowering your monthly interest. Full flexi accounts have a linked current account you can withdraw from freely; semi-flexi accounts require a formal request to redraw funds. Flexi loans typically have a slightly higher rate (+0.05–0.15%) than term loans but save money if you consistently make extra payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my home loan monthly payment in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the mortgage formula: M = P × [r(1+r)^n] / [(1+r)^n - 1], where P = loan amount, r = monthly interest rate (annual rate ÷ 12), n = number of months. For example, a RM500,000 loan at 4.00% for 30 years: r = 0.04/12 = 0.003333, n = 360. Monthly payment ≈ RM2,387. Use the calculator above to compare payments across all Malaysian banks instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Malaysian bank offers the lowest home loan rate in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, Public Bank and Hong Leong Bank tend to offer competitive rates around 3.75–3.85% effective. Public Bank's Home Flexi loan is often cited as among the lowest in market at BR+0.70% (effective ~3.80%). However, the best rate for you depends on your loan amount, property type, income, and credit profile. Islamic financing from Bank Rakyat (BR+0.85%) is also very competitive."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../broadband/">Broadband</a>
+    <a href="../car-loan/">Car Loan</a>
+    <a href="../credit-card/">Credit Cards</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">← Back to all guides</a>
+    <h1>🏠 Compare Malaysia Home Loan Rates <span class="tool-tag">2026</span></h1>
+    <p class="subtitle">17 loan packages from 9 major banks. Enter your property price to see real monthly payments — then filter, sort, and compare side-by-side.</p>
+  </div>
+
+  <!-- MORTGAGE CALCULATOR -->
+  <div class="calc-section">
+    <h2>Mortgage Calculator</h2>
+    <p class="calc-desc">Enter your details to see estimated monthly payments from every bank at once.</p>
+    <div class="calc-inputs-row">
+      <div class="field">
+        <label for="prop-price">Property Price (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="prop-price" min="50000" max="10000000" step="10000" value="600000" placeholder="600000">
+        </div>
+        <div class="hint">Purchase price or market value</div>
+      </div>
+      <div class="field">
+        <label for="down-pct">Down Payment (%)</label>
+        <input type="number" id="down-pct" min="0" max="90" step="1" value="10" placeholder="10">
+        <div class="hint">Min 10% for 1st–2nd property</div>
+      </div>
+      <div class="field">
+        <label for="tenure-yr">Tenure (Years)</label>
+        <select id="tenure-yr">
+          <option value="5">5 years</option>
+          <option value="10">10 years</option>
+          <option value="15">15 years</option>
+          <option value="20">20 years</option>
+          <option value="25">25 years</option>
+          <option value="30" selected>30 years</option>
+          <option value="35">35 years</option>
+        </select>
+        <div class="hint">Max 35 years (age 65–70 limit)</div>
+      </div>
+      <button class="calc-btn" onclick="calculateAll()">Calculate</button>
+    </div>
+    <div class="calc-summary" id="calc-summary">
+      <div class="calc-summary-stats">
+        <div class="cs-stat"><div class="cs-label">Loan Amount</div><div class="cs-value" id="sum-loan">—</div></div>
+        <div class="cs-stat"><div class="cs-label">Down Payment</div><div class="cs-value" id="sum-dp">—</div></div>
+        <div class="cs-stat"><div class="cs-label">Lowest Monthly</div><div class="cs-value accent2" id="sum-low">—</div></div>
+        <div class="cs-stat"><div class="cs-label">Highest Monthly</div><div class="cs-value" id="sum-high">—</div></div>
+        <div class="cs-stat"><div class="cs-label">Total Interest (lowest rate)</div><div class="cs-value" id="sum-interest">—</div></div>
+      </div>
+      <p class="calc-note">&#9432; Estimates are indicative only. Actual rates and approvals are subject to bank assessment, property type, and creditworthiness. Rates shown are variable and may change with OPR adjustments.</p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filters-top">
+      <h3>Filters</h3>
+      <button class="reset-btn" onclick="resetFilters()">Reset all</button>
+    </div>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label for="type-filter">Loan Type</label>
+        <select id="type-filter" onchange="renderLoans()">
+          <option value="all">All types</option>
+          <option value="conventional">Conventional only</option>
+          <option value="islamic">Islamic only</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="bank-filter">Bank</label>
+        <select id="bank-filter" onchange="renderLoans()">
+          <option value="all">All banks</option>
+          <option value="Maybank">Maybank</option>
+          <option value="CIMB">CIMB</option>
+          <option value="Public Bank">Public Bank</option>
+          <option value="Hong Leong">Hong Leong</option>
+          <option value="RHB">RHB</option>
+          <option value="AmBank">AmBank</option>
+          <option value="Bank Islam">Bank Islam</option>
+          <option value="Bank Rakyat">Bank Rakyat</option>
+          <option value="BSN">BSN</option>
+          <option value="Alliance">Alliance Bank</option>
+          <option value="Affin">Affin Bank</option>
+          <option value="MBSB">MBSB Bank</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Max Effective Rate</label>
+        <div class="range-row">
+          <input type="range" id="rate-slider" min="3.5" max="5.0" step="0.05" value="5.0" oninput="document.getElementById('rate-display').textContent=parseFloat(this.value).toFixed(2)+'%'; renderLoans()">
+          <span class="range-value" id="rate-display">5.00%</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label for="tenure-filter">Min Tenure</label>
+        <select id="tenure-filter" onchange="renderLoans()">
+          <option value="0">Any tenure</option>
+          <option value="25">25+ years</option>
+          <option value="30">30+ years</option>
+          <option value="35">35 years only</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="lockin-filter">Lock-in Period</label>
+        <select id="lockin-filter" onchange="renderLoans()">
+          <option value="any">Any</option>
+          <option value="0">No lock-in only</option>
+          <option value="3">3 years or less</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="flexi-filter">Loan Structure</label>
+        <select id="flexi-filter" onchange="renderLoans()">
+          <option value="any">Any</option>
+          <option value="flexi">Flexi accounts only</option>
+          <option value="term">Term loans only</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-bar">
+    <div class="results-count">Showing <em id="count">17</em> of 17 packages</div>
+    <div class="sort-bar">
+      <span class="sort-label">Sort:</span>
+      <button class="sort-btn active" data-sort="rate" onclick="setSort(this)">Lowest Rate</button>
+      <button class="sort-btn" data-sort="tenure" onclick="setSort(this)">Max Tenure</button>
+      <button class="sort-btn" data-sort="monthly" onclick="setSort(this)">Monthly Payment</button>
+      <button class="sort-btn" data-sort="lockin" onclick="setSort(this)">Lock-in</button>
+    </div>
+  </div>
+
+  <div class="loan-cards" id="loan-cards"></div>
+
+  <div class="warn-box">
+    <strong>⚠ Disclaimer:</strong> Rates displayed are indicative only based on publicly available information as of early 2026. Actual approved rates vary depending on your credit profile, property type, loan amount, and bank assessment. Always verify with the bank before making financial decisions. This tool is for reference and comparison purposes only.
+  </div>
+
+  <!-- OPR INFO -->
+  <div class="section">
+    <h2>Understanding Malaysian Home Loan Rates</h2>
+    <p>All Malaysian bank home loan rates are variable and tied to each bank's <strong>Base Rate (BR)</strong>, which tracks Bank Negara Malaysia's <strong>Overnight Policy Rate (OPR)</strong>. As of 2026, the OPR sits at <strong>3.00%</strong>, and most bank BRs range from 3.00–3.10%.</p>
+    <p>Your effective rate = Bank's BR + spread (typically 0.70%–1.30%). Islamic financing products use an equivalent <strong>Effective Profit Rate (EPR)</strong> structure.</p>
+    <ul class="tips-list">
+      <li>A <strong>0.25% OPR change</strong> affects your monthly payment by roughly RM50–80 per RM100k of loan outstanding</li>
+      <li><strong>Flexi home loans</strong> let you park savings in a linked account to offset interest — great if you have irregular income</li>
+      <li><strong>Islamic financing</strong> is available to everyone (not just Muslims) and offers the same competitive rates</li>
+      <li>The <strong>lock-in period</strong> (usually 3 years) is when early full settlement incurs a penalty — plan around it before refinancing</li>
+      <li>Your <strong>Debt Service Ratio (DSR)</strong> must stay below 60–70% of gross income to qualify — include all existing loan commitments</li>
+      <li>Bumiputera borrowers may access <strong>additional MyHome / BSN schemes</strong> with subsidised rates for affordable housing</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">What is the current home loan interest rate in Malaysia 2026? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">As of 2026, Malaysian home loan rates range from about <strong>3.75% to 4.30% per annum (variable)</strong>. Rates are pegged to each bank's Base Rate (BR), which tracks Bank Negara Malaysia's OPR of 3.00%. Most banks price home loans at BR + 0.70% to BR + 1.30%. Islamic home financing uses a similar Effective Profit Rate (EPR) structure with comparable pricing.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">What is the difference between conventional and Islamic home loans? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Conventional home loans charge <strong>interest</strong> on the outstanding principal. Islamic home financing (e.g. Murabahah, Musharakah Mutanaqisah) is Shariah-compliant — the bank purchases the property and sells it to you at a profit, or co-owns it with you. In practice, monthly payments are similar. Islamic financing also provides <strong>Ibra' rebate protection</strong> (selling price lock-in) and is available to all Malaysians regardless of religion.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How much can I borrow for a home loan in Malaysia? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Most banks lend up to <strong>90% of property value</strong> (10% down payment) for your 1st and 2nd properties. For 3rd properties and above, the maximum is 70% (30% down payment). Your eligibility depends on your <strong>Debt Service Ratio (DSR)</strong> — total monthly commitments should not exceed 60–70% of gross income. Joint applications combine both incomes.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">What is a lock-in period for home loans in Malaysia? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">A lock-in period (typically <strong>3–5 years</strong>) is a window where fully redeeming or refinancing your loan triggers an early settlement penalty — usually <strong>2–3% of the outstanding balance</strong>. After the lock-in expires, you can refinance or settle without penalty. Some banks like Maybank (MaxiHome) and Standard Chartered offer <strong>zero lock-in</strong> home loans for greater flexibility.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">Is it worth refinancing my home loan in Malaysia? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Refinancing makes sense if: (1) your current rate is 0.30%+ above today's best rates, (2) your lock-in period has ended, (3) your property value has increased (improving LTV), or (4) you want to extract equity or switch to a flexi structure. Factor in legal fees (~0.5–1% of loan), valuation fees (RM1,000–3,000), and stamp duty on the mortgage agreement when calculating breakeven.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">What is a flexi home loan in Malaysia? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">A flexi home loan lets you make extra repayments into a <strong>linked current account</strong>, reducing the principal balance that interest is charged on. <strong>Full flexi</strong> accounts allow free withdrawals from the extra balance; <strong>semi-flexi</strong> requires a formal request to redraw funds. Flexi loans typically have a slightly higher rate (+0.05–0.15%) but can save significantly in total interest if you consistently park extra cash.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How do I calculate my home loan monthly payment? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">Use the formula: <strong>M = P × [r(1+r)^n] / [(1+r)^n - 1]</strong>, where P = loan amount, r = monthly rate (annual ÷ 12), n = months. For example, RM500,000 at 4.00% for 30 years: r = 0.003333, n = 360 → <strong>RM2,387/month</strong>. Use the mortgage calculator at the top of this page to compare all banks instantly.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">Which Malaysian bank has the lowest home loan rate in 2026? <span class="faq-arrow">▼</span></button>
+        <div class="faq-a">As of 2026, <strong>Public Bank</strong> (BR+0.70% ≈ 3.80%) and <strong>Hong Leong Bank</strong> (BR+0.85% ≈ 3.85%) tend to offer the most competitive conventional rates. For Islamic financing, <strong>Bank Rakyat</strong> (BFR+0.85% ≈ 3.85%) is highly competitive. However, the best rate for you depends on your loan amount, property type, income profile, and credit history — always get quotes from multiple banks.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="section">
+    <h2>More Financial Tools</h2>
+    <div class="related-grid">
+      <a href="../car-loan/" class="related-card">🚗 Car Loan Calculator<div class="rel-desc">Compare car financing rates from all major banks</div></a>
+      <a href="../credit-card/" class="related-card">💳 Credit Cards<div class="rel-desc">Find the best rewards and cashback cards</div></a>
+      <a href="../broadband/" class="related-card">📡 Broadband Plans<div class="rel-desc">Compare Unifi, TIME, Maxis and more</div></a>
+      <a href="../ptptn-calculator/" class="related-card">🎓 PTPTN Calculator<div class="rel-desc">Calculate student loan repayments</div></a>
+      <a href="../rental-yield/" class="related-card">🏘 Rental Yield Tool<div class="rel-desc">Calculate gross and net rental yield</div></a>
+      <a href="../tax-calculator/" class="related-card">📊 Income Tax<div class="rel-desc">Estimate your Malaysia personal income tax</div></a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="tipjar">
+    <p>Found this tool helpful? Support Sorted — it helps keep this free and ad-free.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="../../">Home</a>
+      <a href="../broadband/">Broadband</a>
+      <a href="../car-loan/">Car Loan</a>
+      <a href="../credit-card/">Credit Cards</a>
+      <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support</a>
+    </div>
+    <p>Sorted.my — Malaysian financial guides &amp; tools. Rates are indicative only; verify with each bank. Not financial advice.</p>
+  </div>
+</footer>
+
+<script>
+// ==================== LOAN DATA ====================
+const LOANS = [
+  {
+    bank: "Public Bank",
+    product: "Home Flexi Loan",
+    type: "conventional",
+    br: 3.10,
+    spread: 0.70,
+    rate: 3.80,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "3% of outstanding",
+    structure: "flexi",
+    notes: "Full flexi — lowest spread in market. Requires linked PB current account."
+  },
+  {
+    bank: "Public Bank",
+    product: "Home Financing-i (Murabahah)",
+    type: "islamic",
+    br: 3.10,
+    spread: 0.70,
+    rate: 3.80,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "3% of outstanding",
+    structure: "flexi",
+    notes: "Islamic equivalent of PB Home Flexi. Selling price lock-in via Ibra'."
+  },
+  {
+    bank: "Hong Leong",
+    product: "MortgageRate",
+    type: "conventional",
+    br: 3.00,
+    spread: 0.85,
+    rate: 3.85,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "flexi",
+    notes: "Full flexi structure. Competitive spread, widely available."
+  },
+  {
+    bank: "Bank Rakyat",
+    product: "Home Financing-i (MM)",
+    type: "islamic",
+    br: 3.00,
+    spread: 0.85,
+    rate: 3.85,
+    tenure: 35,
+    margin: 90,
+    lockIn: 5,
+    penalty: "2% of outstanding",
+    structure: "term",
+    notes: "Musharakah Mutanaqisah structure. Longer 5-year lock-in. Cooperative bank — need membership."
+  },
+  {
+    bank: "BSN",
+    product: "MyHome Loan",
+    type: "conventional",
+    br: 3.00,
+    spread: 0.90,
+    rate: 3.90,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "term",
+    notes: "Government-backed bank. Special Bumiputera rates available. Good for affordable housing schemes."
+  },
+  {
+    bank: "Alliance Bank",
+    product: "HomeSmart",
+    type: "conventional",
+    br: 3.00,
+    spread: 0.90,
+    rate: 3.90,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "flexi",
+    notes: "Semi-flexi structure. Competitive mid-tier pricing."
+  },
+  {
+    bank: "Standard Chartered",
+    product: "MortgageOne",
+    type: "conventional",
+    br: 3.00,
+    spread: 0.95,
+    rate: 3.95,
+    tenure: 35,
+    margin: 90,
+    lockIn: 0,
+    penalty: "None",
+    structure: "flexi",
+    notes: "No lock-in period — great for those who may refinance or sell. Full flexi offset account."
+  },
+  {
+    bank: "Maybank",
+    product: "MaxiHome Flexi",
+    type: "conventional",
+    br: 3.00,
+    spread: 1.00,
+    rate: 4.00,
+    tenure: 35,
+    margin: 90,
+    lockIn: 0,
+    penalty: "None",
+    structure: "flexi",
+    notes: "Zero lock-in with full flexi. Maybank's widest branch coverage — ideal for first-time buyers."
+  },
+  {
+    bank: "Maybank",
+    product: "Islamic Home Financing-i",
+    type: "islamic",
+    br: 3.00,
+    spread: 1.00,
+    rate: 4.00,
+    tenure: 35,
+    margin: 90,
+    lockIn: 0,
+    penalty: "None",
+    structure: "flexi",
+    notes: "Tawarruq structure. Same zero lock-in as MaxiHome. Open to all Malaysians."
+  },
+  {
+    bank: "RHB",
+    product: "MyHome Loan",
+    type: "conventional",
+    br: 3.00,
+    spread: 1.00,
+    rate: 4.00,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "term",
+    notes: "Standard term loan. Competitive pricing, strong nationwide presence."
+  },
+  {
+    bank: "AmBank",
+    product: "MortgagePlus",
+    type: "conventional",
+    br: 3.05,
+    spread: 0.95,
+    rate: 4.00,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "3% of outstanding",
+    structure: "flexi",
+    notes: "Semi-flexi with linked savings account. Higher early penalty — compare carefully."
+  },
+  {
+    bank: "Affin Bank",
+    product: "Affin SmartHome",
+    type: "conventional",
+    br: 3.00,
+    spread: 1.00,
+    rate: 4.00,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "term",
+    notes: "Standard term loan. Suitable for applicants with relationship banking at Affin."
+  },
+  {
+    bank: "CIMB",
+    product: "HomeFlexi",
+    type: "conventional",
+    br: 3.00,
+    spread: 1.05,
+    rate: 4.05,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2.5% of outstanding",
+    structure: "flexi",
+    notes: "Full flexi with linked CIMB current account. Strong digital banking experience."
+  },
+  {
+    bank: "CIMB",
+    product: "Home Financing-i",
+    type: "islamic",
+    br: 3.00,
+    spread: 1.05,
+    rate: 4.05,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2.5% of outstanding",
+    structure: "flexi",
+    notes: "Commodity Murabahah structure. Same full flexi as CIMB HomeFlexi."
+  },
+  {
+    bank: "Bank Islam",
+    product: "Home Financing-i (BBA)",
+    type: "islamic",
+    br: 3.00,
+    spread: 1.10,
+    rate: 4.10,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "term",
+    notes: "Bay Bithaman Ajil. Dedicated Islamic bank — full Shariah governance. Good for Shariah-conscious buyers."
+  },
+  {
+    bank: "Hong Leong",
+    product: "Islamic Home Financing-i",
+    type: "islamic",
+    br: 3.00,
+    spread: 0.85,
+    rate: 3.85,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "2% of outstanding",
+    structure: "flexi",
+    notes: "Musharakah Mutanaqisah. Same flexi structure as HLB MortgageRate."
+  },
+  {
+    bank: "MBSB",
+    product: "Property Financing-i",
+    type: "islamic",
+    br: 3.00,
+    spread: 1.30,
+    rate: 4.30,
+    tenure: 35,
+    margin: 90,
+    lockIn: 3,
+    penalty: "3% of outstanding",
+    structure: "term",
+    notes: "Commodity Murabahah. Slightly higher rate but more lenient DSR requirements — good for self-employed."
+  }
+];
+
+// ==================== STATE ====================
+let currentSort = "rate";
+let calcDone = false;
+let loanAmt = 0;
+let tenureYears = 30;
+
+// ==================== CALCULATOR ====================
+function calcMonthly(principal, annualRate, years) {
+  const r = annualRate / 100 / 12;
+  const n = years * 12;
+  if (r === 0) return principal / n;
+  return principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+}
+
+function fmt(n) {
+  return "RM" + n.toLocaleString("en-MY", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+function calculateAll() {
+  const price = parseFloat(document.getElementById("prop-price").value) || 600000;
+  const dpPct = parseFloat(document.getElementById("down-pct").value) || 10;
+  tenureYears = parseInt(document.getElementById("tenure-yr").value) || 30;
+  const dp = price * dpPct / 100;
+  loanAmt = price - dp;
+
+  const monthlies = LOANS.map(l => calcMonthly(loanAmt, l.rate, Math.min(tenureYears, l.tenure)));
+  const low = Math.min(...monthlies);
+  const high = Math.max(...monthlies);
+  const lowRate = Math.min(...LOANS.map(l => l.rate));
+  const totalInterest = calcMonthly(loanAmt, lowRate, tenureYears) * tenureYears * 12 - loanAmt;
+
+  document.getElementById("sum-loan").textContent = fmt(loanAmt);
+  document.getElementById("sum-dp").textContent = fmt(dp);
+  document.getElementById("sum-low").textContent = fmt(low) + "/mo";
+  document.getElementById("sum-high").textContent = fmt(high) + "/mo";
+  document.getElementById("sum-interest").textContent = fmt(totalInterest);
+
+  const summary = document.getElementById("calc-summary");
+  summary.classList.add("visible");
+  calcDone = true;
+  renderLoans();
+}
+
+// ==================== RENDER ====================
+function renderLoans() {
+  const typeF = document.getElementById("type-filter").value;
+  const bankF = document.getElementById("bank-filter").value;
+  const rateF = parseFloat(document.getElementById("rate-slider").value);
+  const tenureF = parseInt(document.getElementById("tenure-filter").value);
+  const lockinF = document.getElementById("lockin-filter").value;
+  const flexiF = document.getElementById("flexi-filter").value;
+
+  let filtered = LOANS.filter(l => {
+    if (typeF !== "all" && l.type !== typeF) return false;
+    if (bankF !== "all" && l.bank !== bankF) return false;
+    if (l.rate > rateF) return false;
+    if (l.tenure < tenureF) return false;
+    if (lockinF === "0" && l.lockIn !== 0) return false;
+    if (lockinF === "3" && l.lockIn > 3) return false;
+    if (flexiF === "flexi" && l.structure !== "flexi") return false;
+    if (flexiF === "term" && l.structure !== "term") return false;
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    if (currentSort === "rate") return a.rate - b.rate;
+    if (currentSort === "tenure") return b.tenure - a.tenure;
+    if (currentSort === "lockin") return a.lockIn - b.lockIn;
+    if (currentSort === "monthly") {
+      const ma = calcMonthly(loanAmt || 540000, a.rate, Math.min(tenureYears, a.tenure));
+      const mb = calcMonthly(loanAmt || 540000, b.rate, Math.min(tenureYears, b.tenure));
+      return ma - mb;
+    }
+    return 0;
+  });
+
+  document.getElementById("count").textContent = filtered.length;
+
+  const container = document.getElementById("loan-cards");
+  if (filtered.length === 0) {
+    container.innerHTML = '<div class="no-results"><h3>No loans match your filters</h3><p>Try relaxing the rate or tenure filters.</p></div>';
+    return;
+  }
+
+  const lowestRate = Math.min(...filtered.map(l => l.rate));
+
+  container.innerHTML = filtered.map((l, i) => {
+    const isBest = l.rate === lowestRate;
+    const monthly = (calcDone && loanAmt > 0) ? calcMonthly(loanAmt, l.rate, Math.min(tenureYears, l.tenure)) : null;
+    const totalCost = monthly ? monthly * Math.min(tenureYears, l.tenure) * 12 : null;
+    const totalInterest = totalCost ? totalCost - loanAmt : null;
+
+    const typePill = l.type === "islamic"
+      ? '<span class="tag tag-islamic">Islamic</span>'
+      : '<span class="tag tag-conv">Conventional</span>';
+    const lockinPill = l.lockIn === 0
+      ? '<span class="tag tag-nolin">No lock-in</span>'
+      : `<span class="tag tag-lockin">${l.lockIn}-yr lock-in</span>`;
+    const flexiPill = l.structure === "flexi"
+      ? '<span class="tag tag-flexi">Flexi</span>'
+      : '';
+
+    return `<div class="loan-card ${isBest ? 'best-rate' : ''}">
+      <div class="card-badge">★ LOWEST RATE</div>
+      <div class="card-header">
+        <div>
+          <div class="card-bank">${l.bank}</div>
+          <div class="card-product">${l.product}</div>
+        </div>
+        <div class="card-rate-block">
+          <div class="card-rate">${l.rate.toFixed(2)}%</div>
+          <div class="card-rate-label">p.a. (variable)</div>
+        </div>
+      </div>
+      <div class="card-grid">
+        <div class="card-stat"><div class="cs-k">Base Rate</div><div class="cs-v">${l.br.toFixed(2)}% BR</div></div>
+        <div class="card-stat"><div class="cs-k">Spread</div><div class="cs-v">+${l.spread.toFixed(2)}%</div></div>
+        <div class="card-stat"><div class="cs-k">Max Tenure</div><div class="cs-v">${l.tenure} yrs</div></div>
+        <div class="card-stat"><div class="cs-k">Max Margin</div><div class="cs-v">${l.margin}%</div></div>
+        <div class="card-stat"><div class="cs-k">Lock-in</div><div class="cs-v">${l.lockIn === 0 ? 'None' : l.lockIn + ' years'}</div></div>
+        <div class="card-stat"><div class="cs-k">Early Penalty</div><div class="cs-v">${l.penalty}</div></div>
+        ${monthly ? `<div class="card-stat"><div class="cs-k">Est. Monthly</div><div class="cs-v monthly">${fmt(monthly)}/mo</div></div>` : ''}
+        ${totalInterest ? `<div class="card-stat"><div class="cs-k">Total Interest</div><div class="cs-v">${fmt(totalInterest)}</div></div>` : ''}
+      </div>
+      <div class="card-tags">${typePill}${lockinPill}${flexiPill}</div>
+      ${l.notes ? `<div style="margin-top:0.6rem;font-size:0.78rem;color:var(--muted);">${l.notes}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+// ==================== HELPERS ====================
+function setSort(btn) {
+  document.querySelectorAll(".sort-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  currentSort = btn.dataset.sort;
+  renderLoans();
+}
+
+function resetFilters() {
+  document.getElementById("type-filter").value = "all";
+  document.getElementById("bank-filter").value = "all";
+  document.getElementById("rate-slider").value = 5.0;
+  document.getElementById("rate-display").textContent = "5.00%";
+  document.getElementById("tenure-filter").value = "0";
+  document.getElementById("lockin-filter").value = "any";
+  document.getElementById("flexi-filter").value = "any";
+  renderLoans();
+}
+
+function toggleFaq(el) {
+  el.classList.toggle("open");
+}
+
+// ==================== INIT ====================
+renderLoans();
+// Auto-calculate on load with defaults
+calculateAll();
+</script>
+</body>
+</html>
