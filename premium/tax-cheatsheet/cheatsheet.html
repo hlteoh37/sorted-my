@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YA 2025 Malaysian Tax Filing Cheatsheet — Sorted MY Premium</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --bg: #0f1117;
+  --bg2: #1a1d26;
+  --bg3: #22263a;
+  --border: #2d3148;
+  --text: #e8eaf6;
+  --muted: #8892b0;
+  --accent: #6c63ff;
+  --accent2: #48cfad;
+  --warn: #ffd166;
+  --danger: #ff6b6b;
+  --success: #22c55e;
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, h4 { letter-spacing: -0.5px; line-height: 1.2; }
+
+/* ── NAV ── */
+nav {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+.nav-brand span { color: var(--accent); }
+.nav-back { font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; }
+.nav-back:hover { color: var(--text); text-decoration: none; }
+
+/* ── HERO / HEADER ── */
+.cheat-header {
+  background: linear-gradient(135deg, #1a1d26 0%, #22263a 100%);
+  border-bottom: 2px solid var(--accent);
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+.cheat-badge {
+  display: inline-block;
+  background: rgba(108,99,255,0.15);
+  border: 1px solid rgba(108,99,255,0.4);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+.cheat-header h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.cheat-header h1 .hl { color: var(--accent2); }
+.cheat-header .sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto 1.25rem;
+}
+.toc-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.toc-pill {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.toc-pill:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* ── LAYOUT ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.section { margin-top: 3rem; }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border);
+}
+.section-icon { font-size: 1.5rem; }
+.section-header h2 { font-size: 1.3rem; font-weight: 800; }
+
+/* ── CARDS & TABLES ── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.card-accent { border-left: 3px solid var(--accent); }
+.card-warn { border-left: 3px solid var(--warn); }
+.card-success { border-left: 3px solid var(--success); }
+.card-danger { border-left: 3px solid var(--danger); }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+thead th {
+  background: var(--bg3);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+tbody td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(255,255,255,0.02); }
+.table-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+/* ── RELIEF AMOUNT BADGES ── */
+.amt {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent2);
+  background: rgba(72,207,173,0.1);
+  border: 1px solid rgba(72,207,173,0.25);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.amt-warn {
+  color: var(--warn);
+  background: rgba(255,209,102,0.1);
+  border-color: rgba(255,209,102,0.25);
+}
+
+/* ── TAG CHIPS ── */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.25rem;
+}
+.tag-new { background: rgba(108,99,255,0.2); color: var(--accent); }
+.tag-common { background: rgba(72,207,173,0.15); color: var(--accent2); }
+.tag-limit { background: rgba(255,107,107,0.15); color: var(--danger); }
+
+/* ── TAX BRACKET ── */
+.bracket-row td:nth-child(3) { font-weight: 700; }
+.bracket-row-0 td:nth-child(3) { color: var(--success); }
+.bracket-row-1 td:nth-child(3) { color: var(--accent2); }
+.bracket-row-2 td:nth-child(3) { color: var(--accent2); }
+.bracket-row-3 td:nth-child(3) { color: var(--accent); }
+.bracket-row-4 td:nth-child(3) { color: var(--accent); }
+.bracket-row-5 td:nth-child(3) { color: var(--warn); }
+.bracket-row-6 td:nth-child(3) { color: var(--warn); }
+.bracket-row-7 td:nth-child(3) { color: var(--danger); }
+.bracket-row-8 td:nth-child(3) { color: var(--danger); }
+.bracket-row-9 td:nth-child(3) { color: var(--danger); }
+.bracket-row-10 td:nth-child(3) { color: #ff3030; font-size: 1rem; }
+
+/* ── STEP LIST ── */
+.step-list { list-style: none; counter-reset: steps; }
+.step-list li {
+  counter-increment: steps;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  align-items: flex-start;
+}
+.step-num {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: white;
+  margin-top: 0.1rem;
+}
+.step-list li.substep { background: transparent; border: none; padding: 0.25rem 0 0.25rem 1rem; margin-bottom: 0.25rem; }
+.step-list li.substep .step-num { background: var(--bg3); color: var(--muted); font-size: 0.7rem; }
+
+/* ── CHECKLIST ── */
+.checklist { list-style: none; }
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.checklist li:last-child { border-bottom: none; }
+.check-box {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  margin-top: 0.15rem;
+  background: var(--bg3);
+}
+
+/* ── CALENDAR ── */
+.cal-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.cal-row {
+  display: contents;
+}
+.cal-date {
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  color: var(--accent2);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+}
+.cal-desc {
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border);
+}
+.cal-row:last-child .cal-date,
+.cal-row:last-child .cal-desc { border-bottom: none; }
+.cal-date.warn { color: var(--warn); }
+.cal-date.danger { color: var(--danger); }
+
+/* ── WARNING BOXES ── */
+.alert {
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+.alert-warn { background: rgba(255,209,102,0.08); border: 1px solid rgba(255,209,102,0.25); }
+.alert-danger { background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.25); }
+.alert-info { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.25); }
+.alert-icon { font-size: 1.1rem; margin-top: 0.05rem; flex-shrink: 0; }
+
+/* ── MISTAKE CARDS ── */
+.mistake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+.mistake-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+.mistake-card .m-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--danger);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.mistake-card .m-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+.mistake-card .m-fix {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--success);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+.mistake-card .m-fix::before { content: '✓ Fix:'; font-weight: 700; white-space: nowrap; }
+
+/* ── RECEIPT QUICK-REF ── */
+.receipt-table td:first-child { font-weight: 600; font-size: 0.85rem; }
+.receipt-table td:last-child { font-size: 0.82rem; color: var(--muted); }
+
+/* ── PRINT STYLES ── */
+@media print {
+  :root {
+    --bg: #fff;
+    --bg2: #f5f5f5;
+    --bg3: #ebebeb;
+    --border: #ccc;
+    --text: #111;
+    --muted: #555;
+    --accent: #4c44cc;
+    --accent2: #1a8c6e;
+    --warn: #b36b00;
+    --danger: #c0392b;
+    --success: #1a7a3f;
+  }
+  nav, .toc-pills, .no-print { display: none !important; }
+  body { font-size: 12px; line-height: 1.5; background: white; color: #111; }
+  .container { max-width: 100%; padding: 0 1rem; }
+  .cheat-header { background: white; border-bottom: 2px solid #4c44cc; padding: 1rem 0; }
+  .section { margin-top: 1.5rem; page-break-inside: avoid; }
+  .table-wrap, .card, .step-list li, .cal-grid { page-break-inside: avoid; }
+  h2 { page-break-after: avoid; }
+  .cheat-badge { border: 1px solid #4c44cc; color: #4c44cc; background: transparent; }
+  .amt { background: transparent; border: 1px solid #1a8c6e; color: #1a8c6e; }
+  footer { background: white; border-top: 1px solid #ccc; }
+  a { color: #4c44cc; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .cheat-header { padding: 1.75rem 1rem 1.5rem; }
+  nav { padding: 0 1rem; }
+  .section-header h2 { font-size: 1.1rem; }
+  .mistake-grid { grid-template-columns: 1fr; }
+  .cal-grid { grid-template-columns: 1fr; }
+  .cal-date { border-bottom: none; padding-bottom: 0.2rem; }
+  .cal-desc { padding-top: 0.2rem; }
+  thead th, tbody td { padding: 0.5rem 0.6rem; }
+}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <a href="../../" class="nav-back">&#8592; Back to Sorted MY</a>
+</nav>
+
+<!-- HEADER -->
+<div class="cheat-header">
+  <div class="cheat-badge">Premium Content &mdash; YA 2025</div>
+  <h1>Malaysian Tax Filing <span class="hl">Cheatsheet</span></h1>
+  <p class="sub">All 22 reliefs &middot; e-Filing walkthrough &middot; Tax brackets &middot; Deadline calendar &middot; Mistakes to avoid</p>
+  <div class="toc-pills">
+    <a href="#reliefs" class="toc-pill">22 Tax Reliefs</a>
+    <a href="#brackets" class="toc-pill">Tax Brackets</a>
+    <a href="#efiling" class="toc-pill">e-Filing Steps</a>
+    <a href="#calendar" class="toc-pill">Deadlines</a>
+    <a href="#mistakes" class="toc-pill">Common Mistakes</a>
+    <a href="#checklist" class="toc-pill">Checklist</a>
+    <a href="#receipts" class="toc-pill">Receipt Guide</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── SECTION 1: ALL 22 RELIEFS ── -->
+  <div class="section" id="reliefs">
+    <div class="section-header">
+      <span class="section-icon">&#128203;</span>
+      <h2>All 22 Tax Reliefs &mdash; YA 2025</h2>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">&#8505;</span>
+      <div><strong>How reliefs work:</strong> Each relief reduces your <em>chargeable income</em>, not your tax directly. If you are in the 13% bracket, claiming RM1,000 in additional reliefs saves you RM130 in tax. Stack reliefs to maximise your refund.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Relief Name</th>
+            <th>Max Amount</th>
+            <th>Key Eligibility &amp; Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Individual &amp; Dependent Relatives</strong> <span class="tag tag-common">everyone</span></td>
+            <td><span class="amt">RM9,000</span></td>
+            <td>Automatic for all individual taxpayers. No receipt needed.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Medical Treatment, Special Needs &amp; Carer Expenses (Parents)</strong></td>
+            <td><span class="amt">RM8,000</span></td>
+            <td>Medical fees for parents at registered medical practitioners, hospitals, or nursing homes. Parents must be Malaysian residents. Keep receipts with parent&#8217;s name.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Basic Supporting Equipment (Self, Spouse, Child, Parent)</strong></td>
+            <td><span class="amt">RM6,000</span></td>
+            <td>Wheelchairs, hearing aids, prosthetics, and other certified medical equipment for persons with disabilities (OKU). Requires OKU registration for beneficiary.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Disabled Individual (Self)</strong></td>
+            <td><span class="amt">RM6,000</span></td>
+            <td>Only for taxpayers who are registered OKU. Stacks with individual relief (#1).</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Education Fees (Self)</strong></td>
+            <td><span class="amt">RM7,000</span></td>
+            <td>Tertiary education (degree, masters, PhD) at recognised institutions. Also covers skills/vocational courses approved by HRDC or the relevant ministry. Keep official fee receipts from institution.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Medical Expenses (Self, Spouse, Children)</strong></td>
+            <td><span class="amt">RM10,000</span></td>
+            <td>Covers: serious illness (cancer, kidney disease, heart disease, etc.) &mdash; up to RM10,000; full medical examination (any licensed clinic or hospital) &mdash; up to RM1,000; mental health treatment &mdash; up to RM1,000. All three sub-categories share the RM10,000 cap. Keep itemised receipts.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Vaccination (Self, Spouse, Children)</strong> <span class="tag tag-new">from YA 2023</span></td>
+            <td><span class="amt">RM1,000</span></td>
+            <td>Private vaccination costs for approved vaccines. Receipts from clinic or pharmacy required. Sub-limit within the medical expenses group.</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><strong>Lifestyle Relief</strong> <span class="tag tag-common">popular</span></td>
+            <td><span class="amt">RM2,500</span></td>
+            <td>Books, journals, magazines, printed newspapers; computer, smartphone, tablet; sports equipment and gym membership; internet subscription. All must be for personal use. Receipts required for each item.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><strong>Lifestyle Relief &mdash; Additional (Sports)</strong></td>
+            <td><span class="amt">RM500</span></td>
+            <td>Purchases specifically for sports activities (jerseys, rackets, etc.) and fees for sports competitions. Separate sub-limit on top of RM2,500 Lifestyle cap.</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><strong>Electric Vehicle Charging Facilities</strong> <span class="tag tag-new">from YA 2022</span></td>
+            <td><span class="amt">RM2,500</span></td>
+            <td>Cost of purchasing and installing EV home charging equipment. Separate from Lifestyle relief. Keep purchase invoice and installation receipt.</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><strong>Husband / Wife / Alimony Payments</strong></td>
+            <td><span class="amt">RM4,000</span></td>
+            <td>Claimed by the husband for a wife with no income, or for alimony paid to a divorced wife (requires court order). Cannot double-claim if filing jointly.</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><strong>Disabled Spouse</strong></td>
+            <td><span class="amt">RM5,000</span></td>
+            <td>Stacks with spouse relief (#11). Requires spouse to be registered OKU.</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><strong>Child (Under 18)</strong></td>
+            <td><span class="amt">RM2,000 each</span></td>
+            <td>RM2,000 per child under 18. Birth certificate required for first claim. No receipt otherwise.</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><strong>Child (18+, Studying)</strong></td>
+            <td><span class="amt">RM8,000 each</span></td>
+            <td>Child aged 18+ in full-time tertiary education at approved institution in Malaysia or abroad, OR doing A-Levels / matriculation / foundation. Keep institution enrollment letter.</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><strong>Disabled Child</strong></td>
+            <td><span class="amt">RM6,000 each</span></td>
+            <td>Additional claim for a child registered as OKU. Stacks on top of child relief (#13 or #14).</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td><strong>Life Insurance &amp; EPF</strong> <span class="tag tag-common">everyone</span></td>
+            <td><span class="amt">RM7,000</span></td>
+            <td>EPF (mandatory contributions from payslip) up to RM4,000 combined. Life insurance premiums up to RM3,000 combined. EPF is auto-populated in e-Filing if employer submits correctly. Keep policy receipts for life insurance.</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td><strong>Private Retirement Scheme (PRS) &amp; Deferred Annuity</strong></td>
+            <td><span class="amt">RM3,000</span></td>
+            <td>Contributions to SC-approved PRS funds (e.g., Public Mutual PRS, CIMB-Principal PRS). Statement from PRS provider serves as receipt. Annuity premium also qualifies.</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td><strong>Education &amp; Medical Insurance</strong></td>
+            <td><span class="amt">RM3,000</span></td>
+            <td>Premiums for medical card / hospitalisation insurance, critical illness insurance, and education insurance for self, spouse, or children. Policy annual statement as receipt.</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td><strong>SOCSO / EIS Contribution (Self)</strong></td>
+            <td><span class="amt">RM350</span></td>
+            <td>SOCSO and EIS contributions deducted from salary. Auto-populated if employer files correctly. Check SOCSO statement for actual amount if unsure.</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td><strong>Child Care Fees</strong></td>
+            <td><span class="amt">RM3,000</span></td>
+            <td>Registered child care centres or kindergartens for children under 6. Centre must be registered with the relevant ministry. Keep official receipts from centre.</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td><strong>Breastfeeding Equipment</strong></td>
+            <td><span class="amt">RM1,000</span></td>
+            <td>Breast pumps, milk storage bags, nursing covers. Claimable once every 2 years. Child must be aged 2 or below. Keep purchase receipts.</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td><strong>Domestic Travel</strong></td>
+            <td><span class="amt">RM1,000</span></td>
+            <td>Hotel accommodation receipts and tourism attraction entrance fees for travel within Malaysia. Accommodation must be registered hotels. Keep hotel invoice and official entrance fee receipts.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-warn" style="margin-top:1rem;">
+      <span class="alert-icon">&#9888;</span>
+      <div><strong>Maximum theoretical savings:</strong> If you could claim every relief fully, total relief deductions can exceed RM70,000 for a family. At the 13% bracket, that&#8217;s potentially RM9,100+ in reduced tax. Most employed Malaysians miss at least RM5,000&ndash;15,000 in unclaimed reliefs.</div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: TAX BRACKETS ── -->
+  <div class="section" id="brackets">
+    <div class="section-header">
+      <span class="section-icon">&#128200;</span>
+      <h2>Tax Rate Table &mdash; YA 2025 (Resident Individuals)</h2>
+    </div>
+
+    <div class="alert alert-info">
+      <span class="alert-icon">&#8505;</span>
+      <div><strong>How tax brackets work:</strong> Malaysian income tax is <em>progressive</em>. You only pay the higher rate on income <em>within</em> that band, not on all your income. Example: RM60,000 chargeable income pays 0% on the first RM5,000, 1% on the next RM15,000, 3% on the next RM15,000, and 8% on the remaining RM25,000.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Chargeable Income (RM)</th>
+            <th>Band Size</th>
+            <th>Tax Rate</th>
+            <th>Tax on This Band</th>
+            <th>Cumulative Tax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bracket-row bracket-row-0">
+            <td>0 &ndash; 5,000</td>
+            <td>5,000</td>
+            <td><strong>0%</strong></td>
+            <td>RM0</td>
+            <td>RM0</td>
+          </tr>
+          <tr class="bracket-row bracket-row-1">
+            <td>5,001 &ndash; 20,000</td>
+            <td>15,000</td>
+            <td><strong>1%</strong></td>
+            <td>RM150</td>
+            <td>RM150</td>
+          </tr>
+          <tr class="bracket-row bracket-row-2">
+            <td>20,001 &ndash; 35,000</td>
+            <td>15,000</td>
+            <td><strong>3%</strong></td>
+            <td>RM450</td>
+            <td>RM600</td>
+          </tr>
+          <tr class="bracket-row bracket-row-3">
+            <td>35,001 &ndash; 50,000</td>
+            <td>15,000</td>
+            <td><strong>8%</strong></td>
+            <td>RM1,200</td>
+            <td>RM1,800</td>
+          </tr>
+          <tr class="bracket-row bracket-row-4">
+            <td>50,001 &ndash; 70,000</td>
+            <td>20,000</td>
+            <td><strong>13%</strong></td>
+            <td>RM2,600</td>
+            <td>RM4,400</td>
+          </tr>
+          <tr class="bracket-row bracket-row-5">
+            <td>70,001 &ndash; 100,000</td>
+            <td>30,000</td>
+            <td><strong>21%</strong></td>
+            <td>RM6,300</td>
+            <td>RM10,700</td>
+          </tr>
+          <tr class="bracket-row bracket-row-6">
+            <td>100,001 &ndash; 250,000</td>
+            <td>150,000</td>
+            <td><strong>24%</strong></td>
+            <td>RM36,000</td>
+            <td>RM46,700</td>
+          </tr>
+          <tr class="bracket-row bracket-row-7">
+            <td>250,001 &ndash; 400,000</td>
+            <td>150,000</td>
+            <td><strong>24.5%</strong></td>
+            <td>RM36,750</td>
+            <td>RM83,450</td>
+          </tr>
+          <tr class="bracket-row bracket-row-8">
+            <td>400,001 &ndash; 600,000</td>
+            <td>200,000</td>
+            <td><strong>25%</strong></td>
+            <td>RM50,000</td>
+            <td>RM133,450</td>
+          </tr>
+          <tr class="bracket-row bracket-row-9">
+            <td>600,001 &ndash; 2,000,000</td>
+            <td>1,400,000</td>
+            <td><strong>26%</strong></td>
+            <td>RM364,000</td>
+            <td>RM497,450</td>
+          </tr>
+          <tr class="bracket-row bracket-row-10">
+            <td>Above 2,000,000</td>
+            <td>&mdash;</td>
+            <td><strong>30%</strong></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card card-accent" style="margin-top:1rem;">
+      <strong>Tax Rebates (reduce tax payable directly):</strong>
+      <ul style="margin-top:0.5rem;padding-left:1.25rem;font-size:0.88rem;color:var(--muted);">
+        <li>Individual rebate: <strong style="color:var(--accent2);">RM400</strong> (if chargeable income &le; RM35,000)</li>
+        <li>Spouse rebate: <strong style="color:var(--accent2);">RM400</strong> (if spouse has no income and chargeable income &le; RM35,000)</li>
+        <li>Zakat / Fitrah paid: <strong style="color:var(--accent2);">100% rebate</strong> (up to total tax payable — not a deduction, a direct rebate)</li>
+      </ul>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">Rebates are deducted from your <em>tax payable</em>, not from income. A RM400 rebate saves exactly RM400 in tax.</p>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: e-FILING WALKTHROUGH ── -->
+  <div class="section" id="efiling">
+    <div class="section-header">
+      <span class="section-icon">&#128187;</span>
+      <h2>Step-by-Step e-Filing Walkthrough (MyTax Portal)</h2>
+    </div>
+
+    <div class="alert alert-warn">
+      <span class="alert-icon">&#9888;</span>
+      <div><strong>Before you start:</strong> Gather your EA form (from employer by Feb/Mar), all relief receipts, EPF statement, insurance policy statements, and your MyKad. Filing on a laptop/desktop is easier than mobile for first-timers.</div>
+    </div>
+
+    <ol class="step-list">
+      <li>
+        <div class="step-num">1</div>
+        <div>
+          <strong>Log in to MyTax</strong><br>
+          Go to <em>mytax.hasil.gov.my</em>. Click <em>ezHASiL e-Filing</em>. Log in with your MyKad IC number as username and your LHDN password. If you have never registered, click <em>Daftar</em> and register first (you will need your IC, EPF number, and active email).
+        </div>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <div>
+          <strong>Select the Correct Tax Form</strong><br>
+          Most salaried employees file <strong>Form BE</strong> (no business income). Self-employed or those with business income file <strong>Form B</strong>. Choose the correct Year of Assessment: <strong>2025</strong>.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <div>
+          <strong>Verify Pre-Filled Income Data</strong><br>
+          LHDN pre-fills salary income from your employer&#8217;s PCB submission. Check that the gross salary and PCB deducted matches your EA form exactly. If there is a discrepancy, contact your HR department &mdash; do not just accept the pre-filled figures.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">4</div>
+        <div>
+          <strong>Declare Other Income (if any)</strong><br>
+          Add rental income, freelance income, dividends, or interest earned. Each has its own section. Rental income can be offset against allowable expenses (repair, insurance, assessment, quit rent). Do not omit any income &mdash; LHDN cross-checks with banks and other agencies.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">5</div>
+        <div>
+          <strong>Enter All Tax Reliefs (Section D)</strong><br>
+          This is where most refunds are won or lost. Work through <strong>Section D</strong> line by line. Use the 22-relief table above. Key sub-sections to check:
+          <ul style="margin-top:0.6rem;padding-left:1.25rem;font-size:0.88rem;color:var(--muted);">
+            <li>D1 &mdash; Individual relief (auto RM9,000)</li>
+            <li>D2 &mdash; Medical for parents (enter receipts total)</li>
+            <li>D5 &mdash; Education fees for self</li>
+            <li>D6 &mdash; Medical expenses / vaccination / mental health</li>
+            <li>D7 &mdash; Lifestyle (books, internet, gadgets, gym)</li>
+            <li>D9 &mdash; EPF &amp; life insurance (check auto-fill vs EA form)</li>
+            <li>D11 &mdash; Spouse / child relief</li>
+            <li>D14 &mdash; Child care / breastfeeding equipment</li>
+            <li>D15 &mdash; SOCSO / EIS (usually auto-filled)</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">6</div>
+        <div>
+          <strong>Claim Donations &amp; Zakat (Section E)</strong><br>
+          Approved donations to government-approved charities get a tax deduction (Section E). Zakat, fitrah, and other Islamic levies go in a separate section and become a <em>rebate</em> (100% of amount, deducted directly from tax payable). Keep receipts from the charity or Zakat body.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">7</div>
+        <div>
+          <strong>Review the Tax Computation Summary</strong><br>
+          The portal calculates your chargeable income and tax payable automatically. Compare the tax payable to PCB already deducted (from EA form). If PCB &gt; tax payable = <strong>refund</strong>. If PCB &lt; tax payable = <strong>balance due</strong>. Verify the figure looks correct before proceeding.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">8</div>
+        <div>
+          <strong>Enter Bank Account for Refund</strong><br>
+          If you are owed a refund, LHDN will transfer it to your registered bank account. Make sure your bank account number is correct and updated in MyTax under <em>Profil</em> &rarr; <em>Maklumat Akaun Bank</em>. Wrong bank details = delayed or failed refund.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">9</div>
+        <div>
+          <strong>Submit and Download Acknowledgement</strong><br>
+          Click <em>Hantar</em> (Submit). You will receive a submission acknowledgement number &mdash; <strong>save or screenshot this</strong>. Download the PDF acknowledgement. LHDN will send a confirmation to your registered email. Filing is now complete.
+        </div>
+      </li>
+      <li>
+        <div class="step-num">10</div>
+        <div>
+          <strong>Pay Any Balance (if applicable)</strong><br>
+          If you owe tax, pay via FPX online banking within the portal, or at any bank counter, or via ATM before the deadline. Failure to pay by deadline = 10% penalty on unpaid amount.
+        </div>
+      </li>
+    </ol>
+
+    <div class="card card-success" style="margin-top:0.5rem;">
+      <strong>Refund timeline:</strong> LHDN targets refunds within 30 working days for e-Filing (90 days for manual). Refunds are credited directly to your registered bank account. You can check refund status at MyTax &rarr; <em>e-Lejar</em>.
+    </div>
+  </div>
+
+  <!-- ── SECTION 4: DEADLINES ── -->
+  <div class="section" id="calendar">
+    <div class="section-header">
+      <span class="section-icon">&#128197;</span>
+      <h2>YA 2025 Deadline Calendar</h2>
+    </div>
+
+    <div class="cal-grid">
+      <div class="cal-row">
+        <div class="cal-date">Mar 1, 2026</div>
+        <div class="cal-desc"><strong>e-Filing opens</strong> &mdash; MyTax portal opens for YA 2025 returns. EA forms must be issued by your employer by this date.</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Mar 31, 2026</div>
+        <div class="cal-desc"><strong>Deadline for non-resident individuals</strong> to submit Form M (paper or online). Also the last day for employers to submit employee PCB reconciliation (Form E).</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date warn">Apr 30, 2026</div>
+        <div class="cal-desc"><strong>Main deadline: Form BE (employment income)</strong> &mdash; Residents with only employment income (no business income). e-Filing closes at midnight on April 30. This is the date most salaried Malaysians need to meet.</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date warn">Jun 30, 2026</div>
+        <div class="cal-desc"><strong>Deadline: Form B (business income)</strong> &mdash; Residents with business or professional income. e-Filing only (paper deadline is April 30). This applies to sole proprietors, freelancers, and partners in a business.</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Apr 30, 2026</div>
+        <div class="cal-desc"><strong>Instalment Payment (CP500)</strong> &mdash; If you received a CP500 notice, the 2nd instalment is due April 30. These are advance payments for self-employed individuals based on previous year&#8217;s assessment.</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date danger">May 1, 2026</div>
+        <div class="cal-desc"><strong>Late filing penalty begins</strong> &mdash; Filing after the deadline triggers an automatic 10% penalty on any tax payable amount. LHDN can also prosecute for wilful failure to file (fine RM200 &ndash; RM20,000).</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Within 30 days</div>
+        <div class="cal-desc"><strong>Refunds expected</strong> &mdash; LHDN targets refunds within 30 working days of e-Filing submission. Check status via MyTax &rarr; e-Lejar.</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-date">Dec 31, 2025</div>
+        <div class="cal-desc"><strong>Receipt cut-off for YA 2025 reliefs</strong> &mdash; Expenses must have occurred between Jan 1 &ndash; Dec 31, 2025 to qualify for YA 2025. Any receipt dated 2026 can only be claimed in the next filing cycle.</div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger" style="margin-top:1rem;">
+      <span class="alert-icon">&#128683;</span>
+      <div><strong>10% late payment surcharge:</strong> If you owe tax and do not pay by the deadline (Apr 30 for Form BE, Jun 30 for Form B), LHDN imposes a 10% surcharge on the outstanding balance. Pay on time even if you need to estimate. You can amend the return later.</div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 5: COMMON MISTAKES ── -->
+  <div class="section" id="mistakes">
+    <div class="section-header">
+      <span class="section-icon">&#128683;</span>
+      <h2>Common Mistakes That Cost Malaysians Money</h2>
+    </div>
+
+    <div class="mistake-grid">
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Missing medical expenses</div>
+        <div class="m-desc">Forgetting to claim the medical card premium under Education &amp; Medical Insurance relief (RM3,000). Many think medical card = lifestyle, but it has its own separate relief category.</div>
+        <div class="m-fix">Claim insurance premiums in Relief #18, not Lifestyle (#8).</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Not claiming parent medical</div>
+        <div class="m-desc">Paying for parents&#8217; hospital bills or nursing home fees and not knowing it is a separate RM8,000 relief. Receipts must have the parent&#8217;s name, not yours.</div>
+        <div class="m-fix">Get receipts in parent&#8217;s name and claim Relief #2.</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Wrong EPF amount</div>
+        <div class="m-desc">EPF contributions are auto-filled but sometimes reflect a different contribution rate (e.g., if you opted for lower contribution). Always cross-check the auto-filled EPF amount against your year-end EPF statement.</div>
+        <div class="m-fix">Log in to MyEPF to download your annual statement and verify.</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Claiming gym without membership proof</div>
+        <div class="m-desc">Gym fees under Lifestyle relief require an official receipt or membership invoice from a registered gym. Sporadic counter payments without proper receipts will fail an audit.</div>
+        <div class="m-fix">Ask gym for an annual statement or use your credit card statement as supporting doc.</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Forgetting education fees</div>
+        <div class="m-desc">If you paid for a part-time degree, professional certification (CPA, ACCA, CIMA), or upskilling course approved by HRDC, it is claimable. Many miss this because it feels like a &#8220;work expense.&#8221;</div>
+        <div class="m-fix">Obtain official fee receipt from the institution and claim Relief #5.</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Not claiming domestic hotel stays</div>
+        <div class="m-desc">Any Malaysian hotel receipt from 2025 (business travel, family holiday, staycation) counts toward the RM1,000 Domestic Travel relief. The hotel must be a registered premises.</div>
+        <div class="m-fix">Collect hotel tax invoices throughout the year, claim Relief #22.</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Double-claiming with spouse</div>
+        <div class="m-desc">If both spouses file separately and claim the same child&#8217;s expenses, LHDN&#8217;s system flags duplicates. Decide upfront who claims which reliefs to avoid audit triggers.</div>
+        <div class="m-fix">Agree with spouse: one claims children, the other claims lifestyle/education.</div>
+      </div>
+
+      <div class="mistake-card">
+        <div class="m-title">&#9888; Missing the zakat rebate</div>
+        <div class="m-desc">Zakat is not just a deduction &mdash; it is a <em>rebate</em>. Every ringgit of zakat paid reduces tax payable by one ringgit (not just reducing income). Muslim taxpayers who paid zakat but did not enter it lose the full rebate.</div>
+        <div class="m-fix">Enter zakat amount in Section E. Obtain receipt from Majlis Agama Islam.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: PRINTABLE CHECKLIST ── -->
+  <div class="section" id="checklist">
+    <div class="section-header">
+      <span class="section-icon">&#9989;</span>
+      <h2>Pre-Filing Deductions Checklist (Print &amp; Tick)</h2>
+    </div>
+
+    <div class="alert alert-info no-print">
+      <span class="alert-icon">&#8505;</span>
+      <div>Run through this checklist before you submit. Each item you tick = potential money back. Use <strong>Ctrl+P</strong> (or File &rarr; Print) to print this checklist.</div>
+    </div>
+
+    <div class="card">
+      <h3 style="font-size:0.9rem;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;">Documents to Collect First</h3>
+      <ul class="checklist">
+        <li><span class="check-box"></span><span>EA Form from employer (gross salary, PCB deducted, EPF deducted)</span></li>
+        <li><span class="check-box"></span><span>EPF annual statement (to verify contribution amount)</span></li>
+        <li><span class="check-box"></span><span>SOCSO / EIS annual statement or payslips</span></li>
+        <li><span class="check-box"></span><span>Life insurance annual statement or premium receipts</span></li>
+        <li><span class="check-box"></span><span>Medical / hospitalisation insurance annual statement</span></li>
+        <li><span class="check-box"></span><span>PRS annual statement (if applicable)</span></li>
+        <li><span class="check-box"></span><span>All medical receipts for self, spouse, and children</span></li>
+        <li><span class="check-box"></span><span>Parent medical / hospital / nursing home receipts (in parent&#8217;s name)</span></li>
+        <li><span class="check-box"></span><span>Education fee receipts (self &mdash; degree, cert, vocational)</span></li>
+        <li><span class="check-box"></span><span>Childcare centre receipts (for children under 6)</span></li>
+        <li><span class="check-box"></span><span>Hotel receipts for domestic travel</span></li>
+        <li><span class="check-box"></span><span>Zakat / Fitrah receipt (if applicable)</span></li>
+        <li><span class="check-box"></span><span>Donation receipts (approved charities only)</span></li>
+        <li><span class="check-box"></span><span>Gym membership invoices or annual statement</span></li>
+        <li><span class="check-box"></span><span>Books, gadget, internet subscription receipts (Lifestyle)</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <h3 style="font-size:0.9rem;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;">Relief Checklist (Have You Claimed All That Apply?)</h3>
+      <ul class="checklist">
+        <li><span class="check-box"></span><span><strong>Individual relief</strong> &mdash; RM9,000 (automatic)</span></li>
+        <li><span class="check-box"></span><span><strong>Medical for parents</strong> &mdash; up to RM8,000 (if you paid any parent medical costs)</span></li>
+        <li><span class="check-box"></span><span><strong>Education fees (self)</strong> &mdash; up to RM7,000 (degree, cert, upskilling)</span></li>
+        <li><span class="check-box"></span><span><strong>Serious illness medical</strong> &mdash; up to RM10,000 (for self, spouse, child)</span></li>
+        <li><span class="check-box"></span><span><strong>Full medical exam</strong> &mdash; up to RM1,000 (within RM10,000 cap)</span></li>
+        <li><span class="check-box"></span><span><strong>Mental health treatment</strong> &mdash; up to RM1,000 (within RM10,000 cap)</span></li>
+        <li><span class="check-box"></span><span><strong>Vaccination</strong> &mdash; up to RM1,000 (within medical group)</span></li>
+        <li><span class="check-box"></span><span><strong>Lifestyle</strong> &mdash; up to RM2,500 (books, internet, devices, gym)</span></li>
+        <li><span class="check-box"></span><span><strong>Lifestyle &mdash; Sports</strong> &mdash; up to RM500 (extra sports equipment / fees)</span></li>
+        <li><span class="check-box"></span><span><strong>EV charging</strong> &mdash; up to RM2,500 (if you installed home EV charger)</span></li>
+        <li><span class="check-box"></span><span><strong>Spouse relief</strong> &mdash; up to RM4,000 (if spouse has no income)</span></li>
+        <li><span class="check-box"></span><span><strong>Child under 18</strong> &mdash; RM2,000 each</span></li>
+        <li><span class="check-box"></span><span><strong>Child 18+ in tertiary education</strong> &mdash; up to RM8,000 each</span></li>
+        <li><span class="check-box"></span><span><strong>EPF contributions</strong> &mdash; up to RM4,000 (verify against EA &amp; EPF statement)</span></li>
+        <li><span class="check-box"></span><span><strong>Life insurance</strong> &mdash; up to RM3,000 (combined with EPF cap of RM7,000)</span></li>
+        <li><span class="check-box"></span><span><strong>Education &amp; medical insurance</strong> &mdash; up to RM3,000</span></li>
+        <li><span class="check-box"></span><span><strong>PRS / Deferred Annuity</strong> &mdash; up to RM3,000</span></li>
+        <li><span class="check-box"></span><span><strong>SOCSO / EIS</strong> &mdash; up to RM350 (check auto-fill is correct)</span></li>
+        <li><span class="check-box"></span><span><strong>Child care fees</strong> &mdash; up to RM3,000 (children under 6, registered centre)</span></li>
+        <li><span class="check-box"></span><span><strong>Breastfeeding equipment</strong> &mdash; up to RM1,000 (child under 2)</span></li>
+        <li><span class="check-box"></span><span><strong>Domestic travel</strong> &mdash; up to RM1,000 (hotel receipts in Malaysia)</span></li>
+        <li><span class="check-box"></span><span><strong>Zakat / Fitrah</strong> &mdash; 100% rebate (enter in Section E, not relief section)</span></li>
+        <li><span class="check-box"></span><span><strong>Donations (approved)</strong> &mdash; check list of approved institutions at LHDN site</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <h3 style="font-size:0.9rem;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;">Before You Click Submit</h3>
+      <ul class="checklist">
+        <li><span class="check-box"></span><span>All income declared (salary, rental, freelance, dividends)</span></li>
+        <li><span class="check-box"></span><span>EPF amount matches EA form</span></li>
+        <li><span class="check-box"></span><span>PCB amount matches EA form</span></li>
+        <li><span class="check-box"></span><span>Bank account number correct for refund</span></li>
+        <li><span class="check-box"></span><span>Acknowledgement downloaded / email confirmation received</span></li>
+        <li><span class="check-box"></span><span>All physical receipts stored safely (LHDN can audit up to 7 years back)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── SECTION 7: RECEIPT GUIDE ── -->
+  <div class="section" id="receipts">
+    <div class="section-header">
+      <span class="section-icon">&#128196;</span>
+      <h2>Quick Reference: What Receipts Does LHDN Accept?</h2>
+    </div>
+
+    <div class="alert alert-warn">
+      <span class="alert-icon">&#9888;</span>
+      <div><strong>LHDN audit risk:</strong> You are not required to submit receipts with your e-Filing. But LHDN can request them within 7 years. Keep <em>all original receipts</em> (physical or scanned digital copy) organised by category.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="receipt-table">
+        <thead>
+          <tr>
+            <th>Relief</th>
+            <th>Accepted Documents</th>
+            <th>Watch Out For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Medical for Parents (#2)</td>
+            <td>Hospital/clinic receipt, pharmacy receipt, nursing home invoice &mdash; must show parent&#8217;s name</td>
+            <td>Receipt in YOUR name = not claimable for parent relief</td>
+          </tr>
+          <tr>
+            <td>Education Fees (#5)</td>
+            <td>Official fee receipt or tax invoice from institution, enrolment letter</td>
+            <td>Course must be at recognised institution or HRDC-approved; personal interest courses do not qualify</td>
+          </tr>
+          <tr>
+            <td>Medical Expenses (#6)</td>
+            <td>Hospital/clinic invoice, pharmacy receipt (for prescription drugs), full medical exam receipt</td>
+            <td>Over-the-counter medicines without prescription are not claimable; cosmetic procedures excluded</td>
+          </tr>
+          <tr>
+            <td>Vaccination (#7)</td>
+            <td>Clinic or pharmacy receipt showing vaccine name and date</td>
+            <td>Only approved vaccines qualify; government/public vaccination (free) cannot be claimed</td>
+          </tr>
+          <tr>
+            <td>Lifestyle &mdash; Books (#8)</td>
+            <td>Bookshop receipt, e-book platform invoice, Kindle/Kobo receipt</td>
+            <td>Magazines qualify; exam reference books qualify; adult entertainment publications do not</td>
+          </tr>
+          <tr>
+            <td>Lifestyle &mdash; Gadgets (#8)</td>
+            <td>Retail receipt or invoice for computer, tablet, smartphone, peripherals</td>
+            <td>Must be for personal use; purchase must be in your name; TVs/gaming consoles = grey area, avoid</td>
+          </tr>
+          <tr>
+            <td>Lifestyle &mdash; Internet (#8)</td>
+            <td>Monthly ISP invoice (Unifi, Maxis, TIME, etc.) or annual statement</td>
+            <td>Plan must be in your name; mobile data plans qualify; prepaid top-ups are harder to substantiate</td>
+          </tr>
+          <tr>
+            <td>Lifestyle &mdash; Gym (#8)</td>
+            <td>Membership invoice, annual statement from gym, credit card statement with gym merchant</td>
+            <td>Gym must be a registered fitness centre; yoga and pilates studios generally qualify</td>
+          </tr>
+          <tr>
+            <td>Life Insurance (#16)</td>
+            <td>Annual premium statement from insurer, policy renewal receipt</td>
+            <td>Takaful contributions also qualify; must be for life/endowment policy, not general insurance</td>
+          </tr>
+          <tr>
+            <td>Medical Insurance (#18)</td>
+            <td>Annual premium statement from insurer showing medical / hospitalisation coverage</td>
+            <td>Combined medical + life policy: only the medical portion qualifies for #18; life portion for #16</td>
+          </tr>
+          <tr>
+            <td>EPF (#16)</td>
+            <td>EA Form (from employer), EPF annual statement</td>
+            <td>Verify that auto-filled amount matches; differences may occur if contribution rate changed</td>
+          </tr>
+          <tr>
+            <td>SOCSO/EIS (#19)</td>
+            <td>EA Form, SOCSO annual statement, payslips</td>
+            <td>Usually auto-filled; confirm against year-end SOCSO statement at perkeso.gov.my</td>
+          </tr>
+          <tr>
+            <td>Child Care (#20)</td>
+            <td>Official receipt from registered kindergarten or child care centre, annual statement</td>
+            <td>Centre must be registered with Ministry of Women, Family, and Community Development</td>
+          </tr>
+          <tr>
+            <td>PRS (#17)</td>
+            <td>Annual statement from PRS provider (e.g., CIMB-Principal, Public Mutual, Kenanga)</td>
+            <td>Fund must be SC-approved PRS; regular unit trust is NOT PRS</td>
+          </tr>
+          <tr>
+            <td>Domestic Travel (#22)</td>
+            <td>Hotel tax invoice (must show hotel name, dates, your name, amount), entrance fee official receipt</td>
+            <td>Airbnb-style receipts are a grey area; use only registered hotel invoices to be safe</td>
+          </tr>
+          <tr>
+            <td>Zakat (#rebate)</td>
+            <td>Official zakat receipt from Majlis Agama Islam (state body), bank transfer confirmation</td>
+            <td>Must be paid to the official state Zakat body, not to individuals; online Zakat portals issue receipts</td>
+          </tr>
+          <tr>
+            <td>Donations</td>
+            <td>Official receipt from approved charity showing their LHDN approval reference</td>
+            <td>Only donations to LHDN-approved institutions qualify; check LHDN website for the approved list</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card card-accent" style="margin-top:1rem;">
+      <strong>Receipt storage tip:</strong> Create a folder (physical or Google Drive) with sub-folders for each relief category. Scan receipts with your phone camera immediately after purchase &mdash; thermal printer receipts fade within months. Keep records for at least 7 years.
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;" class="no-print">
+    <p style="font-size:0.85rem;color:var(--muted);">Found this useful? Share with a friend who is about to file.</p>
+    <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--muted);">More Malaysian finance guides at <a href="../../">Sorted MY</a></p>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p style="font-size:0.82rem;color:var(--muted);">&#169; 2025 Sorted MY &mdash; Premium Content &nbsp;&middot;&nbsp; <a href="../../" style="color:var(--muted);">Back to Sorted MY</a></p>
+  <p style="font-size:0.75rem;color:var(--muted);margin-top:0.35rem;">Compiled from official LHDN guidelines. Not affiliated with LHDN. Verify details at <em>hasil.gov.my</em>. Tax laws may change &mdash; always confirm current year reliefs with the LHDN website or a licensed tax agent.</p>
+</footer>
+
+</body>
+</html>
