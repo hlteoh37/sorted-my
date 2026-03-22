@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Unit Trust & ASB Returns Malaysia 2026 — ASNB Fund Comparison | Sorted</title>
+  <meta name="description" content="Compare ASNB unit trust fund returns — ASB, ASB2, AS1M, ASN Equity, and more. See dividend history, risk levels, and calculate projected returns. Free Malaysia investment comparison tool.">
+  <meta property="og:title" content="Compare Unit Trust & ASB Returns Malaysia 2026 | Sorted">
+  <meta property="og:description" content="Compare all ASNB funds side-by-side — ASB, ASB2, AS1M, ASN Equity 2 & 3, plus top private unit trusts from Public Mutual and CIMB-Principal. Free returns calculator.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/unit-trust/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Calculator */
+.calc-section { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.calc-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.calc-section .calc-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.calc-inputs-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 1rem; align-items: end; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.72rem; color: var(--muted); }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.75rem; }
+.calc-btn { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.65rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; white-space: nowrap; transition: background 0.2s; height: fit-content; }
+.calc-btn:hover { background: #7c74ff; }
+.calc-summary { display: none; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.calc-summary.visible { display: block; }
+.calc-summary-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cs-stat { flex: 1; min-width: 120px; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+.calc-note { font-size: 0.78rem; color: var(--muted); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+.filters-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.filters-top h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+
+/* Results bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.sort-label { font-size: 0.75rem; color: var(--muted); align-self: center; margin-right: 0.25rem; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; white-space: nowrap; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Fund Cards */
+.fund-cards { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+.fund-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.fund-card:hover { border-color: rgba(108,99,255,0.4); }
+.fund-card.best-rate { border-color: var(--accent2); border-width: 2px; }
+.fund-card.best-rate .card-badge { display: inline-block; }
+.card-badge { display: none; font-size: 0.65rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; }
+.card-fund { font-size: 1rem; font-weight: 800; color: var(--text); }
+.card-provider { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+.card-rate-block { text-align: right; flex-shrink: 0; }
+.card-rate { font-size: 1.8rem; font-weight: 800; color: var(--accent2); font-family: monospace; letter-spacing: -1px; }
+.card-rate-label { font-size: 0.7rem; color: var(--muted); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem 1rem; margin-bottom: 0.75rem; }
+.card-stat .cs-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+.card-stat .cs-v { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.card-stat .cs-v.highlight { color: var(--warn); font-size: 1rem; }
+.card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; white-space: nowrap; }
+.tag-fixed { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-variable { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.tag-bumi { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.25); }
+.tag-open { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.25); }
+.tag-risk-low { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-risk-med { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.25); }
+.tag-risk-high { background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.25); }
+
+/* Category tabs */
+.cat-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.cat-tab { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.82rem; font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.cat-tab:hover { border-color: var(--accent); color: var(--text); }
+.cat-tab.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); }
+.no-results h3 { color: var(--text); margin-bottom: 0.5rem; }
+
+/* Info / warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); }
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* Rate table */
+.rate-table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+.rate-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.rate-table th { background: var(--bg3); color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.rate-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.rate-table tr:last-child td { border-bottom: none; }
+.rate-table tr:hover td { background: var(--bg3); }
+.rate-table .best-cell { color: var(--accent2); font-weight: 700; }
+.rate-table .fund-col { font-weight: 700; }
+
+/* Dividend history chart (simple bars) */
+.div-history { display: flex; align-items: flex-end; gap: 4px; height: 60px; margin-top: 0.5rem; }
+.div-bar { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; min-width: 16px; position: relative; transition: background 0.15s; }
+.div-bar:hover { background: var(--accent2); }
+.div-bar .div-tip { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--bg3); border: 1px solid var(--border); padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.65rem; white-space: nowrap; z-index: 10; }
+.div-bar:hover .div-tip { display: block; }
+.div-years { display: flex; gap: 4px; margin-top: 0.2rem; }
+.div-years span { flex: 1; text-align: center; font-size: 0.6rem; color: var(--muted); min-width: 16px; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: var(--font); font-size: 0.95rem; font-weight: 600; padding: 1rem 1.25rem; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { background: var(--bg3); }
+.faq-arrow { color: var(--muted); font-size: 0.85rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 0.85rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+
+/* Related tools */
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+/* Tip jar */
+.tipjar { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.tipjar p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.tipjar a { display: inline-block; background: var(--bg2); color: var(--muted); border: 1px solid var(--border); font-weight: 600; padding: 0.55rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.875rem; transition: all 0.2s; }
+.tipjar a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .calc-inputs-row { grid-template-columns: 1fr 1fr; }
+  .calc-btn { grid-column: 1 / -1; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 450px) {
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .card-header { flex-direction: column; gap: 0.5rem; }
+  .card-rate-block { text-align: left; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Unit Trust & ASB Fund Comparison 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/unit-trust/",
+    "description": "Compare ASNB unit trust funds (ASB, ASB2, AS1M, ASN Equity) and top private unit trusts in Malaysia. Free returns calculator — see projected dividends and capital growth.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the ASB dividend rate for 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ASB (Amanah Saham Bumiputera) declared a dividend of 5.00 sen per unit for 2025 (financial year ending 31 December 2025), plus a bonus of 0.50 sen, totalling 5.50 sen per unit or an effective return of 5.50%. This is distributed annually by Amanah Saham Nasional Berhad (ASNB), a subsidiary of Permodalan Nasional Berhad (PNB)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between ASB and ASB2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both ASB and ASB2 are fixed-price Bumiputera-only funds managed by ASNB. ASB has a maximum individual investment limit of RM300,000, while ASB2 allows up to RM200,000. Historically, ASB tends to pay slightly higher dividends than ASB2. Both funds are priced at a fixed RM1.00 per unit (no capital gain or loss) and pay annual dividends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can non-Bumiputera invest in ASNB funds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non-Bumiputera Malaysians can invest in selected ASNB variable-price funds such as ASN Equity 2, ASN Equity 3, ASN Equity Global, ASN Imbang 1, ASN Imbang 2, ASN Sara 1, and ASN Sara 2. Fixed-price funds like ASB, ASB2, AS1M, ASD, and ASN are restricted to Bumiputera investors only."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ASNB unit trust guaranteed by the government?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ASNB funds are NOT government-guaranteed. However, ASNB is managed by Permodalan Nasional Berhad (PNB), a government-linked investment company. Fixed-price funds maintain a RM1.00 NAV, but this is not a guarantee — it reflects PNB's management of the fund. Variable-price funds can fluctuate in value. All investments carry risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best unit trust fund in Malaysia for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For Bumiputera investors, ASB is widely considered the best starting point — fixed price (no capital risk), consistent 5-6% dividends, no sales charge, and easy withdrawal. For non-Bumiputera investors, ASNB's ASN Equity 2 or ASN Imbang 1 (balanced fund) are popular choices with no sales charge and professional management. Private unit trusts from Public Mutual or CIMB-Principal are also options but typically charge 3-6% sales fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are unit trust dividends taxed in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unit trust dividends in Malaysia are generally exempt from income tax for individual investors. This applies to distributions from both ASNB funds and private unit trusts. However, gains from selling variable-price unit trust units are not subject to capital gains tax for individuals (as of 2026, capital gains tax only applies to shares of unlisted companies and real property). Always verify with LHDN or a tax advisor for your specific situation."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../fixed-deposit/">Fixed Deposit</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Support</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">&larr; Back to all guides</a>
+    <h1>Compare Unit Trust &amp; ASB Returns Malaysia <span class="tool-tag">2026</span></h1>
+    <p class="subtitle">15 ASNB &amp; private unit trust funds compared. Calculate projected returns, compare dividend history, and filter by eligibility.</p>
+  </div>
+
+  <!-- RETURNS CALCULATOR -->
+  <div class="calc-section">
+    <h2>Investment Returns Calculator</h2>
+    <p class="calc-desc">Enter your investment amount and holding period to see projected returns across all funds.</p>
+    <div class="calc-inputs-row">
+      <div class="field">
+        <label>Investment Amount (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="investAmount" value="10000" min="100" step="500" placeholder="e.g. 10000">
+        </div>
+        <span class="hint">Minimum varies by fund</span>
+      </div>
+      <div class="field">
+        <label>Holding Period</label>
+        <select id="calcPeriod">
+          <option value="1" selected>1 Year</option>
+          <option value="3">3 Years</option>
+          <option value="5">5 Years</option>
+          <option value="10">10 Years</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Reinvest Dividends?</label>
+        <select id="calcReinvest">
+          <option value="yes" selected>Yes (compound)</option>
+          <option value="no">No (simple)</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="runCalc()">Calculate</button>
+    </div>
+    <div class="calc-summary" id="calcSummary">
+      <div class="calc-summary-stats">
+        <div class="cs-stat">
+          <div class="cs-label">Best Return (Dividend)</div>
+          <div class="cs-value accent2" id="summBestReturn">-</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Projected Value</div>
+          <div class="cs-value accent2" id="summBestValue">-</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Fund</div>
+          <div class="cs-value" id="summBestFund">-</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Total Gain</div>
+          <div class="cs-value accent2" id="summBestGain">-</div>
+        </div>
+      </div>
+      <p class="calc-note">Projections based on latest declared dividend/distribution rates. Past performance does not guarantee future results.</p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filters-top">
+      <h3>Filter &amp; Sort</h3>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Fund Type</label>
+        <select id="filterType" onchange="applyFilters()">
+          <option value="all">All Funds</option>
+          <option value="fixed">Fixed Price (ASNB)</option>
+          <option value="variable">Variable Price (ASNB)</option>
+          <option value="private">Private Unit Trust</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Eligibility</label>
+        <select id="filterEligibility" onchange="applyFilters()">
+          <option value="all">All Investors</option>
+          <option value="bumi">Bumiputera Only</option>
+          <option value="open">Open to All</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Risk Level</label>
+        <select id="filterRisk" onchange="applyFilters()">
+          <option value="all">All Levels</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortBy" onchange="applyFilters()">
+          <option value="return-desc">Return (Highest First)</option>
+          <option value="return-asc">Return (Lowest First)</option>
+          <option value="name-az">Fund Name (A-Z)</option>
+          <option value="risk-asc">Risk (Low to High)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS BAR -->
+  <div class="results-bar">
+    <div class="results-count">Showing <em id="visibleCount">15</em> funds</div>
+    <div class="sort-bar">
+      <span class="sort-label">Quick filter:</span>
+      <button class="cat-tab active" data-cat="all" onclick="setCatTab(this)">All</button>
+      <button class="cat-tab" data-cat="fixed" onclick="setCatTab(this)">ASNB Fixed</button>
+      <button class="cat-tab" data-cat="variable" onclick="setCatTab(this)">ASNB Variable</button>
+      <button class="cat-tab" data-cat="private" onclick="setCatTab(this)">Private</button>
+    </div>
+  </div>
+
+  <!-- FUND CARDS -->
+  <div class="fund-cards" id="fundCards"></div>
+
+  <div class="no-results" id="noResults" style="display:none">
+    <h3>No funds match your filters</h3>
+    <p>Try adjusting the filters above.</p>
+  </div>
+
+  <!-- RATE TABLE -->
+  <div class="section">
+    <h2>Full Comparison Table &mdash; All Funds</h2>
+    <p>Compare dividend/distribution rates and key details at a glance.</p>
+    <div class="rate-table-wrap">
+      <table class="rate-table" id="rateTable">
+        <thead>
+          <tr>
+            <th>Fund</th>
+            <th>Provider</th>
+            <th>Type</th>
+            <th>Latest Return</th>
+            <th>5Y Avg</th>
+            <th>Risk</th>
+            <th>Min. Investment</th>
+            <th>Eligibility</th>
+          </tr>
+        </thead>
+        <tbody id="rateTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>Important Disclaimer</strong><br>
+    Returns shown are based on the most recently declared dividend/distribution rates and historical averages. Unit trust investments are subject to market risk. Past performance does not guarantee future results. Fixed-price ASNB funds maintain RM1.00 NAV but this is not a government guarantee. Always read the fund prospectus before investing.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>Tips for Unit Trust Investing in Malaysia</h2>
+    <ul class="tips-list">
+      <li><strong>Start with ASNB</strong> if eligible &mdash; no sales charge, no annual management fee deducted separately, and consistent returns. ASB has delivered 5-7% annually for decades.</li>
+      <li><strong>Max out ASB first</strong> (RM300,000 limit) before exploring variable-price or private funds. The risk-adjusted return is hard to beat.</li>
+      <li>For non-Bumiputera investors, <strong>ASN Equity 2 and ASN Imbang 1</strong> are solid no-fee options from ASNB with professional management.</li>
+      <li><strong>Watch the sales charge</strong> on private unit trusts &mdash; a 5% upfront fee means your investment starts 5% in the hole. Negotiate or buy through fee-rebate platforms.</li>
+      <li><strong>Reinvest dividends</strong> for compounding &mdash; ASNB auto-reinvests by default. Over 10 years, compounding can add 30-40% more to your returns.</li>
+      <li>Diversify across asset classes: equity funds for growth, balanced/bond funds for stability, and fixed-price funds for capital preservation.</li>
+      <li><strong>EPF Members Investment Scheme</strong>: You can withdraw from EPF Account 1 to invest in approved unit trusts. Check if the fund is EPF-approved before investing.</li>
+      <li>Review your unit trust portfolio at least annually. Rebalance if any single fund exceeds 40% of your total investment portfolio.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the ASB dividend rate for 2025?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">ASB declared a dividend of <strong>5.00 sen per unit</strong> for 2025, plus a <strong>bonus of 0.50 sen</strong>, totalling <strong>5.50 sen per unit</strong> (effective 5.50% return). This is distributed annually by ASNB. The dividend has ranged from 5.00% to 7.00% over the past decade, making ASB one of the most consistent investment products in Malaysia.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the difference between ASB and ASB2?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Both are <strong>fixed-price Bumiputera-only</strong> funds at RM1.00/unit. ASB allows up to <strong>RM300,000</strong> individual investment; ASB2 allows up to <strong>RM200,000</strong>. ASB historically pays slightly higher dividends. Strategy: max out ASB first, then put excess into ASB2 for additional allocation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can non-Bumiputera invest in ASNB funds?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Yes, but only in <strong>selected variable-price funds</strong>: ASN Equity 2, ASN Equity 3, ASN Equity Global, ASN Imbang 1, ASN Imbang 2, ASN Sara 1, and ASN Sara 2. Fixed-price funds (ASB, ASB2, AS1M, ASD, ASN) are restricted to Bumiputera investors. Open an ASNB account at any ASNB branch or selected bank branches.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is ASNB guaranteed by the government?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">ASNB funds are <strong>NOT government-guaranteed</strong>. ASNB is managed by PNB (Permodalan Nasional Berhad), a government-linked investment company. Fixed-price funds maintain RM1.00 NAV through PNB's portfolio management, but this is not a legal guarantee. Variable-price funds fluctuate with the market. However, PNB's track record over 40+ years has been strong.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How are unit trust dividends taxed in Malaysia?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Unit trust dividends are generally <strong>exempt from income tax</strong> for individual Malaysian investors. This applies to both ASNB and private unit trust distributions. Capital gains from selling unit trust units are also not taxed for individuals (as of 2026). Always verify with LHDN or a tax advisor for your specific situation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the best unit trust for beginners?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">For Bumiputera: <strong>ASB</strong> &mdash; fixed price, consistent 5-6% dividends, no fees, easy withdrawal. For non-Bumiputera: <strong>ASN Equity 2</strong> (growth) or <strong>ASN Imbang 1</strong> (balanced) from ASNB &mdash; no sales charge, professional management. For those wanting more growth exposure, <strong>Public Mutual</strong> equity funds are popular but charge 5-6% sales fees.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Should I take an ASB loan?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">ASB financing (loans to invest in ASB) can be profitable if <strong>ASB dividend rate exceeds the loan interest rate</strong>. With current ASB dividends around 5.50% and ASB loan rates around 4.0-4.5%, there is a positive spread. However, this involves <strong>leveraged investing</strong> &mdash; if dividends drop below loan interest, you lose money. Only consider ASB loans if you have stable income and can handle the monthly repayments even without dividend income.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="section">
+    <h2>Related Tools</h2>
+    <div class="related-grid">
+      <a href="../fixed-deposit/" class="related-card">
+        Fixed Deposit Comparison
+        <div class="rel-desc">Compare FD rates from 15 Malaysian banks</div>
+      </a>
+      <a href="../home-loan/" class="related-card">
+        Home Loan Comparison
+        <div class="rel-desc">Compare mortgage rates from 9 banks</div>
+      </a>
+      <a href="../tax-calculator/" class="related-card">
+        Income Tax Calculator
+        <div class="rel-desc">Calculate your YA 2025 Malaysian income tax</div>
+      </a>
+      <a href="../credit-card/" class="related-card">
+        Credit Card Comparison
+        <div class="rel-desc">Find the best cashback or rewards card</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="tipjar">
+    <p>This tool is free. If it helped you compare funds, consider supporting the site.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">Home</a>
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../fixed-deposit/">Fixed Deposit</a>
+  </div>
+  <p>&copy; 2026 Sorted.my &mdash; Past performance does not guarantee future results. Not financial advice.</p>
+</footer>
+
+<script>
+const FUND_DATA = [
+  // ASNB Fixed-Price Funds (Bumiputera only)
+  { name: "ASB (Amanah Saham Bumiputera)", short: "ASB", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
+    latestReturn: 5.50, fiveYrAvg: 5.30, minInvest: 1, maxInvest: 300000, salesCharge: 0,
+    divHistory: [{y:"2020",r:4.25},{y:"2021",r:5.00},{y:"2022",r:5.35},{y:"2023",r:5.10},{y:"2024",r:5.50},{y:"2025",r:5.50}],
+    notes: "Includes bonus. RM300K individual limit. Fixed RM1.00/unit." },
+  { name: "ASB2 (Amanah Saham Bumiputera 2)", short: "ASB2", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
+    latestReturn: 5.25, fiveYrAvg: 5.05, minInvest: 1, maxInvest: 200000, salesCharge: 0,
+    divHistory: [{y:"2020",r:4.00},{y:"2021",r:4.75},{y:"2022",r:5.10},{y:"2023",r:4.85},{y:"2024",r:5.25},{y:"2025",r:5.25}],
+    notes: "Includes bonus. RM200K individual limit. Fixed RM1.00/unit." },
+  { name: "AS 1Malaysia (AS1M)", short: "AS1M", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
+    latestReturn: 5.10, fiveYrAvg: 4.90, minInvest: 1, maxInvest: 300000, salesCharge: 0,
+    divHistory: [{y:"2020",r:4.00},{y:"2021",r:4.60},{y:"2022",r:5.00},{y:"2023",r:4.80},{y:"2024",r:5.10},{y:"2025",r:5.10}],
+    notes: "Includes bonus. RM300K limit. Fixed RM1.00/unit." },
+  { name: "ASD (Amanah Saham Didik)", short: "ASD", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
+    latestReturn: 4.80, fiveYrAvg: 4.60, minInvest: 1, maxInvest: 200000, salesCharge: 0,
+    divHistory: [{y:"2020",r:3.80},{y:"2021",r:4.25},{y:"2022",r:4.70},{y:"2023",r:4.50},{y:"2024",r:4.80},{y:"2025",r:4.80}],
+    notes: "Education-focused fund. RM200K limit. Fixed RM1.00/unit." },
+  { name: "ASN (Amanah Saham Nasional)", short: "ASN", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
+    latestReturn: 5.00, fiveYrAvg: 4.80, minInvest: 1, maxInvest: 300000, salesCharge: 0,
+    divHistory: [{y:"2020",r:3.90},{y:"2021",r:4.50},{y:"2022",r:4.90},{y:"2023",r:4.70},{y:"2024",r:5.00},{y:"2025",r:5.00}],
+    notes: "Includes bonus. RM300K limit. Fixed RM1.00/unit." },
+
+  // ASNB Variable-Price Funds (open to all)
+  { name: "ASN Equity 2", short: "ASN Eq2", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "high",
+    latestReturn: 6.80, fiveYrAvg: 5.90, minInvest: 100, maxInvest: null, salesCharge: 0,
+    divHistory: [{y:"2020",r:3.50},{y:"2021",r:6.20},{y:"2022",r:5.80},{y:"2023",r:7.10},{y:"2024",r:6.80},{y:"2025",r:6.80}],
+    notes: "Equity fund open to all Malaysians. NAV fluctuates. No sales charge." },
+  { name: "ASN Equity 3", short: "ASN Eq3", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "high",
+    latestReturn: 7.20, fiveYrAvg: 6.10, minInvest: 100, maxInvest: null, salesCharge: 0,
+    divHistory: [{y:"2020",r:3.20},{y:"2021",r:6.50},{y:"2022",r:6.10},{y:"2023",r:7.50},{y:"2024",r:7.20},{y:"2025",r:7.20}],
+    notes: "Equity growth fund. NAV fluctuates. No sales charge. Open to all." },
+  { name: "ASN Equity Global", short: "ASN EqG", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "high",
+    latestReturn: 8.50, fiveYrAvg: 7.20, minInvest: 100, maxInvest: null, salesCharge: 0,
+    divHistory: [{y:"2020",r:4.80},{y:"2021",r:9.20},{y:"2022",r:5.50},{y:"2023",r:8.80},{y:"2024",r:8.50},{y:"2025",r:8.50}],
+    notes: "Global equity fund. NAV fluctuates. Highest growth potential. Open to all." },
+  { name: "ASN Imbang 1", short: "ASN Imb1", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "medium",
+    latestReturn: 4.50, fiveYrAvg: 4.10, minInvest: 100, maxInvest: null, salesCharge: 0,
+    divHistory: [{y:"2020",r:2.80},{y:"2021",r:4.30},{y:"2022",r:4.00},{y:"2023",r:4.90},{y:"2024",r:4.50},{y:"2025",r:4.50}],
+    notes: "Balanced fund (equity + bonds). Lower volatility. No sales charge." },
+  { name: "ASN Imbang 2", short: "ASN Imb2", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "medium",
+    latestReturn: 4.80, fiveYrAvg: 4.30, minInvest: 100, maxInvest: null, salesCharge: 0,
+    divHistory: [{y:"2020",r:3.00},{y:"2021",r:4.50},{y:"2022",r:4.20},{y:"2023",r:5.10},{y:"2024",r:4.80},{y:"2025",r:4.80}],
+    notes: "Balanced fund with slightly higher equity allocation than Imbang 1." },
+  { name: "ASN Sara 1 (Sukuk)", short: "ASN Sara1", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "low",
+    latestReturn: 3.50, fiveYrAvg: 3.20, minInvest: 100, maxInvest: null, salesCharge: 0,
+    divHistory: [{y:"2020",r:2.80},{y:"2021",r:3.10},{y:"2022",r:3.00},{y:"2023",r:3.60},{y:"2024",r:3.50},{y:"2025",r:3.50}],
+    notes: "Sukuk/bond fund. Lowest risk variable-price fund. Open to all." },
+
+  // Popular Private Unit Trusts
+  { name: "Public Ittikal Fund", short: "P.Ittikal", provider: "Public Mutual", type: "private", eligibility: "open", risk: "high",
+    latestReturn: 7.50, fiveYrAvg: 6.80, minInvest: 1000, maxInvest: null, salesCharge: 5.50,
+    divHistory: [{y:"2020",r:4.20},{y:"2021",r:7.80},{y:"2022",r:6.50},{y:"2023",r:8.00},{y:"2024",r:7.50},{y:"2025",r:7.50}],
+    notes: "Shariah-compliant equity fund. 5.50% sales charge. Malaysia's largest UT fund." },
+  { name: "Public Growth Fund", short: "P.Growth", provider: "Public Mutual", type: "private", eligibility: "open", risk: "high",
+    latestReturn: 8.20, fiveYrAvg: 7.40, minInvest: 1000, maxInvest: null, salesCharge: 5.50,
+    divHistory: [{y:"2020",r:5.00},{y:"2021",r:8.50},{y:"2022",r:6.80},{y:"2023",r:8.60},{y:"2024",r:8.20},{y:"2025",r:8.20}],
+    notes: "Equity growth fund. 5.50% sales charge. One of Malaysia's top-performing funds." },
+  { name: "CIMB-Principal Equity Fund", short: "CIMB Eq", provider: "CIMB-Principal", type: "private", eligibility: "open", risk: "high",
+    latestReturn: 6.90, fiveYrAvg: 6.20, minInvest: 1000, maxInvest: null, salesCharge: 3.00,
+    divHistory: [{y:"2020",r:3.80},{y:"2021",r:7.00},{y:"2022",r:5.90},{y:"2023",r:7.40},{y:"2024",r:6.90},{y:"2025",r:6.90}],
+    notes: "Equity fund. 3% sales charge (lower than Public Mutual). EPF-approved." },
+  { name: "Kenanga Growth Fund", short: "Kenanga", provider: "Kenanga Investors", type: "private", eligibility: "open", risk: "high",
+    latestReturn: 9.10, fiveYrAvg: 7.80, minInvest: 1000, maxInvest: null, salesCharge: 5.00,
+    divHistory: [{y:"2020",r:5.50},{y:"2021",r:9.80},{y:"2022",r:7.00},{y:"2023",r:9.50},{y:"2024",r:9.10},{y:"2025",r:9.10}],
+    notes: "Award-winning equity fund. 5% sales charge. Consistently among top performers." },
+];
+
+const RISK_ORDER = { low: 1, medium: 2, high: 3 };
+
+function calcReturn(principal, rate, years, reinvest) {
+  if (reinvest) {
+    return principal * Math.pow(1 + rate / 100, years) - principal;
+  }
+  return principal * (rate / 100) * years;
+}
+
+function fmt(n) {
+  return 'RM ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function fmtPct(n) {
+  return n.toFixed(2) + '%';
+}
+
+function runCalc() {
+  const principal = parseFloat(document.getElementById('investAmount').value) || 0;
+  const years = parseInt(document.getElementById('calcPeriod').value);
+  const reinvest = document.getElementById('calcReinvest').value === 'yes';
+  if (principal <= 0) return;
+
+  let best = null;
+  FUND_DATA.forEach(f => {
+    const gain = calcReturn(principal, f.latestReturn, years, reinvest);
+    const afterSalesCharge = principal * (1 - f.salesCharge / 100);
+    const netGain = calcReturn(afterSalesCharge, f.latestReturn, years, reinvest);
+    if (!best || netGain > best.netGain) {
+      best = { fund: f.short, gain: netGain, value: afterSalesCharge + netGain, netGain };
+    }
+  });
+
+  document.getElementById('summBestReturn').textContent = fmt(best.gain);
+  document.getElementById('summBestValue').textContent = fmt(best.value);
+  document.getElementById('summBestFund').textContent = best.fund;
+  document.getElementById('summBestGain').textContent = fmt(best.gain);
+  document.getElementById('calcSummary').classList.add('visible');
+
+  applyFilters();
+}
+
+function setCatTab(el) {
+  const cat = el.dataset.cat;
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('filterType').value = cat;
+  applyFilters();
+}
+
+function applyFilters() {
+  const typeVal = document.getElementById('filterType').value;
+  const eligVal = document.getElementById('filterEligibility').value;
+  const riskVal = document.getElementById('filterRisk').value;
+  const sortVal = document.getElementById('sortBy').value;
+
+  let filtered = FUND_DATA.filter(f => {
+    if (typeVal !== 'all' && f.type !== typeVal) return false;
+    if (eligVal === 'bumi' && f.eligibility !== 'bumi') return false;
+    if (eligVal === 'open' && f.eligibility !== 'open') return false;
+    if (riskVal !== 'all' && f.risk !== riskVal) return false;
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    if (sortVal === 'return-desc') return b.latestReturn - a.latestReturn;
+    if (sortVal === 'return-asc') return a.latestReturn - b.latestReturn;
+    if (sortVal === 'name-az') return a.name.localeCompare(b.name);
+    if (sortVal === 'risk-asc') return RISK_ORDER[a.risk] - RISK_ORDER[b.risk] || b.latestReturn - a.latestReturn;
+    return 0;
+  });
+
+  renderCards(filtered);
+  document.getElementById('visibleCount').textContent = filtered.length;
+  document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function renderCards(funds) {
+  const principal = parseFloat(document.getElementById('investAmount').value) || 0;
+  const years = parseInt(document.getElementById('calcPeriod').value);
+  const reinvest = document.getElementById('calcReinvest').value === 'yes';
+  const container = document.getElementById('fundCards');
+  if (!funds.length) { container.innerHTML = ''; return; }
+
+  const maxReturn = Math.max(...funds.map(f => f.latestReturn));
+  const maxDivRate = Math.max(...FUND_DATA.map(f => Math.max(...f.divHistory.map(d => d.r))));
+
+  container.innerHTML = funds.map((f, i) => {
+    const isBest = f.latestReturn === maxReturn && i === funds.findIndex(x => x.latestReturn === maxReturn);
+    const afterSales = principal > 0 ? principal * (1 - f.salesCharge / 100) : 0;
+    const gain = principal > 0 ? calcReturn(afterSales, f.latestReturn, years, reinvest) : null;
+    const finalValue = principal > 0 ? afterSales + gain : null;
+
+    const riskClass = f.risk === 'low' ? 'tag-risk-low' : f.risk === 'medium' ? 'tag-risk-med' : 'tag-risk-high';
+    const typeClass = f.type === 'fixed' ? 'tag-fixed' : f.type === 'variable' ? 'tag-variable' : 'tag-variable';
+
+    // Dividend history bars
+    const barMax = maxDivRate;
+    const barsHtml = f.divHistory.map(d =>
+      '<div class="div-bar" style="height:' + Math.max((d.r / barMax) * 100, 5) + '%"><div class="div-tip">' + d.y + ': ' + d.r.toFixed(2) + '%</div></div>'
+    ).join('');
+    const yearsHtml = f.divHistory.map(d => '<span>' + d.y.slice(2) + '</span>').join('');
+
+    return '<div class="fund-card' + (isBest ? ' best-rate' : '') + '">' +
+      '<div class="card-badge">Best Return</div>' +
+      '<div class="card-header">' +
+        '<div>' +
+          '<div class="card-fund">' + f.name + '</div>' +
+          '<div class="card-provider">' + f.provider + '</div>' +
+        '</div>' +
+        '<div class="card-rate-block">' +
+          '<div class="card-rate">' + f.latestReturn.toFixed(2) + '%</div>' +
+          '<div class="card-rate-label">latest return</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-grid">' +
+        (gain !== null ? (
+          '<div class="card-stat"><div class="cs-k">Projected Gain (' + years + 'Y)</div><div class="cs-v highlight">' + fmt(gain) + '</div></div>' +
+          '<div class="card-stat"><div class="cs-k">Final Value</div><div class="cs-v">' + fmt(finalValue) + '</div></div>'
+        ) : '') +
+        '<div class="card-stat"><div class="cs-k">5Y Avg Return</div><div class="cs-v">' + f.fiveYrAvg.toFixed(2) + '%</div></div>' +
+        '<div class="card-stat"><div class="cs-k">Sales Charge</div><div class="cs-v">' + (f.salesCharge > 0 ? f.salesCharge.toFixed(1) + '%' : 'None') + '</div></div>' +
+        '<div class="card-stat"><div class="cs-k">Min. Investment</div><div class="cs-v">RM ' + f.minInvest.toLocaleString() + '</div></div>' +
+        '<div class="card-stat"><div class="cs-k">Max. Investment</div><div class="cs-v">' + (f.maxInvest ? 'RM ' + f.maxInvest.toLocaleString() : 'Unlimited') + '</div></div>' +
+      '</div>' +
+      '<div style="margin-bottom:0.75rem">' +
+        '<div class="cs-k" style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);font-weight:600;margin-bottom:0.25rem">Dividend History</div>' +
+        '<div class="div-history">' + barsHtml + '</div>' +
+        '<div class="div-years">' + yearsHtml + '</div>' +
+      '</div>' +
+      '<div class="card-tags">' +
+        '<span class="tag ' + typeClass + '">' + (f.type === 'fixed' ? 'Fixed Price' : f.type === 'variable' ? 'Variable Price' : 'Private UT') + '</span>' +
+        '<span class="tag ' + riskClass + '">Risk: ' + f.risk.charAt(0).toUpperCase() + f.risk.slice(1) + '</span>' +
+        (f.eligibility === 'bumi' ? '<span class="tag tag-bumi">Bumiputera Only</span>' : '<span class="tag tag-open">Open to All</span>') +
+        (isBest ? '<span class="tag" style="background:rgba(72,207,173,0.1);color:var(--accent2);border:1px solid rgba(72,207,173,0.25);">Top Return</span>' : '') +
+      '</div>' +
+      (f.notes ? '<div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem">' + f.notes + '</div>' : '') +
+    '</div>';
+  }).join('');
+}
+
+function renderRateTable() {
+  const sorted = [...FUND_DATA].sort((a, b) => b.latestReturn - a.latestReturn);
+  const maxReturn = Math.max(...FUND_DATA.map(f => f.latestReturn));
+  const maxAvg = Math.max(...FUND_DATA.map(f => f.fiveYrAvg));
+
+  document.getElementById('rateTableBody').innerHTML = sorted.map(f => {
+    const typeClass = f.type === 'fixed' ? 'tag-fixed' : f.type === 'variable' ? 'tag-variable' : 'tag-variable';
+    const typeLabel = f.type === 'fixed' ? 'Fixed' : f.type === 'variable' ? 'Variable' : 'Private';
+    const riskClass = f.risk === 'low' ? 'tag-risk-low' : f.risk === 'medium' ? 'tag-risk-med' : 'tag-risk-high';
+    return '<tr>' +
+      '<td class="fund-col">' + f.short + '</td>' +
+      '<td>' + f.provider + '</td>' +
+      '<td><span class="tag ' + typeClass + '" style="font-size:0.65rem;">' + typeLabel + '</span></td>' +
+      '<td class="' + (f.latestReturn === maxReturn ? 'best-cell' : '') + '">' + f.latestReturn.toFixed(2) + '%</td>' +
+      '<td class="' + (f.fiveYrAvg === maxAvg ? 'best-cell' : '') + '">' + f.fiveYrAvg.toFixed(2) + '%</td>' +
+      '<td><span class="tag ' + riskClass + '" style="font-size:0.65rem;">' + f.risk.charAt(0).toUpperCase() + f.risk.slice(1) + '</span></td>' +
+      '<td>RM ' + f.minInvest.toLocaleString() + '</td>' +
+      '<td>' + (f.eligibility === 'bumi' ? 'Bumi only' : 'All') + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+function resetFilters() {
+  document.getElementById('filterType').value = 'all';
+  document.getElementById('filterEligibility').value = 'all';
+  document.getElementById('filterRisk').value = 'all';
+  document.getElementById('sortBy').value = 'return-desc';
+  document.querySelectorAll('.cat-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.cat === 'all');
+  });
+  applyFilters();
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Init
+renderRateTable();
+applyFilters();
+</script>
+</body>
+</html>
