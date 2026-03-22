@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASB Loan Calculator 2026 — Should You Take ASB Financing? | Sorted</title>
+  <meta name="description" content="Calculate if an ASB loan is worth it in 2026. Compare bank rates, see your net profit after interest, and find out how much you'll actually earn from ASB financing.">
+  <meta property="og:title" content="ASB Loan Calculator 2026 — Should You Take ASB Financing? | Sorted">
+  <meta property="og:description" content="Free ASB loan calculator for Malaysia. Enter your loan amount, tenure, and expected dividend to see if ASB financing is profitable. Compare Maybank, CIMB, RHB, Bank Rakyat.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/asb-loan/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.5rem; }
+
+.calc-btn {
+  width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px;
+  padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font);
+  cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+}
+.calc-btn:hover { background: #7c74ff; }
+
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+
+.result-placeholder { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+.result-placeholder .icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+.result-placeholder p { font-size: 0.9rem; }
+
+.result-primary { border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+.result-profit { background: linear-gradient(135deg, rgba(72,207,173,0.15), rgba(34,197,94,0.08)); border: 1px solid rgba(72,207,173,0.3); }
+.result-profit .amount { color: var(--accent2); }
+.result-loss { background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(255,209,102,0.08)); border: 1px solid rgba(239,68,68,0.3); }
+.result-loss .amount { color: var(--danger); }
+
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.green { color: var(--accent2); }
+.result-stat .stat-value.danger { color: var(--danger); }
+
+.cost-bar { background: var(--bg3); border-radius: 6px; height: 10px; margin: 1rem 0 0.4rem; overflow: hidden; display: flex; }
+.cost-bar-dividend { background: var(--accent2); }
+.cost-bar-interest { background: var(--warn); }
+.cost-bar-legend { display: flex; gap: 1rem; font-size: 0.75rem; color: var(--muted); }
+.legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+
+.verdict-box { margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-align: center; }
+.verdict-yes { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: var(--success); }
+.verdict-no { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--danger); }
+.verdict-maybe { background: rgba(255,209,102,0.1); border: 1px solid rgba(255,209,102,0.3); color: var(--warn); }
+
+/* Dividend history */
+.div-history { margin-bottom: 2.5rem; }
+.div-history h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.div-history .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.div-chart { display: flex; align-items: flex-end; gap: 4px; height: 120px; padding: 0; }
+.div-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; }
+.div-bar { background: var(--accent); border-radius: 3px 3px 0 0; width: 100%; min-width: 20px; transition: background 0.2s; }
+.div-bar:hover { background: var(--accent2); }
+.div-bar-label { font-size: 0.65rem; color: var(--muted); margin-top: 4px; }
+.div-bar-val { font-size: 0.68rem; color: var(--text); font-weight: 600; margin-bottom: 2px; }
+
+/* Bank comparison */
+.compare-section { margin-bottom: 2.5rem; }
+.compare-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.compare-section .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+
+.bank-table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody tr.highlight { background: rgba(72,207,173,0.07); border-color: rgba(72,207,173,0.2); }
+tbody tr.highlight td:first-child { border-left: 3px solid var(--accent2); padding-left: calc(0.85rem - 3px); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.bank-name { font-weight: 700; color: var(--text); }
+.bank-tag { font-size: 0.65rem; background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); padding: 0.1rem 0.4rem; border-radius: 999px; font-weight: 700; margin-left: 0.4rem; vertical-align: middle; }
+.monthly-amt { font-weight: 700; color: var(--accent2); }
+.rate-cell { color: var(--muted); }
+.profit-cell { font-weight: 700; }
+.profit-cell.positive { color: var(--accent2); }
+.profit-cell.negative { color: var(--danger); }
+.note-cell { font-size: 0.78rem; color: var(--muted); max-width: 200px; }
+
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.4rem; position: relative; }
+.tips-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
+
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+/* Year-by-year table */
+.yearly-table { margin-top: 1.25rem; }
+.yearly-table table { font-size: 0.8rem; }
+.yearly-table thead th { font-size: 0.68rem; }
+.yearly-table tbody td { padding: 0.5rem 0.65rem; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .result-breakdown { grid-template-columns: 1fr; }
+  .div-chart { height: 80px; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ASB Loan Calculator Malaysia 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/asb-loan/",
+    "description": "Free ASB financing calculator. Calculate if an ASB loan is worth it by comparing bank interest costs against expected ASB dividend returns.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is ASB loan worth it in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the dividend rate vs your loan interest rate. If the ASB dividend (historically 4.25%\u20136.75%) exceeds your loan's effective interest rate, the loan generates a net profit. Use this calculator to compare your specific scenario. Most ASB loans at current bank rates (3.5%\u20135%) are profitable if ASB dividends stay above 4.5%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the current ASB dividend rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For 2025, ASB declared a distribution of 5.00 sen per unit (5.00%). The 10-year average is approximately 5.1%. Note that ASB dividends are not guaranteed and are declared annually by ASNB."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which bank offers the lowest ASB loan rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, Maybank typically offers the most competitive ASB financing rates starting from around 3.50% (reducing balance). CIMB, RHB, and Bank Rakyat also offer ASB financing with varying rates. Compare rates using this calculator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ASB loan Shariah compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some banks offer Shariah-compliant ASB financing (Islamic financing). Bank Islam, Maybank Islamic, and CIMB Islamic offer ASB-i financing based on Tawarruq or Commodity Murabahah concepts. The profit rate may differ slightly from conventional loan interest rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum ASB loan amount?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The maximum ASB investment is RM300,000 per individual for ASB. Most banks offer ASB financing from RM10,000 up to RM200,000, depending on your income and eligibility. Some banks like Maybank may offer up to RM200,000."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../unit-trust/">Unit Trust Compare</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">&larr; Back to all guides</a>
+    <h1>ASB Loan Calculator <span class="tool-tag">Interactive</span></h1>
+    <p class="subtitle">Should you take ASB financing? Enter your loan details to see if the dividends beat the interest cost &mdash; and how much profit (or loss) you'd make over the full tenure.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>ASB Financing Details</h2>
+
+      <div class="field">
+        <label for="loan-amount">Loan Amount (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="loan-amount" min="5000" max="300000" step="1000" value="100000" placeholder="100000">
+        </div>
+        <div class="hint">Most banks: RM10,000 &ndash; RM200,000. Max ASB holding: RM300,000.</div>
+      </div>
+
+      <div class="field">
+        <label for="tenure">Loan Tenure (Years)</label>
+        <select id="tenure">
+          <option value="5">5 years</option>
+          <option value="10">10 years</option>
+          <option value="15">15 years</option>
+          <option value="20" selected>20 years</option>
+          <option value="25">25 years</option>
+          <option value="30">30 years</option>
+        </select>
+        <div class="hint">Longer tenure = lower monthly payment but more total interest.</div>
+      </div>
+
+      <div class="field">
+        <label for="interest-rate">Bank Interest Rate (% p.a., reducing)</label>
+        <input type="number" id="interest-rate" min="1" max="10" step="0.01" value="4.00" placeholder="4.00">
+        <div class="hint">Reducing balance rate. Typical: 3.50% &ndash; 5.00%.</div>
+      </div>
+
+      <div class="field">
+        <label for="dividend-rate">Expected ASB Dividend (% p.a.)</label>
+        <input type="number" id="dividend-rate" min="0" max="15" step="0.1" value="5.00" placeholder="5.00">
+        <div class="hint">2025: 5.00%. 10-year average: ~5.1%. Not guaranteed.</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Profit / Loss</button>
+    </div>
+
+    <div class="calc-results" id="results-panel">
+      <h2>Your Results</h2>
+      <div class="result-placeholder" id="result-placeholder">
+        <span class="icon">&#129518;</span>
+        <p>Enter your ASB loan details and click Calculate to see if it's worth it.</p>
+      </div>
+      <div id="result-output" style="display:none">
+        <div class="result-primary" id="result-primary-box">
+          <div class="label">Estimated Net Profit / Loss</div>
+          <div class="amount" id="res-net">--</div>
+          <div class="sub" id="res-net-sub">over <span id="res-tenure-label">--</span></div>
+        </div>
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="stat-label">Monthly Repayment</div>
+            <div class="stat-value" id="res-monthly">--</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Interest Paid</div>
+            <div class="stat-value warn" id="res-interest">--</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Dividends Earned</div>
+            <div class="stat-value green" id="res-dividends">--</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Return on Effort</div>
+            <div class="stat-value" id="res-roi">--</div>
+          </div>
+        </div>
+        <div class="cost-bar" id="cost-bar">
+          <div class="cost-bar-dividend" id="bar-dividend" style="width:60%"></div>
+          <div class="cost-bar-interest" id="bar-interest" style="width:40%"></div>
+        </div>
+        <div class="cost-bar-legend">
+          <span><span class="legend-dot" style="background:var(--accent2)"></span>Dividends</span>
+          <span><span class="legend-dot" style="background:var(--warn)"></span>Interest</span>
+        </div>
+        <div class="verdict-box" id="verdict-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YEAR-BY-YEAR BREAKDOWN -->
+  <div class="section yearly-table" id="yearly-section" style="display:none">
+    <h2>Year-by-Year Breakdown</h2>
+    <div class="bank-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>ASB Balance</th>
+            <th>Dividend Earned</th>
+            <th>Loan Outstanding</th>
+            <th>Interest Paid</th>
+            <th>Cumulative Profit</th>
+          </tr>
+        </thead>
+        <tbody id="yearly-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIVIDEND HISTORY -->
+  <div class="div-history">
+    <h2>ASB Dividend History (2015 &ndash; 2025)</h2>
+    <p class="subtitle">Historical distribution rates. Past performance does not guarantee future returns.</p>
+    <div class="div-chart" id="div-chart"></div>
+  </div>
+
+  <!-- BANK COMPARISON -->
+  <div class="compare-section">
+    <h2>Bank ASB Financing Comparison</h2>
+    <p class="subtitle">Estimated net profit using your loan amount and tenure above. Rates are indicative &mdash; confirm with your bank.</p>
+    <div class="bank-table-wrap">
+      <table id="bank-table">
+        <thead>
+          <tr>
+            <th>Bank</th>
+            <th>Rate (p.a.)</th>
+            <th>Monthly (RM)</th>
+            <th>Total Interest</th>
+            <th>Net Profit</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="bank-tbody">
+          <tr><td colspan="6" style="text-align:center;color:var(--muted);padding:1.5rem">Click Calculate above to compare banks.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>How ASB loan interest works:</strong> Unlike car loans, ASB financing uses a <strong>reducing balance</strong> method. Interest is calculated on the remaining loan balance each month, so you pay less interest as the principal reduces. This is more favourable than flat-rate loans. The ASB units purchased act as collateral for the loan.
+  </div>
+
+  <div class="info-box">
+    <strong>Key assumption:</strong> This calculator assumes dividends are <strong>reinvested</strong> (compounded) annually into your ASB account, which is the default ASNB setting. If you withdraw dividends, your actual returns will be lower.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>Tips for ASB Financing</h2>
+    <ul class="tips-list">
+      <li>Choose the <strong>longest tenure possible</strong> (20&ndash;30 years) &mdash; longer tenure means lower monthly payments, and your ASB balance stays invested longer, earning more dividends.</li>
+      <li>Do <strong>not</strong> withdraw your ASB dividends &mdash; let them compound. Reinvested dividends earn returns on returns.</li>
+      <li>Compare at least 3 banks &mdash; even a 0.25% rate difference can mean thousands of ringgit over 20 years.</li>
+      <li>Keep your <strong>CCRIS/CTOS clean</strong> &mdash; a good credit record gets you better rates and higher approved amounts.</li>
+      <li>Consider <strong>partial early repayment</strong> if your bank allows it without penalty &mdash; some banks charge a penalty, so check first.</li>
+      <li>ASB dividends are <strong>tax-free</strong> for individuals &mdash; the returns are effectively higher than their nominal rate compared to taxable investments.</li>
+      <li>If you already hold close to RM300,000 in ASB, an ASB loan may not be possible as you'd exceed the individual cap.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <p><strong style="color:var(--text)">Is ASB loan worth it in 2026?</strong></p>
+    <p>It depends on the dividend rate vs your loan interest rate. If the ASB dividend (historically 4.25%&ndash;6.75%) exceeds your loan's effective interest rate, the loan generates a net profit. Use this calculator to compare your specific scenario. Most ASB loans at current bank rates (3.5%&ndash;5%) are profitable if ASB dividends stay above 4.5%.</p>
+
+    <p><strong style="color:var(--text)">What is the current ASB dividend rate?</strong></p>
+    <p>For 2025, ASB declared a distribution of 5.00 sen per unit (5.00%). The 10-year average is approximately 5.1%. Note that ASB dividends are not guaranteed and are declared annually by ASNB.</p>
+
+    <p><strong style="color:var(--text)">Which bank offers the lowest ASB loan rate?</strong></p>
+    <p>As of 2026, Maybank typically offers the most competitive ASB financing rates starting from around 3.50% (reducing balance). CIMB, RHB, and Bank Rakyat also offer competitive rates. Always compare using this calculator and confirm directly with banks.</p>
+
+    <p><strong style="color:var(--text)">Is ASB loan Shariah compliant?</strong></p>
+    <p>Some banks offer Shariah-compliant ASB financing (ASB-i). Bank Islam, Maybank Islamic, and CIMB Islamic offer ASB-i financing based on Tawarruq or Commodity Murabahah. The profit rate may differ slightly from conventional rates.</p>
+
+    <p><strong style="color:var(--text)">What is the maximum ASB loan amount?</strong></p>
+    <p>The maximum ASB investment is RM300,000 per individual. Most banks offer ASB financing from RM10,000 up to RM200,000, depending on your income and eligibility.</p>
+
+    <p><strong style="color:var(--text)">What happens if ASB dividend drops below my loan rate?</strong></p>
+    <p>If the dividend rate falls below your loan interest rate, you'd make a net loss that year. However, you can usually continue holding the investment as dividends fluctuate. Historically, ASB has never paid below 4.25% (since 2001). You can also consider early repayment if the outlook turns unfavourable.</p>
+
+    <p><strong style="color:var(--text)">Can non-Bumiputera take an ASB loan?</strong></p>
+    <p>No. Amanah Saham Bumiputera (ASB) is exclusively for Bumiputera investors. Non-Bumiputera can invest in other Amanah Saham funds like ASM, AS 1Malaysia, or ASN Equity 3, but these funds have different dividend rates and terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>Related Tools</h2>
+    <div class="related-grid">
+      <a href="../unit-trust/" class="related-card">
+        Unit Trust &amp; ASB Compare
+        <div class="rel-desc">Compare ASB fixed-price funds with private unit trusts side by side</div>
+      </a>
+      <a href="../fixed-deposit/" class="related-card">
+        Fixed Deposit Rates
+        <div class="rel-desc">Compare FD rates &mdash; see how they stack against ASB returns</div>
+      </a>
+      <a href="../tax-calculator/" class="related-card">
+        Income Tax Calculator
+        <div class="rel-desc">ASB dividends are tax-free &mdash; see your effective returns</div>
+      </a>
+      <a href="../home-loan/" class="related-card">
+        Home Loan Calculator
+        <div class="rel-desc">Compare mortgage rates from the same banks</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>Disclaimer:</strong> This calculator provides estimates only. ASB dividends are not guaranteed and are declared annually by ASNB. Actual loan terms and interest rates depend on your credit profile and the bank's current offerings. This is not financial advice. Always consult with your bank or a licensed financial advisor before committing to any financing.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../unit-trust/">Unit Trust Compare</a>
+    <a href="../fixed-deposit/">Fixed Deposit Rates</a>
+    <a href="../tax-calculator/">Income Tax Calculator</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Buy me a coffee</a>
+  </div>
+  <p>Sorted.my &mdash; Malaysian financial guides &amp; tools. Not financial advice.</p>
+</footer>
+
+<script>
+// ASB Dividend History
+const ASB_DIVIDENDS = [
+  { year: 2015, rate: 7.25 },
+  { year: 2016, rate: 6.75 },
+  { year: 2017, rate: 7.00 },
+  { year: 2018, rate: 7.00 },
+  { year: 2019, rate: 5.50 },
+  { year: 2020, rate: 4.25 },
+  { year: 2021, rate: 4.25 },
+  { year: 2022, rate: 4.75 },
+  { year: 2023, rate: 5.00 },
+  { year: 2024, rate: 5.10 },
+  { year: 2025, rate: 5.00 }
+];
+
+// Banks offering ASB financing
+const BANKS = [
+  { name: 'Maybank', rate: 3.50, tag: 'Lowest', note: 'Conventional & Islamic (ASB-i). Most popular choice.' },
+  { name: 'CIMB', rate: 3.85, tag: null, note: 'Conventional & Islamic available. Flexible tenure.' },
+  { name: 'RHB', rate: 4.00, tag: null, note: 'Competitive rates for existing customers.' },
+  { name: 'Bank Rakyat', rate: 4.20, tag: null, note: 'Co-operative bank. Popular for ASB financing.' },
+  { name: 'Bank Islam', rate: 4.50, tag: 'Islamic', note: 'Shariah-compliant ASB-i financing (Tawarruq).' },
+  { name: 'Bank Muamalat', rate: 4.75, tag: 'Islamic', note: 'Shariah-compliant. Tenure up to 30 years.' }
+];
+
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// Reducing balance monthly payment (standard amortization)
+function monthlyPayment(principal, annualRate, years) {
+  const r = annualRate / 100 / 12;
+  const n = years * 12;
+  if (r === 0) return principal / n;
+  return principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+}
+
+// Full amortization schedule + dividend simulation
+function simulate(loanAmt, annualRate, years, divRate) {
+  const r = annualRate / 100 / 12;
+  const n = years * 12;
+  const monthly = monthlyPayment(loanAmt, annualRate, years);
+
+  let loanBalance = loanAmt;
+  let asbBalance = loanAmt; // full amount invested day 1
+  let totalInterest = 0;
+  let totalDividends = 0;
+  const yearlyData = [];
+
+  for (let y = 1; y <= years; y++) {
+    let yearInterest = 0;
+    for (let m = 0; m < 12; m++) {
+      const interestThisMonth = loanBalance * r;
+      const principalThisMonth = monthly - interestThisMonth;
+      yearInterest += interestThisMonth;
+      loanBalance = Math.max(0, loanBalance - principalThisMonth);
+    }
+    totalInterest += yearInterest;
+
+    // ASB dividend (compounded annually on full balance)
+    const yearDiv = asbBalance * (divRate / 100);
+    totalDividends += yearDiv;
+    asbBalance += yearDiv; // reinvested
+
+    yearlyData.push({
+      year: y,
+      asbBalance: asbBalance,
+      dividend: yearDiv,
+      loanBalance: loanBalance,
+      yearInterest: yearInterest,
+      cumProfit: totalDividends - totalInterest
+    });
+  }
+
+  return { monthly, totalInterest, totalDividends, netProfit: totalDividends - totalInterest, asbFinal: asbBalance, yearlyData };
+}
+
+function calculate() {
+  const loanAmt = parseFloat(document.getElementById('loan-amount').value) || 0;
+  const years = parseInt(document.getElementById('tenure').value) || 20;
+  const rate = parseFloat(document.getElementById('interest-rate').value) || 4.0;
+  const divRate = parseFloat(document.getElementById('dividend-rate').value) || 5.0;
+
+  if (loanAmt <= 0) { alert('Please enter a valid loan amount.'); return; }
+  if (loanAmt > 300000) { alert('Maximum ASB investment is RM300,000 per individual.'); return; }
+
+  const result = simulate(loanAmt, rate, years, divRate);
+
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('result-output').style.display = 'block';
+
+  // Primary result
+  const box = document.getElementById('result-primary-box');
+  box.className = 'result-primary ' + (result.netProfit >= 0 ? 'result-profit' : 'result-loss');
+  document.getElementById('res-net').textContent = (result.netProfit >= 0 ? '+' : '') + fmt(result.netProfit);
+  document.getElementById('res-tenure-label').textContent = years + ' years';
+  document.getElementById('res-net-sub').innerHTML = 'over ' + years + ' years' + (result.netProfit >= 0 ? ' (after all interest paid)' : '');
+
+  document.getElementById('res-monthly').textContent = fmt(result.monthly);
+  document.getElementById('res-interest').textContent = fmt(result.totalInterest);
+  document.getElementById('res-dividends').textContent = fmt(result.totalDividends);
+
+  const roi = ((result.netProfit / loanAmt) * 100).toFixed(1);
+  const roiEl = document.getElementById('res-roi');
+  roiEl.textContent = (result.netProfit >= 0 ? '+' : '') + roi + '%';
+  roiEl.className = 'stat-value ' + (result.netProfit >= 0 ? 'green' : 'danger');
+
+  // Bar
+  const total = result.totalDividends + result.totalInterest;
+  const divPct = ((result.totalDividends / total) * 100).toFixed(1);
+  document.getElementById('bar-dividend').style.width = divPct + '%';
+  document.getElementById('bar-interest').style.width = (100 - parseFloat(divPct)) + '%';
+
+  // Verdict
+  const vbox = document.getElementById('verdict-box');
+  if (result.netProfit > loanAmt * 0.1) {
+    vbox.className = 'verdict-box verdict-yes';
+    vbox.textContent = 'Verdict: Profitable. ASB dividends significantly exceed loan interest.';
+  } else if (result.netProfit > 0) {
+    vbox.className = 'verdict-box verdict-maybe';
+    vbox.textContent = 'Verdict: Marginally profitable. Small profit — sensitive to dividend fluctuations.';
+  } else {
+    vbox.className = 'verdict-box verdict-no';
+    vbox.textContent = 'Verdict: Not profitable at this rate. Loan interest exceeds expected dividends.';
+  }
+
+  // Year-by-year table
+  const ysec = document.getElementById('yearly-section');
+  ysec.style.display = 'block';
+  const ytbody = document.getElementById('yearly-tbody');
+  ytbody.innerHTML = '';
+  result.yearlyData.forEach(d => {
+    const tr = document.createElement('tr');
+    const profClass = d.cumProfit >= 0 ? 'profit-cell positive' : 'profit-cell negative';
+    tr.innerHTML = '<td>' + d.year + '</td>' +
+      '<td>' + fmt(d.asbBalance) + '</td>' +
+      '<td style="color:var(--accent2)">' + fmt(d.dividend) + '</td>' +
+      '<td>' + fmt(d.loanBalance) + '</td>' +
+      '<td style="color:var(--warn)">' + fmt(d.yearInterest) + '</td>' +
+      '<td class="' + profClass + '">' + (d.cumProfit >= 0 ? '+' : '') + fmt(d.cumProfit) + '</td>';
+    ytbody.appendChild(tr);
+  });
+
+  // Bank comparison
+  const btbody = document.getElementById('bank-tbody');
+  btbody.innerHTML = '';
+  const bankResults = BANKS.map(b => {
+    const r = simulate(loanAmt, b.rate, years, divRate);
+    return { ...b, ...r };
+  }).sort((a, b) => b.netProfit - a.netProfit);
+
+  bankResults.forEach((b, i) => {
+    const tr = document.createElement('tr');
+    if (i === 0) tr.classList.add('highlight');
+    const profClass = b.netProfit >= 0 ? 'profit-cell positive' : 'profit-cell negative';
+    tr.innerHTML =
+      '<td class="bank-name">' + b.name + (b.tag ? '<span class="bank-tag">' + b.tag + '</span>' : '') + '</td>' +
+      '<td class="rate-cell">' + b.rate.toFixed(2) + '%</td>' +
+      '<td class="monthly-amt">' + fmt(b.monthly) + '</td>' +
+      '<td class="rate-cell">' + fmt(b.totalInterest) + '</td>' +
+      '<td class="' + profClass + '">' + (b.netProfit >= 0 ? '+' : '') + fmt(b.netProfit) + '</td>' +
+      '<td class="note-cell">' + b.note + '</td>';
+    btbody.appendChild(tr);
+  });
+}
+
+// Render dividend history chart
+function renderDivChart() {
+  const chart = document.getElementById('div-chart');
+  const maxRate = Math.max(...ASB_DIVIDENDS.map(d => d.rate));
+  chart.innerHTML = '';
+  ASB_DIVIDENDS.forEach(d => {
+    const pct = (d.rate / maxRate) * 100;
+    const wrap = document.createElement('div');
+    wrap.className = 'div-bar-wrap';
+    wrap.innerHTML =
+      '<div class="div-bar-val">' + d.rate.toFixed(2) + '%</div>' +
+      '<div class="div-bar" style="height:' + pct + '%" title="' + d.year + ': ' + d.rate + '%"></div>' +
+      '<div class="div-bar-label">' + d.year + '</div>';
+    chart.appendChild(wrap);
+  });
+}
+
+renderDivChart();
+calculate();
+</script>
+<div style="text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);margin-top:2rem;">
+  <p style="color:var(--muted);font-size:0.875rem;margin-bottom:0.75rem;">Found this useful? Support Sorted &mdash; buy us a coffee for RM12</p>
+  <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" style="display:inline-block;background:var(--bg2);color:var(--muted);border:1px solid var(--border);font-weight:600;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='var(--accent)';this.style.borderColor='var(--accent)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">Buy us a coffee &mdash; RM12</a>
+</div>
+</body>
+</html>
