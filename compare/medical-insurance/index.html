@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Medical Insurance Malaysia 2026 — Medical Card &amp; Health Plans | Sorted</title>
+  <meta name="description" content="Compare medical insurance (medical card) plans from 10 Malaysian insurers (2026). Estimate premiums by age and annual limit. Standalone and rider plans from Prudential, AIA, Great Eastern, Allianz, Zurich and more.">
+  <meta property="og:title" content="Compare Medical Insurance Malaysia 2026 — Medical Card &amp; Health Plans | Sorted">
+  <meta property="og:description" content="Estimate your medical card premium and compare health insurance plans from major Malaysian insurers. Filter by annual limit, room type, and provider.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/medical-insurance/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.filters h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select, .filter-group input { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus, .filter-group input:focus { outline: none; border-color: var(--accent); }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.chip { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 20px; cursor: pointer; transition: all 0.15s; }
+.chip:hover { background: rgba(108,99,255,0.25); }
+.chip.active { background: var(--accent); color: white; border-color: var(--accent); }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); margin-top: 0.75rem; }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Calc summary */
+.calc-summary { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.calc-summary h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.75rem; font-weight: 600; }
+.calc-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+
+/* Results bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+
+/* Plan cards */
+.plan-cards { display: grid; gap: 0.75rem; }
+.plan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.plan-card:hover { border-color: rgba(108,99,255,0.4); }
+.plan-card.best-value { border-color: var(--accent2); border-width: 2px; }
+.plan-card.best-value::before { content: '\2605 LOWEST PREMIUM'; display: block; font-size: 0.68rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.card-top { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
+.card-body { margin-top: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.plan-provider { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+.plan-name { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+.plan-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.3rem; }
+.badge { font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; letter-spacing: 0.3px; text-transform: uppercase; }
+.badge-standalone { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.badge-rider { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.badge-takaful { background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.badge-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.badge-room { background: rgba(139,139,139,0.12); color: var(--muted); border: 1px solid rgba(139,139,139,0.2); }
+.plan-pricing { text-align: right; }
+.plan-price { font-size: 1.5rem; font-weight: 800; color: var(--accent2); font-family: monospace; }
+.plan-price-unit { font-size: 0.72rem; color: var(--muted); font-weight: 400; display: block; }
+.plan-monthly { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; font-family: monospace; }
+.coverage-list { list-style: none; font-size: 0.82rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.2rem; }
+.coverage-list li::before { content: '\2713 '; color: var(--success); font-weight: 700; }
+.coverage-list li.no::before { content: '\2717 '; color: var(--danger); }
+.detail-list { font-size: 0.8rem; color: var(--muted); }
+.detail-list strong { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 0.3rem; }
+.detail-tag { display: inline-block; font-size: 0.7rem; background: var(--bg3); border: 1px solid var(--border); color: var(--muted); padding: 0.1rem 0.4rem; border-radius: 4px; margin: 0.1rem 0.15rem 0.1rem 0; }
+.best-for-row { grid-column: 1 / -1; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.65rem; margin-top: 0.1rem; }
+.best-for-row strong { color: var(--accent); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 0.9rem; display: none; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-size: 0.95rem; font-family: var(--font); font-weight: 600; padding: 1rem 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { color: var(--accent); }
+.faq-icon { color: var(--muted); font-size: 1.1rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 1rem 0; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+
+/* Coffee banner */
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+
+/* Disclaimer */
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+
+/* Related */
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 1rem; } .nav-links { display: none; }
+  .filter-grid { grid-template-columns: 1fr; }
+  .card-top { grid-template-columns: 1fr; }
+  .plan-pricing { text-align: left; }
+  .card-body { grid-template-columns: 1fr; }
+  .calc-stats { grid-template-columns: 1fr 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../../">Compare Tools</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">&#9749; Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">&larr; All Guides</a>
+    <h1>&#127973; Compare Medical Insurance Malaysia 2026 <span class="tool-tag">Calculator</span></h1>
+    <p class="subtitle">Estimate annual premiums and compare medical card plans from major Malaysian insurers and takaful operators. Filter by annual limit, room type, and age.</p>
+  </div>
+
+  <div class="info-box">
+    <strong>How this works:</strong> Select your age and preferred annual limit below. Premiums shown are <em>indicative estimates</em> based on published rate ranges &mdash; actual premiums depend on your health, pre-existing conditions, and insurer underwriting. Medical insurance premiums in Malaysia increase with age and are typically reviewed annually. Use this tool to shortlist plans, then request a formal quotation from your chosen insurer or financial adviser.
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>&#128295; Your Profile &amp; Filters</h3>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Age (Next Birthday)</label>
+        <select id="ageSelect">
+          <option value="18">18</option>
+          <option value="25">25</option>
+          <option value="30" selected>30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+          <option value="60">60</option>
+          <option value="65">65</option>
+          <option value="70">70</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortSelect">
+          <option value="price-asc">Lowest premium first</option>
+          <option value="price-desc">Highest premium first</option>
+          <option value="limit-desc">Highest annual limit first</option>
+          <option value="provider">Provider (A&ndash;Z)</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Annual Limit</label>
+      <div class="filter-chips" id="limitChips">
+        <span class="chip active" data-limit="all">All Limits</span>
+        <span class="chip" data-limit="100000">RM 100K</span>
+        <span class="chip" data-limit="200000">RM 200K</span>
+        <span class="chip" data-limit="500000">RM 500K</span>
+        <span class="chip" data-limit="1000000">RM 1M</span>
+        <span class="chip" data-limit="999999999">Unlimited</span>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Room Type</label>
+      <div class="filter-chips" id="roomChips">
+        <span class="chip active" data-room="all">All Rooms</span>
+        <span class="chip" data-room="4-bed">4-Bed Ward</span>
+        <span class="chip" data-room="2-bed">2-Bed / Twin</span>
+        <span class="chip" data-room="single">Single Room</span>
+        <span class="chip" data-room="suite">Suite</span>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Provider</label>
+      <div class="filter-chips" id="providerChips">
+        <span class="chip active" data-provider="all">All Providers</span>
+        <span class="chip" data-provider="Prudential">Prudential</span>
+        <span class="chip" data-provider="AIA">AIA</span>
+        <span class="chip" data-provider="Great Eastern">Great Eastern</span>
+        <span class="chip" data-provider="Allianz">Allianz</span>
+        <span class="chip" data-provider="Zurich">Zurich</span>
+        <span class="chip" data-provider="Etiqa">Etiqa Takaful</span>
+        <span class="chip" data-provider="Tokio Marine">Tokio Marine</span>
+        <span class="chip" data-provider="AXA">AXA Affin</span>
+        <span class="chip" data-provider="FWD">FWD</span>
+        <span class="chip" data-provider="Manulife">Manulife</span>
+      </div>
+    </div>
+    <button class="reset-btn" id="resetBtn">Reset filters</button>
+  </div>
+
+  <!-- CALC SUMMARY -->
+  <div class="calc-summary" id="calcSummary">
+    <h3>Your Medical Coverage Summary</h3>
+    <div class="calc-stats">
+      <div class="cs-stat"><div class="cs-label">Age</div><div class="cs-value" id="csAge">30</div></div>
+      <div class="cs-stat"><div class="cs-label">Cheapest Annual</div><div class="cs-value accent2" id="csCheapest">&mdash;</div></div>
+      <div class="cs-stat"><div class="cs-label">Plans Available</div><div class="cs-value" id="csCount">&mdash;</div></div>
+      <div class="cs-stat"><div class="cs-label">Tax Relief</div><div class="cs-value accent2">Up to RM 3,000</div></div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;">Medical insurance premiums in Malaysia qualify for tax relief of up to RM 3,000/year (separate from life insurance relief). Premiums increase with age &mdash; buying younger locks in lower starting rates.</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-bar">
+    <span class="results-count">Showing <em id="resultCount">0</em> plans</span>
+    <span style="font-size:0.78rem;color:var(--muted);">Estimates only &mdash; request a formal quotation before purchasing</span>
+  </div>
+  <div class="plan-cards" id="planCards"></div>
+  <div class="no-results" id="noResults">
+    <p>No plans match your filters. Try selecting "All Limits" or "All Providers".</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> All premiums shown are <strong>indicative estimates</strong> based on published rate ranges as of 2026. Actual premiums depend on your health declaration, pre-existing conditions, BMI, occupation, and the insurer's underwriting criteria. Medical insurance premiums are reviewed annually and may increase. Takaful plans operate on a contribution (tabarru') model &mdash; contributions shown are approximate equivalents. Co-insurance and deductible terms vary by plan. Always request a formal quotation and read the policy wording before purchasing. Plans marked as "rider" require a base life insurance/ILP policy.
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="section">
+    <h2>Related Guides &amp; Tools</h2>
+    <div class="related-guides">
+      <a href="../life-insurance/" class="related-card">&#128737; Life Insurance Comparison<div class="rel-desc">Compare term life, whole life, and ILP plans from 10 Malaysian insurers</div></a>
+      <a href="../car-insurance/" class="related-card">&#128737; Car Insurance Calculator<div class="rel-desc">Compare motor insurance premiums from major Malaysian insurers</div></a>
+      <a href="../personal-loan/" class="related-card">&#128176; Personal Loan Comparison<div class="rel-desc">Compare personal loan rates from Malaysian banks</div></a>
+      <a href="../tax-calculator/" class="related-card">&#129534; Income Tax Calculator<div class="rel-desc">Calculate your Malaysian income tax for YA 2025</div></a>
+      <a href="../savings-account/" class="related-card">&#128176; Savings Account Comparison<div class="rel-desc">Compare savings accounts from Malaysian banks</div></a>
+      <a href="../home-loan/" class="related-card">&#127968; Home Loan Comparison<div class="rel-desc">Compare home loan packages from Malaysian banks</div></a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="coffee-banner">
+    <p>Found this useful? It takes time to research and build these tools.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">&#9749; Buy us a coffee</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../life-insurance/">Life Insurance</a>
+    <a href="../car-insurance/">Car Insurance</a>
+    <a href="../tax-calculator/">Income Tax Calculator</a>
+    <a href="../home-loan/">Home Loan</a>
+  </div>
+  <p>Sorted.my &mdash; Malaysian life admin, simplified. Estimates are for informational purposes only.</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a standalone medical plan and a medical rider in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A standalone medical plan is an independent policy you purchase directly — it covers hospitalisation and surgical costs on its own. A medical rider (also called medical card rider) is an add-on to a base life insurance or investment-linked plan (ILP) — you need the base policy to get the rider. Standalone plans tend to have simpler structures, while rider plans may offer more comprehensive coverage as part of a bundled package."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does annual limit mean for medical insurance in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The annual limit is the maximum amount the insurer will pay for your medical claims in a single policy year. Plans range from RM 100,000 to unlimited. Higher annual limits cover more expensive treatments and longer hospital stays. For most people, a plan with at least RM 500,000 annual limit provides good coverage for private hospital treatment in Malaysia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is co-insurance and when does it apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Co-insurance means you share a percentage of the medical bill with the insurer. In Malaysia, most medical insurance plans impose co-insurance after a certain age (commonly 10-20% after age 70-80). Some plans also have co-insurance for specific treatments or if you use a non-panel hospital. Check the policy wording for the exact co-insurance terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim tax relief for medical insurance premiums in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Malaysian taxpayers can claim up to RM 3,000 per year for education and medical insurance premiums. This is a separate relief from the life insurance/EPF relief (up to RM 7,000). Keep your premium receipts and the insurer's annual statement for tax filing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a deductible in medical insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A deductible is the amount you pay out of pocket before the insurance kicks in. For example, with a RM 5,000 deductible, you pay the first RM 5,000 of each claim. Higher deductibles significantly lower your premium. Deductible plans are good if you have company medical coverage (your employer plan covers the deductible) or want to save on premiums while keeping coverage for major expenses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between panel and non-panel hospitals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Panel hospitals have a direct billing arrangement with your insurer — you show your medical card and the hospital bills the insurer directly (cashless admission). At non-panel hospitals, you pay upfront and claim reimbursement later. Most major private hospitals in Malaysia are on the panels of major insurers. Some plans also cover government hospitals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does medical insurance cover pre-existing conditions in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most medical insurance plans in Malaysia exclude pre-existing conditions during a waiting period (typically 12 months for named conditions, some up to 36 months). After the waiting period, some plans will cover pre-existing conditions; others may exclude them permanently. Always declare your full medical history — non-disclosure can void your entire policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age should I buy medical insurance in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The younger and healthier you are when you buy, the lower your premiums will be. Premiums increase significantly after age 40-45. Buying in your 20s or 30s also means fewer exclusions for pre-existing conditions. Most Malaysian medical insurance plans accept new applications up to age 65-70, but premiums at older ages can be 5-8 times higher than at age 30."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+const PLANS = [
+  {
+    provider: 'Prudential', model: 'both', planName: 'PRUMy Medical Plus',
+    type: 'rider', annualLimit: 500000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 250,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited days)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)'],
+    excluded: ['Outpatient GP visits', 'Dental', 'Maternity'],
+    details: ['Panel: 300+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 80', 'Waiting period: 30 days (120 days for specific illnesses)'],
+    bestFor: 'Comprehensive rider plan with no lifetime limit — pair with PRULink for flexible ILP + medical combo',
+    basePremium: { 18: 680, 25: 780, 30: 920, 35: 1150, 40: 1480, 45: 1980, 50: 2680, 55: 3650, 60: 5100, 65: 7200, 70: 10200 }
+  },
+  {
+    provider: 'Prudential', model: 'both', planName: 'PRUMy Medical Plus (RM 200K)',
+    type: 'rider', annualLimit: 200000, lifetimeLimit: 'Unlimited',
+    roomType: '4-bed', roomBoard: 120,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Outpatient cancer treatment', 'Kidney dialysis', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Outpatient GP visits', 'Dental', 'Maternity', 'Organ transplant'],
+    details: ['Panel: 300+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 80', 'Waiting period: 30 days'],
+    bestFor: 'Budget-friendly medical rider with no lifetime limit — good entry point for young professionals',
+    basePremium: { 18: 420, 25: 480, 30: 560, 35: 720, 40: 950, 45: 1280, 50: 1750, 55: 2400, 60: 3400, 65: 4800, 70: 6900 }
+  },
+  {
+    provider: 'AIA', model: 'conventional', planName: 'AIA A-Plus Health',
+    type: 'rider', annualLimit: 1000000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 350,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited days)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Emergency outpatient (accident)', 'Pre & post hospitalisation (90/180 days)', 'Second surgical opinion'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 350+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K/20K)', 'Co-insurance: 10% after age 70', 'Waiting period: 30 days'],
+    bestFor: 'High annual limit (RM 1M) with one of the widest hospital panels in Malaysia — excellent for comprehensive private hospital coverage',
+    basePremium: { 18: 850, 25: 980, 30: 1180, 35: 1480, 40: 1920, 45: 2580, 50: 3520, 55: 4800, 60: 6700, 65: 9500, 70: 13500 }
+  },
+  {
+    provider: 'AIA', model: 'conventional', planName: 'AIA Med Regular',
+    type: 'rider', annualLimit: 200000, lifetimeLimit: 'Unlimited',
+    roomType: '4-bed', roomBoard: 100,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Outpatient cancer treatment', 'Kidney dialysis', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
+    details: ['Panel: 350+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 70', 'Waiting period: 30 days'],
+    bestFor: 'Affordable entry-level medical rider with RM 200K limit — good for those with employer medical coverage as top-up',
+    basePremium: { 18: 380, 25: 440, 30: 520, 35: 670, 40: 880, 45: 1200, 50: 1650, 55: 2280, 60: 3200, 65: 4600, 70: 6600 }
+  },
+  {
+    provider: 'Great Eastern', model: 'conventional', planName: 'SmartMedic A+',
+    type: 'rider', annualLimit: 1000000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 300,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)', 'Emergency outpatient accident'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 280+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: Nil up to age 80', 'Waiting period: 30 days'],
+    bestFor: 'No co-insurance until age 80 — one of the most generous co-insurance terms among Malaysian medical plans',
+    basePremium: { 18: 820, 25: 950, 30: 1120, 35: 1420, 40: 1850, 45: 2480, 50: 3380, 55: 4600, 60: 6400, 65: 9100, 70: 12900 }
+  },
+  {
+    provider: 'Great Eastern', model: 'conventional', planName: 'SmartMedic B',
+    type: 'rider', annualLimit: 200000, lifetimeLimit: 'Unlimited',
+    roomType: '2-bed', roomBoard: 150,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Outpatient cancer treatment', 'Kidney dialysis', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
+    details: ['Panel: 280+ hospitals', 'Deductible: RM 0', 'Co-insurance: Nil up to age 80', 'Waiting period: 30 days'],
+    bestFor: 'Mid-tier plan with generous no-co-insurance terms — great value for 2-bed ward coverage',
+    basePremium: { 18: 450, 25: 520, 30: 610, 35: 780, 40: 1020, 45: 1380, 50: 1900, 55: 2600, 60: 3650, 65: 5200, 70: 7400 }
+  },
+  {
+    provider: 'Allianz', model: 'conventional', planName: 'Allianz PowerLink Infinite',
+    type: 'rider', annualLimit: 999999999, lifetimeLimit: 'Unlimited',
+    roomType: 'suite', roomBoard: 500,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (120/180 days)', 'Emergency outpatient', 'Ambulance', 'Second surgical opinion', 'Home nursing (14 days)'],
+    excluded: ['Dental', 'Maternity (unless rider added)', 'Outpatient GP visits'],
+    details: ['Panel: 320+ hospitals', 'Deductible: RM 0 (option for RM 10K/20K/30K)', 'Co-insurance: 10% after age 70 (above RM 100K/year)', 'Worldwide coverage (excl. USA)', 'Waiting period: 30 days'],
+    bestFor: 'Unlimited annual limit with worldwide coverage — the premium choice for maximum medical protection',
+    basePremium: { 18: 1350, 25: 1580, 30: 1880, 35: 2380, 40: 3100, 45: 4200, 50: 5750, 55: 7900, 60: 11000, 65: 15500, 70: 22000 }
+  },
+  {
+    provider: 'Allianz', model: 'conventional', planName: 'Allianz MediSafe Essential',
+    type: 'rider', annualLimit: 100000, lifetimeLimit: 500000,
+    roomType: '4-bed', roomBoard: 80,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 320+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 70', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
+    bestFor: 'Most affordable medical card in Malaysia — basic hospital coverage for budget-conscious buyers',
+    basePremium: { 18: 280, 25: 320, 30: 380, 35: 490, 40: 650, 45: 880, 50: 1220, 55: 1680, 60: 2380, 65: 3400, 70: 4900 }
+  },
+  {
+    provider: 'Zurich', model: 'both', planName: 'Z-MedProtect',
+    type: 'rider', annualLimit: 500000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 250,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)', 'Emergency outpatient accident'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 300+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 80', 'Both conventional & Takaful available', 'Waiting period: 30 days'],
+    bestFor: 'Available in both conventional and Takaful versions — flexible for customers who may switch later',
+    basePremium: { 18: 720, 25: 830, 30: 980, 35: 1230, 40: 1600, 45: 2150, 50: 2920, 55: 3980, 60: 5550, 65: 7900, 70: 11200 }
+  },
+  {
+    provider: 'Zurich', model: 'both', planName: 'Z-MedProtect (RM 1M)',
+    type: 'rider', annualLimit: 1000000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 380,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (120/180 days)', 'Emergency outpatient', 'Second opinion', 'Home nursing'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 300+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K/20K)', 'Co-insurance: 10% after age 80', 'Both conventional & Takaful', 'Waiting period: 30 days'],
+    bestFor: 'High-limit plan with conventional and Takaful flexibility — good for families wanting consistent coverage across different plan types',
+    basePremium: { 18: 900, 25: 1050, 30: 1250, 35: 1580, 40: 2050, 45: 2750, 50: 3750, 55: 5100, 60: 7100, 65: 10100, 70: 14300 }
+  },
+  {
+    provider: 'Etiqa', model: 'takaful', planName: 'Etiqa Medical Booster',
+    type: 'rider', annualLimit: 500000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 250,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)', 'Surplus sharing'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 250+ hospitals', 'Deductible: RM 0 (option for RM 5K)', 'Co-insurance: 10% after age 80', 'Takaful surplus sharing', 'Waiting period: 30 days'],
+    bestFor: 'Shariah-compliant medical takaful with surplus sharing potential — often among the lowest-cost Takaful medical plans',
+    basePremium: { 18: 650, 25: 750, 30: 880, 35: 1100, 40: 1420, 45: 1900, 50: 2580, 55: 3520, 60: 4900, 65: 6950, 70: 9850 }
+  },
+  {
+    provider: 'Etiqa', model: 'takaful', planName: 'Etiqa HealthGuard 200',
+    type: 'rider', annualLimit: 200000, lifetimeLimit: 'Unlimited',
+    roomType: '2-bed', roomBoard: 150,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Outpatient cancer treatment', 'Kidney dialysis', 'Pre & post hospitalisation (60/90 days)', 'Surplus sharing'],
+    excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
+    details: ['Panel: 250+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 80', 'Takaful surplus sharing', 'Waiting period: 30 days'],
+    bestFor: 'Budget Takaful medical plan with 2-bed ward — good for those wanting Shariah compliance at a lower cost',
+    basePremium: { 18: 400, 25: 460, 30: 540, 35: 690, 40: 900, 45: 1220, 50: 1680, 55: 2300, 60: 3250, 65: 4650, 70: 6650 }
+  },
+  {
+    provider: 'Tokio Marine', model: 'conventional', planName: 'TM Medical Plan A',
+    type: 'rider', annualLimit: 500000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 280,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 260+ hospitals', 'Deductible: RM 0 (option for RM 5K)', 'Co-insurance: Nil up to age 75, 10% after', 'Waiting period: 30 days'],
+    bestFor: 'Reputable global insurer with no co-insurance until age 75 — reliable claims track record',
+    basePremium: { 18: 750, 25: 860, 30: 1020, 35: 1280, 40: 1660, 45: 2220, 50: 3020, 55: 4120, 60: 5750, 65: 8150, 70: 11600 }
+  },
+  {
+    provider: 'Tokio Marine', model: 'conventional', planName: 'TM Medical Plan C',
+    type: 'rider', annualLimit: 100000, lifetimeLimit: 500000,
+    roomType: '4-bed', roomBoard: 80,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Outpatient cancer treatment', 'Organ transplant', 'Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 260+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 75', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
+    bestFor: 'Affordable basic medical card from a globally-rated insurer — good for young budget-conscious buyers',
+    basePremium: { 18: 290, 25: 340, 30: 400, 35: 510, 40: 680, 45: 920, 50: 1280, 55: 1760, 60: 2500, 65: 3550, 70: 5100 }
+  },
+  {
+    provider: 'AXA Affin', model: 'conventional', planName: 'AXA eMedic',
+    type: 'standalone', annualLimit: 100000, lifetimeLimit: 500000,
+    roomType: '4-bed', roomBoard: 100,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Pre & post hospitalisation (60/90 days)', 'Outpatient cancer treatment'],
+    excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
+    details: ['Panel: 200+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 75', 'Online purchase available', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
+    bestFor: 'One of the few standalone (no base policy needed) medical plans — buy online, no agent required',
+    basePremium: { 18: 350, 25: 400, 30: 470, 35: 600, 40: 790, 45: 1070, 50: 1480, 55: 2040, 60: 2880, 65: 4100, 70: 5900 }
+  },
+  {
+    provider: 'AXA Affin', model: 'conventional', planName: 'AXA MediSmart',
+    type: 'standalone', annualLimit: 500000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 250,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)', 'Emergency outpatient accident'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 200+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 75', 'Standalone — no base policy needed', 'Waiting period: 30 days'],
+    bestFor: 'Standalone medical plan with RM 500K limit — no need for a base life/ILP policy, simpler to manage',
+    basePremium: { 18: 780, 25: 900, 30: 1060, 35: 1340, 40: 1740, 45: 2340, 50: 3180, 55: 4350, 60: 6050, 65: 8600, 70: 12200 }
+  },
+  {
+    provider: 'FWD', model: 'conventional', planName: 'FWD Medical Plan',
+    type: 'standalone', annualLimit: 200000, lifetimeLimit: 'Unlimited',
+    roomType: '2-bed', roomBoard: 150,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Outpatient cancer treatment', 'Kidney dialysis', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
+    details: ['Panel: 180+ hospitals', 'Deductible: RM 0', 'Co-insurance: Nil up to age 80', 'Online-first — buy direct, no agent', 'Waiting period: 30 days'],
+    bestFor: 'Online direct-purchase standalone medical plan — no agent commission means competitive pricing',
+    basePremium: { 18: 380, 25: 440, 30: 520, 35: 660, 40: 860, 45: 1160, 50: 1600, 55: 2200, 60: 3100, 65: 4400, 70: 6300 }
+  },
+  {
+    provider: 'Manulife', model: 'conventional', planName: 'ManuMedical Pro',
+    type: 'rider', annualLimit: 500000, lifetimeLimit: 'Unlimited',
+    roomType: 'single', roomBoard: 250,
+    coverage: ['Hospitalisation & surgery', 'ICU (unlimited)', 'Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Day surgery', 'Pre & post hospitalisation (90/180 days)', 'Emergency outpatient accident'],
+    excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 280+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 80', 'Waiting period: 30 days'],
+    bestFor: 'Solid medical rider from a global insurer with competitive rates for 30-50 age range',
+    basePremium: { 18: 700, 25: 810, 30: 950, 35: 1200, 40: 1550, 45: 2080, 50: 2830, 55: 3860, 60: 5380, 65: 7650, 70: 10850 }
+  },
+  {
+    provider: 'Manulife', model: 'conventional', planName: 'ManuMedical Basic',
+    type: 'rider', annualLimit: 100000, lifetimeLimit: 500000,
+    roomType: '4-bed', roomBoard: 80,
+    coverage: ['Hospitalisation & surgery', 'ICU', 'Day surgery', 'Pre & post hospitalisation (60/90 days)'],
+    excluded: ['Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Dental', 'Maternity', 'Outpatient GP visits'],
+    details: ['Panel: 280+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 80', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
+    bestFor: 'Affordable basic medical card — pair with employer coverage for comprehensive protection',
+    basePremium: { 18: 260, 25: 300, 30: 350, 35: 450, 40: 600, 45: 820, 50: 1140, 55: 1570, 60: 2220, 65: 3180, 70: 4580 }
+  }
+];
+
+const ROOM_LABELS = { '4-bed': '4-Bed Ward', '2-bed': '2-Bed / Twin', 'single': 'Single Room', 'suite': 'Suite' };
+const TYPE_LABELS = { standalone: 'Standalone', rider: 'Rider' };
+const MODEL_LABELS = { conventional: 'Conventional', takaful: 'Takaful', both: 'Conv. & Takaful' };
+
+let state = {
+  age: 30, limit: 'all', room: 'all', provider: 'all', sort: 'price-asc'
+};
+
+function getPremium(plan) {
+  const ages = Object.keys(plan.basePremium).map(Number).sort((a, b) => a - b);
+  const age = state.age;
+  if (plan.basePremium[age] !== undefined) return plan.basePremium[age];
+  let lower = ages[0], upper = ages[ages.length - 1];
+  for (let i = 0; i < ages.length - 1; i++) {
+    if (ages[i] <= age && ages[i + 1] >= age) {
+      lower = ages[i]; upper = ages[i + 1]; break;
+    }
+  }
+  if (age <= lower) return plan.basePremium[lower];
+  if (age >= upper) return plan.basePremium[upper];
+  const ratio = (age - lower) / (upper - lower);
+  return Math.round(plan.basePremium[lower] + ratio * (plan.basePremium[upper] - plan.basePremium[lower]));
+}
+
+function fmtRM(n) { return 'RM ' + Math.round(n).toLocaleString('en-MY'); }
+function fmtLimit(n) {
+  if (n >= 999999999) return 'Unlimited';
+  if (n >= 1000000) return 'RM ' + (n / 1000000) + 'M';
+  return 'RM ' + (n / 1000).toFixed(0) + 'K';
+}
+
+function renderCards() {
+  const container = document.getElementById('planCards');
+  const noResults = document.getElementById('noResults');
+  const items = [];
+
+  PLANS.forEach(plan => {
+    if (state.provider !== 'all' && plan.provider !== state.provider) return;
+    if (state.limit !== 'all') {
+      const filterLimit = parseInt(state.limit);
+      if (filterLimit >= 999999999) {
+        if (plan.annualLimit < 999999999) return;
+      } else if (plan.annualLimit !== filterLimit) return;
+    }
+    if (state.room !== 'all' && plan.roomType !== state.room) return;
+    const premium = getPremium(plan);
+    const serviceTax = premium * 0.08;
+    const total = premium + serviceTax;
+    items.push({ plan, premium: total, monthly: total / 12 });
+  });
+
+  if (state.sort === 'price-asc') items.sort((a, b) => a.premium - b.premium);
+  else if (state.sort === 'price-desc') items.sort((a, b) => b.premium - a.premium);
+  else if (state.sort === 'limit-desc') items.sort((a, b) => b.plan.annualLimit - a.plan.annualLimit || a.premium - b.premium);
+  else items.sort((a, b) => a.plan.provider.localeCompare(b.plan.provider));
+
+  document.getElementById('resultCount').textContent = items.length;
+  document.getElementById('csCount').textContent = items.length;
+  document.getElementById('csAge').textContent = state.age;
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+    document.getElementById('csCheapest').textContent = '\u2014';
+    return;
+  }
+  noResults.style.display = 'none';
+
+  const lowestPrice = Math.min(...items.map(i => i.premium));
+  document.getElementById('csCheapest').textContent = fmtRM(lowestPrice) + '/yr';
+
+  container.innerHTML = items.map(item => {
+    const { plan, premium, monthly } = item;
+    const isBest = Math.abs(premium - lowestPrice) < 1;
+
+    const coverageHtml = plan.coverage.map(c => '<li>' + c + '</li>').join('');
+    const exclHtml = plan.excluded.map(c => '<li class="no">' + c + '</li>').join('');
+    const detailsHtml = plan.details.map(d => '<span class="detail-tag">' + d + '</span>').join('');
+
+    const typeBadge = plan.type === 'standalone' ? 'badge-standalone' : 'badge-rider';
+    const modelBadge = plan.model === 'takaful' ? 'badge-takaful' : (plan.model === 'both' ? 'badge-takaful' : 'badge-conv');
+
+    return '<div class="plan-card' + (isBest ? ' best-value' : '') + '">' +
+      '<div class="card-top">' +
+        '<div>' +
+          '<div class="plan-provider">' + plan.provider + '</div>' +
+          '<div class="plan-name">' + plan.planName + ' &mdash; Annual limit: ' + fmtLimit(plan.annualLimit) + ' | Room: ' + ROOM_LABELS[plan.roomType] + ' (RM ' + plan.roomBoard + '/day)</div>' +
+          '<div class="plan-badges">' +
+            '<span class="badge ' + modelBadge + '">' + MODEL_LABELS[plan.model] + '</span>' +
+            '<span class="badge ' + typeBadge + '">' + TYPE_LABELS[plan.type] + '</span>' +
+            '<span class="badge badge-room">' + ROOM_LABELS[plan.roomType] + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="plan-pricing">' +
+          '<div class="plan-price">' + fmtRM(premium) + '</div>' +
+          '<span class="plan-price-unit">est. per year (incl. 8% SST)</span>' +
+          '<div class="plan-monthly">' + fmtRM(monthly) + '/month</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-body">' +
+        '<div><ul class="coverage-list">' + coverageHtml + exclHtml + '</ul></div>' +
+        '<div class="detail-list"><strong>Plan Details</strong>' + detailsHtml + '</div>' +
+        '<div class="best-for-row"><strong>Best for:</strong> ' + plan.bestFor + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// Event listeners
+document.getElementById('ageSelect').addEventListener('change', e => { state.age = parseInt(e.target.value); renderCards(); });
+document.getElementById('sortSelect').addEventListener('change', e => { state.sort = e.target.value; renderCards(); });
+
+document.getElementById('limitChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#limitChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.limit = chip.dataset.limit;
+  renderCards();
+});
+
+document.getElementById('roomChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#roomChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.room = chip.dataset.room;
+  renderCards();
+});
+
+document.getElementById('providerChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#providerChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.provider = chip.dataset.provider;
+  renderCards();
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  state = { age: 30, limit: 'all', room: 'all', provider: 'all', sort: 'price-asc' };
+  document.getElementById('ageSelect').value = '30';
+  document.getElementById('sortSelect').value = 'price-asc';
+  document.querySelectorAll('#limitChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  document.querySelectorAll('#roomChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  document.querySelectorAll('#providerChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  renderCards();
+});
+
+// FAQ
+const FAQS = [
+  { q: 'What is the difference between a standalone medical plan and a medical rider?', a: 'A <strong>standalone medical plan</strong> is an independent policy you purchase on its own &mdash; it covers hospitalisation and surgical costs without needing any other policy. A <strong>medical rider</strong> (medical card rider) is an add-on to a base life insurance or investment-linked plan (ILP) &mdash; you need the base policy to activate the rider. Standalone plans are simpler to manage; rider plans may offer more comprehensive coverage as part of a bundled life + medical package.' },
+  { q: 'What does annual limit mean for medical insurance?', a: 'The <strong>annual limit</strong> is the maximum amount the insurer will pay for your medical claims in a single policy year. Plans in Malaysia range from RM 100,000 to unlimited. Higher limits cover more expensive treatments and longer stays in private hospitals. For most people, a plan with at least <strong>RM 500,000</strong> annual limit provides solid coverage for private hospital treatment in Malaysia.' },
+  { q: 'What is co-insurance and when does it apply?', a: '<strong>Co-insurance</strong> means you share a percentage of the medical bill with the insurer (e.g. you pay 10%, insurer pays 90%). Most Malaysian medical plans impose co-insurance after a certain age &mdash; commonly 10-20% after age 70-80. Some plans have no co-insurance until age 80 (e.g. Great Eastern SmartMedic). Check the policy wording carefully for the exact terms.' },
+  { q: 'Can I claim tax relief for medical insurance premiums?', a: 'Yes. Malaysian taxpayers can claim up to <strong>RM 3,000/year</strong> for education and medical insurance premiums. This is a <strong>separate relief</strong> from the life insurance/EPF relief (up to RM 7,000). Medical insurance premiums for yourself, spouse, or children all qualify. Keep premium receipts and the insurer\'s annual statement for tax filing.' },
+  { q: 'What is a deductible and should I choose one?', a: 'A <strong>deductible</strong> is the amount you pay out of pocket before insurance kicks in. For example, with a RM 5,000 deductible, you pay the first RM 5,000 of each hospital admission. Higher deductibles significantly lower your premium &mdash; sometimes by 30-50%. <strong>Good for:</strong> people with employer medical coverage (employer plan covers the deductible amount) or those who want cheap coverage for major expenses only.' },
+  { q: 'What is the difference between panel and non-panel hospitals?', a: '<strong>Panel hospitals</strong> have a direct billing arrangement with your insurer &mdash; show your medical card for cashless admission. <strong>Non-panel hospitals</strong> require you to pay upfront and claim reimbursement later. Most major private hospitals in Malaysia (Sunway Medical, Gleneagles, Pantai, KPJ, etc.) are on the panels of all major insurers. Government hospitals are always covered.' },
+  { q: 'Does medical insurance cover pre-existing conditions?', a: 'Most plans <strong>exclude pre-existing conditions</strong> during a waiting period (typically 12 months for named conditions, some up to 36 months). After the waiting period, coverage varies: some plans cover pre-existing conditions fully, others may exclude them permanently or apply co-insurance. <strong>Always declare your full medical history</strong> &mdash; non-disclosure can void your entire policy.' },
+  { q: 'At what age should I buy medical insurance?', a: 'The <strong>younger you buy, the cheaper</strong> your premiums. A 25-year-old pays roughly 40-50% less than a 45-year-old for the same coverage. After age 45-50, premiums rise sharply. Buying young also means fewer pre-existing conditions and exclusions. Most plans accept new applications up to age 65-70, but premiums at older ages can be 5-8&times; higher than at age 30.' }
+];
+
+document.getElementById('faqList').innerHTML = FAQS.map((f, i) =>
+  '<div class="faq-item" id="faq' + i + '">' +
+    '<button class="faq-q" onclick="toggleFaq(' + i + ')">' + f.q + '<span class="faq-icon">+</span></button>' +
+    '<div class="faq-a">' + f.a + '</div>' +
+  '</div>'
+).join('');
+
+function toggleFaq(i) {
+  document.getElementById('faq' + i).classList.toggle('open');
+}
+
+// Init
+renderCards();
+</script>
+</body>
+</html>
