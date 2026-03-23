@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Savings Account Rates Malaysia 2026 — Best Savings Rates | Sorted</title>
+  <meta name="description" content="Compare savings account rates from 16 Malaysian banks (2026). Find the best savings rate with bonus interest. Free calculator shows monthly interest earned for every account.">
+  <meta property="og:title" content="Compare Savings Account Rates Malaysia 2026 — Best Savings Rates | Sorted">
+  <meta property="og:description" content="Compare savings rates from Maybank, CIMB, Public Bank, RHB, GX Bank, Boost Bank and more. Free calculator — enter your balance and see interest earned from every bank.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/savings-account/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Calculator */
+.calc-section { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.calc-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.calc-section .calc-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.calc-inputs-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: end; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.72rem; color: var(--muted); }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.75rem; }
+.calc-btn { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.65rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; white-space: nowrap; transition: background 0.2s; height: fit-content; }
+.calc-btn:hover { background: #7c74ff; }
+.calc-summary { display: none; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.calc-summary.visible { display: block; }
+.calc-summary-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cs-stat { flex: 1; min-width: 120px; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+.calc-note { font-size: 0.78rem; color: var(--muted); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+.filters-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.filters-top h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+
+/* Sort bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.sort-label { font-size: 0.75rem; color: var(--muted); align-self: center; margin-right: 0.25rem; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; white-space: nowrap; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Cards */
+.fd-cards { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+.fd-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.fd-card:hover { border-color: rgba(108,99,255,0.4); }
+.fd-card.best-rate { border-color: var(--accent2); border-width: 2px; }
+.fd-card.best-rate .card-badge { display: inline-block; }
+.card-badge { display: none; font-size: 0.65rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; }
+.card-bank { font-size: 1rem; font-weight: 800; color: var(--text); }
+.card-type { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+.card-rate-block { text-align: right; flex-shrink: 0; }
+.card-rate { font-size: 1.8rem; font-weight: 800; color: var(--accent2); font-family: monospace; letter-spacing: -1px; }
+.card-rate-label { font-size: 0.7rem; color: var(--muted); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem 1rem; margin-bottom: 0.75rem; }
+.card-stat .cs-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+.card-stat .cs-v { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.card-stat .cs-v.highlight { color: var(--warn); font-size: 1rem; }
+.card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; white-space: nowrap; }
+.tag-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.tag-islamic { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-digital { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.25); }
+.tag-bonus { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.25); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); }
+.no-results h3 { color: var(--text); margin-bottom: 0.5rem; }
+
+/* Info / warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); }
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* Rate table */
+.rate-table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+.rate-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.rate-table th { background: var(--bg3); color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.rate-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.rate-table tr:last-child td { border-bottom: none; }
+.rate-table tr:hover td { background: var(--bg3); }
+.rate-table .best-cell { color: var(--accent2); font-weight: 700; }
+.rate-table .bank-col { font-weight: 700; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: var(--font); font-size: 0.95rem; font-weight: 600; padding: 1rem 1.25rem; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { background: var(--bg3); }
+.faq-arrow { color: var(--muted); font-size: 0.85rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 0.85rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+
+/* Related tools */
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+/* Tip jar */
+.tipjar { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.tipjar p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.tipjar a { display: inline-block; background: var(--bg2); color: var(--muted); border: 1px solid var(--border); font-weight: 600; padding: 0.55rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.875rem; transition: all 0.2s; }
+.tipjar a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .calc-btn { grid-column: 1 / -1; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 450px) {
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .card-header { flex-direction: column; gap: 0.5rem; }
+  .card-rate-block { text-align: left; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Savings Account Rates Comparison 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/savings-account/",
+    "description": "Compare savings account interest rates from 16 major Malaysian banks. Free calculator — enter your balance to see monthly interest earned from every account.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best savings account rate in Malaysia 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, the highest effective savings rate in Malaysia is offered by RHB Smart Account-i at up to 4.00% p.a. (with bonus tiers). CIMB OCTO SavR offers up to 3.80%, while Standard Chartered Esaver, Hong Leong Pay&Save, CIMB e Saving, Alliance SavePlus, GX Bank GX Save, and Boost Bank Boost Pocket all offer up to 3.50%. Most high rates require meeting bonus criteria such as salary crediting, card spending, or maintaining a minimum balance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does bonus interest work for Malaysian savings accounts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many Malaysian banks offer bonus interest on top of the base savings rate when you meet certain criteria. Common criteria include crediting your salary to the account, making a minimum number of card transactions, maintaining a minimum balance, or using the bank's e-wallet or app. Bonus rates typically range from 0.50% to 1.50% p.a. on top of the base rate. You usually need to meet the criteria every month to earn the bonus for that month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are savings account deposits in Malaysia protected by PIDM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Savings account deposits placed with PIDM member banks are protected up to RM250,000 per depositor per bank. This includes both conventional and Islamic savings accounts. The RM250,000 limit covers all your eligible deposits (savings, current, fixed deposit) combined at the same bank. All licensed commercial banks and Islamic banks in Malaysia are PIDM members, including digital banks like GX Bank and Boost Bank."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between conventional and Islamic savings accounts in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conventional savings accounts pay interest (faedah), while Islamic savings accounts (Savings Account-i or BSA-i) pay a profit rate based on Shariah-compliant concepts such as Mudharabah or Wadiah. In practice, the rates and mechanics are very similar. Islamic savings accounts are available to all Malaysians regardless of religion. Both types are protected by PIDM up to RM250,000 per depositor per bank."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I choose a digital bank savings account in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Digital banks like GX Bank and Boost Bank often offer competitive savings rates (up to 3.50% p.a.) with lower minimum balance requirements and no physical branch overhead. They are fully licensed by Bank Negara Malaysia and protected by PIDM. However, they may have deposit caps for bonus rates, limited services compared to traditional banks, and may not yet offer the full range of banking products. A good strategy is to use a digital bank for high-yield savings alongside a traditional bank for everyday banking needs."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../fixed-deposit/">Fixed Deposit</a>
+    <a href="../credit-card/">Credit Card</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">&larr; Back to all guides</a>
+    <h1>🏦 Compare Savings Account Rates Malaysia <span class="tool-tag">2026</span></h1>
+    <p class="subtitle">16 accounts compared. Enter your balance to see monthly interest earned — then filter by bank type, bonus rates, and more.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-section">
+    <h2>Savings Interest Calculator</h2>
+    <p class="calc-desc">Enter your savings balance — results update automatically showing monthly interest for all accounts.</p>
+    <div class="calc-inputs-row">
+      <div class="field">
+        <label>Savings Balance (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="depositAmount" value="10000" min="0" step="500" placeholder="e.g. 10000">
+        </div>
+        <span class="hint">Enter your total savings balance</span>
+      </div>
+      <button class="calc-btn" onclick="runCalc()">Calculate</button>
+    </div>
+    <div class="calc-summary" id="calcSummary">
+      <div class="calc-summary-stats">
+        <div class="cs-stat">
+          <div class="cs-label">Best Effective Rate</div>
+          <div class="cs-value accent2" id="summBestRate">&mdash;</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Monthly Interest</div>
+          <div class="cs-value accent2" id="summBestInterest">&mdash;</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Yearly Interest</div>
+          <div class="cs-value" id="summBestYearly">&mdash;</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Account</div>
+          <div class="cs-value" id="summBestBank">&mdash;</div>
+        </div>
+      </div>
+      <p class="calc-note">⚠️ Rates are indicative only. Bonus rates require meeting specific criteria. Verify with your bank.</p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filters-top">
+      <h3>Filter &amp; Sort</h3>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Bank Type</label>
+        <select id="filterType" onchange="applyFilters()">
+          <option value="all">All Banks</option>
+          <option value="conventional">Conventional</option>
+          <option value="islamic">Islamic</option>
+          <option value="digital">Digital Bank</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Min Balance</label>
+        <select id="filterMinBal" onchange="applyFilters()">
+          <option value="all">Any Minimum</option>
+          <option value="0">No Minimum (RM0)</option>
+          <option value="250">RM250 or less</option>
+          <option value="500">RM500 or less</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Bonus Rate</label>
+        <select id="filterBonus" onchange="applyFilters()">
+          <option value="all">All Accounts</option>
+          <option value="yes">Has Bonus Rate</option>
+          <option value="no">No Bonus (Base Only)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortBy" onchange="applyFilters()">
+          <option value="effective-desc">Max Effective Rate (Highest)</option>
+          <option value="base-desc">Base Rate (Highest)</option>
+          <option value="bank-az">Bank Name (A-Z)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS BAR -->
+  <div class="results-bar">
+    <div class="results-count">Showing <em id="visibleCount">16</em> accounts</div>
+    <div class="sort-bar">
+      <span class="sort-label">Quick filter:</span>
+      <button class="sort-btn active" data-filter="all" onclick="setQuickFilter(this)">All</button>
+      <button class="sort-btn" data-filter="bonus" onclick="setQuickFilter(this)">Bonus</button>
+      <button class="sort-btn" data-filter="islamic" onclick="setQuickFilter(this)">Islamic</button>
+      <button class="sort-btn" data-filter="digital" onclick="setQuickFilter(this)">Digital</button>
+    </div>
+  </div>
+
+  <!-- ACCOUNT CARDS -->
+  <div class="fd-cards" id="savingsCards"></div>
+
+  <div class="no-results" id="noResults" style="display:none">
+    <h3>No accounts match your filters</h3>
+    <p>Try adjusting the filters above.</p>
+  </div>
+
+  <!-- RATE TABLE -->
+  <div class="section">
+    <h2>📊 Full Rate Table — All Savings Accounts</h2>
+    <p>Compare base rates, bonus rates, and max effective rates at a glance. All rates are per annum (p.a.).</p>
+    <div class="rate-table-wrap">
+      <table class="rate-table" id="rateTable">
+        <thead>
+          <tr>
+            <th>Bank</th>
+            <th>Account</th>
+            <th>Type</th>
+            <th>Base Rate</th>
+            <th>Bonus</th>
+            <th>Max Effective</th>
+            <th>Min Balance</th>
+          </tr>
+        </thead>
+        <tbody id="rateTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠️ Important Disclaimer</strong><br>
+    Rates shown are indicative figures based on published data as of early 2026. Bonus rates require meeting specific criteria (salary credit, card spend, minimum transactions, etc.). Actual rates may differ. Always verify current rates and bonus criteria directly with your bank.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips to Maximise Your Savings Returns</h2>
+    <ul class="tips-list">
+      <li><strong>Stack bonus criteria</strong> — many accounts reward salary credit + card spend + bill payments. Meeting all criteria can add 1.00–1.50% to your base rate.</li>
+      <li>Digital banks (GX Bank, Boost Bank) often offer competitive rates with zero minimum balance — great for a secondary high-yield account.</li>
+      <li>Keep your <strong>emergency fund (3–6 months expenses)</strong> in a savings account for liquidity. Move surplus to fixed deposits for higher guaranteed returns.</li>
+      <li>Islamic savings accounts are available to all Malaysians and offer comparable profit rates to conventional accounts.</li>
+      <li>PIDM protects up to <strong>RM250,000 per depositor per bank</strong> — spread large balances across banks if you exceed this limit.</li>
+      <li>Review bonus criteria monthly — <strong>missing one criterion can drop your rate</strong> back to the base rate for that month.</li>
+      <li>Some accounts have tiered bonus rates that cap at a certain balance (e.g., RM100,000). Extra funds above the cap earn only the base rate.</li>
+      <li>Compare the <strong>effective rate after meeting criteria vs the effort required</strong>. A slightly lower rate with easier criteria may be more practical.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the best savings account rate in Malaysia 2026?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">As of 2026, <strong>RHB Smart Account-i</strong> offers the highest effective rate at up to <strong>4.00% p.a.</strong> when all bonus criteria are met. <strong>CIMB OCTO SavR</strong> follows at 3.80%, while <strong>Standard Chartered Esaver</strong> reaches 3.70%. Several banks including CIMB e Saving, Hong Leong Pay&Save, Alliance SavePlus, GX Bank, and Boost Bank offer up to 3.50%. Note that bonus rates require meeting monthly criteria such as salary credit, card spending, or bill payments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does bonus interest work for Malaysian savings accounts?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Many Malaysian banks offer <strong>bonus interest</strong> on top of the base savings rate when you meet certain monthly criteria. Common criteria include: <strong>crediting your salary</strong> to the account (usually RM2,000+), making a minimum number of <strong>debit card or credit card transactions</strong> (typically 3–5 per month), paying <strong>bills via the bank's platform</strong>, or maintaining a <strong>minimum account balance</strong>. Bonus rates typically range from 0.50% to 1.50% p.a. You need to meet the criteria every month — missing them means you only earn the base rate for that month.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are savings accounts protected by PIDM in Malaysia?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Yes. Savings accounts at <strong>PIDM member banks</strong> are protected up to <strong>RM250,000 per depositor per bank</strong>. This includes both conventional and Islamic savings accounts. The limit covers your total eligible deposits (savings, current, fixed deposit) combined at the same bank. All licensed commercial banks, Islamic banks, and digital banks (GX Bank, Boost Bank) in Malaysia are PIDM members.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the difference between conventional and Islamic savings accounts?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Conventional savings accounts pay <strong>interest (faedah)</strong>, while Islamic savings accounts (Savings Account-i or BSA-i) pay a <strong>profit rate</strong> based on Shariah-compliant concepts such as <strong>Mudharabah</strong> (profit sharing) or <strong>Wadiah</strong> (safekeeping). In practice, rates and mechanics are very similar. Islamic savings accounts are available to <strong>all Malaysians regardless of religion</strong> and are equally protected by PIDM up to RM250,000.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Should I use a digital bank savings account in Malaysia?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Digital banks like <strong>GX Bank</strong> and <strong>Boost Bank</strong> offer competitive savings rates (up to 3.50% p.a.) with <strong>zero minimum balance</strong> and a fully mobile experience. They are licensed by Bank Negara Malaysia and protected by PIDM. However, they may have <strong>balance caps for bonus rates</strong>, limited product range, and no physical branches. A practical strategy is to use a digital bank for high-yield savings alongside a traditional bank for everyday banking, loans, and credit cards.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="section">
+    <h2>🔗 Related Tools</h2>
+    <div class="related-grid">
+      <a href="../fixed-deposit/" class="related-card">
+        🏦 Fixed Deposit Comparison
+        <div class="rel-desc">Compare FD rates from 15 Malaysian banks</div>
+      </a>
+      <a href="../credit-card/" class="related-card">
+        💳 Credit Card Comparison
+        <div class="rel-desc">Find the best cashback or rewards card</div>
+      </a>
+      <a href="../ewallet/" class="related-card">
+        📱 E-Wallet Comparison
+        <div class="rel-desc">Compare TNG, GrabPay, Boost &amp; more</div>
+      </a>
+      <a href="../tax-calculator/" class="related-card">
+        🧾 Income Tax Calculator
+        <div class="rel-desc">Calculate your YA 2025 Malaysian income tax</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="tipjar">
+    <p>This tool is free. If it helped you find a better savings rate, consider supporting the site.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">Home</a>
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../fixed-deposit/">Fixed Deposit</a>
+    <a href="../credit-card/">Credit Card</a>
+  </div>
+  <p>&copy; 2026 Sorted.my &mdash; Indicative rates only. Always verify with your bank. Not financial advice.</p>
+</footer>
+
+<script>
+const SAVINGS_DATA = [
+  { bank: "Maybank",            account: "MAE Savings",           type: "conventional", baseRate: 2.50, bonusRate: 0.70, maxEffective: 3.20, minBalance: 0,   islamic: false, digital: false, features: "Spend+save bonuses via MAE app" },
+  { bank: "Maybank",            account: "Islamic Savings-i",     type: "islamic",      baseRate: 2.35, bonusRate: 0,    maxEffective: 2.35, minBalance: 250, islamic: true,  digital: false, features: "Shariah-compliant, Wadiah concept" },
+  { bank: "CIMB",               account: "CIMB e Saving",         type: "conventional", baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: false, digital: false, features: "Online-only account, no min balance" },
+  { bank: "CIMB",               account: "OCTO SavR",             type: "conventional", baseRate: 2.50, bonusRate: 1.30, maxEffective: 3.80, minBalance: 0,   islamic: false, digital: false, features: "Multi-criteria bonus: salary + spend + save" },
+  { bank: "Public Bank",        account: "PB Savings",            type: "conventional", baseRate: 2.50, bonusRate: 0,    maxEffective: 2.50, minBalance: 500, islamic: false, digital: false, features: "Traditional savings, RM500 min balance" },
+  { bank: "Hong Leong Bank",    account: "HLB Pay&Save",          type: "conventional", baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: false, digital: false, features: "Salary credit + card spend bonus" },
+  { bank: "RHB",                account: "RHB Smart Account-i",   type: "islamic",      baseRate: 2.50, bonusRate: 1.50, maxEffective: 4.00, minBalance: 0,   islamic: true,  digital: false, features: "Highest bonus tier, multi-criteria" },
+  { bank: "AmBank",             account: "AmBank i-Savings",      type: "islamic",      baseRate: 2.30, bonusRate: 0.50, maxEffective: 2.80, minBalance: 250, islamic: true,  digital: false, features: "Basic Islamic savings with small bonus" },
+  { bank: "Bank Islam",         account: "BSA-i",                 type: "islamic",      baseRate: 2.30, bonusRate: 0,    maxEffective: 2.30, minBalance: 100, islamic: true,  digital: false, features: "Shariah-compliant, Mudharabah concept" },
+  { bank: "Standard Chartered", account: "SC Esaver",             type: "conventional", baseRate: 2.50, bonusRate: 1.20, maxEffective: 3.70, minBalance: 0,   islamic: false, digital: false, features: "Online-only, multi-tier bonus structure" },
+  { bank: "HSBC",               account: "HSBC Everyday Global",  type: "conventional", baseRate: 2.30, bonusRate: 0.50, maxEffective: 2.80, minBalance: 0,   islamic: false, digital: false, features: "Multi-currency account" },
+  { bank: "Alliance Bank",      account: "Alliance SavePlus",     type: "conventional", baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: false, digital: false, features: "Salary credit + spend bonus" },
+  { bank: "Bank Rakyat",        account: "Savings-i",             type: "islamic",      baseRate: 2.25, bonusRate: 0,    maxEffective: 2.25, minBalance: 100, islamic: true,  digital: false, features: "Co-operative bank, Shariah-compliant" },
+  { bank: "AEON Credit",        account: "AEON Savings",          type: "conventional", baseRate: 2.40, bonusRate: 0,    maxEffective: 2.40, minBalance: 0,   islamic: false, digital: false, features: "Basic savings account" },
+  { bank: "GX Bank",            account: "GX Save",               type: "digital",      baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: true,  digital: true,  features: "Digital bank, Shariah-compliant" },
+  { bank: "Boost Bank",         account: "Boost Pocket",          type: "digital",      baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: true,  digital: true,  features: "Digital bank, Shariah-compliant" }
+];
+
+function calcMonthlyInterest(principal, ratePA) {
+  return principal * (ratePA / 100) / 12;
+}
+
+function calcYearlyInterest(principal, ratePA) {
+  return principal * (ratePA / 100);
+}
+
+function fmt(n) {
+  return 'RM ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function runCalc() {
+  const principal = parseFloat(document.getElementById('depositAmount').value) || 0;
+  if (principal <= 0) return;
+
+  let best = null;
+  SAVINGS_DATA.forEach(a => {
+    if (!best || a.maxEffective > best.maxEffective) best = a;
+  });
+
+  const bestMonthly = calcMonthlyInterest(principal, best.maxEffective);
+  const bestYearly = calcYearlyInterest(principal, best.maxEffective);
+  document.getElementById('summBestRate').textContent = best.maxEffective.toFixed(2) + '% p.a.';
+  document.getElementById('summBestInterest').textContent = fmt(bestMonthly) + '/mo';
+  document.getElementById('summBestYearly').textContent = fmt(bestYearly) + '/yr';
+  document.getElementById('summBestBank').textContent = best.bank + ' ' + best.account;
+  document.getElementById('calcSummary').classList.add('visible');
+
+  applyFilters();
+}
+
+function setQuickFilter(el) {
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  const filter = el.dataset.filter;
+
+  if (filter === 'all') {
+    document.getElementById('filterType').value = 'all';
+    document.getElementById('filterBonus').value = 'all';
+  } else if (filter === 'bonus') {
+    document.getElementById('filterType').value = 'all';
+    document.getElementById('filterBonus').value = 'yes';
+  } else if (filter === 'islamic') {
+    document.getElementById('filterType').value = 'islamic';
+    document.getElementById('filterBonus').value = 'all';
+  } else if (filter === 'digital') {
+    document.getElementById('filterType').value = 'digital';
+    document.getElementById('filterBonus').value = 'all';
+  }
+  applyFilters();
+}
+
+function applyFilters() {
+  const typeVal = document.getElementById('filterType').value;
+  const minBalVal = document.getElementById('filterMinBal').value;
+  const bonusVal = document.getElementById('filterBonus').value;
+  const sortVal = document.getElementById('sortBy').value;
+
+  let filtered = SAVINGS_DATA.filter(a => {
+    // Type filter
+    if (typeVal === 'conventional' && a.type !== 'conventional') return false;
+    if (typeVal === 'islamic' && !a.islamic) return false;
+    if (typeVal === 'digital' && !a.digital) return false;
+
+    // Min balance filter
+    if (minBalVal !== 'all') {
+      const maxMin = parseInt(minBalVal);
+      if (a.minBalance > maxMin) return false;
+    }
+
+    // Bonus filter
+    if (bonusVal === 'yes' && a.bonusRate === 0) return false;
+    if (bonusVal === 'no' && a.bonusRate > 0) return false;
+
+    return true;
+  });
+
+  // Sort
+  filtered.sort((a, b) => {
+    if (sortVal === 'effective-desc') return b.maxEffective - a.maxEffective;
+    if (sortVal === 'base-desc') return b.baseRate - a.baseRate;
+    if (sortVal === 'bank-az') return (a.bank + a.account).localeCompare(b.bank + b.account);
+    return 0;
+  });
+
+  renderCards(filtered);
+  document.getElementById('visibleCount').textContent = filtered.length;
+  document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function renderCards(accounts) {
+  const principal = parseFloat(document.getElementById('depositAmount').value) || 0;
+  const container = document.getElementById('savingsCards');
+  if (!accounts.length) { container.innerHTML = ''; return; }
+
+  const maxRate = Math.max(...accounts.map(a => a.maxEffective));
+
+  container.innerHTML = accounts.map((a, i) => {
+    const isBest = a.maxEffective === maxRate && i === accounts.findIndex(x => x.maxEffective === maxRate);
+    const monthlyInt = principal > 0 ? calcMonthlyInterest(principal, a.maxEffective) : null;
+    const yearlyInt = principal > 0 ? calcYearlyInterest(principal, a.maxEffective) : null;
+    const monthlyBase = principal > 0 ? calcMonthlyInterest(principal, a.baseRate) : null;
+
+    const typeLabel = a.digital ? 'Digital Bank' : (a.islamic ? 'Islamic' : 'Conventional');
+    const typeTagClass = a.digital ? 'tag-digital' : (a.islamic ? 'tag-islamic' : 'tag-conv');
+
+    return `<div class="fd-card${isBest ? ' best-rate' : ''}">
+      <div class="card-badge">★ Best Rate</div>
+      <div class="card-header">
+        <div>
+          <div class="card-bank">${a.bank}</div>
+          <div class="card-type">${a.account}</div>
+        </div>
+        <div class="card-rate-block">
+          <div class="card-rate">${a.maxEffective.toFixed(2)}%</div>
+          <div class="card-rate-label">max effective p.a.</div>
+        </div>
+      </div>
+      <div class="card-grid">
+        <div class="card-stat">
+          <div class="cs-k">Base Rate</div>
+          <div class="cs-v">${a.baseRate.toFixed(2)}% p.a.</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">Bonus Rate</div>
+          <div class="cs-v">${a.bonusRate > 0 ? '+' + a.bonusRate.toFixed(2) + '%' : 'None'}</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">Min Balance</div>
+          <div class="cs-v">${a.minBalance === 0 ? 'RM0' : 'RM' + a.minBalance}</div>
+        </div>
+        ${monthlyInt !== null ? `
+        <div class="card-stat">
+          <div class="cs-k">Monthly Interest (Max)</div>
+          <div class="cs-v highlight">${fmt(monthlyInt)}</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">Monthly Interest (Base)</div>
+          <div class="cs-v">${fmt(monthlyBase)}</div>
+        </div>
+        <div class="card-stat">
+          <div class="cs-k">Yearly Interest (Max)</div>
+          <div class="cs-v">${fmt(yearlyInt)}</div>
+        </div>
+        ` : ''}
+      </div>
+      <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.6rem;">${a.features}</div>
+      <div class="card-tags">
+        <span class="tag ${typeTagClass}">${typeLabel}</span>
+        ${a.islamic ? '<span class="tag tag-islamic">Shariah</span>' : ''}
+        ${a.bonusRate > 0 ? '<span class="tag tag-bonus">Bonus Rate</span>' : ''}
+        ${isBest ? '<span class="tag" style="background:rgba(72,207,173,0.1);color:var(--accent2);border:1px solid rgba(72,207,173,0.25);">Highest Rate</span>' : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderRateTable() {
+  const maxEffRate = Math.max(...SAVINGS_DATA.map(a => a.maxEffective));
+  const sorted = [...SAVINGS_DATA].sort((a, b) => b.maxEffective - a.maxEffective);
+
+  document.getElementById('rateTableBody').innerHTML = sorted.map(a => {
+    const typeLabel = a.digital ? 'Digital' : (a.islamic ? 'Islamic' : 'Conv.');
+    const typeTagClass = a.digital ? 'tag-digital' : (a.islamic ? 'tag-islamic' : 'tag-conv');
+    return `<tr>
+      <td class="bank-col">${a.bank}</td>
+      <td>${a.account}</td>
+      <td><span class="tag ${typeTagClass}" style="font-size:0.65rem;">${typeLabel}</span></td>
+      <td>${a.baseRate.toFixed(2)}%</td>
+      <td>${a.bonusRate > 0 ? '+' + a.bonusRate.toFixed(2) + '%' : '—'}</td>
+      <td class="${a.maxEffective === maxEffRate ? 'best-cell' : ''}">${a.maxEffective.toFixed(2)}%</td>
+      <td>${a.minBalance === 0 ? 'RM0' : 'RM' + a.minBalance}</td>
+    </tr>`;
+  }).join('');
+}
+
+function resetFilters() {
+  document.getElementById('filterType').value = 'all';
+  document.getElementById('filterMinBal').value = 'all';
+  document.getElementById('filterBonus').value = 'all';
+  document.getElementById('sortBy').value = 'effective-desc';
+  document.querySelectorAll('.sort-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === 'all');
+  });
+  applyFilters();
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Init
+renderRateTable();
+applyFilters();
+</script>
+</body>
+</html>
