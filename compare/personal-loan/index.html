@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Personal Loan Rates Malaysia 2026 — Best Bank Rates | Sorted</title>
+  <meta name="description" content="Compare personal loan rates from 12 Malaysian banks (2026). Calculate monthly repayments instantly. Find the cheapest pinjaman peribadi with our free calculator.">
+  <meta property="og:title" content="Compare Personal Loan Rates Malaysia 2026 — Best Bank Rates | Sorted">
+  <meta property="og:description" content="Compare personal loan rates from Maybank, CIMB, Public Bank, RHB, Bank Rakyat, BSN and more. Free calculator — enter loan amount and tenure to see monthly repayments.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/personal-loan/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Calculator */
+.calc-section { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+.calc-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.calc-section .calc-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; }
+.calc-inputs-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 1rem; align-items: end; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.72rem; color: var(--muted); }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.75rem; }
+.calc-btn { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.65rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; white-space: nowrap; transition: background 0.2s; height: fit-content; }
+.calc-btn:hover { background: #7c74ff; }
+.calc-summary { display: none; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.calc-summary.visible { display: block; }
+.calc-summary-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cs-stat { flex: 1; min-width: 120px; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+.calc-note { font-size: 0.78rem; color: var(--muted); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+.filters-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.filters-top h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus { outline: none; border-color: var(--accent); }
+
+/* Sort bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.sort-label { font-size: 0.75rem; color: var(--muted); align-self: center; margin-right: 0.25rem; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; white-space: nowrap; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Cards */
+.fd-cards { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+.fd-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.fd-card:hover { border-color: rgba(108,99,255,0.4); }
+.fd-card.best-rate { border-color: var(--accent2); border-width: 2px; }
+.fd-card.best-rate .card-badge { display: inline-block; }
+.card-badge { display: none; font-size: 0.65rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; }
+.card-bank { font-size: 1rem; font-weight: 800; color: var(--text); }
+.card-type { font-size: 0.8rem; color: var(--muted); font-weight: 400; }
+.card-rate-block { text-align: right; flex-shrink: 0; }
+.card-rate { font-size: 1.8rem; font-weight: 800; color: var(--accent2); font-family: monospace; letter-spacing: -1px; }
+.card-rate-label { font-size: 0.7rem; color: var(--muted); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem 1rem; margin-bottom: 0.75rem; }
+.card-stat .cs-k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+.card-stat .cs-v { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.card-stat .cs-v.highlight { color: var(--warn); font-size: 1rem; }
+.card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.3px; white-space: nowrap; }
+.tag-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.tag-islamic { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.tag-govt { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.25); }
+.tag-low { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.25); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 1rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); }
+.no-results h3 { color: var(--text); margin-bottom: 0.5rem; }
+
+/* Info / warn boxes */
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.875rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); }
+.tips-list li:last-child { border-bottom: none; }
+.tips-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* Rate table */
+.rate-table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+.rate-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.rate-table th { background: var(--bg3); color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.rate-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.rate-table tr:last-child td { border-bottom: none; }
+.rate-table tr:hover td { background: var(--bg3); }
+.rate-table .best-cell { color: var(--accent2); font-weight: 700; }
+.rate-table .bank-col { font-weight: 700; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: var(--font); font-size: 0.95rem; font-weight: 600; padding: 1rem 1.25rem; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { background: var(--bg3); }
+.faq-arrow { color: var(--muted); font-size: 0.85rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 0.85rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+
+/* Related tools */
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; text-decoration: none; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+/* Tip jar */
+.tipjar { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.tipjar p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.tipjar a { display: inline-block; background: var(--bg2); color: var(--muted); border: 1px solid var(--border); font-weight: 600; padding: 0.55rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.875rem; transition: all 0.2s; }
+.tipjar a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .calc-btn { grid-column: 1 / -1; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 450px) {
+  .calc-inputs-row { grid-template-columns: 1fr; }
+  .card-header { flex-direction: column; gap: 0.5rem; }
+  .card-rate-block { text-align: left; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Malaysia Personal Loan Rates Comparison 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/personal-loan/",
+    "description": "Compare personal loan rates from 14 Malaysian banks. Free calculator — enter loan amount and tenure to see monthly repayments from every bank.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the cheapest personal loan in Malaysia 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, BSN MyRinggit-i offers the lowest personal loan rate in Malaysia at 4.99% p.a. flat (approx. 9.10% effective). Bank Rakyat Personal Financing-i is also competitive at 5.50% flat. Government-backed lenders typically offer lower rates than commercial banks, but eligibility may be restricted to government servants or specific sectors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between flat rate and effective rate for personal loans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flat rate calculates interest on the original loan amount throughout the tenure, making the quoted rate appear lower. Effective rate (also called reducing balance rate) calculates interest on the remaining principal, which is the true cost of borrowing. A general rule: effective rate is roughly 1.8x the flat rate. For example, a 6% flat rate equals approximately 10.8% effective rate. Always compare loans using the effective rate for an accurate comparison."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is DSR and why does it matter for personal loan approval?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DSR (Debt Service Ratio) is the percentage of your gross monthly income that goes toward debt repayments. Most Malaysian banks require your total DSR (including the new loan) to be below 60-70%. For example, if you earn RM5,000/month, your total monthly debt payments should not exceed RM3,000-3,500. A lower DSR improves your approval chances and may qualify you for better rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a personal loan with bad CCRIS/CTOS record?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is difficult but not impossible. Most banks check CCRIS (Bank Negara credit report) and CTOS score during the application. Late payments, defaults, or high existing debt will reduce approval chances. Some options include: applying at banks with more lenient criteria, reducing existing debt first, applying for a smaller amount, or considering a secured loan against your fixed deposit or ASB. Government-backed options like BSN may have slightly more flexible criteria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents do I need to apply for a personal loan in Malaysia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typical documents required: (1) MyKad (IC) copy, (2) Latest 3 months salary slips, (3) Latest 3-6 months bank statements, (4) EA Form or income tax return (BE form), (5) Employment confirmation letter. Self-employed applicants typically need business registration (SSM), 6-12 months bank statements, and tax returns. Some banks accept EPF statements as supplementary income proof."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../car-loan/">Car Loan</a>
+    <a href="../home-loan/">Home Loan</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">&larr; Back to all guides</a>
+    <h1>💰 Compare Personal Loan Rates Malaysia <span class="tool-tag">2026</span></h1>
+    <p class="subtitle">14 personal loans compared. Enter your loan amount and tenure to see monthly repayments — then filter by type, rate, and bank.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-section">
+    <h2>Personal Loan Calculator</h2>
+    <p class="calc-desc">Enter your desired loan amount and tenure — results update showing monthly repayments for all banks.</p>
+    <div class="calc-inputs-row">
+      <div class="field">
+        <label>Loan Amount (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="loanAmount" value="30000" min="1000" max="500000" step="1000" placeholder="e.g. 30000">
+        </div>
+        <span class="hint">Typically RM5,000 – RM200,000</span>
+      </div>
+      <div class="field">
+        <label>Tenure (Years)</label>
+        <select id="loanTenure">
+          <option value="1">1 year</option>
+          <option value="2">2 years</option>
+          <option value="3">3 years</option>
+          <option value="4">4 years</option>
+          <option value="5" selected>5 years</option>
+          <option value="7">7 years</option>
+          <option value="10">10 years</option>
+        </select>
+        <span class="hint">1 – 10 years</span>
+      </div>
+      <div class="field">
+        <label>Monthly Salary (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="monthlySalary" value="5000" min="0" step="500" placeholder="e.g. 5000">
+        </div>
+        <span class="hint">For DSR estimate (optional)</span>
+      </div>
+      <button class="calc-btn" onclick="runCalc()">Calculate</button>
+    </div>
+    <div class="calc-summary" id="calcSummary">
+      <div class="calc-summary-stats">
+        <div class="cs-stat">
+          <div class="cs-label">Cheapest Monthly</div>
+          <div class="cs-value accent2" id="summCheapest">&mdash;</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Most Expensive</div>
+          <div class="cs-value" id="summExpensive">&mdash;</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">You Save (Total)</div>
+          <div class="cs-value accent2" id="summSaving">&mdash;</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-label">Best Bank</div>
+          <div class="cs-value" id="summBestBank">&mdash;</div>
+        </div>
+      </div>
+      <p class="calc-note" id="dsrNote"></p>
+      <p class="calc-note">⚠️ Rates are indicative only. Actual rates depend on your credit profile. Verify with your bank.</p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filters-top">
+      <h3>Filter &amp; Sort</h3>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Loan Type</label>
+        <select id="filterType" onchange="applyFilters()">
+          <option value="all">All Types</option>
+          <option value="conventional">Conventional</option>
+          <option value="islamic">Islamic</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Max Loan</label>
+        <select id="filterMaxLoan" onchange="applyFilters()">
+          <option value="all">Any Amount</option>
+          <option value="50000">Up to RM50k</option>
+          <option value="100000">Up to RM100k</option>
+          <option value="150000">RM150k+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Processing Fee</label>
+        <select id="filterFee" onchange="applyFilters()">
+          <option value="all">Any Fee</option>
+          <option value="0">No Fee</option>
+          <option value="1">1% or less</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortBy" onchange="applyFilters()">
+          <option value="rate-asc">Flat Rate (Lowest)</option>
+          <option value="effective-asc">Effective Rate (Lowest)</option>
+          <option value="monthly-asc">Monthly Repayment (Lowest)</option>
+          <option value="maxloan-desc">Max Loan (Highest)</option>
+          <option value="bank-az">Bank Name (A-Z)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS BAR -->
+  <div class="results-bar">
+    <div class="results-count">Showing <em id="visibleCount">14</em> loans</div>
+    <div class="sort-bar">
+      <span class="sort-label">Quick filter:</span>
+      <button class="sort-btn active" data-filter="all" onclick="setQuickFilter(this)">All</button>
+      <button class="sort-btn" data-filter="islamic" onclick="setQuickFilter(this)">Islamic</button>
+      <button class="sort-btn" data-filter="govt" onclick="setQuickFilter(this)">Govt/Co-op</button>
+      <button class="sort-btn" data-filter="low" onclick="setQuickFilter(this)">Under 7%</button>
+    </div>
+  </div>
+
+  <!-- LOAN CARDS -->
+  <div class="fd-cards" id="loanCards"></div>
+
+  <div class="no-results" id="noResults" style="display:none">
+    <h3>No loans match your filters</h3>
+    <p>Try adjusting the filters above.</p>
+  </div>
+
+  <!-- RATE TABLE -->
+  <div class="section">
+    <h2>📊 Full Rate Table — All Personal Loans</h2>
+    <p>Compare flat rates, effective rates, max loan amounts, and tenures at a glance.</p>
+    <div class="rate-table-wrap">
+      <table class="rate-table" id="rateTable">
+        <thead>
+          <tr>
+            <th>Bank</th>
+            <th>Product</th>
+            <th>Type</th>
+            <th>Flat Rate</th>
+            <th>Eff. Rate</th>
+            <th>Max Loan</th>
+            <th>Max Tenure</th>
+            <th>Fee</th>
+          </tr>
+        </thead>
+        <tbody id="rateTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>Flat Rate vs Effective Rate:</strong> Malaysian personal loans typically quote a <strong>flat rate</strong>, which calculates interest on the original principal for the entire tenure. The <strong>effective rate</strong> (true cost) is roughly 1.8&times; the flat rate. For example, 6% flat &asymp; 10.8% effective. Always compare using the effective rate for an accurate picture.
+  </div>
+
+  <div class="warn-box">
+    <strong>⚠️ Important Disclaimer</strong><br>
+    Rates shown are indicative figures based on published data as of early 2026. Actual rates offered depend on your credit profile (CCRIS/CTOS score), income, existing debt, and the bank's assessment. Processing fees and stamp duty apply. Always verify current rates and terms directly with your bank.
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>💡 Tips to Get the Best Personal Loan Rate</h2>
+    <ul class="tips-list">
+      <li><strong>Compare the effective rate, not flat rate</strong> — a 6% flat rate sounds low but equals ~10.8% effective. Some banks quote flat, others effective. Always convert to compare accurately.</li>
+      <li><strong>Check your DSR first</strong> — keep total debt repayments below 60% of gross income. Banks use this as a key approval criterion.</li>
+      <li><strong>Clean your CCRIS/CTOS</strong> — settle any late payments or defaults before applying. A clean credit record can qualify you for lower rates.</li>
+      <li><strong>Government servants</strong> get preferential rates from BSN, Bank Rakyat, and MBSB — typically 2-3% lower flat rate than commercial banks.</li>
+      <li><strong>Shorter tenure = less total interest</strong> — a 3-year loan costs significantly less in total interest than a 7-year loan, even if monthly payments are higher.</li>
+      <li><strong>Watch for processing fees</strong> — some banks charge 1-2% of the loan amount upfront. Factor this into your total cost comparison.</li>
+      <li>Consider <strong>salary deduction loans</strong> if eligible — they often carry lower rates since repayment is guaranteed via payroll.</li>
+      <li><strong>Don't apply to multiple banks simultaneously</strong> — each application creates a CCRIS enquiry. Too many enquiries in a short period can lower your approval chances.</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the cheapest personal loan in Malaysia 2026?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">As of 2026, <strong>BSN MyRinggit-i</strong> offers the lowest personal loan rate at <strong>4.99% p.a. flat</strong> (approximately 9.10% effective). <strong>Bank Rakyat Personal Financing-i</strong> follows at 5.50% flat. Government-backed lenders typically offer the lowest rates but may have eligibility restrictions. Among commercial banks, <strong>Maybank Personal Loan</strong> and <strong>CIMB PersonalOne</strong> are competitive at 6.88% and 7.00% flat respectively.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the difference between flat rate and effective rate?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a"><strong>Flat rate</strong> calculates interest on the <strong>original loan amount</strong> for the entire tenure, making the quoted rate appear lower. <strong>Effective rate</strong> (reducing balance) calculates interest on the <strong>remaining principal</strong>, which is the true cost of borrowing. As a rule of thumb, the effective rate is roughly <strong>1.8&times; the flat rate</strong>. For example, a 6% flat rate equals approximately 10.8% effective rate. Malaysian banks typically quote personal loans in flat rates, while credit cards and overdrafts use effective rates.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is DSR and why does it matter?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a"><strong>DSR (Debt Service Ratio)</strong> is the percentage of your gross monthly income that goes toward all debt repayments (car loan, home loan, credit card minimum, personal loan, PTPTN, etc.). Most banks require your total DSR to be below <strong>60-70%</strong>. For example, if you earn RM5,000/month, your total monthly debt payments should not exceed RM3,000-3,500. A lower DSR improves approval chances and may qualify you for better rates.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I get a personal loan with bad credit (CCRIS/CTOS)?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">It is difficult but not impossible. Most banks check <strong>CCRIS</strong> (Bank Negara credit report) and <strong>CTOS</strong> score during application. Options include: applying at banks with more lenient criteria, reducing existing debt first, applying for a smaller amount, or considering a <strong>secured loan</strong> against your fixed deposit or ASB. Government-backed options like BSN may have slightly more flexible criteria. Improving your credit takes 6-12 months of on-time payments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What documents do I need to apply?
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a">Typical documents: (1) <strong>MyKad (IC) copy</strong>, (2) Latest <strong>3 months salary slips</strong>, (3) Latest <strong>3-6 months bank statements</strong>, (4) <strong>EA Form</strong> or income tax return (BE form), (5) <strong>Employment confirmation letter</strong>. Self-employed applicants typically need business registration (SSM), 6-12 months bank statements, and tax returns. Some banks accept EPF statements as supplementary income proof.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="section">
+    <h2>🔗 Related Tools</h2>
+    <div class="related-grid">
+      <a href="../car-loan/" class="related-card">
+        🚗 Car Loan Calculator
+        <div class="rel-desc">Calculate car loan repayments from major banks</div>
+      </a>
+      <a href="../home-loan/" class="related-card">
+        🏠 Home Loan Comparison
+        <div class="rel-desc">Compare 17 home loan packages</div>
+      </a>
+      <a href="../credit-card/" class="related-card">
+        💳 Credit Card Comparison
+        <div class="rel-desc">Find the best cashback or rewards card</div>
+      </a>
+      <a href="../tax-calculator/" class="related-card">
+        🧾 Income Tax Calculator
+        <div class="rel-desc">Calculate your YA 2025 Malaysian income tax</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="tipjar">
+    <p>This tool is free. If it helped you find a better loan rate, consider supporting the site.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">Home</a>
+    <a href="../../#guides">Guides</a>
+    <a href="../../#compare">Compare Tools</a>
+    <a href="../car-loan/">Car Loan</a>
+    <a href="../home-loan/">Home Loan</a>
+  </div>
+  <p>&copy; 2026 Sorted.my &mdash; Indicative rates only. Always verify with your bank. Not financial advice.</p>
+</footer>
+
+<script>
+const LOAN_DATA = [
+  { bank: "Maybank", product: "Maybank Personal Loan", type: "conventional", flatRate: 6.88, effectiveRate: 12.38, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, features: "No processing fee, fast approval, salary deduction available" },
+  { bank: "Maybank", product: "Maybank Personal Financing-i", type: "islamic", flatRate: 7.00, effectiveRate: 12.60, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, features: "Shariah-compliant (Tawarruq), no processing fee" },
+  { bank: "CIMB", product: "CIMB PersonalOne", type: "conventional", flatRate: 7.00, effectiveRate: 12.60, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, features: "Up to RM200k, no processing fee, online application" },
+  { bank: "CIMB", product: "CIMB Personal Financing-i", type: "islamic", flatRate: 7.20, effectiveRate: 12.96, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, features: "Shariah-compliant, up to RM200k" },
+  { bank: "Public Bank", product: "PB Personal Loan", type: "conventional", flatRate: 7.48, effectiveRate: 13.46, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2500, processingFee: 1, islamic: false, govt: false, features: "1% processing fee, established bank" },
+  { bank: "Hong Leong Bank", product: "HLB Personal Loan", type: "conventional", flatRate: 7.88, effectiveRate: 14.18, maxLoan: 150000, minLoan: 5000, maxTenure: 5, minIncome: 2000, processingFee: 1, islamic: false, govt: false, features: "Online application, 1% processing fee" },
+  { bank: "RHB", product: "RHB Personal Loan", type: "conventional", flatRate: 7.50, effectiveRate: 13.50, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, features: "Up to RM200k, no processing fee" },
+  { bank: "RHB", product: "RHB Personal Financing-i", type: "islamic", flatRate: 7.68, effectiveRate: 13.82, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, features: "Shariah-compliant (Commodity Murabahah), up to RM200k" },
+  { bank: "AmBank", product: "AmBank PersonalOne", type: "conventional", flatRate: 8.00, effectiveRate: 14.40, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 1, islamic: false, govt: false, features: "1% processing fee, online application" },
+  { bank: "Alliance Bank", product: "Alliance CashFirst", type: "conventional", flatRate: 8.88, effectiveRate: 15.98, maxLoan: 100000, minLoan: 5000, maxTenure: 5, minIncome: 2000, processingFee: 1, islamic: false, govt: false, features: "Fast disbursement, 1% processing fee" },
+  { bank: "Standard Chartered", product: "SC CashOne", type: "conventional", flatRate: 7.90, effectiveRate: 14.22, maxLoan: 200000, minLoan: 10000, maxTenure: 5, minIncome: 3000, processingFee: 0, islamic: false, govt: false, features: "Premium bank, no processing fee, higher min income" },
+  { bank: "BSN", product: "BSN MyRinggit-i", type: "islamic", flatRate: 4.99, effectiveRate: 9.10, maxLoan: 150000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, features: "Government-backed, lowest rate, Shariah-compliant, salary deduction" },
+  { bank: "Bank Rakyat", product: "Personal Financing-i", type: "islamic", flatRate: 5.50, effectiveRate: 9.90, maxLoan: 200000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, features: "Co-operative bank, competitive rate, salary deduction" },
+  { bank: "MBSB Bank", product: "MBSB Personal Financing-i", type: "islamic", flatRate: 5.80, effectiveRate: 10.44, maxLoan: 200000, minLoan: 2000, maxTenure: 10, minIncome: 1500, processingFee: 0, islamic: true, govt: true, features: "Government-linked, competitive rates for govt servants" }
+];
+
+function calcMonthly(principal, flatRate, tenureYears) {
+  const totalInterest = principal * (flatRate / 100) * tenureYears;
+  const totalRepayment = principal + totalInterest;
+  return totalRepayment / (tenureYears * 12);
+}
+
+function calcTotalInterest(principal, flatRate, tenureYears) {
+  return principal * (flatRate / 100) * tenureYears;
+}
+
+function fmt(n) {
+  return 'RM ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function fmtK(n) {
+  if (n >= 1000) return 'RM' + (n / 1000).toFixed(0) + 'k';
+  return 'RM' + n;
+}
+
+function runCalc() {
+  const principal = parseFloat(document.getElementById('loanAmount').value) || 0;
+  const tenure = parseInt(document.getElementById('loanTenure').value) || 5;
+  const salary = parseFloat(document.getElementById('monthlySalary').value) || 0;
+  if (principal <= 0) return;
+
+  // Find cheapest and most expensive
+  const eligible = LOAN_DATA.filter(l => principal <= l.maxLoan && principal >= l.minLoan && tenure <= l.maxTenure);
+  if (eligible.length === 0) {
+    document.getElementById('calcSummary').classList.add('visible');
+    document.getElementById('summCheapest').textContent = 'No eligible loans';
+    document.getElementById('summExpensive').textContent = '—';
+    document.getElementById('summSaving').textContent = '—';
+    document.getElementById('summBestBank').textContent = '—';
+    return;
+  }
+
+  let cheapest = null, expensive = null;
+  eligible.forEach(l => {
+    const m = calcMonthly(principal, l.flatRate, tenure);
+    if (!cheapest || m < calcMonthly(principal, cheapest.flatRate, tenure)) cheapest = l;
+    if (!expensive || m > calcMonthly(principal, expensive.flatRate, tenure)) expensive = l;
+  });
+
+  const cheapMo = calcMonthly(principal, cheapest.flatRate, tenure);
+  const expMo = calcMonthly(principal, expensive.flatRate, tenure);
+  const totalSaved = (expMo - cheapMo) * tenure * 12;
+
+  document.getElementById('summCheapest').textContent = fmt(cheapMo) + '/mo';
+  document.getElementById('summExpensive').textContent = fmt(expMo) + '/mo';
+  document.getElementById('summSaving').textContent = fmt(totalSaved);
+  document.getElementById('summBestBank').textContent = cheapest.bank + ' (' + cheapest.flatRate + '%)';
+
+  // DSR estimate
+  if (salary > 0) {
+    const dsr = (cheapMo / salary * 100).toFixed(1);
+    const dsrColor = dsr <= 40 ? 'var(--success)' : dsr <= 60 ? 'var(--warn)' : 'var(--danger)';
+    document.getElementById('dsrNote').innerHTML = '📊 Estimated DSR with cheapest loan: <strong style="color:' + dsrColor + '">' + dsr + '%</strong> of gross income. ' + (dsr <= 60 ? 'Within typical bank approval range (≤60%).' : 'Above typical 60% threshold — may affect approval.');
+  } else {
+    document.getElementById('dsrNote').textContent = '';
+  }
+
+  document.getElementById('calcSummary').classList.add('visible');
+  applyFilters();
+}
+
+function setQuickFilter(el) {
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  const filter = el.dataset.filter;
+
+  if (filter === 'all') {
+    document.getElementById('filterType').value = 'all';
+  } else if (filter === 'islamic') {
+    document.getElementById('filterType').value = 'islamic';
+  } else if (filter === 'govt') {
+    document.getElementById('filterType').value = 'all';
+  } else if (filter === 'low') {
+    document.getElementById('filterType').value = 'all';
+  }
+  applyFilters(filter);
+}
+
+function applyFilters(quickFilter) {
+  const typeVal = document.getElementById('filterType').value;
+  const maxLoanVal = document.getElementById('filterMaxLoan').value;
+  const feeVal = document.getElementById('filterFee').value;
+  const sortVal = document.getElementById('sortBy').value;
+  const principal = parseFloat(document.getElementById('loanAmount').value) || 30000;
+  const tenure = parseInt(document.getElementById('loanTenure').value) || 5;
+
+  let filtered = LOAN_DATA.filter(l => {
+    if (typeVal === 'conventional' && l.type !== 'conventional') return false;
+    if (typeVal === 'islamic' && !l.islamic) return false;
+
+    if (maxLoanVal !== 'all') {
+      const mv = parseInt(maxLoanVal);
+      if (mv === 150000) {
+        if (l.maxLoan < 150000) return false;
+      } else {
+        if (l.maxLoan > mv) return false;
+      }
+    }
+
+    if (feeVal !== 'all') {
+      const fv = parseFloat(feeVal);
+      if (l.processingFee > fv) return false;
+    }
+
+    // Quick filters
+    if (quickFilter === 'govt' && !l.govt) return false;
+    if (quickFilter === 'low' && l.flatRate >= 7) return false;
+
+    return true;
+  });
+
+  // Sort
+  filtered.sort((a, b) => {
+    if (sortVal === 'rate-asc') return a.flatRate - b.flatRate;
+    if (sortVal === 'effective-asc') return a.effectiveRate - b.effectiveRate;
+    if (sortVal === 'monthly-asc') return calcMonthly(principal, a.flatRate, tenure) - calcMonthly(principal, b.flatRate, tenure);
+    if (sortVal === 'maxloan-desc') return b.maxLoan - a.maxLoan;
+    if (sortVal === 'bank-az') return (a.bank + a.product).localeCompare(b.bank + b.product);
+    return 0;
+  });
+
+  renderCards(filtered, principal, tenure);
+  document.getElementById('visibleCount').textContent = filtered.length;
+  document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function renderCards(loans, principal, tenure) {
+  const container = document.getElementById('loanCards');
+  if (!loans.length) { container.innerHTML = ''; return; }
+
+  const minRate = Math.min(...loans.map(l => l.flatRate));
+
+  container.innerHTML = loans.map((l, i) => {
+    const isBest = l.flatRate === minRate && i === loans.findIndex(x => x.flatRate === minRate);
+    const monthly = calcMonthly(principal, l.flatRate, tenure);
+    const totalInt = calcTotalInterest(principal, l.flatRate, tenure);
+    const totalRepay = principal + totalInt;
+    const eligible = principal <= l.maxLoan && principal >= l.minLoan && tenure <= l.maxTenure;
+    const feeAmt = l.processingFee > 0 ? principal * l.processingFee / 100 : 0;
+
+    const typeTagClass = l.islamic ? 'tag-islamic' : 'tag-conv';
+    const typeLabel = l.islamic ? 'Islamic' : 'Conventional';
+
+    return '<div class="fd-card' + (isBest ? ' best-rate' : '') + '">' +
+      '<div class="card-badge">★ Lowest Rate</div>' +
+      '<div class="card-header">' +
+        '<div>' +
+          '<div class="card-bank">' + l.bank + '</div>' +
+          '<div class="card-type">' + l.product + '</div>' +
+        '</div>' +
+        '<div class="card-rate-block">' +
+          '<div class="card-rate">' + l.flatRate.toFixed(2) + '%</div>' +
+          '<div class="card-rate-label">flat rate p.a.</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-grid">' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Effective Rate</div>' +
+          '<div class="cs-v">' + l.effectiveRate.toFixed(2) + '% p.a.</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Max Loan</div>' +
+          '<div class="cs-v">' + fmtK(l.maxLoan) + '</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Max Tenure</div>' +
+          '<div class="cs-v">' + l.maxTenure + ' years</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Processing Fee</div>' +
+          '<div class="cs-v">' + (l.processingFee > 0 ? l.processingFee + '% (' + fmt(feeAmt) + ')' : 'None') + '</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Monthly Repayment</div>' +
+          '<div class="cs-v highlight">' + (eligible ? fmt(monthly) : 'N/A') + '</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Total Interest</div>' +
+          '<div class="cs-v">' + (eligible ? fmt(totalInt) : 'N/A') + '</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Total Repayment</div>' +
+          '<div class="cs-v">' + (eligible ? fmt(totalRepay) : 'N/A') + '</div>' +
+        '</div>' +
+        '<div class="card-stat">' +
+          '<div class="cs-k">Min Income</div>' +
+          '<div class="cs-v">' + fmtK(l.minIncome) + '/mo</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.6rem;">' + l.features + '</div>' +
+      '<div class="card-tags">' +
+        '<span class="tag ' + typeTagClass + '">' + typeLabel + '</span>' +
+        (l.islamic ? '<span class="tag tag-islamic">Shariah</span>' : '') +
+        (l.govt ? '<span class="tag tag-govt">Govt/Co-op</span>' : '') +
+        (l.flatRate < 7 ? '<span class="tag tag-low">Low Rate</span>' : '') +
+        (l.processingFee === 0 ? '<span class="tag" style="background:rgba(108,99,255,0.1);color:#a5b4fc;border:1px solid rgba(108,99,255,0.25);">No Fee</span>' : '') +
+        (!eligible ? '<span class="tag" style="background:rgba(239,68,68,0.1);color:var(--danger);border:1px solid rgba(239,68,68,0.25);">Exceeds Limit</span>' : '') +
+        (isBest ? '<span class="tag" style="background:rgba(72,207,173,0.1);color:var(--accent2);border:1px solid rgba(72,207,173,0.25);">Lowest Rate</span>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function renderRateTable() {
+  const minRate = Math.min(...LOAN_DATA.map(l => l.flatRate));
+  const sorted = [...LOAN_DATA].sort((a, b) => a.flatRate - b.flatRate);
+
+  document.getElementById('rateTableBody').innerHTML = sorted.map(l => {
+    const typeLabel = l.islamic ? 'Islamic' : 'Conv.';
+    const typeTagClass = l.islamic ? 'tag-islamic' : 'tag-conv';
+    return '<tr>' +
+      '<td class="bank-col">' + l.bank + '</td>' +
+      '<td>' + l.product + '</td>' +
+      '<td><span class="tag ' + typeTagClass + '" style="font-size:0.65rem;">' + typeLabel + '</span></td>' +
+      '<td class="' + (l.flatRate === minRate ? 'best-cell' : '') + '">' + l.flatRate.toFixed(2) + '%</td>' +
+      '<td>' + l.effectiveRate.toFixed(2) + '%</td>' +
+      '<td>' + fmtK(l.maxLoan) + '</td>' +
+      '<td>' + l.maxTenure + ' yrs</td>' +
+      '<td>' + (l.processingFee > 0 ? l.processingFee + '%' : 'Free') + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+function resetFilters() {
+  document.getElementById('filterType').value = 'all';
+  document.getElementById('filterMaxLoan').value = 'all';
+  document.getElementById('filterFee').value = 'all';
+  document.getElementById('sortBy').value = 'rate-asc';
+  document.querySelectorAll('.sort-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === 'all');
+  });
+  applyFilters();
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Init
+renderRateTable();
+applyFilters();
+</script>
+</body>
+</html>
