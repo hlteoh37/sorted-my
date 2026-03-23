@@ -363,6 +363,13 @@ footer {
 footer a { color: var(--muted); }
 footer a:hover { color: var(--text); }
 .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.profiterole-footer { border-top: 1px solid var(--border); padding: 1.5rem 1.5rem; text-align: center; font-size: 0.82rem; color: var(--muted); }
+.profiterole-footer .pf-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.profiterole-footer .pf-links a { color: var(--muted); text-decoration: none; }
+.profiterole-footer .pf-links a:hover { color: var(--text); }
+.profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
+.profiterole-footer .pf-brand a { color: var(--muted); text-decoration: none; }
+.profiterole-footer .pf-brand a:hover { color: var(--text); }
 
 /* Disclaimer */
 .disclaimer {

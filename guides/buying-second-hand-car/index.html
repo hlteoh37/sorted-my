@@ -104,7 +104,14 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
 .platform-card .p-name { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem; }
 .platform-card .p-type { font-size: 0.75rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 0.4rem; }
 .platform-card .p-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-  </style>
+  .profiterole-footer { border-top: 1px solid var(--border, #2a2a3a); padding: 1.5rem 1.5rem; text-align: center; font-size: 0.82rem; color: var(--muted, #8b949e); }
+.profiterole-footer .pf-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.profiterole-footer .pf-links a { color: var(--muted, #8b949e); text-decoration: none; }
+.profiterole-footer .pf-links a:hover { color: var(--text, #e6edf3); }
+.profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
+.profiterole-footer .pf-brand a { color: var(--muted, #8b949e); text-decoration: none; }
+.profiterole-footer .pf-brand a:hover { color: var(--text, #e6edf3); }
+</style>
 </head>
 <body>
 
@@ -559,6 +566,16 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   </div>
   <p>Sorted — Every document. Every step. Sorted. | Malaysian life admin guides.</p>
 </footer>
+<div class="profiterole-footer">
+  <div class="pf-links">
+    <a href="https://hlteoh37.github.io/sorted-my/">Sorted MY</a>
+    <a href="https://hlteoh37.github.io/profiterole-blog/">Profiterole Blog</a>
+    <a href="https://www.npmjs.com/package/mcp-devutils">mcp-devutils</a>
+    <a href="https://hlteoh37.github.io/theberean-blog/">The Berean</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+  </div>
+  <div class="pf-brand">Built by <a href="https://hlteoh37.github.io/profiterole-blog/">Profiterole</a></div>
+</div>
 
 <script>
 document.querySelectorAll('.faq-q').forEach(q => {

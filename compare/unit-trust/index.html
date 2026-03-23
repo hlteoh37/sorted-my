@@ -186,7 +186,14 @@ footer a:hover { color: var(--text); }
   .card-header { flex-direction: column; gap: 0.5rem; }
   .card-rate-block { text-align: left; }
 }
-  </style>
+  .profiterole-footer { border-top: 1px solid var(--border, #2a2a3a); padding: 1.5rem 1.5rem; text-align: center; font-size: 0.82rem; color: var(--muted, #8b949e); }
+.profiterole-footer .pf-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.profiterole-footer .pf-links a { color: var(--muted, #8b949e); text-decoration: none; }
+.profiterole-footer .pf-links a:hover { color: var(--text, #e6edf3); }
+.profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
+.profiterole-footer .pf-brand a { color: var(--muted, #8b949e); text-decoration: none; }
+.profiterole-footer .pf-brand a:hover { color: var(--text, #e6edf3); }
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -566,6 +573,16 @@ footer a:hover { color: var(--text); }
   </div>
   <p>&copy; 2026 Sorted.my &mdash; Past performance does not guarantee future results. Not financial advice.</p>
 </footer>
+<div class="profiterole-footer">
+  <div class="pf-links">
+    <a href="https://hlteoh37.github.io/sorted-my/">Sorted MY</a>
+    <a href="https://hlteoh37.github.io/profiterole-blog/">Profiterole Blog</a>
+    <a href="https://www.npmjs.com/package/mcp-devutils">mcp-devutils</a>
+    <a href="https://hlteoh37.github.io/theberean-blog/">The Berean</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+  </div>
+  <div class="pf-brand">Built by <a href="https://hlteoh37.github.io/profiterole-blog/">Profiterole</a></div>
+</div>
 
 <script>
 const FUND_DATA = [
