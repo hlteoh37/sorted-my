@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Life Insurance Malaysia 2026 — Term, Whole Life &amp; ILP Calculator | Sorted</title>
+  <meta name="description" content="Compare life insurance plans from 10 Malaysian insurers (2026). Estimate premiums by age, gender, and coverage amount. Term life, whole life, and investment-linked plans from Prudential, AIA, Great Eastern, Etiqa Takaful and more.">
+  <meta property="og:title" content="Compare Life Insurance Malaysia 2026 — Term, Whole Life &amp; ILP | Sorted">
+  <meta property="og:description" content="Estimate your life insurance premium and compare plans from Prudential, AIA, Great Eastern, Etiqa Takaful, Allianz and more. Free calculator — enter age, gender, and sum assured.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/life-insurance/">
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --card-shadow: 0 2px 12px rgba(0,0,0,0.4); --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--muted); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+
+/* Filters */
+.filters { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.filters h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 1rem; font-weight: 600; }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.filter-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.filter-group select, .filter-group input { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.875rem; font-family: var(--font); cursor: pointer; }
+.filter-group select:focus, .filter-group input:focus { outline: none; border-color: var(--accent); }
+.range-row { display: flex; align-items: center; gap: 0.75rem; }
+.range-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.range-value { font-size: 0.875rem; font-weight: 700; color: var(--accent2); font-family: monospace; min-width: 90px; text-align: right; }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.chip { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 20px; cursor: pointer; transition: all 0.15s; }
+.chip:hover { background: rgba(108,99,255,0.25); }
+.chip.active { background: var(--accent); color: white; border-color: var(--accent); }
+.reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; cursor: pointer; font-family: var(--font); margin-top: 0.75rem; }
+.reset-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Calc summary */
+.calc-summary { background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.calc-summary h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.75rem; font-weight: 600; }
+.calc-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+.cs-stat .cs-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.cs-stat .cs-value { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: monospace; }
+.cs-stat .cs-value.accent2 { color: var(--accent2); }
+
+/* Results bar */
+.results-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; gap: 0.5rem; }
+.results-count { font-weight: 600; }
+.results-count em { color: var(--accent2); font-style: normal; }
+.sort-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sort-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+.sort-btn:hover { border-color: var(--accent); color: var(--text); }
+.sort-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+/* Plan cards */
+.plan-cards { display: grid; gap: 0.75rem; }
+.plan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color 0.15s; }
+.plan-card:hover { border-color: rgba(108,99,255,0.4); }
+.plan-card.best-value { border-color: var(--accent2); border-width: 2px; }
+.plan-card.best-value::before { content: '\2605 LOWEST PREMIUM'; display: block; font-size: 0.68rem; font-weight: 700; color: var(--accent2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.card-top { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
+.card-body { margin-top: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.plan-provider { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+.plan-name { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+.plan-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.3rem; }
+.badge { font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; letter-spacing: 0.3px; text-transform: uppercase; }
+.badge-takaful { background: rgba(72,207,173,0.12); color: var(--accent2); border: 1px solid rgba(72,207,173,0.25); }
+.badge-conv { background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.badge-term { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+.badge-whole { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+.badge-ilp { background: rgba(139,139,139,0.12); color: var(--muted); border: 1px solid rgba(139,139,139,0.2); }
+.plan-pricing { text-align: right; }
+.plan-price { font-size: 1.5rem; font-weight: 800; color: var(--accent2); font-family: monospace; }
+.plan-price-unit { font-size: 0.72rem; color: var(--muted); font-weight: 400; display: block; }
+.plan-monthly { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; font-family: monospace; }
+.coverage-list { list-style: none; font-size: 0.82rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.2rem; }
+.coverage-list li::before { content: '\2713 '; color: var(--success); font-weight: 700; }
+.coverage-list li.no::before { content: '\2717 '; color: var(--danger); }
+.riders-list { font-size: 0.8rem; color: var(--muted); }
+.riders-list strong { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 0.3rem; }
+.rider-tag { display: inline-block; font-size: 0.7rem; background: var(--bg3); border: 1px solid var(--border); color: var(--muted); padding: 0.1rem 0.4rem; border-radius: 4px; margin: 0.1rem 0.15rem 0.1rem 0; }
+.best-for-row { grid-column: 1 / -1; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.65rem; margin-top: 0.1rem; }
+.best-for-row strong { color: var(--accent); }
+
+/* No results */
+.no-results { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 0.9rem; display: none; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-size: 0.95rem; font-family: var(--font); font-weight: 600; padding: 1rem 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q:hover { color: var(--accent); }
+.faq-icon { color: var(--muted); font-size: 1.1rem; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 1rem 0; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+
+/* Coffee banner */
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+
+/* Disclaimer */
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+
+/* Related */
+.related-guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; display: block; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: border-color 0.2s; }
+.related-card:hover { border-color: var(--accent); text-decoration: none; }
+.related-card .rel-desc { font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.2rem; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 1rem; } .nav-links { display: none; }
+  .filter-grid { grid-template-columns: 1fr; }
+  .card-top { grid-template-columns: 1fr; }
+  .plan-pricing { text-align: left; }
+  .card-body { grid-template-columns: 1fr; }
+  .calc-stats { grid-template-columns: 1fr 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../../">Guides</a>
+    <a href="../../">Compare Tools</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">&#9749; Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="../../" class="back-link">&larr; All Guides</a>
+    <h1>&#128737; Compare Life Insurance Malaysia 2026 <span class="tool-tag">Calculator</span></h1>
+    <p class="subtitle">Estimate annual premiums and compare term life, whole life, and investment-linked plans from major Malaysian insurers and takaful operators.</p>
+  </div>
+
+  <div class="info-box">
+    <strong>How this works:</strong> Select your age, gender, and desired coverage amount below. Premiums shown are <em>indicative estimates</em> based on published rate ranges &mdash; actual premiums depend on your health, occupation, lifestyle, and insurer underwriting. Use this tool to shortlist plans, then request a formal illustration from your chosen insurer or financial adviser.
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>&#128295; Your Profile &amp; Filters</h3>
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label>Age (Next Birthday)</label>
+        <select id="ageSelect">
+          <option value="25">25</option>
+          <option value="30" selected>30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+          <option value="60">60</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Gender</label>
+        <select id="genderSelect">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Smoker Status</label>
+        <select id="smokerSelect">
+          <option value="no" selected>Non-smoker</option>
+          <option value="yes">Smoker</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select id="sortSelect">
+          <option value="price-asc">Lowest premium first</option>
+          <option value="price-desc">Highest premium first</option>
+          <option value="provider">Provider (A&ndash;Z)</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-group" style="margin-top:1rem;">
+      <label>Sum Assured (Coverage Amount)</label>
+      <div class="range-row">
+        <input type="range" id="sumAssured" min="100000" max="1000000" step="50000" value="300000">
+        <span class="range-value" id="sumDisplay">RM 300,000</span>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Plan Type</label>
+      <div class="filter-chips" id="typeChips">
+        <span class="chip active" data-type="all">All Plans</span>
+        <span class="chip" data-type="term">Term Life</span>
+        <span class="chip" data-type="whole">Whole Life</span>
+        <span class="chip" data-type="ilp">Investment-Linked (ILP)</span>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <label style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:600;display:block;margin-bottom:0.5rem;">Provider</label>
+      <div class="filter-chips" id="providerChips">
+        <span class="chip active" data-provider="all">All Providers</span>
+        <span class="chip" data-provider="Prudential">Prudential</span>
+        <span class="chip" data-provider="AIA">AIA</span>
+        <span class="chip" data-provider="Great Eastern">Great Eastern</span>
+        <span class="chip" data-provider="Manulife">Manulife</span>
+        <span class="chip" data-provider="Allianz">Allianz</span>
+        <span class="chip" data-provider="Zurich">Zurich</span>
+        <span class="chip" data-provider="Etiqa">Etiqa Takaful</span>
+        <span class="chip" data-provider="Tokio Marine">Tokio Marine</span>
+        <span class="chip" data-provider="Sun Life">Sun Life</span>
+        <span class="chip" data-provider="FWD">FWD</span>
+      </div>
+    </div>
+    <button class="reset-btn" id="resetBtn">Reset filters</button>
+  </div>
+
+  <!-- CALC SUMMARY -->
+  <div class="calc-summary" id="calcSummary">
+    <h3>Your Coverage Summary</h3>
+    <div class="calc-stats">
+      <div class="cs-stat"><div class="cs-label">Sum Assured</div><div class="cs-value accent2" id="csSumAssured">RM 300,000</div></div>
+      <div class="cs-stat"><div class="cs-label">Profile</div><div class="cs-value" id="csProfile">Male, 30, Non-smoker</div></div>
+      <div class="cs-stat"><div class="cs-label">Cheapest Annual</div><div class="cs-value accent2" id="csCheapest">&mdash;</div></div>
+      <div class="cs-stat"><div class="cs-label">Plans Available</div><div class="cs-value" id="csCount">&mdash;</div></div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;">Rule of thumb: aim for coverage of 10&times; your annual income. If you earn RM 5,000/month, target at least RM 600,000 in sum assured.</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-bar">
+    <span class="results-count">Showing <em id="resultCount">0</em> plans</span>
+    <span style="font-size:0.78rem;color:var(--muted);">Estimates only &mdash; request a formal illustration before purchasing</span>
+  </div>
+  <div class="plan-cards" id="planCards"></div>
+  <div class="no-results" id="noResults">
+    <p>No plans match your filters. Try selecting "All Plans" or "All Providers".</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> All premiums shown are <strong>indicative estimates</strong> based on published rate ranges as of 2026. Actual premiums depend on your health declaration, occupation, lifestyle, BMI, family medical history, and the insurer's underwriting criteria. Takaful plans operate on a contribution (tabarru') model &mdash; contributions shown are approximate equivalents. Investment-linked plan (ILP) premiums assume standard allocation rates; actual investment returns are not guaranteed. Always request a formal benefit illustration from a licensed financial adviser or the insurer before purchasing.
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="section">
+    <h2>Related Guides &amp; Tools</h2>
+    <div class="related-guides">
+      <a href="../car-insurance/" class="related-card">&#128737; Car Insurance Calculator<div class="rel-desc">Compare motor insurance premiums from major Malaysian insurers</div></a>
+      <a href="../personal-loan/" class="related-card">&#128176; Personal Loan Comparison<div class="rel-desc">Compare personal loan rates from 10 Malaysian banks</div></a>
+      <a href="../../guides/epf-calculator/" class="related-card">&#128202; EPF Retirement Calculator<div class="rel-desc">Project your KWSP balance at retirement</div></a>
+      <a href="../tax-calculator/" class="related-card">&#129534; Income Tax Calculator<div class="rel-desc">Calculate your Malaysian income tax for YA 2025</div></a>
+      <a href="../savings-account/" class="related-card">&#128176; Savings Account Comparison<div class="rel-desc">Compare 16 savings accounts from Malaysian banks</div></a>
+      <a href="../home-loan/" class="related-card">&#127968; Home Loan Comparison<div class="rel-desc">Compare 17 home loan packages from 9 banks</div></a>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="coffee-banner">
+    <p>Found this useful? It takes time to research and build these tools.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="coffee-btn">&#9749; Buy us a coffee</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../../">All Guides</a>
+    <a href="../car-insurance/">Car Insurance</a>
+    <a href="../personal-loan/">Personal Loan</a>
+    <a href="../tax-calculator/">Income Tax Calculator</a>
+    <a href="../home-loan/">Home Loan</a>
+  </div>
+  <p>Sorted.my &mdash; Malaysian life admin, simplified. Estimates are for informational purposes only.</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between term life, whole life, and investment-linked insurance in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Term life provides pure protection for a fixed period (e.g. 10, 20, or 30 years) at the lowest cost — if you die or are diagnosed with TPD during the term, the insurer pays out the sum assured. Whole life covers you for your entire lifetime and builds cash value over time, but premiums are higher. Investment-linked plans (ILP) combine life insurance with an investment component — part of your premium goes to coverage and the rest is invested in unit trust funds. ILPs offer flexibility but returns are not guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much life insurance coverage do I need in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common rule of thumb is 10 times your annual income. For example, if you earn RM 5,000 per month (RM 60,000 per year), you should aim for at least RM 600,000 in coverage. Consider your outstanding debts (mortgage, car loan, PTPTN), number of dependents, children's education costs, and your spouse's earning capacity. If you have no dependents and no debt, a smaller policy may suffice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is takaful life insurance and how is it different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Takaful (family takaful) is a Shariah-compliant alternative to conventional life insurance. Participants contribute to a shared pool (tabarru') based on mutual assistance — surplus may be distributed back to participants. Coverage benefits are similar to conventional insurance. Major takaful providers in Malaysia include Prudential BSN Takaful, Etiqa Family Takaful, and Zurich Takaful. You can purchase takaful regardless of your religion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim tax relief for life insurance premiums in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Malaysian taxpayers can claim up to RM 3,000 per year for life insurance premiums (or takaful contributions) under the Life Insurance and EPF relief category. This is shared with EPF contributions under a combined limit of RM 7,000. Education and medical insurance premiums have a separate relief of up to RM 3,000. Always keep your premium receipts for tax filing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What riders should I add to my life insurance policy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common riders worth considering: (1) Critical illness — pays a lump sum upon diagnosis of 36+ critical illnesses (cancer, heart attack, stroke, etc.), (2) Medical card — covers hospitalisation costs, (3) TPD (Total and Permanent Disability), (4) Waiver of premium — waives future premiums if you become disabled, (5) Accidental death benefit — pays an additional amount for accidental death. Critical illness and medical card are the most popular riders in Malaysia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the free-look period for life insurance in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bank Negara Malaysia mandates a 15-day free-look period for all life insurance and family takaful policies. During this period, you can cancel the policy and receive a full refund of premiums paid (minus medical examination costs, if any). The 15 days start from the date you receive the policy document."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy life insurance through a bank or an insurance agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Banks sell bancassurance products (usually from one tied insurer), while independent financial advisers (IFAs) can compare plans across multiple insurers. Bank plans are convenient but may be limited in choice. An IFA or licensed financial planner can help you compare across providers and customise riders. Online direct-purchase options from FWD, AIA, and Etiqa may offer lower premiums by cutting out agent commissions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age should I buy life insurance in Malaysia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The younger and healthier you are when you buy, the lower your premiums will be. Buying in your 20s or early 30s locks in the lowest rates. Premiums increase significantly after age 40-45, and pre-existing health conditions can lead to exclusions or loading (higher premiums). If you have dependents or debt at any age, life insurance should be a priority."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+const PROVIDERS = [
+  {
+    id: 'prudential', name: 'Prudential', model: 'both',
+    plans: [
+      {
+        type: 'term', planName: 'PRUTerm Vantage',
+        baseRate: { male: 1.85, female: 1.42 }, smokerLoad: 1.65,
+        ageFactors: { 25: 0.72, 30: 1.0, 35: 1.38, 40: 1.92, 45: 2.75, 50: 4.05, 55: 6.10, 60: 9.50 },
+        coverageTerm: 'Up to age 80',
+        coverage: ['Death benefit', 'Total & permanent disability (TPD)', 'Terminal illness benefit'],
+        excluded: ['Cash value / surrender value', 'Investment returns'],
+        riders: ['Critical illness (36 conditions)', 'Waiver of premium', 'Accidental death benefit', 'Medical card (PRUMedical)'],
+        bestFor: 'Affordable pure protection with strong critical illness rider options'
+      },
+      {
+        type: 'ilp', planName: 'PRULink Gen Vantage',
+        baseRate: { male: 5.20, female: 4.30 }, smokerLoad: 1.55,
+        ageFactors: { 25: 0.75, 30: 1.0, 35: 1.35, 40: 1.85, 45: 2.60, 50: 3.80, 55: 5.60, 60: 8.50 },
+        coverageTerm: 'Up to age 100',
+        coverage: ['Death benefit', 'TPD benefit', 'Investment in PRU funds', 'Premium holiday option'],
+        excluded: ['Guaranteed cash value', 'Guaranteed returns'],
+        riders: ['Crisis cover (36 CI)', 'Waiver of premium', 'Medical card', 'PA rider'],
+        bestFor: 'Flexible ILP with wide fund choices and strong Takaful option (PRULink Vantage Takaful)'
+      }
+    ]
+  },
+  {
+    id: 'aia', name: 'AIA', model: 'conventional',
+    plans: [
+      {
+        type: 'term', planName: 'AIA Term Protect',
+        baseRate: { male: 1.78, female: 1.35 }, smokerLoad: 1.70,
+        ageFactors: { 25: 0.70, 30: 1.0, 35: 1.40, 40: 1.95, 45: 2.80, 50: 4.15, 55: 6.30, 60: 9.80 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness benefit'],
+        excluded: ['Cash value', 'Investment component'],
+        riders: ['AIA Critical Cover (42 conditions)', 'Waiver of premium', 'AIA Med Secure (medical card)', 'Accidental death'],
+        bestFor: 'Wide range of critical illness coverage (42 conditions), digital claims via AIA+ app'
+      },
+      {
+        type: 'whole', planName: 'AIA Lifetime Protect',
+        baseRate: { male: 8.50, female: 7.10 }, smokerLoad: 1.50,
+        ageFactors: { 25: 0.68, 30: 1.0, 35: 1.42, 40: 2.00, 45: 2.90, 50: 4.30, 55: 6.50, 60: 10.00 },
+        coverageTerm: 'Lifetime (to age 100)',
+        coverage: ['Death benefit', 'TPD benefit', 'Guaranteed cash value', 'Participating (dividends)'],
+        excluded: ['Investment fund choice'],
+        riders: ['Critical illness', 'Waiver of premium', 'Medical card', 'PA benefit'],
+        bestFor: 'Lifetime coverage with guaranteed cash value and potential dividends'
+      }
+    ]
+  },
+  {
+    id: 'great-eastern', name: 'Great Eastern', model: 'conventional',
+    plans: [
+      {
+        type: 'term', planName: 'GREAT Term',
+        baseRate: { male: 1.72, female: 1.30 }, smokerLoad: 1.68,
+        ageFactors: { 25: 0.71, 30: 1.0, 35: 1.36, 40: 1.90, 45: 2.72, 50: 4.00, 55: 6.00, 60: 9.40 },
+        coverageTerm: '10, 15, 20, 25, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness acceleration'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['SmartMedic (medical card)', 'Critical illness (37 conditions)', 'Waiver of premium', 'Daily hospital income'],
+        bestFor: 'Competitive term rates, strong medical card rider (SmartMedic), trusted legacy insurer'
+      },
+      {
+        type: 'ilp', planName: 'GREAT Wealth Advantage',
+        baseRate: { male: 5.00, female: 4.15 }, smokerLoad: 1.50,
+        ageFactors: { 25: 0.74, 30: 1.0, 35: 1.32, 40: 1.82, 45: 2.55, 50: 3.70, 55: 5.40, 60: 8.20 },
+        coverageTerm: 'Up to age 100',
+        coverage: ['Death benefit', 'TPD benefit', 'Investment in Great Eastern funds', 'Top-up flexibility'],
+        excluded: ['Guaranteed returns'],
+        riders: ['Critical illness', 'Medical card', 'Waiver', 'Early CI stage'],
+        bestFor: 'Well-established fund management with consistent track record'
+      }
+    ]
+  },
+  {
+    id: 'manulife', name: 'Manulife', model: 'conventional',
+    plans: [
+      {
+        type: 'term', planName: 'Manulife ReadyProtect',
+        baseRate: { male: 1.68, female: 1.28 }, smokerLoad: 1.72,
+        ageFactors: { 25: 0.69, 30: 1.0, 35: 1.39, 40: 1.93, 45: 2.78, 50: 4.10, 55: 6.20, 60: 9.60 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness benefit', 'Convertible to whole life'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['Critical illness (36 conditions)', 'Waiver of premium', 'Medical card (ReadyMedic)', 'Child rider'],
+        bestFor: 'Competitive term rates with option to convert to whole life later without medical re-underwriting'
+      },
+      {
+        type: 'whole', planName: 'Manulife Gio Lifetime',
+        baseRate: { male: 8.20, female: 6.85 }, smokerLoad: 1.48,
+        ageFactors: { 25: 0.67, 30: 1.0, 35: 1.40, 40: 1.98, 45: 2.85, 50: 4.20, 55: 6.35, 60: 9.80 },
+        coverageTerm: 'Lifetime',
+        coverage: ['Death benefit', 'TPD benefit', 'Guaranteed cash value', 'Non-guaranteed bonuses'],
+        excluded: ['Investment fund choice'],
+        riders: ['Critical illness', 'Waiver of premium', 'Medical card', 'Lady rider'],
+        bestFor: 'Solid whole life with competitive cash value accumulation'
+      }
+    ]
+  },
+  {
+    id: 'allianz', name: 'Allianz', model: 'conventional',
+    plans: [
+      {
+        type: 'ilp', planName: 'Allianz Life Cover Plus',
+        baseRate: { male: 4.80, female: 3.95 }, smokerLoad: 1.55,
+        ageFactors: { 25: 0.73, 30: 1.0, 35: 1.34, 40: 1.84, 45: 2.58, 50: 3.75, 55: 5.50, 60: 8.30 },
+        coverageTerm: 'Up to age 80',
+        coverage: ['Death benefit', 'TPD benefit', 'Investment component', 'Premium holiday'],
+        excluded: ['Guaranteed returns'],
+        riders: ['Critical illness (36+ conditions)', 'Medical card (Allianz MediSafe)', 'Waiver', 'PA benefit'],
+        bestFor: 'Strong ILP with Allianz MediSafe medical card — one of the widest hospital networks in MY'
+      },
+      {
+        type: 'term', planName: 'Allianz TermLife Smart',
+        baseRate: { male: 1.80, female: 1.38 }, smokerLoad: 1.65,
+        ageFactors: { 25: 0.71, 30: 1.0, 35: 1.37, 40: 1.91, 45: 2.74, 50: 4.02, 55: 6.05, 60: 9.45 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['Critical illness', 'Waiver of premium', 'MediSafe medical card', 'Accidental death'],
+        bestFor: 'Good term rates with access to Allianz MediSafe hospital network'
+      }
+    ]
+  },
+  {
+    id: 'zurich', name: 'Zurich', model: 'both',
+    plans: [
+      {
+        type: 'term', planName: 'Z-Term Protect',
+        baseRate: { male: 1.75, female: 1.33 }, smokerLoad: 1.68,
+        ageFactors: { 25: 0.70, 30: 1.0, 35: 1.37, 40: 1.91, 45: 2.74, 50: 4.03, 55: 6.08, 60: 9.50 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness benefit'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['Critical illness (37 conditions)', 'Waiver', 'Z-MedProtect (medical card)', 'Accidental death'],
+        bestFor: 'Both conventional and Takaful options, strong Z-MedProtect medical card'
+      },
+      {
+        type: 'ilp', planName: 'Zurich Invest Link',
+        baseRate: { male: 5.10, female: 4.22 }, smokerLoad: 1.52,
+        ageFactors: { 25: 0.74, 30: 1.0, 35: 1.33, 40: 1.83, 45: 2.57, 50: 3.73, 55: 5.45, 60: 8.25 },
+        coverageTerm: 'Up to age 100',
+        coverage: ['Death benefit', 'TPD benefit', 'Investment in Zurich funds', 'Top-up option'],
+        excluded: ['Guaranteed returns'],
+        riders: ['Critical illness', 'Medical card', 'Waiver', 'Early CI'],
+        bestFor: 'Dual conventional/Takaful availability with competitive fund performance'
+      }
+    ]
+  },
+  {
+    id: 'etiqa', name: 'Etiqa', model: 'takaful',
+    plans: [
+      {
+        type: 'term', planName: 'Etiqa TPRO',
+        baseRate: { male: 1.62, female: 1.25 }, smokerLoad: 1.70,
+        ageFactors: { 25: 0.68, 30: 1.0, 35: 1.38, 40: 1.92, 45: 2.76, 50: 4.08, 55: 6.15, 60: 9.55 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit (tabarru\')', 'TPD benefit', 'Terminal illness', 'Surplus sharing'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['Critical illness (36 conditions)', 'Waiver of contribution', 'Medical takaful card', 'PA benefit'],
+        bestFor: 'Often the lowest-cost Takaful term plan with surplus-sharing potential'
+      },
+      {
+        type: 'ilp', planName: 'Etiqa EliteLink',
+        baseRate: { male: 4.65, female: 3.85 }, smokerLoad: 1.52,
+        ageFactors: { 25: 0.72, 30: 1.0, 35: 1.33, 40: 1.82, 45: 2.55, 50: 3.68, 55: 5.35, 60: 8.10 },
+        coverageTerm: 'Up to age 100',
+        coverage: ['Death benefit', 'TPD benefit', 'Investment in Takaful funds', 'Surplus sharing'],
+        excluded: ['Guaranteed returns'],
+        riders: ['Critical illness', 'Medical takaful card', 'Waiver', 'Education benefit'],
+        bestFor: 'Shariah-compliant ILP with online purchase option and competitive fund performance'
+      }
+    ]
+  },
+  {
+    id: 'tokio-marine', name: 'Tokio Marine', model: 'conventional',
+    plans: [
+      {
+        type: 'whole', planName: 'TM Lifetime Shield',
+        baseRate: { male: 8.00, female: 6.70 }, smokerLoad: 1.50,
+        ageFactors: { 25: 0.66, 30: 1.0, 35: 1.41, 40: 1.98, 45: 2.88, 50: 4.25, 55: 6.40, 60: 9.90 },
+        coverageTerm: 'Lifetime',
+        coverage: ['Death benefit', 'TPD benefit', 'Guaranteed cash value', 'Annual bonus (non-guaranteed)'],
+        excluded: ['Investment fund choice'],
+        riders: ['Critical illness (36 conditions)', 'Waiver of premium', 'Medical card', 'Hospitalisation income'],
+        bestFor: 'Reputable global insurer, consistent bonus track record, good for conservative savers'
+      },
+      {
+        type: 'term', planName: 'TM Term Assurance',
+        baseRate: { male: 1.70, female: 1.30 }, smokerLoad: 1.68,
+        ageFactors: { 25: 0.70, 30: 1.0, 35: 1.37, 40: 1.90, 45: 2.73, 50: 4.02, 55: 6.05, 60: 9.42 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['Critical illness', 'Waiver', 'Medical card', 'Accidental death'],
+        bestFor: 'Competitive term rates from a globally-rated insurer'
+      }
+    ]
+  },
+  {
+    id: 'sunlife', name: 'Sun Life', model: 'conventional',
+    plans: [
+      {
+        type: 'term', planName: 'Sun Protect Term',
+        baseRate: { male: 1.74, female: 1.32 }, smokerLoad: 1.70,
+        ageFactors: { 25: 0.70, 30: 1.0, 35: 1.38, 40: 1.92, 45: 2.76, 50: 4.06, 55: 6.12, 60: 9.55 },
+        coverageTerm: '10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness benefit'],
+        excluded: ['Cash value', 'Investment returns'],
+        riders: ['Critical illness (36 conditions)', 'Waiver of premium', 'Medical card', 'Accidental death'],
+        bestFor: 'Competitive term rates, strong in employee benefits — good for self-employed seeking individual plans'
+      },
+      {
+        type: 'ilp', planName: 'Sun Life Wealth Edge',
+        baseRate: { male: 4.90, female: 4.05 }, smokerLoad: 1.52,
+        ageFactors: { 25: 0.73, 30: 1.0, 35: 1.34, 40: 1.84, 45: 2.58, 50: 3.74, 55: 5.48, 60: 8.28 },
+        coverageTerm: 'Up to age 100',
+        coverage: ['Death benefit', 'TPD benefit', 'Investment in Sun Life funds', 'Top-up flexibility'],
+        excluded: ['Guaranteed returns'],
+        riders: ['Critical illness', 'Medical card', 'Waiver', 'PA benefit'],
+        bestFor: 'Global fund management expertise with access to international funds'
+      }
+    ]
+  },
+  {
+    id: 'fwd', name: 'FWD', model: 'conventional',
+    plans: [
+      {
+        type: 'term', planName: 'FWD Term Life',
+        baseRate: { male: 1.55, female: 1.18 }, smokerLoad: 1.72,
+        ageFactors: { 25: 0.68, 30: 1.0, 35: 1.40, 40: 1.95, 45: 2.82, 50: 4.18, 55: 6.35, 60: 9.90 },
+        coverageTerm: '5, 10, 20, or 30 years',
+        coverage: ['Death benefit', 'TPD benefit', 'Terminal illness benefit'],
+        excluded: ['Cash value', 'Investment returns', 'Medical card rider'],
+        riders: ['Critical illness (basic)', 'Accidental death'],
+        bestFor: 'Lowest-cost online-first term plan — buy direct, skip agent commission'
+      },
+      {
+        type: 'term', planName: 'FWD Cancer Care',
+        baseRate: { male: 0.85, female: 0.78 }, smokerLoad: 1.80,
+        ageFactors: { 25: 0.65, 30: 1.0, 35: 1.45, 40: 2.05, 45: 3.00, 50: 4.50, 55: 7.00, 60: 11.00 },
+        coverageTerm: '10 or 20 years',
+        coverage: ['Cancer lump sum payout', 'Early-stage cancer benefit (25%)', 'Second opinion service'],
+        excluded: ['Death benefit (non-cancer)', 'TPD', 'Other critical illnesses'],
+        riders: [],
+        bestFor: 'Standalone affordable cancer-specific cover — good as a supplement to basic life insurance'
+      }
+    ]
+  }
+];
+
+const TYPE_LABELS = { term: 'Term Life', whole: 'Whole Life', ilp: 'Investment-Linked' };
+const TYPE_BADGE = { term: 'badge-term', whole: 'badge-whole', ilp: 'badge-ilp' };
+const MODEL_BADGE = { conventional: 'badge-conv', takaful: 'badge-takaful', both: 'badge-takaful' };
+const MODEL_LABEL = { conventional: 'Conventional', takaful: 'Takaful', both: 'Conv. & Takaful' };
+
+let state = {
+  age: 30, gender: 'male', smoker: 'no', sumAssured: 300000,
+  type: 'all', provider: 'all', sort: 'price-asc'
+};
+
+function calcPremium(plan) {
+  const base = plan.baseRate[state.gender];
+  const ageFactor = plan.ageFactors[state.age] || 1.0;
+  const smokerFactor = state.smoker === 'yes' ? plan.smokerLoad : 1.0;
+  const perThousand = base * ageFactor * smokerFactor;
+  const annual = (state.sumAssured / 1000) * perThousand;
+  const serviceTax = annual * 0.08;
+  const total = annual + serviceTax;
+  return { annual, serviceTax, total, monthly: total / 12, perThousand };
+}
+
+function fmtRM(n) {
+  return 'RM ' + Math.round(n).toLocaleString('en-MY');
+}
+
+function renderCards() {
+  const container = document.getElementById('planCards');
+  const noResults = document.getElementById('noResults');
+  const items = [];
+
+  PROVIDERS.forEach(p => {
+    if (state.provider !== 'all' && p.name !== state.provider) return;
+    p.plans.forEach(plan => {
+      if (state.type !== 'all' && plan.type !== state.type) return;
+      const premium = calcPremium(plan);
+      items.push({ provider: p, plan, premium });
+    });
+  });
+
+  if (state.sort === 'price-asc') items.sort((a, b) => a.premium.total - b.premium.total);
+  else if (state.sort === 'price-desc') items.sort((a, b) => b.premium.total - a.premium.total);
+  else items.sort((a, b) => a.provider.name.localeCompare(b.provider.name));
+
+  document.getElementById('resultCount').textContent = items.length;
+  document.getElementById('csCount').textContent = items.length;
+  document.getElementById('csSumAssured').textContent = fmtRM(state.sumAssured);
+  document.getElementById('csProfile').textContent =
+    (state.gender === 'male' ? 'Male' : 'Female') + ', ' + state.age +
+    ', ' + (state.smoker === 'yes' ? 'Smoker' : 'Non-smoker');
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+    document.getElementById('csCheapest').textContent = '\u2014';
+    return;
+  }
+  noResults.style.display = 'none';
+
+  const lowestPrice = Math.min(...items.map(i => i.premium.total));
+  document.getElementById('csCheapest').textContent = fmtRM(lowestPrice) + '/yr';
+
+  container.innerHTML = items.map(item => {
+    const { provider: p, plan, premium } = item;
+    const isBest = Math.abs(premium.total - lowestPrice) < 1;
+
+    const coverageHtml = plan.coverage.map(c => '<li>' + c + '</li>').join('');
+    const exclHtml = plan.excluded.map(c => '<li class="no">' + c + '</li>').join('');
+    const ridersHtml = plan.riders.length > 0
+      ? plan.riders.map(r => '<span class="rider-tag">' + r + '</span>').join('')
+      : '<span style="font-size:0.78rem;color:var(--muted)">Limited riders available</span>';
+
+    return '<div class="plan-card' + (isBest ? ' best-value' : '') + '">' +
+      '<div class="card-top">' +
+        '<div>' +
+          '<div class="plan-provider">' + p.name + '</div>' +
+          '<div class="plan-name">' + plan.planName + ' &mdash; ' + plan.coverageTerm + '</div>' +
+          '<div class="plan-badges">' +
+            '<span class="badge ' + MODEL_BADGE[p.model] + '">' + MODEL_LABEL[p.model] + '</span>' +
+            '<span class="badge ' + TYPE_BADGE[plan.type] + '">' + TYPE_LABELS[plan.type] + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="plan-pricing">' +
+          '<div class="plan-price">' + fmtRM(premium.total) + '</div>' +
+          '<span class="plan-price-unit">est. per year (incl. 8% tax)</span>' +
+          '<div class="plan-monthly">' + fmtRM(premium.monthly) + '/month</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-body">' +
+        '<div><ul class="coverage-list">' + coverageHtml + exclHtml + '</ul></div>' +
+        '<div class="riders-list"><strong>Optional Riders</strong>' + ridersHtml + '</div>' +
+        '<div class="best-for-row"><strong>Best for:</strong> ' + plan.bestFor + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// Event listeners
+document.getElementById('ageSelect').addEventListener('change', e => { state.age = parseInt(e.target.value); renderCards(); });
+document.getElementById('genderSelect').addEventListener('change', e => { state.gender = e.target.value; renderCards(); });
+document.getElementById('smokerSelect').addEventListener('change', e => { state.smoker = e.target.value; renderCards(); });
+document.getElementById('sortSelect').addEventListener('change', e => { state.sort = e.target.value; renderCards(); });
+
+const sumSlider = document.getElementById('sumAssured');
+const sumDisplay = document.getElementById('sumDisplay');
+sumSlider.addEventListener('input', () => {
+  state.sumAssured = parseInt(sumSlider.value);
+  sumDisplay.textContent = 'RM ' + state.sumAssured.toLocaleString('en-MY');
+  renderCards();
+});
+
+document.getElementById('typeChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#typeChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.type = chip.dataset.type;
+  renderCards();
+});
+
+document.getElementById('providerChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('#providerChips .chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  state.provider = chip.dataset.provider;
+  renderCards();
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  state = { age: 30, gender: 'male', smoker: 'no', sumAssured: 300000, type: 'all', provider: 'all', sort: 'price-asc' };
+  document.getElementById('ageSelect').value = '30';
+  document.getElementById('genderSelect').value = 'male';
+  document.getElementById('smokerSelect').value = 'no';
+  document.getElementById('sortSelect').value = 'price-asc';
+  sumSlider.value = 300000;
+  sumDisplay.textContent = 'RM 300,000';
+  document.querySelectorAll('#typeChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  document.querySelectorAll('#providerChips .chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+  renderCards();
+});
+
+// FAQ
+const FAQS = [
+  { q: 'What is the difference between term life, whole life, and investment-linked insurance?', a: '<strong>Term life</strong> provides pure death protection for a fixed period (10, 20, or 30 years) at the lowest cost &mdash; no cash value builds up. <strong>Whole life</strong> covers you for your entire lifetime and builds guaranteed cash value, but premiums are 4&ndash;5&times; higher. <strong>Investment-linked plans (ILP)</strong> combine insurance with a unit trust investment &mdash; part of your premium pays for protection and the rest is invested. ILPs offer flexibility but returns are not guaranteed and fees are higher.' },
+  { q: 'How much life insurance coverage do I need?', a: 'A common rule of thumb is <strong>10&times; your annual income</strong>. If you earn RM 5,000/month (RM 60,000/year), aim for at least RM 600,000. Also consider: outstanding mortgage, car loan, PTPTN, children\'s education costs, and your spouse\'s income. If you have no dependents and no debt, a smaller policy may be sufficient.' },
+  { q: 'What is takaful (family takaful) and how does it differ?', a: 'Takaful is a Shariah-compliant alternative to conventional insurance. Participants contribute to a shared mutual pool (tabarru\') &mdash; any surplus may be distributed back. Coverage benefits are similar to conventional insurance. Major takaful providers in Malaysia include Prudential BSN Takaful, Etiqa Family Takaful, and Zurich Takaful. You can purchase takaful regardless of religion.' },
+  { q: 'Can I claim tax relief for my life insurance premiums?', a: 'Yes. Malaysian taxpayers can claim up to <strong>RM 3,000/year</strong> for life insurance premiums (or takaful contributions) under the Life Insurance &amp; EPF relief category (shared with EPF up to RM 7,000 combined). Education and medical insurance premiums have a separate relief of up to RM 3,000. Keep your premium receipts for tax filing.' },
+  { q: 'What riders should I add to my life insurance?', a: 'The most popular riders in Malaysia are: (1) <strong>Critical illness</strong> &mdash; lump sum payout on diagnosis of 36+ conditions (cancer, heart attack, stroke), (2) <strong>Medical card</strong> &mdash; cashless hospitalisation, (3) <strong>Waiver of premium</strong> &mdash; waives future premiums if you become disabled, (4) <strong>Accidental death benefit</strong> &mdash; extra payout for accidental death. Critical illness and medical card are considered essential by most financial planners.' },
+  { q: 'What is the free-look period?', a: 'Bank Negara Malaysia mandates a <strong>15-day free-look period</strong> for all life insurance and family takaful policies. During this period, you can cancel and receive a full refund of premiums paid (minus medical exam costs, if any). The 15 days start from the date you receive the policy document.' },
+  { q: 'Should I buy through a bank, agent, or online?', a: '<strong>Banks</strong> sell bancassurance products (usually from one tied insurer) &mdash; convenient but limited choice. <strong>Independent financial advisers (IFAs)</strong> can compare across multiple insurers and customise riders. <strong>Online direct purchase</strong> (FWD, AIA, Etiqa) may offer lower premiums by cutting agent commissions. An IFA is recommended for complex needs; online is great for simple term life.' },
+  { q: 'At what age should I buy life insurance?', a: 'The <strong>younger you buy, the cheaper</strong> your premiums. A 25-year-old pays roughly 30% less than a 35-year-old for the same coverage. After age 40&ndash;45, premiums increase significantly. Pre-existing health conditions can lead to exclusions or premium loading. If you have dependents or debt, life insurance should be an immediate priority regardless of age.' }
+];
+
+document.getElementById('faqList').innerHTML = FAQS.map((f, i) =>
+  '<div class="faq-item" id="faq' + i + '">' +
+    '<button class="faq-q" onclick="toggleFaq(' + i + ')">' + f.q + '<span class="faq-icon">+</span></button>' +
+    '<div class="faq-a">' + f.a + '</div>' +
+  '</div>'
+).join('');
+
+function toggleFaq(i) {
+  document.getElementById('faq' + i).classList.toggle('open');
+}
+
+// Init
+renderCards();
+</script>
+</body>
+</html>
