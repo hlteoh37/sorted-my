@@ -508,8 +508,12 @@ footer a:hover { color: var(--text); }
         <div class="rel-desc">Compare 17 home loan packages</div>
       </a>
       <a href="../credit-card/" class="related-card">
-        💳 Credit Card Comparison
-        <div class="rel-desc">Find the best cashback or rewards card</div>
+        💳 Compare Credit Cards
+        <div class="rel-desc">Best cashback, rewards and travel cards in Malaysia</div>
+      </a>
+      <a href="../savings-account/" class="related-card">
+        🏦 Compare Savings Accounts
+        <div class="rel-desc">Find the best interest rates to grow your savings</div>
       </a>
       <a href="../tax-calculator/" class="related-card">
         🧾 Income Tax Calculator
@@ -538,20 +542,20 @@ footer a:hover { color: var(--text); }
 
 <script>
 const LOAN_DATA = [
-  { bank: "Maybank", product: "Maybank Personal Loan", type: "conventional", flatRate: 6.88, effectiveRate: 12.38, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, features: "No processing fee, fast approval, salary deduction available" },
-  { bank: "Maybank", product: "Maybank Personal Financing-i", type: "islamic", flatRate: 7.00, effectiveRate: 12.60, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, features: "Shariah-compliant (Tawarruq), no processing fee" },
-  { bank: "CIMB", product: "CIMB PersonalOne", type: "conventional", flatRate: 7.00, effectiveRate: 12.60, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, features: "Up to RM200k, no processing fee, online application" },
-  { bank: "CIMB", product: "CIMB Personal Financing-i", type: "islamic", flatRate: 7.20, effectiveRate: 12.96, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, features: "Shariah-compliant, up to RM200k" },
-  { bank: "Public Bank", product: "PB Personal Loan", type: "conventional", flatRate: 7.48, effectiveRate: 13.46, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2500, processingFee: 1, islamic: false, govt: false, features: "1% processing fee, established bank" },
-  { bank: "Hong Leong Bank", product: "HLB Personal Loan", type: "conventional", flatRate: 7.88, effectiveRate: 14.18, maxLoan: 150000, minLoan: 5000, maxTenure: 5, minIncome: 2000, processingFee: 1, islamic: false, govt: false, features: "Online application, 1% processing fee" },
-  { bank: "RHB", product: "RHB Personal Loan", type: "conventional", flatRate: 7.50, effectiveRate: 13.50, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, features: "Up to RM200k, no processing fee" },
-  { bank: "RHB", product: "RHB Personal Financing-i", type: "islamic", flatRate: 7.68, effectiveRate: 13.82, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, features: "Shariah-compliant (Commodity Murabahah), up to RM200k" },
-  { bank: "AmBank", product: "AmBank PersonalOne", type: "conventional", flatRate: 8.00, effectiveRate: 14.40, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 1, islamic: false, govt: false, features: "1% processing fee, online application" },
-  { bank: "Alliance Bank", product: "Alliance CashFirst", type: "conventional", flatRate: 8.88, effectiveRate: 15.98, maxLoan: 100000, minLoan: 5000, maxTenure: 5, minIncome: 2000, processingFee: 1, islamic: false, govt: false, features: "Fast disbursement, 1% processing fee" },
-  { bank: "Standard Chartered", product: "SC CashOne", type: "conventional", flatRate: 7.90, effectiveRate: 14.22, maxLoan: 200000, minLoan: 10000, maxTenure: 5, minIncome: 3000, processingFee: 0, islamic: false, govt: false, features: "Premium bank, no processing fee, higher min income" },
-  { bank: "BSN", product: "BSN MyRinggit-i", type: "islamic", flatRate: 4.99, effectiveRate: 9.10, maxLoan: 150000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, features: "Government-backed, lowest rate, Shariah-compliant, salary deduction" },
-  { bank: "Bank Rakyat", product: "Personal Financing-i", type: "islamic", flatRate: 5.50, effectiveRate: 9.90, maxLoan: 200000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, features: "Co-operative bank, competitive rate, salary deduction" },
-  { bank: "MBSB Bank", product: "MBSB Personal Financing-i", type: "islamic", flatRate: 5.80, effectiveRate: 10.44, maxLoan: 200000, minLoan: 2000, maxTenure: 10, minIncome: 1500, processingFee: 0, islamic: true, govt: true, features: "Government-linked, competitive rates for govt servants" }
+  { bank: "Maybank", product: "Maybank Personal Loan", type: "conventional", flatRate: 6.88, effectiveRate: 12.38, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, url: "https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/loans/personal_financing.page", features: "No processing fee, fast approval, salary deduction available" },
+  { bank: "Maybank", product: "Maybank Personal Financing-i", type: "islamic", flatRate: 7.00, effectiveRate: 12.60, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, url: "https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/loans/personal_financing.page", features: "Shariah-compliant (Tawarruq), no processing fee" },
+  { bank: "CIMB", product: "CIMB PersonalOne", type: "conventional", flatRate: 7.00, effectiveRate: 12.60, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, url: "https://www.cimb.com.my/en/personal/banking-with-us/loans/personal-loan.html", features: "Up to RM200k, no processing fee, online application" },
+  { bank: "CIMB", product: "CIMB Personal Financing-i", type: "islamic", flatRate: 7.20, effectiveRate: 12.96, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, url: "https://www.cimb.com.my/en/personal/banking-with-us/loans/personal-loan.html", features: "Shariah-compliant, up to RM200k" },
+  { bank: "Public Bank", product: "PB Personal Loan", type: "conventional", flatRate: 7.48, effectiveRate: 13.46, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2500, processingFee: 1, islamic: false, govt: false, url: "https://www.pbebank.com/personal-banking/loans/personal-loan", features: "1% processing fee, established bank" },
+  { bank: "Hong Leong Bank", product: "HLB Personal Loan", type: "conventional", flatRate: 7.88, effectiveRate: 14.18, maxLoan: 150000, minLoan: 5000, maxTenure: 5, minIncome: 2000, processingFee: 1, islamic: false, govt: false, url: "https://www.hlb.com.my/en/personal-banking/loans/personal-loan.html", features: "Online application, 1% processing fee" },
+  { bank: "RHB", product: "RHB Personal Loan", type: "conventional", flatRate: 7.50, effectiveRate: 13.50, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: false, govt: false, url: "https://www.rhbgroup.com/personal/loans/personal-loan/index.html", features: "Up to RM200k, no processing fee" },
+  { bank: "RHB", product: "RHB Personal Financing-i", type: "islamic", flatRate: 7.68, effectiveRate: 13.82, maxLoan: 200000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 0, islamic: true, govt: false, url: "https://www.rhbgroup.com/personal/loans/personal-loan/index.html", features: "Shariah-compliant (Commodity Murabahah), up to RM200k" },
+  { bank: "AmBank", product: "AmBank PersonalOne", type: "conventional", flatRate: 8.00, effectiveRate: 14.40, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2000, processingFee: 1, islamic: false, govt: false, url: "https://www.ambank.com.my/eng/personal-banking/loans/personal-financing", features: "1% processing fee, online application" },
+  { bank: "Alliance Bank", product: "Alliance CashFirst", type: "conventional", flatRate: 8.88, effectiveRate: 15.98, maxLoan: 100000, minLoan: 5000, maxTenure: 5, minIncome: 2000, processingFee: 1, islamic: false, govt: false, url: "https://www.alliancebank.com.my/personal-banking/loans/personal-loan.aspx", features: "Fast disbursement, 1% processing fee" },
+  { bank: "Standard Chartered", product: "SC CashOne", type: "conventional", flatRate: 7.90, effectiveRate: 14.22, maxLoan: 200000, minLoan: 10000, maxTenure: 5, minIncome: 3000, processingFee: 0, islamic: false, govt: false, url: "https://www.sc.com/my/borrow/personal-loan/", features: "Premium bank, no processing fee, higher min income" },
+  { bank: "BSN", product: "BSN MyRinggit-i", type: "islamic", flatRate: 4.99, effectiveRate: 9.10, maxLoan: 150000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, url: "https://www.bsn.com.my/personal/financing/myringgit-i", features: "Government-backed, lowest rate, Shariah-compliant, salary deduction" },
+  { bank: "Bank Rakyat", product: "Personal Financing-i", type: "islamic", flatRate: 5.50, effectiveRate: 9.90, maxLoan: 200000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, url: "https://www.bankrakyat.com.my/personal-financing-i", features: "Co-operative bank, competitive rate, salary deduction" },
+  { bank: "MBSB Bank", product: "MBSB Personal Financing-i", type: "islamic", flatRate: 5.80, effectiveRate: 10.44, maxLoan: 200000, minLoan: 2000, maxTenure: 10, minIncome: 1500, processingFee: 0, islamic: true, govt: true, url: "https://www.mbsbbank.com/personal/financing/personal-financing-i", features: "Government-linked, competitive rates for govt servants" }
 ];
 
 function calcMonthly(principal, flatRate, tenureYears) {
@@ -705,7 +709,9 @@ function renderCards(loans, principal, tenure) {
       '<div class="card-badge">★ Lowest Rate</div>' +
       '<div class="card-header">' +
         '<div>' +
-          '<div class="card-bank">' + l.bank + '</div>' +
+          '<div class="card-bank" style="display:flex;align-items:center;gap:0.5rem;">' + l.bank +
+            (l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;">Visit ' + l.bank + ' &rarr;</a>' : '') +
+          '</div>' +
           '<div class="card-type">' + l.product + '</div>' +
         '</div>' +
         '<div class="card-rate-block">' +

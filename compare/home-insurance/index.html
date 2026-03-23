@@ -378,6 +378,7 @@ const PROVIDERS = [
   {
     id: 'allianz',
     name: 'Allianz',
+    url: 'https://www.allianz.com.my/personal/home-insurance.html',
     type: 'conventional',
     rates: { houseowner: 0.000415, householder: 0.00235 },
     highrise_adj: 0.9,
@@ -396,6 +397,7 @@ const PROVIDERS = [
   {
     id: 'etiqa',
     name: 'Etiqa',
+    url: 'https://www.etiqa.com.my/v2/home-insurance',
     type: 'takaful',
     rates: { houseowner: 0.000380, householder: 0.00210 },
     highrise_adj: 0.88,
@@ -414,6 +416,7 @@ const PROVIDERS = [
   {
     id: 'zurich',
     name: 'Zurich',
+    url: 'https://www.zurich.com.my/en/insurance/home-insurance',
     type: 'both',
     rates: { houseowner: 0.000425, householder: 0.00240 },
     highrise_adj: 0.9,
@@ -432,6 +435,7 @@ const PROVIDERS = [
   {
     id: 'msig',
     name: 'MSIG',
+    url: 'https://www.msig.com.my/insurance-for-you/home',
     type: 'conventional',
     rates: { houseowner: 0.000410, householder: 0.00230 },
     highrise_adj: 0.9,
@@ -450,6 +454,7 @@ const PROVIDERS = [
   {
     id: 'tokio',
     name: 'Tokio Marine',
+    url: 'https://www.tokiomarine.com/my/en/personal/home-insurance.html',
     type: 'conventional',
     rates: { houseowner: 0.000420, householder: 0.00238 },
     highrise_adj: 0.9,
@@ -468,6 +473,7 @@ const PROVIDERS = [
   {
     id: 'lonpac',
     name: 'Lonpac',
+    url: 'https://www.lonpac.com/personal/fire-insurance',
     type: 'conventional',
     rates: { houseowner: 0.000395, householder: 0.00215 },
     highrise_adj: 0.88,
@@ -486,6 +492,7 @@ const PROVIDERS = [
   {
     id: 'aig',
     name: 'AIG',
+    url: 'https://www.aig.com.my/personal/home-insurance',
     type: 'conventional',
     rates: { houseowner: 0.000435, householder: 0.00250 },
     highrise_adj: 0.92,
@@ -504,6 +511,7 @@ const PROVIDERS = [
   {
     id: 'rhb',
     name: 'RHB Insurance',
+    url: 'https://www.rhbinsurance.com.my/personal/home-insurance',
     type: 'conventional',
     rates: { houseowner: 0.000405, householder: 0.00225 },
     highrise_adj: 0.9,
@@ -592,7 +600,9 @@ function renderCards() {
 
     return '<div class="plan-card' + (isBest ? ' best-value' : '') + '">' +
       '<div class="card-top"><div>' +
-        '<div class="plan-provider">' + p.name + '</div>' +
+        '<div class="plan-provider" style="display:flex;align-items:center;gap:0.5rem;">' + p.name +
+        (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;">Visit ' + p.name + ' &rarr;</a>' : '') +
+        '</div>' +
         '<div class="plan-badges">' +
           '<span class="badge ' + typeBadge + '">' + typeLabel + '</span>' +
           '<span class="badge ' + POLICY_BADGE[pt] + '">' + POLICY_LABELS[pt] + '</span>' +

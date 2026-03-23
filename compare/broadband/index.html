@@ -350,31 +350,31 @@ footer a:hover { color: var(--text); }
 // ==================== PLAN DATA ====================
 const plans = [
   // Unifi (TM)
-  { provider: "Unifi", sub: "Telekom Malaysia", speed: 100, price: 89, contract: true, contractMonths: 24, bestFor: "Budget / first-time", coverage: "Nationwide", upload: "30 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "Unifi", sub: "Telekom Malaysia", speed: 300, price: 129, contract: true, contractMonths: 24, bestFor: "Families (4–6 users)", coverage: "Nationwide", upload: "50 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "Unifi", sub: "Telekom Malaysia", speed: 500, price: 149, contract: true, contractMonths: 24, bestFor: "WFH + streaming", coverage: "Nationwide", upload: "100 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "Unifi", sub: "Telekom Malaysia", speed: 1000, price: 229, contract: true, contractMonths: 24, bestFor: "Power users", coverage: "Nationwide", upload: "500 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "Unifi", sub: "Telekom Malaysia", speed: 2000, price: 319, contract: true, contractMonths: 24, bestFor: "Max speed on TM", coverage: "Nationwide", upload: "500 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 100, price: 89, contract: true, contractMonths: 24, bestFor: "Budget / first-time", coverage: "Nationwide", upload: "30 Mbps", router: "Wi-Fi 6 included", url: "https://unifi.com.my/personal/broadband" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 300, price: 129, contract: true, contractMonths: 24, bestFor: "Families (4–6 users)", coverage: "Nationwide", upload: "50 Mbps", router: "Wi-Fi 6 included", url: "https://unifi.com.my/personal/broadband" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 500, price: 149, contract: true, contractMonths: 24, bestFor: "WFH + streaming", coverage: "Nationwide", upload: "100 Mbps", router: "Wi-Fi 6 included", url: "https://unifi.com.my/personal/broadband" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 1000, price: 229, contract: true, contractMonths: 24, bestFor: "Power users", coverage: "Nationwide", upload: "500 Mbps", router: "Wi-Fi 6 included", url: "https://unifi.com.my/personal/broadband" },
+  { provider: "Unifi", sub: "Telekom Malaysia", speed: 2000, price: 319, contract: true, contractMonths: 24, bestFor: "Max speed on TM", coverage: "Nationwide", upload: "500 Mbps", router: "Wi-Fi 6 included", url: "https://unifi.com.my/personal/broadband" },
 
   // TIME
-  { provider: "TIME", sub: "Time dotCom", speed: 200, price: 99, contract: false, contractMonths: 0, bestFor: "Flexible tenants", coverage: "Condos (KL, PJ, Penang, JB)", upload: "200 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "TIME", sub: "Time dotCom", speed: 600, price: 139, contract: false, contractMonths: 0, bestFor: "Speed seekers", coverage: "Condos (KL, PJ, Penang, JB)", upload: "500 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "TIME", sub: "Time dotCom", speed: 1000, price: 199, contract: true, contractMonths: 24, bestFor: "Power users / gamers", coverage: "Condos (KL, PJ, Penang, JB)", upload: "1000 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "TIME", sub: "Time dotCom", speed: 2000, price: 379, contract: true, contractMonths: 24, bestFor: "10G PON early adopters", coverage: "Condos (KL, PJ, Penang, JB)", upload: "2000 Mbps", router: "Wi-Fi 6E included" },
+  { provider: "TIME", sub: "Time dotCom", speed: 200, price: 99, contract: false, contractMonths: 0, bestFor: "Flexible tenants", coverage: "Condos (KL, PJ, Penang, JB)", upload: "200 Mbps", router: "Wi-Fi 6 included", url: "https://www.time.com.my/personal/broadband" },
+  { provider: "TIME", sub: "Time dotCom", speed: 600, price: 139, contract: false, contractMonths: 0, bestFor: "Speed seekers", coverage: "Condos (KL, PJ, Penang, JB)", upload: "500 Mbps", router: "Wi-Fi 6 included", url: "https://www.time.com.my/personal/broadband" },
+  { provider: "TIME", sub: "Time dotCom", speed: 1000, price: 199, contract: true, contractMonths: 24, bestFor: "Power users / gamers", coverage: "Condos (KL, PJ, Penang, JB)", upload: "1000 Mbps", router: "Wi-Fi 6 included", url: "https://www.time.com.my/personal/broadband" },
+  { provider: "TIME", sub: "Time dotCom", speed: 2000, price: 379, contract: true, contractMonths: 24, bestFor: "10G PON early adopters", coverage: "Condos (KL, PJ, Penang, JB)", upload: "2000 Mbps", router: "Wi-Fi 6E included", url: "https://www.time.com.my/personal/broadband" },
 
   // Maxis
-  { provider: "Maxis", sub: "Maxis Fibre", speed: 100, price: 89, contract: false, contractMonths: 0, bestFor: "Maxis mobile users", coverage: "TM network coverage", upload: "30 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "Maxis", sub: "Maxis Fibre", speed: 300, price: 129, contract: false, contractMonths: 0, bestFor: "Bundle with postpaid", coverage: "TM network coverage", upload: "50 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "Maxis", sub: "Maxis Fibre", speed: 500, price: 149, contract: false, contractMonths: 0, bestFor: "WFH bundle", coverage: "TM network coverage", upload: "100 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "Maxis", sub: "Maxis Fibre", speed: 100, price: 89, contract: false, contractMonths: 0, bestFor: "Maxis mobile users", coverage: "TM network coverage", upload: "30 Mbps", router: "Wi-Fi 6 included", url: "https://www.maxis.com.my/en/home/fibre/" },
+  { provider: "Maxis", sub: "Maxis Fibre", speed: 300, price: 129, contract: false, contractMonths: 0, bestFor: "Bundle with postpaid", coverage: "TM network coverage", upload: "50 Mbps", router: "Wi-Fi 6 included", url: "https://www.maxis.com.my/en/home/fibre/" },
+  { provider: "Maxis", sub: "Maxis Fibre", speed: 500, price: 149, contract: false, contractMonths: 0, bestFor: "WFH bundle", coverage: "TM network coverage", upload: "100 Mbps", router: "Wi-Fi 6 included", url: "https://www.maxis.com.my/en/home/fibre/" },
 
   // CelcomDigi
-  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 50, price: 90, contract: true, contractMonths: 24, bestFor: "Light users", coverage: "TM network coverage", upload: "20 Mbps", router: "Wi-Fi 5 included" },
-  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 100, price: 110, contract: true, contractMonths: 24, bestFor: "CD postpaid bundle", coverage: "TM network coverage", upload: "30 Mbps", router: "Wi-Fi 6 included" },
-  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 300, price: 150, contract: true, contractMonths: 24, bestFor: "Family bundle", coverage: "TM network coverage", upload: "50 Mbps", router: "Wi-Fi 6 included" },
+  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 50, price: 90, contract: true, contractMonths: 24, bestFor: "Light users", coverage: "TM network coverage", upload: "20 Mbps", router: "Wi-Fi 5 included", url: "https://www.celcomdigi.com/fibre-broadband" },
+  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 100, price: 110, contract: true, contractMonths: 24, bestFor: "CD postpaid bundle", coverage: "TM network coverage", upload: "30 Mbps", router: "Wi-Fi 6 included", url: "https://www.celcomdigi.com/fibre-broadband" },
+  { provider: "CelcomDigi", sub: "CelcomDigi Fibre", speed: 300, price: 150, contract: true, contractMonths: 24, bestFor: "Family bundle", coverage: "TM network coverage", upload: "50 Mbps", router: "Wi-Fi 6 included", url: "https://www.celcomdigi.com/fibre-broadband" },
 
   // Yes 5G
-  { provider: "Yes", sub: "Yes 5G Wireless", speed: 100, price: 99, contract: false, contractMonths: 0, bestFor: "No cable access", coverage: "5G areas (major cities)", upload: "Varies", router: "5G modem included" },
-  { provider: "Yes", sub: "Yes 5G Wireless", speed: 300, price: 149, contract: false, contractMonths: 0, bestFor: "Wireless speed seekers", coverage: "5G areas (major cities)", upload: "Varies", router: "5G modem included" },
+  { provider: "Yes", sub: "Yes 5G Wireless", speed: 100, price: 99, contract: false, contractMonths: 0, bestFor: "No cable access", coverage: "5G areas (major cities)", upload: "Varies", router: "5G modem included", url: "https://www.yes.my/broadband" },
+  { provider: "Yes", sub: "Yes 5G Wireless", speed: 300, price: 149, contract: false, contractMonths: 0, bestFor: "Wireless speed seekers", coverage: "5G areas (major cities)", upload: "Varies", router: "5G modem included", url: "https://www.yes.my/broadband" },
 ];
 
 // ==================== STATE ====================
@@ -439,7 +439,7 @@ function renderPlans() {
     return `
       <div class="plan-card${isBest ? ' best-match' : ''}" data-price="${p.price}" data-speed="${p.speed}" data-provider="${p.provider}" data-upload="${p.upload}" data-contract="${p.contract ? p.contractMonths + ' months' : 'No contract'}" data-coverage="${p.coverage}" data-router="${p.router}" onclick="selectPlan(this)">
         <div class="plan-info">
-          <div class="plan-provider">${p.provider}<span class="provider-sub">${p.sub}</span></div>
+          <div class="plan-provider" style="display:flex;align-items:center;">${p.provider}<span class="provider-sub">${p.sub}</span>${p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;" onclick="event.stopPropagation()">Visit ' + p.provider + ' &rarr;</a>' : ''}</div>
           <div class="plan-details">
             <span class="plan-tag tag-speed">${formatSpeed(p.speed)} ↓ / ${p.upload} ↑</span>
             ${contractTag}

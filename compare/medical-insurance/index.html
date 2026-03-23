@@ -395,7 +395,8 @@ const PLANS = [
     excluded: ['Outpatient GP visits', 'Dental', 'Maternity'],
     details: ['Panel: 300+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 80', 'Waiting period: 30 days (120 days for specific illnesses)'],
     bestFor: 'Comprehensive rider plan with no lifetime limit — pair with PRULink for flexible ILP + medical combo',
-    basePremium: { 18: 680, 25: 780, 30: 920, 35: 1150, 40: 1480, 45: 1980, 50: 2680, 55: 3650, 60: 5100, 65: 7200, 70: 10200 }
+    basePremium: { 18: 680, 25: 780, 30: 920, 35: 1150, 40: 1480, 45: 1980, 50: 2680, 55: 3650, 60: 5100, 65: 7200, 70: 10200 },
+    url: 'https://www.prudential.com.my/en/our-products/medical-insurance/'
   },
   {
     provider: 'Prudential', model: 'both', planName: 'PRUMy Medical Plus (RM 200K)',
@@ -405,7 +406,8 @@ const PLANS = [
     excluded: ['Outpatient GP visits', 'Dental', 'Maternity', 'Organ transplant'],
     details: ['Panel: 300+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 80', 'Waiting period: 30 days'],
     bestFor: 'Budget-friendly medical rider with no lifetime limit — good entry point for young professionals',
-    basePremium: { 18: 420, 25: 480, 30: 560, 35: 720, 40: 950, 45: 1280, 50: 1750, 55: 2400, 60: 3400, 65: 4800, 70: 6900 }
+    basePremium: { 18: 420, 25: 480, 30: 560, 35: 720, 40: 950, 45: 1280, 50: 1750, 55: 2400, 60: 3400, 65: 4800, 70: 6900 },
+    url: 'https://www.prudential.com.my/en/our-products/medical-insurance/'
   },
   {
     provider: 'AIA', model: 'conventional', planName: 'AIA A-Plus Health',
@@ -415,7 +417,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 350+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K/20K)', 'Co-insurance: 10% after age 70', 'Waiting period: 30 days'],
     bestFor: 'High annual limit (RM 1M) with one of the widest hospital panels in Malaysia — excellent for comprehensive private hospital coverage',
-    basePremium: { 18: 850, 25: 980, 30: 1180, 35: 1480, 40: 1920, 45: 2580, 50: 3520, 55: 4800, 60: 6700, 65: 9500, 70: 13500 }
+    basePremium: { 18: 850, 25: 980, 30: 1180, 35: 1480, 40: 1920, 45: 2580, 50: 3520, 55: 4800, 60: 6700, 65: 9500, 70: 13500 },
+    url: 'https://www.aia.com.my/en/our-products/medical-protection.html'
   },
   {
     provider: 'AIA', model: 'conventional', planName: 'AIA Med Regular',
@@ -425,7 +428,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
     details: ['Panel: 350+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 70', 'Waiting period: 30 days'],
     bestFor: 'Affordable entry-level medical rider with RM 200K limit — good for those with employer medical coverage as top-up',
-    basePremium: { 18: 380, 25: 440, 30: 520, 35: 670, 40: 880, 45: 1200, 50: 1650, 55: 2280, 60: 3200, 65: 4600, 70: 6600 }
+    basePremium: { 18: 380, 25: 440, 30: 520, 35: 670, 40: 880, 45: 1200, 50: 1650, 55: 2280, 60: 3200, 65: 4600, 70: 6600 },
+    url: 'https://www.aia.com.my/en/our-products/medical-protection.html'
   },
   {
     provider: 'Great Eastern', model: 'conventional', planName: 'SmartMedic A+',
@@ -435,7 +439,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 280+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: Nil up to age 80', 'Waiting period: 30 days'],
     bestFor: 'No co-insurance until age 80 — one of the most generous co-insurance terms among Malaysian medical plans',
-    basePremium: { 18: 820, 25: 950, 30: 1120, 35: 1420, 40: 1850, 45: 2480, 50: 3380, 55: 4600, 60: 6400, 65: 9100, 70: 12900 }
+    basePremium: { 18: 820, 25: 950, 30: 1120, 35: 1420, 40: 1850, 45: 2480, 50: 3380, 55: 4600, 60: 6400, 65: 9100, 70: 12900 },
+    url: 'https://www.greateasternlife.com/my/en/personal-insurance/medical-insurance.html'
   },
   {
     provider: 'Great Eastern', model: 'conventional', planName: 'SmartMedic B',
@@ -445,7 +450,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
     details: ['Panel: 280+ hospitals', 'Deductible: RM 0', 'Co-insurance: Nil up to age 80', 'Waiting period: 30 days'],
     bestFor: 'Mid-tier plan with generous no-co-insurance terms — great value for 2-bed ward coverage',
-    basePremium: { 18: 450, 25: 520, 30: 610, 35: 780, 40: 1020, 45: 1380, 50: 1900, 55: 2600, 60: 3650, 65: 5200, 70: 7400 }
+    basePremium: { 18: 450, 25: 520, 30: 610, 35: 780, 40: 1020, 45: 1380, 50: 1900, 55: 2600, 60: 3650, 65: 5200, 70: 7400 },
+    url: 'https://www.greateasternlife.com/my/en/personal-insurance/medical-insurance.html'
   },
   {
     provider: 'Allianz', model: 'conventional', planName: 'Allianz PowerLink Infinite',
@@ -455,7 +461,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity (unless rider added)', 'Outpatient GP visits'],
     details: ['Panel: 320+ hospitals', 'Deductible: RM 0 (option for RM 10K/20K/30K)', 'Co-insurance: 10% after age 70 (above RM 100K/year)', 'Worldwide coverage (excl. USA)', 'Waiting period: 30 days'],
     bestFor: 'Unlimited annual limit with worldwide coverage — the premium choice for maximum medical protection',
-    basePremium: { 18: 1350, 25: 1580, 30: 1880, 35: 2380, 40: 3100, 45: 4200, 50: 5750, 55: 7900, 60: 11000, 65: 15500, 70: 22000 }
+    basePremium: { 18: 1350, 25: 1580, 30: 1880, 35: 2380, 40: 3100, 45: 4200, 50: 5750, 55: 7900, 60: 11000, 65: 15500, 70: 22000 },
+    url: 'https://www.allianz.com.my/personal/medical-insurance.html'
   },
   {
     provider: 'Allianz', model: 'conventional', planName: 'Allianz MediSafe Essential',
@@ -465,7 +472,8 @@ const PLANS = [
     excluded: ['Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 320+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 70', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
     bestFor: 'Most affordable medical card in Malaysia — basic hospital coverage for budget-conscious buyers',
-    basePremium: { 18: 280, 25: 320, 30: 380, 35: 490, 40: 650, 45: 880, 50: 1220, 55: 1680, 60: 2380, 65: 3400, 70: 4900 }
+    basePremium: { 18: 280, 25: 320, 30: 380, 35: 490, 40: 650, 45: 880, 50: 1220, 55: 1680, 60: 2380, 65: 3400, 70: 4900 },
+    url: 'https://www.allianz.com.my/personal/medical-insurance.html'
   },
   {
     provider: 'Zurich', model: 'both', planName: 'Z-MedProtect',
@@ -475,7 +483,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 300+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 80', 'Both conventional & Takaful available', 'Waiting period: 30 days'],
     bestFor: 'Available in both conventional and Takaful versions — flexible for customers who may switch later',
-    basePremium: { 18: 720, 25: 830, 30: 980, 35: 1230, 40: 1600, 45: 2150, 50: 2920, 55: 3980, 60: 5550, 65: 7900, 70: 11200 }
+    basePremium: { 18: 720, 25: 830, 30: 980, 35: 1230, 40: 1600, 45: 2150, 50: 2920, 55: 3980, 60: 5550, 65: 7900, 70: 11200 },
+    url: 'https://www.zurich.com.my/en/insurance/medical-insurance'
   },
   {
     provider: 'Zurich', model: 'both', planName: 'Z-MedProtect (RM 1M)',
@@ -485,7 +494,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 300+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K/20K)', 'Co-insurance: 10% after age 80', 'Both conventional & Takaful', 'Waiting period: 30 days'],
     bestFor: 'High-limit plan with conventional and Takaful flexibility — good for families wanting consistent coverage across different plan types',
-    basePremium: { 18: 900, 25: 1050, 30: 1250, 35: 1580, 40: 2050, 45: 2750, 50: 3750, 55: 5100, 60: 7100, 65: 10100, 70: 14300 }
+    basePremium: { 18: 900, 25: 1050, 30: 1250, 35: 1580, 40: 2050, 45: 2750, 50: 3750, 55: 5100, 60: 7100, 65: 10100, 70: 14300 },
+    url: 'https://www.zurich.com.my/en/insurance/medical-insurance'
   },
   {
     provider: 'Etiqa', model: 'takaful', planName: 'Etiqa Medical Booster',
@@ -495,7 +505,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 250+ hospitals', 'Deductible: RM 0 (option for RM 5K)', 'Co-insurance: 10% after age 80', 'Takaful surplus sharing', 'Waiting period: 30 days'],
     bestFor: 'Shariah-compliant medical takaful with surplus sharing potential — often among the lowest-cost Takaful medical plans',
-    basePremium: { 18: 650, 25: 750, 30: 880, 35: 1100, 40: 1420, 45: 1900, 50: 2580, 55: 3520, 60: 4900, 65: 6950, 70: 9850 }
+    basePremium: { 18: 650, 25: 750, 30: 880, 35: 1100, 40: 1420, 45: 1900, 50: 2580, 55: 3520, 60: 4900, 65: 6950, 70: 9850 },
+    url: 'https://www.etiqa.com.my/v2/medical-insurance'
   },
   {
     provider: 'Etiqa', model: 'takaful', planName: 'Etiqa HealthGuard 200',
@@ -505,7 +516,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
     details: ['Panel: 250+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 80', 'Takaful surplus sharing', 'Waiting period: 30 days'],
     bestFor: 'Budget Takaful medical plan with 2-bed ward — good for those wanting Shariah compliance at a lower cost',
-    basePremium: { 18: 400, 25: 460, 30: 540, 35: 690, 40: 900, 45: 1220, 50: 1680, 55: 2300, 60: 3250, 65: 4650, 70: 6650 }
+    basePremium: { 18: 400, 25: 460, 30: 540, 35: 690, 40: 900, 45: 1220, 50: 1680, 55: 2300, 60: 3250, 65: 4650, 70: 6650 },
+    url: 'https://www.etiqa.com.my/v2/medical-insurance'
   },
   {
     provider: 'Tokio Marine', model: 'conventional', planName: 'TM Medical Plan A',
@@ -515,7 +527,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 260+ hospitals', 'Deductible: RM 0 (option for RM 5K)', 'Co-insurance: Nil up to age 75, 10% after', 'Waiting period: 30 days'],
     bestFor: 'Reputable global insurer with no co-insurance until age 75 — reliable claims track record',
-    basePremium: { 18: 750, 25: 860, 30: 1020, 35: 1280, 40: 1660, 45: 2220, 50: 3020, 55: 4120, 60: 5750, 65: 8150, 70: 11600 }
+    basePremium: { 18: 750, 25: 860, 30: 1020, 35: 1280, 40: 1660, 45: 2220, 50: 3020, 55: 4120, 60: 5750, 65: 8150, 70: 11600 },
+    url: 'https://www.tokiomarine.com/my/en/personal/medical-insurance.html'
   },
   {
     provider: 'Tokio Marine', model: 'conventional', planName: 'TM Medical Plan C',
@@ -525,7 +538,8 @@ const PLANS = [
     excluded: ['Outpatient cancer treatment', 'Organ transplant', 'Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 260+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 75', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
     bestFor: 'Affordable basic medical card from a globally-rated insurer — good for young budget-conscious buyers',
-    basePremium: { 18: 290, 25: 340, 30: 400, 35: 510, 40: 680, 45: 920, 50: 1280, 55: 1760, 60: 2500, 65: 3550, 70: 5100 }
+    basePremium: { 18: 290, 25: 340, 30: 400, 35: 510, 40: 680, 45: 920, 50: 1280, 55: 1760, 60: 2500, 65: 3550, 70: 5100 },
+    url: 'https://www.tokiomarine.com/my/en/personal/medical-insurance.html'
   },
   {
     provider: 'AXA Affin', model: 'conventional', planName: 'AXA eMedic',
@@ -535,7 +549,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
     details: ['Panel: 200+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 75', 'Online purchase available', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
     bestFor: 'One of the few standalone (no base policy needed) medical plans — buy online, no agent required',
-    basePremium: { 18: 350, 25: 400, 30: 470, 35: 600, 40: 790, 45: 1070, 50: 1480, 55: 2040, 60: 2880, 65: 4100, 70: 5900 }
+    basePremium: { 18: 350, 25: 400, 30: 470, 35: 600, 40: 790, 45: 1070, 50: 1480, 55: 2040, 60: 2880, 65: 4100, 70: 5900 },
+    url: 'https://www.axa.com.my/medical-insurance'
   },
   {
     provider: 'AXA Affin', model: 'conventional', planName: 'AXA MediSmart',
@@ -545,7 +560,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 200+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 75', 'Standalone — no base policy needed', 'Waiting period: 30 days'],
     bestFor: 'Standalone medical plan with RM 500K limit — no need for a base life/ILP policy, simpler to manage',
-    basePremium: { 18: 780, 25: 900, 30: 1060, 35: 1340, 40: 1740, 45: 2340, 50: 3180, 55: 4350, 60: 6050, 65: 8600, 70: 12200 }
+    basePremium: { 18: 780, 25: 900, 30: 1060, 35: 1340, 40: 1740, 45: 2340, 50: 3180, 55: 4350, 60: 6050, 65: 8600, 70: 12200 },
+    url: 'https://www.axa.com.my/medical-insurance'
   },
   {
     provider: 'FWD', model: 'conventional', planName: 'FWD Medical Plan',
@@ -555,7 +571,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Organ transplant', 'Outpatient GP visits'],
     details: ['Panel: 180+ hospitals', 'Deductible: RM 0', 'Co-insurance: Nil up to age 80', 'Online-first — buy direct, no agent', 'Waiting period: 30 days'],
     bestFor: 'Online direct-purchase standalone medical plan — no agent commission means competitive pricing',
-    basePremium: { 18: 380, 25: 440, 30: 520, 35: 660, 40: 860, 45: 1160, 50: 1600, 55: 2200, 60: 3100, 65: 4400, 70: 6300 }
+    basePremium: { 18: 380, 25: 440, 30: 520, 35: 660, 40: 860, 45: 1160, 50: 1600, 55: 2200, 60: 3100, 65: 4400, 70: 6300 },
+    url: 'https://www.fwd.com.my/medical-insurance/'
   },
   {
     provider: 'Manulife', model: 'conventional', planName: 'ManuMedical Pro',
@@ -565,7 +582,8 @@ const PLANS = [
     excluded: ['Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 280+ hospitals', 'Deductible: RM 0 (option for RM 5K/10K)', 'Co-insurance: 10% after age 80', 'Waiting period: 30 days'],
     bestFor: 'Solid medical rider from a global insurer with competitive rates for 30-50 age range',
-    basePremium: { 18: 700, 25: 810, 30: 950, 35: 1200, 40: 1550, 45: 2080, 50: 2830, 55: 3860, 60: 5380, 65: 7650, 70: 10850 }
+    basePremium: { 18: 700, 25: 810, 30: 950, 35: 1200, 40: 1550, 45: 2080, 50: 2830, 55: 3860, 60: 5380, 65: 7650, 70: 10850 },
+    url: 'https://www.manulife.com.my/en/individual/products/medical-insurance.html'
   },
   {
     provider: 'Manulife', model: 'conventional', planName: 'ManuMedical Basic',
@@ -575,7 +593,8 @@ const PLANS = [
     excluded: ['Outpatient cancer treatment', 'Kidney dialysis', 'Organ transplant', 'Dental', 'Maternity', 'Outpatient GP visits'],
     details: ['Panel: 280+ hospitals', 'Deductible: RM 0', 'Co-insurance: 10% after age 80', 'Lifetime limit: RM 500K', 'Waiting period: 30 days'],
     bestFor: 'Affordable basic medical card — pair with employer coverage for comprehensive protection',
-    basePremium: { 18: 260, 25: 300, 30: 350, 35: 450, 40: 600, 45: 820, 50: 1140, 55: 1570, 60: 2220, 65: 3180, 70: 4580 }
+    basePremium: { 18: 260, 25: 300, 30: 350, 35: 450, 40: 600, 45: 820, 50: 1140, 55: 1570, 60: 2220, 65: 3180, 70: 4580 },
+    url: 'https://www.manulife.com.my/en/individual/products/medical-insurance.html'
   }
 ];
 
@@ -664,7 +683,7 @@ function renderCards() {
     return '<div class="plan-card' + (isBest ? ' best-value' : '') + '">' +
       '<div class="card-top">' +
         '<div>' +
-          '<div class="plan-provider">' + plan.provider + '</div>' +
+          '<div class="plan-provider" style="display:flex;align-items:center;gap:0.5rem;">' + plan.provider + (plan.url ? '<a href="' + plan.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;">Visit ' + plan.provider + ' &rarr;</a>' : '') + '</div>' +
           '<div class="plan-name">' + plan.planName + ' &mdash; Annual limit: ' + fmtLimit(plan.annualLimit) + ' | Room: ' + ROOM_LABELS[plan.roomType] + ' (RM ' + plan.roomBoard + '/day)</div>' +
           '<div class="plan-badges">' +
             '<span class="badge ' + modelBadge + '">' + MODEL_LABELS[plan.model] + '</span>' +

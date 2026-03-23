@@ -324,6 +324,10 @@ footer a:hover { color: var(--text); }
         🎓 PTPTN Repayment Calculator
         <div class="rel-desc">Manage student loan repayments alongside your car loan</div>
       </a>
+      <a href="../car-insurance/" class="related-card">
+        🛡️ Compare Car Insurance
+        <div class="rel-desc">Compare premiums from Allianz, Etiqa, Zurich and more — you'll need insurance for your new car</div>
+      </a>
     </div>
   </div>
 
@@ -375,11 +379,11 @@ footer a:hover { color: var(--text); }
 
 <script>
 const BANKS = [
-  { name: 'Maybank',      rate: 2.99, tag: 'Lowest',  note: 'MAE customers may qualify for preferential rates' },
-  { name: 'Public Bank',  rate: 3.15, tag: null,       note: 'Competitive for Proton/Perodua vehicles' },
-  { name: 'CIMB',         rate: 3.25, tag: null,       note: 'Flexible repayment options available' },
-  { name: 'Hong Leong',   rate: 3.35, tag: null,       note: 'Good for Toyota/Honda models' },
-  { name: 'RHB',          rate: 3.50, tag: null,       note: 'Promotions available for select brands' },
+  { name: 'Maybank',      rate: 2.99, tag: 'Lowest',  note: 'MAE customers may qualify for preferential rates', url: 'https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/loans/car_financing.page' },
+  { name: 'Public Bank',  rate: 3.15, tag: null,       note: 'Competitive for Proton/Perodua vehicles', url: 'https://www.pbebank.com/personal-banking/loans/hire-purchase' },
+  { name: 'CIMB',         rate: 3.25, tag: null,       note: 'Flexible repayment options available', url: 'https://www.cimb.com.my/en/personal/banking-with-us/loans/auto-finance.html' },
+  { name: 'Hong Leong',   rate: 3.35, tag: null,       note: 'Good for Toyota/Honda models', url: 'https://www.hlb.com.my/en/personal-banking/loans/car-loan.html' },
+  { name: 'RHB',          rate: 3.50, tag: null,       note: 'Promotions available for select brands', url: 'https://www.rhbgroup.com/personal/loans/auto-finance/index.html' },
 ];
 
 function fmt(n) {
@@ -437,7 +441,7 @@ function calculate() {
     if (i === 0) tr.classList.add('highlight');
     const savings = i > 0 ? ` (+RM ${(b.monthly - minMonthly).toFixed(2)}/mo)` : '';
     tr.innerHTML = `
-      <td class="bank-name">${b.name}${b.tag ? `<span class="bank-tag">${b.tag}</span>` : ''}</td>
+      <td class="bank-name">${b.name}${b.tag ? `<span class="bank-tag">${b.tag}</span>` : ''}${b.url ? ` <a href="${b.url}" target="_blank" rel="noopener" style="font-size:0.72rem;color:var(--accent);">Visit →</a>` : ''}</td>
       <td class="rate-cell">${b.rate.toFixed(2)}%</td>
       <td class="monthly-amt">${fmt(b.monthly)}${savings ? `<br><span style="font-size:0.72rem;color:var(--warn);font-weight:400">${savings}</span>` : ''}</td>
       <td class="rate-cell">${fmt(b.totalInterest)}</td>

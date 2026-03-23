@@ -393,6 +393,10 @@ footer a:hover { color: var(--text); }
         🗂️ All Sorted MY Guides
         <div class="rel-desc">Housing, finance, telecoms, and more</div>
       </a>
+      <a href="../ewallet/" class="related-card">
+        💳 Compare E-Wallets
+        <div class="rel-desc">TNG, GrabPay, Boost, MAE — compare cashback and features</div>
+      </a>
     </div>
   </div>
 
@@ -419,180 +423,209 @@ const PLANS = [
     provider: 'CelcomDigi', name: 'BEST Prepaid 30',
     type: 'prepaid', price: 30, data: 15, dataDisplay: '15 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'Light users & backup SIM'
+    bestFor: 'Light users & backup SIM',
+    url: 'https://www.celcomdigi.com/plans'
   },
   {
     provider: 'CelcomDigi', name: 'BEST Prepaid 50',
     type: 'prepaid', price: 50, data: 30, dataDisplay: '30 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Mid-range prepaid with 5G'
+    bestFor: 'Mid-range prepaid with 5G',
+    url: 'https://www.celcomdigi.com/plans'
   },
   {
     provider: 'CelcomDigi', name: 'BEST Prepaid 80',
     type: 'prepaid', price: 80, data: 65, dataDisplay: '65 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Heavy prepaid users'
+    bestFor: 'Heavy prepaid users',
+    url: 'https://www.celcomdigi.com/plans'
   },
   {
     provider: 'CelcomDigi', name: 'Postpaid 50',
     type: 'postpaid', price: 50, data: 20, dataDisplay: '20 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: false,
-    bestFor: 'Budget postpaid starter'
+    bestFor: 'Budget postpaid starter',
+    url: 'https://www.celcomdigi.com/plans'
   },
   {
     provider: 'CelcomDigi', name: 'Postpaid 80',
     type: 'postpaid', price: 80, data: 50, dataDisplay: '50 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
-    bestFor: 'Mid-tier postpaid with 5G'
+    bestFor: 'Mid-tier postpaid with 5G',
+    url: 'https://www.celcomdigi.com/plans'
   },
   {
     provider: 'CelcomDigi', name: 'Postpaid 100',
     type: 'postpaid', price: 100, data: 100, dataDisplay: '100 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
-    bestFor: 'Power users, hotspot sharing'
+    bestFor: 'Power users, hotspot sharing',
+    url: 'https://www.celcomdigi.com/plans'
   },
   {
     provider: 'CelcomDigi', name: 'Postpaid 130',
     type: 'postpaid', price: 130, data: 999, dataDisplay: 'Unlimited',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
-    bestFor: 'Unlimited data on 5G'
+    bestFor: 'Unlimited data on 5G',
+    url: 'https://www.celcomdigi.com/plans'
   },
   // ── Maxis ──
   {
     provider: 'Maxis', name: 'HotLink Red 35',
     type: 'prepaid', price: 35, data: 15, dataDisplay: '15 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'Flexible Maxis prepaid'
+    bestFor: 'Flexible Maxis prepaid',
+    url: 'https://www.maxis.com.my/en/plans/'
   },
   {
     provider: 'Maxis', name: 'HotLink Red Plus 60',
     type: 'prepaid', price: 60, data: 40, dataDisplay: '40 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Mid-range Maxis 5G prepaid'
+    bestFor: 'Mid-range Maxis 5G prepaid',
+    url: 'https://www.maxis.com.my/en/plans/'
   },
   {
     provider: 'Maxis', name: 'Postpaid 60',
     type: 'postpaid', price: 60, data: 30, dataDisplay: '30 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: false,
-    bestFor: 'Entry postpaid with Maxis network'
+    bestFor: 'Entry postpaid with Maxis network',
+    url: 'https://www.maxis.com.my/en/plans/'
   },
   {
     provider: 'Maxis', name: 'Postpaid 98',
     type: 'postpaid', price: 98, data: 80, dataDisplay: '80 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
-    bestFor: 'High-data 5G postpaid'
+    bestFor: 'High-data 5G postpaid',
+    url: 'https://www.maxis.com.my/en/plans/'
   },
   {
     provider: 'Maxis', name: 'Postpaid 128',
     type: 'postpaid', price: 128, data: 999, dataDisplay: 'Unlimited',
     calls: 'Unlimited', sms: 'Unlimited', contract: 24, fiveG: true,
-    bestFor: 'Unlimited data & 5G'
+    bestFor: 'Unlimited data & 5G',
+    url: 'https://www.maxis.com.my/en/plans/'
   },
   // ── U Mobile ──
   {
     provider: 'U Mobile', name: 'Giler Unlimited Prepaid',
     type: 'prepaid', price: 40, data: 999, dataDisplay: 'Unlimited*',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'Budget unlimited prepaid'
+    bestFor: 'Budget unlimited prepaid',
+    url: 'https://www.u.com.my/en/personal/plan'
   },
   {
     provider: 'U Mobile', name: '5G Prepaid 55',
     type: 'prepaid', price: 55, data: 30, dataDisplay: '30 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: '5G prepaid with no contract'
+    bestFor: '5G prepaid with no contract',
+    url: 'https://www.u.com.my/en/personal/plan'
   },
   {
     provider: 'U Mobile', name: 'Postpaid P58',
     type: 'postpaid', price: 58, data: 30, dataDisplay: '30 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'No-contract postpaid'
+    bestFor: 'No-contract postpaid',
+    url: 'https://www.u.com.my/en/personal/plan'
   },
   {
     provider: 'U Mobile', name: 'Postpaid P98',
     type: 'postpaid', price: 98, data: 100, dataDisplay: '100 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'High data, no contract, 5G'
+    bestFor: 'High data, no contract, 5G',
+    url: 'https://www.u.com.my/en/personal/plan'
   },
   {
     provider: 'U Mobile', name: 'Postpaid P138',
     type: 'postpaid', price: 138, data: 999, dataDisplay: 'Unlimited',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Unlimited no-contract postpaid'
+    bestFor: 'Unlimited no-contract postpaid',
+    url: 'https://www.u.com.my/en/personal/plan'
   },
   // ── Yes 4G/5G ──
   {
     provider: 'Yes', name: '5G Go Prepaid 38',
     type: 'prepaid', price: 38, data: 20, dataDisplay: '20 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Affordable 5G prepaid'
+    bestFor: 'Affordable 5G prepaid',
+    url: 'https://www.yes.my/plans'
   },
   {
     provider: 'Yes', name: '5G Freedom 65',
     type: 'postpaid', price: 65, data: 50, dataDisplay: '50 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: '5G postpaid, no contract'
+    bestFor: '5G postpaid, no contract',
+    url: 'https://www.yes.my/plans'
   },
   {
     provider: 'Yes', name: '5G Freedom 95',
     type: 'postpaid', price: 95, data: 100, dataDisplay: '100 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'High-data 5G, no contract'
+    bestFor: 'High-data 5G, no contract',
+    url: 'https://www.yes.my/plans'
   },
   // ── Unifi Mobile ──
   {
     provider: 'Unifi Mobile', name: 'Prepaid 30',
     type: 'prepaid', price: 30, data: 10, dataDisplay: '10 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'Budget prepaid on Unifi network'
+    bestFor: 'Budget prepaid on Unifi network',
+    url: 'https://unifi.com.my/personal/mobile'
   },
   {
     provider: 'Unifi Mobile', name: 'Prepaid 50',
     type: 'prepaid', price: 50, data: 30, dataDisplay: '30 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Mid-range prepaid with 5G'
+    bestFor: 'Mid-range prepaid with 5G',
+    url: 'https://unifi.com.my/personal/mobile'
   },
   {
     provider: 'Unifi Mobile', name: 'Postpaid 45',
     type: 'postpaid', price: 45, data: 20, dataDisplay: '20 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'Affordable no-contract postpaid'
+    bestFor: 'Affordable no-contract postpaid',
+    url: 'https://unifi.com.my/personal/mobile'
   },
   {
     provider: 'Unifi Mobile', name: 'Postpaid 65',
     type: 'postpaid', price: 65, data: 40, dataDisplay: '40 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Good value 5G postpaid, no contract'
+    bestFor: 'Good value 5G postpaid, no contract',
+    url: 'https://unifi.com.my/personal/mobile'
   },
   {
     provider: 'Unifi Mobile', name: 'Postpaid 99',
     type: 'postpaid', price: 99, data: 80, dataDisplay: '80 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'High data 5G postpaid, no contract'
+    bestFor: 'High data 5G postpaid, no contract',
+    url: 'https://unifi.com.my/personal/mobile'
   },
   {
     provider: 'Unifi Mobile', name: 'Postpaid 149',
     type: 'postpaid', price: 149, data: 999, dataDisplay: 'Unlimited',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: true,
-    bestFor: 'Unlimited 5G, no contract'
+    bestFor: 'Unlimited 5G, no contract',
+    url: 'https://unifi.com.my/personal/mobile'
   },
   // ── Tune Talk ──
   {
     provider: 'Tune Talk', name: 'Prepaid Basic 25',
     type: 'prepaid', price: 25, data: 10, dataDisplay: '10 GB',
     calls: '100 mins', sms: '50 SMS', contract: 0, fiveG: false,
-    bestFor: 'Lowest cost prepaid'
+    bestFor: 'Lowest cost prepaid',
+    url: 'https://www.tunetalk.com/plans'
   },
   {
     provider: 'Tune Talk', name: 'Active Prepaid 45',
     type: 'prepaid', price: 45, data: 25, dataDisplay: '25 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 0, fiveG: false,
-    bestFor: 'Value prepaid, no 5G needed'
+    bestFor: 'Value prepaid, no 5G needed',
+    url: 'https://www.tunetalk.com/plans'
   },
   {
     provider: 'Tune Talk', name: 'Postpaid 55',
     type: 'postpaid', price: 55, data: 30, dataDisplay: '30 GB',
     calls: 'Unlimited', sms: 'Unlimited', contract: 12, fiveG: false,
-    bestFor: 'Budget postpaid on Celcom network'
+    bestFor: 'Budget postpaid on Celcom network',
+    url: 'https://www.tunetalk.com/plans'
   }
 ];
 
@@ -704,7 +737,7 @@ function render() {
 
     return `<div class="plan-card${isBest ? ' best-value' : ''}">
   <div class="plan-info">
-    <div class="plan-provider" style="color:${color}">${p.provider} <span style="color:var(--text);font-weight:400;font-size:0.85rem">${p.name}</span></div>
+    <div class="plan-provider" style="color:${color};display:flex;align-items:center;gap:0.5rem">${p.provider} <span style="color:var(--text);font-weight:400;font-size:0.85rem">${p.name}</span>${p.url ? `<a href="${p.url}" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;">Visit ${p.provider} &rarr;</a>` : ''}</div>
     <div class="plan-details">
       ${typeTag}
       <span class="plan-tag tag-data">${p.dataDisplay}</span>

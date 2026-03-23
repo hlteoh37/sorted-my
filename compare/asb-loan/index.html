@@ -509,12 +509,12 @@ const ASB_DIVIDENDS = [
 
 // Banks offering ASB financing
 const BANKS = [
-  { name: 'Maybank', rate: 3.50, tag: 'Lowest', note: 'Conventional & Islamic (ASB-i). Most popular choice.' },
-  { name: 'CIMB', rate: 3.85, tag: null, note: 'Conventional & Islamic available. Flexible tenure.' },
-  { name: 'RHB', rate: 4.00, tag: null, note: 'Competitive rates for existing customers.' },
-  { name: 'Bank Rakyat', rate: 4.20, tag: null, note: 'Co-operative bank. Popular for ASB financing.' },
-  { name: 'Bank Islam', rate: 4.50, tag: 'Islamic', note: 'Shariah-compliant ASB-i financing (Tawarruq).' },
-  { name: 'Bank Muamalat', rate: 4.75, tag: 'Islamic', note: 'Shariah-compliant. Tenure up to 30 years.' }
+  { name: 'Maybank', rate: 3.50, tag: 'Lowest', note: 'Conventional & Islamic (ASB-i). Most popular choice.', url: 'https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/loans/asb_financing.page' },
+  { name: 'CIMB', rate: 3.85, tag: null, note: 'Conventional & Islamic available. Flexible tenure.', url: 'https://www.cimb.com.my/en/personal/banking-with-us/loans/asb-financing.html' },
+  { name: 'RHB', rate: 4.00, tag: null, note: 'Competitive rates for existing customers.', url: 'https://www.rhbgroup.com/personal/loans/asb-financing/index.html' },
+  { name: 'Bank Rakyat', rate: 4.20, tag: null, note: 'Co-operative bank. Popular for ASB financing.', url: 'https://www.bankrakyat.com.my/d/personal/financing_i/asb_financing_i' },
+  { name: 'Bank Islam', rate: 4.50, tag: 'Islamic', note: 'Shariah-compliant ASB-i financing (Tawarruq).', url: 'https://www.bankislam.com/personal-banking/financing/asb-financing-i/' },
+  { name: 'Bank Muamalat', rate: 4.75, tag: 'Islamic', note: 'Shariah-compliant. Tenure up to 30 years.', url: 'https://www.muamalat.com.my/personal-banking/financing/asb-financing' }
 ];
 
 function fmt(n) {
@@ -648,7 +648,7 @@ function calculate() {
     if (i === 0) tr.classList.add('highlight');
     const profClass = b.netProfit >= 0 ? 'profit-cell positive' : 'profit-cell negative';
     tr.innerHTML =
-      '<td class="bank-name">' + b.name + (b.tag ? '<span class="bank-tag">' + b.tag + '</span>' : '') + '</td>' +
+      '<td class="bank-name">' + b.name + (b.tag ? '<span class="bank-tag">' + b.tag + '</span>' : '') + (b.url ? ' <a href="' + b.url + '" target="_blank" rel="noopener" style="font-size:0.72rem;color:var(--accent);">Visit →</a>' : '') + '</td>' +
       '<td class="rate-cell">' + b.rate.toFixed(2) + '%</td>' +
       '<td class="monthly-amt">' + fmt(b.monthly) + '</td>' +
       '<td class="rate-cell">' + fmt(b.totalInterest) + '</td>' +

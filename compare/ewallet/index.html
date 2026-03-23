@@ -275,6 +275,7 @@ const WALLETS = [
   {
     id: "tng",
     name: "Touch 'n Go eWallet",
+    url: "https://www.tngdigital.com.my/wallet",
     tagline: "Malaysia's most widely used e-wallet",
     emoji: "💳",
     rating: 4.6,
@@ -292,6 +293,7 @@ const WALLETS = [
   {
     id: "grabpay",
     name: "GrabPay",
+    url: "https://www.grab.com/my/pay/",
     tagline: "Ride-hailing rewards powerhouse",
     emoji: "🟢",
     rating: 4.4,
@@ -309,6 +311,7 @@ const WALLETS = [
   {
     id: "boost",
     name: "Boost",
+    url: "https://www.myboost.com.my/",
     tagline: "Celcom-backed wallet with lifestyle rewards",
     emoji: "🚀",
     rating: 4.1,
@@ -326,6 +329,7 @@ const WALLETS = [
   {
     id: "mae",
     name: "MAE by Maybank",
+    url: "https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/services/mae.page",
     tagline: "Maybank's digital wallet & banking app",
     emoji: "🏦",
     rating: 4.3,
@@ -343,6 +347,7 @@ const WALLETS = [
   {
     id: "shopee",
     name: "ShopeePay",
+    url: "https://shopee.com.my/m/shopeepay",
     tagline: "Best for Shopee shoppers",
     emoji: "🛒",
     rating: 3.9,
@@ -360,6 +365,7 @@ const WALLETS = [
   {
     id: "bigpay",
     name: "BigPay",
+    url: "https://www.bigpayme.com/",
     tagline: "Best for international transfers & travel",
     emoji: "✈️",
     rating: 4.2,
@@ -377,6 +383,7 @@ const WALLETS = [
   {
     id: "favepay",
     name: "FavePay",
+    url: "https://www.myfave.com/",
     tagline: "Cashback at F&B and lifestyle merchants",
     emoji: "⭐",
     rating: 3.7,
@@ -394,6 +401,7 @@ const WALLETS = [
   {
     id: "gopayz",
     name: "GoPayz",
+    url: "https://www.gopayz.com.my/",
     tagline: "UMB's multi-currency e-wallet",
     emoji: "🌐",
     rating: 3.5,
@@ -411,6 +419,7 @@ const WALLETS = [
   {
     id: "setel",
     name: "Setel",
+    url: "https://www.setel.com/",
     tagline: "Petrol & highway payments made easy",
     emoji: "⛽",
     rating: 3.8,
@@ -452,6 +461,7 @@ function renderCard(w) {
           <span class="wallet-emoji">${w.emoji}</span>
           <div class="wallet-name-wrap">
             <h3>${w.name}</h3>
+            ${w.url ? `<a href="${w.url}" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);">Visit ${w.name} →</a>` : ''}
             <div class="wallet-tagline">${w.tagline}</div>
           </div>
         </div>

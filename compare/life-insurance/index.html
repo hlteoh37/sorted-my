@@ -295,6 +295,10 @@ footer a:hover { color: var(--text); }
       <a href="../tax-calculator/" class="related-card">&#129534; Income Tax Calculator<div class="rel-desc">Calculate your Malaysian income tax for YA 2025</div></a>
       <a href="../savings-account/" class="related-card">&#128176; Savings Account Comparison<div class="rel-desc">Compare 16 savings accounts from Malaysian banks</div></a>
       <a href="../home-loan/" class="related-card">&#127968; Home Loan Comparison<div class="rel-desc">Compare 17 home loan packages from 9 banks</div></a>
+      <a href="../medical-insurance/" class="related-card">
+        🏥 Compare Medical Insurance
+        <div class="rel-desc">Medical cards from Prudential, AIA, Great Eastern and more</div>
+      </a>
     </div>
   </div>
 
@@ -393,7 +397,7 @@ footer a:hover { color: var(--text); }
 <script>
 const PROVIDERS = [
   {
-    id: 'prudential', name: 'Prudential', model: 'both',
+    id: 'prudential', name: 'Prudential', model: 'both', url: 'https://www.prudential.com.my/en/our-products/life-insurance/',
     plans: [
       {
         type: 'term', planName: 'PRUTerm Vantage',
@@ -418,7 +422,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'aia', name: 'AIA', model: 'conventional',
+    id: 'aia', name: 'AIA', model: 'conventional', url: 'https://www.aia.com.my/en/our-products/life-protection.html',
     plans: [
       {
         type: 'term', planName: 'AIA Term Protect',
@@ -443,7 +447,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'great-eastern', name: 'Great Eastern', model: 'conventional',
+    id: 'great-eastern', name: 'Great Eastern', model: 'conventional', url: 'https://www.greateasternlife.com/my/en/personal-insurance/life-insurance.html',
     plans: [
       {
         type: 'term', planName: 'GREAT Term',
@@ -468,7 +472,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'manulife', name: 'Manulife', model: 'conventional',
+    id: 'manulife', name: 'Manulife', model: 'conventional', url: 'https://www.manulife.com.my/en/individual/products/protection.html',
     plans: [
       {
         type: 'term', planName: 'Manulife ReadyProtect',
@@ -493,7 +497,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'allianz', name: 'Allianz', model: 'conventional',
+    id: 'allianz', name: 'Allianz', model: 'conventional', url: 'https://www.allianz.com.my/personal/life-insurance.html',
     plans: [
       {
         type: 'ilp', planName: 'Allianz Life Cover Plus',
@@ -518,7 +522,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'zurich', name: 'Zurich', model: 'both',
+    id: 'zurich', name: 'Zurich', model: 'both', url: 'https://www.zurich.com.my/en/insurance/life-insurance',
     plans: [
       {
         type: 'term', planName: 'Z-Term Protect',
@@ -543,7 +547,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'etiqa', name: 'Etiqa', model: 'takaful',
+    id: 'etiqa', name: 'Etiqa', model: 'takaful', url: 'https://www.etiqa.com.my/v2/life-insurance',
     plans: [
       {
         type: 'term', planName: 'Etiqa TPRO',
@@ -568,7 +572,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'tokio-marine', name: 'Tokio Marine', model: 'conventional',
+    id: 'tokio-marine', name: 'Tokio Marine', model: 'conventional', url: 'https://www.tokiomarine.com/my/en/personal/life-insurance.html',
     plans: [
       {
         type: 'whole', planName: 'TM Lifetime Shield',
@@ -593,7 +597,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'sunlife', name: 'Sun Life', model: 'conventional',
+    id: 'sunlife', name: 'Sun Life', model: 'conventional', url: 'https://www.sunlifemalaysia.com/life-insurance',
     plans: [
       {
         type: 'term', planName: 'Sun Protect Term',
@@ -618,7 +622,7 @@ const PROVIDERS = [
     ]
   },
   {
-    id: 'fwd', name: 'FWD', model: 'conventional',
+    id: 'fwd', name: 'FWD', model: 'conventional', url: 'https://www.fwd.com.my/life-insurance/',
     plans: [
       {
         type: 'term', planName: 'FWD Term Life',
@@ -718,7 +722,7 @@ function renderCards() {
     return '<div class="plan-card' + (isBest ? ' best-value' : '') + '">' +
       '<div class="card-top">' +
         '<div>' +
-          '<div class="plan-provider">' + p.name + '</div>' +
+          '<div class="plan-provider" style="display:flex;align-items:center;">' + p.name + (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;">Visit ' + p.name + ' &rarr;</a>' : '') + '</div>' +
           '<div class="plan-name">' + plan.planName + ' &mdash; ' + plan.coverageTerm + '</div>' +
           '<div class="plan-badges">' +
             '<span class="badge ' + MODEL_BADGE[p.model] + '">' + MODEL_LABEL[p.model] + '</span>' +

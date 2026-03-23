@@ -386,6 +386,7 @@ const PROVIDERS = [
   {
     id: 'allianz',
     name: 'Allianz',
+    url: 'https://www.allianz.com.my/personal/motor-insurance.html',
     type: 'conventional',
     rates: { comprehensive: 0.0322, tpft: 0.0086, tpo: 218 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Legal liability of passengers'], tpft: ['Special perils (fire ext.)', 'Windscreen'], tpo: [] },
@@ -402,6 +403,7 @@ const PROVIDERS = [
   {
     id: 'aia',
     name: 'AIA',
+    url: 'https://www.aia.com.my/en/our-products/general-insurance/motor-insurance.html',
     type: 'conventional',
     rates: { comprehensive: 0.0298, tpft: 0.0082, tpo: 205 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Key replacement'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -418,6 +420,7 @@ const PROVIDERS = [
   {
     id: 'etiqa',
     name: 'Etiqa',
+    url: 'https://www.etiqa.com.my/v2/motor-insurance',
     type: 'takaful',
     rates: { comprehensive: 0.0291, tpft: 0.0079, tpo: 198 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Hospital income'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -434,6 +437,7 @@ const PROVIDERS = [
   {
     id: 'zurich',
     name: 'Zurich',
+    url: 'https://www.zurich.com.my/en/insurance/motor-insurance',
     type: 'both',
     rates: { comprehensive: 0.0308, tpft: 0.0083, tpo: 210 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Smart key replacement'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -450,6 +454,7 @@ const PROVIDERS = [
   {
     id: 'kurnia',
     name: 'Kurnia',
+    url: 'https://www.kurnia.com/motor-insurance',
     type: 'conventional',
     rates: { comprehensive: 0.0328, tpft: 0.0088, tpo: 222 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Emergency cash'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -466,6 +471,7 @@ const PROVIDERS = [
   {
     id: 'rhb',
     name: 'RHB Insurance',
+    url: 'https://rhbinsurance.com.my/motor-insurance/',
     type: 'conventional',
     rates: { comprehensive: 0.0304, tpft: 0.0083, tpo: 207 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Legal liability passengers'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -482,6 +488,7 @@ const PROVIDERS = [
   {
     id: 'tokio',
     name: 'Tokio Marine',
+    url: 'https://www.tokiomarine.com/my/en/personal/motor-insurance.html',
     type: 'conventional',
     rates: { comprehensive: 0.0315, tpft: 0.0085, tpo: 214 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', '24hr roadside assist'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -498,6 +505,7 @@ const PROVIDERS = [
   {
     id: 'msig',
     name: 'MSIG',
+    url: 'https://www.msig.com.my/insurance-for-you/motor',
     type: 'conventional',
     rates: { comprehensive: 0.0311, tpft: 0.0084, tpo: 211 },
     addons: { comprehensive: ['Special perils (flood)', 'Windscreen', 'PA driver', 'PA passengers', 'NCD protector', 'Accessories rider'], tpft: ['Special perils', 'Windscreen'], tpo: [] },
@@ -593,7 +601,7 @@ function renderCards() {
     <div class="plan-card${isBest ? ' best-value' : ''}">
       <div class="card-top">
         <div>
-          <div class="plan-provider">${p.name}</div>
+          <div class="plan-provider" style="display:flex;align-items:center;gap:0.5rem;">${p.name}${p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:auto;">Visit ' + p.name + ' &rarr;</a>' : ''}</div>
           <div class="plan-badges">
             <span class="badge ${typeBadge}">${typeLabel}</span>
             <span class="badge ${PLAN_BADGE[pt]}">${PLAN_LABELS[pt]}</span>

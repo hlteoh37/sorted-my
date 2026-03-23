@@ -543,6 +543,10 @@ footer a:hover { color: var(--text); }
         💳 Credit Card Comparison
         <div class="rel-desc">Find the best cashback or rewards card</div>
       </a>
+      <a href="../asb-loan/" class="related-card">
+        🏦 ASB Loan Calculator
+        <div class="rel-desc">Compare ASB financing rates from Maybank, CIMB, RHB and more</div>
+      </a>
     </div>
   </div>
 
@@ -567,67 +571,67 @@ footer a:hover { color: var(--text); }
 const FUND_DATA = [
   // ASNB Fixed-Price Funds (Bumiputera only)
   { name: "ASB (Amanah Saham Bumiputera)", short: "ASB", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
-    latestReturn: 5.50, fiveYrAvg: 5.30, minInvest: 1, maxInvest: 300000, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 5.50, fiveYrAvg: 5.30, minInvest: 1, maxInvest: 300000, salesCharge: 0,
     divHistory: [{y:"2020",r:4.25},{y:"2021",r:5.00},{y:"2022",r:5.35},{y:"2023",r:5.10},{y:"2024",r:5.50},{y:"2025",r:5.50}],
     notes: "Includes bonus. RM300K individual limit. Fixed RM1.00/unit." },
   { name: "ASB2 (Amanah Saham Bumiputera 2)", short: "ASB2", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
-    latestReturn: 5.25, fiveYrAvg: 5.05, minInvest: 1, maxInvest: 200000, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 5.25, fiveYrAvg: 5.05, minInvest: 1, maxInvest: 200000, salesCharge: 0,
     divHistory: [{y:"2020",r:4.00},{y:"2021",r:4.75},{y:"2022",r:5.10},{y:"2023",r:4.85},{y:"2024",r:5.25},{y:"2025",r:5.25}],
     notes: "Includes bonus. RM200K individual limit. Fixed RM1.00/unit." },
   { name: "AS 1Malaysia (AS1M)", short: "AS1M", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
-    latestReturn: 5.10, fiveYrAvg: 4.90, minInvest: 1, maxInvest: 300000, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 5.10, fiveYrAvg: 4.90, minInvest: 1, maxInvest: 300000, salesCharge: 0,
     divHistory: [{y:"2020",r:4.00},{y:"2021",r:4.60},{y:"2022",r:5.00},{y:"2023",r:4.80},{y:"2024",r:5.10},{y:"2025",r:5.10}],
     notes: "Includes bonus. RM300K limit. Fixed RM1.00/unit." },
   { name: "ASD (Amanah Saham Didik)", short: "ASD", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
-    latestReturn: 4.80, fiveYrAvg: 4.60, minInvest: 1, maxInvest: 200000, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 4.80, fiveYrAvg: 4.60, minInvest: 1, maxInvest: 200000, salesCharge: 0,
     divHistory: [{y:"2020",r:3.80},{y:"2021",r:4.25},{y:"2022",r:4.70},{y:"2023",r:4.50},{y:"2024",r:4.80},{y:"2025",r:4.80}],
     notes: "Education-focused fund. RM200K limit. Fixed RM1.00/unit." },
   { name: "ASN (Amanah Saham Nasional)", short: "ASN", provider: "ASNB/PNB", type: "fixed", eligibility: "bumi", risk: "low",
-    latestReturn: 5.00, fiveYrAvg: 4.80, minInvest: 1, maxInvest: 300000, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 5.00, fiveYrAvg: 4.80, minInvest: 1, maxInvest: 300000, salesCharge: 0,
     divHistory: [{y:"2020",r:3.90},{y:"2021",r:4.50},{y:"2022",r:4.90},{y:"2023",r:4.70},{y:"2024",r:5.00},{y:"2025",r:5.00}],
     notes: "Includes bonus. RM300K limit. Fixed RM1.00/unit." },
 
   // ASNB Variable-Price Funds (open to all)
   { name: "ASN Equity 2", short: "ASN Eq2", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "high",
-    latestReturn: 6.80, fiveYrAvg: 5.90, minInvest: 100, maxInvest: null, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 6.80, fiveYrAvg: 5.90, minInvest: 100, maxInvest: null, salesCharge: 0,
     divHistory: [{y:"2020",r:3.50},{y:"2021",r:6.20},{y:"2022",r:5.80},{y:"2023",r:7.10},{y:"2024",r:6.80},{y:"2025",r:6.80}],
     notes: "Equity fund open to all Malaysians. NAV fluctuates. No sales charge." },
   { name: "ASN Equity 3", short: "ASN Eq3", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "high",
-    latestReturn: 7.20, fiveYrAvg: 6.10, minInvest: 100, maxInvest: null, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 7.20, fiveYrAvg: 6.10, minInvest: 100, maxInvest: null, salesCharge: 0,
     divHistory: [{y:"2020",r:3.20},{y:"2021",r:6.50},{y:"2022",r:6.10},{y:"2023",r:7.50},{y:"2024",r:7.20},{y:"2025",r:7.20}],
     notes: "Equity growth fund. NAV fluctuates. No sales charge. Open to all." },
   { name: "ASN Equity Global", short: "ASN EqG", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "high",
-    latestReturn: 8.50, fiveYrAvg: 7.20, minInvest: 100, maxInvest: null, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 8.50, fiveYrAvg: 7.20, minInvest: 100, maxInvest: null, salesCharge: 0,
     divHistory: [{y:"2020",r:4.80},{y:"2021",r:9.20},{y:"2022",r:5.50},{y:"2023",r:8.80},{y:"2024",r:8.50},{y:"2025",r:8.50}],
     notes: "Global equity fund. NAV fluctuates. Highest growth potential. Open to all." },
   { name: "ASN Imbang 1", short: "ASN Imb1", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "medium",
-    latestReturn: 4.50, fiveYrAvg: 4.10, minInvest: 100, maxInvest: null, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 4.50, fiveYrAvg: 4.10, minInvest: 100, maxInvest: null, salesCharge: 0,
     divHistory: [{y:"2020",r:2.80},{y:"2021",r:4.30},{y:"2022",r:4.00},{y:"2023",r:4.90},{y:"2024",r:4.50},{y:"2025",r:4.50}],
     notes: "Balanced fund (equity + bonds). Lower volatility. No sales charge." },
   { name: "ASN Imbang 2", short: "ASN Imb2", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "medium",
-    latestReturn: 4.80, fiveYrAvg: 4.30, minInvest: 100, maxInvest: null, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 4.80, fiveYrAvg: 4.30, minInvest: 100, maxInvest: null, salesCharge: 0,
     divHistory: [{y:"2020",r:3.00},{y:"2021",r:4.50},{y:"2022",r:4.20},{y:"2023",r:5.10},{y:"2024",r:4.80},{y:"2025",r:4.80}],
     notes: "Balanced fund with slightly higher equity allocation than Imbang 1." },
   { name: "ASN Sara 1 (Sukuk)", short: "ASN Sara1", provider: "ASNB/PNB", type: "variable", eligibility: "open", risk: "low",
-    latestReturn: 3.50, fiveYrAvg: 3.20, minInvest: 100, maxInvest: null, salesCharge: 0,
+    url: "https://www.asnb.com.my/", latestReturn: 3.50, fiveYrAvg: 3.20, minInvest: 100, maxInvest: null, salesCharge: 0,
     divHistory: [{y:"2020",r:2.80},{y:"2021",r:3.10},{y:"2022",r:3.00},{y:"2023",r:3.60},{y:"2024",r:3.50},{y:"2025",r:3.50}],
     notes: "Sukuk/bond fund. Lowest risk variable-price fund. Open to all." },
 
   // Popular Private Unit Trusts
   { name: "Public Ittikal Fund", short: "P.Ittikal", provider: "Public Mutual", type: "private", eligibility: "open", risk: "high",
-    latestReturn: 7.50, fiveYrAvg: 6.80, minInvest: 1000, maxInvest: null, salesCharge: 5.50,
+    url: "https://www.publicmutual.com.my/", latestReturn: 7.50, fiveYrAvg: 6.80, minInvest: 1000, maxInvest: null, salesCharge: 5.50,
     divHistory: [{y:"2020",r:4.20},{y:"2021",r:7.80},{y:"2022",r:6.50},{y:"2023",r:8.00},{y:"2024",r:7.50},{y:"2025",r:7.50}],
     notes: "Shariah-compliant equity fund. 5.50% sales charge. Malaysia's largest UT fund." },
   { name: "Public Growth Fund", short: "P.Growth", provider: "Public Mutual", type: "private", eligibility: "open", risk: "high",
-    latestReturn: 8.20, fiveYrAvg: 7.40, minInvest: 1000, maxInvest: null, salesCharge: 5.50,
+    url: "https://www.publicmutual.com.my/", latestReturn: 8.20, fiveYrAvg: 7.40, minInvest: 1000, maxInvest: null, salesCharge: 5.50,
     divHistory: [{y:"2020",r:5.00},{y:"2021",r:8.50},{y:"2022",r:6.80},{y:"2023",r:8.60},{y:"2024",r:8.20},{y:"2025",r:8.20}],
     notes: "Equity growth fund. 5.50% sales charge. One of Malaysia's top-performing funds." },
   { name: "CIMB-Principal Equity Fund", short: "CIMB Eq", provider: "CIMB-Principal", type: "private", eligibility: "open", risk: "high",
-    latestReturn: 6.90, fiveYrAvg: 6.20, minInvest: 1000, maxInvest: null, salesCharge: 3.00,
+    url: "https://www.principal.com.my/en/unit-trust", latestReturn: 6.90, fiveYrAvg: 6.20, minInvest: 1000, maxInvest: null, salesCharge: 3.00,
     divHistory: [{y:"2020",r:3.80},{y:"2021",r:7.00},{y:"2022",r:5.90},{y:"2023",r:7.40},{y:"2024",r:6.90},{y:"2025",r:6.90}],
     notes: "Equity fund. 3% sales charge (lower than Public Mutual). EPF-approved." },
   { name: "Kenanga Growth Fund", short: "Kenanga", provider: "Kenanga Investors", type: "private", eligibility: "open", risk: "high",
-    latestReturn: 9.10, fiveYrAvg: 7.80, minInvest: 1000, maxInvest: null, salesCharge: 5.00,
+    url: "https://www.kenangainvestors.com.my/", latestReturn: 9.10, fiveYrAvg: 7.80, minInvest: 1000, maxInvest: null, salesCharge: 5.00,
     divHistory: [{y:"2020",r:5.50},{y:"2021",r:9.80},{y:"2022",r:7.00},{y:"2023",r:9.50},{y:"2024",r:9.10},{y:"2025",r:9.10}],
     notes: "Award-winning equity fund. 5% sales charge. Consistently among top performers." },
 ];
@@ -740,7 +744,7 @@ function renderCards(funds) {
       '<div class="card-header">' +
         '<div>' +
           '<div class="card-fund">' + f.name + '</div>' +
-          '<div class="card-provider">' + f.provider + '</div>' +
+          '<div class="card-provider">' + f.provider + (f.url ? '<a href="' + f.url + '" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--accent);margin-left:0.5rem;">Visit →</a>' : '') + '</div>' +
         '</div>' +
         '<div class="card-rate-block">' +
           '<div class="card-rate">' + f.latestReturn.toFixed(2) + '%</div>' +
