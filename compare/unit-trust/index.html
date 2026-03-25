@@ -222,6 +222,17 @@ footer a:hover { color: var(--text); }
 .breadcrumb a { color: var(--muted); }
 .breadcrumb a:hover { color: var(--accent); text-decoration: none; }
 .breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
+
+/* Sticky mobile filters */
+.filter-toggle { display: none; }
+@media (max-width: 600px) {
+  .filter-toggle { display: flex; position: sticky; top: 56px; z-index: 90; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 1rem; margin-bottom: 0.75rem; align-items: center; justify-content: space-between; cursor: pointer; font-family: var(--font); font-size: 0.85rem; font-weight: 600; color: var(--text); }
+  .filter-toggle .ft-count { background: var(--accent); color: #fff; font-size: 0.7rem; padding: 0.1rem 0.45rem; border-radius: 10px; margin-left: 0.5rem; }
+  .filter-toggle .ft-arrow { color: var(--muted); transition: transform 0.2s; font-size: 0.75rem; }
+  .filter-toggle.open .ft-arrow { transform: rotate(180deg); }
+  .filters { position: sticky; top: 106px; z-index: 89; max-height: 0; overflow: hidden; padding: 0 1.5rem; margin-bottom: 0; border: none; opacity: 0; transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.2s ease, margin 0.3s ease; }
+  .filters.mobile-open { max-height: 500px; padding: 1.25rem 1.5rem; border: 1px solid var(--border); margin-bottom: 1.5rem; opacity: 1; }
+}
 </style>
   <script type="application/ld+json">
   {
@@ -872,6 +883,31 @@ function toggleFaq(btn) {
 // Init
 renderRateTable();
 applyFilters();
+</script>
+<script>
+(function(){
+  var f=document.querySelector('.filters');if(!f)return;
+  var tog=document.createElement('button');
+  tog.className='filter-toggle';
+  tog.innerHTML='<span>🔧 Filters <span class="ft-count">0</span></span><span class="ft-arrow">▼</span>';
+  f.parentNode.insertBefore(tog,f);
+  var cnt=tog.querySelector('.ft-count');
+  function updateCount(){
+    var s=f.querySelectorAll('select'),n=0;
+    s.forEach(function(sel){if(sel.value&&sel.value!=='any'&&sel.value!=='all')n++;});
+    cnt.textContent=n;cnt.style.display=n?'inline':'none';
+  }
+  tog.addEventListener('click',function(){
+    var open=f.classList.toggle('mobile-open');
+    tog.classList.toggle('open',open);
+  });
+  f.addEventListener('change',updateCount);
+  var rb=f.querySelector('.reset-btn,#reset-filters,[id*=reset]');
+  if(rb)rb.addEventListener('click',function(){setTimeout(updateCount,50);});
+  updateCount();
+  // Start open on mobile for first interaction
+  if(window.innerWidth<=600){f.classList.add('mobile-open');tog.classList.add('open');}
+})();
 </script>
 </body>
 </html>
