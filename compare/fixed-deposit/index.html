@@ -827,9 +827,35 @@ function toggleFaq(btn) {
   item.classList.toggle('open');
 }
 
+// URL state
+function pushState() {
+  var p = new URLSearchParams();
+  var tf = document.getElementById('filterTenure').value;
+  var ty = document.getElementById('filterType').value;
+  var sb = document.getElementById('sortBy').value;
+  var da = document.getElementById('depositAmount').value;
+  if (tf !== '12') p.set('tenure', tf);
+  if (ty !== 'all') p.set('type', ty);
+  if (sb !== 'rate-desc') p.set('sort', sb);
+  if (da && parseFloat(da) > 0) p.set('amount', da);
+  var url = p.toString() ? '?' + p.toString() : location.pathname;
+  history.replaceState(null, '', url);
+}
+function loadFromParams() {
+  var p = new URLSearchParams(location.search);
+  if (p.has('tenure')) { var t = p.get('tenure'); document.getElementById('filterTenure').value = t; document.getElementById('calcTenure').value = t; currentTenure = parseInt(t); document.querySelectorAll('.tenure-tab').forEach(function(el) { el.classList.toggle('active', el.dataset.tenure === t); }); }
+  if (p.has('type')) document.getElementById('filterType').value = p.get('type');
+  if (p.has('sort')) document.getElementById('sortBy').value = p.get('sort');
+  if (p.has('amount')) { document.getElementById('depositAmount').value = p.get('amount'); }
+}
+var origApplyFilters = applyFilters;
+applyFilters = function() { origApplyFilters(); pushState(); };
+
 // Init
+loadFromParams();
 renderRateTable();
 applyFilters();
+if (new URLSearchParams(location.search).has('amount')) runCalc();
 </script>
 <script>
 (function(){

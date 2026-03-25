@@ -983,9 +983,50 @@ function toggleFaq(el) {
   el.classList.toggle("open");
 }
 
+// ==================== URL STATE ====================
+function pushState() {
+  var p = new URLSearchParams();
+  var tf = document.getElementById("type-filter").value;
+  var bf = document.getElementById("bank-filter").value;
+  var rf = document.getElementById("rate-slider").value;
+  var tnf = document.getElementById("tenure-filter").value;
+  var lf = document.getElementById("lockin-filter").value;
+  var ff = document.getElementById("flexi-filter").value;
+  if (tf !== "all") p.set("type", tf);
+  if (bf !== "all") p.set("bank", bf);
+  if (parseFloat(rf) < 5.0) p.set("rate", rf);
+  if (tnf !== "0") p.set("tenure", tnf);
+  if (lf !== "any") p.set("lockin", lf);
+  if (ff !== "any") p.set("flexi", ff);
+  if (currentSort !== "rate") p.set("sort", currentSort);
+  var pp = document.getElementById("prop-price").value;
+  var dp = document.getElementById("down-pct").value;
+  var ty = document.getElementById("tenure-yr").value;
+  if (pp && pp !== "600000") p.set("price", pp);
+  if (dp && dp !== "10") p.set("dp", dp);
+  if (ty && ty !== "30") p.set("years", ty);
+  var url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  var p = new URLSearchParams(location.search);
+  if (p.has("type")) document.getElementById("type-filter").value = p.get("type");
+  if (p.has("bank")) document.getElementById("bank-filter").value = p.get("bank");
+  if (p.has("rate")) { document.getElementById("rate-slider").value = p.get("rate"); document.getElementById("rate-display").textContent = parseFloat(p.get("rate")).toFixed(2) + "%"; }
+  if (p.has("tenure")) document.getElementById("tenure-filter").value = p.get("tenure");
+  if (p.has("lockin")) document.getElementById("lockin-filter").value = p.get("lockin");
+  if (p.has("flexi")) document.getElementById("flexi-filter").value = p.get("flexi");
+  if (p.has("sort")) { currentSort = p.get("sort"); document.querySelectorAll(".sort-btn").forEach(function(b) { b.classList.toggle("active", b.dataset.sort === currentSort); }); }
+  if (p.has("price")) document.getElementById("prop-price").value = p.get("price");
+  if (p.has("dp")) document.getElementById("down-pct").value = p.get("dp");
+  if (p.has("years")) document.getElementById("tenure-yr").value = p.get("years");
+}
+var origRenderLoans = renderLoans;
+renderLoans = function() { origRenderLoans(); pushState(); };
+
 // ==================== INIT ====================
+loadFromParams();
 renderLoans();
-// Auto-calculate on load with defaults
 calculateAll();
 </script>
 <script>

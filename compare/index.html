@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Tools — Malaysian Finance Calculators & Comparison Tools | Sorted</title>
+  <meta name="description" content="Free interactive comparison tools for Malaysian finance. Compare credit cards, home loans, fixed deposits, insurance, e-wallets, unit trusts, and more — all in one place.">
+  <meta property="og:title" content="Compare Tools — Malaysian Finance Calculators | Sorted">
+  <meta property="og:description" content="19 free interactive tools to compare Malaysian financial products. Credit cards, loans, insurance, savings, investments — filter, sort, and calculate.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/compare/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Sorted", "item": "https://hlteoh37.github.io/sorted-my/" },
+      { "@type": "ListItem", "position": 2, "name": "Compare Tools" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Malaysian Finance Compare Tools",
+    "description": "Free interactive comparison tools for Malaysian financial products — credit cards, loans, insurance, savings, investments, and more.",
+    "url": "https://hlteoh37.github.io/sorted-my/compare/",
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" },
+    "numberOfItems": 19
+  }
+  </script>
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.breadcrumb { padding: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+.breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
+
+.page-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.page-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.page-header p { color: var(--muted); font-size: 1rem; max-width: 640px; }
+.tool-count { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+
+/* Search */
+.search-wrap { max-width: 480px; margin: 1.5rem 0 0; position: relative; }
+.search-box { display: flex; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; }
+.search-box:focus-within { border-color: var(--accent); }
+.search-box input { flex: 1; background: transparent; border: none; outline: none; padding: 0.7rem 1rem; color: var(--text); font-size: 0.9rem; font-family: var(--font); }
+.search-box input::placeholder { color: var(--muted); }
+.search-clear { background: none; border: none; color: var(--muted); cursor: pointer; padding: 0 1rem; font-size: 1rem; display: none; }
+.search-clear:hover { color: var(--text); }
+
+/* Category */
+.category { margin-bottom: 2.5rem; }
+.category-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.category-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* Tool grid */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.tool-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; display: block; color: var(--text); transition: border-color 0.2s, transform 0.15s; }
+.tool-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.tool-card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+.tool-card .title { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.3rem; }
+.tool-card .desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+.tool-card .meta { margin-top: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tool-tag-sm { font-size: 0.68rem; font-weight: 600; padding: 0.12rem 0.45rem; border-radius: 4px; background: rgba(108,99,255,0.12); color: #a5b4fc; border: 1px solid rgba(108,99,255,0.25); }
+.tool-tag-calc { background: rgba(72,207,173,0.1); color: var(--accent2); border: 1px solid rgba(72,207,173,0.2); }
+.tool-tag-guide { background: rgba(255,209,102,0.1); color: var(--warn); border: 1px solid rgba(255,209,102,0.2); }
+
+/* No results */
+.no-results { display: none; text-align: center; padding: 3rem 0; color: var(--muted); }
+
+/* Coffee banner */
+.coffee-banner { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin: 2.5rem 0; }
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+
+.disclaimer { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.8rem; color: var(--muted); margin: 2rem 0; line-height: 1.5; }
+.disclaimer strong { color: var(--warn); }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 4rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+.tool-card.hidden { display: none; }
+.category.all-hidden { display: none; }
+
+@media (max-width: 600px) {
+  .tool-grid { grid-template-columns: 1fr; }
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="../">All Guides</a>
+    <a href="broadband/">Compare Broadband</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="../">Sorted</a> <span class="sep">›</span> Compare Tools
+  </div>
+
+  <div class="page-header">
+    <h1>Compare Tools <span class="tool-count">19 tools</span></h1>
+    <p>Free interactive tools to compare Malaysian financial products. Filter, sort, and calculate — find the best deal for your situation.</p>
+    <div class="search-wrap">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search tools… e.g. credit card, home loan, EPF" autocomplete="off">
+        <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" id="no-results">
+    <p>No tools found for "<span id="no-results-term"></span>".</p>
+    <p style="font-size:0.875rem;margin-top:0.5rem;">Try: credit card, home loan, insurance, savings, tax, EPF</p>
+  </div>
+
+  <!-- BANKING & CREDIT -->
+  <div class="category" id="cat-banking">
+    <p class="category-label">💳 Banking &amp; Credit</p>
+    <div class="tool-grid">
+
+      <a href="credit-card/" class="tool-card" data-search="credit card cashback rewards travel miles islamic maybank cimb public bank hong leong rhb ambank">
+        <span class="icon">💳</span>
+        <div class="title">Credit Card Comparison</div>
+        <div class="desc">Compare Malaysian credit cards by cashback, rewards, travel miles, or Islamic options. Wizard helps you pick the best card.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Wizard</span></div>
+      </a>
+
+      <a href="savings-account/" class="tool-card" data-search="savings account interest rate bonus digital bank islamic maybank cimb rhb hong leong gx boost mae">
+        <span class="icon">💰</span>
+        <div class="title">Savings Account Comparison</div>
+        <div class="desc">Compare 16 savings accounts. Filter by Islamic, digital, or bonus accounts — with interest calculator.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+      <a href="fixed-deposit/" class="tool-card" data-search="fixed deposit fd rate maybank cimb public bank hong leong rhb ambank standard chartered hsbc bank islam">
+        <span class="icon">🏦</span>
+        <div class="title">Fixed Deposit (FD) Rates</div>
+        <div class="desc">Compare FD rates from 15 banks. Best rates for 1M, 3M, 6M, 12M, and 24M tenures — with interest calculator.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+      <a href="ewallet/" class="tool-card" data-search="e-wallet ewallet touch n go tng grabpay boost mae shopee pay bigpay cashback">
+        <span class="icon">📱</span>
+        <div class="title">E-Wallet Comparison</div>
+        <div class="desc">Compare 9 Malaysian e-wallets — TNG, GrabPay, Boost, MAE, ShopeePay, BigPay and more. Filter by cashback, bill pay, investments.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- LOANS -->
+  <div class="category" id="cat-loans">
+    <p class="category-label">🏠 Loans &amp; Financing</p>
+    <div class="tool-grid">
+
+      <a href="home-loan/" class="tool-card" data-search="home loan mortgage housing loan pinjaman perumahan maybank cimb public bank hong leong rhb ambank bank islam">
+        <span class="icon">🏠</span>
+        <div class="title">Home Loan Comparison</div>
+        <div class="desc">Compare 17 home loan packages from 9 banks. Filter conventional or Islamic, sort by rate, calculate monthly repayments.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+      <a href="personal-loan/" class="tool-card" data-search="personal loan pinjaman peribadi maybank cimb public bank rhb bsn bank rakyat mbsb islamic">
+        <span class="icon">💰</span>
+        <div class="title">Personal Loan Comparison</div>
+        <div class="desc">Compare 14 personal loans. Calculator shows monthly repayments, total interest, and DSR estimate for every bank.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+      <a href="car-loan/" class="tool-card" data-search="car loan hire purchase auto maybank cimb public bank hong leong rhb interest rate monthly repayment">
+        <span class="icon">🚗</span>
+        <div class="title">Car Loan Calculator</div>
+        <div class="desc">Calculate monthly repayments. Compare rates from Maybank, CIMB, Public Bank, Hong Leong &amp; RHB side by side.</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-calc">Calculator</span><span class="tool-tag-sm">Compare</span></div>
+      </a>
+
+      <a href="asb-loan/" class="tool-card" data-search="asb loan amanah saham bumiputera financing dividend interest bank rakyat maybank cimb rhb bank islam">
+        <span class="icon">🏦</span>
+        <div class="title">ASB Loan Calculator</div>
+        <div class="desc">Should you take ASB financing? Calculate net profit vs interest cost, compare 6 banks, year-by-year breakdown with dividend history.</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-calc">Calculator</span><span class="tool-tag-sm">Compare</span></div>
+      </a>
+
+      <a href="ptptn-calculator/" class="tool-card" data-search="ptptn loan repayment student loan ujrah salary deduction perbadanan tabung pendidikan">
+        <span class="icon">🎓</span>
+        <div class="title">PTPTN Loan Calculator</div>
+        <div class="desc">Calculate PTPTN repayment schedule. See salary deduction rates, total ujrah cost, and lump-sum settlement savings.</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- INSURANCE -->
+  <div class="category" id="cat-insurance">
+    <p class="category-label">🛡️ Insurance &amp; Takaful</p>
+    <div class="tool-grid">
+
+      <a href="medical-insurance/" class="tool-card" data-search="medical insurance health insurance medical card hospitalisation prudential aia great eastern allianz zurich etiqa">
+        <span class="icon">🏥</span>
+        <div class="title">Medical Insurance Comparison</div>
+        <div class="desc">Compare 19 medical card plans from 10 insurers. Filter by annual limit, room type, and age — standalone and rider plans.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Estimator</span></div>
+      </a>
+
+      <a href="life-insurance/" class="tool-card" data-search="life insurance takaful term whole life investment-linked ILP prudential aia great eastern manulife allianz zurich">
+        <span class="icon">🛡️</span>
+        <div class="title">Life Insurance Comparison</div>
+        <div class="desc">Compare 18 life insurance plans from 10 insurers. Estimate premiums by age, gender, and sum assured — term, whole life, and ILP.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Estimator</span></div>
+      </a>
+
+      <a href="car-insurance/" class="tool-card" data-search="car insurance motor takaful comprehensive third party NCD allianz etiqa zurich kurnia tokio marine">
+        <span class="icon">🚙</span>
+        <div class="title">Car Insurance Calculator</div>
+        <div class="desc">Estimate your car insurance premium. Compare comprehensive, third-party, and takaful plans from major Malaysian insurers.</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-calc">Calculator</span><span class="tool-tag-sm">Compare</span></div>
+      </a>
+
+      <a href="home-insurance/" class="tool-card" data-search="home insurance fire houseowner householder contents property allianz etiqa zurich msig tokio marine lonpac">
+        <span class="icon">🏠</span>
+        <div class="title">Home Insurance Comparison</div>
+        <div class="desc">Compare houseowner (fire) and householder (contents) insurance from 8 insurers. Estimate premiums by property value and type.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Estimator</span></div>
+      </a>
+
+      <a href="takaful-vs-conventional/" class="tool-card" data-search="takaful vs conventional insurance shariah islamic halal surplus wakalah mudharabah guide">
+        <span class="icon">☯</span>
+        <div class="title">Takaful vs Conventional Insurance</div>
+        <div class="desc">Side-by-side comparison of takaful and conventional insurance. Key differences, provider guide, and decision helper.</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-guide">Guide</span><span class="tool-tag-sm">Compare</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- INVESTMENTS -->
+  <div class="category" id="cat-investments">
+    <p class="category-label">📈 Investments</p>
+    <div class="tool-grid">
+
+      <a href="unit-trust/" class="tool-card" data-search="unit trust ASB ASNB ASB2 AS1M ASD ASN equity PNB amanah saham public mutual cimb principal kenanga fund dividend">
+        <span class="icon">💰</span>
+        <div class="title">Unit Trust &amp; ASB Comparison</div>
+        <div class="desc">Compare 15 ASNB and private unit trust funds — ASB, ASB2, ASN Equity, Public Mutual. Dividend history, returns calculator, eligibility filter.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+      <a href="rental-yield/" class="tool-card" data-search="rental yield property investment roi return gross net cash flow landlord buy to let">
+        <span class="icon">🏘️</span>
+        <div class="title">Rental Yield Calculator</div>
+        <div class="desc">Calculate gross &amp; net rental yield, monthly cash flow, and total acquisition costs for Malaysian property investments.</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- TAX & TELECOM -->
+  <div class="category" id="cat-utilities">
+    <p class="category-label">📊 Tax, Telecom &amp; Utilities</p>
+    <div class="tool-grid">
+
+      <a href="tax-calculator/" class="tool-card" data-search="income tax calculator lhdn chargeable income progressive bracket effective rate relief epf personal lifestyle">
+        <span class="icon">🧾</span>
+        <div class="title">Income Tax Calculator</div>
+        <div class="desc">Calculate Malaysian income tax for YA 2025. Full bracket breakdown, effective rate, and common reliefs (EPF, SOCSO, lifestyle).</div>
+        <div class="meta"><span class="tool-tag-sm tool-tag-calc">Calculator</span></div>
+      </a>
+
+      <a href="broadband/" class="tool-card" data-search="broadband internet fibre unifi time maxis celcomdigi yes plan speed price">
+        <span class="icon">🌐</span>
+        <div class="title">Broadband Plan Finder</div>
+        <div class="desc">Filter by budget, speed, and contract. Sort and compare every Malaysian broadband plan side by side.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span></div>
+      </a>
+
+      <a href="mobile/" class="tool-card" data-search="mobile plan prepaid postpaid digi celcom maxis u mobile yes tune talk 5g data">
+        <span class="icon">📱</span>
+        <div class="title">Mobile Plan Finder</div>
+        <div class="desc">Compare every Malaysian mobile plan. Filter prepaid and postpaid from Digi, CelcomDigi, Maxis, U Mobile, Yes 5G and Tune Talk.</div>
+        <div class="meta"><span class="tool-tag-sm">Filter & Sort</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="coffee-banner">
+    <p>These tools are free and always will be. If they saved you time, consider buying us a coffee.</p>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener" class="coffee-btn">☕ Buy me a coffee — RM15</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> These tools are for informational purposes only. Rates, fees, and product details may change — always verify with the provider before making financial decisions. Sorted MY is not a licensed financial advisor.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../">All Guides</a>
+    <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Support Us</a>
+  </div>
+  <p>© 2026 Sorted MY — Accurate information for Malaysian life decisions</p>
+</footer>
+
+<script>
+(function() {
+  const input = document.getElementById('search-input');
+  const clearBtn = document.getElementById('search-clear');
+  const noResults = document.getElementById('no-results');
+  const noResultsTerm = document.getElementById('no-results-term');
+  const cards = document.querySelectorAll('.tool-card');
+  const categories = document.querySelectorAll('.category');
+
+  input.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    clearBtn.style.display = q ? 'block' : 'none';
+    let visible = 0;
+
+    cards.forEach(function(card) {
+      const searchText = (card.dataset.search || '') + ' ' + card.textContent.toLowerCase();
+      const match = !q || q.split(/\s+/).every(function(word) { return searchText.includes(word); });
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+
+    categories.forEach(function(cat) {
+      const visibleCards = cat.querySelectorAll('.tool-card:not(.hidden)');
+      cat.classList.toggle('all-hidden', visibleCards.length === 0);
+    });
+
+    noResults.style.display = (q && visible === 0) ? 'block' : 'none';
+    if (q && visible === 0) noResultsTerm.textContent = q;
+  });
+
+  clearBtn.addEventListener('click', function() {
+    input.value = '';
+    input.dispatchEvent(new Event('input'));
+    input.focus();
+  });
+})();
+</script>
+
+</body>
+</html>

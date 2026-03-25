@@ -240,7 +240,7 @@ footer a:hover { color: var(--text); }
   <a href="../../" class="nav-brand"><span>Sorted</span>.my</a>
   <div class="nav-links">
     <a href="../../">All Guides</a>
-    <a href="../broadband/">Compare Broadband</a>
+    <a href="../">All Compare Tools</a>
     <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Buy me a coffee</a>
   </div>
 </nav>
@@ -478,7 +478,7 @@ footer a:hover { color: var(--text); }
 <footer>
   <div class="footer-links">
     <a href="../../">All Guides</a>
-    <a href="../broadband/">Compare Broadband</a>
+    <a href="../">All Compare Tools</a>
     <a href="../mobile/">Compare Mobile</a>
     <a href="https://buy.stripe.com/dRm8wP8R295Z9VyeN59Zm00" target="_blank" rel="noopener">☕ Support</a>
   </div>
@@ -911,7 +911,36 @@ document.querySelectorAll(".faq-q").forEach(q => {
   });
 });
 
-// Initial render
+// URL state: read params on load, update on filter/sort change
+function filtersToParams() {
+  const p = new URLSearchParams();
+  if (filters.type !== "any") p.set("type", filters.type);
+  if (filters.fee !== "any") p.set("fee", filters.fee);
+  if (filters.income !== "any") p.set("income", filters.income);
+  if (filters.bank !== "any") p.set("bank", filters.bank);
+  if (currentSort !== "income-asc") p.set("sort", currentSort);
+  return p;
+}
+function pushState() {
+  const p = filtersToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("type")) { filters.type = p.get("type"); document.getElementById("type-filter").value = filters.type; }
+  if (p.has("fee")) { filters.fee = p.get("fee"); document.getElementById("fee-filter").value = filters.fee; }
+  if (p.has("income")) { filters.income = p.get("income"); document.getElementById("income-filter").value = filters.income; }
+  if (p.has("bank")) { filters.bank = p.get("bank"); document.getElementById("bank-filter").value = filters.bank; }
+  if (p.has("sort")) {
+    currentSort = p.get("sort");
+    document.querySelectorAll(".sort-btn").forEach(b => { b.classList.toggle("active", b.dataset.sort === currentSort); });
+  }
+}
+const origRender = renderCards;
+renderCards = function() { origRender(); pushState(); };
+
+loadFromParams();
 renderCards();
 </script>
 
