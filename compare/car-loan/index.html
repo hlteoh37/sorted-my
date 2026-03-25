@@ -164,6 +164,10 @@ footer a:hover { color: var(--text); }
 .profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
 .profiterole-footer .pf-brand a { color: var(--muted, #8b949e); text-decoration: none; }
 .profiterole-footer .pf-brand a:hover { color: var(--text, #e6edf3); }
+.breadcrumb { padding: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+.breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
 </style>
   <script type="application/ld+json">
   {
@@ -202,7 +206,7 @@ footer a:hover { color: var(--text); }
 
 <div class="container">
   <div class="guide-header">
-    <a href="../../" class="back-link">← Back to all guides</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../">Sorted</a><span class="sep">›</span><a href="../../#compare">Compare Tools</a><span class="sep">›</span><span>Car Loan Calculator</span></nav>
     <h1>🚗 Car Loan Calculator <span class="tool-tag">Interactive</span></h1>
     <p class="subtitle">Calculate your monthly repayment and compare rates from major Malaysian banks — Maybank, CIMB, Public Bank, Hong Leong, RHB.</p>
   </div>

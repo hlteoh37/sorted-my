@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compare Personal Loan Rates Malaysia 2026 — Best Bank Rates | Sorted</title>
-  <meta name="description" content="Compare personal loan rates from 12 Malaysian banks (2026). Calculate monthly repayments instantly. Find the cheapest pinjaman peribadi with our free calculator.">
+  <meta name="description" content="Compare personal loan rates from 15 Malaysian banks (2026). Calculate monthly repayments instantly. Find the cheapest pinjaman peribadi with our free calculator.">
   <meta property="og:title" content="Compare Personal Loan Rates Malaysia 2026 — Best Bank Rates | Sorted">
   <meta property="og:description" content="Compare personal loan rates from Maybank, CIMB, Public Bank, RHB, Bank Rakyat, BSN and more. Free calculator — enter loan amount and tenure to see monthly repayments.">
   <meta property="og:type" content="website">
@@ -200,6 +200,10 @@ footer a:hover { color: var(--text); }
 .profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
 .profiterole-footer .pf-brand a { color: var(--muted, #8b949e); text-decoration: none; }
 .profiterole-footer .pf-brand a:hover { color: var(--text, #e6edf3); }
+.breadcrumb { padding: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+.breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
 </style>
   <script type="application/ld+json">
   {
@@ -280,7 +284,7 @@ footer a:hover { color: var(--text); }
 
 <div class="container">
   <div class="guide-header">
-    <a href="../../" class="back-link">← Back to all guides</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../">Sorted</a><span class="sep">›</span><a href="../../#compare">Compare Tools</a><span class="sep">›</span><span>Personal Loans</span></nav>
     <h1>💰 Compare Personal Loan Rates Malaysia <span class="tool-tag">2026</span></h1>
     <p class="subtitle">14 personal loans compared. Enter your loan amount and tenure to see monthly repayments — then filter by type, rate, and bank.</p>
   </div>
@@ -597,7 +601,10 @@ const LOAN_DATA = [
   { bank: "Standard Chartered", product: "SC CashOne", type: "conventional", flatRate: 7.90, effectiveRate: 14.22, maxLoan: 200000, minLoan: 10000, maxTenure: 5, minIncome: 3000, processingFee: 0, islamic: false, govt: false, url: "https://www.sc.com/my/borrow/personal-loan/", features: "Premium bank, no processing fee, higher min income" },
   { bank: "BSN", product: "BSN MyRinggit-i", type: "islamic", flatRate: 4.99, effectiveRate: 9.10, maxLoan: 150000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, url: "https://www.bsn.com.my/personal/financing/myringgit-i", features: "Government-backed, lowest rate, Shariah-compliant, salary deduction" },
   { bank: "Bank Rakyat", product: "Personal Financing-i", type: "islamic", flatRate: 5.50, effectiveRate: 9.90, maxLoan: 200000, minLoan: 1000, maxTenure: 10, minIncome: 1000, processingFee: 0, islamic: true, govt: true, url: "https://www.bankrakyat.com.my/personal-financing-i", features: "Co-operative bank, competitive rate, salary deduction" },
-  { bank: "MBSB Bank", product: "MBSB Personal Financing-i", type: "islamic", flatRate: 5.80, effectiveRate: 10.44, maxLoan: 200000, minLoan: 2000, maxTenure: 10, minIncome: 1500, processingFee: 0, islamic: true, govt: true, url: "https://www.mbsbbank.com/personal/financing/personal-financing-i", features: "Government-linked, competitive rates for govt servants" }
+  { bank: "MBSB Bank", product: "MBSB Personal Financing-i", type: "islamic", flatRate: 5.80, effectiveRate: 10.44, maxLoan: 200000, minLoan: 2000, maxTenure: 10, minIncome: 1500, processingFee: 0, islamic: true, govt: true, url: "https://www.mbsbbank.com/personal/financing/personal-financing-i", features: "Government-linked, competitive rates for govt servants" },
+  { bank: "AEON Credit", product: "AEON Personal Financing-i", type: "islamic", flatRate: 9.99, effectiveRate: 17.98, maxLoan: 100000, minLoan: 3000, maxTenure: 5, minIncome: 1500, processingFee: 0, islamic: true, govt: false, url: "https://www.aeoncredit.com.my/product/personal-financing", features: "Shariah-compliant, fast approval, non-bank lender" },
+  { bank: "OCBC", product: "OCBC Personal Loan", type: "conventional", flatRate: 7.60, effectiveRate: 13.68, maxLoan: 150000, minLoan: 5000, maxTenure: 7, minIncome: 2500, processingFee: 0, islamic: false, govt: false, url: "https://www.ocbc.com.my/personal-banking/loans/personal-loan.page", features: "No processing fee, online application" },
+  { bank: "UOB", product: "UOB Personal Loan", type: "conventional", flatRate: 7.48, effectiveRate: 13.46, maxLoan: 200000, minLoan: 10000, maxTenure: 7, minIncome: 2500, processingFee: 0, islamic: false, govt: false, url: "https://www.uob.com.my/personal/borrow/personal-loans.page", features: "Up to RM200k, no processing fee, higher min loan" }
 ];
 
 function calcMonthly(principal, flatRate, tenureYears) {

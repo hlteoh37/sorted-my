@@ -218,6 +218,10 @@ footer a:hover { color: var(--text); }
 .profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
 .profiterole-footer .pf-brand a { color: var(--muted, #8b949e); text-decoration: none; }
 .profiterole-footer .pf-brand a:hover { color: var(--text, #e6edf3); }
+.breadcrumb { padding: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+.breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
 </style>
   <script type="application/ld+json">
   {
@@ -305,7 +309,7 @@ footer a:hover { color: var(--text); }
 
 <div class="container">
   <div class="guide-header">
-    <a href="../../" class="back-link">← Back to all guides</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../">Sorted</a><span class="sep">›</span><a href="../../#compare">Compare Tools</a><span class="sep">›</span><span>Unit Trusts</span></nav>
     <h1>Compare Unit Trust &amp; ASB Returns Malaysia <span class="tool-tag">2026</span></h1>
     <p class="subtitle">15 ASNB &amp; private unit trust funds compared. Calculate projected returns, compare dividend history, and filter by eligibility.</p>
   </div>
@@ -676,6 +680,14 @@ const FUND_DATA = [
     url: "https://www.kenangainvestors.com.my/", latestReturn: 9.10, fiveYrAvg: 7.80, minInvest: 1000, maxInvest: null, salesCharge: 5.00,
     divHistory: [{y:"2020",r:5.50},{y:"2021",r:9.80},{y:"2022",r:7.00},{y:"2023",r:9.50},{y:"2024",r:9.10},{y:"2025",r:9.10}],
     notes: "Award-winning equity fund. 5% sales charge. Consistently among top performers." },
+  { name: "Affin Hwang Select Opportunity Fund", short: "AH Opp", provider: "Affin Hwang AM", type: "private", eligibility: "open", risk: "high",
+    url: "https://www.affinhwangam.com/", latestReturn: 8.40, fiveYrAvg: 7.10, minInvest: 1000, maxInvest: null, salesCharge: 5.00,
+    divHistory: [{y:"2020",r:4.80},{y:"2021",r:8.90},{y:"2022",r:6.30},{y:"2023",r:8.70},{y:"2024",r:8.40},{y:"2025",r:8.40}],
+    notes: "Multi-cap equity fund. 5% sales charge. EPF-approved. Strong long-term track record." },
+  { name: "AmInvest Equity Trust", short: "AmEquity", provider: "AmInvest", type: "private", eligibility: "open", risk: "high",
+    url: "https://www.aminvest.com/", latestReturn: 7.80, fiveYrAvg: 6.50, minInvest: 1000, maxInvest: null, salesCharge: 5.00,
+    divHistory: [{y:"2020",r:4.50},{y:"2021",r:8.00},{y:"2022",r:5.80},{y:"2023",r:8.10},{y:"2024",r:7.80},{y:"2025",r:7.80}],
+    notes: "Malaysian equity fund. 5% sales charge. EPF-approved. Part of AmBank group." },
 ];
 
 const RISK_ORDER = { low: 1, medium: 2, high: 3 };

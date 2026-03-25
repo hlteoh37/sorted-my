@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compare Savings Account Rates Malaysia 2026 — Best Savings Rates | Sorted</title>
-  <meta name="description" content="Compare savings account rates from 16 Malaysian banks (2026). Find the best savings rate with bonus interest. Free calculator shows monthly interest earned for every account.">
+  <meta name="description" content="Compare savings account rates from 19 Malaysian banks (2026). Find the best savings rate with bonus interest. Free calculator shows monthly interest earned for every account.">
   <meta property="og:title" content="Compare Savings Account Rates Malaysia 2026 — Best Savings Rates | Sorted">
   <meta property="og:description" content="Compare savings rates from Maybank, CIMB, Public Bank, RHB, GX Bank, Boost Bank and more. Free calculator — enter your balance and see interest earned from every bank.">
   <meta property="og:type" content="website">
@@ -200,6 +200,10 @@ footer a:hover { color: var(--text); }
 .profiterole-footer .pf-brand { margin-top: 0.5rem; font-size: 0.75rem; }
 .profiterole-footer .pf-brand a { color: var(--muted, #8b949e); text-decoration: none; }
 .profiterole-footer .pf-brand a:hover { color: var(--text, #e6edf3); }
+.breadcrumb { padding: 0.75rem 0 0; font-size: 0.8rem; color: var(--muted); }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+.breadcrumb .sep { margin: 0 0.4rem; opacity: 0.5; }
 </style>
   <script type="application/ld+json">
   {
@@ -280,9 +284,9 @@ footer a:hover { color: var(--text); }
 
 <div class="container">
   <div class="guide-header">
-    <a href="../../" class="back-link">← Back to all guides</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../">Sorted</a><span class="sep">›</span><a href="../../#compare">Compare Tools</a><span class="sep">›</span><span>Savings Accounts</span></nav>
     <h1>🏦 Compare Savings Account Rates Malaysia <span class="tool-tag">2026</span></h1>
-    <p class="subtitle">16 accounts compared. Enter your balance to see monthly interest earned — then filter by bank type, bonus rates, and more.</p>
+    <p class="subtitle">19 accounts compared. Enter your balance to see monthly interest earned — then filter by bank type, bonus rates, and more.</p>
   </div>
 
   <!-- CALCULATOR -->
@@ -574,7 +578,10 @@ const SAVINGS_DATA = [
   { bank: "Bank Rakyat",        account: "Savings-i",             type: "islamic",      url: "https://www.bankrakyat.com.my/d/personal/deposit_i/savings_account_i", baseRate: 2.25, bonusRate: 0,    maxEffective: 2.25, minBalance: 100, islamic: true,  digital: false, features: "Co-operative bank, Shariah-compliant" },
   { bank: "AEON Credit",        account: "AEON Savings",          type: "conventional", url: "https://www.aeoncredit.com.my/", baseRate: 2.40, bonusRate: 0,    maxEffective: 2.40, minBalance: 0,   islamic: false, digital: false, features: "Basic savings account" },
   { bank: "GX Bank",            account: "GX Save",               type: "digital",      url: "https://www.gxbank.my/", baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: true,  digital: true,  features: "Digital bank, Shariah-compliant" },
-  { bank: "Boost Bank",         account: "Boost Pocket",          type: "digital",      url: "https://www.boostbank.my/", baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: true,  digital: true,  features: "Digital bank, Shariah-compliant" }
+  { bank: "Boost Bank",         account: "Boost Pocket",          type: "digital",      url: "https://www.boostbank.my/", baseRate: 2.50, bonusRate: 1.00, maxEffective: 3.50, minBalance: 0,   islamic: true,  digital: true,  features: "Digital bank, Shariah-compliant" },
+  { bank: "OCBC",               account: "OCBC 360 Savings",      type: "conventional", url: "https://www.ocbc.com.my/personal-banking/deposits/savings-account.page", baseRate: 2.30, bonusRate: 0.70, maxEffective: 3.00, minBalance: 0,   islamic: false, digital: false, features: "Multi-criteria bonus: salary + spend + save" },
+  { bank: "UOB",                account: "UOB One Account",       type: "conventional", url: "https://www.uob.com.my/personal/save/savings-accounts/one-account.page", baseRate: 2.30, bonusRate: 0.80, maxEffective: 3.10, minBalance: 0,   islamic: false, digital: false, features: "Tiered bonus: salary credit + card spend + GIRO" },
+  { bank: "Affin Bank",         account: "Affin Savings-i",       type: "islamic",      url: "https://www.affinbank.com.my/Personal/Deposits/Savings-Account-i", baseRate: 2.25, bonusRate: 0,    maxEffective: 2.25, minBalance: 250, islamic: true,  digital: false, features: "Shariah-compliant, basic savings" }
 ];
 
 function calcMonthlyInterest(principal, ratePA) {
