@@ -888,6 +888,46 @@ function toggleFaq(btn) {
   item.classList.toggle('open');
 }
 
+// ==================== URL STATE ====================
+function filtersToParams() {
+  const p = new URLSearchParams();
+  if (document.getElementById("filterType").value !== "all") p.set("type", document.getElementById("filterType").value);
+  if (document.getElementById("filterEligibility").value !== "all") p.set("elig", document.getElementById("filterEligibility").value);
+  if (document.getElementById("filterRisk").value !== "all") p.set("risk", document.getElementById("filterRisk").value);
+  if (document.getElementById("sortBy").value !== "return-desc") p.set("sort", document.getElementById("sortBy").value);
+  const amt = document.getElementById("investAmount").value;
+  if (amt && amt !== "10000") p.set("amt", amt);
+  const period = document.getElementById("calcPeriod").value;
+  if (period !== "1") p.set("period", period);
+  if (document.getElementById("calcReinvest").value !== "yes") p.set("reinvest", "no");
+  return p;
+}
+
+function pushUrlState() {
+  const p = filtersToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("type")) {
+    document.getElementById("filterType").value = p.get("type");
+    document.querySelectorAll(".cat-tab").forEach(t => t.classList.toggle("active", t.dataset.cat === p.get("type")));
+  }
+  if (p.has("elig")) document.getElementById("filterEligibility").value = p.get("elig");
+  if (p.has("risk")) document.getElementById("filterRisk").value = p.get("risk");
+  if (p.has("sort")) document.getElementById("sortBy").value = p.get("sort");
+  if (p.has("amt")) document.getElementById("investAmount").value = p.get("amt");
+  if (p.has("period")) document.getElementById("calcPeriod").value = p.get("period");
+  if (p.has("reinvest")) document.getElementById("calcReinvest").value = p.get("reinvest");
+}
+
+const _origApplyFilters = applyFilters;
+applyFilters = function() { _origApplyFilters(); pushUrlState(); };
+
+loadFromParams();
+
 // Init
 renderRateTable();
 applyFilters();

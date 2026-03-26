@@ -861,6 +861,44 @@ document.getElementById("compare-modal-overlay").addEventListener("click", e => 
   }
 });
 
+// ==================== URL STATE ====================
+function filtersToParams() {
+  const p = new URLSearchParams();
+  if (selectedFeature !== "all") p.set("feature", selectedFeature);
+  if (searchQuery) p.set("q", searchQuery);
+  if (sortBy !== "rating") p.set("sort", sortBy);
+  return p;
+}
+
+function pushState() {
+  const p = filtersToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("feature")) {
+    selectedFeature = p.get("feature");
+    document.querySelectorAll("#feature-filters button").forEach(b => {
+      b.classList.toggle("active", (b.dataset.feature || "all") === selectedFeature);
+    });
+  }
+  if (p.has("q")) {
+    searchQuery = p.get("q");
+    document.getElementById("search-input").value = searchQuery;
+  }
+  if (p.has("sort")) {
+    sortBy = p.get("sort");
+    document.getElementById("sort-select").value = sortBy;
+  }
+}
+
+const _origRender = render;
+render = function() { _origRender(); pushState(); };
+
+loadFromParams();
+
 // Initial render
 render();
 </script>
