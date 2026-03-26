@@ -789,7 +789,43 @@ function toggleFaq(btn) {
   item.classList.toggle('open');
 }
 
+// URL state: read params on load, update on filter/sort change
+function filtersToParams() {
+  const p = new URLSearchParams();
+  const t = document.getElementById('filterType').value;
+  const m = document.getElementById('filterMinBal').value;
+  const b = document.getElementById('filterBonus').value;
+  const s = document.getElementById('sortBy').value;
+  if (t !== 'all') p.set('type', t);
+  if (m !== 'all') p.set('min', m);
+  if (b !== 'all') p.set('bonus', b);
+  if (s !== 'effective-desc') p.set('sort', s);
+  // Quick filter chip
+  const activeChip = document.querySelector('.sort-btn.active');
+  if (activeChip && activeChip.dataset.filter !== 'all') p.set('quick', activeChip.dataset.filter);
+  return p;
+}
+function syncUrl() {
+  const p = filtersToParams();
+  const url = p.toString() ? '?' + p.toString() : location.pathname;
+  history.replaceState(null, '', url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has('type')) document.getElementById('filterType').value = p.get('type');
+  if (p.has('min')) document.getElementById('filterMinBal').value = p.get('min');
+  if (p.has('bonus')) document.getElementById('filterBonus').value = p.get('bonus');
+  if (p.has('sort')) document.getElementById('sortBy').value = p.get('sort');
+  if (p.has('quick')) {
+    const btn = document.querySelector('.sort-btn[data-filter="' + p.get('quick') + '"]');
+    if (btn) setQuickFilter(btn);
+  }
+}
+const _origApply = applyFilters;
+applyFilters = function() { _origApply(); syncUrl(); };
+
 // Init
+loadFromParams();
 renderRateTable();
 applyFilters();
 </script>

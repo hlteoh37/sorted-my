@@ -337,6 +337,8 @@ footer a:hover { color: var(--text); }
       <a href="../tax-calculator/" class="related-card">&#129534; Income Tax Calculator<div class="rel-desc">Calculate your Malaysian income tax for YA 2025</div></a>
       <a href="../savings-account/" class="related-card">&#128176; Savings Account Comparison<div class="rel-desc">Compare savings accounts from Malaysian banks</div></a>
       <a href="../home-loan/" class="related-card">&#127968; Home Loan Comparison<div class="rel-desc">Compare home loan packages from Malaysian banks</div></a>
+      <a href="../takaful-vs-conventional/" class="related-card">☪️ Takaful vs Conventional<div class="rel-desc">Understand the differences between Islamic and conventional insurance</div></a>
+      <a href="../" class="related-card">📊 All Compare Tools<div class="rel-desc">Browse all 19 Malaysian finance comparison tools</div></a>
     </div>
   </div>
 
@@ -827,7 +829,43 @@ function toggleFaq(i) {
   document.getElementById('faq' + i).classList.toggle('open');
 }
 
+// URL state: read params on load, update on filter change
+function stateToParams() {
+  const p = new URLSearchParams();
+  if (state.age !== 30) p.set('age', state.age);
+  if (state.limit !== 'all') p.set('limit', state.limit);
+  if (state.room !== 'all') p.set('room', state.room);
+  if (state.provider !== 'all') p.set('provider', state.provider);
+  if (state.sort !== 'price-asc') p.set('sort', state.sort);
+  return p;
+}
+function syncUrl() {
+  const p = stateToParams();
+  const url = p.toString() ? '?' + p.toString() : location.pathname;
+  history.replaceState(null, '', url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has('age')) { state.age = parseInt(p.get('age')); document.getElementById('ageSelect').value = state.age; }
+  if (p.has('sort')) { state.sort = p.get('sort'); document.getElementById('sortSelect').value = state.sort; }
+  if (p.has('limit')) {
+    state.limit = p.get('limit');
+    document.querySelectorAll('#limitChips .chip').forEach(c => c.classList.toggle('active', c.dataset.limit === state.limit));
+  }
+  if (p.has('room')) {
+    state.room = p.get('room');
+    document.querySelectorAll('#roomChips .chip').forEach(c => c.classList.toggle('active', c.dataset.room === state.room));
+  }
+  if (p.has('provider')) {
+    state.provider = p.get('provider');
+    document.querySelectorAll('#providerChips .chip').forEach(c => c.classList.toggle('active', c.dataset.provider === state.provider));
+  }
+}
+const _origRender = renderCards;
+renderCards = function() { _origRender(); syncUrl(); };
+
 // Init
+loadFromParams();
 renderCards();
 </script>
 <script>

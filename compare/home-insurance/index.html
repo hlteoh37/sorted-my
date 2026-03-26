@@ -176,6 +176,8 @@ footer a:hover { color: var(--text); }
   .card-body { grid-template-columns: 1fr; }
   .compare-table { font-size: 0.75rem; }
   .compare-table th, .compare-table td { padding: 0.4rem 0.5rem; }
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; position: relative; }
+  .table-scroll::after { content: 'Swipe →'; position: absolute; top: 0.4rem; right: 0.5rem; font-size: 0.65rem; color: var(--muted); opacity: 0.7; pointer-events: none; }
 }
   .profiterole-footer { border-top: 1px solid var(--border, #2a2a3a); padding: 1.5rem 1.5rem; text-align: center; font-size: 0.82rem; color: var(--muted, #8b949e); }
 .profiterole-footer .pf-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
@@ -226,7 +228,7 @@ footer a:hover { color: var(--text); }
   <!-- KEY DIFFERENCE BOX -->
   <div class="calc-summary">
     <h3>Houseowner vs Householder &mdash; What's the Difference?</h3>
-    <table class="compare-table" style="margin:0.75rem 0 0;">
+    <div class="table-scroll"><table class="compare-table" style="margin:0.75rem 0 0;">
       <thead>
         <tr><th>Feature</th><th>Houseowner (Fire)</th><th>Householder (Contents)</th></tr>
       </thead>
@@ -238,7 +240,7 @@ footer a:hover { color: var(--text); }
         <tr><td>Covers tenant's items?</td><td class="no">No</td><td class="yes">Yes</td></tr>
         <tr><td>Typical premium range</td><td>RM 150 &ndash; RM 800/year</td><td>RM 50 &ndash; RM 300/year</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
 
   <!-- FILTERS -->
@@ -344,6 +346,7 @@ footer a:hover { color: var(--text); }
       <a href="../../guides/home-loan-guide/" class="related-card">&#128196; Home Loan Guide<div class="rel-desc">Everything about Malaysian home financing — rates, eligibility, tips</div></a>
       <a href="../../guides/renewing-tenancy-agreement/" class="related-card">&#128221; Renewing Tenancy Agreement<div class="rel-desc">Landlord &amp; tenant insurance considerations at renewal</div></a>
       <a href="../medical-insurance/" class="related-card">&#127973; Medical Insurance<div class="rel-desc">Compare medical cards from major Malaysian insurers</div></a>
+      <a href="../" class="related-card">📊 All Compare Tools<div class="rel-desc">Browse all 19 Malaysian finance comparison tools</div></a>
     </div>
   </div>
 
