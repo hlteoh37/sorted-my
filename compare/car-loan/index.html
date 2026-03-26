@@ -557,6 +557,36 @@ function calculate() {
   });
 }
 
+// URL state: read params on load, update on calculate
+function calcToParams() {
+  const p = new URLSearchParams();
+  const price = document.getElementById("car-price").value;
+  const dp = document.getElementById("down-payment").value;
+  const tenure = document.getElementById("tenure").value;
+  const rate = document.getElementById("interest-rate").value;
+  if (price && price !== "0") p.set("price", price);
+  if (dp && dp !== "10") p.set("dp", dp);
+  if (tenure && tenure !== "7") p.set("tenure", tenure);
+  if (rate && rate !== "3.5") p.set("rate", rate);
+  return p;
+}
+function pushURL() {
+  const p = calcToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("price")) document.getElementById("car-price").value = p.get("price");
+  if (p.has("dp")) document.getElementById("down-payment").value = p.get("dp");
+  if (p.has("tenure")) document.getElementById("tenure").value = p.get("tenure");
+  if (p.has("rate")) document.getElementById("interest-rate").value = p.get("rate");
+}
+const origCalc = calculate;
+calculate = function() { origCalc(); pushURL(); };
+
+loadFromParams();
+
 // Auto-calculate on load with defaults
 calculate();
 </script>

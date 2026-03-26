@@ -867,6 +867,38 @@ function toggleFaq(btn) {
   item.classList.toggle('open');
 }
 
+// URL state: read params on load, update on filter change
+function filtersToParams() {
+  const p = new URLSearchParams();
+  const amt = document.getElementById("loanAmount").value;
+  const tenure = document.getElementById("loanTenure").value;
+  if (amt && amt !== "30000") p.set("amount", amt);
+  if (tenure && tenure !== "5") p.set("tenure", tenure);
+  if (document.getElementById("filterType").value !== "all") p.set("type", document.getElementById("filterType").value);
+  if (document.getElementById("filterMaxLoan").value !== "all") p.set("maxloan", document.getElementById("filterMaxLoan").value);
+  if (document.getElementById("filterFee").value !== "all") p.set("fee", document.getElementById("filterFee").value);
+  if (document.getElementById("sortBy").value !== "rate-asc") p.set("sort", document.getElementById("sortBy").value);
+  return p;
+}
+function pushURL() {
+  const p = filtersToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("amount")) document.getElementById("loanAmount").value = p.get("amount");
+  if (p.has("tenure")) document.getElementById("loanTenure").value = p.get("tenure");
+  if (p.has("type")) document.getElementById("filterType").value = p.get("type");
+  if (p.has("maxloan")) document.getElementById("filterMaxLoan").value = p.get("maxloan");
+  if (p.has("fee")) document.getElementById("filterFee").value = p.get("fee");
+  if (p.has("sort")) document.getElementById("sortBy").value = p.get("sort");
+}
+const origApplyFilters = applyFilters;
+applyFilters = function(qf) { origApplyFilters(qf); pushURL(); };
+
+loadFromParams();
+
 // Init
 renderRateTable();
 applyFilters();

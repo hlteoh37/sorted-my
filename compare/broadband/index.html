@@ -697,6 +697,40 @@ document.querySelectorAll(".sort-btn").forEach(btn => {
   });
 });
 
+// URL state: read params on load, update on filter/sort change
+function filtersToParams() {
+  const p = new URLSearchParams();
+  if (document.getElementById("speed-filter").value !== "0") p.set("speed", document.getElementById("speed-filter").value);
+  if (document.getElementById("contract-filter").value !== "any") p.set("contract", document.getElementById("contract-filter").value);
+  if (document.getElementById("provider-filter").value !== "any") p.set("provider", document.getElementById("provider-filter").value);
+  if (document.getElementById("budget-slider").value !== "400") p.set("budget", document.getElementById("budget-slider").value);
+  if (currentSort !== "price-asc") p.set("sort", currentSort);
+  return p;
+}
+function pushState() {
+  const p = filtersToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("speed")) { document.getElementById("speed-filter").value = p.get("speed"); }
+  if (p.has("contract")) { document.getElementById("contract-filter").value = p.get("contract"); }
+  if (p.has("provider")) { document.getElementById("provider-filter").value = p.get("provider"); }
+  if (p.has("budget")) {
+    document.getElementById("budget-slider").value = p.get("budget");
+    document.getElementById("budget-display").textContent = "RM" + p.get("budget");
+  }
+  if (p.has("sort")) {
+    currentSort = p.get("sort");
+    document.querySelectorAll(".sort-btn").forEach(b => { b.classList.toggle("active", b.dataset.sort === currentSort); });
+  }
+}
+const origRender = renderPlans;
+renderPlans = function() { origRender(); pushState(); };
+
+loadFromParams();
+
 // ==================== INIT ====================
 renderPlans();
 </script>

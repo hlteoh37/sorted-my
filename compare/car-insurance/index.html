@@ -772,6 +772,50 @@ function toggleFaq(i) {
   item.classList.toggle('open');
 }
 
+// URL state: read params on load, update on filter change
+function stateToParams() {
+  const p = new URLSearchParams();
+  if (state.carValue !== 80000) p.set("value", state.carValue);
+  if (state.ncd !== 30) p.set("ncd", state.ncd);
+  if (state.plan !== "all") p.set("plan", state.plan);
+  if (state.provider !== "all") p.set("provider", state.provider);
+  if (state.sort !== "price-asc") p.set("sort", state.sort);
+  return p;
+}
+function pushURL() {
+  const p = stateToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("value")) {
+    state.carValue = parseInt(p.get("value"));
+    document.getElementById("carValue").value = state.carValue;
+    document.getElementById("carValueDisplay").textContent = "RM " + state.carValue.toLocaleString("en-MY");
+  }
+  if (p.has("ncd")) {
+    state.ncd = parseFloat(p.get("ncd"));
+    document.getElementById("ncdSelect").value = state.ncd;
+  }
+  if (p.has("plan")) {
+    state.plan = p.get("plan");
+    document.querySelectorAll("#planChips .chip").forEach(c => c.classList.toggle("active", c.dataset.plan === state.plan));
+  }
+  if (p.has("provider")) {
+    state.provider = p.get("provider");
+    document.querySelectorAll("#providerChips .chip").forEach(c => c.classList.toggle("active", c.dataset.provider === state.provider));
+  }
+  if (p.has("sort")) {
+    state.sort = p.get("sort");
+    document.getElementById("sortSelect").value = state.sort;
+  }
+}
+const origRenderCards = renderCards;
+renderCards = function() { origRenderCards(); pushURL(); };
+
+loadFromParams();
+
 // Init
 updateNcdScale();
 renderCards();
