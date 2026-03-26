@@ -947,7 +947,36 @@ FAQS.forEach((faq, i) => {
   });
 });
 
+// URL state: read params on load, update on filter/sort change
+function filtersToParams() {
+  const p = new URLSearchParams();
+  if (filters.provider !== 'any') p.set('provider', filters.provider);
+  if (filters.type !== 'any') p.set('type', filters.type);
+  if (filters.budget !== 200) p.set('budget', filters.budget);
+  if (filters.minData !== 0) p.set('data', filters.minData);
+  if (filters.fiveG) p.set('5g', '1');
+  if (sortMode !== 'price-asc') p.set('sort', sortMode);
+  return p;
+}
+function pushURLState() {
+  const p = filtersToParams();
+  const url = p.toString() ? '?' + p.toString() : location.pathname;
+  history.replaceState(null, '', url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has('provider')) { filters.provider = p.get('provider'); document.getElementById('provider-filter').value = filters.provider; }
+  if (p.has('type')) { filters.type = p.get('type'); document.getElementById('type-filter').value = filters.type; }
+  if (p.has('budget')) { filters.budget = +p.get('budget'); document.getElementById('budget-slider').value = filters.budget; document.getElementById('budget-display').textContent = 'RM' + filters.budget; }
+  if (p.has('data')) { filters.minData = +p.get('data'); document.getElementById('data-slider').value = filters.minData; document.getElementById('data-display').textContent = filters.minData + ' GB'; }
+  if (p.has('5g')) { filters.fiveG = true; document.getElementById('fiveg-toggle').checked = true; }
+  if (p.has('sort')) { sortMode = p.get('sort'); document.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b.dataset.sort === sortMode)); }
+}
+const origRender = render;
+render = function() { origRender(); pushURLState(); };
+
 // Initial render
+loadFromParams();
 render();
 </script>
 <div style="text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);margin-top:2rem;">

@@ -774,7 +774,36 @@ function toggleFaq(i) {
   document.getElementById('faq' + i).classList.toggle('open');
 }
 
+// URL state: read params on load, update on filter/sort change
+function stateToParams() {
+  const p = new URLSearchParams();
+  if (state.buildingValue !== 500000) p.set("bv", state.buildingValue);
+  if (state.contentsValue !== 50000) p.set("cv", state.contentsValue);
+  if (state.propertyType !== "landed") p.set("pt", state.propertyType);
+  if (state.policy !== "all") p.set("policy", state.policy);
+  if (state.provider !== "all") p.set("provider", state.provider);
+  if (state.sort !== "price-asc") p.set("sort", state.sort);
+  return p;
+}
+function pushURLState() {
+  const p = stateToParams();
+  const url = p.toString() ? "?" + p.toString() : location.pathname;
+  history.replaceState(null, "", url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  if (p.has("bv")) { state.buildingValue = parseInt(p.get("bv")); buildingSlider.value = state.buildingValue; buildingDisplay.textContent = 'RM ' + state.buildingValue.toLocaleString('en-MY'); }
+  if (p.has("cv")) { state.contentsValue = parseInt(p.get("cv")); contentsSlider.value = state.contentsValue; contentsDisplay.textContent = 'RM ' + state.contentsValue.toLocaleString('en-MY'); }
+  if (p.has("pt")) { state.propertyType = p.get("pt"); document.getElementById('propertyType').value = state.propertyType; }
+  if (p.has("policy")) { state.policy = p.get("policy"); document.querySelectorAll('#policyChips .chip').forEach(c => c.classList.toggle('active', c.dataset.policy === state.policy)); }
+  if (p.has("provider")) { state.provider = p.get("provider"); document.querySelectorAll('#providerChips .chip').forEach(c => c.classList.toggle('active', c.dataset.provider === state.provider)); }
+  if (p.has("sort")) { state.sort = p.get("sort"); document.getElementById('sortSelect').value = state.sort; }
+}
+const origRenderCards = renderCards;
+renderCards = function() { origRenderCards(); pushURLState(); };
+
 // Init
+loadFromParams();
 renderCards();
 </script>
 <script>

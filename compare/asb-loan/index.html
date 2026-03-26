@@ -722,6 +722,32 @@ function renderDivChart() {
 }
 
 renderDivChart();
+
+// URL state: save/load calculator inputs
+const asbInputs = [
+  {id: 'loan-amount', key: 'amt', def: 100000},
+  {id: 'tenure', key: 'yr', def: '20', isSelect: true},
+  {id: 'interest-rate', key: 'rate', def: 4.00},
+  {id: 'dividend-rate', key: 'div', def: 5.00}
+];
+function pushURLState() {
+  const p = new URLSearchParams();
+  asbInputs.forEach(i => {
+    const el = document.getElementById(i.id);
+    if (el.value != i.def) p.set(i.key, el.value);
+  });
+  const url = p.toString() ? '?' + p.toString() : location.pathname;
+  history.replaceState(null, '', url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  asbInputs.forEach(i => {
+    if (p.has(i.key)) document.getElementById(i.id).value = p.get(i.key);
+  });
+}
+const origCalc = calculate;
+calculate = function() { origCalc(); pushURLState(); };
+loadFromParams();
 calculate();
 </script>
 <div style="text-align:center;padding:2rem 1rem;border-top:1px solid var(--border);margin-top:2rem;">

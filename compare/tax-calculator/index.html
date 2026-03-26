@@ -580,7 +580,34 @@ function calculate() {
   tbody.appendChild(totalRow);
 }
 
+// URL state: save/load calculator inputs
+const taxInputs = [
+  {id: 'gross-income', key: 'income', def: 72000},
+  {id: 'relief-personal', key: 'rp', def: 9000},
+  {id: 'relief-epf', key: 're', def: 4000},
+  {id: 'relief-socso', key: 'rs', def: 350},
+  {id: 'relief-lifestyle', key: 'rl', def: 2500},
+  {id: 'relief-other', key: 'ro', def: 0}
+];
+function pushURLState() {
+  const p = new URLSearchParams();
+  taxInputs.forEach(i => {
+    const el = document.getElementById(i.id);
+    if (el.value != i.def) p.set(i.key, el.value);
+  });
+  const url = p.toString() ? '?' + p.toString() : location.pathname;
+  history.replaceState(null, '', url);
+}
+function loadFromParams() {
+  const p = new URLSearchParams(location.search);
+  taxInputs.forEach(i => {
+    if (p.has(i.key)) document.getElementById(i.id).value = p.get(i.key);
+  });
+}
+const origCalc = calculate;
+calculate = function() { origCalc(); pushURLState(); };
 // Auto-calculate with defaults on load
+loadFromParams();
 calculate();
 </script>
 </body>
