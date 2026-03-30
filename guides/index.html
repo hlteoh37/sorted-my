@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Malaysian Guides — 73 Step-by-Step Checklists | Sorted</title>
+  <meta name="description" content="Browse all 73 Malaysian bureaucracy guides — property, tax, banking, immigration, car ownership, EPF, PTPTN, business registration and more. Every document, every step, sorted.">
+  <meta property="og:title" content="All Malaysian Guides — Sorted Directory">
+  <meta property="og:description" content="73 step-by-step guides for Malaysian bureaucracy. Property, tax, banking, immigration, car, business, and more.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/guides/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "All Malaysian Guides",
+    "description": "Browse all 73 Malaysian bureaucracy guides — property, tax, banking, immigration, car ownership, EPF, PTPTN, business registration and more.",
+    "url": "https://hlteoh37.github.io/sorted-my/guides/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sorted MY",
+      "url": "https://hlteoh37.github.io/sorted-my/"
+    },
+    "numberOfItems": 73
+  }
+  </script>
+  <style>
+:root {
+  --bg: #0f1117;
+  --bg2: #1a1d26;
+  --bg3: #22263a;
+  --border: #2d3148;
+  --text: #e8eaf6;
+  --muted: #8892b0;
+  --accent: #6c63ff;
+  --accent2: #48cfad;
+  --warn: #ffd166;
+  --success: #22c55e;
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+nav {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+.hero {
+  background: linear-gradient(135deg, #0f1117 0%, #1a1d26 50%, #0f1117 100%);
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+.hero h1 .highlight { color: var(--accent); }
+.hero p { font-size: 1rem; color: var(--muted); max-width: 540px; margin: 0 auto 1.5rem; }
+
+.search-wrap { max-width: 560px; margin: 0 auto; position: relative; }
+.search-box {
+  display: flex;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.search-box:focus-within { border-color: var(--accent); }
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.9rem 1rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: var(--font);
+}
+.search-box input::placeholder { color: var(--muted); }
+.search-clear {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  display: none;
+}
+.search-clear:hover { color: var(--text); }
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.stats strong { color: var(--text); font-weight: 700; }
+
+.container { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 2rem 0 1rem;
+}
+.cat-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font);
+}
+.cat-btn:hover { border-color: var(--accent); color: var(--text); }
+.cat-btn.active { background: rgba(108,99,255,0.15); border-color: var(--accent); color: var(--accent); }
+
+.result-count {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 1rem 0;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2rem 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-count {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.guide-list { list-style: none; }
+.guide-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  transition: border-color 0.2s, transform 0.1s;
+}
+.guide-item:hover { border-color: var(--accent); transform: translateX(4px); text-decoration: none; }
+.guide-item .item-title { font-weight: 700; font-size: 0.92rem; }
+.guide-item .item-desc { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--muted);
+}
+
+.category-section { margin-bottom: 0.5rem; }
+.category-section.all-hidden { display: none; }
+
+.coffee-banner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  margin: 2.5rem 0;
+}
+.coffee-banner p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.coffee-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+.coffee-btn:hover { background: #7c74ff; text-decoration: none; }
+
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 4rem;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .stats { gap: 1rem; }
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/sorted-my/" class="nav-brand"><span>Sorted</span>.my</a>
+  <div class="nav-links">
+    <a href="/sorted-my/">Home</a>
+    <a href="/sorted-my/guides/">Guides</a>
+    <a href="/sorted-my/compare/">Compare Tools</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>All <span class="highlight">Malaysian Guides</span></h1>
+  <p>73 step-by-step checklists for Malaysian bureaucracy. Every document, every step, sorted.</p>
+  <div class="search-wrap">
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search guides… e.g. property, EPF, passport, tax" autocomplete="off">
+      <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+    </div>
+  </div>
+  <div class="stats">
+    <span><strong>73</strong> guides</span>
+    <span><strong>8</strong> categories</span>
+    <span><strong>Free</strong> forever</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="category-nav" id="category-nav">
+    <button class="cat-btn active" data-cat="all">All</button>
+    <button class="cat-btn" data-cat="property">🏠 Property</button>
+    <button class="cat-btn" data-cat="finance">💰 Finance</button>
+    <button class="cat-btn" data-cat="tax">🧾 Tax</button>
+    <button class="cat-btn" data-cat="personal">👨‍👩‍👧 Personal</button>
+    <button class="cat-btn" data-cat="career">💼 Career</button>
+    <button class="cat-btn" data-cat="transport">🚗 Transport</button>
+    <button class="cat-btn" data-cat="govt">🪪 Government</button>
+    <button class="cat-btn" data-cat="disputes">⚖️ Disputes</button>
+  </div>
+
+  <div class="result-count" id="result-count"></div>
+
+  <div class="no-results" id="no-results">
+    <p>No guides found for "<span id="no-results-term"></span>".</p>
+    <p style="font-size:0.875rem;margin-top:0.5rem;">Try: property, bank, car, tax, passport, EPF, PTPTN, marriage</p>
+  </div>
+
+  <!-- PROPERTY & HOUSING -->
+  <div class="category-section" data-category="property">
+    <p class="section-label">🏠 Property & Housing <span class="section-count">(8)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/buying-property/" class="guide-item" data-search="buying property first home spa lawyer stamp duty valuation loan">
+        <div class="item-title">Buying Your First Property in Malaysia</div>
+        <div class="item-desc">Documents, costs, SPA, stamp duty, lawyer fees & full timeline</div>
+      </a>
+      <a href="/sorted-my/guides/home-loan-guide/" class="guide-item" data-search="home loan mortgage bank housing interest rate dsr eligibility">
+        <div class="item-title">How to Apply for a Home Loan</div>
+        <div class="item-desc">Bank eligibility, DSR ratio, interest rates & approval process</div>
+      </a>
+      <a href="/sorted-my/guides/mydeposit-guide/" class="guide-item" data-search="mydeposit first home buyer affordable housing pr1ma">
+        <div class="item-title">MyDeposit & First Home Buyer Schemes</div>
+        <div class="item-desc">Government deposit assistance and affordable housing programmes</div>
+      </a>
+      <a href="/sorted-my/guides/residensi-wilayah/" class="guide-item" data-search="residensi wilayah rumawip affordable housing kl federal territory">
+        <div class="item-title">Residensi Wilayah (RUMAWIP)</div>
+        <div class="item-desc">Affordable housing in KL — eligibility, application & balloting</div>
+      </a>
+      <a href="/sorted-my/guides/renting-first-apartment/" class="guide-item" data-search="renting apartment room deposit tenancy agreement">
+        <div class="item-title">Renting Your First Apartment</div>
+        <div class="item-desc">Deposits, tenancy agreement, stamp duty & tenant rights</div>
+      </a>
+      <a href="/sorted-my/guides/renewing-tenancy-agreement/" class="guide-item" data-search="renewing tenancy agreement stamp duty extension rent increase">
+        <div class="item-title">Renewing Your Tenancy Agreement</div>
+        <div class="item-desc">Checklist, stamp duty costs & what to negotiate</div>
+      </a>
+      <a href="/sorted-my/guides/renting-out-room/" class="guide-item" data-search="renting out room landlord sewa bilik tenancy deposit tax">
+        <div class="item-title">Renting Out a Room Legally</div>
+        <div class="item-desc">Tenancy agreement, stamp duty, income tax declaration & tenant rights</div>
+      </a>
+      <a href="/sorted-my/guides/contractor-went-dark/" class="guide-item" data-search="contractor disappeared renovation deposit scam ttpm cidb">
+        <div class="item-title">My Contractor Went Dark — What To Do</div>
+        <div class="item-desc">Police report, TTPM tribunal, CIDB complaint & civil action</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MONEY & FINANCE -->
+  <div class="category-section" data-category="finance">
+    <p class="section-label">💰 Money & Finance <span class="section-count">(16)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/opening-bank-account/" class="guide-item" data-search="opening bank account maybank cimb public rhb citizen foreigner">
+        <div class="item-title">Opening a Bank Account</div>
+        <div class="item-desc">For citizens & foreigners — documents, fees & which bank to choose</div>
+      </a>
+      <a href="/sorted-my/guides/applying-credit-card/" class="guide-item" data-search="credit card apply eligibility income cashback rewards miles">
+        <div class="item-title">Applying for a Credit Card</div>
+        <div class="item-desc">Eligibility, documents, income requirements & best cards</div>
+      </a>
+      <a href="/sorted-my/guides/applying-personal-loan/" class="guide-item" data-search="personal loan bank interest rate documents eligibility">
+        <div class="item-title">Applying for a Personal Loan</div>
+        <div class="item-desc">Rates, documents & banks compared</div>
+      </a>
+      <a href="/sorted-my/guides/checking-credit-score/" class="guide-item" data-search="credit score ccris ctos bnm report check">
+        <div class="item-title">Check Your Credit Score (CCRIS & CTOS)</div>
+        <div class="item-desc">Free CCRIS via eCCRIS, CTOS reports & how to improve your score</div>
+      </a>
+      <a href="/sorted-my/guides/akpk-debt-management/" class="guide-item" data-search="akpk debt management programme dmp financial counselling">
+        <div class="item-title">AKPK Debt Management Programme</div>
+        <div class="item-desc">Free financial counselling and structured debt repayment</div>
+      </a>
+      <a href="/sorted-my/guides/epf-guide/" class="guide-item" data-search="epf kwsp account structure withdrawal contribution rate employer">
+        <div class="item-title">EPF (KWSP) Complete Guide</div>
+        <div class="item-desc">Account structure, contribution rates, withdrawals & benefits</div>
+      </a>
+      <a href="/sorted-my/guides/kwsp-i-akaun/" class="guide-item" data-search="epf kwsp i-akaun register balance check withdrawal nomination">
+        <div class="item-title">EPF i-Akaun Guide</div>
+        <div class="item-desc">Register, check balance, manage nominations & apply for withdrawals</div>
+      </a>
+      <a href="/sorted-my/guides/kwsp-akaun-fleksibel-withdrawal/" class="guide-item" data-search="kwsp akaun fleksibel flexible account withdrawal">
+        <div class="item-title">KWSP Akaun Fleksibel Withdrawal</div>
+        <div class="item-desc">How to withdraw from the Flexible Account anytime</div>
+      </a>
+      <a href="/sorted-my/guides/applying-kwsp-nomination/" class="guide-item" data-search="epf kwsp nomination beneficiary update">
+        <div class="item-title">Update Your EPF Nomination</div>
+        <div class="item-desc">Nominate beneficiaries and update existing nominations</div>
+      </a>
+      <a href="/sorted-my/guides/epf-calculator/" class="guide-item" data-search="epf calculator retirement kwsp projected balance">
+        <div class="item-title">EPF Retirement Calculator</div>
+        <div class="item-desc">Project your KWSP balance at retirement age</div>
+      </a>
+      <a href="/sorted-my/guides/tng-ewallet/" class="guide-item" data-search="touch n go tng ewallet top up ekyc limit register">
+        <div class="item-title">Touch 'n Go eWallet Guide</div>
+        <div class="item-desc">Register, top up, eKYC, limits & everything TNG</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-bpr-sumbangan/" class="guide-item" data-search="bpr str sumbangan tunai rakyat bantuan government aid b40">
+        <div class="item-title">Claiming STR / BPR Cash Aid</div>
+        <div class="item-desc">Government cash assistance — eligibility, application & payment schedule</div>
+      </a>
+      <a href="/sorted-my/guides/mysalam-guide/" class="guide-item" data-search="mysalam free insurance b40 government takaful hospitalisation">
+        <div class="item-title">MySalam: Free B40 Insurance</div>
+        <div class="item-desc">Free government insurance for B40 Malaysians</div>
+      </a>
+      <a href="/sorted-my/guides/peka-b40/" class="guide-item" data-search="peka b40 free health screening medical checkup">
+        <div class="item-title">PeKa B40: Free Health Screening</div>
+        <div class="item-desc">Free health screenings for B40 households</div>
+      </a>
+      <a href="/sorted-my/guides/making-a-will/" class="guide-item" data-search="will wasiat probate faraid amanah raya estate">
+        <div class="item-title">Making a Will in Malaysia</div>
+        <div class="item-desc">Wills Act, Faraid for Muslims, Amanah Raya & full process</div>
+      </a>
+      <a href="/sorted-my/guides/sspn-i-guide/" class="guide-item" data-search="sspn-i education savings ptptn tax relief children">
+        <div class="item-title">SSPN-i Education Savings</div>
+        <div class="item-desc">Save for children's education with tax relief up to RM8,000</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TAX -->
+  <div class="category-section" data-category="tax">
+    <p class="section-label">🧾 Tax & SST <span class="section-count">(7)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/filing-tax-return/" class="guide-item" data-search="filing tax return lhdn e-filing income tax ya 2025">
+        <div class="item-title">Filing Your First Tax Return (e-Filing)</div>
+        <div class="item-desc">LHDN e-Filing guide for YA 2025 — step by step</div>
+      </a>
+      <a href="/sorted-my/guides/reading-ea-form/" class="guide-item" data-search="ea form borang ea read employer statement">
+        <div class="item-title">How to Read Your EA Form</div>
+        <div class="item-desc">Understand every field on your Borang EA statement</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-income-tax-refund/" class="guide-item" data-search="income tax refund lhdn mytax overpaid rebate">
+        <div class="item-title">Claiming Income Tax Refund</div>
+        <div class="item-desc">Check and claim your refund via MyTax</div>
+      </a>
+      <a href="/sorted-my/guides/dispute-lhdn-assessment/" class="guide-item" data-search="dispute lhdn assessment form q appeal notice tax wrong">
+        <div class="item-title">Dispute an LHDN Tax Assessment</div>
+        <div class="item-desc">File Form Q within 30 days — grounds, documents & process</div>
+      </a>
+      <a href="/sorted-my/guides/zakat-tax-rebate/" class="guide-item" data-search="zakat tax rebate income tax muslim lhdn deduction">
+        <div class="item-title">Zakat and Income Tax Rebate</div>
+        <div class="item-desc">How zakat reduces your income tax — rates, claims & limits</div>
+      </a>
+      <a href="/sorted-my/guides/applying-sst-registration/" class="guide-item" data-search="sst registration sales service tax business threshold">
+        <div class="item-title">Registering for SST</div>
+        <div class="item-desc">Sales & Service Tax registration for businesses</div>
+      </a>
+      <a href="/sorted-my/guides/freelancer-invoicing/" class="guide-item" data-search="freelancer invoice sst e-invoice myinvois tax self employed">
+        <div class="item-title">Freelancer Invoicing Guide</div>
+        <div class="item-desc">Invoicing clients, SST thresholds, e-Invoicing & getting paid</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- PERSONAL & FAMILY -->
+  <div class="category-section" data-category="personal">
+    <p class="section-label">👨‍👩‍👧 Personal & Family <span class="section-count">(8)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/getting-married-non-muslim/" class="guide-item" data-search="married non-muslim jpn registration civil marriage">
+        <div class="item-title">Getting Married (Non-Muslim)</div>
+        <div class="item-desc">JPN registration — documents, fees & ceremony requirements</div>
+      </a>
+      <a href="/sorted-my/guides/getting-married-muslim/" class="guide-item" data-search="married muslim jabatan agama islam nikah">
+        <div class="item-title">Getting Married (Muslim)</div>
+        <div class="item-desc">Jabatan Agama Islam guide — nikah course, documents & process</div>
+      </a>
+      <a href="/sorted-my/guides/registering-newborn/" class="guide-item" data-search="registering newborn birth certificate mykid jpn baby">
+        <div class="item-title">Registering a Newborn</div>
+        <div class="item-desc">Birth certificate, MyKid & JPN registration within 14 days</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-maternity-leave/" class="guide-item" data-search="maternity leave paternity 98 days sip employer">
+        <div class="item-title">Maternity & Paternity Leave</div>
+        <div class="item-desc">98 days maternity, 7 days paternity, SIP claims & documents</div>
+      </a>
+      <a href="/sorted-my/guides/registering-death/" class="guide-item" data-search="registering death jpn burial permit death certificate">
+        <div class="item-title">Registering a Death</div>
+        <div class="item-desc">JPN process, documents, timeline & burial permit</div>
+      </a>
+      <a href="/sorted-my/guides/applying-ptptn/" class="guide-item" data-search="ptptn loan study education university application">
+        <div class="item-title">Applying for PTPTN Loan</div>
+        <div class="item-desc">Eligibility, documents, repayment terms & application steps</div>
+      </a>
+      <a href="/sorted-my/guides/repaying-ptptn/" class="guide-item" data-search="ptptn repayment schedule settlement discount deferral">
+        <div class="item-title">Repaying Your PTPTN Loan</div>
+        <div class="item-desc">Repayment schedule, settlement discounts & deferral options</div>
+      </a>
+      <a href="/sorted-my/guides/missed-ptptn-payment/" class="guide-item" data-search="ptptn missed payment blacklist travel ban epf block">
+        <div class="item-title">Missed PTPTN Payment?</div>
+        <div class="item-desc">Blacklist, travel ban, EPF block — and how to fix it</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CAREER & BUSINESS -->
+  <div class="category-section" data-category="career">
+    <p class="section-label">💼 Career & Business <span class="section-count">(10)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/resigning-from-job/" class="guide-item" data-search="resigning job notice period epf eis tax clearance">
+        <div class="item-title">Resigning From Your Job</div>
+        <div class="item-desc">Notice period, EPF, EIS, tax clearance & final pay</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-eis-sip/" class="guide-item" data-search="eis sip unemployment benefit perkeso job search allowance">
+        <div class="item-title">Claiming EIS/SIP Unemployment Benefits</div>
+        <div class="item-desc">Eligibility, application, job search allowance & training</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-socso/" class="guide-item" data-search="socso perkeso workplace injury disability claim benefit">
+        <div class="item-title">Claiming SOCSO (PERKESO) Benefits</div>
+        <div class="item-desc">Workplace injury, disability & dependent claims</div>
+      </a>
+      <a href="/sorted-my/guides/internship-rights/" class="guide-item" data-search="internship intern trainee allowance minimum wage socso rights">
+        <div class="item-title">Internship Rights Guide</div>
+        <div class="item-desc">Minimum allowance, SOCSO, working hours & what to do if mistreated</div>
+      </a>
+      <a href="/sorted-my/guides/registering-enterprise/" class="guide-item" data-search="sole proprietorship enterprise ssm registration business">
+        <div class="item-title">Registering a Sole Proprietorship</div>
+        <div class="item-desc">SSM registration — documents, fees & step by step</div>
+      </a>
+      <a href="/sorted-my/guides/starting-sdn-bhd/" class="guide-item" data-search="sdn bhd company ssm registration private limited">
+        <div class="item-title">Starting a Sdn Bhd</div>
+        <div class="item-desc">SSM company registration — requirements, fees & process</div>
+      </a>
+      <a href="/sorted-my/guides/hiring-first-employee/" class="guide-item" data-search="hiring employee epf socso eis pcb employer registration">
+        <div class="item-title">Hiring Your First Employee</div>
+        <div class="item-desc">EPF, SOCSO, EIS & PCB registration guide for employers</div>
+      </a>
+      <a href="/sorted-my/guides/grab-driver-guide/" class="guide-item" data-search="grab driver grabcar e-hailing psv licence puspakom">
+        <div class="item-title">How to Become a Grab Driver</div>
+        <div class="item-desc">PSV licence, Puspakom inspection & Grab registration</div>
+      </a>
+      <a href="/sorted-my/guides/applying-jpa-scholarship/" class="guide-item" data-search="jpa scholarship biasiswa government education">
+        <div class="item-title">Applying for JPA Scholarship</div>
+        <div class="item-desc">Government scholarship — eligibility, documents & interview tips</div>
+      </a>
+      <a href="/sorted-my/guides/applying-mara-loan/" class="guide-item" data-search="mara education loan scholarship bumiputera study">
+        <div class="item-title">Applying for MARA Education Loan</div>
+        <div class="item-desc">MARA loan & scholarship for Bumiputera students</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TRANSPORT & VEHICLES -->
+  <div class="category-section" data-category="transport">
+    <p class="section-label">🚗 Transport & Vehicles <span class="section-count">(13)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/getting-driving-license/" class="guide-item" data-search="driving licence license p full test jpj kpp">
+        <div class="item-title">Getting Your Driving Licence</div>
+        <div class="item-desc">P licence to full licence — fees, KPP, tests & JPJ process</div>
+      </a>
+      <a href="/sorted-my/guides/getting-motorcycle-license/" class="guide-item" data-search="motorcycle licence license b2 b test jpj">
+        <div class="item-title">Getting Your Motorcycle Licence</div>
+        <div class="item-desc">B2 & B licence — fees, training, tests & steps</div>
+      </a>
+      <a href="/sorted-my/guides/renewing-driving-licence/" class="guide-item" data-search="renewing driving licence myjpj app pos counter">
+        <div class="item-title">Renewing Your Driving Licence</div>
+        <div class="item-desc">MyJPJ app, JPJ counter & Pos Malaysia options</div>
+      </a>
+      <a href="/sorted-my/guides/applying-international-driving-permit/" class="guide-item" data-search="international driving permit idp jpj aam drive abroad">
+        <div class="item-title">International Driving Permit (IDP)</div>
+        <div class="item-desc">Drive abroad legally — JPJ or AAM, RM150, same-day</div>
+      </a>
+      <a href="/sorted-my/guides/buying-a-car/" class="guide-item" data-search="buying car jpj puspakom road tax registration new">
+        <div class="item-title">Buying a Car in Malaysia</div>
+        <div class="item-desc">JPJ transfer, Puspakom, road tax & complete guide</div>
+      </a>
+      <a href="/sorted-my/guides/buying-second-hand-car/" class="guide-item" data-search="second hand used car puspakom b5 loan jpj transfer">
+        <div class="item-title">Buying a Second-Hand Car</div>
+        <div class="item-desc">Puspakom B5 inspection, loan check & JPJ ownership transfer</div>
+      </a>
+      <a href="/sorted-my/guides/transfer-car-ownership/" class="guide-item" data-search="transfer car ownership jpj e-tukar etukar puspakom">
+        <div class="item-title">Transfer Car Ownership (JPJ e-Tukar)</div>
+        <div class="item-desc">Puspakom inspection, documents, e-Tukar portal & costs</div>
+      </a>
+      <a href="/sorted-my/guides/renewing-road-tax/" class="guide-item" data-search="renewing road tax myeg myjpj pos office insurance">
+        <div class="item-title">Renewing Road Tax</div>
+        <div class="item-desc">MyEG, MyJPJ, Post Office — all renewal methods explained</div>
+      </a>
+      <a href="/sorted-my/guides/renewing-car-insurance/" class="guide-item" data-search="renewing car insurance ncd online agent comprehensive third party">
+        <div class="item-title">Renewing Car Insurance</div>
+        <div class="item-desc">NCD, online vs agent, comprehensive vs third-party</div>
+      </a>
+      <a href="/sorted-my/guides/renewing-car-insurance-online/" class="guide-item" data-search="car insurance online policystreet bjak myeg renew">
+        <div class="item-title">Renew Car Insurance Online</div>
+        <div class="item-desc">PolicyStreet, Bjak & MyEG — compare and renew instantly</div>
+      </a>
+      <a href="/sorted-my/guides/claiming-car-insurance/" class="guide-item" data-search="claiming car insurance accident own damage third party ncd workshop">
+        <div class="item-title">Claiming Car Insurance After an Accident</div>
+        <div class="item-desc">OD vs TP claims, NCD impact & step-by-step process</div>
+      </a>
+      <a href="/sorted-my/guides/car-accident-guide/" class="guide-item" data-search="car accident what to do police report insurance claim hit run">
+        <div class="item-title">What to Do After a Car Accident</div>
+        <div class="item-desc">Immediate steps, police report, insurance claim & hit-and-run</div>
+      </a>
+      <a href="/sorted-my/guides/toll-road-guide/" class="guide-item" data-search="toll road highway smarttag rfid tng ewallet plusmiles">
+        <div class="item-title">Toll Roads & Highway Guide</div>
+        <div class="item-desc">SmartTAG vs RFID, highway rates, PLUSMiles & overcharge disputes</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- GOVERNMENT & DOCUMENTS -->
+  <div class="category-section" data-category="govt">
+    <p class="section-label">🪪 Government & Documents <span class="section-count">(7)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/renewing-passport/" class="guide-item" data-search="renewing passport imigresen utc processing time fee">
+        <div class="item-title">Renewing Your Passport</div>
+        <div class="item-desc">Fees, documents, processing time & online booking</div>
+      </a>
+      <a href="/sorted-my/guides/replacing-mykad/" class="guide-item" data-search="replacing mykad ic lost damaged jpn fee">
+        <div class="item-title">Replacing a Lost or Damaged MyKad</div>
+        <div class="item-desc">JPN process, RM110 fee, documents needed</div>
+      </a>
+      <a href="/sorted-my/guides/reporting-lost-mykad/" class="guide-item" data-search="lost mykad police report jpn replacement temporary letter">
+        <div class="item-title">Lost Your MyKad? Here's What to Do</div>
+        <div class="item-desc">Police report first, then JPN replacement — same-day process</div>
+      </a>
+      <a href="/sorted-my/guides/applying-pr-mm2h/" class="guide-item" data-search="permanent residency pr mm2h immigration foreign spouse">
+        <div class="item-title">PR & MM2H Guide</div>
+        <div class="item-desc">Permanent residency and Malaysia My Second Home — complete guide</div>
+      </a>
+      <a href="/sorted-my/guides/police-report/" class="guide-item" data-search="police report laporan polis balai pdrm ipolis theft lost">
+        <div class="item-title">How to Make a Police Report</div>
+        <div class="item-desc">At the balai polis or iPolis online — what to bring & expect</div>
+      </a>
+      <a href="/sorted-my/guides/pos-malaysia-guide/" class="guide-item" data-search="pos malaysia pos laju parcel courier tracking address format">
+        <div class="item-title">Pos Malaysia & Pos Laju Guide</div>
+        <div class="item-desc">Send parcels, rates, tracking & address format</div>
+      </a>
+      <a href="/sorted-my/guides/public-transport-guide/" class="guide-item" data-search="public transport lrt mrt ktm bus touch n go pulse pass">
+        <div class="item-title">Malaysia Public Transport Guide</div>
+        <div class="item-desc">LRT, MRT, KTM, bus — fares, TNG card & PULSE pass</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- DISPUTES & LEGAL -->
+  <div class="category-section" data-category="disputes">
+    <p class="section-label">⚖️ Disputes & Legal <span class="section-count">(4)</span></p>
+    <div class="guide-list">
+      <a href="/sorted-my/guides/ttpm-consumer-tribunal/" class="guide-item" data-search="ttpm tribunal consumer claims defective goods refund rm50000 ettm">
+        <div class="item-title">File a TTPM Consumer Tribunal Claim</div>
+        <div class="item-desc">Claim up to RM50,000 with RM5 fee — no lawyer needed</div>
+      </a>
+      <a href="/sorted-my/guides/dispute-bank-charge/" class="guide-item" data-search="dispute bank charge unauthorized transaction fraud chargeback fmos bnm">
+        <div class="item-title">Dispute a Bank Charge</div>
+        <div class="item-desc">Unauthorized transactions, liability cap & escalation to FMOS/BNM</div>
+      </a>
+      <a href="/sorted-my/guides/broadband-comparison/" class="guide-item" data-search="broadband comparison unifi time maxis celcomdigi internet speed">
+        <div class="item-title">Broadband Comparison Guide</div>
+        <div class="item-desc">Compare Unifi, TIME, Maxis & CelcomDigi home broadband plans</div>
+      </a>
+      <a href="/sorted-my/guides/transferring-car-ownership/" class="guide-item" data-search="transferring car ownership jpj grant">
+        <div class="item-title">Transferring Car Ownership</div>
+        <div class="item-desc">JPJ transfer process & grant requirements</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="coffee-banner">
+    <p>Sorted is free. If it saved you an hour of panic-googling, consider buying me a coffee.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" class="coffee-btn" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/sorted-my/">Home</a>
+    <a href="/sorted-my/guides/">All Guides</a>
+    <a href="/sorted-my/compare/">Compare Tools</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Support this site</a>
+  </div>
+  <p>Sorted — Every document. Every step. Sorted. | Malaysia 🇲🇾</p>
+  <p style="margin-top:0.4rem;">Not affiliated with any Malaysian government body. Information verified March 2026.</p>
+</footer>
+
+<script>
+(function() {
+  var input = document.getElementById('search-input');
+  var clearBtn = document.getElementById('search-clear');
+  var noResults = document.getElementById('no-results');
+  var noResultsTerm = document.getElementById('no-results-term');
+  var items = document.querySelectorAll('.guide-item');
+  var categories = document.querySelectorAll('.category-section');
+  var catBtns = document.querySelectorAll('.cat-btn');
+  var resultCount = document.getElementById('result-count');
+  var activeCat = 'all';
+
+  function filterAndSearch() {
+    var q = input.value.trim().toLowerCase();
+    clearBtn.style.display = q ? 'flex' : 'none';
+    var anyVisible = false;
+    var count = 0;
+
+    items.forEach(function(item) {
+      var section = item.closest('.category-section');
+      var cat = section ? section.dataset.category : '';
+      var catMatch = activeCat === 'all' || cat === activeCat;
+
+      var textMatch = true;
+      if (q) {
+        var title = (item.querySelector('.item-title') || item).textContent.toLowerCase();
+        var desc = (item.querySelector('.item-desc') || {}).textContent || '';
+        desc = desc.toLowerCase();
+        var extra = (item.dataset.search || '').toLowerCase();
+        textMatch = title.indexOf(q) > -1 || desc.indexOf(q) > -1 || extra.indexOf(q) > -1;
+      }
+
+      var visible = catMatch && textMatch;
+      item.style.display = visible ? '' : 'none';
+      if (visible) { anyVisible = true; count++; }
+    });
+
+    categories.forEach(function(section) {
+      var visibleItems = section.querySelectorAll('.guide-item[style=""],.guide-item:not([style])');
+      var hasVisible = false;
+      visibleItems.forEach(function(item) {
+        if (item.style.display !== 'none') hasVisible = true;
+      });
+      section.classList.toggle('all-hidden', !hasVisible);
+    });
+
+    if (q || activeCat !== 'all') {
+      resultCount.textContent = count + ' guide' + (count !== 1 ? 's' : '') + ' found';
+    } else {
+      resultCount.textContent = '';
+    }
+
+    if (!anyVisible && q) {
+      noResultsTerm.textContent = input.value.trim();
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  }
+
+  input.addEventListener('input', filterAndSearch);
+
+  clearBtn.addEventListener('click', function() {
+    input.value = '';
+    input.focus();
+    filterAndSearch();
+  });
+
+  catBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      catBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      filterAndSearch();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
