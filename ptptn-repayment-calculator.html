@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTPTN Repayment Calculator 2026 — Monthly Payment &amp; Loan Estimator | Sorted</title>
+  <meta name="description" content="Free PTPTN loan repayment calculator 2026. Estimate your monthly payment based on income, years to clear your loan, and total service charge. Income-based instalment guide for Malaysian borrowers.">
+  <meta property="og:title" content="PTPTN Repayment Calculator 2026 | Sorted MY">
+  <meta property="og:description" content="Calculate your PTPTN monthly instalment based on income, see how long to clear your loan, and find out about current discount offers. Free tool for Malaysian borrowers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hlteoh37.github.io/sorted-my/ptptn-repayment-calculator.html">
+  <meta property="og:image" content="https://hlteoh37.github.io/sorted-my/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hlteoh37.github.io/sorted-my/og-image.png">
+  <meta name="keywords" content="ptptn repayment calculator, ptptn monthly payment, ptptn loan malaysia, cara bayar ptptn, ptptn instalment 2026, ptptn discount 2026, PTPTN income based repayment">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/ptptn-repayment-calculator.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PTPTN Repayment Calculator 2026",
+    "url": "https://hlteoh37.github.io/sorted-my/ptptn-repayment-calculator.html",
+    "description": "Free PTPTN loan repayment calculator for Malaysian borrowers. Shows monthly instalment by income bracket, years to clear, and total service charge.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MYR"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sorted MY",
+      "url": "https://hlteoh37.github.io/sorted-my/"
+    }
+  }
+  </script>
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.new-tag { background: rgba(72,207,173,0.15); color: var(--accent2); border-color: rgba(72,207,173,0.3); }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+.section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent2); margin: 1.25rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(72,207,173,0.15); }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.73rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.85rem; }
+.calc-btn { width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+.calc-btn:hover { background: #7c74ff; }
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+.result-primary { background: linear-gradient(135deg, rgba(108,99,255,0.15), rgba(72,207,173,0.08)); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; text-align: center; }
+.result-primary .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.4rem; }
+.result-primary .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-primary .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+.result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+.result-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; }
+.result-stat .stat-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.2rem; }
+.result-stat .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.result-stat .stat-value.warn { color: var(--warn); }
+.result-stat .stat-value.success { color: var(--success); }
+.result-stat .stat-value.accent { color: var(--accent2); }
+.result-stat .stat-value.danger { color: var(--danger); }
+.result-empty { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 0.9rem; }
+.result-empty .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.section { margin-bottom: 2.5rem; }
+.section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.6rem; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+thead th { background: var(--bg3); color: var(--muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+tbody tr:hover { background: var(--bg3); }
+tbody td { padding: 0.75rem 0.85rem; vertical-align: middle; }
+.col-amount { font-weight: 700; color: var(--accent2); }
+.col-muted { color: var(--muted); }
+.highlight-row { background: rgba(108,99,255,0.08) !important; }
+.info-box { background: rgba(108,99,255,0.08); border: 1px solid rgba(108,99,255,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem; color: var(--muted); }
+.info-box strong { color: var(--text); }
+.warn-box { background: rgba(255,209,102,0.06); border: 1px solid rgba(255,209,102,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.warn-box strong { color: var(--warn); }
+.success-box { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.82rem; color: var(--muted); margin: 1.5rem 0; }
+.success-box strong { color: var(--success); }
+.steps-list { list-style: none; padding: 0; counter-reset: steps; }
+.steps-list li { font-size: 0.9rem; color: var(--muted); padding: 0.6rem 0 0.6rem 2.2rem; position: relative; border-bottom: 1px solid var(--border); counter-increment: steps; }
+.steps-list li:last-child { border-bottom: none; }
+.steps-list li::before { content: counter(steps); position: absolute; left: 0; top: 0.55rem; width: 1.5rem; height: 1.5rem; background: var(--accent); border-radius: 50%; color: white; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
+.faq-a { font-size: 0.88rem; color: var(--muted); }
+.tip-jar { background: linear-gradient(135deg, rgba(108,99,255,0.12), rgba(72,207,173,0.06)); border: 1px solid rgba(108,99,255,0.25); border-radius: var(--radius); padding: 1.5rem; text-align: center; margin: 2.5rem 0; }
+.tip-jar p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
+.tip-btn { display: inline-block; background: var(--accent); color: white; padding: 0.65rem 1.5rem; border-radius: 6px; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; }
+.tip-btn:hover { background: #7c74ff; text-decoration: none; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+.related-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; color: var(--text); font-size: 0.85rem; font-weight: 600; transition: border-color 0.2s, background 0.2s; }
+.related-card:hover { border-color: var(--accent); background: var(--bg3); text-decoration: none; }
+.rel-desc { font-weight: 400; color: var(--muted); font-size: 0.8rem; margin-top: 0.2rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 3rem; }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 0.75rem; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--text); text-decoration: none; }
+.discount-badge { display: inline-block; background: rgba(255,209,102,0.15); border: 1px solid rgba(255,209,102,0.3); color: var(--warn); border-radius: 4px; font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.45rem; text-transform: uppercase; letter-spacing: 0.5px; margin-left: 0.4rem; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="./" class="nav-brand">Sorted<span>.my</span></a>
+  <div class="nav-links">
+    <a href="./guides/">Guides</a>
+    <a href="./income-tax-efiling-guide.html">Tax Guide</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Support</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="guide-header">
+    <a href="./" class="back-link">&#8592; Sorted.my</a>
+    <h1>PTPTN Repayment Calculator 2026 <span class="tool-tag new-tag">FREE</span></h1>
+    <p class="subtitle">Estimate your monthly instalment, years to clear, and total service charge &#8212; based on your income and outstanding loan balance.</p>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>&#9998; Your PTPTN Loan Details</h2>
+      <div class="field">
+        <label for="loan-amount">Outstanding Loan Balance (RM)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="loan-amount" placeholder="e.g. 25000" min="1000" max="100000" step="500">
+        </div>
+        <div class="hint">Check your balance at <strong>sspn.com.my</strong> or i-PTPTN app.</div>
+      </div>
+      <div class="field">
+        <label for="income-bracket">Monthly Gross Income</label>
+        <select id="income-bracket">
+          <option value="">— Select income range —</option>
+          <option value="50">Below RM 1,000 → RM 50/month</option>
+          <option value="150">RM 1,000 – RM 1,999 → RM 150/month</option>
+          <option value="250">RM 2,000 – RM 2,999 → RM 250/month</option>
+          <option value="350">RM 3,000 – RM 3,999 → RM 350/month</option>
+          <option value="500">RM 4,000 and above → RM 500/month</option>
+        </select>
+        <div class="hint">Based on PTPTN's published sliding-scale instalment table.</div>
+      </div>
+      <button class="calc-btn" onclick="calculate()">&#9654; Calculate Repayment</button>
+    </div>
+
+    <div class="calc-results" id="results-panel">
+      <h2>&#128200; Repayment Summary</h2>
+      <div class="result-empty" id="results-empty">
+        <div class="icon">&#128196;</div>
+        Enter your loan balance and income above to see your repayment estimate.
+      </div>
+      <div id="results-content" style="display:none;">
+        <div class="result-primary">
+          <div class="label">Monthly Instalment</div>
+          <div class="amount" id="res-monthly">RM 0</div>
+          <div class="sub" id="res-income-note">Based on your income bracket</div>
+        </div>
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="stat-label">Years to Clear</div>
+            <div class="stat-value accent" id="res-years">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Months to Clear</div>
+            <div class="stat-value" id="res-months">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Total Paid</div>
+            <div class="stat-value warn" id="res-total">—</div>
+          </div>
+          <div class="result-stat">
+            <div class="stat-label">Service Charge (1%/yr)</div>
+            <div class="stat-value danger" id="res-charge">—</div>
+          </div>
+        </div>
+        <div id="res-discount-box" class="success-box" style="display:none;">
+          <strong>&#128197; Lump-Sum Discount Tip:</strong> PTPTN periodically offers <strong>10–20% discounts</strong> for full lump-sum repayment. If your discount amount is shown above, paying a lump sum now could save you significantly. Check current offers at <a href="https://www.ptptn.gov.my" target="_blank" rel="noopener">ptptn.gov.my</a>.
+        </div>
+        <div id="res-info-box" class="info-box">
+          <strong>Note:</strong> This estimate uses PTPTN's 1% annual service charge with monthly compounding. Actual figures may differ slightly &#8212; verify at <a href="https://www.ptptn.gov.my" target="_blank" rel="noopener">ptptn.gov.my</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTALMENT TABLE -->
+  <div class="section">
+    <h2>PTPTN Monthly Instalment Rate Table</h2>
+    <p>PTPTN repayment uses an income-based sliding scale &#8212; your monthly payment is determined by your gross income, not the loan amount. This is set by the government to keep repayments affordable.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Monthly Gross Income</th>
+            <th>Monthly Instalment</th>
+            <th>Annual Repayment</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody id="rate-table-body">
+          <tr>
+            <td>Below RM 1,000</td>
+            <td class="col-amount">RM 50</td>
+            <td class="col-muted">RM 600 / year</td>
+            <td class="col-muted">Minimum payment — loan takes longest to clear</td>
+          </tr>
+          <tr>
+            <td>RM 1,000 – RM 1,999</td>
+            <td class="col-amount">RM 150</td>
+            <td class="col-muted">RM 1,800 / year</td>
+            <td class="col-muted">Fresh graduate starting salary range</td>
+          </tr>
+          <tr>
+            <td>RM 2,000 – RM 2,999</td>
+            <td class="col-amount">RM 250</td>
+            <td class="col-muted">RM 3,000 / year</td>
+            <td class="col-muted">Mid-range; repayment active for most employees</td>
+          </tr>
+          <tr>
+            <td>RM 3,000 – RM 3,999</td>
+            <td class="col-amount">RM 350</td>
+            <td class="col-muted">RM 4,200 / year</td>
+            <td class="col-muted">Loan clears significantly faster at this bracket</td>
+          </tr>
+          <tr>
+            <td>RM 4,000 and above</td>
+            <td class="col-amount">RM 500</td>
+            <td class="col-muted">RM 6,000 / year</td>
+            <td class="col-muted">Fastest repayment — maximum instalment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box">
+      <strong>Repayment obligation:</strong> Repayment begins 6 months after graduation, or when your monthly income exceeds RM 2,000 &#8212; whichever comes first. Income below RM 2,000 requires RM 50–150/month minimum.
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section">
+    <h2>How PTPTN Loan Repayment Works</h2>
+    <p>PTPTN (Perbadanan Tabung Pendidikan Tinggi Nasional) is Malaysia's national higher education fund. Unlike a commercial bank loan, PTPTN charges only a <strong>1% annual service charge</strong> &#8212; this is not "interest" in the conventional sense but a low administrative fee. Here's how repayment works:</p>
+    <ol class="steps-list">
+      <li><strong>Repayment starts</strong> 6 months after you graduate, or when you earn &gt; RM 2,000/month &#8212; whichever is earlier.</li>
+      <li><strong>Your income bracket</strong> determines your monthly instalment (see table above). PTPTN can verify income via e-Caruman (EPF) data.</li>
+      <li><strong>Service charge (1%/year)</strong> accrues on the outstanding balance. Lower balance = lower charge over time.</li>
+      <li><strong>Payments go to PTPTN</strong> via salary deduction (if employer-enrolled), online banking (FPX), or counter. You can also set up auto-debit.</li>
+      <li><strong>Early repayment is allowed</strong> with no penalty. Extra payments reduce the principal immediately, cutting total service charge.</li>
+      <li><strong>Discount campaigns</strong> are announced periodically &#8212; typically 10–20% off for lump-sum payments. These can save thousands. Check ptptn.gov.my regularly.</li>
+    </ol>
+  </div>
+
+  <!-- DISCOUNT INFO -->
+  <div class="section">
+    <h2>PTPTN Discount Offers <span class="discount-badge">Check Regularly</span></h2>
+    <p>PTPTN periodically announces discount campaigns. The most common types:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Discount Type</th>
+            <th>Typical Discount</th>
+            <th>Condition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lump-sum full settlement</td>
+            <td class="col-amount">10–20%</td>
+            <td class="col-muted">Pay off entire balance in one payment during campaign period</td>
+          </tr>
+          <tr>
+            <td>Consistent monthly payment</td>
+            <td class="col-amount">Up to 10%</td>
+            <td class="col-muted">No missed payments for 12 consecutive months</td>
+          </tr>
+          <tr>
+            <td>Early repayment</td>
+            <td class="col-amount">Varies</td>
+            <td class="col-muted">Paying ahead of schedule &#8212; check campaign conditions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      <strong>Important:</strong> Discount campaigns have specific dates and conditions. Always verify the <strong>current active offer</strong> at <a href="https://www.ptptn.gov.my" target="_blank" rel="noopener">ptptn.gov.my</a> or the i-PTPTN mobile app before making a lump-sum payment. This calculator shows an <em>estimate</em> &#8212; confirm with PTPTN directly.
+    </div>
+  </div>
+
+  <!-- WAYS TO PAY -->
+  <div class="section">
+    <h2>How to Pay PTPTN (Step-by-Step)</h2>
+    <p>You can make payments via several channels:</p>
+    <ol class="steps-list">
+      <li><strong>Online banking (FPX):</strong> Login to <a href="https://sspn.com.my" target="_blank" rel="noopener">sspn.com.my</a> &#8212; go to Repayment &gt; Make Payment. Choose your bank, enter amount, confirm.</li>
+      <li><strong>Auto-debit:</strong> Set up standing instruction at your bank to auto-debit the monthly instalment. Recommended &#8212; avoids missed payments.</li>
+      <li><strong>Salary deduction (employer):</strong> Some employers enrol you in PTPTN Potongan Gaji. Deductions appear on your payslip.</li>
+      <li><strong>Over-the-counter:</strong> Pay at any PTPTN branch, Pos Malaysia outlet, or selected banks with your PTPTN account number.</li>
+      <li><strong>Maybank2u / CIMB Clicks / etc.:</strong> Add PTPTN as a billers account. Use IC number as account reference.</li>
+    </ol>
+  </div>
+
+  <!-- FAQs -->
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">When does PTPTN repayment start?</div>
+      <div class="faq-a">Repayment begins <strong>6 months after graduation</strong>, or when your monthly income exceeds RM 2,000 &#8212; whichever is earlier. If you studied part-time or left before completing, check your specific conditions on the i-PTPTN app.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens if I miss a payment?</div>
+      <div class="faq-a">Missing payments will incur additional service charges and affect your CCRIS credit record. PTPTN may also take legal action for persistent defaulters. If you genuinely can't pay, contact PTPTN to apply for a <strong>payment deferment</strong> &#8212; they do accommodate hardship cases.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I pay more than the minimum monthly amount?</div>
+      <div class="faq-a">Yes. You can overpay any time &#8212; extra payments reduce your principal balance directly and lower the total service charge you'll pay. There is <strong>no early repayment penalty</strong>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I check my PTPTN balance?</div>
+      <div class="faq-a">Login to <a href="https://sspn.com.my" target="_blank" rel="noopener">sspn.com.my</a> with your PTPTN account number (usually your IC number) or download the <strong>i-PTPTN mobile app</strong>. Your outstanding balance, payment history, and repayment schedule are all visible there.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is PTPTN considered a "loan" for credit scoring?</div>
+      <div class="faq-a">Yes. PTPTN is reported to CCRIS (Bank Negara's credit database). Regular on-time payments <strong>build your credit score</strong>. Defaults or missed payments show up as negative entries and can affect your ability to get a home loan or personal loan in future.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is SSPN and how does it relate to PTPTN?</div>
+      <div class="faq-a">SSPN (Skim Simpanan Pendidikan Nasional) is a savings scheme managed by PTPTN. You can offset your PTPTN loan using your SSPN savings balance at any time. SSPN savings also qualify for a <strong>tax relief of up to RM 8,000/year</strong> on your income tax. Consider saving into SSPN to both get tax relief and reduce your PTPTN balance faster.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I get a PTPTN loan waiver?</div>
+      <div class="faq-a">PTPTN waiver (full or partial) is granted to students who graduate with <strong>first class honours</strong> from a recognised programme, or under specific government waiver schemes announced from time to time. Check ptptn.gov.my to see if you qualify.</div>
+    </div>
+  </div>
+
+  <!-- TIP JAR -->
+  <div class="tip-jar">
+    <p>&#9749; This calculator took hours to research. If it helped you plan your PTPTN repayment, consider buying me a coffee!</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener" class="tip-btn">&#9749; Buy me a coffee</a>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="section">
+    <h2>Related Calculators &amp; Guides</h2>
+    <div class="related-grid">
+      <a href="./income-tax-efiling-guide.html" class="related-card">
+        &#128197; E-Filing Guide 2026
+        <div class="rel-desc">LHDN Form BE deadline April 30 &#8212; checklist &amp; steps</div>
+      </a>
+      <a href="./influencer-tax-calculator.html" class="related-card">
+        &#128247; Influencer Tax Calculator
+        <div class="rel-desc">Content creator LHDN income tax estimator</div>
+      </a>
+      <a href="./gig-worker-calculator.html" class="related-card">
+        &#128663; Gig Worker Calculator
+        <div class="rel-desc">SOCSO + EIS + take-home for Grab, Foodpanda, etc.</div>
+      </a>
+      <a href="./guides/" class="related-card">
+        &#128218; All Guides
+        <div class="rel-desc">57+ Malaysian finance guides</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="./">Home</a>
+    <a href="./guides/">Guides</a>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">Support</a>
+  </div>
+  <div>&#169; 2026 Sorted.my &#8212; For informational purposes only. Verify all figures with PTPTN directly at ptptn.gov.my.</div>
+</footer>
+
+<script>
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+function calculate() {
+  const loanVal = parseFloat(document.getElementById('loan-amount').value);
+  const payment = parseFloat(document.getElementById('income-bracket').value);
+
+  if (!loanVal || loanVal < 100 || !payment) {
+    alert('Please enter your outstanding loan balance and select your income bracket.');
+    return;
+  }
+
+  // PTPTN: 1% annual service charge, monthly compounding
+  const annualRate = 0.01;
+  const monthlyRate = annualRate / 12;
+
+  let balance = loanVal;
+  let totalPaid = 0;
+  let months = 0;
+  const MAX_MONTHS = 600; // 50 years safety cap
+
+  while (balance > 0 && months < MAX_MONTHS) {
+    const charge = balance * monthlyRate;
+    balance += charge;
+    const paid = Math.min(payment, balance);
+    balance -= paid;
+    totalPaid += paid;
+    months++;
+    if (balance < 0.01) { balance = 0; break; }
+  }
+
+  const years = Math.floor(months / 12);
+  const remMonths = months % 12;
+  const serviceCharge = totalPaid - loanVal;
+
+  const yearsStr = years > 0 ? years + ' yr' + (years !== 1 ? 's' : '') : '';
+  const remStr = remMonths > 0 ? remMonths + ' mo' : '';
+  const yearsDisplay = [yearsStr, remStr].filter(Boolean).join(' ') || '< 1 mo';
+
+  document.getElementById('res-monthly').textContent = fmt(payment);
+  document.getElementById('res-income-note').textContent = 'Based on your selected income bracket';
+  document.getElementById('res-years').textContent = years + (years !== 1 ? ' years' : ' year') + (remMonths > 0 ? ' ' + remMonths + ' mo' : '');
+  document.getElementById('res-months').textContent = months + ' months total';
+  document.getElementById('res-total').textContent = fmt(Math.round(totalPaid));
+  document.getElementById('res-charge').textContent = fmt(Math.round(serviceCharge));
+
+  // Show discount tip if loan is >= 5000
+  const discountBox = document.getElementById('res-discount-box');
+  discountBox.style.display = loanVal >= 5000 ? 'block' : 'none';
+
+  document.getElementById('results-empty').style.display = 'none';
+  document.getElementById('results-content').style.display = 'block';
+
+  // Highlight matching row in rate table
+  const rows = document.querySelectorAll('#rate-table-body tr');
+  const paymentMap = [50, 150, 250, 350, 500];
+  rows.forEach((r, i) => {
+    r.classList.toggle('highlight-row', paymentMap[i] === payment);
+  });
+}
+
+// Allow Enter key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') calculate();
+});
+</script>
+</body>
+</html>
