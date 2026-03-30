@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB/MTD Monthly Tax Deduction Calculator Malaysia 2026 — Jadual PCB LHDN | Sorted</title>
+  <meta name="description" content="Free Malaysian PCB/MTD calculator 2026. Calculate your Potongan Cukai Berjadual (monthly salary tax deduction) using LHDN 2026 tax brackets. Covers single, married, and children reliefs.">
+  <meta property="og:title" content="PCB/MTD Monthly Tax Deduction Calculator Malaysia 2026 | Sorted">
+  <meta property="og:description" content="Calculate how much PCB (Potongan Cukai Berjadual) your employer deducts from your salary each month. Uses LHDN 2026 progressive tax brackets with spouse and child reliefs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hlteoh37.github.io/sorted-my/pcb-calculator.html">
+  <meta property="og:image" content="https://hlteoh37.github.io/sorted-my/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hlteoh37.github.io/sorted-my/og-image.png">
+  <meta name="keywords" content="pcb calculator malaysia 2026, mtd calculator malaysia, monthly tax deduction calculator, jadual pcb lhdn 2026, potongan cukai berjadual, pcb calculation formula malaysia, income tax monthly deduction malaysia">
+  <link rel="canonical" href="https://hlteoh37.github.io/sorted-my/pcb-calculator.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate PCB/MTD Monthly Tax Deduction in Malaysia 2026",
+    "description": "Step-by-step guide to calculate your Potongan Cukai Berjadual (PCB) or Monthly Tax Deduction (MTD) using LHDN 2026 progressive tax rates.",
+    "step": [
+      { "@type": "HowToStep", "name": "Enter monthly gross salary", "text": "Input your gross salary before any deductions." },
+      { "@type": "HowToStep", "name": "Select marital status", "text": "Choose single or married — spouse relief is RM4,000 per year." },
+      { "@type": "HowToStep", "name": "Enter number of children", "text": "Each child under 18 gives RM2,000 relief; disabled child RM6,000." },
+      { "@type": "HowToStep", "name": "Enter EPF deduction", "text": "Standard employee EPF is 11% of gross salary (up to RM4,000/year deductible)." },
+      { "@type": "HowToStep", "name": "Click Calculate", "text": "The calculator applies LHDN progressive brackets and divides by 12 for monthly PCB." }
+    ],
+    "isPartOf": { "@type": "WebSite", "name": "Sorted MY", "url": "https://hlteoh37.github.io/sorted-my/" }
+  }
+  </script>
+  <style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a; --border: #2d3148; --text: #e8eaf6; --muted: #8892b0; --accent: #6c63ff; --accent2: #48cfad; --warn: #ffd166; --danger: #ef4444; --success: #22c55e; --radius: 10px; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.5px; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+.guide-header { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.guide-header .back-link { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; display: inline-block; }
+.guide-header .back-link:hover { color: var(--text); text-decoration: none; }
+.guide-header h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 0.5rem; }
+.guide-header .subtitle { color: var(--muted); font-size: 1rem; }
+.tool-tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.3); font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 0.5rem; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .calc-grid { grid-template-columns: 1fr; } }
+.calc-inputs { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-inputs h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text); }
+.section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent2); margin: 1.25rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(72,207,173,0.15); }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.95rem; font-family: var(--font); transition: border-color 0.2s; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 0.73rem; color: var(--muted); margin-top: 0.25rem; }
+.input-prefix { position: relative; }
+.input-prefix span { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85rem; pointer-events: none; }
+.input-prefix input { padding-left: 2.85rem; }
+.calc-btn { width: 100%; background: var(--accent); color: white; border: none; border-radius: 6px; padding: 0.8rem 1.5rem; font-size: 0.95rem; font-weight: 700; font-family: var(--font); cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+.calc-btn:hover { background: #7c74ff; }
+.calc-results { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+.calc-results h2 { font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; }
+.result-hero { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+.result-hero .label { font-size: 0.73rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.7px; color: var(--muted); margin-bottom: 0.35rem; }
+.result-hero .amount { font-size: 2.2rem; font-weight: 800; color: var(--accent2); letter-spacing: -1px; }
+.result-hero .per { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+.result-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; gap: 0.5rem; }
+.result-row:last-child { border-bottom: none; }
+.result-row .label { color: var(--muted); }
+.result-row .val { font-weight: 600; text-align: right; }
+.result-row .val.deduction { color: var(--danger); }
+.result-row .val.neutral { color: var(--warn); }
+.result-row .val.total { color: var(--accent2); font-size: 1rem; }
+.result-placeholder { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 0.9rem; }
+.alert { border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 0.875rem; line-height: 1.6; }
+.alert-warn { background: rgba(255,209,102,0.1); border: 1px solid rgba(255,209,102,0.3); color: var(--warn); }
+.alert-info { background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.3); color: #a8a0ff; }
+.alert-success { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: var(--success); }
+.info-section { margin: 2rem 0; }
+.info-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+.info-section h3 { font-size: 0.95rem; font-weight: 700; color: var(--accent2); margin: 1.25rem 0 0.5rem; }
+.info-section p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; line-height: 1.7; }
+.info-section ul { color: var(--muted); font-size: 0.9rem; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.info-section ul li { margin-bottom: 0.3rem; }
+table.rates-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1rem 0; }
+table.rates-table th { text-align: left; padding: 0.5rem 0.75rem; background: var(--bg3); color: var(--muted); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+table.rates-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); }
+table.rates-table tr:last-child td { border-bottom: none; }
+table.rates-table td.rate { font-weight: 700; color: var(--accent2); }
+.breakdown-section { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.breakdown-section h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 0.75rem; }
+.cp8d-box { background: rgba(72,207,173,0.08); border: 1px solid rgba(72,207,173,0.2); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1rem; font-size: 0.875rem; color: var(--accent2); }
+.tip-jar { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; text-align: center; margin: 2rem 0; }
+.tip-jar p { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; }
+.tip-jar a { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.5rem; border-radius: 6px; font-weight: 700; font-size: 0.9rem; }
+.tip-jar a:hover { background: #7c74ff; text-decoration: none; }
+.related-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+.related-link { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; font-size: 0.85rem; color: var(--text); display: block; transition: border-color 0.2s; }
+.related-link:hover { border-color: var(--accent); text-decoration: none; }
+.related-link .rl-title { font-weight: 600; margin-bottom: 0.2rem; }
+.related-link .rl-desc { color: var(--muted); font-size: 0.75rem; }
+footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 3rem; }
+footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/sorted-my/" class="nav-brand">Sorted<span>MY</span></a>
+  <div class="nav-links">
+    <a href="/sorted-my/guides/">Guides</a>
+    <a href="/sorted-my/">Tools</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="guide-header">
+    <a href="/sorted-my/" class="back-link">← Back to all tools</a>
+    <h1>PCB / MTD Monthly Tax Deduction Calculator <span class="tool-tag">2026</span></h1>
+    <p class="subtitle">Calculate your Potongan Cukai Berjadual (PCB) — the monthly tax your employer deducts from your salary under LHDN's Jadual PCB 2026 tables.</p>
+  </div>
+
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <h2>Your Details</h2>
+      <div class="section-label">Income</div>
+      <div class="field">
+        <label for="gross">Monthly Gross Salary</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="gross" placeholder="e.g. 5000" min="0" step="100">
+        </div>
+        <div class="hint">Before any deductions. Include fixed allowances if subject to PCB.</div>
+      </div>
+      <div class="field">
+        <label for="epf">Monthly EPF Contribution (Employee)</label>
+        <div class="input-prefix">
+          <span>RM</span>
+          <input type="number" id="epf" placeholder="Auto-calculated (11%)" min="0" step="10">
+        </div>
+        <div class="hint">Standard rate: 11% of gross salary. Leave blank to auto-calculate. Max deductible: RM4,000/year.</div>
+      </div>
+      <div class="section-label">Status &amp; Reliefs</div>
+      <div class="field">
+        <label for="status">Marital Status</label>
+        <select id="status">
+          <option value="single">Single / Not claiming spouse</option>
+          <option value="married_ne">Married — spouse not employed</option>
+          <option value="married_e">Married — spouse employed</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="children">Number of Children</label>
+        <select id="children">
+          <option value="0">0 children</option>
+          <option value="1">1 child (under 18)</option>
+          <option value="2">2 children</option>
+          <option value="3">3 children</option>
+          <option value="4">4 children</option>
+          <option value="5">5+ children</option>
+        </select>
+        <div class="hint">RM2,000 relief per child under 18; RM8,000 for 18+ in full-time education.</div>
+      </div>
+      <div class="field">
+        <label for="disabled_child">Disabled Children</label>
+        <select id="disabled_child">
+          <option value="0">None</option>
+          <option value="1">1 disabled child</option>
+          <option value="2">2 disabled children</option>
+        </select>
+        <div class="hint">RM6,000 additional relief per disabled child (on top of RM2,000).</div>
+      </div>
+      <button class="calc-btn" onclick="calcPCB()">Calculate Monthly PCB</button>
+    </div>
+
+    <div class="calc-results" id="results">
+      <h2>Results</h2>
+      <div class="result-placeholder" id="placeholder">
+        Enter your salary details and click Calculate.
+      </div>
+      <div id="result-content" style="display:none">
+        <div class="result-hero">
+          <div class="label">Monthly PCB Deduction</div>
+          <div class="amount" id="res-pcb">RM 0</div>
+          <div class="per" id="res-effective">Effective rate: —</div>
+        </div>
+        <div class="result-row">
+          <span class="label">Monthly Gross Salary</span>
+          <span class="val" id="res-gross">—</span>
+        </div>
+        <div class="result-row">
+          <span class="label">EPF Deduction (monthly)</span>
+          <span class="val deduction" id="res-epf">—</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Monthly PCB / MTD</span>
+          <span class="val deduction" id="res-pcb2">—</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Monthly Take-Home</span>
+          <span class="val total" id="res-takehome">—</span>
+        </div>
+        <div class="breakdown-section">
+          <h3>Annual Tax Calculation</h3>
+          <div class="result-row">
+            <span class="label">Annual Gross</span>
+            <span class="val" id="res-annual-gross">—</span>
+          </div>
+          <div class="result-row">
+            <span class="label">EPF Relief (capped RM4,000)</span>
+            <span class="val deduction" id="res-epf-relief">—</span>
+          </div>
+          <div class="result-row">
+            <span class="label">Personal Relief</span>
+            <span class="val deduction">−RM 9,000</span>
+          </div>
+          <div class="result-row">
+            <span class="label">Spouse Relief</span>
+            <span class="val deduction" id="res-spouse">—</span>
+          </div>
+          <div class="result-row">
+            <span class="label">Child Relief</span>
+            <span class="val deduction" id="res-child">—</span>
+          </div>
+          <div class="result-row">
+            <span class="label">Annual Chargeable Income</span>
+            <span class="val neutral" id="res-chargeable">—</span>
+          </div>
+          <div class="result-row">
+            <span class="label">Annual Tax</span>
+            <span class="val deduction" id="res-annual-tax">—</span>
+          </div>
+          <div class="result-row">
+            <span class="label">Monthly PCB (÷12)</span>
+            <span class="val deduction" id="res-monthly-tax">—</span>
+          </div>
+        </div>
+        <div class="cp8d-box" id="cp8d-box" style="display:none">
+          <strong>CP8D Exemption:</strong> Your monthly PCB is RM0 — your annual chargeable income falls below the taxable threshold (RM5,000). You are exempt from PCB deduction.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">
+    <strong>Note:</strong> This calculator uses the simplified PCB formula based on LHDN's published tax brackets and standard reliefs. Your actual PCB may differ if you have additional reliefs (e.g., medical, education, lifestyle) submitted via Borang TP1. Always confirm with your payroll department or LHDN's official PCB calculator at <a href="https://mytax.hasil.gov.my" target="_blank" rel="noopener">mytax.hasil.gov.my</a>.
+  </div>
+
+  <div class="info-section">
+    <h2>What is PCB / MTD?</h2>
+    <p>PCB stands for <strong>Potongan Cukai Berjadual</strong> (Scheduled Tax Deduction), also known as MTD (Monthly Tax Deduction). It is the amount your employer deducts from your salary each month on behalf of LHDN (Inland Revenue Board of Malaysia).</p>
+    <p>The PCB system ensures your income tax is paid progressively throughout the year rather than in a lump sum when you file your tax return. If too much PCB was deducted, you get a refund; if too little, you pay the balance when filing.</p>
+
+    <h3>How PCB is Calculated</h3>
+    <ul>
+      <li>Annual Chargeable Income = (Monthly Gross × 12) − EPF − Personal Relief − Spouse/Child Reliefs</li>
+      <li>Apply LHDN progressive tax brackets to get Annual Tax</li>
+      <li>Monthly PCB = Annual Tax ÷ 12</li>
+    </ul>
+
+    <h2 style="margin-top:2rem">LHDN 2026 Tax Brackets (YA2025)</h2>
+    <table class="rates-table">
+      <thead>
+        <tr>
+          <th>Annual Chargeable Income</th>
+          <th>Rate</th>
+          <th>Tax on Band</th>
+          <th>Cumulative Tax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>RM 0 – RM 5,000</td><td class="rate">0%</td><td>RM 0</td><td>RM 0</td></tr>
+        <tr><td>RM 5,001 – RM 20,000</td><td class="rate">1%</td><td>RM 150</td><td>RM 150</td></tr>
+        <tr><td>RM 20,001 – RM 35,000</td><td class="rate">3%</td><td>RM 450</td><td>RM 600</td></tr>
+        <tr><td>RM 35,001 – RM 50,000</td><td class="rate">8%</td><td>RM 1,200</td><td>RM 1,800</td></tr>
+        <tr><td>RM 50,001 – RM 70,000</td><td class="rate">13%</td><td>RM 2,600</td><td>RM 4,400</td></tr>
+        <tr><td>RM 70,001 – RM 100,000</td><td class="rate">21%</td><td>RM 6,300</td><td>RM 10,700</td></tr>
+        <tr><td>RM 100,001 – RM 400,000</td><td class="rate">24%</td><td>RM 72,000</td><td>RM 82,700</td></tr>
+        <tr><td>RM 400,001 – RM 600,000</td><td class="rate">25%</td><td>RM 50,000</td><td>RM 132,700</td></tr>
+        <tr><td>RM 600,001 – RM 2,000,000</td><td class="rate">26%</td><td>RM 364,000</td><td>RM 496,700</td></tr>
+        <tr><td>Over RM 2,000,000</td><td class="rate">30%</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Standard Reliefs Used in PCB</h3>
+    <p>Employers apply these base reliefs when calculating PCB. You can claim additional reliefs when filing your annual tax return.</p>
+    <ul>
+      <li><strong>Personal Relief:</strong> RM 9,000 (every resident taxpayer)</li>
+      <li><strong>Spouse Relief:</strong> RM 4,000 (if spouse is not employed or has no income)</li>
+      <li><strong>Child Relief:</strong> RM 2,000 per child under 18; RM 8,000 if 18+ in full-time education</li>
+      <li><strong>Disabled Child:</strong> Additional RM 6,000 per disabled child</li>
+      <li><strong>EPF Contribution:</strong> Up to RM 4,000 per year (employee's share only)</li>
+    </ul>
+
+    <h3>What Borang TP1 Does</h3>
+    <p>If you have additional reliefs (medical, lifestyle, SSPN, life insurance, etc.) that aren't reflected in your PCB, you can submit <strong>Borang TP1</strong> to your employer. This reduces your monthly PCB deduction so you don't overpay throughout the year and claim a refund later.</p>
+
+    <h3>CP8D Exemption</h3>
+    <p>If your annual chargeable income is RM 5,000 or below, no PCB is deducted. Your employer should note this as a CP8D exemption in their payroll records.</p>
+  </div>
+
+  <div class="tip-jar">
+    <p>Found this calculator useful? Help keep Sorted MY free.</p>
+    <a href="https://buymeacoffee.com/gl89tu25lp" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+  </div>
+
+  <div class="info-section">
+    <h2>Related Tax Guides &amp; Calculators</h2>
+    <div class="related-links">
+      <a href="/sorted-my/income-tax-efiling-guide.html" class="related-link">
+        <div class="rl-title">Income Tax E-Filing Guide 2026</div>
+        <div class="rl-desc">Step-by-step MyTax walkthrough, deadlines, checklist</div>
+      </a>
+      <a href="/sorted-my/income-tax-relief-checklist.html" class="related-link">
+        <div class="rl-title">Complete Tax Relief Checklist YA2025</div>
+        <div class="rl-desc">27+ reliefs with exact RM amounts and eligibility</div>
+      </a>
+      <a href="/sorted-my/influencer-tax-calculator.html" class="related-link">
+        <div class="rl-title">Influencer &amp; Freelancer Tax Calculator</div>
+        <div class="rl-desc">For creators, brand deals, gifted products, Form B</div>
+      </a>
+      <a href="/sorted-my/gig-worker-calculator.html" class="related-link">
+        <div class="rl-title">Gig Worker Take-Home Calculator</div>
+        <div class="rl-desc">Grab, Foodpanda: SOCSO SKSPS + EIS deductions</div>
+      </a>
+      <a href="/sorted-my/lhdn-refund-status-guide.html" class="related-link">
+        <div class="rl-title">LHDN Tax Refund Status Guide</div>
+        <div class="rl-desc">Check your refund status via MyTax, typical timelines</div>
+      </a>
+      <a href="/sorted-my/zakat-tax-guide.html" class="related-link">
+        <div class="rl-title">Zakat vs Income Tax Rebate Guide</div>
+        <div class="rl-desc">How zakat reduces your tax payable directly</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Sorted MY — Free financial calculators for Malaysians &middot; <a href="/sorted-my/">Home</a> &middot; <a href="/sorted-my/guides/">Guides</a></p>
+    <p style="margin-top:0.5rem">For reference only. Confirm with LHDN's official tools at <a href="https://mytax.hasil.gov.my" target="_blank" rel="noopener">mytax.hasil.gov.my</a>.</p>
+  </div>
+</footer>
+
+<script>
+// LHDN 2026 tax brackets (YA2025)
+const BRACKETS = [
+  { min: 0,       max: 5000,     rate: 0.00, base: 0 },
+  { min: 5001,    max: 20000,    rate: 0.01, base: 0 },
+  { min: 20001,   max: 35000,    rate: 0.03, base: 150 },
+  { min: 35001,   max: 50000,    rate: 0.08, base: 600 },
+  { min: 50001,   max: 70000,    rate: 0.13, base: 1800 },
+  { min: 70001,   max: 100000,   rate: 0.21, base: 4400 },
+  { min: 100001,  max: 400000,   rate: 0.24, base: 10700 },
+  { min: 400001,  max: 600000,   rate: 0.25, base: 82700 },
+  { min: 600001,  max: 2000000,  rate: 0.26, base: 132700 },
+  { min: 2000001, max: Infinity, rate: 0.30, base: 496700 }
+];
+
+function calcTax(income) {
+  if (income <= 0) return 0;
+  for (const b of BRACKETS) {
+    if (income <= b.max) {
+      return b.base + (income - b.min + 1) * b.rate;
+    }
+  }
+  return 0;
+}
+
+function fmt(n) {
+  return 'RM ' + n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calcPCB() {
+  const gross = parseFloat(document.getElementById('gross').value) || 0;
+  if (gross <= 0) {
+    alert('Please enter your monthly gross salary.');
+    return;
+  }
+
+  const statusVal = document.getElementById('status').value;
+  const children = parseInt(document.getElementById('children').value) || 0;
+  const disabledChildren = parseInt(document.getElementById('disabled_child').value) || 0;
+
+  // EPF: auto-calculate if blank
+  let epfInput = document.getElementById('epf').value;
+  let monthlyEPF = epfInput ? parseFloat(epfInput) : gross * 0.11;
+  let annualEPF = monthlyEPF * 12;
+  let epfRelief = Math.min(annualEPF, 4000); // capped at RM4,000
+
+  // Annual gross
+  let annualGross = gross * 12;
+
+  // Reliefs
+  let personalRelief = 9000;
+  let spouseRelief = 0;
+  let spouseLabel = '−RM 0 (single / spouse employed)';
+  if (statusVal === 'married_ne') {
+    spouseRelief = 4000;
+    spouseLabel = '−RM 4,000';
+  }
+
+  let childRelief = children * 2000;
+  let disabledChildRelief = disabledChildren * 6000; // additional
+  let totalChildRelief = childRelief + disabledChildRelief;
+  let childLabel = '−' + fmt(totalChildRelief);
+  if (totalChildRelief === 0) childLabel = '−RM 0';
+
+  // Chargeable income
+  let chargeable = annualGross - epfRelief - personalRelief - spouseRelief - totalChildRelief;
+  if (chargeable < 0) chargeable = 0;
+
+  // Annual tax
+  let annualTax = calcTax(chargeable);
+
+  // Monthly PCB
+  let monthlyPCB = annualTax / 12;
+
+  // Take-home
+  let takeHome = gross - monthlyEPF - monthlyPCB;
+
+  // Effective rate on gross
+  let effectiveRate = gross > 0 ? (monthlyPCB / gross * 100) : 0;
+
+  // Update UI
+  document.getElementById('placeholder').style.display = 'none';
+  document.getElementById('result-content').style.display = 'block';
+
+  document.getElementById('res-pcb').textContent = fmt(monthlyPCB);
+  document.getElementById('res-effective').textContent = 'Effective rate: ' + effectiveRate.toFixed(2) + '% of gross salary';
+  document.getElementById('res-gross').textContent = fmt(gross);
+  document.getElementById('res-epf').textContent = '−' + fmt(monthlyEPF);
+  document.getElementById('res-pcb2').textContent = '−' + fmt(monthlyPCB);
+  document.getElementById('res-takehome').textContent = fmt(takeHome);
+  document.getElementById('res-annual-gross').textContent = fmt(annualGross);
+  document.getElementById('res-epf-relief').textContent = '−' + fmt(epfRelief);
+  document.getElementById('res-spouse').textContent = spouseLabel;
+  document.getElementById('res-child').textContent = childLabel;
+  document.getElementById('res-chargeable').textContent = fmt(chargeable);
+  document.getElementById('res-annual-tax').textContent = '−' + fmt(annualTax);
+  document.getElementById('res-monthly-tax').textContent = '−' + fmt(monthlyPCB);
+
+  const cp8dBox = document.getElementById('cp8d-box');
+  if (chargeable <= 5000 && monthlyPCB < 0.01) {
+    cp8dBox.style.display = 'block';
+  } else {
+    cp8dBox.style.display = 'none';
+  }
+}
+</script>
+</body>
+</html>
